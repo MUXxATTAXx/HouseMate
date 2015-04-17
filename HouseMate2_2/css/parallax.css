@@ -1,0 +1,35 @@
+* {
+ 
+}
+
+
+html,body,#wrapper {
+  height: 118%;
+}
+
+html{
+  
+}
+
+#main {
+  height: 100%;
+  z-index: -1;
+  transition: transform 0.2s ease;
+  background-color
+}
+
+#wrapper {
+  z-index: -1;
+  overflow:inherit;
+}
+
+
+
+.one:before {
+
+}
+
+.two:before {
+
+}
+
