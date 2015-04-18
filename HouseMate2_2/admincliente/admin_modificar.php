@@ -233,7 +233,7 @@ echo("
 			$nomina .= $Where;
 			$consultaq=mysql_query($nomina);
 			echo "<script> 
-			location.replace('cliente_mantenimiento.php'); 
+			location.replace('cliente_mantenimiento.php?actualstand=3'); 
 			</script>";
 		}
 		}

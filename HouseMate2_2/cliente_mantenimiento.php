@@ -22,21 +22,12 @@
 
 	<?php
 		include "Call/Loged/urgent.php";
+		
 		?>
 <div id='myTabContent' class='tab-content'>
-	<div class='tab-pane fade active in' id='home'><?php
-		include'admincliente/crear_cliente.php';?>
-	</div>
-	<div class='tab-pane fade' id='crear'><?php
-		include'admincliente/admin_mostrar.php';?>
-	</div>
-	<div class="tab-pane fade" id="sd">	<?php
-		include("admincliente/admin_modificar.php");?>
-	 </div>
-		
-	<div class="tab-pane fade" id="eliminar"><?php
-		include('admincliente/admin_eliminar.php'); ?>
-	</div>
+	<?php 
+	include "Call/Funciones/tab.php"; 
+	?>
 </div>
 </form>
 </body>

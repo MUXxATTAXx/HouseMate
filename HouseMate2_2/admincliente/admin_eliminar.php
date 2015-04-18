@@ -32,10 +32,10 @@ echo("
             if(mysql_query($consulta))
             {
             echo "<p>Usuario Eliminado</p>";
-			$consulta = "UPDATE tbUsuario SET IdUsuario = IdUsuario - 1 WHERE IdUsuario < '$id'";
+			$consulta = "UPDATE tbUsuario SET IdUsuario = IdUsuario - 1 WHERE IdUsuario > '$id'";
 			$cs=mysql_query($consulta);
 			echo "<script> 
-			location.replace('cliente_mantenimiento.php'); 
+			location.replace('cliente_mantenimiento.php?actualstand=4'); 
 			</script>";
             }
             else

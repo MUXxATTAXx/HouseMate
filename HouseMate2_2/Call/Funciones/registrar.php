@@ -30,7 +30,9 @@
 			$query = $_SERVER['PHP_SELF'];
 			$path = pathinfo( $query );
 			$url = $path['basename'];
-			
+			echo "<script> 
+			location.replace('cliente_mantenimiento.php?actualstand=1'); 
+			</script>";
 		}
         else
 		{
