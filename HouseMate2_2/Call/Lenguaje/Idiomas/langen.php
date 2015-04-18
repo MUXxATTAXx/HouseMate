@@ -129,4 +129,13 @@ $lang['Fre8'] = "Yes please, register now!";
 $lang['Ca1'] = "Contact";
 $lang['Ca2'] = "More details";
 $land['noticias'] = "News";
+
+//Perfil
+$lang['IdUsuario'] = "User ID: ";
+$lang['UsuNombre'] = "User Name: ";
+$lang['ComNombre'] = "Full Name: ";
+//Fecha-Nac
+//Correo
+$lang['MisCasas'] = "My Properties";
+$lang['MisMensajes'] = "My Messages";
 ?>

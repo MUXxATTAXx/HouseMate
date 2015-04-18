@@ -127,4 +127,14 @@ $lang['Fre8'] = "Si, por favor!";
 $lang['Ca1'] = "Contactar";
 $lang['Ca2'] = "Más detalles";
 $land['noticias'] = "Noticias";
+
+//Perfil
+$lang['IdUsuario'] = "ID de Usuario: ";
+$lang['UsuNombre'] = "Nombre de Usuario: ";
+$lang['ComNombre'] = "Nombre Completo: ";
+//Fecha-Nac
+//Correo
+$lang['MisCasas'] = "Mis Inmuebles";
+$lang['MisMensajes'] = "Mis Mensajes";
+
 ?>

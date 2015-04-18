@@ -44,7 +44,30 @@
    
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Sheena Kristin A.Eschor</h3>
+              <h3 class="panel-title">
+                <?php
+                    include "conexion.php";
+                    $usuario = $_SESSION['id'];
+                    $consulta = ("SELECT * FROM tbusuario WHERE idUsuario = $usuario ");
+                    $cs = mysql_query($consulta);
+                    while($row = mysql_fetch_array($cs)){
+                        switch ($row['tipo']){
+                            case 1:
+                            echo($lang["Admin"]);
+                            break;
+                            case 2:
+                            echo($lang["Cliente"]);
+                            break;
+                            case 3:
+                            echo($lang["Perito"]);
+                            break;
+                            case 4:
+                            echo($lang["Agente"]);
+                            break;
+                            
+                        }       
+                ?>
+                </h3>
             </div>
             <div class="panel-body">
               <div class="row">
@@ -54,42 +77,34 @@
                   <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
+                        <td><?php echo $lang['IdUsuario']?></td>
+                        <td><?php echo $row['idUsuario'] ?></td>
+                      </tr>
+                        <tr>
+                        <td><?php echo $lang['UsuNombre']?></td>
+                        <td><?php echo $row['usuario'] ?></td>
+                        </tr>
+                      <tr>
+                        <td><?php echo "<hr>".$lang['ComNombre']?></td>
+                        <td><?php echo "<hr>".$row['nombre']."<br>".$row['apellido'] ?></td>
                       </tr>
                       <tr>
-                        <td>Hire date:</td>
-                        <td>06/23/2013</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
+                        <td><?php echo($lang['Fecha-Nac'])?></td>
+                        <td><?php echo $row['fechanac'] ?></td>
                       </tr>
                    
                          <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Male</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address</td>
-                        <td>Metro Manila,Philippines</td>
-                      </tr>
                       <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
+                        <td><?php echo $lang['Correo']?></td>
+                        <td><?php echo $row['correo'] ?></td>
+                      </tr>  
                       </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                      </tr>
-                     
                     </tbody>
                   </table>
+                <?php } ?>
                   
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
+                  <a href="#" class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
+                  <a href="#" class="btn btn-primary"><?php echo($lang['MisMensajes'])?></a>
                 </div>
               </div>
             </div>
