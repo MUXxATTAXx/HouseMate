@@ -67,3 +67,40 @@ text-transform: lowercase;
 }
 
 .close:hover { background: #00d9ff; }
+.pD1{
+    margin: 5%;
+    text-align: justify;
+}
+.pD2{
+    margin: 5%;
+    text-align: center;
+}
+.h1-D1{
+    margin: 5%;
+    text-align: justify;
+}
+#refrem{
+    margin: 5%;
+    width: auto;
+    height: auto;
+    background-color: white;
+    text-align: center;
+}
+#barrabusqueda{
+    width: 100%;
+    height: 10%;
+    background-color: #375a7f;
+}
+#BarraLateral{
+    width: 30%;
+    height: 90%;
+    background-color: #303030;
+    float: left;
+}
+#contenido{
+    width: 70%;
+    height: 90%;
+    background-color: white;
+    float: right;
+    color: black;
+}

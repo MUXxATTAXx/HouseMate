@@ -21,21 +21,7 @@
 <br>
 <br>
 
-<?php
-   /* include("conexion.php");
-    $info = $_SESSION['user'];
-    mysql_query("SET NAMES 'utf8'");
-    $consulta = "SELECT * FROM tbUsuario WHERE nombre='$info'";
-    $cs=mysql_query($consulta);
-    while($row=mysql_fetch_array($cs)){
-    echo "<h2>".$row['nombre']." ".$row['apellido']."</h2>";
-    echo"<h4>";
-        if($row['tipo']=="1"){echo $lang['Admin'];}
-        if($row['tipo']=="2"){echo $lang['Cliente'];}
-        if($row['tipo']=="3"){echo $lang['Perito'];}
-    echo"<br></h4>";
-    */
-?> 
+
 	
 
       <div class="row">

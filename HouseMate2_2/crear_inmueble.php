@@ -1,10 +1,9 @@
 <?php
-    echo("
+    echo"
     <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-    ");
-    echo "<link href='css/change.css' rel='stylesheet'/>";
-    
+	<link href='css/change.css' rel='stylesheet'/>
+	";
     include("Header/barranav2.php");
 
 ?>
@@ -37,8 +36,7 @@
  <?php require('admininmueble/mostrar_inmueble.php'); ?>
  </div>
  <div class="tab-pane fade" id="sd">
- asd3
-  
+ <?php require('admininmueble/modificar_inmueble.php'); ?> 
  </div>
 
 <div class="tab-pane fade" id="eliminar">
