@@ -31,6 +31,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="mailto:housemate2015@outlook.com"><?php echo($lang['Contactenos']);?></a></li>
       </ul>
     </div>
   </div>
