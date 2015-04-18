@@ -31,7 +31,6 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><?php echo($lang['Contactenos']);?></a></li>
       </ul>
     </div>
   </div>
