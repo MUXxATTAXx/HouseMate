@@ -75,6 +75,10 @@ text-transform: lowercase;
     margin: 5%;
     text-align: center;
 }
+.pD3{
+    margin: 0;
+    text-align: center;
+}
 .h1-D1{
     margin: 5%;
     text-align: justify;
@@ -87,6 +91,11 @@ text-transform: lowercase;
     text-align: center;
 }
 #barrabusqueda{
+    width: 100%;
+    height: 10%;
+    background-color: #375a7f;
+}
+#barrabusqueda2{
     width: 100%;
     height: 10%;
     background-color: #375a7f;

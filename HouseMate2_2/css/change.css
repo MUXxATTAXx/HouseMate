@@ -25,9 +25,9 @@ input[type=date]::-webkit-inner-spin-button {
 }
 .form-Dl
 {
-    width: 55%;
+    width: 60%;
     vertical-align: middle;
-margin: 0 auto; 
+	margin: 0 auto; 
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;

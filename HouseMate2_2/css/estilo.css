@@ -176,5 +176,9 @@ margin-top:10%;
 #login-overlay .form-group {
   margin-bottom:0;
 }
+#mostramu div input
+{
+	border-color:black 1px;
+}
 
 
