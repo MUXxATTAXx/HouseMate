@@ -1,13 +1,12 @@
 
 <div class='form-Dl' align="center">
 <div class="row row-centered">
+<?php require ("Call/Funciones/select.php") ?>
+</div>
+<div class="row row-centered">
 	<div class="form-group col-xs-6 col-centered">
 		<label><?php echo $lang['Direccion'] ?>: </label>
 			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
-	</div>
-	<div class="form-group col-xs-6 col-centered">
-		<label><?php echo $lang['Descripcion'] ?>:</label>
-	<textarea rows="3" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
 	</div>
 </div>
     <label><?php echo $lang['Etiqueta'] ?>:</label>
@@ -74,6 +73,10 @@
          <span class="input-group-addon">.00</span>
       </div>
     
+	</div>
+		<div class="form-group col-xs-6">
+		<label><?php echo $lang['Descripcion'] ?>:</label>
+	<textarea rows="3" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
 	</div>
 </div>
 	

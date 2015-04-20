@@ -2,13 +2,12 @@
     echo"
     <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/change.css' rel='stylesheet'/>
-	";
+	<link href='css/change.css' rel='stylesheet'/>";
     include("Header/barranav2.php");
 
 ?>
 <!DOCTYPE HTML>
-<html >
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
@@ -45,5 +44,8 @@
   </div>
 </div>
 </form>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
+  <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
 </body>
 </html>

@@ -6,9 +6,12 @@ if(isset($_POST['boto']))
 	if($_POST['boto'] == "Insert")
 	{
 			
-		if($_POST['dirrecion'] != null and $_POST['descrip'] != null and $_POST['selector'] != 0 and $_POST['selector2'] != 0 and $_POST['precio'] != null)
+		if($_POST['dirrecion'] != null and $_POST['descrip'] != null and $_POST['selector'] != 0 and $_POST['selector2'] != 0 and $_POST['precio'] != null and $_POST['Departamento'] != "" and $_POST['Municipio'])
 		{
-			$objecto1 = trim($_POST['dirrecion']);
+			$Depa = $_POST['Departamento'];
+			$Muni = $_POST['Municipio'];
+			$objecto0 = trim($_POST['dirrecion']);
+			$objecto1 = $Depa." ".$Muni." ".$objecto0;
 			$objecto2 = trim($_POST['descrip']);
 			$objecto3 = trim($_POST['selector']);
 			$objecto4 = trim($_POST['selector2']);

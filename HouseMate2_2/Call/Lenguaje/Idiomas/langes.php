@@ -94,6 +94,8 @@ $lang['Urbana'] = "Urbano";
 $lang['idm'] = "Id del inmueble";
 $lang['Duen'] = "Dueño";
 
+$lang['Departamento'] = "Departamento";
+$lang['Municipio'] = "Municipio";
 //Errores y faltas
 $lang['missing'] =  'Ingrese una imagen'; 
 $lang['error'] = 'Eso no es una imagen';

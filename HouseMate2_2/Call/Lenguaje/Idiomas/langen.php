@@ -68,7 +68,7 @@ $lang['vr']  ="Sale or Rent:";
 $lang['contra'] = "Password";
 $lang['Mostrar'] ="Show";
 //Variables redundantes
-$lang['Direccion'] = 'Adress';
+$lang['Direccion'] = 'Address';
 $lang['Etiqueta'] = 'Tags';
 $lang['EtiquetaNum'] = 'Type the number of tags (Max. 12)';
 $lang['Descripcion'] = 'Descripton';
@@ -95,6 +95,8 @@ $lang['Rustico'] = "Rustic";
 $lang['Urbana'] = "Urban";
 $lang['idm'] = "Id here";
 $lang['Duen'] = "Owner";
+$lang['Departamento'] = "Department";
+$lang['Municipio'] = "Town";
 
 //Errores y faltas
 $lang['missing'] = 'Insert a image';
