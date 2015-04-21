@@ -84,32 +84,19 @@ text-transform: lowercase;
     text-align: justify;
 }
 #refrem{
-    margin: 5%;
-    width: auto;
-    height: auto;
+
     background-color: white;
     text-align: center;
 }
 #barrabusqueda{
-    width: 100%;
-    height: 10%;
     background-color: #375a7f;
 }
 #barrabusqueda2{
-    width: 100%;
-    height: 10%;
     background-color: #375a7f;
 }
 #BarraLateral{
-    width: 30%;
-    height: 90%;
     background-color: #303030;
-    float: left;
 }
 #contenido{
-    width: 70%;
-    height: 90%;
-    background-color: white;
-    float: right;
-    color: black;
+    background-color: 6F95BD;
 }

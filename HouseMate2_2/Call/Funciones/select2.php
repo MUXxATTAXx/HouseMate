@@ -1,12 +1,14 @@
+
   <script type="text/javascript" charset="utf-8">
   $(function() {
-    $("#Municipio").chained("#Departamento");
+    $("#Municipio2").chained("#Departamento2");
   });
  </script>
+ <div class="row">
 
 <div class="form-group col-xs-4">
-<label><?php echo $lang['Departamento']  ?>:</label>
-<select name="Departamento" class="form-control" id="Departamento">
+ <label><?php echo $lang['Departamento']  ?>:</label>
+<select name="Departamento2" class="form-control" id="Departamento2">
 	<option value=""><?php echo $lang['Nada'] ?></option>
 	<option value="Ahuachapán">Ahuachapán</option>
 	<option value="Cabañas">Cabañas</option>
@@ -24,9 +26,10 @@
 	<option value="Usulután">Usulután</option>
 </select>
 </div>
+
 <div class="form-group col-xs-4">
 <label><?php echo $lang['Municipio'] ?>:</label>
-<select name="Municipio" class="form-control" id="Municipio">
+<select name="Municipio2" class="form-control" id="Municipio2">
 	<option value=""><?php echo $lang['Nada'] ?></option>
 	<?php include "Call/Funciones/InsideSelect/Ahu.php"; 
 	include "Call/Funciones/InsideSelect/Caba.php";
@@ -47,5 +50,6 @@
 </div>
  <div class="form-group col-xs-4 col-centered">
 		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
-	</div>
+			<textarea rows="2" class='form-control' type='text' name='dirrecion2'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+</div>
+</div>

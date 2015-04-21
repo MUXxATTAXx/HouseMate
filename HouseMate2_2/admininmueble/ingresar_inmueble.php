@@ -1,15 +1,11 @@
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/jquery.chained.min.js"></script>
 <div class='form-Dl' align="center">
-<div class="row row-centered">
-<?php require ("Call/Funciones/select.php") ?>
-</div>
-<div class="row row-centered">
-	<div class="form-group col-xs-6 col-centered">
-		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
-	</div>
-</div>
-    <label><?php echo $lang['Etiqueta'] ?>:</label>
+
+
+    <div class="center">
+					<h3><?php echo $lang['Etiqueta'] ?>:</h3>
+			</div>
 	<div class="center">
 	<div class="row row-centered">
             <div class="form-group col-xs-2 col-centered">
@@ -66,7 +62,7 @@
 </div>
 <div class="row row-centered">
 <div class="form-group col-xs-6 col-centered">
-	<label><?php echo $lang['Precio']?></label>
+	<label><?php echo $lang['Precio']?>:</label>
 	<div class="input-group">
          <span class="input-group-addon">$</span>
          <input type="number" class='form-control' min="0" step="1" name="precio" placeholder='<?php echo $lang['Precio']?>'>
@@ -79,7 +75,9 @@
 	<textarea rows="3" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
 	</div>
 </div>
-	
+	<div class="row row-centered">
+<?php require ("Call/Funciones/select.php") ?>
+</div>
 		
 	<label><?php echo $lang['Imagen']  ?>:</label>
 	<div  class="onlyme">

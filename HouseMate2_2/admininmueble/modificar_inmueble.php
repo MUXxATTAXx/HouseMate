@@ -1,20 +1,22 @@
 
-  <div id="barrabusqueda2">
-		<div class="row">
-        
-		</div>
-    </div>
-    <div id="BarraLateral">
-        
-    </div>
-    <div id="contenido">
-        <div class="row row-centered">
-			<div class="form-group col-xs-12 col-centered">
-			<label><?php echo $lang['Direccion'] ?>: </label>
-				<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+  <div class="row row-centered">
+		<div class="form-group col-xs-12 col-centered">
+			<div id="barrabusqueda2">
+			<?php include "Call/Funciones/Select2.php" ?>
+
 			</div>
 		</div>
-    <label><?php echo $lang['Etiqueta'] ?>:</label>
+		<!-- barra lateral -->
+		<div class="form-group col-xs-4 col-centered">	
+			<div id="BarraLateral">
+		</div>
+		</div>
+		<!-- contenido -->
+		<div class="form-group col-xs-8 col-centered">	
+			<div id="contenido">
+				<div class="center">
+					<h3><?php echo $lang['Etiqueta'] ?>:</h3>
+			</div>
 	<div class="center">
 	<div class="row row-centered">
             <div class="form-group col-xs-2 col-centered">
@@ -71,7 +73,7 @@
 </div>
 <div class="row row-centered">
 <div class="form-group col-xs-6 col-centered">
-	<label><?php echo $lang['Precio']?></label>
+	<label><?php echo $lang['Precio']?>:</label>
 	<div class="input-group">
          <span class="input-group-addon">$</span>
          <input type="number" class='form-control' min="0" step="1" name="precio" placeholder='<?php echo $lang['Precio']?>'>
@@ -112,5 +114,7 @@
     }
 	</script>
 	<br>
-    <button class='btn btn-lg btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>    
+    <button class='btn btn-lg btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>       
+			</div>
 	</div>	
+</div>
