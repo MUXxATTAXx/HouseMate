@@ -14,6 +14,7 @@
 	<title><?php echo($lang['Page_title']);?></title>
 	<meta charset = "utf-8" />
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href="css/bootstrap-table.css" rel="stylesheet">
 </head>
 <body> 
 <form method="post">
@@ -30,5 +31,6 @@
 	?>
 </div>
 </form>
+<script src="js/bootstrap-table.js" ></script>
 </body>
 </html>

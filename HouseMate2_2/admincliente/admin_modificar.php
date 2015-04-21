@@ -247,22 +247,22 @@ else
 ?>
        
         </div>  
-<?php
+<!-- <?php
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0'";
     $cs=mysql_query($consulta);
-   echo"<table class='table table-striped table-hover ' border=1px>";
-        echo"<tr><td><b>";
+   echo"<table class='table table-striped table-hover ' border='1px' data-toggle='table'>";
+        echo"<thead><tr><th>";
 		echo $lang['Codigo'];
-		echo '</b></td><td><b>';
+		echo '</th><th>';
 		echo $lang['Nombre'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Apellido'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Correo'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Tipous'];
-		echo "</b></td>";
+		echo "</th></thead>";
     while($row=mysql_fetch_array($cs)){
 		switch($row['tipo'])
 		{
@@ -279,8 +279,9 @@ else
 			$var = $lang['Cliente'];
 			break;
 		}
-        echo "<tr><td>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr>";
+        echo "<tbody><tr><td>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr></tbody>";
     }
     echo"</table>";
     ?>
-</form> 
+-->
+	</form> 

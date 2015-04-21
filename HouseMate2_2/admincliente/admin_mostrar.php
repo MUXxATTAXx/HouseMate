@@ -10,20 +10,21 @@
     //Revisamos que no esten vacios los campos
     $cs=mysql_query($consulta);
 	$var = "";
-    echo"<table class='table table-responsive table-striped table-hover' id='here' border=1px>";
-        echo"<tr><td><b>";
+	// data-show-columns='true'
+    echo"<table id='here' class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
+        echo"<thead><tr><th>";
 		echo $lang['Codigo'];
-		echo '</b></td><td><b>';
+		echo '</th><th>';
 		echo $lang['Nombre'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Apellido'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Correo'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Fecha-Nac'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Tipous'];
-		echo "</b></td>";
+		echo "</th></thead>";
     while($row=mysql_fetch_array($cs)){
 		switch($row['tipo'])
 		{

@@ -1,0 +1,4 @@
+http://reactiveraven.github.io/jqBootstrapValidation/
+http://wenzhixin.net.cn/p/bootstrap-show-password/
+http://startbootstrap.com/bootstrap-resources/
+http://mrlopez.me/bootstrap-floating-labels/

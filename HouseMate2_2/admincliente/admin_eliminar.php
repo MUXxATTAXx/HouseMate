@@ -50,23 +50,22 @@ echo("
     }
 
 ?>
- 
-</div> <?php
+ <?php
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0' ORDER BY `tbusuario`.`idUsuario` ASC";
     $cs=mysql_query($consulta);
-   echo"<table id='example' class='table table-striped table-hover table-bordered ' border=1px>";
-        echo"<tr><td><b>";
+   echo"<table id='example' table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true' data-show-toggle='true' data-show-columns='true' data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
+        echo"<thead><tr><th>";
 		echo $lang['Codigo'];
-		echo '</b></td><td><b>';
+		echo '</th><th>';
 		echo $lang['Nombre'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Apellido'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Correo'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['Tipous'];
-		echo "</b></td>";
+		echo "</th></thead>";
     while($row=mysql_fetch_array($cs)){
 		switch($row['tipo'])
 		{
@@ -83,10 +82,13 @@ echo("
 			$var = $lang['Cliente'];
 			break;
 		}
-        echo "<tr ><td class='cd'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr>";
+        echo "<tbody><tr ><td class='cd'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr></tbody>";
     }
     echo"</table>";
     ?>
+	
+</div> 
+
 	<script language="javascript" type="text/javascript">  
     var tf = setFilterGrid("example");  
 </script>   
