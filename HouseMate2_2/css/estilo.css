@@ -1,4 +1,36 @@
+<!--Fernando-->
+.pD9{
+    margin: 5%;
+    text-align: center;
+}
+#homepage9{
+    margin: 5%;
+    width: auto;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+#barrabusqueda9{
+    width: 100%;
+    height: 10%;
+    background-color: #375a7f;
+}
+#BarraLateral9{
+    width: 25%;
+    height: 90%;
+    background-color: #303030;
+    float: left;
+}
+#contenido9{
+    width: 75%;
+    height: auto;
+    background-color: #303030;
+    float: right;
+    color: black;
+}
 
+<!-- Alex-->
 .formD3{
 width: 80%;
 margin: auto;
