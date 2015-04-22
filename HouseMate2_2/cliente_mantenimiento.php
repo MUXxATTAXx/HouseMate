@@ -1,12 +1,5 @@
 <?php
-    echo("
-    <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-    ");
-    echo "<link href='css/change.css' rel='stylesheet'/>";
-    
     include("Header/barranav2.php");
-    
 ?>
 <!DOCTYPE HTML>
 <html onload="refresh()">
@@ -15,6 +8,7 @@
 	<meta charset = "utf-8" />
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href='css/change.css' rel='stylesheet'/>
 </head>
 <body> 
 <form method="post">
@@ -31,6 +25,7 @@
 	?>
 </div>
 </form>
+ <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 <script src="js/bootstrap-table.js" ></script>
 </body>
 </html>

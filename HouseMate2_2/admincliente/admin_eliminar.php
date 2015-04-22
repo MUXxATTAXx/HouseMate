@@ -1,4 +1,5 @@
-<div class='form-Dl' align='center'>
+
+ <div class='form-Dl' align='center'>
     <form action="cliente_mantenimiento.php" method="POST">
 	<div class='row row-centered'>
 		<div class="col-sm-4 col-centered">            
@@ -9,16 +10,11 @@
 	</div>
     </form>
   
-    <?php
-echo("
-    <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-    ");
+ <?php
     mysql_query("SET NAMES 'utf8'");
 
     if (isset($_POST["eliminar"]) )
     {
-    include("conexion.php");
     if (isset($_POST['id3']))
         {
 			$idt = $_POST['id3'];
@@ -54,7 +50,7 @@ echo("
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0' ORDER BY `tbusuario`.`idUsuario` ASC";
     $cs=mysql_query($consulta);
-   echo"<table id='example' table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true' data-show-toggle='true' data-show-columns='true' data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
+   echo"<table class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
         echo"<thead><tr><th>";
 		echo $lang['Codigo'];
 		echo '</th><th>';
@@ -63,6 +59,8 @@ echo("
 		echo $lang['Apellido'];
 		echo "</th><th>";
 		echo $lang['Correo'];
+		echo "</th><th>";
+		echo $lang['Fecha-Nac'];
 		echo "</th><th>";
 		echo $lang['Tipous'];
 		echo "</th></thead>";
@@ -82,13 +80,11 @@ echo("
 			$var = $lang['Cliente'];
 			break;
 		}
-        echo "<tbody><tr ><td class='cd'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr></tbody>";
+        echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td></tr>";
     }
     echo"</table>";
     ?>
 	
 </div> 
 
-	<script language="javascript" type="text/javascript">  
-    var tf = setFilterGrid("example");  
-</script>   
+

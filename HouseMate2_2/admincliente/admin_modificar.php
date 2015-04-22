@@ -247,11 +247,11 @@ else
 ?>
        
         </div>  
-<!-- <?php
+ <?php /*
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0'";
     $cs=mysql_query($consulta);
-   echo"<table class='table table-striped table-hover ' border='1px' data-toggle='table'>";
+  echo"<table class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
         echo"<thead><tr><th>";
 		echo $lang['Codigo'];
 		echo '</th><th>';
@@ -260,6 +260,8 @@ else
 		echo $lang['Apellido'];
 		echo "</th><th>";
 		echo $lang['Correo'];
+		echo "</th><th>";
+		echo $lang['Fecha-Nac'];
 		echo "</th><th>";
 		echo $lang['Tipous'];
 		echo "</th></thead>";
@@ -279,9 +281,8 @@ else
 			$var = $lang['Cliente'];
 			break;
 		}
-        echo "<tbody><tr><td>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$var."</td></tr></tbody>";
+        echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td></tr>";
     }
     echo"</table>";
-    ?>
--->
+    */?>
 	</form> 

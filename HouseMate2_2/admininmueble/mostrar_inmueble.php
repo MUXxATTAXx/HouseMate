@@ -1,22 +1,14 @@
-<div class="row">
-		<div class="col-sm-2">
-			<div id="example_filter" class="dataTables_filter">
-				<label>Search:</label>
-				<input id="search" type="search" class="form-control input-sm" placeholder="" aria-controls="example">
-			</div>
-		</div>
-</div>
+
 <?php
- include("conexion.php");
     mysql_query("SET NAMES 'utf8'");	
-    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario";
+    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
     $cs=mysql_query($consulta);
 
 	$countermax = 0;
 	$i = 0;
 	$know = "";
 	$know2= "";
-	echo "<table id='example' class='table table-striped table-bordered' cellspacing='0' width='100%'>
+	echo "<table id='here' class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 	<thead>
             <tr>
                 <th>".$lang['Codigo']."</th>
@@ -27,7 +19,7 @@
                 <th>".$lang['Duen']."</th>
 				<th>".$lang['tm']."</th>
             </tr>
-        </thead>";
+    </thead>";
 	
 	while($row=mysql_fetch_array($cs))
 	{
@@ -48,13 +40,6 @@
 			case 2:
 			$know2 =  $lang['Urbana'];
 			break;
-		}
-		$i++;
-		$smurf = $i / 2;
-		
-		if($i == 0 || $smurf == 0 )
-		{
-			echo "<div class='list-group'>";
 		}
 		echo "<tr>
 		<td>
@@ -81,24 +66,10 @@
 			<p>".$know2."</p>
 		</td>
 		</tr>";
-		if($smurf == 0 and $i != 0)
-		{
-			echo "</div>";
-		}
+
 		
 	}	
-	echo "	
-		<tfoot>
-            <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-				<th></th>
-            </tr>
-        </tfoot></table>";
+	echo "</table>";
 
 ?>
 <script type="text/javascript">
