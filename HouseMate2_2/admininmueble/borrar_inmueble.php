@@ -11,10 +11,6 @@
     </form>
 </div>
     <?php
-echo("
-    <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-    ");
     mysql_query("SET NAMES 'utf8'");
 
     if (isset($_POST["eleminar"]) )
@@ -55,22 +51,22 @@ echo("
 ?>	
 <?php
     mysql_query("SET NAMES 'utf8'");
-    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario";
+    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
     $cs=mysql_query($consulta);
 	$know = "";
 	$know2 = "";
-    echo"<table class='table table-striped table-hover ' border=1px>";
-        echo"<tr><td><b>";
+    echo"<table class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
+        echo"<thead><tr><th>";
 		echo $lang['Codigo'];
-		echo '</b></td><td><b>';
+		echo '</th><th>';
 		echo $lang['Duen'];
-		echo '</b></td><td><b>';
+		echo '</th><th>';
 		echo $lang['Direccion'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['vr'];
-		echo "</b></td><td><b>";
+		echo "</th><th>";
 		echo $lang['tm'];
-	
+		echo "</th></tr></thead>";
 		
     while($row=mysql_fetch_array($cs)){
 		switch($row['VentaRenta'])
@@ -94,8 +90,4 @@ echo("
         echo "<tr><td>".$row['IdInmueble']."</td><td>".$row['nombre']." ".$row['apellido']."</td><td>".$row['Direccion']."</td><td>".$know."</td><td>".$know2."</td></tr>";
     }
     echo"</table>";
-    echo '<script>
-    function refre() {
-    window.location.href = "admin_eliminar.php";
-    }
-    </script>'?>
+?>
