@@ -67,5 +67,19 @@ input:focus, textarea:focus {
 {
   color: black;
 }
+.row
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-responsive
+{
+	display: none;
+}
+.form-group
+{
+margin-bottom:2px;
+}
+
    
 

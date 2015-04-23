@@ -48,8 +48,8 @@
 	?>
 </select>
 </div>
- <div class="form-group col-xs-4 col-centered">
-		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion2'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+ <div class="form-group col-xs-4">
+		<label><?php echo $lang['Duen'] ?>: </label>
+			<input id="busquename" class='form-control' type='text' name='pertenece' placeholder='<?php echo $lang['Duen'] ?>'>
 </div>
 </div>

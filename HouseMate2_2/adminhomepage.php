@@ -43,13 +43,12 @@
 <!-- Ni idea  de porque necesiro este div -->
 
     <div id="barrabusqueda9">
-        <p class="pD9">Barra de Busqueda</p>
     </div>
-    <div id="BarraLateral9">
+  <!--  <div id="BarraLateral9">
         <p class="pD9">Barra Lateral</p>
     </div>
     <div id="contenido9">
-        <?php
+        <?php /*
             include("conexion.php");
             mysql_query("SET NAMES 'utf8'");
             $know = "";
@@ -150,6 +149,6 @@
             echo " <span class='pactiva'><a href='?pagina=".($pagina+1)."'>Siguiente &raquo;</a></span>"; 
             } 
             } 
-        ?>
-    </div>
+       */ ?>
+    </div> -->
 </body>

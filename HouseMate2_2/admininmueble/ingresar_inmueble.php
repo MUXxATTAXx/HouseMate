@@ -61,7 +61,7 @@
 		</div>
 </div>
 <div class="row row-centered">
-<div class="form-group col-xs-6 col-centered">
+<div class="form-group col-xs-6">
 	<label><?php echo $lang['Precio']?>:</label>
 	<div class="input-group">
          <span class="input-group-addon">$</span>
