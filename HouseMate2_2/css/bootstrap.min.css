@@ -80,6 +80,10 @@ input:focus, textarea:focus {
 {
 margin-bottom:2px;
 }
-
+.limitante
+{
+height:100px;
+width:100px;
+}
    
 

@@ -6,7 +6,7 @@
  </script>
  <div class="row">
 
-<div class="form-group col-xs-4">
+<div class="form-group col-xs-2">
  <label><?php echo $lang['Departamento']  ?>:</label>
 <select name="Departamento2" class="form-control" id="Departamento2">
 	<option value=""><?php echo $lang['Nada'] ?></option>
@@ -27,7 +27,7 @@
 </select>
 </div>
 
-<div class="form-group col-xs-4">
+<div class="form-group col-xs-2">
 <label><?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio2" class="form-control" id="Municipio2">
 	<option value=""><?php echo $lang['Nada'] ?></option>
@@ -48,7 +48,7 @@
 	?>
 </select>
 </div>
- <div class="form-group col-xs-4">
+ <div class="form-group col-xs-2">
 		<label><?php echo $lang['Duen'] ?>: </label>
 			<input id="busquename" class='form-control' type='text' name='pertenece' placeholder='<?php echo $lang['Duen'] ?>'>
 </div>

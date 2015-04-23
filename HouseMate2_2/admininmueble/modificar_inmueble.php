@@ -2,12 +2,14 @@
 	<div id="barrabusqueda2" class="form-group col-xs-12 col-centered">
 			<?php include "Call/Funciones/Select2.php" ?>
 	</div>
+</div>
 			<!-- barra lateral -->
-	<div id="BarraLateral" class="form-group col-xs-4 col-centered">	
+<div class="row row-centered">
+	<div id="BarraLateral" class="form-group col-xs-4">	
 
 	</div>
 			<!-- contenido -->
-	<div id="contenido" class="form-group col-xs-8 col-centered">	
+	<div id="contenido" class="form-group col-xs-8">	
 					<div class="center">
 						<h3><?php echo $lang['Etiqueta'] ?>:</h3>
 					</div>
