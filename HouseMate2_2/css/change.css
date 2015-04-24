@@ -145,3 +145,46 @@ text-align:center;
 margin-right:auto;
 margin-left:auto;
 }
+.main .container {
+    padding-right: 330px;
+    overflow: hidden;
+}
+.content {
+    float: left;
+    width: 100%;
+    background-color: #6EA4DB;
+}
+.sidebar {
+    float: right;
+    margin-right: -330px;
+    width: 300px;
+    background-color: #6EA4DB;
+}
+.content,
+.sidebar {
+    padding-bottom: 99999px;
+    margin-bottom: -99999px;
+}
+
+@media all and (max-width: 940px) { 
+    .main .container {
+        padding: 0 30px;
+        overflow: visible;
+    }
+    .content {
+        float: none
+    }
+    .sidebar {
+        float: none;
+        margin-right: 0;
+        width: 100%;
+    }
+    .content,
+    .sidebar {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .content {
+        margin-bottom: 30px
+    }
+}
