@@ -4,9 +4,9 @@
   });
  </script>
 
-<div class="form-group col-xs-4">
+<div class="form-group col-xs-6">
 <label><?php echo $lang['Departamento']  ?>:</label>
-<select name="Departamento" class="form-control" id="Departamento">
+<select name="Departamento" class="form-control whitecover" id="Departamento">
 	<option value=""><?php echo $lang['Nada'] ?></option>
 	<option value="Ahuachapán">Ahuachapán</option>
 	<option value="Cabañas">Cabañas</option>
@@ -24,9 +24,9 @@
 	<option value="Usulután">Usulután</option>
 </select>
 </div>
-<div class="form-group col-xs-4">
+<div class="form-group col-xs-6">
 <label><?php echo $lang['Municipio'] ?>:</label>
-<select name="Municipio" class="form-control" id="Municipio">
+<select name="Municipio" class="form-control whitecover" id="Municipio">
 	<option value=""><?php echo $lang['Nada'] ?></option>
 	<?php include "Call/Funciones/InsideSelect/Ahu.php"; 
 	include "Call/Funciones/InsideSelect/Caba.php";
@@ -45,7 +45,3 @@
 	?>
 </select>
 </div>
- <div class="form-group col-xs-4">
-		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
-	</div>
