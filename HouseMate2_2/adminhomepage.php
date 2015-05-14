@@ -1,6 +1,10 @@
 <head>
+   <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
+<<<<<<< HEAD
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
+=======
+>>>>>>> origin/master
 	<link href='css/intro.css' rel='stylesheet'/>
     <link href='css/estilo.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -43,13 +47,12 @@
 <!-- Ni idea  de porque necesiro este div -->
 
     <div id="barrabusqueda9">
-        <p class="pD9">Barra de Busqueda</p>
     </div>
-    <div id="BarraLateral9">
+  <!--  <div id="BarraLateral9">
         <p class="pD9">Barra Lateral</p>
     </div>
     <div id="contenido9">
-        <?php
+        <?php /*
             include("conexion.php");
             mysql_query("SET NAMES 'utf8'");
             $know = "";
@@ -153,9 +156,15 @@
             echo " <span class='pactiva'><a href='?pagina=".($pagina+1)."'>Siguiente &raquo;</a></span>"; 
             } 
             } 
+<<<<<<< HEAD
         ?>
 		<script src="js/bootstrap-table.js" ></script>
 			<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 			
     </div>
+=======
+       */ ?>
+    </div> -->
+		<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+>>>>>>> origin/master
 </body>

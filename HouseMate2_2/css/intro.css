@@ -3,7 +3,6 @@
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 15px;
   line-height: 1.42857143;	
-  
   height: 100%;	
 }
 #intro:before
@@ -99,4 +98,16 @@ text-transform: lowercase;
 }
 #contenido{
     background-color: 6F95BD;
+}
+#comingtoright
+{
+	float:right;
+}
+#comingleft
+{
+	float:left;
+}
+.hidme
+{
+	display:none;
 }

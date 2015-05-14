@@ -1,3 +1,6 @@
+<link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href='css/change.css' rel='stylesheet'/>
 <?php
     include("Header/barranav2.php");
 ?>
@@ -6,9 +9,7 @@
 <head>
 	<title><?php echo($lang['Page_title']);?></title>
 	<meta charset = "utf-8" />
-	<link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
-	<link href='css/change.css' rel='stylesheet'/>
+	
 </head>
 <body> 
 <form method="post">

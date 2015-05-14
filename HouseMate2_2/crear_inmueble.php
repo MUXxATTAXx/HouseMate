@@ -1,3 +1,6 @@
+	<link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='css/change.css' rel='stylesheet'/>
+	<link href="css/bootstrap-table.css" rel="stylesheet">
 <?php
     include("Header/barranav2.php");
 ?>
@@ -6,9 +9,7 @@
 <head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
-	<link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/change.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
+
 </head>
 <body> 
     <form method="post" method="GET" enctype="multipart/form-data">
@@ -46,5 +47,8 @@
   <script src="js/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
   <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
   <script src="js/bootstrap-table.js" ></script>
+
+
+
 </body>
 </html>

@@ -4,27 +4,30 @@
     $("#Municipio2").chained("#Departamento2");
   });
  </script>
- <div class="row">
+ <div id="comingleft">
+	<h1>Filtros</h1>
+ </div>
+ <div id="comingtoright" class="row">
 
 <div class="form-group col-xs-4">
- <label><?php echo $lang['Departamento']  ?>:</label>
-<select name="Departamento2" class="form-control" id="Departamento2">
-	<option value=""><?php echo $lang['Nada'] ?></option>
-	<option value="Ahuachapán">Ahuachapán</option>
-	<option value="Cabañas">Cabañas</option>
-	<option value="Chalatenango">Chalatenango</option>
-	<option value="Cuscatlán">Cuscatlán</option>
-	<option value="Morazán">Morazán</option>
-	<option value="La Libertad">La Libertad</option>
-	<option value="La Paz">La Paz</option>
-	<option value="La Unión">La Unión</option>
-	<option value="San Miguel">San Miguel</option>
-	<option value="San Salvador">San Salvador</option>
-	<option value="San Vicente">San Vicente</option>
-	<option value="Santa Ana">Santa Ana</option>
-	<option value="Sonsonate">Sonsonate</option>
-	<option value="Usulután">Usulután</option>
-</select>
+	 <label><?php echo $lang['Departamento']  ?>:</label>
+	<select name="Departamento2" class="form-control" id="Departamento2">
+		<option value=""><?php echo $lang['Nada'] ?></option>
+		<option value="Ahuachapán">Ahuachapán</option>
+		<option value="Cabañas">Cabañas</option>
+		<option value="Chalatenango">Chalatenango</option>
+		<option value="Cuscatlán">Cuscatlán</option>
+		<option value="Morazán">Morazán</option>
+		<option value="La Libertad">La Libertad</option>
+		<option value="La Paz">La Paz</option>
+		<option value="La Unión">La Unión</option>
+		<option value="San Miguel">San Miguel</option>
+		<option value="San Salvador">San Salvador</option>
+		<option value="San Vicente">San Vicente</option>
+		<option value="Santa Ana">Santa Ana</option>
+		<option value="Sonsonate">Sonsonate</option>
+		<option value="Usulután">Usulután</option>
+	</select>
 </div>
 
 <div class="form-group col-xs-4">
@@ -48,8 +51,8 @@
 	?>
 </select>
 </div>
- <div class="form-group col-xs-4 col-centered">
-		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion2'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+ <div class="form-group col-xs-4">
+		<label><?php echo $lang['Duen'] ?>: </label>
+			<input id="busquename" class='form-control' type='text' name='pertenece' placeholder='<?php echo $lang['Duen'] ?>'>
 </div>
 </div>

@@ -9,7 +9,8 @@
 ?>
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
 </head>
-<body>  
+<body> 
+ 
 <?php
     include "Header/barranav0.php";
 
@@ -26,15 +27,16 @@
 		<?php include ('Call/Funciones/showme.php') ?>
 	</div>
 </div>	
-<br><br>
+<center>
 <form class="formD3 two">
     <div class="jumbotron" width="80%">
         <h2 class="pD1"><?php echo($lang['QueEs']);?></h2>
         <p class="pD1"><?php echo($lang['QueEs1']);?></p>
     </div>
 </form>
+</center>
 </div>
-		</div>
+</div>
 </body>
 <script src="js/parallax.js"></script>
 </html>

@@ -8,6 +8,7 @@
 			<button class='btn btn-primary btn-block' type='submit' name='eliminar' ><?php echo $lang['Eliminares'] ?></button>
 		</div>
 	</div>
+	
     </form>
   
  <?php
@@ -46,7 +47,11 @@
     }
 
 ?>
- <?php
+ 
+	
+</div> 
+
+<?php
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0' ORDER BY `tbusuario`.`idUsuario` ASC";
     $cs=mysql_query($consulta);
@@ -84,7 +89,3 @@
     }
     echo"</table>";
     ?>
-	
-</div> 
-
-

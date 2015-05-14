@@ -16,10 +16,11 @@
 include_once "Call/Lenguaje/lenguaje.php";
 ?>
 <body>  
- 
+ <center>
  <form class="formD3">
+ 
 	<div class="jumbotron">
-	<h1 class="h1-D1"><img src="img/House%20Mate%20Logo%205.png" height="200px" width="210px"><?php echo($lang['Acerca']);?></h1>
+	<h2 class="h1-D1"><img src="img/House%20Mate%20Logo%205.png" height="150px" width="210px"><?php echo($lang['Acerca']);?></h2>
 	<hr><h2 class="pD1"><?php echo($lang['Mision']);?></h2>
 	<p class="pD1"><?php echo($lang['Mision1']);?></p><hr>
 	<h2 class="pD1"><?php echo($lang['Vision']);?></h2>
@@ -28,5 +29,6 @@ include_once "Call/Lenguaje/lenguaje.php";
 	<p><a href="http://santacecilia.edu.sv" class="btn btn-primary btn-lg"><?php echo($lang['Institucion']);?></a></p>
 	</div>
 </form>
+</center>
 </body>
 
