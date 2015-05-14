@@ -1,52 +1,15 @@
-<div class="row row-centered">
-	<div id="barrabusqueda2" class="form-group col-xs-12 col-centered">
-			<?php include "Call/Funciones/Select2.php" ?>
-	</div>
-</div>
+
 			<!-- barra lateral -->
 <div class="row row-centered">
 	<div class="main">
     <div class="container clearfix">
         <div class="content">
             <section>
-                <div class="center">
-				<h3><?php echo $lang['Etiqueta'] ?>:</h3>
-				<div class="row row-centered">
-							<div class="form-group col-xs-2 col-centered">
-					<label><?php echo $lang['Cuartos'] ?>:</label><input name="a1"  type="number" min="0" max="15" class="form-control"  placeholder='<?php echo $lang['Cuartos'] ?>'>
-						</div>
-						<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Terraza'] ?>:</label><input name="a2"  type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Terraza'] ?>'>
-						</div>
-						<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Cocinas'] ?>:</label><input name="a3"  type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Cocinas'] ?>'>
-						</div>
-						<div class="form-group col-xs-2 col-centered">
-							<label><?php echo $lang['Piscinas'] ?>:</label><input name="a4"  type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
-						</div>
-						<div class="form-group col-xs-2 col-centered">
-							<label><?php echo $lang['Jardines'] ?>:</label><input name="a5" type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
-						</div>
-					</div>
-					<div class="row row-centered">
-					<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Comedores'] ?>:</label><input name="a6" type="number" min="0" max="15"  class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
-					</div>
-					<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Cocheras'] ?>:</label><input name="a7" type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
-					</div>
-					<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Salas'] ?>:</label><input name="a8" type="number" min="0"  max="15" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
-					</div>
-					<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Sotanos'] ?>:</label><input name="a9" type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
-					</div>
-					<div class="form-group col-xs-2 col-centered">
-						<label><?php echo $lang['Baños'] ?>:</label><input name="a10" type="number" min="0" max="15" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
-					</div>
-				</div>
+           <div class="center">
+		    <div class="center">
+					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>
-			<div class="row row-centered">
+		   <div class="row row-centered">
 				<div id="nece1" class="form-group col-xs-6">
 					<label><?php echo $lang['vr'] ?> </label>
 						<select name="selector" class='form-control'>
@@ -94,14 +57,176 @@
 					<img id="blah2" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
 					<br>
 					<br>
-				<div class="row row-centered">	
+				
+			</div>
+				<h3><?php echo $lang['Etiqueta'] ?>:</h3>
+					<div class="center">
+		<div class="row row-centered">
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Cuartos'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons1" id="fancy-checkbox-success-custom-icons1" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons1" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
+				   
+						</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Terraza'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons2" id="fancy-checkbox-success-custom-icons2" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons2" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
+				   
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Cocinas'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons3" id="fancy-checkbox-success-custom-icons3" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons3" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
+				   
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Piscinas'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons4" id="fancy-checkbox-success-custom-icons4" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons4" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
+				   
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-centered">
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Jardines'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons5" id="fancy-checkbox-success-custom-icons5" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons5" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Comedores'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons6" id="fancy-checkbox-success-custom-icons6" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons6" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"  name="a6" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Cocheras'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons7" id="fancy-checkbox-success-custom-icons7" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons7" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a7" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-xs-3">
+				<div class="[ form-group ]">
+					<label><?php echo $lang['Salas'] ?>:</label>
+						<br>
+					<input type="checkbox" name="fancy-checkbox-success-custom-icons8" id="fancy-checkbox-success-custom-icons8" autocomplete="off" />
+					<div class="[ btn-group ]">
+						<label for="fancy-checkbox-success-custom-icons8" class="[ btn btn-success ]">
+							<span class="[ glyphicon glyphicon-ok ]"></span>
+							<span class="[ glyphicon glyphicon-minus ]"></span>
+						</label>
+						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a8" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-centered">
+			<div class="form-group col-xs-3">
+			<span>
+			</div>
+			<div class="form-group col-xs-3">
+					<div class="[ form-group ]">
+						<label><?php echo $lang['Sotanos'] ?>:</label>
+							<br>
+						<input type="checkbox" name="fancy-checkbox-success-custom-icons9" id="fancy-checkbox-success-custom-icons9" autocomplete="off" />
+						<div class="[ btn-group ]">
+							<label for="fancy-checkbox-success-custom-icons9" class="[ btn btn-success ]">
+								<span class="[ glyphicon glyphicon-ok ]"></span>
+								<span class="[ glyphicon glyphicon-minus ]"></span>
+							</label>
+							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a9" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
+						</div>
+					</div>
+				</div>
+			<div class="form-group col-xs-3">
+					<div class="[ form-group ]">
+						<label><?php echo $lang['Baños'] ?>:</label>
+							<br>
+						<input type="checkbox" name="fancy-checkbox-success-custom-icons10" id="fancy-checkbox-success-custom-icons10" autocomplete="off" />
+						<div class="[ btn-group ]">
+							<label for="fancy-checkbox-success-custom-icons10" class="[ btn btn-success ]">
+								<span class="[ glyphicon glyphicon-ok ]"></span>
+								<span class="[ glyphicon glyphicon-minus ]"></span>
+							</label>
+							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a10" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
+						</div>
+					</div>
+				</div>
+		</div>
+		<br>
+		<div class="row row-centered">	
 					<div class="form-group col-xs-6 col-centered">
 						<button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
 					</div>
 				</div>
+</div>
 			</div>
+			
 		<br>
             </section>
+			<br>
+			<br>
         </div>
         <div class="sidebar">
             <aside>
@@ -167,9 +292,15 @@
         </div>
     </div><!-- /.containter -->
 </div><!-- /.main -->
-
+<nav class="navbar navbar-default navbar-fixed-bottom">
+       <div id="barrabusqueda2" class="form-group col-xs-12 col-centered">
+			<?php include "Call/Funciones/Select2.php" ?>
+	</div>
+   </nav>
 </div>
-<?php echo
+
+<?php 
+echo
 "<script type='text/javascript'>
 onload = function() 
 	{
@@ -204,5 +335,5 @@ onload = function()
             reader.readAsDataURL(input.files[0]);
         }
     }
-	</script>";
-?>
+	</script>";?>
+	

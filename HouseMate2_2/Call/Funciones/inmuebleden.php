@@ -1,6 +1,16 @@
 <?php
 $maxc = 0;
 $man="";
+$check1 = $_POST['fancy-checkbox-success-custom-icons1'];
+$check2 = $_POST['fancy-checkbox-success-custom-icons2'];
+$check3 = $_POST['fancy-checkbox-success-custom-icons3'];
+$check4 = $_POST['fancy-checkbox-success-custom-icons4'];
+$check5 = $_POST['fancy-checkbox-success-custom-icons5'];
+$check6 = $_POST['fancy-checkbox-success-custom-icons6'];
+$check7 = $_POST['fancy-checkbox-success-custom-icons7'];
+$check8 = $_POST['fancy-checkbox-success-custom-icons8'];
+$check9 = $_POST['fancy-checkbox-success-custom-icons9'];
+$check10 = $_POST['fancy-checkbox-success-custom-icons10'];
 $a = $_POST['a1'];
 $b = $_POST['a2'];
 $c = $_POST['a3'];
@@ -16,73 +26,103 @@ for ($i=1;$i <=10;$i++)
 		switch ($i)
 		{
 			case 1:
-			if ($a != 0 || $a != null)
+			if ($check1 == 1)
 			{
-				$maxc++;
-				$man .= "a";
+				if ($a != 0 || $a != null)
+				{
+					$maxc++;
+					$man .= "a";
+				}
 			}
 			break;
 			case 2:
-			if ($b != 0 || $b != null)
+			if ($check2 == 1)
 			{
-				$maxc++;
-				$man .= "b";
+				if ($b != 0 || $b != null)
+				{
+					$maxc++;
+					$man .= "b";
+				}
 			}
 			break;
 			case 3:
-			if ($c != 0 || $c != null)
+			if ($check3 == 1)
 			{
-				$maxc++;
-				$man .= "c";
+				if ($c != 0 || $c != null)
+				{
+					$maxc++;
+					$man .= "c";
+				}
 			}
 			break;
 			case 4:
-			if ($d != 0 || $d != null)
+			if ($check4 == 1)
 			{
-				$maxc++;
-				$man .= "d";
+				if ($d != 0 || $d != null)
+				{
+					$maxc++;
+					$man .= "d";
+				}
 			}
 			break;
 			case 5:
-			if ($e != 0 || $e != null)
+			if ($check5 == 1)
 			{
-				$maxc++;
-				$man .= "e";
+				if ($e != 0 || $e != null)
+				{
+					$maxc++;
+					$man .= "e";
+				}
 			}
 			break;
 			case 6:
-			if ($f != 0 || $f != null)
+			if ($check6 == 1)
 			{
-				$maxc++;
-				$man .= "f";
+				if ($f != 0 || $f != null)
+				{
+					$maxc++;
+					$man .= "f";
+				}
 			}
 			break;
 			case 7:
-			if ($g != 0 || $g != null)
+			if ($check7 == 1)
 			{
-				$maxc++;
-				$man .= "g";
+				if ($g != 0 || $g != null)
+				{
+					$maxc++;
+					$man .= "g";
+				}
 			}
 			break;
 			case 8:
-			if ($h != 0 || $h != null)
+			if ($check8 == 1)
 			{
-				$maxc++;
-				$man .= "h";
+				if ($h != 0 || $h != null)
+				{
+					$maxc++;
+					$man .= "h";
+				}
 			}
 			break;
 			case 9:
-			if ($i != 0 || $i != null)
+			if ($check9 == 1)
 			{
-				$maxc++;
-				$man .= "i";
+				if ($i != 0 || $i != null)
+				{
+					$maxc++;
+					$man .= "i";
+				}
 			}
 			break;
 			case 10:
-			if ($j != 0 || $j != null)
+			if ($check10 == 1)
 			{
-				$maxc++;
-				$man .= "j";
+				if ($j != 0 || $j != null)
+				{
+					$maxc++;
+					$man .= "j";
+				}
 			}
 			break;
 		}

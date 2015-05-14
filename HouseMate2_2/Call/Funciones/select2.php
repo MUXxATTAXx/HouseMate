@@ -5,7 +5,7 @@
   });
  </script>
  <div id="comingleft">
-	<h1>Filtros</h1>
+	<h3>Filtros</h3>
  </div>
  <div id="comingtoright" class="row">
 
