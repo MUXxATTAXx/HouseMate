@@ -1,9 +1,9 @@
 <head>
 	<link href='css/appeal.css' rel='stylesheet'/>
-	<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
     <link href='css/estilo.css' rel='stylesheet'/>
+	<link href="css/bootstrap-table.css" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <body id="intro">
@@ -75,7 +75,10 @@
             $total_paginas = ceil($total_registros / $registros); 
 
             $cs=mysql_query($consulta);
-            echo"<table>";
+            echo"<table class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' >
+			<thead>
+			<th>Hola</th>
+			</thead>";
             while($row=mysql_fetch_array($cs))
             {
                 switch($row['VentaRenta']){
@@ -90,31 +93,31 @@
                 echo "
                 <tr>
                     <td>
-                       ".$lang['Codigo'].":".$row['IdInmueble']."<br><img width='150px' height='100px' class='imagenmost' src=".$row['Imagen']." 
+                       ".$lang['Codigo'].":".$row['IdInmueble']."<img width='150px' height='100px' class='imagenmost' src=".$row['Imagen']."> 
                     </td>
                     <td>
-                        <h2>".$know."</h2>
+                        ".$know."
                     </td>
                     <td>
-                        <p class='pD9'>$".$row['Precio'].".00</p>
+                        $".$row['Precio'].".00
                     </td>
                     <td>
-                        <p>".$lang['Descripcion'].":</p><p class='pD9'>".$row['Descripcion']."</p>
-                        <p>".$lang['Direccion'].": </p><p class='pD9'>".$row['Direccion']."</p>
+                        ".$lang['Descripcion'].": ".$row['Descripcion']."
+                        ".$lang['Direccion'].": ".$row['Direccion']."
                     </td>
                     <td>
-                        <p class='pD9'>".$know2."</p>
+                        ".$know2."
                     </td>
                     <td>
-                        <label>".$lang['Nombre'].":</label>
-                        <p class='pD9'>".$row['nombre']."</p>
-                        <p class='pD9'>".$row['apellido']."</p>
+                        ".$lang['Nombre'].":
+                        ".$row['nombre']."
+                        ".$row['apellido']."
                     </td>
                 </tr>
                 ";
 
             }
-            echo"</table>";
+            echo"</table><br>";
             echo "<center><p>"; 
             //creando los enlaces de paginacion de resultados
             if($total_registros>$registros){ 
@@ -151,5 +154,8 @@
             } 
             } 
         ?>
+		<script src="js/bootstrap-table.js" ></script>
+			<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+			
     </div>
 </body>
