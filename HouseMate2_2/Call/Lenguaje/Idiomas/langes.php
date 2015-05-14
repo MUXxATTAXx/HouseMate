@@ -140,4 +140,18 @@ $lang['ComNombre'] = "Nombre Completo: ";
 $lang['MisCasas'] = "Mis Inmuebles";
 $lang['MisMensajes'] = "Mis Mensajes";
 
+//Mejorar Perfil
+$lang['mejorar'] = "Mejorar Perfil";
+$lang['crede'] = "Credenciales";
+$lang['direc'] = "Direcci&oacute;n";
+$lang['dui'] = "DUI";
+$lang['nit'] = "NIT";
+$lang['tel'] = "Tel&eacute;fono";
+$lang['tel2'] = "Tel&eacute;fono 2 (Opcional)";
+$lang['tel22'] = "Tel&eacute;fono 2";
+$lang['mejorar2'] = "Enviar";
+$lang['mejorar_exito'] = "¡Cuenta mejorada!";
+$lang['mejorar_error'] = "Error en la consulta.";
+$lang['mejorar_error2'] = "Usuario ya mejorado";
+
 ?>

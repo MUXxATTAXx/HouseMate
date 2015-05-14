@@ -141,4 +141,18 @@ $lang['ComNombre'] = "Full Name: ";
 //Correo
 $lang['MisCasas'] = "My Properties";
 $lang['MisMensajes'] = "My Messages";
+
+//Mejorar Perfil
+$lang['mejorar'] = "Upgrade Profile";
+$lang['crede'] = "Credentials";
+$lang['direc'] = "Adress";
+$lang['dui'] = "DUI";
+$lang['nit'] = "NIT";
+$lang['tel'] = "Phone Number";
+$lang['tel2'] = "Phone Number 2(Optional)";
+$lang['tel22'] = "Phone Number 2";
+$lang['mejorar2'] = "Send";
+$lang['mejorar_exito'] = "¡Account upgraded!";
+$lang['mejorar_error'] = "Error.";
+$lang['mejorar_error2'] = "User has been already upgraded";
 ?>
