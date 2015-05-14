@@ -9,8 +9,9 @@
 		 $_SESSION["user"] = $row["nombre"];
 		$_SESSION['id'] = $row['idUsuario'];
 		$_SESSION['tip'] = $row['tipo'];
+		
 		echo "<script> 
-			location.replace('adminhomepage.php'); 
+			location.replace('adminhomepage.php#close'); 
 			</script>";
         
 		break;
@@ -23,7 +24,7 @@
 		$_SESSION['id'] = $row['idUsuario'];
 		$_SESSION['tip'] = $row['tipo'];
 		echo "<script> 
-			location.replace('visitantehomepage.php'); 
+			location.replace('visitantehomepage.php#close'); 
 			</script>";
 		break;
 		default:
@@ -33,7 +34,7 @@
 		$path = pathinfo( $query );
 		$url = $path['basename'];
 		// modal de error
-		// echo "<script> location.replace('$url?#login-overlay'); </script>";
+		 echo "<script> location.replace('$url?#login-overlay'); </script>";
 			
 		break;
 	}

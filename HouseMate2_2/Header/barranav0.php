@@ -51,6 +51,7 @@
               <div class="row">
                   <div class="col-xs-6">
                       <div class="well">
+
                               <div class="form-group">
 								<h4><?php echo $lang['Iniciar-Sesion']; ?></h4>
                                   <label for="username" class="control-label"><?php echo $lang['Usuarioname']; ?></label>
@@ -65,7 +66,7 @@
 							
 
 								
-                              <input type="submit" name="ingresar" class="btn btn-info btn-block" value="<?php echo $lang['Iniciar-Sesion']; ?>">                             
+                              <input href="#close" type="submit" name="ingresar" class="btn btn-info btn-block " value="<?php echo $lang['Iniciar-Sesion']; ?>">                             
                           
                       </div>
                   </div>
@@ -87,13 +88,17 @@
       </div>
   </div>
 </div>
+</form>
 		  <?php 
 							//Ingresar
 							if(isset($_POST['ingresar'])){
 							$usuario = trim($_POST['usuario1']);
 							$contra = $_POST['contra1'];
+
 								if($usuario != "" and $contra != ""){
+									
 									require "Call/Funciones/ingresar1.php";
+								
 								}
 								else{
 									echo ' <script language="javascript">alert("Campos vacios en Ingresar");</script> ';
@@ -107,7 +112,7 @@
 
 		?>
 		
-		</form>
+		
 	</div>
 <br>
 <br>

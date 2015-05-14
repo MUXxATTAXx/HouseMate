@@ -233,6 +233,7 @@
 						<button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
 					</div>
 				</div>
+		
 </div>
 			</div>
 			
@@ -256,7 +257,7 @@
 	$i = 0;
 	$know = "";
 	$know2= "";
-	echo "<center><table id='rowfinder' class='table  table-hover table-striped table-striped' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
+	echo "<center><table id='rowfinder' class='table  table-hover table-striped table-striped' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/'    data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 	<thead>
             <tr>
                 <th>".$lang['Codigo']."</th>
@@ -302,6 +303,7 @@
 	echo "</tbody></table></center>";
 
 ?>
+
 					</div>
             </aside>
         </div>
