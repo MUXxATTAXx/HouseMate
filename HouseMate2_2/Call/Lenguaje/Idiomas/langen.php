@@ -156,4 +156,5 @@ $lang['mejorar2'] = "Send";
 $lang['mejorar_exito'] = "¡Account upgraded!";
 $lang['mejorar_error'] = "Error.";
 $lang['mejorar_error2'] = "User has been already upgraded";
+$lang['tipo'] = "Type";
 ?>

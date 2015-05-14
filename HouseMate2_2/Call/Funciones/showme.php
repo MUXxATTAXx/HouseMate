@@ -15,7 +15,7 @@ while($row=mysql_fetch_array($cs))
 		$count = 0;
 		$morf = 0;
 		$watch = 0;
-		$count = 0;
+
 	}
 	switch ($morf)
 	{
@@ -77,22 +77,22 @@ while($row=mysql_fetch_array($cs))
 	switch ($end)
 	{
 		case 1:
-	echo "<div class='cover-card col-sm-3' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
+	echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-3' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
 			<p>".$row['Descripcion']."</p>
-		</div>";
+		</div></a>";
 		$morf = 1;
 		$count++;
 		break;
 		case 2:
-		echo "<div class='cover-card col-sm-5' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
+		echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-5' href='index.php?IdInmueble='".$row['IdInmueble']."' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
 			<p>".$row['Descripcion']."</p>
-		</div>";
+		</div></a>";
 		$morf = 2;
 		$count++;
 		break;
-		case 3:echo "<div class='cover-card col-sm-4' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
+		case 3:echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-4' href='index.php?IdInmueble='".$row['IdInmueble']."' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
 			<p>".$row['Descripcion']."</p>
-		</div>";
+		</div></a>";
 		$morf = 3;
 		$count++;
 		break;

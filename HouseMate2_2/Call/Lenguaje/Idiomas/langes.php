@@ -154,5 +154,5 @@ $lang['mejorar2'] = "Enviar";
 $lang['mejorar_exito'] = "¡Cuenta mejorada!";
 $lang['mejorar_error'] = "Error en la consulta.";
 $lang['mejorar_error2'] = "Usuario ya mejorado";
-
+$lang['tipo'] = "Tipo";
 ?>
