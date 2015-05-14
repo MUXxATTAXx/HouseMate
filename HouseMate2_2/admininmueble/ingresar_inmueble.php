@@ -35,7 +35,7 @@
 	<center>
 		<div class="form-group col-xs-12">
 		<label><?php echo $lang['Descripcion'] ?>:</label>
-	<textarea rows="1" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
+	<textarea rows="2" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
 	</div>
 	</center>
 </div>
@@ -48,7 +48,7 @@
 	<center>
 		<div class="form-group col-xs-12">
 		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="1" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
 	</div>
 </center>
 </div>

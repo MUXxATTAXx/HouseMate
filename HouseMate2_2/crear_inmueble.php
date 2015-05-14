@@ -13,9 +13,14 @@
 </head>
 <body> 
     <form method="post" method="GET" enctype="multipart/form-data">
-<h1><?php echo($lang['Inmuebles']);?></h1>
 
+<div class="row">
+        <ol class="breadcrumb bread-primary breadnomargin">
+            <li><a><?php echo($lang['Inmuebles']);?></a></li>
+        </ol>
+    </div>
 <ul id="what" class="nav nav-tabs">
+		
     <li id="me" class='active'><a href='#home' data-toggle='tab'><?php echo($lang['Crear-Inmuebles']);?></a></li>
     <li id="me2"><a href='#crear' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
     <li id="me3"><a href='#sd' data-toggle='tab' ><?php echo($lang['Modificar-Inmuebles']);?></a></li>

@@ -98,6 +98,7 @@ $lang['Duen'] = "Owner";
 $lang['Departamento'] = "Department";
 $lang['Municipio'] = "Town";
 $lang['Informacion'] = "Information";
+$lang['propiedades'] = "Properties";
 
 //Errores y faltas
 $lang['missing'] = 'Insert a image';

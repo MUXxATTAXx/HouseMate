@@ -65,7 +65,7 @@ $lang['Cliente'] = 'Cliente';
 $lang['Perito'] = 'Perito';
 $lang['Agente'] = "Agente";
 $lang['selectp'] = 'Seleccione imagen';
-$lang['vr']  ="Venta o renta";
+$lang['vr']  ="Venta o renta:";
 $lang['Direccion'] = 'Dirección';
 $lang['Etiqueta'] = 'Etiquetas';
 $lang['EtiquetaNum'] = 'Digite el número de etiquetas (Max. 12)';
@@ -88,7 +88,7 @@ $lang['Cerrar-Sesion'] = "Cerrar sesión";
 $lang['Salir-text'] = "Seguro de que quiere cerrar sesión?";
 $lang['Salir'] = "Aceptar";
 $lang['Aceptar'] = "Cancelar";
-$lang['tm'] = "Tipo de propiedad";
+$lang['tm'] = "Tipo de propiedad:";
 $lang['Rustico'] = "Rustico";
 $lang['Urbana'] = "Urbano";
 $lang['idm'] = "Id del inmueble";
@@ -96,6 +96,7 @@ $lang['Duen'] = "Dueño";
 $lang['Departamento'] = "Departamento";
 $lang['Municipio'] = "Municipio";
 $lang['Informacion'] = "Información";
+$lang['propiedades'] = "Propiedades";
 
 //Errores y faltas
 $lang['missing'] =  'Ingrese una imagen'; 
