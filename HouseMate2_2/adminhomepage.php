@@ -1,10 +1,7 @@
 <head>
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
-<<<<<<< HEAD
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-=======
->>>>>>> origin/master
 	<link href='css/intro.css' rel='stylesheet'/>
     <link href='css/estilo.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -156,13 +153,11 @@
             echo " <span class='pactiva'><a href='?pagina=".($pagina+1)."'>Siguiente &raquo;</a></span>"; 
             } 
             } 
-<<<<<<< HEAD
         ?>
 		<script src="js/bootstrap-table.js" ></script>
 			<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 			
     </div>
-=======
        */ ?>
     </div> -->
 		<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
