@@ -20,7 +20,8 @@
     <div class="row">
     <?php
         include "conexion.php";
-        if(isset($_GET['IdInmueble']))
+        $dueno = $_GET['IdUsuario'];
+        /*if(isset($dueno))
         {
            
         }else{
@@ -28,9 +29,8 @@
             "<script> 
 			location.replace('index.php'); 
 			</script>";
-        }
-        $casa = $_GET['IdInmueble'];
-        $consulta = ( "select inmueble.*, tbusuario.IdUsuario, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble = '$casa'");
+        }*/
+        $consulta = ( "select * FROM tbusuario WHERE Idusuario = '$dueno'");
         $cs = mysql_query($consulta);
         while ($row=mysql_fetch_array($cs)){
     ?>
@@ -39,54 +39,48 @@
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <?php
-                        if($row['VentaRenta'] == 1){
-                            echo $lang['Venta'];
+                        if($row['tipo'] == 1){
+                            echo $lang['Admin'];
                         }
-                        elseif($row['VentaRenta' == 2]){
-                            echo $lang['Renta'];
+                        elseif($row['tipo' == 4]){
+                            echo $lang['Cliente'];
                         }
                     ?>
                 </h3>
             </div>
             <div class="panel-body">
             <center>
+                <form action="mejorar_perfil.php" method="POST">
                   <div class="row">   
                     <div class=" col-md-9 col-lg-9 ">
-                        <img src="<?php echo $row['Imagen'] ?>" height="100%" width="100%">
                     <table class="table table-user-information">
                     <tbody>
                       <tr>
-                        <td><?php echo $lang['Duen'];?></td>
+                        <td><?php echo $lang['Nombre'];?></td>
                         <td><?php echo $row['nombre']." ".$row['apellido'] ?></td>
                       </tr>
                         <tr>
-                        <td><?php echo $lang['Direccion'];?></td>
-                        <td><?php echo $row['Direccion'] ?></td>
+                        <td><?php echo $lang['Correo'];?></td>
+                        <td><?php echo $row['correo'] ?></td>
                         </tr>
                       <tr>
-                        <td><?php echo $lang['Descripcion'];?></td>
-                        <td><?php echo $row['Descripcion'] ?></td>
-                      </tr>
-                      <tr>
-                        <td><?php echo $lang['tipo'];?></td>
-                        <td><?php echo $row['Tipopropiedad'] ?></td>
+                        <td><hr><?php echo $lang['Usuarioname'];?></td>
+                        <td><hr><?php echo $row['usuario'] ?></td>
                       </tr>              
-                      <tr>
-                        <td><hr><?php echo $lang['precio'];?></td>
-                        <td><hr>$<?php echo $row['Precio'] ?></td>
-                      </tr>
                     </tbody>
                   </table>
                     </div>
                   </div>     
             </div>
-            </center>
-            <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="Ofertar">
             <?php
                 }
             ?>
+            </center>
+            <div class="panel-footer">
+                <input type="submit" name="mejorar" class="btn btn-primary" value="Ofertar">
             </div>
+
+            </form>
             </div>
         </div>
         </div>

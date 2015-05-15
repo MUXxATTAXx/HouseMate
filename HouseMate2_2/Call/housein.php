@@ -51,9 +51,9 @@ echo "
                                     </div>
                                     <div class='separator clear-left'>
                                         <p class='btn-add'>
-                                            <i class='fa fa-shopping-cart'></i><a href='#' class='hidden-sm'>".$lang['Ca1']."</a></p>
+                                            <i class='fa fa-shopping-cart'></i><a href='dueno.php?IdUsuario=".$row['Dueno']."' class='hidden-sm'>".$lang['Ca1']."</a></p>
                                         <p class='btn-details'>
-                                            <i class='fa fa-list'></i><a href='#' class='hidden-sm'>".$lang['Ca2']."</a></p>
+                                            <i class='fa fa-list'></i><a href='inmueble.php?IdInmueble=".$row['IdInmueble']."' class='hidden-sm'>".$lang['Ca2']."</a></p>
                                     </div>
                                     <div class='clearfix'>
                                     </div>
