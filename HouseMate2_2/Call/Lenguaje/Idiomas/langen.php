@@ -63,7 +63,7 @@ $lang['Cliente'] = 'Client';
 $lang['Perito'] = 'Aprassier';
 $lang['Agente'] = "Agent";
 $lang['selectp'] = "Select a image";
-$lang['vr']  ="Sale or Rent:";
+$lang['vr']  ="Sale or Rent";
 //Variables redundantes
 $lang['contra'] = "Password";
 $lang['Mostrar'] ="Show";

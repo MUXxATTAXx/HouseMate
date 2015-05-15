@@ -11,7 +11,7 @@
 			</div>
 		   <div class="row row-centered">
 				<div id="nece1" class="form-group col-xs-4">
-					<label><?php echo $lang['vr'] ?> </label>
+					<label><?php echo $lang['vr'] ?>:</label>
 						<select id="selecta" name="selectora" class='form-control'>
 							<option value="0"><?php echo $lang['Nada'] ?></option>
 							<option value="1"><?php echo $lang['Venta']?></option>
@@ -19,7 +19,7 @@
 						</select>
 						</div>
 				<div id="nece2" class="form-group col-xs-4">
-						  <label><?php echo $lang['tm'] ?> </label>
+						  <label><?php echo $lang['tm'] ?>:</label>
 						</span><select id="selecta2" name="selectora2" class='form-control'>
 							<option value="0"><?php echo $lang['Nada'] ?></option>
 							<option value="1"><?php echo $lang['Rustico']?></option>
@@ -30,7 +30,7 @@
 					<label><?php echo $lang['Precio']?>:</label>
 					<div class="input-group">
 						 <span class="input-group-addon">$</span>
-						 <input id="modinece" type="number" class='form-control' min="0" step="1" name="precioa" placeholder='<?php echo $lang['Precio']?>'>
+						 <input onkeypress="return num(event)" id="modinece" type="number" class='form-control' min="0" step="1" name="precioa" placeholder='<?php echo $lang['Precio']?>'>
 						 <span class="input-group-addon">.00</span>
 					  </div>
 					
@@ -61,7 +61,7 @@
 					<div  class="onlyme">
 						<label>
 							<?php echo $lang['selectp']; ?>
-							<input  id="imagenfea2" class='form-control imagenfea' type='file' name='imagena' onchange="readURL2(this);"/>
+							<input id="imagenfea2" class='form-control imagenfea' type='file' name='imagena' onchange="readURL2(this);"/>
 						</label>
 					</div>
 				</div>
@@ -85,7 +85,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="b1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="b1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
 				   
 						</div>
 				</div>
@@ -100,7 +100,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
 				   
 					</div>
 				</div>
@@ -115,7 +115,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
 				   
 					</div>
 				</div>
@@ -130,7 +130,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
 				   
 					</div>
 				</div>
@@ -147,7 +147,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"name="b5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"name="b5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -161,7 +161,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"  name="b6" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"  name="b6" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -175,7 +175,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b7" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b7" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -189,7 +189,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b8" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
+						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b8" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -208,7 +208,7 @@
 								<span class="[ glyphicon glyphicon-ok ]"></span>
 								<span class="[ glyphicon glyphicon-minus ]"></span>
 							</label>
-							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b9" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
+							<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b9" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
 						</div>
 					</div>
 				</div>
@@ -222,7 +222,7 @@
 								<span class="[ glyphicon glyphicon-ok ]"></span>
 								<span class="[ glyphicon glyphicon-minus ]"></span>
 							</label>
-							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b10" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
+							<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b10" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
 						</div>
 					</div>
 				</div>
@@ -322,8 +322,7 @@
 
 <?php 
 echo
-"
-	<script>
+"<script>
 	function Fill(that)
 	{
 		

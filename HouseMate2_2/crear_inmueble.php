@@ -80,16 +80,16 @@
 	<script>
 		function check(value,id)
 		{
-			if(Math.floor(value) == value && $.isNumeric(value) && value > 0) 
+			if(Math.floor(value) == value && $.isNumeric(value) && value >  0) 
 			{
 				document.getElementById(id).className = "form-control widther [ btn btn-default active ] ";
 			}
 			else
 			{
-				document.getElementById(id).className = "errormsg form-control widther [ btn btn-default active ]";
+				document.getElementById(id).className = "errormsg";
 			}
 		}
 	</script>
-
+<script src="js/validaciones.js" type="text/javascript" ></script>
 </body>
 </html>

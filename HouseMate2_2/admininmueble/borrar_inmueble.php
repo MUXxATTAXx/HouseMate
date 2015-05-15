@@ -1,8 +1,8 @@
 <div class='form-Dl' align='center'>
 	<div class='row row-centered'>
 		<div class="col-sm-4 col-centered">            
-			<label><?php echo $lang['idm'] ?></label>
-			<input class='form-control' type='number' name="destruiere" placeholder='<?php echo $lang['Codigo'] ?>' autocomplete="off"/>
+			<label><?php echo $lang['idm'] ?>:</label>
+			<input onkeypress="return num(event)" class='form-control' type='number' name="destruiere" placeholder='<?php echo $lang['Codigo'] ?>' autocomplete="off"/>
 			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>
 			
 		</div>
