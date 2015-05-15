@@ -1,7 +1,7 @@
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/change.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
-	  <script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
    <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" ></script>
 <?php
     include("Header/barranav2.php");
@@ -77,7 +77,19 @@
   <script src="js/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
   <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
   <script src="js/bootstrap-table.js" ></script>
-
+	<script>
+		function check(value,id)
+		{
+			if(Math.floor(value) == value && $.isNumeric(value) && value > 0) 
+			{
+				document.getElementById(id).className = "form-control widther [ btn btn-default active ] ";
+			}
+			else
+			{
+				document.getElementById(id).className = "errormsg form-control widther [ btn btn-default active ]";
+			}
+		}
+	</script>
 
 </body>
 </html>

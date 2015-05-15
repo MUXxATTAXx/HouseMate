@@ -309,7 +309,7 @@
 		
 	}	
 	echo "</tbody></table></center>";
-
+	
 ?>
 
 					</div>
@@ -382,7 +382,7 @@ echo
 		document.getElementById('selecta').value= uno;
 		document.getElementById('selecta2').value= dos;
 		document.getElementById('modinece').value= tres;
-
+		
 		document.getElementById('modidescrip').value = sies;
 		document.getElementById('modidirre').value = siete;
 		document.getElementById('blah2').src = cuatro;
@@ -404,4 +404,4 @@ echo
             reader.readAsDataURL(input.files[0]);
         }
     }
-	</script>
+</script>

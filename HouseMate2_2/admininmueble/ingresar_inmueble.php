@@ -82,7 +82,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
+						<input id="tag1" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
 				   
 						</div>
 				</div>
@@ -97,7 +97,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
+						<input id="tag2" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
 				   
 					</div>
 				</div>
@@ -112,7 +112,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
+						<input id="tag3" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
 				   
 					</div>
 				</div>
@@ -127,7 +127,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
+						<input id="tag4" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
 				   
 					</div>
 				</div>
@@ -144,7 +144,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
+						<input id="tag5" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Jardines'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -158,7 +158,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"  name="a6" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
+						<input id="tag6" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]"  name="a6" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -172,7 +172,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a7" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
+						<input id="tag7" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a7" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Cocheras'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -186,7 +186,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a8" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
+						<input id="tag8"  onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a8" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
 					</div>
 				</div>
 			</div>
@@ -205,7 +205,7 @@
 								<span class="[ glyphicon glyphicon-ok ]"></span>
 								<span class="[ glyphicon glyphicon-minus ]"></span>
 							</label>
-							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a9" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
+							<input id="tag9" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a9" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Sotanos'] ?>'>
 						</div>
 					</div>
 				</div>
@@ -219,7 +219,7 @@
 								<span class="[ glyphicon glyphicon-ok ]"></span>
 								<span class="[ glyphicon glyphicon-minus ]"></span>
 							</label>
-							<input for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a10" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
+							<input id="tag10" onchange="check(this.value,this.id)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a10" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
 						</div>
 					</div>
 				</div>
