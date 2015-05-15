@@ -61,7 +61,7 @@
 					<div  class="onlyme">
 						<label>
 							<?php echo $lang['selectp']; ?>
-							<input  id="imagenfea" class='form-control' type='file' name='imagena' onchange="readURL2(this);"/>
+							<input  id="imagenfea2" class='form-control imagenfea' type='file' name='imagena' onchange="readURL2(this);"/>
 						</label>
 					</div>
 				</div>
@@ -257,15 +257,18 @@
 	$i = 0;
 	$know = "";
 	$know2= "";
-	echo "<center><table id='rowfinder' class='table  table-hover table-striped table-striped' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/'    data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
+	echo "<center><table id='rowfinder' class='table  table-hover table-striped table-striped' data-toggle='table' data-query-params='queryParams' data-page-list='[5, 10]' data-pagination='true'>
 	<thead>
             <tr>
+				<th><Clase/th>
                 <th>".$lang['Codigo']."</th>
                 <th>".$lang['vr']."</th>
                 <th>".$lang['Precio']."</th>
 				<th class='hidme'></th>
                 <th class='hidme'></th>
                 <th class='hidme'></th>
+				<th class='hidme'></th>
+				<th class='hidme'></th>
 				<th class='hidme'></th>
             </tr>
     </thead><tbody>";
@@ -291,11 +294,15 @@
 			break;
 		}
 		echo "<tr>
+		<td><a id='".$row['IdInmueble']."' onclick='Fill(this.id)'><div class='glyphicon glyphicon-eye-open'></div></a></td>
 		<td>".$row['IdInmueble']." </td>
 		<td>".$know."</td>
-		<td id='t1".$row['IdInmueble']."'>".$know2."</td>
-		<td id='t2".$row['IdInmueble']."'>". $row['Precio']."</td>
-		<td id='t3".$row['IdInmueble']."'>". $row['Imagen']."</td>
+		<td>".$know2."</td>
+		<td>".$row['Precio']."</td>
+		<td>".$row['Imagen']."</td>
+		<td>".$row['Direccion']."</td>
+		<td>".$row['Descripcion']."</td>
+		<td>".$row['DescDire']."</td>
 		</tr>";
 		
 		
@@ -318,28 +325,77 @@
 
 <?php 
 echo
-"<script type='text/javascript'>
-onload = function() 
+"
+	<script>
+	function Fill(that)
 	{
-		var x;
-		if (!document.getElementsByTagName || !document.createTextNode) return;
-		var rows = document.getElementById('rowfinder').getElementsByTagName('tbody')[0].getElementsByTagName('tr');
-		for (i = 0; i < rows.length; i++) {
-			var table = document.getElementById('rowfinder');
-			rows[i].onclick = function() 
-			{
-			   
-				var row1 = table.rows[this.rowIndex].cells[0].innerHTML;
-				var row2 = table.rows[this.rowIndex].cells[1].innerHTML;
-				
-				var row4 = table.rows[this.rowIndex].cells[3].innerHTML
-				var row5 = table.rows[this.rowIndex].cells[4].innerHTML;
-				
-			  	alert(row2);
-			}
-        }
 		
-    }
+		var table = document.getElementById('rowfinder');
+		var lengs = document.getElementById('rowfinder').rows.length;
+		
+		if(that > 5 && lengs < that)
+		{
+			var i = 6;
+			var obtener = 0;
+			var rvalue = 0;
+			for(var x=parseInt(that);x!=0;i++)
+			{
+				obtener = x-i;
+				rvalue++;
+				if(rvalue > 5)
+				{
+					rvalue= 1;
+				}
+				if(obtener == 0)
+				{
+					that = rvalue;
+					x = 0;
+				}
+				
+			}
+		}
+		var row = table.rows[that];
+		var uno = row.cells[2].innerHTML;
+		switch(uno)
+		{
+			case '".$lang['Renta']."':
+			uno = '2';
+			break;	
+			case '".$lang['Venta']."':
+			uno = '1';
+			break;
+		}
+		var dos = row.cells[3].innerHTML;
+		switch (dos)
+		{
+			case '".$lang['Urbana']."':
+			dos = '2';
+			break;	
+			case '".$lang['Rustico']."':
+			dos = '1';
+			break;
+		}
+		var tres = row.cells[4].innerHTML;
+		var cuatro = row.cells[5].innerHTML;
+		var cinco = row.cells[6].innerHTML;
+		var mySplitResult = cinco.split(', ');
+		var  muni  = mySplitResult[0];
+		var departa  = mySplitResult[1];
+		var sies = row.cells[7].innerHTML;
+		var siete = row.cells[8].innerHTML;
+		
+		document.getElementById('selecta').value= uno;
+		document.getElementById('selecta2').value= dos;
+		document.getElementById('modinece').value= tres;
+		document.getElementById('modidescrip').value = sies;
+		document.getElementById('modidirre').value = siete;
+		document.getElementById('blah2').src = cuatro;
+		
+	}
+</script>";?>  
+
+	
+<script>
 	function readURL2(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -352,5 +408,4 @@ onload = function()
             reader.readAsDataURL(input.files[0]);
         }
     }
-	</script>";?>
-	
+	</script>

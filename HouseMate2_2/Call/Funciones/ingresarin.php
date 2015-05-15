@@ -11,7 +11,8 @@ if(isset($_POST['boto']))
 			$Depa = $_POST['Departamento'];
 			$Muni = $_POST['Municipio'];
 			$objecto0 = trim($_POST['dirrecion']);
-			$objecto1 = $Depa." ".$Muni." ".$objecto0;
+			$objecto1 = $Muni.",".$Depa."El Salvador";
+			$descdire = $objecto0;
 			$objecto2 = trim($_POST['descrip']);
 			$objecto3 = trim($_POST['selector']);
 			$objecto4 = trim($_POST['selector2']);
@@ -39,7 +40,7 @@ if(isset($_POST['boto']))
 					copy($varing,"img/Houses/$imagevar");
 					$fecha = date("Y-m-d");
 					$maximun = $digito;
-					$thehouse = "Insert Into inmueble VALUES ('$maximun','$id','$objecto1','$objecto2','$objecto3','$objecto4','$objecto5','img/Houses/$imagevar')";
+					$thehouse = "Insert Into inmueble VALUES ('$maximun','$id','$objecto1','$objecto2','$objecto3','$objecto4','$objecto5','img/Houses/$imagevar','$descdire')";
 					if(file_exists('img/Houses/$imagevar'))
 					{
 						echo $lang['error3'];

@@ -56,27 +56,14 @@
 	<div  class="onlyme">
 	<label>
 	<?php echo $lang['selectp']; ?>
-<input id="imagenfea" class='form-control' type='file' name='imagen' onchange="readURL(this);"/>
+<input id="imagenfea" class='form-control imagenfea' type='file' name='imagen' onchange="readURL(this);"/>
 	</label>
 
 	</div >
 	<br>
 	<img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
 	<br>
-	<script>
-	function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-            };
-			
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-	</script>
 	<br>
 	
     <div class="center">
@@ -245,6 +232,20 @@
     <button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
 	</div>
      	</div>   
+			<script>
+	function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+            };
+			
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+	</script>
 	<?php
 		require('Call/Funciones/ingresarin.php');	
 	?>
