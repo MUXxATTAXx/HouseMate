@@ -58,6 +58,7 @@ require ("Call/Loged/seguridad.php");
 		</form>
 	</div>
 </div>
+
  </form>
  <br>
  <br>

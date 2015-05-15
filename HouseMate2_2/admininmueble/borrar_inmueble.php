@@ -1,51 +1,53 @@
 <div class='form-Dl' align='center'>
-    <form action="cliente_mantenimiento.php" method="POST">
 	<div class='row row-centered'>
 		<div class="col-sm-4 col-centered">            
 			<label><?php echo $lang['idm'] ?></label>
-			  <input class='form-control'  name="correo3" type='number' name="id4" placeholder='<?php echo $lang['Codigo'] ?>' autocomplete="off"/>
-			<button class='btn btn-primary btn-block' type='submit' name='eliminar' ><?php echo $lang['Eliminares'] ?></button>
+			<input class='form-control' type='number' name="destruiere" placeholder='<?php echo $lang['Codigo'] ?>' autocomplete="off"/>
+			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>
+			
 		</div>
         
 	</div>
-    </form>
 </div>
     <?php
     mysql_query("SET NAMES 'utf8'");
 
-    if (isset($_POST["eleminar"]) )
+    if (isset($_POST["eliminar"]))
     {
-  
-    if (isset($_POST['id4']))
-        {
-			 include("conexion.php");
-			$ideli = trim($_POST["id4"]);
-            mysql_query("SET NAMES 'utf8'");
+		if (isset($_POST['destruiere']))
+		{
+			$ideli = trim($_POST["destruiere"]);
+			mysql_query("SET NAMES 'utf8'");
 			$consulta = "SELECT * FROM inmueble WHERE IdInmueble = '$ideli'";
 			$cs=mysql_query($consulta);
 			$row=mysql_fetch_array($cs);
-				if($row > 0)
-				{
-					$consulta = "DELETE FROM inmueble WHERE IdInmueble = '$ideli'";
-					if(mysql_query($consulta))
-					{
-						echo "<p>Usuario Eliminado</p>";
-						$consulta = "UPDATE inmueble SET IdInmueble = IdInmueble - 1  WHERE IdInmueble > '$ideli'";
-						$cs=mysql_query($consulta);
-						echo "<script> 
-						location.replace('crear_inmueble.php'); 
-						</script>";
-					}
-				}
-				else
-				{
-					echo $lang['error4'];
-				}
-        }
-    else
-    {
-        echo"Ingrese el correo del usuario.";
-    }
+			if($row > 0)
+			{
+				$consulta = "DELETE FROM inmueble WHERE IdInmueble = '$ideli'";
+				$cs=mysql_query($consulta);
+				echo "<p>Usuario Eliminado</p>";
+				$consulta = "UPDATE inmueble SET IdInmueble = IdInmueble - 1  WHERE IdInmueble > '$ideli'";
+				$cs=mysql_query($consulta);
+				echo "<script> 
+				location.replace('crear_inmueble.php'); 
+				</script>";
+				
+			}
+			else
+			{
+				echo $lang['error4'];
+				echo "<script> 
+				location.replace('crear_inmueble.php'); 
+				</script>";
+			}
+		}
+		else
+		{
+			echo $lang['error5'];
+			echo "<script> 
+				location.replace('crear_inmueble.php'); 
+				</script>";
+		}
     }
 
 ?>	

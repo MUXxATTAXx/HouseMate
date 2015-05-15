@@ -14,7 +14,7 @@
 
 </head>
 <body> 
-    <form method="post" method="GET" enctype="multipart/form-data">
+    <form method="POST" method="GET" enctype="multipart/form-data">
 
 <div class="row">
         <ol class="breadcrumb bread-primary breadnomargin">
@@ -47,6 +47,29 @@
  <?php require('admininmueble/borrar_inmueble.php'); ?>
   
   </div>
+</div>
+<div id="delete" class="modalDialog2">
+
+	<div>
+		<div  class='form-D2'>
+		<a href="#close" title="Close" class="close">X</a>
+		           <div class="modal-header">
+               
+                    <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p><?php echo $lang['Xdelete']; ?></p>
+                    <p><?php echo $lang['Fdelete']; ?></p>
+                    <p class="debug-url"></p>
+					 <button name='eliminar'  type="submit" class="btn btn-default btn-block" ><?php echo($lang['Salir']); ?>
+					 </button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
+                </div>
+                
+                
+		</div>
+	
+		</div>
 </div>
 </form>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>

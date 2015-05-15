@@ -4,11 +4,34 @@
 	<div class='row row-centered'>
 		<div class="col-sm-4 col-centered">            
 			<label><?php echo $lang['Codigo'] ?>:</label>
+			<a></a>
 			<input id='search' class='form-control' name="id3" placeholder='<?php echo $lang['Codigo'] ?>' onkeypress="doSearch()" required autocomplete="off"/>
-			<button class='btn btn-primary btn-block' type='submit' name='eliminar' ><?php echo $lang['Eliminares'] ?></button>
+			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>
 		</div>
 	</div>
+	<div id="delete" class="modalDialog2">
+
+	<div>
+		<div  class='form-D2'>
+		<a href="#close" title="Close" class="close">X</a>
+		           <div class="modal-header">
+               
+                    <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p><?php echo $lang['Xdelete']; ?> </p>
+                    <p><?php echo $lang['Fdelete']; ?> </p>
+                    <p class="debug-url"></p>
+					<button class='btn btn-default btn-block' type='submit' name='eliminar' ><?php echo($lang['Salir']);?></button>
+					 </button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
+                </div>
+                
+                
+		</div>
 	
+		</div>
+</div>
     </form>
   
  <?php

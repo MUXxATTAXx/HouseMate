@@ -13,7 +13,11 @@
 </head>
 <body> 
 <form method="post">
-<h1><?php echo($lang['Usuarios']);?></h1>
+<div class="row">
+        <ol class="breadcrumb bread-primary breadnomargin">
+            <li><a><?php echo($lang['Usuarios']);?></a></li>
+        </ol>
+    </div>
 <!-- Logic para change of active tab -->
 
 	<?php

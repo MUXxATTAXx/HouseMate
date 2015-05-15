@@ -270,6 +270,7 @@
 				<th class='hidme'></th>
 				<th class='hidme'></th>
 				<th class='hidme'></th>
+			
             </tr>
     </thead><tbody>";
 	
@@ -316,11 +317,7 @@
         </div>
     </div><!-- /.containter -->
 </div><!-- /.main -->
-<nav class="navbar navbar-default navbar-fixed-bottom">
-       <div id="barrabusqueda2" class="form-group col-xs-12 col-centered">
-			<?php include "Call/Funciones/Select2.php" ?>
-	</div>
-   </nav>
+
 </div>
 
 <?php 
@@ -378,15 +375,14 @@ echo
 		var tres = row.cells[4].innerHTML;
 		var cuatro = row.cells[5].innerHTML;
 		var cinco = row.cells[6].innerHTML;
-		var mySplitResult = cinco.split(', ');
-		var  muni  = mySplitResult[0];
-		var departa  = mySplitResult[1];
+
 		var sies = row.cells[7].innerHTML;
 		var siete = row.cells[8].innerHTML;
 		
 		document.getElementById('selecta').value= uno;
 		document.getElementById('selecta2').value= dos;
 		document.getElementById('modinece').value= tres;
+
 		document.getElementById('modidescrip').value = sies;
 		document.getElementById('modidirre').value = siete;
 		document.getElementById('blah2').src = cuatro;

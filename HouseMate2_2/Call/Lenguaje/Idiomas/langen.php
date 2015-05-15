@@ -99,6 +99,10 @@ $lang['Departamento'] = "Department";
 $lang['Municipio'] = "Town";
 $lang['Informacion'] = "Information";
 $lang['propiedades'] = "Properties";
+$lang['Cdelete'] = "Confirm Delete";
+$lang['Xdelete'] = "You are about to delete one element, this procedure is irreversible.";
+$lang['Fdelete'] = "Do you want to proceed?";
+
 
 //Errores y faltas
 $lang['missing'] = 'Insert a image';
@@ -106,6 +110,7 @@ $lang['error'] = 'Thats not a image';
 $lang['error2'] = 'Fill 1 tag at least';
 $lang['error3'] = 'There is a image with the same name';
 $lang['error4'] = "You dont have the right to do it";
+$lang['error5'] = "Insert the id of the property";
 
 //Etiquetas
 $lang['Cuartos'] = "Bedroom";

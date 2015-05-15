@@ -97,6 +97,9 @@ $lang['Departamento'] = "Departamento";
 $lang['Municipio'] = "Municipio";
 $lang['Informacion'] = "Información";
 $lang['propiedades'] = "Propiedades";
+$lang['Cdelete'] = "Confirmar Borrar";
+$lang['Xdelete'] = "Esta en proceso de borrar un elemento, este proceso es inrreversible.";
+$lang['Fdelete'] = "Desea continuar?";
 
 //Errores y faltas
 $lang['missing'] =  'Ingrese una imagen'; 
@@ -104,6 +107,7 @@ $lang['error'] = 'Eso no es una imagen';
 $lang['error2'] = 'Llene almenos una etiqueta';
 $lang['error3'] = 'Ya existe una imagen con ese nombre';
 $lang['error4'] = "No tiene los privilegios";
+$lang['error5'] = "Ingrese un Id";
 
 //Etiquetas
 $lang['Cuartos'] = "Cuarto";
