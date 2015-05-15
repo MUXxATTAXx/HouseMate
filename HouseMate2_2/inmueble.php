@@ -20,9 +20,11 @@
     <div class="row">
     <?php
         include "conexion.php";
-        if(empty($_GET['IdInmueble']))
+        if(isset($_GET['IdInmueble']))
         {
-            echo
+           
+        }else{
+             echo
             "<script> 
 			location.replace('index.php'); 
 			</script>";
