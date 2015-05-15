@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2015 a las 19:48:53
--- Versión del servidor: 5.6.16
--- Versión de PHP: 5.5.9
+-- Host: 127.0.0.1
+-- Generation Time: May 15, 2015 at 03:59 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,93 +17,82 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `bdhousemate`
+-- Database: `bdhousemate`
 --
-CREATE DATABASE IF NOT EXISTS `bdhousemate` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `bdhousemate`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `asesoria`
+-- Table structure for table `asesoria`
 --
 
 CREATE TABLE IF NOT EXISTS `asesoria` (
-  `IdAsesoria` int(11) NOT NULL AUTO_INCREMENT,
+`IdAsesoria` int(11) NOT NULL,
   `IdUsuario` int(11) NOT NULL,
   `Tipo` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `Satisfactoria` int(1) NOT NULL,
-  PRIMARY KEY (`IdAsesoria`),
-  KEY `IdUsuario` (`IdUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+  `Satisfactoria` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comprador`
+-- Table structure for table `comprador`
 --
 
 CREATE TABLE IF NOT EXISTS `comprador` (
-  `IdComprador` int(11) NOT NULL AUTO_INCREMENT,
+`IdComprador` int(11) NOT NULL,
   `Telefono` char(8) COLLATE utf8_spanish_ci NOT NULL,
   `DUI` char(9) COLLATE utf8_spanish_ci NOT NULL,
   `NIT` char(9) COLLATE utf8_spanish_ci NOT NULL,
   `Correo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `IdUsuario` int(11) NOT NULL,
-  `IdInmueble` int(11) NOT NULL,
-  PRIMARY KEY (`IdComprador`),
-  KEY `IdUsuario` (`IdUsuario`,`IdInmueble`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+  `IdInmueble` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `convenio`
+-- Table structure for table `convenio`
 --
 
 CREATE TABLE IF NOT EXISTS `convenio` (
-  `IdConvenio` int(11) NOT NULL AUTO_INCREMENT,
+`IdConvenio` int(11) NOT NULL,
   `Arrendante` int(11) NOT NULL,
   `Comprador` int(11) NOT NULL,
   `Oferta` int(11) NOT NULL,
   `Acuerdo` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
-  `Fecha` date NOT NULL,
-  PRIMARY KEY (`IdConvenio`),
-  KEY `Arrendante` (`Arrendante`,`Comprador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+  `Fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empresa`
+-- Table structure for table `empresa`
 --
 
 CREATE TABLE IF NOT EXISTS `empresa` (
-  `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT,
+`IdEmpresa` int(11) NOT NULL,
   `Nombre` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `Direccion` varchar(140) COLLATE utf8_spanish_ci NOT NULL,
   `NIT` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `Ratings` int(1) DEFAULT NULL,
-  PRIMARY KEY (`IdEmpresa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+  `Ratings` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `etiqueta`
+-- Table structure for table `etiqueta`
 --
 
 CREATE TABLE IF NOT EXISTS `etiqueta` (
   `IdEtiqueta` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `Idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `Netiqueta` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `Valor` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`IdEtiqueta`),
-  KEY `Idinmueble` (`Idinmueble`)
+  `Valor` varchar(5) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `etiqueta`
+-- Dumping data for table `etiqueta`
 --
 
 INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
@@ -152,6 +141,9 @@ INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
 ('48', '5', '9', '11'),
 ('49', '5', '10', '1'),
 ('5', '0', '7', '1'),
+('50', '6', '1', '1'),
+('51', '6', '2', '1'),
+('52', '6', '7', '1'),
 ('6', '0', '8', '2'),
 ('7', '0', '9', '11'),
 ('8', '0', '10', '2'),
@@ -160,21 +152,19 @@ INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `idcontratofin`
+-- Table structure for table `idcontratofin`
 --
 
 CREATE TABLE IF NOT EXISTS `idcontratofin` (
-  `IdContrato` int(11) NOT NULL AUTO_INCREMENT,
+`IdContrato` int(11) NOT NULL,
   `Convenio` int(11) NOT NULL,
-  `Fecha` date NOT NULL,
-  PRIMARY KEY (`IdContrato`),
-  KEY `Convenio` (`Convenio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+  `Fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inmueble`
+-- Table structure for table `inmueble`
 --
 
 CREATE TABLE IF NOT EXISTS `inmueble` (
@@ -186,26 +176,26 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `Tipopropiedad` int(1) NOT NULL,
   `Precio` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `Imagen` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  PRIMARY KEY (`IdInmueble`),
-  KEY `Dueno` (`Dueno`)
+  `DescDire` text COLLATE utf8_spanish_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `inmueble`
+-- Dumping data for table `inmueble`
 --
 
-INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`) VALUES
-('0', '0', 'Test', 'Test', 2, 1, '23000', 'img/Houses/2.jpg'),
-('1', '0', 'Santa Tecla', 'Casa nueva casi sin usar', 2, 1, '200', 'img/Houses/5.jpg'),
-('2', '0', 'Santa Ana', 'Casa en Santa Ana', 1, 2, '21323', 'img/Houses/f.jpg'),
-('3', '0', 'La Paz', 'Grande', 1, 1, '12323', 'img/Houses/3.jpg'),
-('4', '0', 'Chalatenango', 'Casa linda', 2, 1, '150', 'img/Houses/1.jpg'),
-('5', '0', 'La Libertad San José Villanueva La example', 'Casa bonita', 1, 1, '120000', 'img/Houses/d.jpg');
+INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`) VALUES
+('0', '0', 'Santa Tecla, La Libertad, El Salvador', 'Test', 2, 1, '23000', 'img/Houses/2.jpg', NULL),
+('1', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa nueva casi sin usar', 2, 1, '200', 'img/Houses/5.jpg', NULL),
+('2', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa en Santa Ana', 1, 2, '21323', 'img/Houses/f.jpg', NULL),
+('3', '0', 'Santa Tecla, La Libertad, El Salvador', 'Grande', 1, 1, '12323', 'img/Houses/3.jpg', NULL),
+('4', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa linda', 2, 1, '150', 'img/Houses/1.jpg', NULL),
+('5', '0', 'La Libertad, San José Villanueva, El Salvador', 'Casa bonita', 1, 1, '120000', 'img/Houses/d.jpg', NULL),
+('6', '0', 'Nueva Concepción, Chalatenango,  El Salvador', 'Casa', 2, 1, '245', 'img/Houses/f.jpg', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbusuario`
+-- Table structure for table `tbusuario`
 --
 
 CREATE TABLE IF NOT EXISTS `tbusuario` (
@@ -217,26 +207,23 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `usuario` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `contra` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `tipo` int(1) DEFAULT NULL,
-  `image` blob,
-  PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY `usuario` (`usuario`),
-  UNIQUE KEY `usuario_2` (`usuario`),
-  UNIQUE KEY `correo` (`correo`)
+  `image` blob
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `tbusuario`
+-- Dumping data for table `tbusuario`
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
-('2', 'José Alexander', 'García Valladares', '1997-02-05', 'muxxattaxx@hotmail.com', 'Enter', '12345', 1, NULL),
+('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', 'chaleco234', 2, NULL),
 ('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', 'chaleco234', 4, NULL),
-('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '12345', 1, NULL);
+('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '12345', 1, NULL),
+('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'asd', 2, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -248,34 +235,118 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `NIT` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telefono1` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
   `telefono2` varchar(8) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `Rating` int(1) DEFAULT NULL,
-  PRIMARY KEY (`IdUsuario`),
-  UNIQUE KEY `TempId` (`TempId`),
-  UNIQUE KEY `TempId_2` (`TempId`)
+  `Rating` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`) VALUES
 ('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0);
 
 --
--- Restricciones para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Filtros para la tabla `etiqueta`
+-- Indexes for table `asesoria`
+--
+ALTER TABLE `asesoria`
+ ADD PRIMARY KEY (`IdAsesoria`), ADD KEY `IdUsuario` (`IdUsuario`);
+
+--
+-- Indexes for table `comprador`
+--
+ALTER TABLE `comprador`
+ ADD PRIMARY KEY (`IdComprador`), ADD KEY `IdUsuario` (`IdUsuario`,`IdInmueble`);
+
+--
+-- Indexes for table `convenio`
+--
+ALTER TABLE `convenio`
+ ADD PRIMARY KEY (`IdConvenio`), ADD KEY `Arrendante` (`Arrendante`,`Comprador`);
+
+--
+-- Indexes for table `empresa`
+--
+ALTER TABLE `empresa`
+ ADD PRIMARY KEY (`IdEmpresa`);
+
+--
+-- Indexes for table `etiqueta`
 --
 ALTER TABLE `etiqueta`
-  ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
+ ADD PRIMARY KEY (`IdEtiqueta`), ADD KEY `Idinmueble` (`Idinmueble`);
 
 --
--- Filtros para la tabla `inmueble`
+-- Indexes for table `idcontratofin`
+--
+ALTER TABLE `idcontratofin`
+ ADD PRIMARY KEY (`IdContrato`), ADD KEY `Convenio` (`Convenio`);
+
+--
+-- Indexes for table `inmueble`
 --
 ALTER TABLE `inmueble`
-  ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`Dueno`) REFERENCES `usuario` (`IdUsuario`) ON DELETE SET NULL ON UPDATE SET NULL;
+ ADD PRIMARY KEY (`IdInmueble`), ADD KEY `Dueno` (`Dueno`);
+
+--
+-- Indexes for table `tbusuario`
+--
+ALTER TABLE `tbusuario`
+ ADD PRIMARY KEY (`idUsuario`), ADD UNIQUE KEY `usuario` (`usuario`), ADD UNIQUE KEY `usuario_2` (`usuario`), ADD UNIQUE KEY `correo` (`correo`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+ ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `asesoria`
+--
+ALTER TABLE `asesoria`
+MODIFY `IdAsesoria` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `comprador`
+--
+ALTER TABLE `comprador`
+MODIFY `IdComprador` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `convenio`
+--
+ALTER TABLE `convenio`
+MODIFY `IdConvenio` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `empresa`
+--
+ALTER TABLE `empresa`
+MODIFY `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `idcontratofin`
+--
+ALTER TABLE `idcontratofin`
+MODIFY `IdContrato` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `etiqueta`
+--
+ALTER TABLE `etiqueta`
+ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `inmueble`
+--
+ALTER TABLE `inmueble`
+ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`Dueno`) REFERENCES `usuario` (`IdUsuario`) ON DELETE SET NULL ON UPDATE SET NULL;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
