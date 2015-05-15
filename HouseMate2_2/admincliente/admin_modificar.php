@@ -4,7 +4,7 @@
 	<div class="row">
 	<label><?php echo $lang['Codigo'] ?>:</label>
 		<div class="col-sm-2 col-centered">  
-			<input id="thestart" class='form-control' type='number' autocomplete="off" onchange="myFunction()" placeholder="<?php echo $lang['Codigo'] ?>"/>
+			<input onkeypress="return num(event)" id="thestart" class='form-control' type='number' autocomplete="off" onchange="myFunction()" placeholder="<?php echo $lang['Codigo'] ?>"/>
 		</div>
 	</div>
 	<hr>

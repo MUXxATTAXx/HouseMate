@@ -5,7 +5,7 @@
 		<div class="col-sm-4 col-centered">            
 			<label><?php echo $lang['Codigo'] ?>:</label>
 			<a></a>
-			<input id='search' class='form-control' name="id3" placeholder='<?php echo $lang['Codigo'] ?>' onkeypress="doSearch()" required autocomplete="off"/>
+			<input onkeypress="return num(event)" id='search' class='form-control' name="id3" placeholder='<?php echo $lang['Codigo'] ?>' onkeypress="doSearch()" required autocomplete="off"/>
 			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>
 		</div>
 	</div>
