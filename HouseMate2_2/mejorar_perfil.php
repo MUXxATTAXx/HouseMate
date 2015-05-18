@@ -30,32 +30,26 @@
                 <form action="mejorar_perfil.php" method="POST">
                   <div class="row">   
                     <div class=" col-md-9 col-lg-9 ">
-                        <table>
-                            <tr padding="3px">
-                                <td><?php echo($lang['crede']);?></td>
-                                <td><input name="crede" class="form-control" type="textbox" placeholder="<?php echo($lang['crede']);?>" maxlength="100" required></td>
-                            </tr>
-                            <tr padding="3px">
-                                <td><?php echo($lang['direc']);?></td>
-                                <td><input name="direccion" class="form-control" type="textbox" placeholder="<?php echo($lang['direc']);?>" maxlength="140" required></td>
-                            </tr>
-                            <tr padding="3px">
-                                <td><?php echo($lang['dui']);?></td>
-                                <td><input name="dui" class="form-control" type="textbox" placeholder="DUI" maxlength="9" required></td>
-                            </tr>
-                            <tr padding="3px">
-                                <td><?php echo($lang['nit']);?></td>
-                                <td><input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="10" required></td>
-                            </tr>
-                            <tr padding="3px">
-                                <td><?php echo($lang['tel']);?></td>
-                                <td><input name="tel" class="form-control" type="textbox" placeholder="<?php echo($lang['tel']);?>" maxlength="8" required></td>
-                            </tr>
-                            <tr padding="3px">
-                                <td><?php echo($lang['tel2']);?></td>
-                                <td><input name="tel2" class="form-control" type="textbox" placeholder="<?php echo($lang['tel22']);?>" maxlength="8"></td>
-                            </tr>
-                        </table>
+
+                                <p><?php echo($lang['crede']);?></p>
+                                <input name="crede" class="form-control" type="textbox" placeholder="<?php echo($lang['crede']);?>" maxlength="100" required>
+
+                                <p><?php echo($lang['direc']);?></p>
+                                <input name="direccion" class="form-control" type="textbox" placeholder="<?php echo($lang['direc']);?>" maxlength="140" required>
+
+                                <?php echo($lang['dui']);?></p>
+                                <td><input name="dui" class="form-control" type="textbox" placeholder="DUI" maxlength="9" required>
+
+                                <p><?php echo($lang['nit']);?></p>
+                                <input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="10" required>
+
+                                <p><?php echo($lang['tel']);?></p>
+                                <input name="tel" class="form-control" type="textbox" placeholder="<?php echo($lang['tel']);?>" maxlength="8" required>
+
+                                <p><?php echo($lang['tel2']);?></p>
+                                <input name="tel2" class="form-control" type="textbox" placeholder="<?php echo($lang['tel22']);?>" maxlength="8">
+                                    
+
                     </div>
                   </div>     
             </div>

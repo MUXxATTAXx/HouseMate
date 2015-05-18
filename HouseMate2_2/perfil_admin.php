@@ -97,7 +97,17 @@
                  <div class="panel-footer">
                         <a id="meperfil" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i   class="glyphicon glyphicon-envelope"></i></a>
 						<span class="pull-right">
-                            <a href="mejorar_perfil.php" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                        <?php
+                            $temp_id = $_SESSION['id'];
+                            $consulta = mysql_query("select * from usuario where TempId = '$temp_id'");
+                            if($consulta){
+                                $boton = "modificar.php";
+                                
+                            }else{
+                                $boton = "mejorar_perfil.php";
+                            }        
+                            ?>
+                            <a href="<?php echo $boton ;?>" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                         </span>
                     </div>
             
