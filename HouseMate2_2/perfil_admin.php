@@ -88,8 +88,7 @@
                     </tbody>
                   </table>
                 <?php } ?>
-                  
-                  <a href="#" class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
+                  <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
                   <a href="#" class="btn btn-primary"><?php echo($lang['MisMensajes'])?></a>
                 </div>
               </div>

@@ -29,17 +29,23 @@
             <div class="panel-body">
             <form action="modificar.php" method="POST">
                 <p>Nombre</p>
-                <input type="text" name="" placeholder="Nombre">
-                <input type="text" name="" placeholder="Apellido"><br><br>
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="apellido" placeholder="Apellido"><br><br>
                 <p>Usuario</p>
-                <input type="text" name="" placeholder="Usuario" ><br><br>
-                <select class="form-control" name="tipo">
-                    <option>Tipo</option>
-                </select><br><br>
+                <input type="text" name="usuario" placeholder="Usuario" ><br><br>
+			<select id="b6" class="form-control" name="tiposu">
+				<option value="0"><?php echo $lang['Nada'] ?></option>
+				<option value="1"><?php echo $lang['Admin'] ?></option>
+				<option value="2"><?php echo $lang['Cliente'] ?> </option>
+				<option value="3"><?php echo $lang['Perito'] ?> </option>
+				<option value="4"><?php echo $lang['Agente'] ?> </option>
+			</select>
                 <p>Fecha de Nac</p>
                 <input class="form-control" class="form-control" type="date" name=""><br><br>
                 <p>Contraseña</p>
                 <input class="form-control" type="text" name="" placeholder="Contra"><br><input class="form-control" type="text" name="" placeholder="Confirmar"><br><br>
+            <hr>
+                
             </form>
             </div>
             <div class="panel-footer">
