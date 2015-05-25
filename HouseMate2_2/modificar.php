@@ -1,9 +1,7 @@
 <?php
     echo("
-
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-
-<meta charset=utf-8 />
+	<meta charset=utf-8 />
     ");
     include("Header/barranav2.php");
 

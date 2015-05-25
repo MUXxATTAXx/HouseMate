@@ -1,16 +1,48 @@
 <?php
 $maxc = 0;
 $man="";
-$check1 = $_POST['fancy-checkbox-success-custom-icons1'];
-$check2 = $_POST['fancy-checkbox-success-custom-icons2'];
-$check3 = $_POST['fancy-checkbox-success-custom-icons3'];
-$check4 = $_POST['fancy-checkbox-success-custom-icons4'];
-$check5 = $_POST['fancy-checkbox-success-custom-icons5'];
-$check6 = $_POST['fancy-checkbox-success-custom-icons6'];
-$check7 = $_POST['fancy-checkbox-success-custom-icons7'];
-$check8 = $_POST['fancy-checkbox-success-custom-icons8'];
-$check9 = $_POST['fancy-checkbox-success-custom-icons9'];
-$check10 = $_POST['fancy-checkbox-success-custom-icons10'];
+if (isset($_POST['fancy-checkbox-success-custom-icons1']))
+	$check1 = 1; 	
+else
+	$check1 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons2']))
+	$check2 = 1;
+else
+	$check2 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons3']))
+	$check3 = 1; 	
+else
+	$check3 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons4']))
+	$check4 = 1; 	
+else
+	$check4 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons5']))
+	$check5 = 1; 	
+else
+	$check5 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons6']))
+	$check6 = 1; 	
+else
+	$check6 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons7']))
+	$check7 = 1; 	
+else
+	$check7 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons8']))
+	$check8 = 1; 	
+else
+	$check8 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons9']))
+	$check9 = 1; 	
+else
+	$check9 = 0;
+if (isset($_POST['fancy-checkbox-success-custom-icons10']))
+	$check10 = 1; 	
+else
+	$check10 = 0;
+
+
 $a = $_POST['a1'];
 $b = $_POST['a2'];
 $c = $_POST['a3'];
@@ -128,7 +160,7 @@ for ($i=1;$i <=10;$i++)
 		}
 }
 $array = array();
-$Start = "INSERT INTO etiqueta(IdEtiqueta,`IdInmueble`,`Netiqueta`,`Valor` ) VALUES ";
+$Start = "INSERT INTO etiqueta(IdEtiqueta,IdInmueble,Netiqueta,Valor ) VALUES ";
 $num = "Select * FROM etiqueta";
 $nume = mysql_query($num);
 $numeroreal = mysql_num_rows($nume);
@@ -220,10 +252,9 @@ if ($maxc != 0)
 	$theend .= $final_string;
 	$ingresa2 = mysql_query($thehouse);
 	$ingresa3 = mysql_query($theend);	
-	echo "<script> 
-			location.replace('crear_inmueble.php'); 
-			</script>";
-}
+	echo $thehouse."<br>"; 
+	echo $theend;
+	}	
 else
 {	
 	echo $lang['error2'];

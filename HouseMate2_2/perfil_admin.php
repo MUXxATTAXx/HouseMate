@@ -99,11 +99,13 @@
                         <?php
                             $temp_id = $_SESSION['id'];
                             $consulta = mysql_query("select * from usuario where TempId = '$temp_id'");
-                            if($consulta){
+							$existe = mysql_num_rows($consulta);
+                            if($existe > 0){
                                 $boton = "modificar.php";
-                                
+                               
                             }else{
                                 $boton = "mejorar_perfil.php";
+								
                             }        
                             ?>
                             <a href="<?php echo $boton ;?>" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>

@@ -74,11 +74,12 @@
                 $telefono2 = $_POST['tel2'];
                 
                 $consulta3 = mysql_query("select * from usuario where TempId = '$temp_id'");
-                if($consulta3){
+				$digito2 = mysql_num_rows($consulta3);
+                if($digito2 > 0){
                     echo ($lang['mejorar_error2']);
                 }
                 else{
-                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2',NULL)");        
+                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0')");        
                     if($consulta2){
                         echo($lang['mejorar_exito']);
                     }
