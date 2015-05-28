@@ -78,7 +78,10 @@ if($contra2 =! "" and isset($_POST['nombre']) and isset($_POST['apellido']) and 
             $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac' WHERE idUsuario = '$id' ");
         }
         if($consulta3 > 0 or $consulta4 > 0){
-            echo"Changes successfully changed!";
+            echo"The profile was successfully changed!";
+            echo "<script> 
+			location.replace('perfil_admin.php'); 
+			</script>";
         }
     }
     else{echo"Passwords don't match.";}
