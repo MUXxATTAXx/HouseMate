@@ -18,9 +18,15 @@
         <div class="panel-body">
 		<div class="row">
 			<div class="col-xs-4"> 
-				<input class="form-control" type="text" id="busqueda" />
+			<label><?php echo $lang['Precio']?>:</label>
+		<div class="input-group">
+			 <span class="input-group-addon black">$</span>
+			 <input id="busqueda" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1"  placeholder='<?php echo $lang['Precio']?>'>
+			 <span class="input-group-addon black">.00</span>
+		  </div>
 			</div>
 			<div class="col-xs-4"> 
+			<label><?php echo $lang['vr'] ?>:</label>
 				<select id="select" class="form-control" >
 				<?php
 					echo "<option value='0'>".$lang['Nada']."</option>

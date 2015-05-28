@@ -10,7 +10,7 @@ if(isset($_GET['actualstand']))
 	".$lang['Crear-Usuario']."
 	</a></li>
     <li id='me2'><a href='#crear' data-toggle='tab'>
-	".$lang['Crear-Usuario']."
+	".$lang['Ver-Usuario']."
 	</a></li>
     <li id='me3'><a href='#sd' data-toggle='tab'>
 	".$lang['Modificar-Usuario']."
@@ -26,7 +26,7 @@ if(isset($_GET['actualstand']))
 	".$lang['Crear-Usuario']."
 	</a></li>
     <li id='me2' class='active'><a href='#crear' data-toggle='tab'>
-	".$lang['Crear-Usuario']."
+	".$lang['Ver-Usuario']."
 	</a></li>
     <li id='me3'><a href='#sd' data-toggle='tab'>
 	".$lang['Modificar-Usuario']."
@@ -42,7 +42,7 @@ if(isset($_GET['actualstand']))
 	".$lang['Crear-Usuario']."
 	</a></li>
     <li id='me2'><a href='#crear' data-toggle='tab'>
-	".$lang['Crear-Usuario']."
+	".$lang['Ver-Usuario']."
 	</a></li>
     <li id='me3' class='active'><a href='#sd' data-toggle='tab'>
 	".$lang['Modificar-Usuario']."
@@ -58,7 +58,7 @@ if(isset($_GET['actualstand']))
 	".$lang['Crear-Usuario']."
 	</a></li>
     <li id='me2'><a href='#crear' data-toggle='tab'>
-	".$lang['Crear-Usuario']."
+	".$lang['Ver-Usuario']."
 	</a></li>
     <li id='me3'><a href='#sd' data-toggle='tab' >
 	".$lang['Modificar-Usuario']."

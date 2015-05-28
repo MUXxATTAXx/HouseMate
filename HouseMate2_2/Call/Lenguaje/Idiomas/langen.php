@@ -124,7 +124,7 @@ $lang['Baños'] = "Bathroom";
 $lang['Comedores'] = "Diningroom";
 $lang['Jardines'] = "Gardens";
 $lang['Cocheras'] = "Garages";
-$lang['Terraza'] = "Terrace";
+$lang['Terraza'] = "Rooftop";
 $lang['Sotanos'] = "Cellar";
 $lang['Piscinas'] = "Pool";
 
