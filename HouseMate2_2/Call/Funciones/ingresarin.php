@@ -11,7 +11,7 @@ if(isset($_POST['boto']))
 			$Depa = $_POST['Departamento'];
 			$Muni = $_POST['Municipio'];
 			$objecto0 = trim($_POST['dirrecion']);
-			$objecto1 = $Muni.",".$Depa.", El Salvador";
+			$objecto1 = $Muni.", ".$Depa.", El Salvador";
 			$descdire = $objecto0;
 			$objecto2 = trim($_POST['descrip']);
 			$objecto3 = trim($_POST['selector']);

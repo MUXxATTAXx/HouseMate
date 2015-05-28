@@ -28,11 +28,14 @@
 				$digito = mysql_num_rows($numero);
 				echo $digito;
 				
-				$consulta3 = "UPDATE etiqueta SET IdEtiqueta = IdEtiqueta - $digito  WHERE Idinmueble > '$ideli'";
-				$numero=mysql_query($consulta3);
 				
-				$consulta4 = "DELETE FROM inmueble WHERE IdInmueble = '$ideli'";
-				$cs=mysql_query($consulta4);
+				$consulta3 = "DELETE FROM inmueble WHERE IdInmueble = '$ideli'";
+				$cs=mysql_query($consulta3);
+				
+				$consulta4 = "UPDATE etiqueta SET IdEtiqueta = IdEtiqueta - $digito  WHERE Idinmueble > '$ideli'";
+				$numero=mysql_query($consulta4);
+				
+				
 				$consulta5 = "UPDATE inmueble SET IdInmueble = IdInmueble - 1  WHERE IdInmueble > '$ideli'";
 				$cs=mysql_query($consulta5);
 				echo "<script> 
