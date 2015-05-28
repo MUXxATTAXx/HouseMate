@@ -1,6 +1,7 @@
 <?php
 session_start();
-header('Location: ../../Index.php#login-overlay');
 session_destroy();
+header('Location: ../../Index.php#login-overlay');
+
 
 ?>
