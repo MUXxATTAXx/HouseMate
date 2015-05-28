@@ -97,7 +97,7 @@
                         <a id="meperfil" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i   class="glyphicon glyphicon-envelope"></i></a>
 						<span class="pull-right">
                         <?php
-                            $consulta = mysql_query("select * from usuario where TempId = '$temp_id'");
+                            $consulta = mysql_query("select * from usuario where TempId = '$usuario'");
 							$existe = mysql_num_rows($consulta);
                             if($existe > 0){
                                 $boton = "modificar.php";
