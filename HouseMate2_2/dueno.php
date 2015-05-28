@@ -13,7 +13,12 @@
 <body> 
  
 <?php
+
+if(isset($_SESSION['id'])){
     include "Header/barranav0.php";
+}else{
+    include "Header/barranav1.php";
+}
 
 ?>
  <br>
