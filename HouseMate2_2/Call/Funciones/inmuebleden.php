@@ -252,8 +252,7 @@ if ($maxc != 0)
 	$theend .= $final_string;
 	$ingresa2 = mysql_query($thehouse);
 	$ingresa3 = mysql_query($theend);	
-	echo $thehouse."<br>"; 
-	echo $theend;
+
 	}	
 else
 {	
