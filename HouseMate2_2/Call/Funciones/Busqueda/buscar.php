@@ -18,7 +18,7 @@ session_start();
              
             if($contar == 0)
 			{
-                  echo "No se han encontrado resultados para '<b>".$b."</b>'.";
+                  echo "No entries found for '<b>".$b."</b>'.";
             }
 			else
 			{

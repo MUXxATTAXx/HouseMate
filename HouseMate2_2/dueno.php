@@ -83,7 +83,7 @@ if(isset($_SESSION['id'])){
             ?>
             </center>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="Ofertar">
+                <input type="submit" name="mejorar" class="btn btn-primary" value="Offer">
             </div>
 
             </form>
