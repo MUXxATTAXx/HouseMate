@@ -7,12 +7,19 @@
    <?php
     include "Call/spr.php";
 ?>
-	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
+	
 </head>
 <body> 
  
 <?php
-    include "Header/barranav0.php";
+if(isset($_GET['tip']))
+{
+    include "Header/barranav2.php";
+}
+else
+{
+	include "Header/barranav0.php";
+}
 
 ?>
  <br>
@@ -96,5 +103,5 @@
       
 
 </body>
-<script src="js/parallax.js"></script>
+
 </html>

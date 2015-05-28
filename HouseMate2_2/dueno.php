@@ -8,6 +8,7 @@
     include "Call/spr.php";
 ?>
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
+	
 </head>
 <body> 
  

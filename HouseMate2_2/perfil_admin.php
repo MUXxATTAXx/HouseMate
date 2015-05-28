@@ -1,20 +1,22 @@
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <?php
     echo("
-
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-
 <meta charset=utf-8 />
     ");
     include("Header/barranav2.php");
 
 ?>
 <!DOCTYPE HTML>
+
 <html>
 <head>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<title><?php echo($lang['Perfil']);?></title>
 	<meta charset = "utf-8" />
+	
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/estilop.css' rel='stylesheet'/>
+	
 </head>
 <body> 
 

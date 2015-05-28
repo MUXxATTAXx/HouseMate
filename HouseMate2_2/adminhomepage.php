@@ -1,4 +1,5 @@
 <head>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>

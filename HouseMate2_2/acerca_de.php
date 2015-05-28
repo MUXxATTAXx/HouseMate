@@ -1,5 +1,7 @@
+
 <!DOCTYPE HTML>
 <html>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <head>
 
 	<title>Login</title>
@@ -15,6 +17,7 @@
     include "Header/barranav0.php";
 include_once "Call/Lenguaje/lenguaje.php";
 ?>
+
 <body>  
  <center>
  <form class="formD3">

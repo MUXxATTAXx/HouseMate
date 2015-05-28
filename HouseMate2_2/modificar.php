@@ -1,3 +1,4 @@
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <?php
     echo("
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
