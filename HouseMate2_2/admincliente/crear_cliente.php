@@ -14,7 +14,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">  
 			<label><?php echo($lang['Usuarioname']);?>:</label>
-			<input class="form-control"maxlength="20" name="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
+			<input class="form-control" maxlength="20" name="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
 		</div>
 		<div class="col-sm-4 col-centered">  
 			<label><?php echo $lang['Tipous'] ?>:</label>

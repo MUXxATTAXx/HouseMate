@@ -20,11 +20,11 @@
 	<div class="row">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo $lang['Nombre']; ?>: </label>
-				<input id="b2" class='form-control' maxlength='20' type='text' name='nombre2' placeholder='<?php echo $lang['Nombre']; ?>' autocomplete="off"/>
+				<input onkeypress="return letras(event)" id="b2" class='form-control' maxlength='20' type='text' name='nombre2' placeholder='<?php echo $lang['Nombre']; ?>' autocomplete="off"/>
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo $lang['Apellido'];?>: </label>
-				<input id="b3" class='form-control' maxlength='20' type='text' name='apellido2' placeholder='<?php echo $lang['Apellido']?>' autocomplete="off"/>
+				<input onkeypress="return letras(event)" id="b3" class='form-control' maxlength='20' type='text' name='apellido2' placeholder='<?php echo $lang['Apellido']?>' autocomplete="off"/>
 		</div>
 	</div>
 	<div class="row">
