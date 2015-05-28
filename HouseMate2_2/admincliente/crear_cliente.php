@@ -4,11 +4,11 @@
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">    
 			<label><?php echo($lang['Nombre']); ?>:</label>
-			<input class="form-control"maxlength="20" type="text" autocomplete="off" name="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" name="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
 		</div>
 		<div class="col-sm-6 col-centered">    
 			<label><?php echo($lang['Apellido']); ?>:</label>
-			<input class="form-control"maxlength="20" type="text" autocomplete="off" name="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" name="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
 		</div>
 	</div>
 	<div class="row row-centered">
@@ -77,3 +77,4 @@ if(isset($_POST['registrar'])){
     }
 }
 ?>
+

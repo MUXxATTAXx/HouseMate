@@ -10,6 +10,7 @@
 <body>  
 <?php
     require "Header/barranav0.php";
+    
 ?>
 <br>
 <br>
@@ -52,11 +53,11 @@
 						<div class='row row-centered'>
 						<div class="col-sm-6 col-centered">    
 								<label><?php echo($lang['Nombre']); ?>:</label>
-								<input class="form-control"maxlength="20" type="text" autocomplete="off" name="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
+								<input onkeypress="return letras(event)"  class="form-control"maxlength="20" type="text" autocomplete="off" name="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
 						</div>
 						<div class="col-sm-6 col-centered">    
 								<label><?php echo($lang['Apellido']); ?>:</label>
-								<input class="form-control"maxlength="20" type="text" autocomplete="off" name="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
+								<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" name="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
 								</td>
 						</div>
 						</div>
@@ -90,60 +91,6 @@
           </div>
         </div>
       </div>
-<!--
-    <div class='form-D3' align='center'> 
-<div id="section" align="center">
-<div class="form-group">
-<h2 class="form-signin-heading" ><?php echo($lang['Crear-Cuenta']); ?></h2>
-<form class="form-signin" action="inicio.php" method="POST" name="registrar">
-<div class='row row-centered'>
-<div class="col-sm-12 col-centered">    
-		<label><?php echo($lang['Usuarioname']); ?>:</label>
-		<input class="form-control"maxlength="20" name="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
-</div>
-</div>
-<div class='row row-centered'>
-<div class="col-sm-6 col-centered">   
-		<label><?php echo($lang['Contra']); ?>:</label>
-		<input class="form-control"maxlength="20" type="password" autocomplete="off" name="contra" placeholder="<?php echo($lang['Contra']); ?>" />
-</div>
-<div class="col-sm-6 col-centered">  
-		<label><?php echo($lang['Confirmar']); ?>:</label>
-		<input class="form-control"maxlength="20" type="password" autocomplete="off" name="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
-
-</div>
-</div>
-<div class='row row-centered'>
-<div class="col-sm-6 col-centered">    
-		<label><?php echo($lang['Nombre']); ?>:</label>
-		<input class="form-control"maxlength="20" type="text" autocomplete="off" name="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
-</div>
-<div class="col-sm-6 col-centered">    
-		<label><?php echo($lang['Apellido']); ?>:</label>
-		<input class="form-control"maxlength="20" type="text" autocomplete="off" name="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
-		</td>
-</div>
-</div>
-
-<div class='row row-centered'>
-<div class="col-sm-4 col-centered"> 
-		<label><?php echo($lang['Fecha-Nac']); ?>:</label>
-		<input class="form-control" type="date" name="fechanac" placeholder="fecha nacimiento" max="1997-01-01"/>
-</div>
-<div class="col-sm-8 col-centered"> 
-		<label><?php echo($lang['Correo']); ?>:</label>
-		<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" name="correo" placeholder="<?php echo($lang['Correos']); ?>" />
-</div>
-</div>
-<br>
-	<div class="col-sm-4 col-centered"> 
-   
-</div>
-<br>
-</form>
-</div>
-</div>
--->
 <?php
 //Registrar
 if(isset($_POST['registrar'])){
@@ -168,7 +115,7 @@ if(isset($_POST['registrar'])){
 }
 ?>
 </div>
-
+<script src="js/validaciones.js"></script>
     <br>
 </body>
 </html>

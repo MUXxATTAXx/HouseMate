@@ -3,8 +3,17 @@
     <form action="#" method="POST">
 	<div class="row">
 	<label><?php echo $lang['Codigo'] ?>:</label>
-		<div class="col-sm-2 col-centered">  
-			<input onkeypress="return num(event)" id="thestart" class='form-control' type='number' autocomplete="off" onchange="myFunction()" placeholder="<?php echo $lang['Codigo'] ?>"/>
+		<div class="col-sm-2 col-centered">
+            <select  id="thestart" class='form-control' onchange="myFunction()">
+            <?php
+                    include "conexion.php";
+                    $consulta = mysql_query("SELECT * from tbusuario WHERE idUsuario > 0");
+                    while($row = mysql_fetch_array($consulta))
+                    {
+                    echo "<option>".$row['idUsuario']."</option>";
+                    }
+                ?>
+            </select>
 		</div>
 	</div>
 	<hr>
