@@ -17,11 +17,11 @@
     <div class="panel-heading">
         <div class="panel-body">
 		<div class="row">
-			<div class="col-xs-6"> 
+			<div class="col-xs-4"> 
 				<input class="form-control" type="text" id="busqueda" />
 			</div>
-			<div class="col-xs-6"> 
-				<select id="select" class="form-control">
+			<div class="col-xs-4"> 
+				<select id="select" class="form-control" >
 				<?php
 					echo "<option value='0'>".$lang['Nada']."</option>
 						<option value='1'>".$lang['Venta']."</option>
@@ -76,6 +76,32 @@
 																						  
 																				   
 				});
+			$('#select').on('change', function() {
+				//obtenemos el texto introducido en el campo de búsqueda
+              consulta = $("#busqueda").val();
+              select = $("#select").val();                                                        
+              //hace la búsqueda
+                                                                                  
+              $.ajax({
+                    type: "POST",
+                    url: "Call/Funciones/Busqueda/buscar.php",
+                    data: "b="+consulta+"&c="+select,
+                    dataType: "html",
+                    beforeSend: function(){
+                          //imagen de carga
+                          $("#resultado").html("<p align='center'><img src='ajax-loader.gif' /></p>");
+                    },
+                    error: function(){
+                          alert("error petición ajax");
+                    },
+                    success: function(data){                                                    
+                          $("#resultado").empty();
+                          $("#resultado").append(data);
+                                                             
+							}
+					  });
+			  
+			});
 																		   
 		});
 		</script>

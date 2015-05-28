@@ -12,7 +12,7 @@ session_start();
             $con = mysql_connect('localhost','root', '');
             mysql_select_db('bdhousemate', $con);
 			mysql_query("Set Names 'utf8'");
-            $sql = mysql_query("SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b'",$con);
+            $sql = mysql_query("SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= $b",$con);
              
             $contar = mysql_num_rows($sql);
              
@@ -24,11 +24,11 @@ session_start();
 			{
 				if($c == 0 and $c == null)
 				{
-				$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b'";
+				$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= $b";
 				}
 				else
 				{
-					$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b' and VentaRenta = '$c'";
+					$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= $b and VentaRenta = '$c'";
 				}
 				$cs = mysql_query($consulta);
 				while($row = mysql_fetch_array($cs)){
