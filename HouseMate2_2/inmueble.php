@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <html>
 <head>
 
@@ -90,7 +91,7 @@ else
             </div>
             </center>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="Ofertar">
+                <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer'] ?>">
             <?php
                 }
             ?>
