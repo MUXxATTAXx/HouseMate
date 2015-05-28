@@ -1,4 +1,6 @@
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+	<link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='css/estilop.css' rel='stylesheet'/>
 <?php
     echo("
 <meta charset=utf-8 />
@@ -10,13 +12,8 @@
 
 <html>
 <head>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<title><?php echo($lang['Perfil']);?></title>
 	<meta charset = "utf-8" />
-	
-	<link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/estilop.css' rel='stylesheet'/>
-	
 </head>
 <body> 
 

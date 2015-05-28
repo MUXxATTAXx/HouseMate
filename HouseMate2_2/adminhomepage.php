@@ -12,18 +12,18 @@
 <?php
     include("Header/barranav2.php");
 ?>
-<br>
+<a class="btn btn-sm btn-primary" href="quick.php"><?php echo $lang['quick'] ?></a>
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-body">
-            <div class="row">
+      
                 <div class="row">
-				<div class="col-md-9">
+				<div class="col-md-8">
 				 <ol class="breadcrumb bread-primary breadnomargin">
-            <li><a><h3><?php echo $land['noticias'] ?><h3></a></li>
-        </ol>
+				<li><a><h3><?php echo $land['noticias'] ?><h3></a></li>
+				</ol>
                     
-                    </div>
+                   </div>
                     <div class="col-md-3">
                         <div class="controls pull-right hidden-xs">
                             <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example"
@@ -39,7 +39,7 @@
                     ?>         
                     </div>
                 </div>		
-            </div>
+
         </div>
     </div>      
 </div>

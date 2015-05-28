@@ -100,6 +100,7 @@ $lang['propiedades'] = "Propiedades";
 $lang['Cdelete'] = "Confirmar Borrar";
 $lang['Xdelete'] = "Esta en proceso de borrar un elemento, este proceso es inrreversible.";
 $lang['Fdelete'] = "Desea continuar?";
+$lang['quick'] = "Buscador";
 
 //Errores y faltas
 $lang['missing'] =  'Ingrese todos los campos de información';

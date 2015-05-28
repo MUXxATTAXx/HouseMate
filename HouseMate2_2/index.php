@@ -1,5 +1,6 @@
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+
 <!DOCTYPE HTML>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <html>
 <head>
 

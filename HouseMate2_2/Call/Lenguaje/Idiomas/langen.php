@@ -102,7 +102,7 @@ $lang['propiedades'] = "Properties";
 $lang['Cdelete'] = "Confirm Delete";
 $lang['Xdelete'] = "You are about to delete one element, this procedure is irreversible.";
 $lang['Fdelete'] = "Do you want to proceed?";
-
+$lang['quick'] = "Quick finder";
 
 //Errores y faltas
 $lang['missing'] = 'Insert all the information fields';

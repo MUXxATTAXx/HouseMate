@@ -2,10 +2,10 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 15, 2015 at 03:59 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 28-05-2015 a las 15:43:59
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `bdhousemate`
+-- Base de datos: `bdhousemate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asesoria`
+-- Estructura de tabla para la tabla `asesoria`
 --
 
 CREATE TABLE IF NOT EXISTS `asesoria` (
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `asesoria` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comprador`
+-- Estructura de tabla para la tabla `comprador`
 --
 
 CREATE TABLE IF NOT EXISTS `comprador` (
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `comprador` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `convenio`
+-- Estructura de tabla para la tabla `convenio`
 --
 
 CREATE TABLE IF NOT EXISTS `convenio` (
@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `convenio` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresa`
+-- Estructura de tabla para la tabla `empresa`
 --
 
 CREATE TABLE IF NOT EXISTS `empresa` (
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etiqueta`
+-- Estructura de tabla para la tabla `etiqueta`
 --
 
 CREATE TABLE IF NOT EXISTS `etiqueta` (
@@ -92,67 +92,26 @@ CREATE TABLE IF NOT EXISTS `etiqueta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `etiqueta`
+-- Volcado de datos para la tabla `etiqueta`
 --
 
 INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
 ('1', '0', '1', '1'),
-('10', '1', '3', '1'),
-('11', '1', '5', '1'),
-('12', '1', '6', '1'),
-('13', '1', '7', '1'),
-('14', '1', '8', '1'),
-('15', '1', '9', '11'),
-('16', '1', '10', '1'),
-('17', '2', '1', '2'),
-('18', '2', '2', '2'),
-('19', '2', '3', '2'),
+('10', '1', '6', '1'),
+('11', '1', '10', '1'),
 ('2', '0', '2', '1'),
-('20', '2', '4', '2'),
-('21', '2', '5', '2'),
-('22', '2', '6', '2'),
-('23', '2', '7', '2'),
-('24', '2', '8', '1'),
-('25', '2', '9', '11'),
-('26', '2', '10', '2'),
-('27', '3', '1', '1'),
-('28', '3', '3', '1'),
-('29', '3', '4', '1'),
 ('3', '0', '4', '2'),
-('30', '3', '5', '1'),
-('31', '3', '6', '1'),
-('32', '3', '8', '1'),
-('33', '3', '9', '11'),
-('34', '4', '1', '1'),
-('35', '4', '2', '1'),
-('36', '4', '3', '1'),
-('37', '4', '4', '1'),
-('38', '4', '5', '1'),
-('39', '4', '9', '11'),
 ('4', '0', '5', '1'),
-('40', '5', '1', '1'),
-('41', '5', '2', '1'),
-('42', '5', '3', '1'),
-('43', '5', '4', '1'),
-('44', '5', '5', '1'),
-('45', '5', '6', '1'),
-('46', '5', '7', '1'),
-('47', '5', '8', '1'),
-('48', '5', '9', '11'),
-('49', '5', '10', '1'),
 ('5', '0', '7', '1'),
-('50', '6', '1', '1'),
-('51', '6', '2', '1'),
-('52', '6', '7', '1'),
 ('6', '0', '8', '2'),
 ('7', '0', '9', '11'),
 ('8', '0', '10', '2'),
-('9', '1', '1', '1');
+('9', '1', '2', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `idcontratofin`
+-- Estructura de tabla para la tabla `idcontratofin`
 --
 
 CREATE TABLE IF NOT EXISTS `idcontratofin` (
@@ -164,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `idcontratofin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inmueble`
+-- Estructura de tabla para la tabla `inmueble`
 --
 
 CREATE TABLE IF NOT EXISTS `inmueble` (
@@ -180,22 +139,17 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `inmueble`
+-- Volcado de datos para la tabla `inmueble`
 --
 
 INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`) VALUES
 ('0', '0', 'Santa Tecla, La Libertad, El Salvador', 'Test', 2, 1, '23000', 'img/Houses/2.jpg', NULL),
-('1', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa nueva casi sin usar', 2, 1, '200', 'img/Houses/5.jpg', NULL),
-('2', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa en Santa Ana', 1, 2, '21323', 'img/Houses/f.jpg', NULL),
-('3', '0', 'Santa Tecla, La Libertad, El Salvador', 'Grande', 1, 1, '12323', 'img/Houses/3.jpg', NULL),
-('4', '0', 'Santa Tecla, La Libertad, El Salvador', 'Casa linda', 2, 1, '150', 'img/Houses/1.jpg', NULL),
-('5', '0', 'La Libertad, San José Villanueva, El Salvador', 'Casa bonita', 1, 1, '120000', 'img/Houses/d.jpg', NULL),
-('6', '0', 'Nueva Concepción, Chalatenango,  El Salvador', 'Casa', 2, 1, '245', 'img/Houses/f.jpg', NULL);
+('1', '0', 'Lolotique, San Miguel, El Salvador', 'asd', 1, 1, '2323', 'img/Houses/3.jpg', 'asd');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbusuario`
+-- Estructura de tabla para la tabla `tbusuario`
 --
 
 CREATE TABLE IF NOT EXISTS `tbusuario` (
@@ -211,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `tbusuario`
+-- Volcado de datos para la tabla `tbusuario`
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
@@ -223,7 +177,7 @@ INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -239,111 +193,111 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`) VALUES
 ('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `asesoria`
+-- Indices de la tabla `asesoria`
 --
 ALTER TABLE `asesoria`
  ADD PRIMARY KEY (`IdAsesoria`), ADD KEY `IdUsuario` (`IdUsuario`);
 
 --
--- Indexes for table `comprador`
+-- Indices de la tabla `comprador`
 --
 ALTER TABLE `comprador`
  ADD PRIMARY KEY (`IdComprador`), ADD KEY `IdUsuario` (`IdUsuario`,`IdInmueble`);
 
 --
--- Indexes for table `convenio`
+-- Indices de la tabla `convenio`
 --
 ALTER TABLE `convenio`
  ADD PRIMARY KEY (`IdConvenio`), ADD KEY `Arrendante` (`Arrendante`,`Comprador`);
 
 --
--- Indexes for table `empresa`
+-- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
  ADD PRIMARY KEY (`IdEmpresa`);
 
 --
--- Indexes for table `etiqueta`
+-- Indices de la tabla `etiqueta`
 --
 ALTER TABLE `etiqueta`
  ADD PRIMARY KEY (`IdEtiqueta`), ADD KEY `Idinmueble` (`Idinmueble`);
 
 --
--- Indexes for table `idcontratofin`
+-- Indices de la tabla `idcontratofin`
 --
 ALTER TABLE `idcontratofin`
  ADD PRIMARY KEY (`IdContrato`), ADD KEY `Convenio` (`Convenio`);
 
 --
--- Indexes for table `inmueble`
+-- Indices de la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
  ADD PRIMARY KEY (`IdInmueble`), ADD KEY `Dueno` (`Dueno`);
 
 --
--- Indexes for table `tbusuario`
+-- Indices de la tabla `tbusuario`
 --
 ALTER TABLE `tbusuario`
  ADD PRIMARY KEY (`idUsuario`), ADD UNIQUE KEY `usuario` (`usuario`), ADD UNIQUE KEY `usuario_2` (`usuario`), ADD UNIQUE KEY `correo` (`correo`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
  ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `asesoria`
+-- AUTO_INCREMENT de la tabla `asesoria`
 --
 ALTER TABLE `asesoria`
 MODIFY `IdAsesoria` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `comprador`
+-- AUTO_INCREMENT de la tabla `comprador`
 --
 ALTER TABLE `comprador`
 MODIFY `IdComprador` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `convenio`
+-- AUTO_INCREMENT de la tabla `convenio`
 --
 ALTER TABLE `convenio`
 MODIFY `IdConvenio` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `empresa`
+-- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
 MODIFY `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `idcontratofin`
+-- AUTO_INCREMENT de la tabla `idcontratofin`
 --
 ALTER TABLE `idcontratofin`
 MODIFY `IdContrato` int(11) NOT NULL AUTO_INCREMENT;
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `etiqueta`
+-- Filtros para la tabla `etiqueta`
 --
 ALTER TABLE `etiqueta`
 ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `inmueble`
+-- Filtros para la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
 ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`Dueno`) REFERENCES `usuario` (`IdUsuario`) ON DELETE SET NULL ON UPDATE SET NULL;
