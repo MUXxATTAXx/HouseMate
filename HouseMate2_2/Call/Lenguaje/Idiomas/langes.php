@@ -102,7 +102,8 @@ $lang['Xdelete'] = "Esta en proceso de borrar un elemento, este proceso es inrre
 $lang['Fdelete'] = "Desea continuar?";
 
 //Errores y faltas
-$lang['missing'] =  'Ingrese una imagen'; 
+$lang['missing'] =  'Ingrese todos los campos de información';
+$lang['missing2'] = 'Ingrese una imagen'; 
 $lang['error'] = 'Eso no es una imagen';
 $lang['error2'] = 'Llene almenos una etiqueta';
 $lang['error3'] = 'Ya existe una imagen con ese nombre';

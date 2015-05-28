@@ -20,9 +20,14 @@
 <div class="container">
     <div class="row">
 <?php
-$dueno = $_GET['Dueno'];
 include "conexion.php";
-$consulta = "SELECT * FROM inmueble WHERE Dueno = '$dueno'";
+// Obtiene el verdadero id usuario
+$dueno = $_GET['Dueno'];
+$tempid = "SELECT IdUsuario FROM usuario WHERE TempId = '$dueno'";
+$temcs=mysql_query($tempid);
+$rowt=mysql_fetch_array($temcs);
+$Rtemid = $rowt['IdUsuario'];
+$consulta = "SELECT * FROM inmueble WHERE Dueno = '$Rtemid'";
 $cs = mysql_query($consulta);
 while($row = mysql_fetch_array($cs)){
 //Inicio de bloque

@@ -97,7 +97,6 @@
                         <a id="meperfil" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i   class="glyphicon glyphicon-envelope"></i></a>
 						<span class="pull-right">
                         <?php
-                            $temp_id = $_SESSION['id'];
                             $consulta = mysql_query("select * from usuario where TempId = '$temp_id'");
 							$existe = mysql_num_rows($consulta);
                             if($existe > 0){

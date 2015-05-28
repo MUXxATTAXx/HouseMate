@@ -105,7 +105,8 @@ $lang['Fdelete'] = "Do you want to proceed?";
 
 
 //Errores y faltas
-$lang['missing'] = 'Insert a image';
+$lang['missing'] = 'Insert all the information fields';
+$lang['missing2'] = 'Insert a image';
 $lang['error'] = 'Thats not a image';
 $lang['error2'] = 'Fill 1 tag at least';
 $lang['error3'] = 'There is a image with the same name';

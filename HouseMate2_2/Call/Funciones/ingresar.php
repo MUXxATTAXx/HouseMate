@@ -18,7 +18,6 @@
 		echo "<script> 
 			location.replace('adminHomepage.php'); 
 			</script>";
-       
     }	
 	else
 	{
