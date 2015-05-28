@@ -35,18 +35,18 @@ while($row=mysql_fetch_array($cs)){
     
 ?>
             <form action="modificar.php" method="POST">
-                <p>Nombre</p>
-                <input value="<?php echo $row['nombre']; ?>" class="form-control" type="text" name="nombre" placeholder="Nombre">
-                <p>Apellido</p>
-                <input value="<?php echo $row['apellido']; ?>" class="form-control" type="text" name="apellido" placeholder="Apellido"><br><br>
-                <p>Usuario</p>
-                <input value="<?php echo $row['usuario']; ?>" class="form-control" type="text" name="usuario" placeholder="Usuario" ><br><br>
-                <p>Fecha de Nac</p>
+                <p>Name</p>
+                <input value="<?php echo $row['nombre']; ?>" class="form-control" type="text" name="nombre" placeholder="Name">
+                <p>Last Name</p>
+                <input value="<?php echo $row['apellido']; ?>" class="form-control" type="text" name="apellido" placeholder="Last Name"><br><br>
+                <p>User</p>
+                <input value="<?php echo $row['usuario']; ?>" class="form-control" type="text" name="usuario" placeholder="User" ><br><br>
+                <p>Birth Date</p>
                 <input value="<?php echo $row['fechanac']; ?>" class="form-control" class="form-control" type="date" name="fechanac"><br><br>
-                <p>Nueva contraseña:</p>
-                <input class="form-control" type="password" name="contra_nueva" placeholder="Contraseña Nueva"><br>
-                <p>Confirmar contraseña anterior:</p>
-                <input class="form-control" type="password" name="contra_vieja" placeholder="Confirmar"><br><br>
+                <p>New password:</p>
+                <input class="form-control" type="password" name="contra_nueva" placeholder="New Password"><br>
+                <p>Confirm old password:</p>
+                <input class="form-control" type="password" name="contra_vieja" placeholder="Confirm"><br><br>
             <hr>
             </div>
             <div class="panel-footer">
@@ -78,11 +78,11 @@ if($contra2 =! "" and isset($_POST['nombre']) and isset($_POST['apellido']) and 
             $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac' WHERE idUsuario = '$id' ");
         }
         if($consulta3 > 0 or $consulta4 > 0){
-            echo"Consulta realizada!";
+            echo"Changes successfully changed!";
         }
     }
-    else{echo"Contraseña no coincide";}
-}else{echo"Informacion faltante";}
+    else{echo"Passwords don't match.";}
+}else{echo"Blank spaces";}
 }
 ?>
             </form>
