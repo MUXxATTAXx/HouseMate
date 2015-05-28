@@ -47,14 +47,22 @@ while($row=mysql_fetch_array($cs)){
 	  </div>
 	  <div class="row">
 			<div class="col-xs-6">
-                <p><?php echo $lang['Imagen'] ?></p>
-                <input value="<?php echo $row['usuario']; ?>" class="form-control" type="text" name="usuario" placeholder="User" >
+                <div  class="onlyme">
+	<label>
+	<p><?php echo $lang['Imagen'] ?></p>
+		
+			</label>
+
+			</div >
+	<img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
+	<br>
 		</div>
 			<div class="col-xs-6">
                 <p><?php echo $lang['Fecha-Nac'] ?></p>
                 <input value="<?php echo $row['fechanac']; ?>" class="form-control" class="form-control" type="date" name="fechanac">
 			</div>
 	  </div>
+	  <br>
 	  <div class="row">
 			<div class="col-xs-6">
                 <p><?php echo $lang['oldp'] ?></p>

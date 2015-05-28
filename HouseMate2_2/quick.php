@@ -16,8 +16,20 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-body">
-		<input type="text" id="busqueda" />
-             
+		<div class="row">
+			<div class="col-xs-6"> 
+				<input class="form-control" type="text" id="busqueda" />
+			</div>
+			<div class="col-xs-6"> 
+				<select id="select" class="form-control">
+				<?php
+					echo "<option value='0'>".$lang['Nada']."</option>
+						<option value='1'>".$lang['Venta']."</option>
+						<option value='2'>".$lang['Renta']."</option>";
+				?>
+				</select>
+			</div>
+		</div>
 <div id="resultado"></div>
 
         </div>
@@ -40,13 +52,13 @@
                                      
               //obtenemos el texto introducido en el campo de búsqueda
               consulta = $("#busqueda").val();
-                                                                           
+              select = $("#select").val();                                                        
               //hace la búsqueda
                                                                                   
               $.ajax({
                     type: "POST",
                     url: "Call/Funciones/Busqueda/buscar.php",
-                    data: "b="+consulta,
+                    data: "b="+consulta+"&c="+select,
                     dataType: "html",
                     beforeSend: function(){
                           //imagen de carga

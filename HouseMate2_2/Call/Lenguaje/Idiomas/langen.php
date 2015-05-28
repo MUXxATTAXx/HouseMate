@@ -41,7 +41,7 @@ $lang['Cerrar-Sesion'] = 'Log out';
 $lang['Crear-Usuario'] = 'Create user';
 $lang['Ver-Usuario'] = 'View users';
 $lang['Modificar-Usuario'] = 'Modify user';
-$lang['Eliminar-Usuario'] = 'Eliminate user';
+$lang['Eliminar-Usuario'] = 'Delete user';
 
 $lang['Codigo'] = 'Cod';
 $lang['Modificar'] = 'Modify';
@@ -63,7 +63,7 @@ $lang['Usuarioname'] = "Username";
 $lang['Tipous'] = 'User type';
 $lang['Admin'] = "Administrator";
 $lang['Cliente'] = 'Client';
-$lang['Perito'] = 'Aprassier';
+$lang['Perito'] = 'Apraisser';
 $lang['Agente'] = "Agent";
 $lang['selectp'] = "Select a image";
 $lang['vr']  ="Sale or Rent";

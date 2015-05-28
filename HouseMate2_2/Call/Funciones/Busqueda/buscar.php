@@ -1,26 +1,37 @@
 <?php
 session_start();
       $buscar = $_POST['b'];
-       
+      $select = $_POST['c'];
+	  
       if(!empty($buscar)) {
-            buscar($buscar);
+            buscar($buscar,$select);
       }
-       
-      function buscar($b) {
+	  
+      
+      function buscar($b,$c) {
             $con = mysql_connect('localhost','root', '');
             mysql_select_db('bdhousemate', $con);
-       
-            $sql = mysql_query("SELECT * FROM inmueble WHERE IdInmueble > 0 AND IdInmueble= '".$b."'",$con);
+			mysql_query("Set Names 'utf8'");
+            $sql = mysql_query("SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b'",$con);
              
             $contar = mysql_num_rows($sql);
              
-            if($contar == 0){
+            if($contar == 0)
+			{
                   echo "No se han encontrado resultados para '<b>".$b."</b>'.";
-            }else{
-        
-			$consulta = "SELECT * FROM inmueble WHERE IdInmueble = '$b'";
-			$cs = mysql_query($consulta);
-			while($row = mysql_fetch_array($cs)){
+            }
+			else
+			{
+				if($c == 0 and $c == null)
+				{
+				$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b'";
+				}
+				else
+				{
+					$consulta = " SELECT * FROM inmueble WHERE IdInmueble > 0 and Precio <= '$b' and VentaRenta = '$c'";
+				}
+				$cs = mysql_query($consulta);
+				while($row = mysql_fetch_array($cs)){
 //Inicio de bloque
 			
 		echo    "<div class='row'><div class='col-xs-12 col-sm-6 col-md-6'>
@@ -40,22 +51,22 @@ session_start();
                             ";
 						//Venta o Renta
 						if($row['VentaRenta'] == 1){
-							if ($_SESSION['lang'] == "en")
-							{
-								echo "Sale";
-							}
-							else
+							if (empty($_SESSION['lang']) || $_SESSION['lang'] == "es") 
 							{
 								echo "Venta";
 							}
-						}elseif($row['VentaRenta'] == 2){
-							if ($_SESSION['lang'] == "en")
+							else
 							{
-								echo "Rent";
+								echo "Sale";
+							}
+						}elseif($row['VentaRenta'] == 2){
+							if (empty($_SESSION['lang']) || $_SESSION['lang'] == "es")
+							{
+								echo "Renta";
 							}
 							else
 							{
-								echo "Renta";
+								echo "Rent";
 							}
 						}
 						echo"
@@ -66,9 +77,9 @@ session_start();
             </div>
         </div> </div>";
 //Fin de bloque
-		}
-	}
- }
+				}
+			}
+		 }
       
        
 ?>
