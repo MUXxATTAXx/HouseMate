@@ -54,38 +54,54 @@ while($row=mysql_fetch_array($cs)){
             </div>
 <?php
 }
-if(isset($_POST['mejorar'])){
+if(isset($_POST['mejorar']))
+{
 include "conexion.php";
 $contra1 = $_POST['contra_nueva'];
 $contra2 = $_POST['contra_vieja'];
 
 //Nombre,Apellido,Usuario,Tipo,FechaNac, Contra
 //Si se digito la contra y se llenaron los campos
-if($contra2 =! "" and isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['usuario']) and isset($_POST['fechanac']) ){
+if($contra2 =! "" and isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['usuario']) and isset($_POST['fechanac']) )
+{
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $usuario = $_POST['usuario'];
     $fechanac = $_POST['fechanac'];
-    $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id' and contra = '$contra2'");
-    //Si un usuario tiene esa contraseña
-    if($consulta2 > 0){
+    $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id'");
+    while($row=mysql_fetch_array($consulta2))
+    {
+    //Si las contraseñas coinciden
+        if($row['contra'] == $contra2 )
+        {
         //Si se puso una nueva contraseña
-        if($contra1 =! ""){
+        if(!empty($contra1))
+        {
             $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac', contra = '$contra1' WHERE idUsuario = '$id' ");
         }
         //Si no se puso una nueva contrasela
-        else{
+        else
+        {
             $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac' WHERE idUsuario = '$id' ");
         }
-        if($consulta3 > 0 or $consulta4 > 0){
-            echo"The profile was successfully changed!";
-            echo "<script> 
-			location.replace('perfil_admin.php'); 
-			</script>";
+            if($consulta3 != null  xor $consulta4 != null)
+            {
+                echo"The profile was successfully changed!";
+                echo "<script> 
+                location.replace('perfil_admin.php');
+                alert('The profile was successfully changed!');
+                </script>";
+            } 
+        }
+        else
+        {
+            echo"Passwords don't match.";
         }
     }
-    else{echo"Passwords don't match.";}
-}else{echo"Blank spaces";}
+}else
+{
+    echo "Blank Spaces";
+}
 }
 ?>
             </form>
