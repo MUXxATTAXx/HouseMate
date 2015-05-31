@@ -3,19 +3,28 @@
     <form action="#" method="POST">
 	<div class="row">
 	<label><?php echo $lang['Codigo'] ?>:</label>
-		<div class="col-sm-2 col-centered">  
-			<input onkeypress="return num(event)" id="thestart" class='form-control' type='number' autocomplete="off" onchange="myFunction()" placeholder="<?php echo $lang['Codigo'] ?>"/>
+		<div class="col-sm-2 col-centered">
+            <select  id="thestart" class='form-control' onchange="myFunction()">
+            <?php
+                    include "conexion.php";
+                    $consulta = mysql_query("SELECT * from tbusuario WHERE idUsuario > 0");
+                    while($row = mysql_fetch_array($consulta))
+                    {
+                    echo "<option>".$row['idUsuario']."</option>";
+                    }
+                ?>
+            </select>
 		</div>
 	</div>
 	<hr>
 	<div class="row">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo $lang['Nombre']; ?>: </label>
-				<input id="b2" class='form-control' maxlength='20' type='text' name='nombre2' placeholder='<?php echo $lang['Nombre']; ?>' autocomplete="off"/>
+				<input onkeypress="return letras(event)" id="b2" class='form-control' maxlength='20' type='text' name='nombre2' placeholder='<?php echo $lang['Nombre']; ?>' autocomplete="off"/>
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo $lang['Apellido'];?>: </label>
-				<input id="b3" class='form-control' maxlength='20' type='text' name='apellido2' placeholder='<?php echo $lang['Apellido']?>' autocomplete="off"/>
+				<input onkeypress="return letras(event)" id="b3" class='form-control' maxlength='20' type='text' name='apellido2' placeholder='<?php echo $lang['Apellido']?>' autocomplete="off"/>
 		</div>
 	</div>
 	<div class="row">

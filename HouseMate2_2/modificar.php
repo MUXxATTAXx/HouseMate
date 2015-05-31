@@ -65,11 +65,11 @@ while($row=mysql_fetch_array($cs)){
 	  <br>
 	  <div class="row">
 			<div class="col-xs-6">
-                <p><?php echo $lang['oldp'] ?></p>
+                <p><?php echo $lang['newp'] ?></p>
                 <input class="form-control" type="password" name="contra_nueva" placeholder="New Password">
 			</div>
 			<div class="col-xs-6">
-                <p><?php echo $lang['newp'] ?></p>
+                <p><?php echo $lang['oldp'] ?></p>
                 <input class="form-control" type="password" name="contra_vieja" placeholder="Confirm">
 			</div>
 		</div>
@@ -91,37 +91,45 @@ while($row=mysql_fetch_array($cs)){
 if(isset($_POST['mejorar']))
 {
 include "conexion.php";
-
-
+$contra_nueva = $_POST['contra_nueva'];
+$contra_vieja = $_POST['contra_vieja'];
 //Nombre,Apellido,Usuario,Tipo,FechaNac, Contra
 //Si se digito la contra y se llenaron los campos
-if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['usuario']) and isset($_POST['fechanac']) )
+if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fechanac']) )
 {
-	$consulta4 = null;
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
-    $usuario = $_POST['usuario'];
     $fechanac = $_POST['fechanac'];
     $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id'");
     //Si las contraseñas coinciden
         //Si se puso una nueva contraseña
-        /*if(!empty($contra1))
-        {
-            $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac', contra = '$contra1' WHERE idUsuario = '$id' ");
-        } */
-        //Si no se puso una nueva contrasela
-    $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', usuario = '$usuario', fechanac = '$fechanac' WHERE idUsuario = '$id' ");
-          if($consulta3 != null  xor $consulta4 != null)
+    while($row = mysql_fetch_array($consulta2)){
+        if($row['contra']==$contra_vieja){
+            if(!empty($contra_nueva))
             {
+            $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
+            echo "<script> 
+                location.replace('modificar.php');
+                alert('Sucess! Changes and new password added.');
+                </script>";
+
+            }
+            //Si no se puso una nueva contrasela
+            if(empty($contra_nueva))
+            {
+                $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac' WHERE idUsuario               = '$id'");
                 echo "<script> 
                 location.replace('modificar.php');
+                alert('Sucess! Changes added.');
                 </script>";
-            } 
+            }
+        }
         else
         {
             echo"Passwords don't match.";
         }
     }
+}
 else
 {
     echo "Blank Spaces";

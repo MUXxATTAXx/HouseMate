@@ -21,6 +21,7 @@ if(isset($_SESSION['id'])){
 }
 
 ?>
+<br>
  <br>
  <br>
 <div id="main">
@@ -41,7 +42,7 @@ if(isset($_SESSION['id'])){
         $cs = mysql_query($consulta);
         while ($row=mysql_fetch_array($cs)){
     ?>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -70,6 +71,7 @@ if(isset($_SESSION['id'])){
                         <td><?php echo $lang['Correo'];?></td>
                         <td><?php echo $row['correo'] ?></td>
                         </tr>
+<<<<<<< HEAD
 						<?php
                 }
 				$consulta = ( "select * FROM tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
@@ -84,15 +86,67 @@ if(isset($_SESSION['id'])){
                         <td><?php echo $row['correo'] ?></td>
                       </tr>
                       </tr>              
+=======
+				 <?php
+                }
+				$consulta = ( "select tbusuario.* , usuario.* from tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
+				$cs = mysql_query($consulta);
+				while ($row=mysql_fetch_array($cs)){
+            ?>
+                      <tr>
+					  <hr>
+						<td><hr><?php echo $lang['Direccion'];?></td>
+                        <td><hr><?php echo $row['Direccion'];?></td>
+                      </tr>
+					  <tr>
+					  <td><?php echo "NIT" ?></td>
+						<td><?php 
+						$Nresult1 = substr($row['NIT'],0,4);
+						$Nresult2 = substr($row['NIT'],4,6);
+						$Nresult3 = substr($row['NIT'],10,3);
+						$Nresult4 = substr($row['NIT'],13,1);
+						echo $Nresult1."-".$Nresult2."-".$Nresult3."-".$Nresult4 ?></td>
+                      </tr>
+					  <tr>
+						<td><?php echo "DUI" ?></td>
+						<td><?php
+						$Dresult = substr($row['DUI'], 0, 8);
+						$Dresult2 = substr($row['DUI'], 8, 1);
+								
+						echo $Dresult."-".$Dresult2  ?></td>
+					  </tr>
+					  <tr>
+						<td><?php echo $lang['tel'] ?></td>
+						<td><?php $Telefono1 = substr($row['telefono1'],0,4);
+								  $Telefono2 = substr($row['telefono1'],4,4);
+						echo $Telefono1."-".$Telefono2 ?></td>
+					  </tr>
+					  <tr>
+					  <td><?php echo $lang['tel'] ?></td>
+					  <td><?php 
+					  $Telefono1 = substr($row['telefono2'],0,4);
+					  $Telefono2 = substr($row['telefono2'],4,4);
+					  echo $Telefono1."-".$Telefono2 ?></td>
+					  </tr>
+>>>>>>> origin/master
                     </tbody>
                   </table>
                     </div>
                   </div>     
             </div>
+<<<<<<< HEAD
             <?php ?>
             </center>
             <div class="panel-footer">
                 <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer']; ?>">
+=======
+				<?php 
+				}
+				?>
+            </center>
+            <div class="panel-footer">
+                <input type="submit" name="mejorar" class="btn btn-primary" value="Offer">
+>>>>>>> origin/master
             </div>
 
             </form>

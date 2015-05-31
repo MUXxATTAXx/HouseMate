@@ -45,14 +45,14 @@ $lang['Eliminar-Usuario'] = 'Delete user';
 
 $lang['Codigo'] = 'Cod';
 $lang['Modificar'] = 'Modify';
-$lang['Eliminar'] = 'Eliminate';
+$lang['Eliminar'] = 'Delete';
 $lang['Contra-reset'] = "Reset password";
 $lang['Crear-Inmuebles'] = 'Create Property';
 $lang['Ver-Inmuebles'] = 'Show Properties';
 $lang['Modificar-Inmuebles'] = 'Modify Properties';
-$lang['Eliminar-Inmuebles'] = 'Eliminate Properties';
+$lang['Eliminar-Inmuebles'] = 'Delete Properties';
 $lang['Eliminares'] = "Delete";
-$lang['oldp'] = "Actual password";
+$lang['oldp'] = "Current password";
 $lang['newp'] = "New password";
 $lang['Offer'] = "Offer";
 
@@ -124,7 +124,7 @@ $lang['Baños'] = "Bathroom";
 $lang['Comedores'] = "Diningroom";
 $lang['Jardines'] = "Gardens";
 $lang['Cocheras'] = "Garages";
-$lang['Terraza'] = "Terrace";
+$lang['Terraza'] = "Rooftop";
 $lang['Sotanos'] = "Cellar";
 $lang['Piscinas'] = "Pool";
 
