@@ -1,4 +1,20 @@
-
+<div id="delete" class="modalDialog2">
+	<div>
+		<div  class='form-D2'>
+            <a href="#close" title="Close" class="close">X</a>
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
+            </div>
+            <div class="modal-body">
+                <p><?php echo $lang['Xdelete']; ?> </p>
+                <p><?php echo $lang['Fdelete']; ?> </p>
+                <p class="debug-url"></p>
+				<button class='btn btn-default btn-block' type='submit' name='eliminar' ><?php echo($lang['Salir']);?></button>
+				</button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
+            </div> 
+		</div>
+    </div>
+</div>
 <?php
     include("conexion.php");
     mysql_query("SET NAMES 'utf8'");
@@ -14,6 +30,8 @@
 		echo $lang['Nombre'];
 		echo "</th><th>";
 		echo $lang['Apellido'];
+		echo "</th><th>";
+		echo $lang['Usuario'];
 		echo "</th><th>";
 		echo $lang['Correo'];
 		echo "</th><th>";
@@ -38,8 +56,8 @@
 			$var = $lang['Cliente'];
 			break;
 		}
-        echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td><td>
-        <a href='#delete' class='btn btn-danger'><i class='glyphicon glyphicon-remove'></i></a>
+        echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['usuario']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td><td>
+        <a href='#delete' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a>
         </td></tr>";
     }
     echo"</table>";

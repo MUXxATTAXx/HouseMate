@@ -32,9 +32,6 @@
 			<li id='me3'><a href='#sd' data-toggle='tab'>
 			".$lang['Modificar-Usuario']."
 			</a></li>
-			<li id='me4'><a href='#eliminar' data-toggle='tab'>
-			".$lang['Eliminar-Usuario']."
-			</a></li>
 		</ul>";
 		?>
 <div id='myTabContent' class='tab-content'>
@@ -45,9 +42,6 @@
 	include'admincliente/admin_mostrar.php';
 	echo "</div><div class='tab-pane fade' id='sd'>";
 	include("admincliente/admin_modificar.php");
-	echo "</div><div class='tab-pane fade' id='eliminar'>";
-	include('admincliente/admin_eliminar.php'); 
-	echo "</div>";
 	?>
 </div>
 </form>
