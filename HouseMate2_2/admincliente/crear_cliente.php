@@ -48,10 +48,12 @@
 	</div>
 	
    <br>
-   <div class="col-sm-6 col-centered">
-    <button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo($lang['Crear-Cuenta']); ?></button>
-	</div>
+    <div class="col-sm-6 col-centered">
+        <button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo($lang['Crear-Cuenta']); ?></button>
+    </div>
+<hr>
 </form>
+<br><span class="label label-danger" id="validacion1"></span>
 </div>
 <?php
 //Registrar

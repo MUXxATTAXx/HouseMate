@@ -67,7 +67,7 @@
 	<br>
 	
     <div class="center">
-					<h3><?php echo $lang['Etiqueta'] ?>:</h3>
+					<h3><?php echo $lang['Etiqueta'] ?>: </h3><span class="label label-danger" id="validacion-num1"></span>
 			</div>
 	
 	<div class="center">
@@ -82,8 +82,7 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input id="tag1" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
-				   
+						<input id="tag1" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number" maxlength="2"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
 						</div>
 				</div>
 			</div>

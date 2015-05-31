@@ -5,6 +5,7 @@
 	<label><?php echo $lang['Codigo'] ?>:</label>
 		<div class="col-sm-2 col-centered">
             <select  id="thestart" class='form-control' onchange="myFunction()">
+            <option onload="selected"></option>
             <?php
                     include "conexion.php";
                     $consulta = mysql_query("SELECT * from tbusuario WHERE idUsuario > 0");
@@ -60,7 +61,7 @@
 	
 		<button class='btn btn-primary btn-block' type='submit' name='registrar2' value="modificar" ><?php echo $lang['Modificar-Usuario'] ?></button>
 		</div>
-
+<hr><span class="label label-danger" id="validacion2"></span>
 
     <?php
 echo("
