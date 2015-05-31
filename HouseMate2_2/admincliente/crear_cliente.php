@@ -1,5 +1,5 @@
 
-<form  action='crear_cliente.php' method='POST' name='registrar'>
+<form name='registrar'>
 <div class='form-Dl' align="center">
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">    
