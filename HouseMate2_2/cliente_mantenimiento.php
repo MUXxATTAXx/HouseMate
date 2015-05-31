@@ -22,12 +22,32 @@
 <!-- Logic para change of active tab -->
 
 	<?php
-		include "Call/Loged/urgent.php";
-		
+				echo "<ul id='what' class='nav nav-tabs'>
+			<li id='me' class='active'><a href='#home' data-toggle='tab'>
+			".$lang['Crear-Usuario']."
+			</a></li>
+			<li id='me2'><a href='#crear' data-toggle='tab'>
+			".$lang['Ver-Usuario']."
+			</a></li>
+			<li id='me3'><a href='#sd' data-toggle='tab'>
+			".$lang['Modificar-Usuario']."
+			</a></li>
+			<li id='me4'><a href='#eliminar' data-toggle='tab'>
+			".$lang['Eliminar-Usuario']."
+			</a></li>
+		</ul>";
 		?>
 <div id='myTabContent' class='tab-content'>
 	<?php 
-	include "Call/Funciones/tab.php"; 
+	echo "<div class='tab-pane fade active in' id='home'>";
+	include'admincliente/crear_cliente.php';
+	echo "</div><div class='tab-pane fade' id='crear'>";
+	include'admincliente/admin_mostrar.php';
+	echo "</div><div class='tab-pane fade' id='sd'>";
+	include("admincliente/admin_modificar.php");
+	echo "</div><div class='tab-pane fade' id='eliminar'>";
+	include('admincliente/admin_eliminar.php'); 
+	echo "</div>";
 	?>
 </div>
 </form>
