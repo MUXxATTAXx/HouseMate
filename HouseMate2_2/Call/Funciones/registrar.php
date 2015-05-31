@@ -46,7 +46,7 @@ session_start();
 					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',NULL)";
 					if(mysql_query($consulta))
 					{
-						
+						echo "<p>Usuario ingresado</p>";
 					}
 					else
 					{
