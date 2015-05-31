@@ -78,15 +78,7 @@ else
                       </tr>
                       <tr>
                         <td><?php echo $lang['tipo'];?></td>
-                        <td>
-                            <?php
-                            if($row['Tipopropiedad']== 1){
-                                echo $lang['Urbana'];
-                            }elseif($row['Tipopropiedad']== 2){
-                                echo $lang['Rustico'];
-                            }
-                            ?>
-                        </td>
+                        <td><?php echo $row['Tipopropiedad'] ?></td>
                       </tr>              
                       <tr>
                         <td><hr><?php echo $lang['precio'];?></td>

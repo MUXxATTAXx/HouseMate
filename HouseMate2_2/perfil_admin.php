@@ -1,28 +1,12 @@
-    <?php
-	require ("Call/Loged/seguridad.php");
-    ?>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/estilop.css' rel='stylesheet'/>
 <?php
     echo("
 <meta charset=utf-8 />
     ");
-	switch ($_SESSION['tip'])
-	{
-		case 1:
-            include("Header/barranav2.php");
-		break;
-		case 2:
+    include("Header/barranav2.php");
 
-		break;
-		case 3:
-
-		break;
-		case 4:
-            include("Header/barranav6.php");
-		break;
-	}
 ?>
 <!DOCTYPE HTML>
 

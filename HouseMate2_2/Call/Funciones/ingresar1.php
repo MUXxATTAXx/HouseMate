@@ -9,7 +9,7 @@
 		 $_SESSION["user"] = $row["nombre"];
 		$_SESSION['id'] = $row['idUsuario'];
 		$_SESSION['tip'] = $row['tipo'];
-		session_start();
+		
 		echo "<script> 
 			location.replace('adminhomepage.php#close'); 
 			</script>";
@@ -23,7 +23,6 @@
 		$_SESSION["user"] = $row["nombre"];
 		$_SESSION['id'] = $row['idUsuario'];
 		$_SESSION['tip'] = $row['tipo'];
-        session_start();
 		echo "<script> 
 			location.replace('visitantehomepage.php#close'); 
 			</script>";
