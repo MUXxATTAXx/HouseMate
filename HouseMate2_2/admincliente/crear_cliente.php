@@ -48,11 +48,19 @@
 	</div>
 	
    <br>
+<<<<<<< HEAD
    <div class="col-sm-6 col-centered">
     <button class="btn btn-primary btn-block" id="ingresarstuff"><?php echo($lang['Crear-Cuenta']); ?></button>
 	<p id="resultado"></p>
 	</div>
+=======
+    <div class="col-sm-6 col-centered">
+        <button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo($lang['Crear-Cuenta']); ?></button>
+    </div>
+<hr>
+>>>>>>> origin/master
 </form>
+<br><span class="label label-danger" id="validacion1"></span>
 </div>
 <script>                                                      
         //comprobamos si se pulsa una boton
