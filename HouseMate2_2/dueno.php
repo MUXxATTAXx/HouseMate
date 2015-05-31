@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <html>
 <head>
 
@@ -7,7 +8,6 @@
    <?php
     include "Call/spr.php";
 ?>
-	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
 	
 </head>
 <body> 
@@ -21,6 +21,7 @@ if(isset($_SESSION['id'])){
 }
 
 ?>
+ <br>
  <br>
 <div id="main">
     <div class="row">
@@ -69,21 +70,29 @@ if(isset($_SESSION['id'])){
                         <td><?php echo $lang['Correo'];?></td>
                         <td><?php echo $row['correo'] ?></td>
                         </tr>
+						<?php
+                }
+				$consulta = ( "select * FROM tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
+        $cs = mysql_query($consulta);
+        while ($row=mysql_fetch_array($cs)){
+            ?>
                       <tr>
                         <td><hr><?php echo $lang['Usuarioname'];?></td>
                         <td><hr><?php echo $row['usuario'] ?></td>
+					<tr>
+                        <td><?php echo $lang['Correo'];?></td>
+                        <td><?php echo $row['correo'] ?></td>
+                      </tr>
                       </tr>              
                     </tbody>
                   </table>
                     </div>
                   </div>     
             </div>
-            <?php
-                }
-            ?>
+            <?php ?>
             </center>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="Ofertar">
+                <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer']; ?>">
             </div>
 
             </form>
@@ -95,5 +104,4 @@ if(isset($_SESSION['id'])){
       
 
 </body>
-<script src="js/parallax.js"></script>
 </html>
