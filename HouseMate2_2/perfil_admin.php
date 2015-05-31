@@ -5,7 +5,24 @@
     echo("
 <meta charset=utf-8 />
     ");
-    include("Header/barranav2.php");
+	session_start();
+	$variable1 = $_SESSION["user"]; 
+	$variable2 = $_SESSION['id']; 
+	$variable3 = $_SESSION['tip'];
+	switch($variable3)
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+	}
+    
 
 ?>
 <!DOCTYPE HTML>

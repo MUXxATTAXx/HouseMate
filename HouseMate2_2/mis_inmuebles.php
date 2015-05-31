@@ -6,7 +6,20 @@
 
 <meta charset=utf-8 />
     ");
-    include("Header/barranav2.php");
+    session_start();
+	switch($_SESSION['tip'])
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+	}
 
 ?>
 <!DOCTYPE HTML>
@@ -28,7 +41,7 @@ $tempid = "SELECT IdUsuario FROM usuario WHERE TempId = '$dueno'";
 $temcs=mysql_query($tempid);
 $rowt=mysql_fetch_array($temcs);
 $Rtemid = $rowt['IdUsuario'];
-$consulta = "SELECT * FROM inmueble WHERE Dueno = '$Rtemid'";
+$consulta = "SELECT * FROM inmueble WHERE Dueno = '$Rtemid' and IdInmueble > 0";
 $cs = mysql_query($consulta);
 while($row = mysql_fetch_array($cs)){
 //Inicio de bloque
