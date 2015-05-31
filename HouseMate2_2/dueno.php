@@ -71,7 +71,6 @@ if(isset($_SESSION['id'])){
                         <td><?php echo $lang['Correo'];?></td>
                         <td><?php echo $row['correo'] ?></td>
                         </tr>
-<<<<<<< HEAD
 						<?php
                 }
 				$consulta = ( "select * FROM tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
@@ -132,7 +131,6 @@ if(isset($_SESSION['id'])){
                     </div>
                   </div>     
             </div>
-<<<<<<< HEAD
             <?php ?>
             </center>
             <div class="panel-footer">
@@ -140,10 +138,6 @@ if(isset($_SESSION['id'])){
 				<?php 
 				}
 				?>
-            </center>
-            <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="Offer">
-            </div>
 
             </form>
             </div>
