@@ -86,7 +86,6 @@ if(isset($_SESSION['id'])){
                         <td><?php echo $row['correo'] ?></td>
                       </tr>
                       </tr>              
-=======
 				 <?php
                 }
 				$consulta = ( "select tbusuario.* , usuario.* from tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
@@ -128,7 +127,6 @@ if(isset($_SESSION['id'])){
 					  $Telefono2 = substr($row['telefono2'],4,4);
 					  echo $Telefono1."-".$Telefono2 ?></td>
 					  </tr>
->>>>>>> origin/master
                     </tbody>
                   </table>
                     </div>
@@ -139,14 +137,12 @@ if(isset($_SESSION['id'])){
             </center>
             <div class="panel-footer">
                 <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer']; ?>">
-=======
 				<?php 
 				}
 				?>
             </center>
             <div class="panel-footer">
                 <input type="submit" name="mejorar" class="btn btn-primary" value="Offer">
->>>>>>> origin/master
             </div>
 
             </form>
