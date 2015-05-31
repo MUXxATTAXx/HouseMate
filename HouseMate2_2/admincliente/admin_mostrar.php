@@ -1,3 +1,4 @@
+<form>
 <div id="delete" class="modalDialog2">
 	<div>
 		<div  class='form-D2'>
@@ -9,8 +10,9 @@
                 <p><?php echo $lang['Xdelete']; ?> </p>
                 <p><?php echo $lang['Fdelete']; ?> </p>
                 <p class="debug-url"></p>
-				<button class='btn btn-default btn-block' type='submit' name='eliminar' ><?php echo($lang['Salir']);?></button>
-				</button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
+				<a class='btn btn-default btn-block' id="name" href="#close"><?php echo($lang['Salir']);?></a>
+				
+				<a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
             </div> 
 		</div>
     </div>
@@ -57,9 +59,49 @@
 			break;
 		}
         echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['usuario']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td><td>
-        <a href='#delete' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a>
+        <a href='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a>
         </td></tr>";
     }
     echo"</table>";
 ?>
+<span id="spanme"></span>
+<script>                                                      
+		function obtener(yo) {
+		document.getElementById('spanme').innerHTML = yo;
+}
+</script>
+<script>                                                      
+        //comprobamos si se pulsa una boton
+        $("#name").click(function(){
+                                     
+		  //obtenemos el texto introducido
+		  idre = $("#spanme").html();
+ 
+		  //ingresar usuario
+																			  
+		  $.ajax({
+				type: "POST",
+				url: "Call/Funciones/admin_eliminar.php",
+				data: "idre="+idre,
+				dataType: "html",
+				beforeSend: function(){
+					  //imagen de carga
+					  $("#spanme").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+				},
+				error: function(){
+					  alert("error petición ajax");
+				},
+				success: function(data){                                                    
+					  $("#spanme").empty();
+					  $("#spanme").append(data);
+														 
+						}
+				  });
+																					  
+																			   
+			});
+</script>
+</form>	
+
+
 

@@ -164,3 +164,7 @@ input[type=number] {
 .black {
 	background-color:black;
 }
+#spanme
+{
+  visibility:hidden;
+}

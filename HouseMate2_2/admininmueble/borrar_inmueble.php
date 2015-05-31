@@ -12,8 +12,7 @@
     <?php
     mysql_query("SET NAMES 'utf8'");
 
-    if (isset($_POST["eliminar"]))
-    {
+
 		if (isset($_POST['destruiere']))
 		{
 			$ideli = trim($_POST["destruiere"]);
@@ -58,7 +57,7 @@
 				location.replace('crear_inmueble.php'); 
 				</script>";
 		}
-    }
+    
 
 ?>	
 <?php
