@@ -7,11 +7,32 @@
     <link href='css/estilo.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
     <title>Inicio</title>
+<?php
+    echo("
+<meta charset=utf-8 />
+    ");
+	session_start();
+	$variable1 = $_SESSION["user"]; 
+	$variable2 = $_SESSION['id']; 
+	$variable3 = $_SESSION['tip'];
+	switch($variable3)
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+	}
+    
+
+?>
 </head>
 <body id="intro">
-<?php
-    include("Header/barranav2.php");
-?>
 <a class="btn btn-sm btn-primary"><?php echo $lang['quick'] ?></a>
 <div class="panel panel-default">
     <div class="panel-heading">

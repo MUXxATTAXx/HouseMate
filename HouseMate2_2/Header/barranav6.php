@@ -17,8 +17,8 @@
           ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="perfil_admin.php" name="dude"><?php echo($lang['Perfil']);?>(<?php include ('namae.php') ?>) <span class="sr-only">(current)</span></a></li>
-
+        <li><a href="perfil_admin.php" name="dude"><?php echo($lang['Perfil']);?>(<?php include ('namae.php') ?>) <span class="sr-only">(current)</span></a></li>
+        <li><a href="vender.php">Vender</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
