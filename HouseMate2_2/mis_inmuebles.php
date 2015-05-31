@@ -25,7 +25,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>	
-	<title><?php echo($lang['Perfil']);?></title>
+	<title><?php echo $lang['mis-inmuebles'];?></title>
 	<meta charset = "utf-8" />
 	<link href='css/estilo.css' rel='stylesheet'/>
 	

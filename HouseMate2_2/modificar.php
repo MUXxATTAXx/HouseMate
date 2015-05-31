@@ -50,11 +50,11 @@ while($row=mysql_fetch_array($cs)){
 		<div class="col-xs-6"> 
             
                 <p><?php echo $lang['Nombre'] ?></p>
-                <input value="<?php echo $row['nombre']; ?>" class="form-control" type="text" name="nombre" placeholder="Name">
+                <input value="<?php echo $row['nombre']; ?>" class="form-control" type="text" name="nombre" placeholder="Name" required>
 		</div>
 		<div class="col-xs-6"> 
                 <p><?php echo $lang['Apellido'] ?></p>
-                <input value="<?php echo $row['apellido']; ?>" class="form-control" type="text" name="apellido" placeholder="Last Name">
+                <input value="<?php echo $row['apellido']; ?>" class="form-control" type="text" name="apellido" placeholder="Last Name" required>
 		</div>
 	  </div>
 	  <div class="row">
@@ -122,7 +122,7 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
             $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
             echo "<script> 
                 location.replace('modificar.php');
-                alert('Sucess! Changes and new password added.');
+                alert('".$lang['modificar-exito2']."');
                 </script>";
 
             }
@@ -131,20 +131,20 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
             {
                 $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac' WHERE idUsuario               = '$id'");
                 echo "<script> 
-                location.replace('modificar.php');
-                alert('Sucess! Changes added.');
+                location.replace('perfil_admin.php');
+                alert('".$lang['modificar-exito']."');
                 </script>";
             }
         }
         else
         {
-            echo"Passwords don't match.";
+            echo"<span class='label label-danger'>".$lang['error-contra']."</span>";
         }
     }
 }
 else
 {
-    echo "Blank Spaces";
+    echo $lang['blank'];
 }
 }
 ?>

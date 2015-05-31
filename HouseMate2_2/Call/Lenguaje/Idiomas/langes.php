@@ -113,6 +113,15 @@ $lang['error2'] = 'Llene almenos una etiqueta';
 $lang['error3'] = 'Ya existe una imagen con ese nombre';
 $lang['error4'] = "No tiene los privilegios";
 $lang['error5'] = "Ingrese un Id";
+$lang['error-contra'] = "Contraseñas no coinciden";
+$lang['modificar-exito'] = "¡Exito! Cambios agregados.";
+$lang['modificar-exito2'] = "¡Exito! Cambios y nueva contraseña agregada.";
+$lang['blank'] = "Espacios en blanco";
+
+//Titulos
+$lang['regis'] = "Crear Cuenta";
+$lang['mis-inmuebles'] = "Mis Inmuebles";
+$lang['real-estate'] = "Inmuebles";
 
 //Etiquetas
 $lang['Cuartos'] = "Cuarto";

@@ -24,7 +24,7 @@ require ("Call/Loged/seguridad.php");
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Mantenimiento']);?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="cliente_mantenimiento.php"><?php echo($lang['Usuarios']);?></a></li>
-            <li><a href="crear_inmueble.php"><?php echo($lang['Inmuebles']);?></a></li>
+            <li><a href="crear_inmueble.php"><?php echo($lang['real-estate']);?></a></li>
             <li><a href=""><?php echo($lang['Perito']);?></a></li>
           </ul>
         </li>

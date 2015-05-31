@@ -1,4 +1,7 @@
-		<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+<?php
+require ("Call/Lenguaje/lenguaje.php");
+?>
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/change.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -10,7 +13,7 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>House Mate</title>
+	<title><?php echo($lang['real-estate']);?></title>
 	<meta charset = "utf-8" />
 
 </head>

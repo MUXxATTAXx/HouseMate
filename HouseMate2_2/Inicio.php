@@ -1,7 +1,10 @@
+<?php
+require ("Call/Lenguaje/lenguaje.php");
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Login</title>
+	<title><?php echo $lang['regis']; ?></title>
 	<meta charset = "utf-8" />
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/change.css"	rel="stylesheet" type="text/css" />

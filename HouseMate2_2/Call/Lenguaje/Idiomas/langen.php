@@ -115,6 +115,16 @@ $lang['error2'] = 'Fill 1 tag at least';
 $lang['error3'] = 'There is a image with the same name';
 $lang['error4'] = "You dont have the right to do it";
 $lang['error5'] = "Insert the id of the property";
+$lang['error-contra'] = "Passwords don't match";
+$lang['modificar-exito'] = "Sucess! Changes added.";
+$lang['modificar-exito2'] = "Sucess! Changes and new password added.";
+$lang['blank'] = "Blank Spaces";
+
+
+//Titulos
+$lang['regis'] = "Sign Up";
+$lang['mis-inmuebles'] = "My properties";
+$lang['real-estate'] = "Real Estate";
 
 //Etiquetas
 $lang['Cuartos'] = "Bedroom";

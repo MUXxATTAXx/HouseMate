@@ -8,7 +8,7 @@
 <!DOCTYPE HTML>
 <html onload="refresh()">
 <head>
-	<title><?php echo($lang['Page_title']);?></title>
+	<title><?php echo($lang['Usuarios']);?></title>
 	<meta charset = "utf-8" />
 	
 </head>

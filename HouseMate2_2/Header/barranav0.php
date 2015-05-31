@@ -1,9 +1,6 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" >
-    <?php
-    require ("Call/Lenguaje/lenguaje.php");
-    ?>
-	
+
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
    <div class="container-fluid">
     <div class="navbar-header">
@@ -55,12 +52,12 @@
                               <div class="form-group">
 								<h4><?php echo $lang['Iniciar-Sesion']; ?></h4>
                                   <label for="username" class="control-label"><?php echo $lang['Usuarioname']; ?></label>
-                                  <input type="text" class="form-control" id="username" name="usuario1" value="" required="" title="Please enter you username" placeholder="<?php echo $lang['Usuarioname']; ?>">
+                                  <input type="text" class="form-control" id="username" name="usuario1" required title="Please enter you username" placeholder="<?php echo $lang['Usuarioname']; ?>">
                                   <span class="help-block"></span>
                               </div>
                               <div class="form-group">
                                   <label for="password" class="control-label"><?php echo $lang['Contra'] ?></label>
-                                  <input type="password" class="form-control" id="password" name="contra1" value="" required="" placeholder='<?php echo $lang['Contra'] ?>' title="Please enter your password">
+                                  <input type="password" class="form-control" id="password" name="contra1" required placeholder='<?php echo $lang['Contra'] ?>' title="Please enter your password">
                                   <span class="help-block"></span>
                               </div>
 							

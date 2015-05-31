@@ -1,10 +1,12 @@
-
+<?php
+require ("Call/Lenguaje/lenguaje.php");
+?>
 <!DOCTYPE HTML>
 <html>
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <head>
 
-	<title>Login</title>
+	<title><?php echo $lang['Acerca']; ?></title>
 	<meta charset = "utf-8" />
    <?php
     

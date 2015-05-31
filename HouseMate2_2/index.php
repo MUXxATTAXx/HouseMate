@@ -1,10 +1,12 @@
-
+<?php
+require ("Call/Lenguaje/lenguaje.php");
+?>
 <!DOCTYPE HTML>
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <html>
 <head>
 
-	<title>Login</title>
+	<title>House Mate</title>
 	<meta charset = "utf-8" />
    <?php
     include "Call/spr.php";
@@ -12,10 +14,9 @@
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
 </head>
 <body> 
- 
+
 <?php
     include "Header/barranav0.php";
-
 ?>
 <div id="wrapper">
 
