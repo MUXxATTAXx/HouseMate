@@ -55,7 +55,7 @@
                                 <td><input name="dui" class="form-control" type="textbox" placeholder="DUI" maxlength="9" required>
 
                                 <p><?php echo($lang['nit']);?></p>
-                                <input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="10" required>
+                                <input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="14" required>
 
                                 <p><?php echo($lang['tel']);?></p>
                                 <input name="tel" class="form-control" type="textbox" placeholder="<?php echo($lang['tel']);?>" maxlength="8" required>
