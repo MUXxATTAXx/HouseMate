@@ -1,6 +1,6 @@
 <link href='css/intro.css' rel='stylesheet'/>
 <form method="post" >
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">House Mate</a>
+      <a class="navbar-brand" href="visitantehomepage.php">House Mate</a>
     </div>
     <?php  
 	include "Call/Lenguaje/lenguaje.php";
@@ -17,8 +17,7 @@
           ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="visitante_homepage.php" name="dude"><?php echo($lang['Inicio']);?>(<?php include ('namae.php') ?>) <span class="sr-only">(current)</span></a></li>
-        <li><a href="perfil_visitante.php"><?php echo($lang['Perfil']);?></a></li>
+        <li class="active"><a href="perfil_admin.php" name="dude"><?php echo($lang['Perfil']);?>(<?php include ('namae.php') ?>) <span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
@@ -52,3 +51,6 @@
 	</div>
 </div>
        </form>
+	   <br>
+	   <br>
+	   <br>

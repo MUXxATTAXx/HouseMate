@@ -5,8 +5,20 @@
 
 <meta charset=utf-8 />
     ");
-    include("Header/barranav2.php");
-
+    session_start();
+	switch($_SESSION['tip'])
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+	}
 ?>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <!DOCTYPE HTML>
@@ -21,7 +33,6 @@
 </head>
 <body> 
 
-<br>
 <br>
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >

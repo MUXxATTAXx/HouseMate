@@ -11,38 +11,46 @@
 	
 </head>
 <body> 
- 
 <?php
-
-if(isset($_SESSION['id'])){
-    include "Header/barranav0.php";
-}else{
-    include "Header/barranav1.php";
+session_start();
+if(isset($_SESSION['tip']))
+{
+	switch($_SESSION['tip'])
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+		default:
+		include "Header/barranav0.php";
+		break;
+	}
 }
-
+else
+{
+	include "Header/barranav0.php";
+}
 ?>
-<br>
- <br>
+
  <br>
 <div id="main">
     <div class="row">
     <?php
         include "conexion.php";
         $dueno = $_GET['IdUsuario'];
-        /*if(isset($dueno))
-        {
-           
-        }else{
-             echo
-            "<script> 
-			location.replace('index.php'); 
-			</script>";
-        }*/
+
         $consulta = ( "select * FROM tbusuario WHERE Idusuario = '$dueno'");
         $cs = mysql_query($consulta);
         while ($row=mysql_fetch_array($cs)){
     ?>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+	
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xs-offset-1 col-sm-offset-0 col-md-offset-3 col-lg-offset-2 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-title">
@@ -58,7 +66,7 @@ if(isset($_SESSION['id'])){
             </div>
             <div class="panel-body">
             <center>
-                <form action="mejorar_perfil.php" method="POST">
+            <form action="mejorar_perfil.php" method="POST">
                   <div class="row">   
                     <div class=" col-md-9 col-lg-9 ">
                     <table class="table table-user-information">

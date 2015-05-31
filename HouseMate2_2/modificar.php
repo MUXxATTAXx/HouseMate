@@ -5,8 +5,20 @@
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<meta charset=utf-8 />
     ");
-    include("Header/barranav2.php");
-
+    session_start();
+	switch($_SESSION['tip'])
+	{
+		case 1:
+		include("Header/barranav2.php");
+		break;
+		case 2:
+		break;
+		case 3:
+		break;
+		case 4:
+		include("Header/barranav6.php");
+		break;
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
