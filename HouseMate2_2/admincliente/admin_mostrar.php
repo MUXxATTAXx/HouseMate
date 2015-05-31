@@ -1,20 +1,4 @@
-<div id="delete" class="modalDialog2">
-	<div>
-		<div  class='form-D2'>
-            <a href="#close" title="Close" class="close">X</a>
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
-            </div>
-            <div class="modal-body">
-                <p><?php echo $lang['Xdelete']; ?> </p>
-                <p><?php echo $lang['Fdelete']; ?> </p>
-                <p class="debug-url"></p>
-				<button class='btn btn-default btn-block' type='submit' name='eliminar' ><?php echo($lang['Salir']);?></button>
-				</button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
-            </div> 
-		</div>
-    </div>
-</div>
+
 <?php
     include("conexion.php");
     mysql_query("SET NAMES 'utf8'");
