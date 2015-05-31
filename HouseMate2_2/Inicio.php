@@ -103,7 +103,7 @@ if(isset($_POST['registrar'])){
     $contra2 = trim($_POST['contra2']);
     if($nombre != "" and $apellido != "" and $fechanac != "" and $correo != "" and $usuario != "" and $contra1 != "" and $contra2 != ""){
         if($contra1 == $contra2){
-            require "Call/Funciones/registrar.php";
+            require "Call/Funciones/registrar1.php";
         }
         else{
             echo "contraseña incorrecta";
