@@ -1,5 +1,5 @@
 <?php
-session_start();
+	session_start();
     $nombre = trim($_POST['nombre']);
     $apellido = trim($_POST['apellido']);
     $fechanac = $_POST['fechanac'];
@@ -42,27 +42,20 @@ session_start();
 					if(!isset($tipo))
 					{
 						$tipo = 4;
-					}
+					} 	
 					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',NULL)";
-					if(mysql_query($consulta))
-					{
-						echo "<p>Usuario ingresado</p>";
-					}
-					else
-					{
-						
-						echo "<p>Consulta de insertar fallo</p>";
-					}
+					echo 'Usuario ingresado';
+					mysql_query($consulta);
 				}
 			}
 			else
 			{
-				echo "<p>contraseña incorrecta</p>";
+				echo 'contraseña incorrecta';
 			}
 		}
 		else
 		{
-		echo '<p>Campos vacios en Registrarse"</p>';
+		echo 'Campos vacios en Registrarse';
 		}
 }
 ?>

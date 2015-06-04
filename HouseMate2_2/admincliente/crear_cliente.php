@@ -1,5 +1,5 @@
 
-<form name='registrar'>
+<div name='registrar'>
 <div class='form-Dl' align="center">
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">    
@@ -48,49 +48,17 @@
 	</div>
 	
    <br>
-   <div class="col-sm-6 col-centered">
-    <button class="btn btn-primary btn-block" id="ingresarstuff"><?php echo($lang['Crear-Cuenta']); ?></button>
-	<p id="resultado"></p>
-	</div>
-</form>
-<br><span class="label label-danger" id="validacion1"></span>
+	   <div class="row row-centered">
+			<div class="col-sm-6 col-centered">
+			<button class="btn btn-primary btn-block" id="ingresarstuff"><?php echo($lang['Crear-Cuenta']); ?></button>
+			</div>
+		</div>
+		<br><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span>
 </div>
-<script>                                                      
-        //comprobamos si se pulsa una boton
-        $("#ingresarstuff").click(function(){
-                                     
-		  //obtenemos el texto introducido
-		  nombre = $("#nombre").val();
-		  apellido = $("#apellido").val();
-		  fechanac = $("#fechanac").val();      
-		  correo = $("#lowerme").val();      
-		  user = $("#user").val();      
-		  contra = $("#contra").val();  
-		  contra2 = $("#contra2").val(); 
-		  tiposu = $("#tiposu").val();  
-		  //ingresar usuario
-																			  
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/registrar.php",
-				data: "nombre="+nombre+"&apellido="+apellido+"&fechanac="+fechanac+"&correo="+correo+"&user="+user+"&contra="+contra+"&contra2="+contra2+"&tiposu="+tiposu,
-				dataType: "html",
-				beforeSend: function(){
-					  //imagen de carga
-					  $("#resultado").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){                                                    
-					  $("#resultado").empty();
-					  $("#resultado").append(data);
-														 
-						}
-				  });
-																					  
-																			   
-			});
-</script>
+
+
+
+</div>
+
 
 

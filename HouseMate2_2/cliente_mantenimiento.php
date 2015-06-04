@@ -6,14 +6,13 @@
     include("Header/barranav2.php");
 ?>
 <!DOCTYPE HTML>
-<html onload="refresh()">
+<html>
 <head>
 	<title><?php echo($lang['Usuarios']);?></title>
 	<meta charset = "utf-8" />
 	
 </head>
 <body> 
-<form method="post">
 <div class="row">
         <ol class="breadcrumb bread-primary breadnomargin">
             <li><a><?php echo($lang['Usuarios']);?></a></li>
@@ -44,9 +43,52 @@
 	include("admincliente/admin_modificar.php");
 	?>
 </div>
-</form>
  <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 <script src="js/bootstrap-table.js" ></script>
 <script src="js/validaciones.js" type="text/javascript" ></script>
+
+<script type="text/javascript">                                                      
+        //comprobamos si se pulsa una boton
+        $("#ingresarstuff").click(function(){
+                                     
+		  //obtenemos el texto introducido
+		   nombre = $("#nombre").val();
+			apellido = $("#apellido").val();
+			fechanac = $("#fechanac").val();      
+			correo = $("#lowerme").val();      
+			user = $("#user").val();      
+			contra = $("#contra").val();  
+			contra2 = $("#contra2").val(); 
+			tiposu = $("#tiposu").val(); 
+		  //ingresar usuario
+																			  
+		  $.ajax({
+				type: "POST",
+				url: "Call/Funciones/registrar.php",
+				data: "nombre="+nombre+"&apellido="+apellido+"&fechanac="+fechanac+"&correo="+correo+"&user="+user+"&contra="+contra+"&contra2="+contra2+"&tiposu="+tiposu,
+				dataType: "html",
+				beforeSend: function(){
+					  //imagen de carga
+					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				},
+				error: function(){
+					  alert("error petición ajax");
+				},
+				success: function(data){                                                    
+					  $("#resultadoinsert").empty();
+					  $("#resultadoinsert").append(data);
+						$("#nombre").val() = "";
+						$("#apellido").val() = "";
+						$("#fechanac").val() = "";      
+						$("#lowerme").val() = "";      
+						$("#user").val() = "";      
+						$("#contra").val() ="";  
+						$("#contra2").val() = ""; 
+						$("#tiposu").val() = "";
+						}
+				  });
+															   
+			});
+</script>
 </body>
 </html>

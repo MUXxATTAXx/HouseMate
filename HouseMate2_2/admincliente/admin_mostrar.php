@@ -1,22 +1,32 @@
 <form>
-<div id="delete" class="modalDialog2">
-	<div>
-		<div  class='form-D2'>
-            <a href="#close" title="Close" class="close">X</a>
-            <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
-            </div>
-            <div class="modal-body">
+<div id="delete" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
+      </div>
+      <div class="modal-body">
+	  <div class="modal-body">
                 <p><?php echo $lang['Xdelete']; ?> </p>
                 <p><?php echo $lang['Fdelete']; ?> </p>
                 <p class="debug-url"></p>
-				<a class='btn btn-default btn-block' id="name" href="#close"><?php echo($lang['Salir']);?></a>
 				
-				<a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
             </div> 
-		</div>
+     
+      </div>
+      <div class="modal-footer">
+           <button class='btn btn-default' id="deleteuser" data-dismiss="modal"><?php echo($lang['Salir']);?></button>
+			
+			<a type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></a>
+      </div>
     </div>
+
+  </div>
 </div>
+
 <?php
     include("conexion.php");
     mysql_query("SET NAMES 'utf8'");
@@ -25,7 +35,7 @@
     $cs=mysql_query($consulta);
 	$var = "";
 	// data-show-columns='true'
-    echo"<form action='#' method='POST'><table id='here' class='table table-striped table-hover' data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
+    echo"<form action='#' method='POST'><table data-toggle='table' data-url='/gh/get/response.json/wenzhixin/bootstrap-table/tree/master/docs/data/data1/' id='here' class='table table-striped table-hover'  data-search='true' data-show-refresh='true' data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>";
         echo"<thead><tr><th>";
 		echo $lang['Codigo'];
 		echo '</th><th>';
@@ -59,26 +69,25 @@
 			break;
 		}
         echo "<tr><td id='a".$row['idUsuario']."'>".$row['idUsuario']."</td><td>".$row['nombre']."</td><td>".$row['apellido']."</td><td>".$row['usuario']."</td><td>".$row['correo']."</td><td>".$row['fechanac']."</td><td>".$var."</td><td>
-        <a href='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a>
+        <a data-toggle='modal' data-target='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a>
         </td></tr>";
     }
     echo"</table>";
 ?>
 <span id="spanme"></span>
-<script>                                                      
+<script type="text/javascript">                                                      
 		function obtener(yo) {
 		document.getElementById('spanme').innerHTML = yo;
 }
 </script>
-<script>                                                      
+<script type="text/javascript">                                                      
         //comprobamos si se pulsa una boton
-        $("#name").click(function(){
+        $("#deleteuser").click(function(){
                                      
 		  //obtenemos el texto introducido
 		  idre = $("#spanme").html();
- 
 		  //ingresar usuario
-																			  
+														  
 		  $.ajax({
 				type: "POST",
 				url: "Call/Funciones/admin_eliminar.php",
@@ -92,15 +101,16 @@
 					  alert("error petición ajax");
 				},
 				success: function(data){                                                    
-					  $("#spanme").empty();
-					  $("#spanme").append(data);
+					  $("#mesangemostra").empty();
+					  $("#mesangemostra").append(data);
 														 
 						}
 				  });
-																					  
+																				  
 																			   
 			});
 </script>
+<div id="mesangemostra" class="label label-success"></div>
 </form>	
 
 

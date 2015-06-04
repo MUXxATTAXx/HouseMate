@@ -17,16 +17,16 @@
 		$row=mysql_fetch_array($cs);
 		$id = $row['idUsuario'];
 		$correo = $idt;
-		$consulta = "DELETE FROM tbUsuario WHERE IdUsuario = '$idt' AND idUsuario <> 0";
+		$consulta = "DELETE FROM tbUsuario WHERE IdUsuario = '$idt' AND idUsuario > 0";
 		if(mysql_query($consulta))
 		{
-		echo "<p>Usuario Eliminado</p>";
+		echo "Usuario Eliminado";
 		$consulta = "UPDATE tbUsuario SET IdUsuario = IdUsuario - 1 WHERE IdUsuario > '$id'";
 		$cs=mysql_query($consulta);
 		}
 		else
 		{
-		echo "<p>Consulta de Eliminar fallo</p>";
+		echo "Consulta de Eliminar fallo";
 		}
 
     
