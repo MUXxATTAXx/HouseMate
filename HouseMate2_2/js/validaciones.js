@@ -46,4 +46,4 @@ function num(e){
             else{
                 document.getElementById("validacion-num1").innerHTML = "";
             }
-      }   
+      }  

@@ -45,11 +45,11 @@ require ("Call/Lenguaje/lenguaje.php");
 						<div class='row row-centered'>
 						<div class="col-sm-6 col-centered">   
 								<label><?php echo($lang['Contra']); ?>:</label>
-								<input class="form-control"maxlength="20" type="password" autocomplete="off" name="contra" placeholder="<?php echo($lang['Contra']); ?>" />
+								<input class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" name="contra" placeholder="<?php echo($lang['contra']); ?>" />
 						</div>
 						<div class="col-sm-6 col-centered">  
 								<label><?php echo($lang['Confirmar']); ?>:</label>
-								<input class="form-control"maxlength="20" type="password" autocomplete="off" name="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
+								<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" name="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
 
 						</div>
 						</div>
@@ -87,6 +87,7 @@ require ("Call/Lenguaje/lenguaje.php");
 							<div class="col-sm-6 col-centered">
 								<button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo($lang['Crear-Cuenta']); ?></button>
 							</div><br><span class="label label-danger" id="validacion1"></span>
+                            <span class="label label-warning" id="contra-error"></span>
 							</center>
 						</div>
                     </div>
@@ -120,5 +121,24 @@ if(isset($_POST['registrar'])){
 </div>
 <script src="js/validaciones.js"></script>
     <br>
+
+<script>
+function password(){
+    var pass1 = document.getElementById('contra');
+    var pass2 = document.getElementById('contra2');
+    var message = document.getElementById('contra-error');
+     if(pass1.value == pass2.value){
+
+        message.innerHTML = "Passwords Match!"
+        message.className = "label label-success"
+    }else{
+        message.innerHTML = "Passwords Do Not Match!"
+        message.className = "label label-warning"
+    }
+    if(pass2.value == ""){
+        message.innerHTML = ""
+    }
+}
+</script>
 </body>
 </html>
