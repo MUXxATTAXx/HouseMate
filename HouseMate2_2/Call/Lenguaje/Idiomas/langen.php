@@ -42,7 +42,7 @@ $lang['Crear-Usuario'] = 'Create user';
 $lang['Ver-Usuario'] = 'View users';
 $lang['Modificar-Usuario'] = 'Modify user';
 $lang['Eliminar-Usuario'] = 'Delete user';
-
+$lang['Uingre'] = "User succesfully insert";
 $lang['Codigo'] = 'Cod';
 $lang['Modificar'] = 'Modify';
 $lang['Eliminar'] = 'Delete';

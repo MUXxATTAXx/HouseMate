@@ -16,9 +16,17 @@ function letras(e){
                 document.getElementById("validacion1").innerHTML = "Letter only.";
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letter only.";
+<<<<<<< HEAD
                 document.getElementById("validacion1").innerHTML = "Letters only.";
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letters only.";
+=======
+
+                document.getElementById("validacion1").innerHTML = "Letters only.";
+                return false;
+                document.getElementById("validacion2").innerHTML = "Letters only.";
+
+>>>>>>> origin/master
                 return false;
             }
             else    
