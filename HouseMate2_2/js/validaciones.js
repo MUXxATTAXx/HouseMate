@@ -13,9 +13,11 @@ function letras(e){
                   }
             }
             if(letras.indexOf(teclado)==-1 && !teclado_especial){
+<<<<<<< HEAD
                 document.getElementById("validacion1").innerHTML = "Letter only.";
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letter only.";
+<<<<<<< HEAD
 <<<<<<< HEAD
                 document.getElementById("validacion1").innerHTML = "Letters only.";
                 return false;
@@ -26,6 +28,12 @@ function letras(e){
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letters only.";
 
+=======
+=======
+                document.getElementById("validacion1").innerHTML = "Letters only.";
+                return false;
+                document.getElementById("validacion2").innerHTML = "Letters only.";
+>>>>>>> parent of e5c95ab... basura
 >>>>>>> origin/master
                 return false;
             }
