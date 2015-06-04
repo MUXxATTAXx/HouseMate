@@ -1,6 +1,5 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/jquery.chained.min.js"></script>
-<div class='form-Dl' align="center">
+
+ <div class='form-Dl' align="center">
 
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
@@ -248,4 +247,6 @@
 	<?php
 		require('Call/Funciones/ingresarin.php');	
 	?>
+
+    
 

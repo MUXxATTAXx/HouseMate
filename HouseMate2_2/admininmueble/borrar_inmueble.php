@@ -9,13 +9,34 @@
         
 	</div>
 </div>
+<div id="delete" class="modalDialog2">
+
+	<div>
+		<div  class='form-D2'>
+		<a href="#close" title="Close" class="close">X</a>
+		           <div class="modal-header">
+               
+                    <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p><?php echo $lang['Xdelete']; ?></p>
+                    <p><?php echo $lang['Fdelete']; ?></p>
+                    <p class="debug-url"></p>
+					 <button name='eliminar' type="submit" class="btn btn-default btn-block" ><?php echo($lang['Salir']); ?>
+					 </button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
+                </div>
+                
+                
+		</div>
+	
+		</div>
+</div>
     <?php
-    mysql_query("SET NAMES 'utf8'");
-
-
-		if (isset($_POST['destruiere']))
+	    mysql_query("SET NAMES 'utf8'");
+		if (isset($_POST['eliminar']))
 		{
-			$ideli = trim($_POST["destruiere"]);
+			$ideli = trim($_POST["eliminar"]);
 			mysql_query("SET NAMES 'utf8'");
 			$consulta = "SELECT * FROM inmueble WHERE IdInmueble = '$ideli'";
 			$cs=mysql_query($consulta);
@@ -50,18 +71,12 @@
 				</script>";
 			}
 		}
-		else
-		{
-			echo $lang['error5'];
-			echo "<script> 
-				location.replace('crear_inmueble.php'); 
-				</script>";
-		}
+
     
 
 ?>	
 <?php
-    mysql_query("SET NAMES 'utf8'");
+
     $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
     $cs=mysql_query($consulta);
 	$know = "";
