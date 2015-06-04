@@ -13,15 +13,14 @@ function letras(e){
                   }
             }
             if(letras.indexOf(teclado)==-1 && !teclado_especial){
-<<<<<<< HEAD
                 document.getElementById("validacion1").innerHTML = "Letter only.";
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letter only.";
-=======
+
                 document.getElementById("validacion1").innerHTML = "Letters only.";
                 return false;
                 document.getElementById("validacion2").innerHTML = "Letters only.";
->>>>>>> origin/master
+
                 return false;
             }
             else    

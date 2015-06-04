@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include ("../Lenguaje/lenguaje.php");
     $nombre = trim($_POST['nombre']);
     $apellido = trim($_POST['apellido']);
     $fechanac = $_POST['fechanac'];
@@ -25,13 +26,13 @@
 				$result = mysql_query($query);
 				if(mysql_num_rows($result) > 0)
 				{
-					echo $lang['ErUsuarioYa'];
+					echo "<span class='label label-important'>".$lang['ErUsuarioYa']."</span>";
 				}
 				$query2 = "Select correo FROM tbusuario WHERE correo ='$correo'";
 				$result2 = mysql_query($query2);
 				if(mysql_num_rows($result2) > 0)
 				{
-					echo $lang['ErCorreoya'];	
+					echo "<span class='label label-important'>" .$lang['ErCorreoya']."</span>";	
 				}
 				else
 				{
@@ -44,18 +45,18 @@
 						$tipo = 4;
 					} 	
 					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',NULL)";
-					echo 'Usuario ingresado';
+					echo "<span class='label label-success'>".$lang['Uingre']."</span>";
 					mysql_query($consulta);
 				}
 			}
 			else
 			{
-				echo 'contraseña incorrecta';
+				echo "<span class='label label-important'>".$lang['error-contra']."</span>";
 			}
 		}
 		else
 		{
-		echo 'Campos vacios en Registrarse';
+		echo "<span class='label label-important'>".$lang['blank']."</span>";
 		}
 }
 ?>
