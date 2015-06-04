@@ -110,7 +110,7 @@
 																			   
 			});
 </script>
-<div id="mesangemostra" class="label label-success"></div>
+<center><div id="mesangemostra"></div></center>
 </form>	
 
 

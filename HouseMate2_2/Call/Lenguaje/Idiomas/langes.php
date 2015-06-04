@@ -105,6 +105,7 @@ $lang['Xdelete'] = "Esta en proceso de borrar un elemento, este proceso es inrre
 $lang['Fdelete'] = "Desea continuar?";
 $lang['quick'] = "Buscador";
 $lang['Uingre'] = "Usuario creado";
+$lang['Eliminado-Usuario'] = 'User eliminado';
 
 //Errores y faltas
 $lang['missing'] =  'Ingrese todos los campos de información';
@@ -118,6 +119,7 @@ $lang['error-contra'] = "Contraseñas no coinciden";
 $lang['modificar-exito'] = "¡Exito! Cambios agregados.";
 $lang['modificar-exito2'] = "¡Exito! Cambios y nueva contraseña agregada.";
 $lang['blank'] = "Espacios en blanco";
+$lang['Eliminado-Usuario-error'] = 'El usuario no fue eliminado';
 
 //Titulos
 $lang['regis'] = "Crear Cuenta";

@@ -42,7 +42,9 @@ $lang['Crear-Usuario'] = 'Create user';
 $lang['Ver-Usuario'] = 'View users';
 $lang['Modificar-Usuario'] = 'Modify user';
 $lang['Eliminar-Usuario'] = 'Delete user';
-$lang['Uingre'] = "User succesfully insert";
+$lang['Eliminado-Usuario'] = 'User deleted';
+
+$lang['Uingre'] = "User succesfully inserted";
 $lang['Codigo'] = 'Cod';
 $lang['Modificar'] = 'Modify';
 $lang['Eliminar'] = 'Delete';
@@ -119,7 +121,7 @@ $lang['error-contra'] = "Passwords don't match";
 $lang['modificar-exito'] = "Sucess! Changes added.";
 $lang['modificar-exito2'] = "Sucess! Changes and new password added.";
 $lang['blank'] = "Blank Spaces";
-
+$lang['Eliminado-Usuario-error'] = 'The user was not deleted';
 
 //Titulos
 $lang['regis'] = "Sign Up";

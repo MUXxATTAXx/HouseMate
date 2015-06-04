@@ -74,17 +74,18 @@
 				error: function(){
 					  alert("error petición ajax");
 				},
-				success: function(data){                                                    
-					  $("#resultadoinsert").empty();
-					  $("#resultadoinsert").append(data);
-						$("#nombre").val() = "";
-						$("#apellido").val() = "";
-						$("#fechanac").val() = "";      
-						$("#lowerme").val() = "";      
-						$("#user").val() = "";      
-						$("#contra").val() ="";  
-						$("#contra2").val() = ""; 
-						$("#tiposu").val() = "";
+				success: function(data){  
+					$("#nombre").val("");
+					$("#apellido").val("");
+					$("#fechanac").val("");      
+					$("#lowerme").val("");      
+					$("#user").val("");      
+					$("#contra").val("");  
+					$("#contra2").val(""); 
+					$("#tiposu").val("");
+					$("#resultadoinsert").empty();
+					$("#resultadoinsert").append(data);
+						
 						}
 				  });
 															   

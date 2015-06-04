@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include ("../Lenguaje/lenguaje.php");
+
     $nombre = trim($_POST['nombre']);
     $apellido = trim($_POST['apellido']);
     $fechanac = $_POST['fechanac'];
@@ -17,7 +17,7 @@
 		$con = mysql_connect('localhost','root', '');
 		mysql_select_db('bdhousemate', $con);
 		mysql_query("Set Names 'utf8'");
-		
+		include ("../Lenguaje/lenguaje.php");
 		if($nombre != "" and $apellido != "" and $fechanac != "" and $correo != "" and $usuario != "" and $contra1 != "" and $contra2 != "" and $tipo != 0)
 		{
 			if($contra1 == $contra2)
