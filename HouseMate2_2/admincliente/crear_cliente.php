@@ -43,7 +43,7 @@
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Confirmar']); ?>:</label>
-			<input class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
+			<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
 		</div>
 	</div>
 	
@@ -54,11 +54,27 @@
 			</div>
 		</div>
 		<br><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span>
+    <span class="label label-warning" id="contra-error"></span>
 </div>
-
-
-
 </div>
+<script>
+function password(){
+    var pass1 = document.getElementById('contra');
+    var pass2 = document.getElementById('contra2');
+    var message = document.getElementById('contra-error');
+     if(pass1.value == pass2.value){
+
+        message.innerHTML = "Passwords Match!"
+        message.className = "label label-success"
+    }else{
+        message.innerHTML = "Passwords Do Not Match!"
+        message.className = "label label-warning"
+    }
+    if(pass2.value == ""){
+        message.innerHTML = ""
+    }
+}
+</script>
 
 
 
