@@ -96,12 +96,9 @@
                     },
                     success: function(data){                                                    
                           $("#resultado").empty();
-                          $("#resultado").append(data);
-                                                             
+                          $("#resultado").append(data);                         
 							}
-					  });
-																						  
-																				   
+					  });															   
 				});
 			$('#select').on('change', function() {
 				//obtenemos el texto introducido en el campo de búsqueda
