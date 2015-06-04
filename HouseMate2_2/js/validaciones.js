@@ -13,9 +13,9 @@ function letras(e){
                   }
             }
             if(letras.indexOf(teclado)==-1 && !teclado_especial){
-                document.getElementById("validacion1").innerHTML = "Solo letras";
+                document.getElementById("validacion1").innerHTML = "Letters only.";
                 return false;
-                document.getElementById("validacion2").innerHTML = "Solo letras";
+                document.getElementById("validacion2").innerHTML = "Letters only.";
                 return false;
             }
             else    
@@ -40,7 +40,7 @@ function num(e){
                   }
             }
             if(letras.indexOf(teclado)==-1 && !teclado_especial){
-                document.getElementById("validacion-num1").innerHTML = "Solo Números";
+                document.getElementById("validacion-num1").innerHTML = "Numbers only.";
                 return false;  
             }
             else{
