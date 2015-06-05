@@ -106,7 +106,7 @@
     echo"</table>";
 ?>
 <span id="spanme"></span>
-<script type="text/javascript">                                                      
+<script type="text/javascript">
 		function obtener(yo) {
 		document.getElementById('spanme').innerHTML = yo;
 }

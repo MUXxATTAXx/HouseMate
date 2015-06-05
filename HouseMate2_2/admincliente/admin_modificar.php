@@ -255,7 +255,7 @@ function myFunction() {
 	// elem6.value = seis;
 	}
 	}
-</script>   
+</script>
         </div>  
 
 	</form> 
