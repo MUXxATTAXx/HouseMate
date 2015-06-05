@@ -105,8 +105,13 @@ function myFunction() {
 	elem4.value = cuatro;
 	// elem6.value = seis;
 	}
+<<<<<<< HEAD
 	} */
 </script>   
+=======
+	}
+</script>
+>>>>>>> origin/master
         </div>  
 
 	</form> 
