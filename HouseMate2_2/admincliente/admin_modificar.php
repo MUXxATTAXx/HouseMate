@@ -2,7 +2,7 @@
     
     <form action="#" method="POST">
 	<div class="row">
-	<label><?php echo $lang['Codigo'] ?>:</label>
+	<label><?php echo $lang['Usuario'] ?>:</label>
 		<div class="col-sm-2 col-centered">
             <select  id="thestart" class='form-control' onchange="myFunction()">
             <option onload="selected"></option>

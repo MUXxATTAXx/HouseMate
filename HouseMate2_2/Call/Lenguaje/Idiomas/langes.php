@@ -19,7 +19,7 @@ $lang['Vision'] = 'Visi&oacute;n';
 $lang['Vision1'] = 'Trascender en el mercado salvadoreño cambiando la forma en que realizamos las transacciones en línea, mediante una plataforma dedicada exclusivamente en la venta y/o renta de inmuebles de cualquier tipo  y a su promoción entre los usuarios de la plataforma y con los visitantes de esta.';
 $lang['QueEs'] = '¿Qué es House Mate?';
 $lang['QueEs1'] = 'House Mate es una plataforma web que permite la difusión y promoción de inmuebles para su venta y renta entre los usuarios que interactúan dentro de la aplicación web. Para ello los visitantes tienen la opción de registrarse gratuitamente a la plataforma para gozar de nuestros servicios.';
-
+$lang['edit'] = "Editar";
 $lang['Institucion'] = 'Mas sobre la institucion';
 $lang['Contactenos'] = 'Cont&aacute;ctenos';
 $lang['Novedades'] = 'Novedades';

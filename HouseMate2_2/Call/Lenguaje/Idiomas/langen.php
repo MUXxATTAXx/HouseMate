@@ -54,6 +54,7 @@ $lang['Ver-Inmuebles'] = 'Show Properties';
 $lang['Modificar-Inmuebles'] = 'Modify Properties';
 $lang['Eliminar-Inmuebles'] = 'Delete Properties';
 $lang['Eliminares'] = "Delete";
+$lang['edit'] = "Edit";
 $lang['oldp'] = "Current password";
 $lang['newp'] = "New password";
 $lang['Offer'] = "Offer";
