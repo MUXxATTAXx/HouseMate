@@ -82,14 +82,20 @@
 					$("#user").val("");      
 					$("#contra").val("");  
 					$("#contra2").val(""); 
-					$("#tiposu").val("");
+					$("#tiposu").val(1);
 					$("#resultadoinsert").empty();
 					$("#resultadoinsert").append(data);
-						
+					loadData();	
 						}
 				  });
 															   
 			});
 </script>
+<script>
+	$(window).load(function()  {
+				loadData();
+			});
+</script>
+<span id="spanme"></span>
 </body>
 </html>
