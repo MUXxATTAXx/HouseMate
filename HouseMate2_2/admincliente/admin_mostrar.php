@@ -13,9 +13,7 @@
                 <p><?php echo $lang['Xdelete']; ?> </p>
                 <p><?php echo $lang['Fdelete']; ?> </p>
                 <p class="debug-url"></p>
-				
             </div> 
-     
       </div>
       <div class="modal-footer">
            <button class='btn btn-default' id="deleteuser" data-dismiss="modal"><?php echo($lang['Salir']);?></button>
@@ -23,7 +21,6 @@
 			<a type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></a>
       </div>
     </div>
-
   </div>
 </div>
 <script type="text/javascript">                                                      
@@ -66,13 +63,11 @@
     });
   };
 </script>
-<<<<<<< HEAD
 <div id="thetablejq">
 </div>
-
-<script type="text/javascript">                                                      
-=======
+                                                  
 <?php
+/*
     include("conexion.php");
     mysql_query("SET NAMES 'utf8'");
     $consulta = "SELECT * FROM tbusuario where idUsuario > '0' ORDER BY `tbusuario`.`idUsuario` ASC";
@@ -119,11 +114,10 @@
 		<td><a onclick='cambiar(this.id)' href='#me3' data-toggle='tab' class='btn btn-warning' id='".$row['idUsuario']."'><i class='glyphicon glyphicon-edit'></i></a></td>
 		<td><a data-toggle='modal' data-target='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['idUsuario']."'><i class='glyphicon glyphicon-remove'></i></a></td></tr>";
     }
-    echo"</table>";
+    echo"</table>"; */
 ?>
 <span id="spanme"></span>
 <script type="text/javascript">
->>>>>>> origin/master
 		function obtener(yo) {
 		document.getElementById('spanme').innerHTML = yo;
 }
@@ -136,7 +130,6 @@
 			d.className = "tab-pane fade active in";
 			
 }
-
 </script>
 
 <center><div id="mesangemostra"></div></center>
