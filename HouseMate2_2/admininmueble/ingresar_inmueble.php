@@ -5,7 +5,7 @@
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>
 <div class="row row-centered">
-	<div class="form-group col-xs-4">
+	<div class="form-group col-xs-3">
 		<label><?php echo $lang['vr'] ?>:</label>
 			<select name="selector" class='form-control whitecover'>
 				<option value="0"><?php echo $lang['Nada'] ?></option>
@@ -13,7 +13,7 @@
 				<option value="2"><?php echo $lang['Renta']?></option>
 			</select>
 	</div>
-	<div class="form-group col-xs-4">
+	<div class="form-group col-xs-3">
 			  <label><?php echo $lang['tm'] ?>:</label>
 			</span><select name="selector2" class='form-control whitecover'>
 				<option value="0"><?php echo $lang['Nada'] ?></option>
@@ -21,7 +21,7 @@
 				<option value="2"><?php echo $lang['Urbana']?></option>
 			</select>
 	</div>
-	<div class="form-group col-xs-4">
+	<div class="form-group col-xs-6">
 		<label><?php echo $lang['Precio']?>:</label>
 		<div class="input-group">
 			 <span class="input-group-addon">$</span>
@@ -32,24 +32,22 @@
 </div>
 <div class="row row-centered">
 	<center>
-		<div class="form-group col-xs-12">
-		<label><?php echo $lang['Descripcion'] ?>:</label>
-	<textarea rows="2" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
-	</div>
-	</center>
-</div>
-<div class="row row-centered">
-	<center>
 		<?php require ("Call/Funciones/select.php") ?>
 	</center>
 </div>
 <div class="row row-centered">
-	<center>
-		<div class="form-group col-xs-12">
+    <center>
+		<div class="form-group col-xs-6">
 		<label><?php echo $lang['Direccion'] ?>:</label>
 			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
 	</div>
-</center>
+    </center>
+	<center>
+		<div class="form-group col-xs-6">
+		<label><?php echo $lang['Descripcion'] ?>:</label>
+	<textarea rows="2" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
+	</div>
+	</center>
 </div>
 	<label><?php echo $lang['Imagen']  ?>:</label>
 	<div  class="onlyme">
