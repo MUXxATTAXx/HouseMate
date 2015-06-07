@@ -176,4 +176,12 @@ $lang['mejorar_exito'] = "¡Cuenta mejorada!";
 $lang['mejorar_error'] = "Error en la consulta.";
 $lang['mejorar_error2'] = "Usuario ya mejorado";
 $lang['tipo'] = "Tipo";
+
+//Quick Finder/Buscador
+$lang['Buscar'] = "Buscar: ";
+$lang['Buscar2'] = "Buscar casas, apartamentos, condominios...";
+$lang['Precio-Max'] = "Precio M&aacute;ximo";
+$lang['Tipo-Transa'] = "Tipo de Transacci&oacute;n:";
+$lang['Tipo-Prop'] = "Tipo de Bien Ra&iacute;z";
+//$lang['Etiqueta']
 ?>

@@ -179,4 +179,13 @@ $lang['mejorar_exito'] = "¡Account upgraded!";
 $lang['mejorar_error'] = "Error.";
 $lang['mejorar_error2'] = "User has been already upgraded";
 $lang['tipo'] = "Type";
+
+//Quick Finder/Buscador
+$lang['Buscar'] = "Search: ";
+$lang['Buscar2'] = "Look for houses, apartments and other real estate...";
+$lang['Precio-Max'] = "Maximum Price";
+$lang['Tipo-Transa'] = "Transaction Type";
+$lang['Tipo-Prop'] = "Real Estate Type";
+//$lang['Etiqueta']
+?>
 ?>

@@ -129,4 +129,97 @@
 																		   
 		});
 		</script>
+<div id="homepage9">
+    <div id="barrabusqueda9">
+        <br>
+        <div class="row row-centered">
+            <div class="col-sm-2 col-centered">
+                <label><?php echo $lang['Buscar']; ?></label>
+            </div>
+            <div class="col-sm-6 col-centered">
+                <input placeholder="<?php echo $lang['Buscar2']; ?>" class="form-control input-sm" type="text" id="inputSmall">
+            </div>
+        </div>
+        <br>
+    </div>
+    <div id="BarraLateral9">
+           <div class="row row-centered">
+                <div class="row">
+                    <hr>
+                </div>
+                <div class="col-sm-10 col-centered">
+                    <div class="form-group">
+                      <label class="control-label"><?php echo $lang['Precio-Max']; ?></label>
+                      <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-centered">
+                    <br>
+                    <p><?php echo $lang['Tipo-Transa']; ?></p>
+                    <select class="form-control">
+                    </select>
+                </div>
+                <div class="col-sm-10 col-centered">
+                    <br>
+                    <p><?php echo $lang['Tipo-Prop']; ?></p>
+                    <select class="form-control">
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <hr>
+            </div>
+            <div class="row row-centered">
+                <p><?php echo $lang['Etiqueta']; ?></p>
+                <div class="row row-centered">
+                    <div class="col-sm-4 col-centered">
+                        <input placeholder="<?php echo$lang['Cuartos']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Salas']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Cocinas']; ?>" type="number" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Baños']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Comedores']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Jardines']; ?>" type="number" class="form-control">
+                    </div>
+                </div>
+                <br>    
+                <div class="row">
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Cocheras']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Terraza']; ?>" type="number" class="form-control">
+                    </div>
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Sotanos']; ?>" type="number" class="form-control">
+                    </div>
+                </div>
+                <br>
+                <div class="row row-centered">
+                    <div class="col-sm-4 col-centered">
+                         <input placeholder="<?php echo $lang['Piscinas']; ?>" type="number" class="form-control">
+                    </div>  
+                </div>
+            </div>
+        <br>
+    </div>
+    <div id="contenido9">
+        <h2>No hay resultados que mostrar. :(</h2>
+    </div>
+</div>
 </body>
