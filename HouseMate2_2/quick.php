@@ -33,7 +33,7 @@
 ?>
 </head>
 <body id="intro">
-<a class="btn btn-sm btn-primary"><?php echo $lang['quick'] ?></a>
+<a class="btn btn-sm btn-primary"><?php echo $lang['quick']; ?></a>
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-body">

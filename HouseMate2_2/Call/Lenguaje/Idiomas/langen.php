@@ -188,4 +188,3 @@ $lang['Tipo-Transa'] = "Transaction Type";
 $lang['Tipo-Prop'] = "Real Estate Type";
 //$lang['Etiqueta']
 ?>
-?>
