@@ -77,38 +77,6 @@ $( "#thestart" ).change(function() {
 });
 </script>
 
-    <script>
-	/*
-function myFunction() {
-    var infor = document.getElementById("thestart").value;
-	var table = document.getElementById("here");
-	var row = table.rows[infor];
-	var uno = row.cells[1].innerHTML;
-	var dos = row.cells[2].innerHTML;
-	var tres = row.cells[3].innerHTML;
-	var cuatro = row.cells[4].innerHTML;
-	// var seis = row.cells[6].innerHTML;
-	var elem1 = document.getElementById("b3");
-	var elem2 = document.getElementById("b2");
-	var elem3 = document.getElementById("b1");
-	var elem4 = document.getElementById("b4");
-	// var elem5 = document.getElementById("b6");
-	if(infor == 0)
-	{
-		
-	}
-	else
-	{
-	elem1.value = uno;
-	elem2.value = dos;
-	elem3.value = tres;
-	elem4.value = cuatro;
-	// elem6.value = seis;
-	}
-	} */
-</script>   
-	}
-</script>
         </div>  
 
 	</form> 
