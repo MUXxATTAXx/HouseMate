@@ -123,6 +123,7 @@ $lang['modificar-exito'] = "Sucess! Changes added.";
 $lang['modificar-exito2'] = "Sucess! Changes and new password added.";
 $lang['blank'] = "Blank Spaces";
 $lang['Eliminado-Usuario-error'] = 'The user was not deleted';
+$lang['notheremate'] = "The user does not exist";
 
 //Titulos
 $lang['regis'] = "Sign Up";

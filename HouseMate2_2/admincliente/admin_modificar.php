@@ -1,10 +1,10 @@
 <div class='form-Dl' align='center'> 
-    
-    <form action="#" method="POST">
 	<div class="row">
-	<label><?php echo $lang['Usuario'] ?>:</label>
-		<div class="col-sm-2 col-centered">
-            <input id="thestart" class='form-control' onchange="myFunction()">
+	<div class="col-sm-2 col-centered">
+		<label><?php echo $lang['Usuario'] ?>:</label>
+	</div>
+		<div class="col-sm-6 col-centered">
+            <input id="thestart" class='form-control'>
 		</div>
 	</div>
 	<hr>
@@ -49,34 +49,72 @@
 	<br>
 	<div class="col-sm-6 col-centered">
 	
-		<button class='btn btn-primary btn-block' type='submit' name='registrar2' value="modificar" ><?php echo $lang['Modificar-Usuario'] ?></button>
+		<button id="adminmodificar" class='btn btn-primary btn-block'><?php echo $lang['Modificar-Usuario'] ?></button>
 		</div>
-<hr><span class="label label-danger" id="validacion2"></span><span class="label label-danger" id="resultmodiadmin"></span>
-<script>
-$( "#thestart" ).change(function() {
-	 usuario = $("#thestart").html();
-		  //ingresar usuario					  
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/checkmodificar.php",
-				data: "usuario="+usuario,
-				dataType: "html",
-				beforeSend: function(){
-					  //imagen de carga
-					  $("#spanme").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){                                                    
-						$("#resultmodiadmin").empty();
-						$("#resultmodiadmin").append(data);
-						loadData();							 
-						}
-				});	
+<hr><div id="resultmodiadmin"></div>
+
+
+<script type="text/javascript">
+$("#thestart").change(function() {
+	usuario = $("#thestart").val();
+	//ingresar usuario					  
+	$.ajax({
+		type: "POST",
+		url: "Call/Funciones/checkmodificar.php",
+		data: "usuario="+usuario,
+		dataType: 'html',
+        cache: false,
+		beforeSend: function(){
+			  //imagen de carga
+			  $("#resultmodiadmin").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+		},
+		error: function(){
+			  alert("error petición ajax");
+		},
+		success: function(data){                                                    
+					$("#resultmodiadmin").empty();
+					$("#resultmodiadmin").append(data);
+			}
+	});	
 });
+function unison(){
+	usuario = $("#thestart").val();
+    $.ajax({   
+    type: 'POST',   
+    url: 'Call/Funciones/checkmodificar.php',   
+    data: "usuario="+usuario,
+	dataType: 'html',
+    cache: false,
+    success: function(data) {
+				$("#resultmodiadmin").empty();
+				$("#resultmodiadmin").append(data);	
+        },
+    });
+};
+$("#adminmodificar").click(function() {
+		nombre = $("#b2").val();
+		apellido = $("#b3").val();
+		correo = $("#b1").val();
+		fecha = $("#b4").val();
+		tipo = $("#b6").val();
+		$.ajax({   
+		type: 'POST',   
+		url: 'Call/Funciones/modificaradmin.php',   
+		data: "nombre="+nombre+"&apellido="+apellido+"&correo="+correo+"&fecha="+fecha+"&tipo="+tipo+"&contraprevia="+contraprevia,
+		dataType: 'html',
+		beforeSend: function(){
+			  //imagen de carga
+			  $("#resultmodiadmin").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+		},
+		error: function(){
+			  alert("error petición ajax");
+		},
+		success: function(data){                                                    
+					$("#resultmodiadmin").empty();
+					$("#resultmodiadmin").append(data);
+			}
+	});	
+});
+
 </script>
-
-        </div>  
-
-	</form> 
+</div>  

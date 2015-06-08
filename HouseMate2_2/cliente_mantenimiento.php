@@ -90,8 +90,7 @@
 				  });
 															   
 			});
-</script>
-<script>
+
 	$(window).load(function()  {
 				loadData();
 			});
