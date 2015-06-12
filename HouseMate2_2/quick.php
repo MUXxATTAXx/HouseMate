@@ -149,10 +149,10 @@
                 </div>
                 <div class="col-sm-10 col-centered">
                     <div class="form-group">
-                      <label class="control-label"><?php echo $lang['Precio-Max']; ?></label>
+                      <label class="control-label"><?php echo $lang['Precio-Max']; ?></label><span class="label label-danger" id="validacion-num1"></span>
                       <div class="input-group">
                         <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control">
+                        <input onkeypress="return num(event)" type="text" class="form-control">
                       </div>
                     </div>
                 </div>
@@ -160,12 +160,18 @@
                     <br>
                     <p><?php echo $lang['Tipo-Transa']; ?></p>
                     <select class="form-control">
+                        <option selected></option>
+                        <option value="1"><?php echo $lang['Venta'];?></option>
+                        <option value="2"><?php echo $lang['Renta'];?></option>
                     </select>
                 </div>
                 <div class="col-sm-10 col-centered">
                     <br>
                     <p><?php echo $lang['Tipo-Prop']; ?></p>
                     <select class="form-control">
+                        <option selected></option>
+                        <option value="1"><?php echo $lang['Urbana'];?></option>
+                        <option value="2"><?php echo $lang['Rustico'];?></option>
                     </select>
                 </div>
             </div>
@@ -176,43 +182,43 @@
                 <p><?php echo $lang['Etiqueta']; ?></p>
                 <div class="row row-centered">
                     <div class="col-sm-4 col-centered">
-                        <input placeholder="<?php echo$lang['Cuartos']; ?>" type="number" class="form-control">
+                        <input type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo$lang['Cuartos']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Salas']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Salas']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Cocinas']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Cocinas']; ?>" type="text" class="form-control">
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Baños']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Baños']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Comedores']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Comedores']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Jardines']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Jardines']; ?>" type="text" class="form-control">
                     </div>
                 </div>
                 <br>    
                 <div class="row">
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Cocheras']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Cocheras']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Terraza']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Terraza']; ?>" type="text" class="form-control">
                     </div>
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Sotanos']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Sotanos']; ?>" type="text" class="form-control">
                     </div>
                 </div>
                 <br>
                 <div class="row row-centered">
                     <div class="col-sm-4 col-centered">
-                         <input placeholder="<?php echo $lang['Piscinas']; ?>" type="number" class="form-control">
+                         <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="<?php echo $lang['Piscinas']; ?>" type="text" class="form-control">
                     </div>  
                 </div>
             </div>
@@ -222,4 +228,5 @@
         <h2>No hay resultados que mostrar. :(</h2>
     </div>
 </div>
+<script src="js/validaciones.js" type="text/javascript"></script>
 </body>

@@ -39,7 +39,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Contra']); ?>:</label>
-			<input class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" />
+			<input  onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" />
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Confirmar']); ?>:</label>

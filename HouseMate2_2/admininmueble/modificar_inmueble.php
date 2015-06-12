@@ -10,51 +10,50 @@
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>
 		   <div class="row row-centered">
-				<div id="nece1" class="form-group col-xs-4">
-					<label><?php echo $lang['vr'] ?>:</label>
-						<select id="selecta" name="selectora" class='form-control'>
-							<option value="0"><?php echo $lang['Nada'] ?></option>
-							<option value="1"><?php echo $lang['Venta']?></option>
-							<option value="2"><?php echo $lang['Renta']?></option>
-						</select>
-						</div>
-				<div id="nece2" class="form-group col-xs-4">
-						  <label><?php echo $lang['tm'] ?>:</label>
-						</span><select id="selecta2" name="selectora2" class='form-control'>
-							<option value="0"><?php echo $lang['Nada'] ?></option>
-							<option value="1"><?php echo $lang['Rustico']?></option>
-							<option value="2"><?php echo $lang['Urbana']?></option>
-						</select>
-				</div>
-				<div class="form-group col-xs-4">
-					<label><?php echo $lang['Precio']?>:</label>
-					<div class="input-group">
-						 <span class="input-group-addon">$</span>
-						 <input onkeypress="return num(event)" id="modinece" type="number" class='form-control' min="0" step="1" name="precioa" placeholder='<?php echo $lang['Precio']?>'>
-						 <span class="input-group-addon">.00</span>
-					  </div>
-					
-				</div>
-			</div>
-			<div class="row row-centered">
-				<center>
-				<div class="form-group col-xs-12">
-						<label><?php echo $lang['Descripcion'] ?>:</label>
-					<textarea id="modidescrip" rows="2" class='form-control' type='text' name='descripa' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
-				</div>
-				</center>
-			</div>
-			<div class="row row-centered">
-				<?php include "Call/Funciones/Select3.php" ?>
-			</div>
-			<div class="row row-centered">
-			<center>
-		<div class="form-group col-xs-12">
-		<label><?php echo $lang['Direccion'] ?>: </label>
-			<textarea rows="2" id="modidirre" class='form-control' type='text' name='dirreciona'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
-			</div>
-		</center>
-		</div>
+	<div class="form-group col-xs-3">
+		<label><?php echo $lang['vr'] ?>:</label>
+			<select name="selector" class='form-control whitecover'>
+				<option value="0"><?php echo $lang['Nada'] ?></option>
+				<option value="1"><?php echo $lang['Venta']?></option>
+				<option value="2"><?php echo $lang['Renta']?></option>
+			</select>
+	</div>
+	<div class="form-group col-xs-3">
+			  <label><?php echo $lang['tm'] ?>:</label>
+			</span><select name="selector2" class='form-control whitecover'>
+				<option value="0"><?php echo $lang['Nada'] ?></option>
+				<option value="1"><?php echo $lang['Rustico']?></option>
+				<option value="2"><?php echo $lang['Urbana']?></option>
+			</select>
+	</div>
+	<div class="form-group col-xs-6">
+		<label><?php echo $lang['Precio']?>:</label>
+		<div class="input-group">
+			 <span class="input-group-addon">$</span>
+			 <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" name="precio" placeholder='<?php echo $lang['Precio']?>'>
+			 <span class="input-group-addon">.00</span>
+		  </div>
+	</div>
+</div>
+<div class="row row-centered">
+	<center>
+		<?php require ("Call/Funciones/select.php") ?>
+	</center>
+</div>
+<div class="row row-centered">
+    <center>
+		<div class="form-group col-xs-6">
+		<label><?php echo $lang['Direccion'] ?>:</label>
+			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+	</div>
+    </center>
+	<center>
+		<div class="form-group col-xs-6">
+		<label><?php echo $lang['Descripcion'] ?>:</label>
+	<textarea rows="2" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
+	</div>
+	</center>
+</div>
 			<div class="row row-centered">
 				<div class="form-group col-xs-12">			
 					<label><?php echo $lang['Imagen']  ?>:</label>
