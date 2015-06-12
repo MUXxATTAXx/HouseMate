@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" >
-
+<?php require ("Call/Lenguaje/lenguaje.php"); ?>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
    <div class="container-fluid">
     <div class="navbar-header">
