@@ -17,7 +17,6 @@
 	}
 	function error()
 	{
-		include("../../conexion.php");
 		include("../Lenguaje/lenguaje.php");
 		echo "<span class='label label-warning'>".$lang['errornada']."</span>";
 	}

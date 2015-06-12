@@ -7,7 +7,7 @@
 <div class="row row-centered">
 	<div class="form-group col-xs-3">
 		<label><?php echo $lang['vr'] ?>:</label>
-			<select name="selector" class='form-control whitecover'>
+			<select id="selector" class='form-control whitecover'>
 				<option value="0"><?php echo $lang['Nada'] ?></option>
 				<option value="1"><?php echo $lang['Venta']?></option>
 				<option value="2"><?php echo $lang['Renta']?></option>
@@ -15,7 +15,7 @@
 	</div>
 	<div class="form-group col-xs-3">
 			  <label><?php echo $lang['tm'] ?>:</label>
-			</span><select name="selector2" class='form-control whitecover'>
+			</span><select id="selector2" class='form-control whitecover'>
 				<option value="0"><?php echo $lang['Nada'] ?></option>
 				<option value="1"><?php echo $lang['Rustico']?></option>
 				<option value="2"><?php echo $lang['Urbana']?></option>
@@ -25,7 +25,7 @@
 		<label><?php echo $lang['Precio']?>:</label>
 		<div class="input-group">
 			 <span class="input-group-addon">$</span>
-			 <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" name="precio" placeholder='<?php echo $lang['Precio']?>'>
+			 <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="precio" placeholder='<?php echo $lang['Precio']?>'>
 			 <span class="input-group-addon">.00</span>
 		  </div>
 	</div>
@@ -39,13 +39,13 @@
     <center>
 		<div class="form-group col-xs-6">
 		<label><?php echo $lang['Direccion'] ?>:</label>
-			<textarea rows="2" class='form-control' type='text' name='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
+			<textarea rows="2" class='form-control' type='text' id='dirrecion'  placeholder='<?php echo $lang['Direccion'] ?>'></textarea>
 	</div>
     </center>
 	<center>
 		<div class="form-group col-xs-6">
 		<label><?php echo $lang['Descripcion'] ?>:</label>
-	<textarea rows="2" class='form-control' type='text' name='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
+	<textarea rows="2" class='form-control' type='text' id='descrip' placeholder='<?php echo $lang['Descripcion'] ?>'></textarea>
 	</div>
 	</center>
 </div>
@@ -225,7 +225,8 @@
 </div>
 <br>
 	 <div class="col-sm-6 col-centered">
-    <button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
+    <a class='btn btn-primary btn-block' type='submit' id='boto' value="Insert"><?php echo $lang['insert']?></a>
+	<span id="resultadoinsert"></span>
 	</div>
      	</div>   
 			<script>
@@ -242,9 +243,46 @@
         }
     }
 	</script>
-	<?php
-		require('Call/Funciones/ingresarin.php');	
+	<?php 
+	/*
+		require('Call/Funciones/ingresarin.php');
+	*/
 	?>
 
     
-
+<script type="text/javascript">
+ //comprobamos si se pulsa una boton
+        $("#boto").click(function(){
+                                     
+		  //obtenemos el texto introducido
+			VR = $("#selector").val();
+			Tpro = $("#selector2").val();
+			precio = $("#precio").val();      
+			Departamentos = $("#Departamento").val();      
+			Municipios = $("#Municipio").val();      
+			dirrecion = $("#dirrecion").val();  
+			descrip = $("#descrip").val(); 
+			imagen = $("#imagenfea").val();
+		  //ingresar usuario
+																			  
+		  $.ajax({
+				type: "POST",
+				url: "Call/Funciones/ingresarin.php",
+				data: "VR="+VR+"&Tpro="+Tpro+"&precio="+precio+"&Departamentos="+Departamentos+"&Municipios="+Municipios+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagen="+imagen,
+				dataType: "html",
+				beforeSend: function(){
+					  //imagen de carga
+					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				},
+				error: function(){
+					  alert("error petición ajax");
+				},
+				success: function(data){  
+					$("#resultadoinsert").empty();
+					$("#resultadoinsert").append(data);
+					
+						}
+				  });
+															   
+			});
+</script>

@@ -81,7 +81,6 @@ function unison(){
     });
 };
 $("#adminmodificar").click(function() {
-		var atLeastOneIsChecked = $('#checkArray :checkbox:checked').length > 0;
 		nombre = $("#b2").val();
 		apellido = $("#b3").val();
 		correo = $("#b1").val();
@@ -91,7 +90,6 @@ $("#adminmodificar").click(function() {
 		} else {
 		contraprevia = "no";
 		}
-		
 		tipo = $("#b6").val();
 		$.ajax({   
 		type: 'POST',   
