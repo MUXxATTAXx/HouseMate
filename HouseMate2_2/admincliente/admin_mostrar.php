@@ -23,55 +23,6 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">                                                      
-        //comprobamos si se pulsa una boton
-        $("#deleteuser").click(function(){
-                                     
-		  //obtenemos el texto introducido
-		  idre = $("#spanme").html();
-		  //ingresar usuario						  
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/admin_eliminar.php",
-				data: "idre="+idre,
-				dataType: "html",
-				beforeSend: function(){
-					  //imagen de carga
-					  $("#spanme").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){                                                    
-						$("#mesangemostra").empty();
-						$("#mesangemostra").append(data);
-						loadData();							 
-						}
-				  });															   
-			});
-	function loadData(){
-    $.ajax({   
-     type: 'POST',   
-     url: 'Call/Funciones/update.php',   
-     data: {LastName:"stuff", FirstName:"stuff"},
-    success: function(msg) {
-            $("#thetablejq").html(msg);
-        },
-    });
-  };
-  	function obtener(yo) {
-		document.getElementById('spanme').innerHTML = yo;
-}
-	function cambiar(yo) {
-			var changer = document.getElementById("thestart");
-			var d = document.getElementById("sd");
-			var e = document.getElementById("crear");
-			changer.value = yo;
-			e.className = "tab-pane fade";
-			d.className = "tab-pane fade active in";
-			unison();
-}
-</script>
 <div id="thetablejq">
 </div>
 <span id="spanme"></span>

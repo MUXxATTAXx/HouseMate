@@ -93,7 +93,7 @@
                     echo ($lang['mejorar_error2']);
                 }
                 else{
-                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id',NULL,'$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0')");        
+                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0')");        
                     if($consulta2){
                         echo($lang['mejorar_exito']);
                     }

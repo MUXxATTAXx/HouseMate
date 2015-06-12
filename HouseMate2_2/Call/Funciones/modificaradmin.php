@@ -5,10 +5,21 @@
 	$correo = $_POST['correo'];
 	$fecha = $_POST['fecha'];
 	$tipo = $_POST['tipo'];
-	$contraprevia $_POST['contraprevia'];
-	if(!empty($nombre) || !empty($apellido) || !empty($correo) || !empty($fecha) || !empty($tipo) || !empty($contraprevia))
+
+	if(!empty($nombre) || !empty($apellido) || !empty($correo) || !empty($fecha) || !empty($tipo))
 	{
 		modificar($nombre,$apellido,$correo,$fecha,$tipo);
+	}
+	else
+	{
+		error();
+		
+	}
+	function error()
+	{
+		include("../../conexion.php");
+		include("../Lenguaje/lenguaje.php");
+		echo "<span class='label label-warning'>".$lang['errornada']."</span>";
 	}
 	function modificar($nombre,$apellido,$correo,$fecha,$tipo) 
 	{
@@ -18,7 +29,7 @@
 		//Se validan si no son nulos los inputs
 		$maxc = 0;
 		$man="";
-		$a = $correo,;
+		$a = $correo;
 		$b = $nombre;
 		$c = $apellido;
 		$d = $fecha;
@@ -53,7 +64,7 @@
 						}
 						break;
 						case 4:
-						if (isset($_POST['contraprevia']))
+						if ($_POST['contraprevia'] == "yes")
 						{
 							$maxc++;
 							$man .= "e";
@@ -148,6 +159,6 @@
 			$nomina .= $final_string;
 			$nomina .= $Where;
 		$consultaq=mysql_query($nomina);
-		echo "<span class='label label-success'>modificado</span>";
+		echo "<span class='label label-success'>".$lang['modificar-exito']."</span>";
 	}
 ?>

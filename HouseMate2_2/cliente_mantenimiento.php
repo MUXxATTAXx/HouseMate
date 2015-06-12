@@ -43,58 +43,10 @@
 	include("admincliente/admin_modificar.php");
 	?>
 </div>
- <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-<script src="js/bootstrap-table.js" ></script>
+<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+<script src="js/bootstrap-table.js" type="text/javascript"></script>
 <script src="js/validaciones.js" type="text/javascript" ></script>
-
-<script type="text/javascript">                                                      
-        //comprobamos si se pulsa una boton
-        $("#ingresarstuff").click(function(){
-                                     
-		  //obtenemos el texto introducido
-		   nombre = $("#nombre").val();
-			apellido = $("#apellido").val();
-			fechanac = $("#fechanac").val();      
-			correo = $("#lowerme").val();      
-			user = $("#user").val();      
-			contra = $("#contra").val();  
-			contra2 = $("#contra2").val(); 
-			tiposu = $("#tiposu").val(); 
-		  //ingresar usuario
-																			  
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/registrar.php",
-				data: "nombre="+nombre+"&apellido="+apellido+"&fechanac="+fechanac+"&correo="+correo+"&user="+user+"&contra="+contra+"&contra2="+contra2+"&tiposu="+tiposu,
-				dataType: "html",
-				beforeSend: function(){
-					  //imagen de carga
-					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){  
-					$("#nombre").val("");
-					$("#apellido").val("");
-					$("#fechanac").val("");      
-					$("#lowerme").val("");      
-					$("#user").val("");      
-					$("#contra").val("");  
-					$("#contra2").val(""); 
-					$("#tiposu").val(1);
-					$("#resultadoinsert").empty();
-					$("#resultadoinsert").append(data);
-					loadData();	
-						}
-				  });
-															   
-			});
-
-	$(window).load(function()  {
-				loadData();
-			});
-</script>
+<script src="js/usuariom.js" type="text/javascript"></script>
 <span id="spanme"></span>
 </body>
 </html>

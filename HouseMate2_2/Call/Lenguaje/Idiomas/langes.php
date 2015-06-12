@@ -121,7 +121,7 @@ $lang['modificar-exito2'] = "¡Exito! Cambios y nueva contraseña agregada.";
 $lang['blank'] = "Espacios en blanco";
 $lang['Eliminado-Usuario-error'] = 'El usuario no fue eliminado';
 $lang['notheremate'] = "El usuario no existe";
-
+$lang['errornada'] = "No hay nada que modifciar";
 //Titulos
 $lang['regis'] = "Crear Cuenta";
 $lang['mis-inmuebles'] = "Mis Inmuebles";

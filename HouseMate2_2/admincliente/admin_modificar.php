@@ -32,9 +32,9 @@
 			<select id="b6" class="form-control" name="tiposu">
 				<option value="0"><?php echo $lang['Nada'] ?></option>
 				<option value="1"><?php echo $lang['Admin'] ?></option>
-				<option value="2"><?php echo $lang['Cliente'] ?> </option>
+				<option value="2"><?php echo $lang['Agente'] ?> </option>
 				<option value="3"><?php echo $lang['Perito'] ?> </option>
-				<option value="4"><?php echo $lang['Agente'] ?> </option>
+				<option value="4"><?php echo $lang['Cliente'] ?> </option>
 			</select>
 		</div>
 	</div>
@@ -42,80 +42,16 @@
 		<div class="col-sm-4 col-centered">
 		<br>
 		<label><?php echo $lang['Contra-reset']; ?>: </label>
-			<input id="b5" type='checkbox' class="checkbox-inline" name='contraprevia' placeholder='<?php echo $lang['Contra-nueva']; ?>' autocomplete="off"/>
+			<input id="b5" type='checkbox' class="checkbox-inline" value="marcado" name='contraprevia' placeholder='<?php echo $lang['Contra-nueva']; ?>' autocomplete="off"/>
 		</div>
 		
 	</div>
 	<br>
 	<div class="col-sm-6 col-centered">
 	
-		<a id="adminmodificar" class='btn btn-primary btn-block'><?php echo $lang['Modificar-Usuario'] ?></a>
+		<a id="adminmodificar" class='btn btn-primary btn-block' href="#me2"><?php echo $lang['Modificar-Usuario'] ?></a>
 		</div>
 <hr><div id="resultmodiadmin"></div>
 
 
-<script type="text/javascript">
-$("#thestart").change(function() {
-	usuario = $("#thestart").val();
-	//ingresar usuario					  
-	$.ajax({
-		type: "POST",
-		url: "Call/Funciones/checkmodificar.php",
-		data: "usuario="+usuario,
-		dataType: 'html',
-        cache: false,
-		beforeSend: function(){
-			  //imagen de carga
-			  $("#resultmodiadmin").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
-		},
-		error: function(){
-			  alert("error petición ajax");
-		},
-		success: function(data){                                                    
-					$("#resultmodiadmin").empty();
-					$("#resultmodiadmin").append(data);
-			}
-	});	
-});
-function unison(){
-	usuario = $("#thestart").val();
-    $.ajax({   
-    type: 'POST',   
-    url: 'Call/Funciones/checkmodificar.php',   
-    data: "usuario="+usuario,
-	dataType: 'html',
-    cache: false,
-    success: function(data) {
-				$("#resultmodiadmin").empty();
-				$("#resultmodiadmin").append(data);	
-        },
-    });
-};
-$("#adminmodificar").click(function() {
-		nombre = $("#b2").val();
-		apellido = $("#b3").val();
-		correo = $("#b1").val();
-		fecha = $("#b4").val();
-		contraprevia = $("#b5").val();
-		tipo = $("#b6").val();
-		$.ajax({   
-		type: 'POST',   
-		url: 'Call/Funciones/modificaradmin.php',   
-		data: "nombre="+nombre+"&apellido="+apellido+"&correo="+correo+"&fecha="+fecha+"&tipo="+tipo+"&contraprevia="+contraprevia,
-		dataType: 'html',
-		beforeSend: function(){
-			  //imagen de carga
-			  $("#resultmodiadmin").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
-		},
-		error: function(){
-			  alert("error petición ajax");
-		},
-		success: function(data){                                                    
-					$("#resultmodiadmin").empty();
-					$("#resultmodiadmin").append(data);
-			}
-	});	
-});
-
-</script>
 </div>  

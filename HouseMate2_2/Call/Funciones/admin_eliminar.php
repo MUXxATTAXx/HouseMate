@@ -21,13 +21,23 @@
 		$consulta = "DELETE FROM tbUsuario WHERE IdUsuario = '$idt' AND idUsuario > 0";
 		if(mysql_query($consulta))
 		{
-		echo "<span class='label label-success'>".$lang['Eliminado-Usuario']."</span>";
-		$consulta = "UPDATE tbUsuario SET IdUsuario = IdUsuario - 1 WHERE IdUsuario > '$id'";
-		$cs=mysql_query($consulta);
+			echo "<span class='label label-success'>".$lang['Eliminado-Usuario']."</span>";
+			$consulta = "UPDATE tbUsuario SET IdUsuario = IdUsuario - 1 WHERE IdUsuario > '$id'";
+			$cs=mysql_query($consulta);
+			$consulta = "SELECT * FROM usuario WHERE TempId = '$idt' AND TempId > 0";
+			$cs=mysql_query($consulta);
+			$row=mysql_num_rows($cs);
+			if($row >0)
+			{
+				$consulta = "DELETE FROM usuario WHERE TempId = '$idt' AND TempId > 0";
+				$cs=mysql_query($consulta);
+				$consulta = "UPDATE usuario SET TempId = TempId - 1 WHERE TempId > '$id";
+				$cs=mysql_query($consulta);
+			}
 		}
 		else
 		{
-		echo "<span class='label label-important'>".$lang['Eliminado-Usuario-error']."</span>";
+			echo "<span class='label label-important'>".$lang['Eliminado-Usuario-error']."</span>";
 		}
 
     
