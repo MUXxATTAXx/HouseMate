@@ -20,9 +20,10 @@
 			<label><?php echo $lang['Tipous'] ?>:</label>
 			<select class="form-control" id="tiposu">
 				<option value="0"><?php echo $lang['Nada'] ?></option>
-				<option value="2"><?php echo $lang['Cliente'] ?> </option>
+				<option value="1"><?php echo $lang['Admin'] ?></option>
+				<option value="2"><?php echo $lang['Agente'] ?></option>
 				<option value="3"><?php echo $lang['Perito'] ?> </option>
-				<option value="4"><?php echo $lang['Agente'] ?> </option>
+				<option value="4"><?php echo $lang['Cliente'] ?></option>
 			</select>
 		</div>
 	</div>

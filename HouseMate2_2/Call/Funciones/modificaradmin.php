@@ -5,7 +5,8 @@
 	$correo = $_POST['correo'];
 	$fecha = $_POST['fecha'];
 	$tipo = $_POST['tipo'];
-	if(!empty($nombre) || !empty($apellido) || !empty($correo) || !empty($fecha) || !empty($tipo) ||)
+	$contraprevia $_POST['contraprevia'];
+	if(!empty($nombre) || !empty($apellido) || !empty($correo) || !empty($fecha) || !empty($tipo) || !empty($contraprevia))
 	{
 		modificar($nombre,$apellido,$correo,$fecha,$tipo);
 	}

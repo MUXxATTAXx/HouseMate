@@ -49,7 +49,7 @@
 	<br>
 	<div class="col-sm-6 col-centered">
 	
-		<button id="adminmodificar" class='btn btn-primary btn-block'><?php echo $lang['Modificar-Usuario'] ?></button>
+		<a id="adminmodificar" class='btn btn-primary btn-block'><?php echo $lang['Modificar-Usuario'] ?></a>
 		</div>
 <hr><div id="resultmodiadmin"></div>
 
@@ -96,6 +96,7 @@ $("#adminmodificar").click(function() {
 		apellido = $("#b3").val();
 		correo = $("#b1").val();
 		fecha = $("#b4").val();
+		contraprevia = $("#b5").val();
 		tipo = $("#b6").val();
 		$.ajax({   
 		type: 'POST',   
