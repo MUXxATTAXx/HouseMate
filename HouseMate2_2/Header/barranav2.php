@@ -29,6 +29,12 @@ require ("Call/Loged/seguridad.php");
           </ul>
         </li>
         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['msjs']);?><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="enviar_msj.php"><?php echo($lang['msj-nuevo']);?></a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?php require ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>

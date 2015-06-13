@@ -188,4 +188,15 @@ $lang['Precio-Max'] = "Maximum Price";
 $lang['Tipo-Transa'] = "Transaction Type";
 $lang['Tipo-Prop'] = "Real Estate Type";
 //$lang['Etiqueta']
+
+//Enviar mensaje
+$lang['msj-nuevo'] = "New Message";
+$lang['msj'] = "Message";
+$lang['msjs'] = "Messages";
+$lang['destin'] = "Addressee";
+$lang['asunto'] = "Subject";
+$lang['msj-max'] = "Message: (Maximum 260 characters)";
+$lang['msj-enviar'] = "Send Message";
+$lang['msj-exito'] = "Message Sent!";
+$lang['msj-error'] = "Error in sending the message.";
 ?>

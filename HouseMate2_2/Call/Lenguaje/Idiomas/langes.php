@@ -185,4 +185,15 @@ $lang['Precio-Max'] = "Precio M&aacute;ximo";
 $lang['Tipo-Transa'] = "Tipo de Transacci&oacute;n:";
 $lang['Tipo-Prop'] = "Tipo de Bien Ra&iacute;z";
 //$lang['Etiqueta']
+
+//Enviar mensaje
+$lang['msj-nuevo'] = "Nuevo Mensaje";
+$lang['msj'] = "Mensaje";
+$lang['msjs'] = "Mensajes";
+$lang['destin'] = "Destinatario";
+$lang['asunto'] = "Asunto";
+$lang['msj-max'] = "Mensaje: (M&aacute;ximo 260 caracteres)";
+$lang['msj-enviar'] = "Enviar Mensaje";
+$lang['msj-exito'] = "Mensaje enviado!";
+$lang['msj-error'] = "Error al enviar.";
 ?>
