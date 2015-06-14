@@ -1,9 +1,5 @@
 
-  <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("#Municipio2").chained("#Departamento2");
-  });
- </script>
+
  <div id="comingleft">
 	<h3>Filtros</h3>
  </div>

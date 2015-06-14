@@ -1,8 +1,4 @@
-  <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("#Municipio").chained("#Departamento");
-  });
- </script>
+
 
 <div class="form-group col-xs-6">
 <label><?php echo $lang['Departamento']  ?>:</label>

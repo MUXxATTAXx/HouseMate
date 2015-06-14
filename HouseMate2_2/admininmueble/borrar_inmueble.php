@@ -76,7 +76,7 @@
 
 ?>	
 <?php
-
+	
     $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
     $cs=mysql_query($consulta);
 	$know = "";
