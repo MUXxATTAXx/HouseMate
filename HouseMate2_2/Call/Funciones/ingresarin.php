@@ -1,27 +1,41 @@
 <?php
-	$Depa = $_POST['Departamentos'];
-	$Muni = $_POST['Municipios'];
+	session_start();
+	$Depa = $_POST['Departamento'];
+	
 	$objecto0 = trim($_POST['dirrecion']); 
 	$objecto2 =  trim($_POST['descrip']);
-	$objecto3 = trim($_POST['VR']);
-	$objecto4 = trim($_POST['Tpro']);
-	$objecto5 = trim($_POST['precio']);
-	$varing = $_FILES['imagen']['tmp_name'];
-	$imagevar = $_FILES['imagen']['name'];
-	if($Depa != null and $Muni != null and $objecto3 != 0 and $objecto4 != 0 and $objecto5 != null and $objecto0 != "" and $objecto2 != "")
+	$objecto3 = trim($_POST['selector']);
+	$objecto4 = trim($_POST['selector2']);
+	if($Depa != null and $objecto0 != "" and $objecto2 != "" and $objecto3 != 0 and $objecto4 != 0  )
 	{
-		ingresar($Muni,$Depa,$objecto0,$varing,$varing,$imagevar);
+		if(isset($_POST['Municipio']) and $_POST['precio'])
+		{
+			$Muni = $_POST['Municipio'];
+			ingresar($Muni,$Depa,$objecto0,$objecto2,$objecto3,$objecto4);
+		}
+		else
+		{
+				echo "out2";
+		}
 	}
-	function ingresar($Muni,$Depa,$objecto0,$varing,$imagevar)
+	else
 	{
+		echo "out1";
+	}
+	function ingresar($Muni,$Depa,$objecto0,$objecto2,$objecto3,$objecto4)
+	{
+	echo "in";
 	include("../../conexion.php");
-	include("../Lenguaje/lenguaje.php");	
-		$objecto1 = $Muni.", ".$Depa.", El Salvador";
-		$descdire = $objecto0;
+	include("../Lenguaje/lenguaje.php");
+	
+	$varing = $_FILES['imagenfea']['tmp_name'];
+	$imagevar = $_FILES['imagenfea']['name'];
+	$objecto1 = $Muni.", ".$Depa.", El Salvador";
+	$descdire = $objecto0;
 		
 		if($varing != null || $imagevar != null)
 		{
-			$image_size = getimagesize($_FILES['imagen']['tmp_name']);
+			$image_size = getimagesize($_FILES['imagenfea']['tmp_name']);
 			if ($image_size == False)
 			{
 				echo $lang['error'];
