@@ -196,4 +196,19 @@ $lang['msj-max'] = "Mensaje: (M&aacute;ximo 260 caracteres)";
 $lang['msj-enviar'] = "Enviar Mensaje";
 $lang['msj-exito'] = "Mensaje enviado!";
 $lang['msj-error'] = "Error al enviar.";
+
+
+//inbox
+$lang['inbox'] = "Bandeja de Entrada";
+$lang['enviados'] = "Enviados";
+$lang['recibidos'] = "Recibidos";
+$lang['fecha'] = "Fecha";
+$lang['remi'] = "Remitente";
+//asunto
+//msj
+
+//Barra 6
+$lang['vender'] = "Vender";
+$lang['manejar'] = "";
+
 ?>

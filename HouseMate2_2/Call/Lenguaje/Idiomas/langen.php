@@ -199,4 +199,18 @@ $lang['msj-max'] = "Message: (Maximum 260 characters)";
 $lang['msj-enviar'] = "Send Message";
 $lang['msj-exito'] = "Message Sent!";
 $lang['msj-error'] = "Error in sending the message.";
+
+
+//inbox
+$lang['inbox'] = "Inbox";
+$lang['enviados'] = "Sent";
+$lang['recibidos'] = "Inbox";
+$lang['fecha'] = "Date";
+$lang['remi'] = "To";
+//asunto
+//msj
+
+//Barra 6
+$lang['vender'] = "Sale";
+$lang['manejar'] = "";
 ?>

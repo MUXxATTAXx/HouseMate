@@ -78,11 +78,11 @@ while($row=mysql_fetch_array($cs)){
 	  <div class="row">
 			<div class="col-xs-6">
                 <p><?php echo $lang['newp'] ?></p>
-                <input class="form-control" type="password" name="contra_nueva" placeholder="New Password">
+                <input class="form-control" type="password" name="contra_nueva" placeholder="<?php echo $lang['newp'] ?>">
 			</div>
 			<div class="col-xs-6">
                 <p><?php echo $lang['oldp'] ?></p>
-                <input class="form-control" type="password" name="contra_vieja" placeholder="Confirm">
+                <input class="form-control" type="password" name="contra_vieja" placeholder="<?php echo $lang['oldp'] ?>">
 			</div>
 		</div>
             <hr>

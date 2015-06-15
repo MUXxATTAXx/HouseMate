@@ -33,11 +33,12 @@
                 <h3 class="panel-title"><?php echo $lang['msj'];?></h3>
             </div>
             <div class="panel-body">
-                <div class="row row-centered">
+                <div class="row">
                   <form action="enviar_msj.php" method="POST">
-                    <center><label><?php echo $lang['destin'];?></label></center>
-
-                    <input class="form-control" type="text" name="destinatario" placeholder="<?php echo $lang['destin'];?>">
+                    <div class="col sm-1 col-centered">
+                        <label><?php echo $lang['destin'].": ";?></label>
+                        <input class="form-control" type="text" name="destinatario" placeholder="<?php echo $lang['destin'];?>">
+                    </div>      
                 </div>
                     <center><label><?php echo $lang['asunto'];?></label></center>
                       <input class="form-control" type="text" name="asunto" placeholder="<?php echo $lang['asunto'];?>"><br>

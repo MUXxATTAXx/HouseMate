@@ -18,11 +18,18 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="perfil_admin.php" name="dude"><?php echo($lang['Perfil']);?>(<?php include ('namae.php') ?>) <span class="sr-only">(current)</span></a></li>
-        <li><a href="vender.php">Vender</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['real-estate']);?><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="vender.php"><?php echo($lang['vender']);?></a></li>
+            <li><a href="inbox.php"><?php echo($lang['manejar']);?></a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['msjs']);?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="enviar_msj.php"><?php echo($lang['msj-nuevo']);?></a></li>
+            <li><a href="inbox.php"><?php echo($lang['inbox']);?></a></li>
           </ul>
         </li>
         <li class="dropdown">
