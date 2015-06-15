@@ -36,6 +36,9 @@
 <?php
 include "conexion.php";
 // Obtiene el verdadero id usuario
+if(!isset($_GET['Dueno'])){
+    header('Location: perfil_admin.php');
+}
 $dueno = $_GET['Dueno'];
 $tempid = "SELECT IdUsuario FROM usuario WHERE TempId = '$dueno'";
 $temcs=mysql_query($tempid);

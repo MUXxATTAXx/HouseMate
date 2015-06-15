@@ -10,6 +10,9 @@ require ("Call/Lenguaje/lenguaje.php");
 	<meta charset = "utf-8" />
    <?php
     include "Call/spr.php";
+if(isset($_SESSION['id'])){
+    header('Location: adminhomepage.php');
+}
 ?>
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
 </head>

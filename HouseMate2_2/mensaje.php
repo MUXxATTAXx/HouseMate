@@ -28,13 +28,18 @@
 ?>
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
+
 <?php
 include "conexion.php";
+if(!isset($_GET['idmensaje'])){
+    header('Location: inbox.php');
+}
 $idmensaje = $_GET['idmensaje'];
 $consulta = "SELECT * FROM mensaje WHERE idmensaje = '$idmensaje'";
 $cs = mysql_query($consulta);
 while($row=mysql_fetch_array($cs)){
     $cs2 = mysql_query("SELECT usuario FROM tbusuario WHERE idusuario ='".$row['remitente']."'");
+
     while($row2=mysql_fetch_array($cs2)){
 ?>
             <div class="panel-heading">

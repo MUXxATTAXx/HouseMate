@@ -43,6 +43,9 @@ else
     <div class="row">
     <?php
         include "conexion.php";
+        if(!isset($_GET['IdUsuario'])){
+            header('Location: adminhomepage.php');
+        }
         $dueno = $_GET['IdUsuario'];
 
         $consulta = ( "select * FROM tbusuario WHERE Idusuario = '$dueno'");

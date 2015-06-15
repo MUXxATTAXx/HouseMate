@@ -3,11 +3,13 @@
 <head>	
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
-	   <link href='css/bootstrap.min.css' rel='stylesheet'/>
+    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
+     <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+<script src="js/bootstrap-table.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
@@ -51,6 +53,7 @@ $cs = mysql_query($consulta);
             </tr>
           </thead>
             <tbody>
+            <form action="mensaje.php" method="POST">
             <?php
                 while($row = mysql_fetch_array($cs)){
                     $desc = mysql_query("SELECT usuario FROM tbusuario WHERE idUsuario ='".$row['remitente']."'");
@@ -64,6 +67,7 @@ $cs = mysql_query($consulta);
                     }
                 }
             ?>
+            </form>
             </tbody>
         </table>
     </div>
@@ -84,6 +88,7 @@ $cs = mysql_query($consulta);
             </tr>
           </thead>
             <tbody>
+            <form action="msj_enviado.php" method="POST">
             <?php
                 while($row = mysql_fetch_array($cs)){
                     
@@ -99,11 +104,11 @@ $cs = mysql_query($consulta);
                     }
                 }
             ?>
+            </form>
             </tbody>
         </table>
     </div>
 </div>
-    <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
-<script src="js/bootstrap-table.js" type="text/javascript"></script>
+   
 </body>
 </html>
