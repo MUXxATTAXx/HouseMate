@@ -225,11 +225,14 @@
 		
 </div>
 <br>
-	 <div class="col-sm-6 col-centered">
-    <a class='btn btn-primary btn-block' type='submit' id='ingresarin' value="Insert"><?php echo $lang['insert']?></a>
-	<span id="resultadoinsert"></span>
+	<div class="row">
+	<div class="col-sm-6 col-centered">
+			<a class='btn btn-primary btn-block' type='submit' id='ingresarin' value="Insert"><?php echo $lang['insert']?></a>
 	</div>
-     	</div>   
+	</div>
+	<span id="resultadoinsert"  class="row">
+		</span>
+	</div>
 			<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
@@ -247,38 +250,34 @@
 <script>
  //comprobamos si se pulsa una boton
         $("#ingresarin").click(function(){
-                                     
-		  //obtenemos el texto introducido
-		  /*
-			VR = $("#selector").val();
-			Tpro = $("#selector2").val();
+			$("#error1").remove();
+			$("#ingresarin").remove();
+			$("#poderdej").remove();
+			selector = $("#selector").val();
+			selector2 = $("#selector2").val();
 			precio = $("#precio").val();      
-			Departamentos = $("#Departamento").val();      
-			Municipios = $("#Municipio").val();      
+			Departamento = $("#Departamento").val();      
+			Municipio = $("#Municipio").val();      
 			dirrecion = $("#dirrecion").val();  
 			descrip = $("#descrip").val(); 
 			imagen = $("#imagenfea").val();
-			*/
-		  //ingresar usuario
-																			  
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/ingresarin.php",
-				data:  $('#formenow').serialize(),
-				beforeSend: function(){
-					  //imagen de carga
-					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){  
+            $.ajax({
+                url: "Call/Funciones/ingresarin.php",
+                data:  "selector="+selector+"&selector2="+selector2+"&precio="+precio+"&Departamento="+Departamento+"&Municipio="+Municipio+
+				"&dirrecion="+dirrecion+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea,
+                dataType : "html",
+                type : "post",
+                
+                success: function(data){
+					
 					$("#resultadoinsert").empty();
 					$("#resultadoinsert").append(data);
-					
-						}
-				  });
-															   
-			}); 
+                },
+                failure: function(){
+                   
+                }
+            });										  
+				  });											   
+			
 </script>
 </form>

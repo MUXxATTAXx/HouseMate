@@ -1,41 +1,51 @@
 <?php
 	session_start();
+	include("../../conexion.php");
+	include("../Lenguaje/lenguaje.php");
 	$Depa = $_POST['Departamento'];
 	
 	$objecto0 = trim($_POST['dirrecion']); 
 	$objecto2 =  trim($_POST['descrip']);
 	$objecto3 = trim($_POST['selector']);
 	$objecto4 = trim($_POST['selector2']);
+	
 	if($Depa != null and $objecto0 != "" and $objecto2 != "" and $objecto3 != 0 and $objecto4 != 0  )
 	{
-		if(isset($_POST['Municipio']) and $_POST['precio'])
+		if(isset($_POST['Municipio']) and $_POST['precio'] and isset($_POST['imagenfea']))
 		{
-			$Muni = $_POST['Municipio'];
-			ingresar($Muni,$Depa,$objecto0,$objecto2,$objecto3,$objecto4);
+			ingresar();
 		}
 		else
 		{
-				echo "out2";
+				echo "<span class='label label-warning' id='error1'>llene todos los campos</span>";
+				echo "<div class='col-sm-6 col-centered'> <a class='btn btn-primary btn-block' type='submit' id='ingresarin' value='Insert'>".$lang['insert']."</a><div>";
 		}
 	}
 	else
 	{
-		echo "out1";
+		echo "<span class='label label-warning' id='error1'>llene todos los campos</span>";
+		echo "<div class='col-sm-6 col-centered'> <a class='btn btn-primary btn-block' type='submit' id='ingresarin' value='Insert'>".$lang['insert']."</a><div>";
 	}
-	function ingresar($Muni,$Depa,$objecto0,$objecto2,$objecto3,$objecto4)
+	function ingresar()
 	{
-	echo "in";
+
 	include("../../conexion.php");
 	include("../Lenguaje/lenguaje.php");
-	
-	$varing = $_FILES['imagenfea']['tmp_name'];
-	$imagevar = $_FILES['imagenfea']['name'];
-	$objecto1 = $Muni.", ".$Depa.", El Salvador";
+	echo "<div class='row'> 
+	<div class='col-sm-6 col-centered'> 
+	<a class='btn btn-primary btn-block' type='submit' id='ingresarin' value='Insert'>".$lang['insert']."</a>
+	</div>
+	<div class='col-sm-6 col-centered'> 
+	<a class='btn btn-primary btn-block' type='submit' id='poderdej' value='Insert'>".$lang['insert']."</a>
+	</div>
+	</div>";
+	// $varing = $_FILES['imagenfea']['tmp_name'];
+	// $imagevar = basename('imagenfea'); 
+	/* $objecto1 = $Muni.", ".$Depa.", El Salvador";
 	$descdire = $objecto0;
-		
-		if($varing != null || $imagevar != null)
+		if($imagevar != null)
 		{
-			$image_size = getimagesize($_FILES['imagenfea']['tmp_name']);
+			$image_size = getimagesize($file);
 			if ($image_size == False)
 			{
 				echo $lang['error'];
@@ -78,10 +88,11 @@
 				}
 				
 			}
-		}
+		} 
 		else
 		{
 			echo $lang['missing2'];
 		}
+		*/
 	}
 ?>
