@@ -32,11 +32,12 @@
 <?php
 include "conexion.php";
 if(!isset($_GET['idmensaje'])){
-    header('Location: inbox.php');
+    header('Location: recibidos.php');
 }
 $idmensaje = $_GET['idmensaje'];
 $consulta = "SELECT * FROM mensaje WHERE idmensaje = '$idmensaje'";
 $cs = mysql_query($consulta);
+$consulta2 = mysql_query("UPDATE mensaje SET estado = '2' WHERE idmensaje = '$idmensaje' ");
 while($row=mysql_fetch_array($cs)){
     $cs2 = mysql_query("SELECT usuario FROM tbusuario WHERE idusuario ='".$row['remitente']."'");
 
@@ -63,7 +64,7 @@ while($row=mysql_fetch_array($cs)){
                 </div>
             </div>
             <div class="panel-footer">
-                 <a href="inbox.php"><button class="btn btn-primary btn-block" type="submit"><?php echo $lang['inbox'];?></button></a>
+                 <a href="recibidos.php"><button class="btn btn-primary btn-block" type="submit"><?php echo $lang['inbox'];?></button></a>
             </div>
           </div>
     </div>

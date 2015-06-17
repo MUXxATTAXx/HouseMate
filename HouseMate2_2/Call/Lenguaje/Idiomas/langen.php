@@ -209,6 +209,13 @@ $lang['fecha'] = "Date";
 $lang['remi'] = "To";
 //asunto
 //msj
+$lang['msj-estado']= "State";
+$lang['leido']= "Read";
+$lang['pendiente']= "Pending";
+$lang['marcar']= "Mark messages as: ";
+$lang['msj-elim'] = "Delete messages";
+$lang['elim-msj-exito'] = "Message deleted!";
+$lang['marcado-exito'] = "Message changed!";
 
 //Barra 6
 $lang['vender'] = "Sale";

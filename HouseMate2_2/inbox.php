@@ -42,24 +42,36 @@ $cs = mysql_query($consulta);
     
 ?>
     <div class='tab-pane fade active gris in' id='recibidos'  >
-        <table data-toggle='table'  id='here' class='table table-striped table-hover negro'  data-search='true' data-show-refresh='true' data-query-params='queryParams'>
-
+        <table data-toggle='table'  id='here' class='table table-striped table-hover negro'>
+               <!--data-search='true' data-show-refresh='true' data-query-params='queryParams'>-->
+            
           <thead>
             <tr>
-              <th><?php echo $lang['fecha'];?></th>
-            <th><?php echo $lang['remi'];?></th>
-              <th><?php echo $lang['asunto'];?></th>
-              <th><?php echo $lang['msj'];?></th>
+                <th>#</th>
+                <th><?php echo $lang['fecha'];?></th>
+                <th>Estado</th>
+                <th><?php echo $lang['remi'];?></th>
+                <th><?php echo $lang['asunto'];?></th>
+                <th><?php echo $lang['msj'];?></th>
             </tr>
           </thead>
             <tbody>
-            <form action="mensaje.php" method="POST">
             <?php
                 while($row = mysql_fetch_array($cs)){
                     $desc = mysql_query("SELECT usuario FROM tbusuario WHERE idUsuario ='".$row['remitente']."'");
                     while($row2 = mysql_fetch_array($desc)){
                     echo "<tr>
+                        <td><input name= 'check".$row['idmensaje']."' type='checkbox''></td>
                         <td>".$row['fecha']."</td>
+                        <td>";
+                        if($row['estado']=="2"){
+                        echo "<span class='label label-primary'>Leido</span>";
+                        }
+                        else
+                        {
+                            echo "<span class='label label-danger'>Pendiente</span>";
+                        }
+                    echo"</td>
                         <td>".$row2['usuario']."</td>
                         <td><a href='mensaje.php?idmensaje=".$row['idmensaje']."'>".$row['asunto']."</a></td>
                         <td>".substr($row['mensaje'],0,50)."...</td>
@@ -67,9 +79,11 @@ $cs = mysql_query($consulta);
                     }
                 }
             ?>
-            </form>
+
+
             </tbody>
         </table>
+
     </div>
     <div class='tab-pane fade gris' id='enviados'>
                 <table data-toggle='table'  id='here' class='table table-striped table-hover negro'  data-search='true' data-show-refresh='true' data-query-params='queryParams'>
@@ -81,14 +95,13 @@ $cs = mysql_query($consulta);
                     ?>
           <thead>
             <tr>
-              <th><?php echo $lang['fecha'];?></th>
-              <th><?php echo $lang['destin'];?></th>
-              <th><?php echo $lang['asunto'];?></th>
+                <th><?php echo $lang['fecha'];?></th>
+                <th><?php echo $lang['destin'];?></th>
+                <th><?php echo $lang['asunto'];?></th>
                 <th><?php echo $lang['msj'];?></th>
             </tr>
           </thead>
             <tbody>
-            <form action="msj_enviado.php" method="POST">
             <?php
                 while($row = mysql_fetch_array($cs)){
                     
@@ -104,11 +117,33 @@ $cs = mysql_query($consulta);
                     }
                 }
             ?>
-            </form>
             </tbody>
         </table>
+        <script>
+            $(document).ready(function() {
+    $('#here').dataTable( {
+        "dom": '<"top"i>rt<"bottom"flp><"clear">'
+    } );
+} );
+            </script>
     </div>
 </div>
-   
+<form action="inbox.php" method="POST">
+    
+    <input value="1" type="checkbox" name="check" value >
+    <button name="marcar" type="submit" class="btn btn-primary boxleft" value="1">Marcar</button>
+    <button name="eliminar" type="submit" class="btn btn-primary boxleft" value="2">Eliminar</button>
+<?php
+if(isset($_POST['eliminar'])){
+    echo $_POST['check'];
+}
+elseif(isset($_POST['marcar'])){
+    echo"M";
+}
+else{
+    echo "error";
+}
+?>
+</form>
 </body>
 </html>

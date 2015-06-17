@@ -16,6 +16,7 @@ require ("Call/Lenguaje/lenguaje.php");
     include("Header/barranav2.php");
 ?>
 <a class="btn btn-sm btn-primary" href="quick.php"><?php echo $lang['quick'] ?></a>
+<a class="btn btn-sm btn-primary" href="quick.php">Asesoria</a>
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="panel-body">

@@ -60,7 +60,7 @@ if(isset($_POST['registrar'])){
     $cs = mysql_query($consulta1);
     while($row = mysql_fetch_array($cs)){
         $destinatario1 = $row['idUsuario'];
-        $consulta2 = mysql_query("INSERT INTO mensaje VALUES (null,'$remitente','$destinatario1','$asunto','$mensaje',CURRENT_TIMESTAMP)");
+        $consulta2 = mysql_query("INSERT INTO mensaje VALUES (null,'$remitente','$destinatario1','$asunto','$mensaje',CURRENT_TIMESTAMP,1,1)");
         if($consulta2){
             echo"<center><span class='label label-success'>".$lang['msj-exito']."</span></center";
         }
