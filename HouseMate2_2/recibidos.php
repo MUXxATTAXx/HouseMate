@@ -43,6 +43,7 @@ $cs = mysql_query($consulta);
             <tr>
                 <th>#</th>
                 <th><?php echo $lang['fecha'];?></th>
+                <th><?php echo $lang['msj-estado'];?></th>
                 <th><?php echo $lang['remi'];?></th>
                 <th><?php echo $lang['asunto'];?></th>
                 <th><?php echo $lang['msj'];?></th>
@@ -58,9 +59,11 @@ $cs = mysql_query($consulta);
                         <td>".$row['fecha']."</td>
                         <td>";
                         if($row['estado']=="2"){
+                        echo "<span class='label label-primary'>".$lang['leido']."</span>";
                         }
                         else
                         {
+                            echo "<span class='label label-danger'>".$lang['pendiente']."</span>";
                         }
                     echo"</td>
                         <td>".$row2['usuario']."</td>
@@ -72,14 +75,30 @@ $cs = mysql_query($consulta);
             ?>
             </tbody>
         </table>
+    <button name="marcar" type="submit" class="btn btn-primary boxleft" value="1"><?php echo $lang['marcar'];?></button>
     <select class=" checbocks" name="estado">
+        <option value="2"><?php echo $lang['leido'];?></option>
+        <option value="1"><?php echo $lang['pendiente'];?></option>
     </select>
+    <button name="eliminar" type="submit" class="btn btn-primary boxleft" value="2"><?php echo $lang['msj-elim'];?></button>
 <?php
+if(isset($_POST['eliminar']) and isset($_POST['check'])){
     $check = $_POST['check'];
     for($i=0;$i<count($check);$i++){
         $del_id = $check[$i];
         $sql = mysql_query("UPDATE mensaje SET estado2 = '2' WHERE idmensaje ='$del_id'");
     }
+    echo"<span class='label label-success'>".$lang['elim-msj-exito']."</span>";
+    
+}
+elseif(isset($_POST['marcar']) and isset($_POST['check'])){
+    $check = $_POST['check'];
+    $estado = $_POST['estado'];
+    for($i=0;$i<count($check);$i++){
+        $del_id = $check[$i];
+        $sql = mysql_query("UPDATE mensaje SET estado = '$estado' WHERE idmensaje ='$del_id'");
+    }
+    echo"<span class='label label-success'>".$lang['marcado-exito']."</span>";
 }
 ?>
 </form>
