@@ -1,6 +1,6 @@
-<form id="formenow" method="post">
+<form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
  <div class='form-Dl' align="center">
-
+<div id="cosas">
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>
@@ -53,10 +53,9 @@
 	<div  class="onlyme">
 	<label>
 	<?php echo $lang['selectp']; ?>
-<input id="imagenfea" class='form-control imagenfea' type='file' name='imagenfea' onchange="readURL(this);"/>
+		<input  class='form-control imagenfea' type='file' onchange="readURL(this);" name='imagenfea'/>
 	</label>
-
-	</div >
+	</div>
 	<br>
 	<img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
 	<br>
@@ -222,17 +221,27 @@
 
 		</div>
 
-		
+</div>		
 </div>
 <br>
 	<div class="row">
 	<div class="col-sm-6 col-centered">
-			<a class='btn btn-primary btn-block' type='submit' id='ingresarin' value="Insert"><?php echo $lang['insert']?></a>
+			<a class='btn btn-primary btn-block ingresarin' type='submit' value="Insert"><?php echo $lang['Verificar']?></a>
+	<?php 
+		if(isset($_POST['insertarforreal']))
+		{
+			require "Call/Funciones/beforeingresar.php";
+		}
+		else
+		{
+			
+		}
+	?>
 	</div>
 	</div>
 	<span id="resultadoinsert"  class="row">
 		</span>
-	</div>
+</div>
 			<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
@@ -249,35 +258,45 @@
 	</script>    
 <script>
  //comprobamos si se pulsa una boton
-        $("#ingresarin").click(function(){
+    $(".ingresarin").click(function(){
+		unison();
+	});
+	$(".ingresarin").click(function(){
+		unison();
+
+	});
+	$("form").on('click', 'a.ingresarin2', function() {
+		unison(); 
+	});
+	
+function unison(){
+	alert("test");
+	$("#poderdej").remove();
+	selector = $("#selector").val();
+	selector2 = $("#selector2").val();
+	precio = $("#precio").val();      
+	Departamento = $("#Departamento").val();      
+	Municipio = $("#Municipio").val();      
+	dirrecion = $("#dirrecion").val();  
+	descrip = $("#descrip").val();
+	imagenfea = $("#imagenfea").val();
+	$.ajax({
+		url: "Call/Funciones/ingresarin.php",
+		data:  "selector="+selector+"&selector2="+selector2+"&precio="+precio+"&Departamento="+Departamento+"&Municipio="+Municipio+
+		"&dirrecion="+dirrecion+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea,
+		dataType : "html",
+		type : "post",
+		
+		success: function(data){
 			$("#error1").remove();
-			$("#ingresarin").remove();
-			$("#poderdej").remove();
-			selector = $("#selector").val();
-			selector2 = $("#selector2").val();
-			precio = $("#precio").val();      
-			Departamento = $("#Departamento").val();      
-			Municipio = $("#Municipio").val();      
-			dirrecion = $("#dirrecion").val();  
-			descrip = $("#descrip").val(); 
-			imagen = $("#imagenfea").val();
-            $.ajax({
-                url: "Call/Funciones/ingresarin.php",
-                data:  "selector="+selector+"&selector2="+selector2+"&precio="+precio+"&Departamento="+Departamento+"&Municipio="+Municipio+
-				"&dirrecion="+dirrecion+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea,
-                dataType : "html",
-                type : "post",
-                
-                success: function(data){
-					
-					$("#resultadoinsert").empty();
-					$("#resultadoinsert").append(data);
-                },
-                failure: function(){
-                   
-                }
-            });										  
-				  });											   
-			
+			$(".ingresarin").remove();
+			$("#resultadoinsert").empty();
+			$("#resultadoinsert").append(data);
+		},
+		failure: function(){
+		   
+		}
+	});
+};
 </script>
 </form>

@@ -78,7 +78,7 @@ $lang['Renta'] = 'Renta';
 $lang['Imagen'] = 'Imagen';
 $lang['numeroeti'] = "Número de etiquetas";
 $lang['Imagese'] = "Su imagen";
-
+$lang['Verificar'] = "Verificar";
 $lang['insert'] ="Insertar";
 $lang['Tima'] = "Eso no es una imagen";
 $lang['precio'] = "Precio" ;

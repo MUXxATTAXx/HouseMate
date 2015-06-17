@@ -58,7 +58,7 @@ $lang['edit'] = "Edit";
 $lang['oldp'] = "Current password";
 $lang['newp'] = "New password";
 $lang['Offer'] = "Offer";
-
+$lang['Verificar'] = "Verify";
 $lang['Existe'] = "Bad User or password";
 $lang['Usuario'] = "User";
 $lang['Usuarios'] = "Users";
