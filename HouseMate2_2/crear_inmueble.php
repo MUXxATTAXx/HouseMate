@@ -68,5 +68,6 @@
 	  });
 	 </script>
  	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	<script src="js/upload.js" type="text/javascript"></script>
 </body>
 </html>
