@@ -270,7 +270,6 @@
 	});
 	
 function unison(){
-	alert("test");
 	$("#poderdej").remove();
 	selector = $("#selector").val();
 	selector2 = $("#selector2").val();

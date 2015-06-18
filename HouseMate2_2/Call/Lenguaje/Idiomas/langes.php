@@ -106,7 +106,8 @@ $lang['Fdelete'] = "Desea continuar?";
 $lang['quick'] = "Buscador";
 $lang['Uingre'] = "Usuario creado";
 $lang['Eliminado-Usuario'] = 'User eliminado';
-
+$lang['ingresado'] = "Se ingreso la propiedad";
+$lang['Eliminado-inmueble'] = 'Inmueble eliminado';
 //Errores y faltas
 $lang['missing'] =  'Ingrese todos los campos de información';
 $lang['missing2'] = 'Ingrese una imagen'; 
@@ -115,6 +116,7 @@ $lang['error2'] = 'Llene almenos una etiqueta';
 $lang['error3'] = 'Ya existe una imagen con ese nombre';
 $lang['error4'] = "No tiene los privilegios";
 $lang['error5'] = "Ingrese un Id";
+$lang['error6'] = "Error al intentar borrar imagen";
 $lang['error-contra'] = "Contraseñas no coinciden";
 $lang['modificar-exito'] = "¡Exito! Cambios agregados.";
 $lang['modificar-exito2'] = "¡Exito! Cambios y nueva contraseña agregada.";
@@ -122,6 +124,7 @@ $lang['blank'] = "Espacios en blanco";
 $lang['Eliminado-Usuario-error'] = 'El usuario no fue eliminado';
 $lang['notheremate'] = "El usuario no existe";
 $lang['errornada'] = "No hay nada que modifciar";
+
 //Titulos
 $lang['regis'] = "Crear Cuenta";
 $lang['mis-inmuebles'] = "Mis Inmuebles";

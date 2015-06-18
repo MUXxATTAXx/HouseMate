@@ -1,8 +1,8 @@
 <?php		
 if(isset($_POST['insertarforreal']) == "Insertreal")
 {
-	if(isset($_POST['dirrecion']) and $_POST['descrip'] and $_POST['selector'] and $_POST['selector2']
-		and isset($_POST['Municipio']) and isset($_POST['Departamento']) and isset($_POST['precio']))
+	if(isset($_POST['dirrecion']) and isset($_POST['descrip']) and isset($_POST['selector']) and isset($_POST['selector2'])
+		and isset($_POST['Municipio']) and isset($_POST['Departamento']) and isset($_POST['precio']) and $_POST['selector'] != null and $_POST['selector2'] != null)
 	{
 
 	$Muni = $_POST['Municipio'];
@@ -23,9 +23,13 @@ if(isset($_POST['insertarforreal']) == "Insertreal")
 		if($imagevar != null)
 		{
 			$image_size = getimagesize($varing);
-			if ($image_size == False)
+			if ($image_size == False )
 			{
-				echo "<span class='label label-warning' id='error1'>".$lang['error']."</span>";
+				echo "<span class='label label-warning'>".$lang['error']."</span>";
+			}
+			elseif(file_exists("img/Houses/$imagevar"))
+			{
+				echo "<span class='label label-warning'>".$lang['error3']."</span>";
 			}
 			else
 			{
@@ -49,31 +53,24 @@ if(isset($_POST['insertarforreal']) == "Insertreal")
 					$maximun = $digito;
 					$thehouse = "INSERT INTO inmueble VALUES ('$maximun','$Rtemid','$objecto1','$objecto2','$objecto3','$objecto4','$objecto5','img/Houses/$imagevar','$objecto6')";
 					//Mira si existe la imagen
-					if(file_exists('img/Houses/$imagevar'))
-					{
-						echo "<span class='label label-warning' id='error1'>".$lang['error3']."</span>";
-					}
-					else
-					{
 					copy($varing,"img/Houses/$imagevar");
 					require "Call/Funciones/inmuebleden.php";
-					}
 				}
 				else
 				{
-					echo "<span class='label label-warning' id='error1'>".$lang['error4']."</span>";
+					echo "<span class='label label-warning'>".$lang['error4']."</span>";
 				}
 				
 			}
 		} 
 		else
 		{
-			echo "<span class='label label-warning' id='error1'>".$lang['missing2']."</span>";
+			echo "<span class='label label-warning'>".$lang['missing2']."</span>";
 		}
 		}
 	else
 	{
-		echo "<span class='label label-warning' id='error1'>llene todos los campos</span>";
+		echo "<span class='label label-warning'>llene todos los campos</span>";
 	}
 	}
 ?>

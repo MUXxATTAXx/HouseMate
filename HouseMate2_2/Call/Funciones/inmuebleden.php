@@ -252,11 +252,11 @@ if ($maxc != 0)
 	$theend .= $final_string;
 	$ingresa2 = mysql_query($thehouse);
 	$ingresa3 = mysql_query($theend);	
-
+	echo "<span class='label label-success'>" .$lang['ingresado']."</span>";
 	}	
 else
 {	
-	echo $lang['error2'];
+	echo "<span class='label label-warning'>" .$lang['error2']."</span>";
 }
 
 ?>

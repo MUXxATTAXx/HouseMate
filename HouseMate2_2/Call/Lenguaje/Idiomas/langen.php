@@ -43,7 +43,7 @@ $lang['Ver-Usuario'] = 'View users';
 $lang['Modificar-Usuario'] = 'Modify user';
 $lang['Eliminar-Usuario'] = 'Delete user';
 $lang['Eliminado-Usuario'] = 'User deleted';
-
+$lang['Eliminado-inmueble'] = 'Real estate deleted';
 $lang['Uingre'] = "User succesfully inserted";
 $lang['Codigo'] = 'Cod';
 $lang['Modificar'] = 'Modify';
@@ -109,7 +109,7 @@ $lang['Cdelete'] = "Confirm Delete";
 $lang['Xdelete'] = "You are about to delete one element, this procedure is irreversible.";
 $lang['Fdelete'] = "Do you want to proceed?";
 $lang['quick'] = "Quick finder";
-
+$lang['ingresado'] = "Your real estate was inserted";
 //Errores y faltas
 $lang['missing'] = 'Insert all the information fields';
 $lang['missing2'] = 'Insert a image';
@@ -118,6 +118,7 @@ $lang['error2'] = 'Fill 1 tag at least';
 $lang['error3'] = 'There is a image with the same name';
 $lang['error4'] = "You dont have the right to do it";
 $lang['error5'] = "Insert the id of the property";
+$lang['error6'] = "Error while trying to delete image";
 $lang['error-contra'] = "Passwords don't match";
 $lang['modificar-exito'] = "Sucess! Changes added.";
 $lang['modificar-exito2'] = "Sucess! Changes and new password added.";

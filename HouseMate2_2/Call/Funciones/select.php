@@ -23,7 +23,7 @@
 <div class="form-group col-xs-6">
 <label><?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio" class="form-control whitecover" id="Municipio">
-	<option value=""><?php echo $lang['Nada'] ?></option>
+	<option value="nada"><?php echo $lang['Nada'] ?></option>
 	<?php include "Call/Funciones/InsideSelect/Ahu.php"; 
 	include "Call/Funciones/InsideSelect/Caba.php";
 	include "Call/Funciones/InsideSelect/Cha.php" ;
