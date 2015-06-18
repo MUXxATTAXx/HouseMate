@@ -156,7 +156,7 @@ $lang['Fre8'] = "Yes please, register now!";
 //Carusel
 $lang['Ca1'] = "Contact";
 $lang['Ca2'] = "More details";
-$lang['noticias'] = "News";
+$land['noticias'] = "News";
 
 //Perfil
 $lang['IdUsuario'] = "User ID: ";
@@ -217,9 +217,6 @@ $lang['marcar']= "Mark messages as: ";
 $lang['msj-elim'] = "Delete messages";
 $lang['elim-msj-exito'] = "Message deleted!";
 $lang['marcado-exito'] = "Message changed!";
-
-$lang['cercadeti']= "Cerca de ti: ";
-$lang['recomenda']= "Recomendaciones: ";
 
 //Barra 6
 $lang['vender'] = "Sale";
