@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2015 a las 15:43:59
+-- Tiempo de generación: 18-06-2015 a las 16:15:19
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdhousemate`
 --
+CREATE DATABASE IF NOT EXISTS `bdhousemate` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `bdhousemate`;
 
 -- --------------------------------------------------------
 
@@ -149,6 +151,32 @@ INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `Vent
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `mensaje`
+--
+
+CREATE TABLE IF NOT EXISTS `mensaje` (
+`idmensaje` int(5) NOT NULL,
+  `remitente` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `destinatario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `asunto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
+  `mensaje` varchar(260) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha` datetime NOT NULL,
+  `estado` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  `estado2` char(1) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `mensaje`
+--
+
+INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mensaje`, `fecha`, `estado`, `estado2`) VALUES
+(1, '0', '2', 'Test', 'Hola!', '2015-06-12 00:00:00', '1', '1'),
+(2, '0', '2', 'Test 2', 'sadhgaskdjashdaskdjksdasjdhajghdasgdhasgsdasd', '2015-06-12 00:00:00', '1', '1'),
+(3, '1', '2', 'Test 3', 'esto es de otro usuario', '2015-06-12 00:00:00', '1', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tbusuario`
 --
 
@@ -246,6 +274,12 @@ ALTER TABLE `inmueble`
  ADD PRIMARY KEY (`IdInmueble`), ADD KEY `Dueno` (`Dueno`);
 
 --
+-- Indices de la tabla `mensaje`
+--
+ALTER TABLE `mensaje`
+ ADD PRIMARY KEY (`idmensaje`), ADD KEY `remitente` (`remitente`,`destinatario`);
+
+--
 -- Indices de la tabla `tbusuario`
 --
 ALTER TABLE `tbusuario`
@@ -286,6 +320,11 @@ MODIFY `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `idcontratofin`
 MODIFY `IdContrato` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT de la tabla `mensaje`
+--
+ALTER TABLE `mensaje`
+MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
