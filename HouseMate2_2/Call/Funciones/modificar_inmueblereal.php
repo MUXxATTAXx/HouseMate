@@ -4,6 +4,7 @@
 	include("../Lenguaje/lenguaje.php"); ?>
 <form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
  <div class='form-Dl' align="center">
+   <div class="boxleft "><a href="#me2" class=" glyphicon glyphicon-arrow-left" onclick='regresar(this.id)'></a></div>
 <div id="cosas">
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>

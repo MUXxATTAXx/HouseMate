@@ -156,7 +156,7 @@ $lang['Fre8'] = "Yes please, register now!";
 //Carusel
 $lang['Ca1'] = "Contact";
 $lang['Ca2'] = "More details";
-$land['noticias'] = "News";
+$lang['noticias'] = "News";
 
 //Perfil
 $lang['IdUsuario'] = "User ID: ";

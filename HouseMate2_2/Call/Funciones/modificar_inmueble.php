@@ -5,8 +5,9 @@
 			<!-- barra lateral -->
 			
  <div class='form-Dl' align="center">
- <div class="boxleft "><a href="#me2" class=" glyphicon glyphicon-arrow-left" onclick='regresar(this.id)'></a></div>
-           <div class="center">
+
+           <div class="center"
+		     <div class="boxleft "><a href="#me2" class=" glyphicon glyphicon-arrow-left" onclick='regresar(this.id)'></a></div>
 		    <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>

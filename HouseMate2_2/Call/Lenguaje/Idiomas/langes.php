@@ -155,7 +155,7 @@ $lang['Fre8'] = "Si, por favor!";
 //Carusel
 $lang['Ca1'] = "Contactar";
 $lang['Ca2'] = "Más detalles";
-$land['noticias'] = "Noticias";
+$lang['noticias'] = "Noticias";
 
 //Perfil
 $lang['IdUsuario'] = "ID de Usuario: ";
