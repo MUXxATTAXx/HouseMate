@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-06-2015 a las 16:15:19
+-- Tiempo de generación: 18-06-2015 a las 22:50:38
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bdhousemate`
 --
-CREATE DATABASE IF NOT EXISTS `bdhousemate` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `bdhousemate`;
 
 -- --------------------------------------------------------
 
@@ -73,12 +71,30 @@ CREATE TABLE IF NOT EXISTS `convenio` (
 --
 
 CREATE TABLE IF NOT EXISTS `empresa` (
-`IdEmpresa` int(11) NOT NULL,
-  `Nombre` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
-  `Direccion` varchar(140) COLLATE utf8_spanish_ci NOT NULL,
-  `NIT` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
-  `Ratings` int(1) DEFAULT NULL
+  `IdEmpresa` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `dueño` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
+  `direccion` varchar(140) COLLATE utf8_spanish_ci NOT NULL,
+  `nit` varchar(10) COLLATE utf8_spanish_ci NOT NULL,
+  `descrip` varchar(140) COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `ratings` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `empresasolicitud`
+--
+
+CREATE TABLE IF NOT EXISTS `empresasolicitud` (
+  `idsolicitud` varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `idempresa` varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `idusuario` varchar(5) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `aprovado` int(1) NOT NULL,
+  `aprovado2` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -170,9 +186,9 @@ CREATE TABLE IF NOT EXISTS `mensaje` (
 --
 
 INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mensaje`, `fecha`, `estado`, `estado2`) VALUES
-(1, '0', '2', 'Test', 'Hola!', '2015-06-12 00:00:00', '1', '1'),
-(2, '0', '2', 'Test 2', 'sadhgaskdjashdaskdjksdasjdhajghdasgdhasgsdasd', '2015-06-12 00:00:00', '1', '1'),
-(3, '1', '2', 'Test 3', 'esto es de otro usuario', '2015-06-12 00:00:00', '1', '1');
+(1, '0', '2', 'Test', 'Hola!', '2015-06-12 00:00:00', '', ''),
+(2, '0', '2', 'Test 2', 'sadhgaskdjashdaskdjksdasjdhajghdasgdhasgsdasd', '2015-06-12 00:00:00', '', ''),
+(3, '1', '2', 'Test 3', 'esto es de otro usuario', '2015-06-12 00:00:00', '', '');
 
 -- --------------------------------------------------------
 
@@ -217,15 +233,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `NIT` varchar(10) COLLATE utf8_spanish_ci DEFAULT NULL,
   `telefono1` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
   `telefono2` varchar(8) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `Rating` int(1) DEFAULT NULL
+  `Rating` int(1) DEFAULT NULL,
+  `Empresa` varchar(5) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`) VALUES
-('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0);
+INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`, `Empresa`) VALUES
+('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0, '');
 
 --
 -- Índices para tablas volcadas
@@ -253,7 +270,13 @@ ALTER TABLE `convenio`
 -- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
- ADD PRIMARY KEY (`IdEmpresa`);
+ ADD PRIMARY KEY (`IdEmpresa`), ADD UNIQUE KEY `Dueño` (`dueño`);
+
+--
+-- Indices de la tabla `empresasolicitud`
+--
+ALTER TABLE `empresasolicitud`
+ ADD PRIMARY KEY (`idsolicitud`), ADD KEY `idempresa` (`idempresa`,`idusuario`), ADD KEY `idempresa_2` (`idempresa`), ADD KEY `idusuario` (`idusuario`);
 
 --
 -- Indices de la tabla `etiqueta`
@@ -277,7 +300,7 @@ ALTER TABLE `inmueble`
 -- Indices de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
- ADD PRIMARY KEY (`idmensaje`), ADD KEY `remitente` (`remitente`,`destinatario`);
+ ADD PRIMARY KEY (`idmensaje`), ADD KEY `remitente` (`remitente`,`destinatario`), ADD KEY `remitente_2` (`remitente`), ADD KEY `destinatario` (`destinatario`);
 
 --
 -- Indices de la tabla `tbusuario`
@@ -289,7 +312,7 @@ ALTER TABLE `tbusuario`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
- ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`);
+ ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`), ADD KEY `Empresa` (`Empresa`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -311,11 +334,6 @@ MODIFY `IdComprador` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `convenio`
 MODIFY `IdConvenio` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `empresa`
---
-ALTER TABLE `empresa`
-MODIFY `IdEmpresa` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `idcontratofin`
 --
 ALTER TABLE `idcontratofin`
@@ -328,6 +346,13 @@ MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `empresasolicitud`
+--
+ALTER TABLE `empresasolicitud`
+ADD CONSTRAINT `empresasolicitud_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`),
+ADD CONSTRAINT `empresasolicitud_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`);
 
 --
 -- Filtros para la tabla `etiqueta`

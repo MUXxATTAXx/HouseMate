@@ -1,9 +1,4 @@
 
-  <script type="text/javascript" charset="utf-8">
-  $(function() {
-    $("#Municipio3").chained("#Departamento3");
-  });
- </script>
  <div  class="row">
 
 <div class="form-group col-xs-6">
@@ -30,8 +25,9 @@
 <div class="form-group col-xs-6">
 <label><?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio3" class="form-control" id="Municipio3">
-	<option value=""><?php echo $lang['Nada'] ?></option>
-	<?php include "Call/Funciones/InsideSelect/Ahu.php"; 
+	<option value="nada"><?php echo $lang['Nada'] ?></option>
+<?php 
+	include "Call/Funciones/InsideSelect/Ahu.php"; 
 	include "Call/Funciones/InsideSelect/Caba.php";
 	include "Call/Funciones/InsideSelect/Cha.php" ;
 	include "Call/Funciones/InsideSelect/Cus.php" ;

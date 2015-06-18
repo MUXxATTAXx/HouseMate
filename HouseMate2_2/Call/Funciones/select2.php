@@ -1,8 +1,4 @@
-
-
-
- <div class="row">
-
+<div class="row">
 <div class="form-group col-xs-6">
 	 <label><?php echo $lang['Departamento']  ?>:</label>
 	<select name="Departamento2" class="form-control" id="Departamento2">

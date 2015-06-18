@@ -189,6 +189,7 @@ $lang['tipo'] = "Type";
 //Quick Finder/Buscador
 $lang['Buscar'] = "Search: ";
 $lang['Buscar2'] = "Look for houses, apartments and other real estate...";
+$lang['Buscar3'] = "Search";
 $lang['Precio-Max'] = "Maximum Price";
 $lang['Tipo-Transa'] = "Transaction Type";
 $lang['Tipo-Prop'] = "Real Estate Type";

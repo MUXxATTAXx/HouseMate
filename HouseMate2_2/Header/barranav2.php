@@ -31,7 +31,7 @@ require ("Call/Loged/seguridad.php");
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Social']);?><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="#"><?php echo($lang['Empresa']);?></a></li>
+				<li><a href="Empresa.php"><?php echo($lang['Empresa']);?></a></li>
 				<li class="divider"></li>
 				<li><a href="enviar_msj.php"><?php echo($lang['msj-nuevo']);?></a></li>
 				<li><a href="recibidos.php">Recibidos</a></li>
