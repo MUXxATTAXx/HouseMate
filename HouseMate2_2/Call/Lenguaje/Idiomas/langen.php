@@ -35,6 +35,10 @@ $lang['Perfil'] = 'Profile';
 $lang['Mantenimiento'] = 'Maintenances';
 $lang['Clientes'] = 'Clients';
 $lang['Inmuebles'] = 'Properties';
+$lang['Empresa'] = "Enterprise";
+$lang['EmpresaN'] = "New enterprise";
+$lang['EmpresaS'] = "Enterprise requests";
+$lang['Social'] = "Social";
 $lang['Idioma'] = 'Language';
 $lang['Cerrar-Sesion'] = 'Log out';
 //tab user admin

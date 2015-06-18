@@ -36,7 +36,10 @@ $lang['Perfil'] = 'Perfil';
 $lang['Mantenimiento'] = 'Mantenimientos';
 $lang['Clientes'] = 'Clientes';
 $lang['Inmuebles'] = 'Inmuebles';
-
+$lang['Empresa'] = "Empresa";
+$lang['EmpresaN'] = "Nueva empresa";
+$lang['EmpresaS'] = "Solicitudes de la empresa";
+$lang['Social'] = "Social";
 $lang['Idioma'] = 'Lenguaje';
 $lang['Cerrar-Sesion'] = 'Cerrar Sesi&oacute;n';
 $lang['contra'] = "Contraseña";
