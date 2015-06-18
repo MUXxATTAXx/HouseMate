@@ -1,10 +1,9 @@
-
+<?php 
+	include("../../conexion.php");
+	include("../Lenguaje/lenguaje.php");
+?>
 			<!-- barra lateral -->
-<div class="row row-centered">
-	<div class="main">
-    <div class="container clearfix">
-        <div class="content">
-            <section>
+ <div class='form-Dl' align="center">
            <div class="center">
 		    <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
@@ -37,7 +36,7 @@
 </div>
 <div class="row row-centered">
 	<center>
-		<?php require ("Call/Funciones/select.php") ?>
+		<?php require ("../../Call/Funciones/select2.php") ?>
 	</center>
 </div>
 <div class="row row-centered">
@@ -237,159 +236,16 @@
 			</div>
 			
 		<br>
-            </section>
-			<br>
-			<br>
-        </div>
-        <div class="sidebar">
-            <aside>
-                <div class="center">
-						<div class="center">
-					<h3><?php echo $lang['propiedades'] ?>:</h3>
-			</div>
-						<?php
-    mysql_query("SET NAMES 'utf8'");	
-    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
-    $cs=mysql_query($consulta);
-
-	$countermax = 0;
-	$i = 0;
-	$know = "";
-	$know2= "";
-	echo "<center><table id='rowfinder' class='table  table-hover table-striped table-striped' data-toggle='table' data-query-params='queryParams' data-page-list='[5, 10]' data-pagination='true'>
-	<thead>
-            <tr>
-				<th><Clase/th>
-                <th>".$lang['Codigo']."</th>
-                <th>".$lang['vr']."</th>
-                <th>".$lang['Precio']."</th>
-				<th class='hidme'></th>
-                <th class='hidme'></th>
-                <th class='hidme'></th>
-				<th class='hidme'></th>
-				<th class='hidme'></th>
-				<th class='hidme'></th>
-			
-            </tr>
-    </thead><tbody>";
-	
-	while($row=mysql_fetch_array($cs))
-	{
-		switch($row['VentaRenta'])
-		{
-			case 1:
-			$know = $lang['Venta'];
-			break;
-			case 2:
-			$know =  $lang['Renta'];
-			break;
-		}
-		switch($row['Tipopropiedad'])
-		{
-			case 1:
-			$know2 = $lang['Rustico'];
-			break;
-			case 2:
-			$know2 =  $lang['Urbana'];
-			break;
-		}
-		echo "<tr>
-		<td><a id='".$row['IdInmueble']."' onclick='Fill(this.id)'><div class='glyphicon glyphicon-eye-open'></div></a></td>
-		<td>".$row['IdInmueble']." </td>
-		<td>".$know."</td>
-		<td>".$know2."</td>
-		<td>".$row['Precio']."</td>
-		<td>".$row['Imagen']."</td>
-		<td>".$row['Direccion']."</td>
-		<td>".$row['Descripcion']."</td>
-		<td>".$row['DescDire']."</td>
-		</tr>";
-		
-		
-	}	
-	echo "</tbody></table></center>";
-	
-?>
-
-					</div>
-            </aside>
-        </div>
-    </div><!-- /.containter -->
-</div><!-- /.main -->
 
 </div>
 
-<?php 
-echo
-"<script>
-	function Fill(that)
-	{
-		
-		var table = document.getElementById('rowfinder');
-		var lengs = document.getElementById('rowfinder').rows.length;
-		
-		if(that > 5 && lengs < that)
-		{
-			var i = 6;
-			var obtener = 0;
-			var rvalue = 0;
-			for(var x=parseInt(that);x!=0;i++)
-			{
-				obtener = x-i;
-				rvalue++;
-				if(rvalue > 5)
-				{
-					rvalue= 1;
-				}
-				if(obtener == 0)
-				{
-					that = rvalue;
-					x = 0;
-				}
-				
-			}
-		}
-		var row = table.rows[that];
-		var uno = row.cells[2].innerHTML;
-		switch(uno)
-		{
-			case '".$lang['Renta']."':
-			uno = '2';
-			break;	
-			case '".$lang['Venta']."':
-			uno = '1';
-			break;
-		}
-		var dos = row.cells[3].innerHTML;
-		switch (dos)
-		{
-			case '".$lang['Urbana']."':
-			dos = '2';
-			break;	
-			case '".$lang['Rustico']."':
-			dos = '1';
-			break;
-		}
-		var tres = row.cells[4].innerHTML;
-		var cuatro = row.cells[5].innerHTML;
-		var cinco = row.cells[6].innerHTML;
-
-		var sies = row.cells[7].innerHTML;
-		var siete = row.cells[8].innerHTML;
-		
-		document.getElementById('selecta').value= uno;
-		document.getElementById('selecta2').value= dos;
-		document.getElementById('modinece').value= tres;
-		
-		document.getElementById('modidescrip').value = sies;
-		document.getElementById('modidirre').value = siete;
-		document.getElementById('blah2').src = cuatro;
-		
-	}
-</script>";?>  
 
 	
-<script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+<script>  $(function() {
+$("#Municipio2").chained("#Departamento2");
+});
 	function readURL2(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

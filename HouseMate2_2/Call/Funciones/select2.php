@@ -1,11 +1,9 @@
 
 
- <div id="comingleft">
-	<h3>Filtros</h3>
- </div>
- <div id="comingtoright" class="row">
 
-<div class="form-group col-xs-4">
+ <div class="row">
+
+<div class="form-group col-xs-6">
 	 <label><?php echo $lang['Departamento']  ?>:</label>
 	<select name="Departamento2" class="form-control" id="Departamento2">
 		<option value=""><?php echo $lang['Nada'] ?></option>
@@ -26,29 +24,25 @@
 	</select>
 </div>
 
-<div class="form-group col-xs-4">
+<div class="form-group col-xs-6">
 <label><?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio2" class="form-control" id="Municipio2">
-	<option value=""><?php echo $lang['Nada'] ?></option>
-	<?php include "Call/Funciones/InsideSelect/Ahu.php"; 
-	include "Call/Funciones/InsideSelect/Caba.php";
-	include "Call/Funciones/InsideSelect/Cha.php" ;
-	include "Call/Funciones/InsideSelect/Cus.php" ;
-	include "Call/Funciones/InsideSelect/Mor.php" ;
-	include "Call/Funciones/InsideSelect/LaL.php" ;
-	include "Call/Funciones/InsideSelect/LaP.php";
-	include "Call/Funciones/InsideSelect/Uni.php";
-	include "Call/Funciones/InsideSelect/SaM.php";
-	include "Call/Funciones/InsideSelect/SaS.php";
-	include "Call/Funciones/InsideSelect/SaV.php";
-	include "Call/Funciones/InsideSelect/SaA.php";
-	include "Call/Funciones/InsideSelect/So.php";
-	include "Call/Funciones/InsideSelect/Usu.php";
+	<option value="nada"><?php echo $lang['Nada'] ?></option>
+	<?php include "../../Call/Funciones/InsideSelect/Ahu.php"; 
+	include ".../../Call/Funciones/InsideSelect/Caba.php";
+	include "../../Call/Funciones/InsideSelect/Cha.php" ;
+	include "../../Call/Funciones/InsideSelect/Cus.php" ;
+	include "../../Call/Funciones/InsideSelect/Mor.php" ;
+	include "../../Call/Funciones/InsideSelect/LaL.php" ;
+	include "../../Call/Funciones/InsideSelect/LaP.php";
+	include "../../Call/Funciones/InsideSelect/Uni.php";
+	include "../../Call/Funciones/InsideSelect/SaM.php";
+	include "../../Call/Funciones/InsideSelect/SaS.php";
+	include "../../Call/Funciones/InsideSelect/SaV.php";
+	include "../../Call/Funciones/InsideSelect/SaA.php";
+	include "../../Call/Funciones/InsideSelect/So.php";
+	include "../../Call/Funciones/InsideSelect/Usu.php";
 	?>
 </select>
-</div>
- <div class="form-group col-xs-4">
-		<label><?php echo $lang['Duen'] ?>: </label>
-			<input id="busquename" class='form-control' type='text' name='pertenece' placeholder='<?php echo $lang['Duen'] ?>'>
 </div>
 </div>

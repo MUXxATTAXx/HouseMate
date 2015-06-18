@@ -43,7 +43,12 @@
 	</div>
  </div>
  <div class="tab-pane fade" id="sd">
- <?php require('admininmueble/modificar_inmueble.php'); ?> 
+  <div id="thetablemodif">
+	</div>
+	</div>
+		<div id='errormodificar'>
+	</div>
+	<span class="hidme" id="modificarid"></span>
  </div>
 
 
@@ -59,13 +64,25 @@
 <script type="text/javascript">
 $(window).load(function()  {
 		loadDataAdmin();
+		loadDataModificar();	
 	});
 function loadDataAdmin(){
+	idre = $("#modificarid").val();
 $.ajax({   
-type: 'POST',   
+type: 'POST',
+data: "idre="+idre,   
 url: 'Call/Funciones/mostrar_inmueble.php',   
 success: function(msg) {
 	$("#thetablejq").html(msg);
+},
+});
+};
+function loadDataModificar(){
+$.ajax({   
+type: 'POST',   
+url: 'Call/Funciones/modificardefault.php',   
+success: function(msg) {
+	$("#thetablemodif").html(msg);
 },
 });
 };
@@ -98,7 +115,6 @@ success: function(msg) {
  <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 <script>
   $(function() {
-$("#Municipio2").chained("#Departamento2");
 $("#Municipio").chained("#Departamento");
 });
 </script>
