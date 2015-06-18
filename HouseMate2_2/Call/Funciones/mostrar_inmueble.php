@@ -141,11 +141,18 @@
 		document.getElementById('spanme').innerHTML = yo;
 }
 	function cambiar(yo) {
-			var changer = document.getElementById("thestart");
+			var changer = document.getElementById("modificarid");
+			changer.innerHTML = yo;
 			var d = document.getElementById("sd");
 			var e = document.getElementById("crear");
 			e.className = "tab-pane fade";
 			d.className = "tab-pane fade active in";
-
+}
+function regresar() {
+			loadDataModificar();
+			var d = document.getElementById("crear");
+			var e = document.getElementById("sd");
+			e.className = "tab-pane fade";
+			d.className = "tab-pane fade active in";
 }
 </script>

@@ -19,14 +19,13 @@
 <?php include_once("conexion.php"); ?>
 <div class="row">
         <ol class="breadcrumb bread-primary breadnomargin">
-            <li><a><?php echo($lang['Inmuebles']);?></a></li>
+            <li><a><?php echo($lang['real-estate']);?></a></li>
         </ol>
     </div>
 <ul id="what" class="nav nav-tabs">
 		
     <li id="me" class='active'><a href='#home' data-toggle='tab'><?php echo($lang['Crear-Inmuebles']);?></a></li>
     <li id="me2"><a href='#crear' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
-    <li id="me3"><a href='#sd' data-toggle='tab' ><?php echo($lang['Modificar-Inmuebles']);?></a></li>
 </ul>
 
 <div id='myTabContent' class='tab-content'>
@@ -64,7 +63,7 @@
 <script type="text/javascript">
 $(window).load(function()  {
 		loadDataAdmin();
-		loadDataModificar();	
+		loadDataModificar();
 	});
 function loadDataAdmin(){
 	idre = $("#modificarid").val();
@@ -79,7 +78,8 @@ success: function(msg) {
 };
 function loadDataModificar(){
 $.ajax({   
-type: 'POST',   
+type: 'POST',
+data: "idre="+idre,     
 url: 'Call/Funciones/modificardefault.php',   
 success: function(msg) {
 	$("#thetablemodif").html(msg);
