@@ -6,6 +6,7 @@
 	<link href='css/intro.css' rel='stylesheet'/>
     <link href='css/estilo.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href="css/empresatag.css" rel="stylesheet">
    
 </head>
 <body id="intro">
@@ -35,8 +36,9 @@
  <title><?php echo $lang['Inicio'] ?></title>
 <br>
 <br>
+<form method="POST" action="Empresa.php">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"><?php echo $lang['EmpresaN'] ?></h3>
@@ -50,31 +52,30 @@
 						</div>
 						<div class="form-group col-xs-12">
 							<div class="btn btn-primary btn-file">
-								<i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?><input type="file" class="file" onchange="readURL(this)">
+								<i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?><input name="archivo" type="file" class="file" onchange="readURL(this)">
 							</div>
 						</div>
 					</div>
 				</div>
-                
                 <div class=" col-md-9 col-lg-9 ">
 					<div class="row">
 						<div class="form-group col-xs-6">
-							<label>Nombre</label>
-							<input class="form-control">
+							<label>*<?php echo $lang['Nombre'] ?>:</label>
+							<input name="nombre" class="form-control">
 						</div>
 						<div class="form-group col-xs-6">
-							<label>NIT</label>
-							<input class="form-control">
+							<label>*NIT:</label>
+							<input name="nit" class="form-control">
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-6">
-							<label>Telefono</label>
-							<input class="form-control">
+							<label>*<?php echo $lang['tel'] ?>:</label>
+							<input name="telefono" class="form-control">
 						</div>
 						<div class="form-group col-xs-6">
-							<label>Telefono2</label>
-							<input class="form-control">
+							<label><?php echo $lang['tel2'] ?>:</label>
+							<input name="telefono2" class="form-control">
 						</div>
 					</div>
 					<div>
@@ -82,21 +83,39 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<label>Descripcion</label>
-							<textarea class="form-control"></textarea>
+							<label><?php echo $lang['Descripcion'] ?>:</label>
+							<textarea name="descripcion" class="form-control"></textarea>
 						</div>
 					</div>
                 </div>
               </div>
             </div>
                  <div class="panel-footer">
-					<a href='mis_mensajes.php?remitente=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisMensajes'])?></a>
+				 <center>
+					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
+					<?php
+					if(isset($_POST['ingresar'])){
+						if($_POST['nombre'] != "" and $_POST['nit'] != "" and $_POST['telefono'] != "" and $_POST['Departamento3'] != ""
+							and $_POST['Municipio3'] != "nada"){
+						include "Call/Empresa/Empresafuncion/crearempresa.php";
+						}
+						else{
+							echo "<span class='label label-warning'>" .$lang['missing']." (*)</span>";
+						}
+					}
+					else{
+						
+					}
+					?>
+				</center>	
              </div>
           </div>
         </div>
       </div>
+	  </form>
  <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
-<script>
+
+ <script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

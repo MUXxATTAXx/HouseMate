@@ -2,7 +2,7 @@
  <div  class="row">
 
 <div class="form-group col-xs-6">
-	 <label><?php echo $lang['Departamento']  ?>:</label>
+	 <label>*<?php echo $lang['Departamento']  ?>:</label>
 	<select name="Departamento3" class="form-control" id="Departamento3">
 		<option value=""><?php echo $lang['Nada'] ?></option>
 		<option value="Ahuachapán">Ahuachapán</option>
@@ -23,7 +23,7 @@
 </div>
 
 <div class="form-group col-xs-6">
-<label><?php echo $lang['Municipio'] ?>:</label>
+<label>*<?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio3" class="form-control" id="Municipio3">
 	<option value="nada"><?php echo $lang['Nada'] ?></option>
 <?php 

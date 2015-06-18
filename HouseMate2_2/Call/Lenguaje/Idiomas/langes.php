@@ -59,7 +59,7 @@ $lang['Eliminar-Inmuebles'] = 'Eliminar Inmuebles';
 $lang['Eliminares'] = "Eliminar";
 $lang['oldp'] = "Contraseña actual";
 $lang['newp'] = "Nueva contraseña";
-$lang['Offer'] = "Offertar";
+$lang['Offer'] = "Ofertar";
 
 $lang['Existe'] = "Usuario erróneo o contraseña incorrecta";
 $lang['Usuario'] = "Usuario";
