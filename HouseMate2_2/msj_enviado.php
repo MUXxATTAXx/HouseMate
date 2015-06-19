@@ -41,21 +41,45 @@ while($row=mysql_fetch_array($cs)){
                 <h3 class="panel-title"><?php echo $row['asunto'];?></h3>
             </div>
             <div class="panel-body">
-                <table>
-                    <thead>
-                        <?php echo "<td>".$lang['destin'].":  </td>";?>
-                        <?php echo "<td><h3>".$row2['usuario']."</h3></td>";?>
-                    </thead>
-                    <tr>
-                        
-                        <?php echo "<td>".$lang['asunto'].": </td>"; ?>
-                        <?php echo "<td>".$row['asunto']."</td>"; ?>
-                    <tr> 
-                </table>
-                <div class="row row-centered">
-                      <?php echo "<h3>".$lang['msj']."</h3>";?>
-                      <?php echo "<h4>".$row['mensaje']."</h4>"; ?><br>
-                </div>
+				<div class="row">
+					<div class="col col-sm-4 col-centered">
+						<h4><?php echo $lang['destin'].":";?></h4>
+					</div>
+					<div class="col col-sm-6 col-centered">
+						<?php echo $row2['usuario'];?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-sm-4 col-centered">
+						<?php echo $lang['asunto'].":";?>
+					</div>
+					<div class="col col-sm-6 col-centered">
+						<?php echo $row['asunto'];?>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-sm-4 col-centered">
+						<?php echo $lang['msj'].":";?>
+					</div>
+					<div class="col col-sm-6 col-centered">
+						<p>
+						<?php
+						$mensaje = $row['mensaje'];
+						$longitud = strlen($mensaje);
+						
+						while($longitud <= 360){
+							$contador = 0;
+							$contador2 = 50;
+							echo substr($mensaje,$contador,$contador2);
+							echo"<br>";
+							$contador = $contador + 50;
+							$contador2 = $contador2 + 50;
+							$longitud = $longitud + 50;
+						}
+						?>
+						</p>
+					</div>
+				</div>
             </div>
             <div class="panel-footer">
                  <a href="inbox.php"><button class="btn btn-primary btn-block" type="submit"><?php echo $lang['inbox'];?></button></a>

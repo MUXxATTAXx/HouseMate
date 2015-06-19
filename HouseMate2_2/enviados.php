@@ -67,7 +67,8 @@ $cs = mysql_query($consulta);
             ?>
             </tbody>
         </table>
-    <button name="eliminar" type="submit" class="btn btn-primary boxleft" value="2"><?php echo $lang['msj-elim'];?></button>
+		<br>
+    <center><button name="eliminar" type="submit" class="btn btn-danger boxleft" value="2"><?php echo $lang['msj-elim'];?></button></center>
 <?php
 if(isset($_POST['eliminar']) and isset($_POST['check'])){  
     $check = $_POST['check'];

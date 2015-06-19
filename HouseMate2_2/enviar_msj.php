@@ -30,20 +30,36 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
-                <h3 class="panel-title"><?php echo $lang['msj'];?></h3>
+                <h2 class="panel-title"><center><?php echo $lang['msj'];?></center></h2>
             </div>
             <div class="panel-body">
-                <div class="row">
-                  <form action="enviar_msj.php" method="POST">
-                    <div class="col sm-1 col-centered">
-                        <label><?php echo $lang['destin'].": ";?></label>
-                        <input class="form-control" type="text" name="destinatario" placeholder="<?php echo $lang['destin'];?>">
-                    </div>      
-                </div>
-                    <center><label><?php echo $lang['asunto'];?></label></center>
-                      <input class="form-control" type="text" name="asunto" placeholder="<?php echo $lang['asunto'];?>"><br>
-                      <p><?php echo $lang['msj-max'];?></p>
-                      <textarea  maxlength="260" class="form-control" name="mensaje"></textarea><br>
+				<form action="enviar_msj.php" method="POST">
+					<div class="row">
+						<div class="col col-sm-4">
+							<center><?php echo $lang['destin'].": ";?></center>
+						</div>
+						<div class="col col-sm-6">
+							<input class="form-control" type="text" name="destinatario" placeholder="<?php echo $lang['destin'];?>">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-sm-4">
+							<center><?php echo $lang['asunto'];?></center>
+						</div>
+						<div class="col col-sm-6">
+							<input class="form-control" type="text" name="asunto" placeholder="<?php echo $lang['asunto'];?>">
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-sm-4">
+							<center><?php echo $lang['msj-max'];?></center>
+						</div>
+						<div class="col col-sm-6">
+							<textarea name="mensaje" placeholder="<?php echo $lang['msj'];?>" maxlength="260" class="form-control" rows="7" id="textArea" style="margin: 0px -0.84375px 0px 0px; width: 424px; height: 83px;"></textarea>
+						</div>
+					</div>
             </div>
             <div class="panel-footer">
                      <button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo $lang['msj-enviar'];?></button>

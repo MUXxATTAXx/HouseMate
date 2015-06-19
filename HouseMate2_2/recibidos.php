@@ -75,12 +75,21 @@ $cs = mysql_query($consulta);
             ?>
             </tbody>
         </table>
-    <button name="marcar" type="submit" class="btn btn-primary boxleft" value="1"><?php echo $lang['marcar'];?></button>
-    <select class=" checbocks" name="estado">
-        <option value="2"><?php echo $lang['leido'];?></option>
-        <option value="1"><?php echo $lang['pendiente'];?></option>
-    </select>
-    <button name="eliminar" type="submit" class="btn btn-primary boxleft" value="2"><?php echo $lang['msj-elim'];?></button>
+	<br>
+	<div class="row row-centered">
+		<div class="col col-sm-2">
+			<button name="marcar" type="submit" class="btn btn-default boxleft" value="1"><?php echo $lang['marcar'];?></button>
+		</div>
+		<div class="col col-sm-2">
+			<select class="form-control" name="estado">
+				<option value="2"><?php echo $lang['leido'];?></option>
+				<option value="1"><?php echo $lang['pendiente'];?></option>
+			</select>
+		</div>
+		<div class="col col-sm-1">
+			<button name="eliminar" type="submit" class="btn btn-danger boxleft" value="2"><?php echo $lang['msj-elim'];?></button>
+		</div>
+	</div>
 <?php
 if(isset($_POST['eliminar']) and isset($_POST['check'])){
     $check = $_POST['check'];
