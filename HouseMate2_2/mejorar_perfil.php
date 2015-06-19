@@ -5,12 +5,9 @@
 <meta charset=utf-8 />
     ");
     session_start();
-<<<<<<< HEAD
 	if(isset($_SESSION['tip']))
-=======
 if(isset($_SESSION['tip'])){
 	switch($_SESSION['tip'])
->>>>>>> origin/master
 	{
 		switch($_SESSION['tip'])
 		{
