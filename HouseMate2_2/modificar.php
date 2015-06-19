@@ -85,16 +85,12 @@ while($row=mysql_fetch_array($cs)){
                 <input class="form-control" type="password" name="contra_vieja" placeholder="<?php echo $lang['oldp'] ?>">
 			</div>
 		</div>
-            <hr>
-			<input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Modificar-Usuario'] ?>">
             </div>
-	
-		
-			<div class="panel-footer">		
-			<a id="meperfil" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-					<span class="pull-right">
-							<a href="perfil_admin.php" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                        </span>
+			<div class="panel-footer">
+					<center>
+						<a href="perfil_admin.php" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-chevron-left"></i><?php echo($lang['back']);?></a>
+						<input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Modificar-Usuario'];?>">
+                    </center>
 				</div>
 			</div>
 

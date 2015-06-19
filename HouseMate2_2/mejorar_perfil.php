@@ -5,7 +5,12 @@
 <meta charset=utf-8 />
     ");
     session_start();
+<<<<<<< HEAD
 	if(isset($_SESSION['tip']))
+=======
+if(isset($_SESSION['tip'])){
+	switch($_SESSION['tip'])
+>>>>>>> origin/master
 	{
 		switch($_SESSION['tip'])
 		{
@@ -21,6 +26,7 @@
 			break;
 		}
 	}
+}
 ?>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <!DOCTYPE HTML>
@@ -44,34 +50,60 @@
             </div>
             <div class="panel-body">
                 <form action="mejorar_perfil.php" method="POST">
-                  <div class="row">   
-                    <div class=" col-md-9 col-lg-9 ">
-
-                                <p><?php echo($lang['crede']);?></p>
-                                <input name="crede" class="form-control" type="textbox" placeholder="<?php echo($lang['crede']);?>" maxlength="100" required>
-
-                                <p><?php echo($lang['direc']);?></p>
-                                <input name="direccion" class="form-control" type="textbox" placeholder="<?php echo($lang['direc']);?>" maxlength="140" required>
-
-                                <?php echo($lang['dui']);?></p>
-                                <td><input name="dui" class="form-control" type="textbox" placeholder="DUI" maxlength="9" required>
-
-                                <p><?php echo($lang['nit']);?></p>
-                                <input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="14" required>
-
-                                <p><?php echo($lang['tel']);?></p>
-                                <input name="tel" class="form-control" type="textbox" placeholder="<?php echo($lang['tel']);?>" maxlength="8" required>
-
-                                <p><?php echo($lang['tel2']);?></p>
-                                <input name="tel2" class="form-control" type="textbox" placeholder="<?php echo($lang['tel22']);?>" maxlength="8">
-                                    
-
-                    </div>
-                  </div>     
+					<div class="row">
+						<div class="col col-sm-2">
+							<center><?php echo($lang['crede']);?></center>
+						</div>
+						<div class="col col-sm-10">
+							<input name="crede" class="form-control" type="textbox" placeholder="<?php echo($lang['crede']);?>" maxlength="100" required>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-sm-2">
+							<center><?php echo($lang['direc']);?></center>
+						</div>
+						<div class="col col-sm-10">
+							<input name="direccion" class="form-control" type="textbox" placeholder="<?php echo($lang['direc']);?>" maxlength="140" required>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-sm-2">
+							<center><?php echo($lang['dui']);?></center>
+						</div>
+						<div class="col col-sm-4">
+							<input name="dui" class="form-control" type="textbox" placeholder="DUI" maxlength="9" required>
+						</div>
+						<div class="col col-sm-2">
+							<center><?php echo($lang['nit']);?></center>
+						</div>
+						<div class="col col-sm-4">
+							<input name="nit" class="form-control" type="textbox" placeholder="NIT" maxlength="14" required>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col col-sm-2">
+							<center><?php echo($lang['tel']);?></center>
+						</div>
+						<div class="col col-sm-4">
+							<input name="tel" class="form-control" type="textbox" placeholder="<?php echo($lang['tel']);?>" maxlength="8" required>
+						</div>
+						<div class="col col-sm-2">
+							<center><?php echo($lang['tel2']);?></center>
+						</div>
+						<div class="col col-sm-4">
+							<input name="tel2" class="form-control" type="textbox" placeholder="<?php echo($lang['tel22']);?>" maxlength="8">
+						</div>
+					</div>   
             </div>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo($lang['mejorar']);?>">
-            </div>
+				<center>
+					<a href="perfil_admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-chevron-left"></i><?php echo($lang['back']);?></a>
+					<input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo($lang['mejorar']);?>">
+				</center>
+			</div>
             <?php
             if(isset($_POST['mejorar']) ){
                 include "conexion.php";  

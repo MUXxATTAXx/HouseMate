@@ -224,6 +224,8 @@ $lang['msj-elim'] = "Delete messages";
 $lang['elim-msj-exito'] = "Message deleted!";
 $lang['marcado-exito'] = "Message changed!";
 
+$lang['back'] = "Return";
+
 //Barra 6
 $lang['vender'] = "Sale";
 $lang['manejar'] = "";
