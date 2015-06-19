@@ -139,7 +139,6 @@ $("#adminmodificar").click(function() {
     $.ajax({   
      type: 'POST',   
      url: 'Call/Funciones/update.php',   
-     data: {LastName:"stuff", FirstName:"stuff"},
     success: function(msg) {
             $("#thetablejq").html(msg);
         },

@@ -1,23 +1,25 @@
 <?php
     echo("
-
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
 
 <meta charset=utf-8 />
     ");
     session_start();
-	switch($_SESSION['tip'])
+	if(isset($_SESSION['tip']))
 	{
-		case 1:
-		include("Header/barranav2.php");
-		break;
-		case 2:
-		break;
-		case 3:
-		break;
-		case 4:
-		include("Header/barranav6.php");
-		break;
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			include("Header/barranav2.php");
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			include("Header/barranav6.php");
+			break;
+		}
 	}
 ?>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>

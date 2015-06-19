@@ -18,7 +18,7 @@ $lang['Vision'] = 'Vision';
 $lang['Vision1'] = 'Transcend on the Salvadorian market changing the way we perform transactions on line, through a platform dedicated exclusively to the sales and renting of real estate properties of any kind, and the promotion among the users of the platform and visitors of it.';
 $lang['QueEs'] = 'What is House Mate?';
 $lang['QueEs1'] = 'House Mate it’s a web platform that allows the advertising and promotion of real estate properties for sale or for rent between the users who interact inside the webpage. To do that, visitors have the choice to sign in for free to the platform to enjoy our services.';
-
+$lang['NCompañia'] = "Enterprise name";
 $lang['Institucion'] = 'More about the Institution';
 $lang['Contactenos'] = 'Contact us';
 $lang['Novedades'] = 'Latest News';
@@ -41,6 +41,7 @@ $lang['EmpresaS'] = "Enterprise requests";
 $lang['Social'] = "Social";
 $lang['Idioma'] = 'Language';
 $lang['Cerrar-Sesion'] = 'Log out';
+$lang['miembros'] = "Members";
 //tab user admin
 $lang['Crear-Usuario'] = 'Create user';
 $lang['Ver-Usuario'] = 'View users';

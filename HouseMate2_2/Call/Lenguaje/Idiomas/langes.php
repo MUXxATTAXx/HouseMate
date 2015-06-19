@@ -60,7 +60,7 @@ $lang['Eliminares'] = "Eliminar";
 $lang['oldp'] = "Contraseña actual";
 $lang['newp'] = "Nueva contraseña";
 $lang['Offer'] = "Ofertar";
-
+$lang['miembros'] = "Miembros";
 $lang['Existe'] = "Usuario erróneo o contraseña incorrecta";
 $lang['Usuario'] = "Usuario";
 $lang['Usuarios'] = "Usuarios";
@@ -73,6 +73,7 @@ $lang['Agente'] = "Agente";
 $lang['selectp'] = 'Seleccione imagen';
 $lang['vr']  ="Venta o renta";
 $lang['Direccion'] = 'Dirección';
+$lang['NCompañia'] = "Nombre de compañia";
 $lang['Etiqueta'] = 'Etiquetas';
 $lang['EtiquetaNum'] = 'Digite el número de etiquetas (Max. 12)';
 $lang['Descripcion'] = 'Descripción';

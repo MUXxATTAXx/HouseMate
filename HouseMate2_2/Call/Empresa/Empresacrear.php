@@ -14,29 +14,27 @@
     echo("
 <meta charset=utf-8 />
     ");
-	$variable1 = $_SESSION["user"]; 
-	$variable2 = $_SESSION['id']; 
-	$variable3 = $_SESSION['tip'];
-	switch($variable3)
+	if(isset($_SESSION['tip']))
 	{
-		case 1:
-		include("Header/barranav2.php");
-		break;
-		case 2:
-		break;
-		case 3:
-		break;
-		case 4:
-		include("Header/barranav6.php");
-		break;
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			include("Header/barranav2.php");
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			include("Header/barranav6.php");
+			break;
+		}
 	}
-    
-
 ?>
  <title><?php echo $lang['Inicio'] ?></title>
 <br>
 <br>
-<form method="POST" action="Empresa.php">
+<form method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
           <div class="panel panel-info">
@@ -45,19 +43,20 @@
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> 
+                <div class="col-md-4 col-lg-4 " align="center"> 
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<img class="img-responsive imagenpequeña" id="imagenempresa" > 
+							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"> 
 						</div>
 						<div class="form-group col-xs-12">
 							<div class="btn btn-primary btn-file">
-								<i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?><input name="archivo" type="file" class="file" onchange="readURL(this)">
+								<i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?>
+								<input type="file" class="file" onchange="readURL(this)" name="file" >
 							</div>
 						</div>
 					</div>
 				</div>
-                <div class=" col-md-9 col-lg-9 ">
+                <div class=" col-md-8 col-lg-8 ">
 					<div class="row">
 						<div class="form-group col-xs-6">
 							<label>*<?php echo $lang['Nombre'] ?>:</label>
@@ -94,18 +93,7 @@
 				 <center>
 					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
 					<?php
-					if(isset($_POST['ingresar'])){
-						if($_POST['nombre'] != "" and $_POST['nit'] != "" and $_POST['telefono'] != "" and $_POST['Departamento3'] != ""
-							and $_POST['Municipio3'] != "nada"){
 						include "Call/Empresa/Empresafuncion/crearempresa.php";
-						}
-						else{
-							echo "<span class='label label-warning'>" .$lang['missing']." (*)</span>";
-						}
-					}
-					else{
-						
-					}
 					?>
 				</center>	
              </div>

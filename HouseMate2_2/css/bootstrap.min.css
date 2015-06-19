@@ -190,3 +190,11 @@ textarea {
 	max-width:150px;
 	max-height:100px;
 }
+.forcenavchange{
+  border-bottom: 1px solid #3498db;
+}
+.justificar
+{
+text-align: justify;
+    text-justify: inter-word;
+}
