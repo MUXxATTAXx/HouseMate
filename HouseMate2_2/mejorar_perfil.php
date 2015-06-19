@@ -93,8 +93,11 @@ if(isset($_SESSION['tip'])){
 					</div>   
             </div>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo($lang['mejorar']);?>">
-            </div>
+				<center>
+					<a href="perfil_admin.php" class="btn btn-warning"><i class="glyphicon glyphicon-chevron-left"></i><?php echo($lang['back']);?></a>
+					<input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo($lang['mejorar']);?>">
+				</center>
+			</div>
             <?php
             if(isset($_POST['mejorar']) ){
                 include "conexion.php";  
