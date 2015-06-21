@@ -1,4 +1,6 @@
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/profile_cards.css" rel="stylesheet">
 <?php
     echo("
 
@@ -36,47 +38,36 @@
 <?php
 include "conexion.php";
 // Obtiene el verdadero id usuario
-if(!isset($_GET['Dueno'])){
+if(!isset($_GET['socio1'])){
     header('Location: perfil_admin.php');
 }
-$dueno = $_GET['Dueno'];
-$tempid = "SELECT IdUsuario FROM usuario WHERE TempId = '$dueno'";
-$temcs=mysql_query($tempid);
-$rowt=mysql_fetch_array($temcs);
-$Rtemid = $rowt['IdUsuario'];
-$consulta = "SELECT * FROM inmueble WHERE Dueno = '$Rtemid' and IdInmueble > 0";
-$cs = mysql_query($consulta);
-while($row = mysql_fetch_array($cs)){
+$socio = $_GET['socio1'];
+$consulta = "SELECT * FROM asociados WHERE socio1 = '$socio'";
+$cs2 = mysql_query($consulta);
+
+while($row2 = mysql_fetch_array($cs2)){
+    $consulta2 = "SELECT * FROM tbusuario WHERE idUsuario = '".$row2['socio2']."'";
+
+    $cs = mysql_query($consulta2);
+    while($row = mysql_fetch_array($cs)){
 //Inicio de bloque
     echo    "<div class='col-xs-12 col-sm-6 col-md-6'>
             <div class='well well-sm'>
                 <div class='row'>
                     <div class='col-sm-6 col-md-4'>
-                        <img height='150px' width='150px' src='".$row['Imagen']."' alt='' class='img-rounded img-responsive' />
+                        <img height='150px' width='150px' src='https://lh3.googleusercontent.com/-4h2GkEskmws/AAAAAAAAAAI/AAAAAAAAAAA/9UdKs51m48o/photo.jpg' alt='' class='img-rounded img-responsive' />
                     </div>
                     <div class='col-sm-6 col-md-8'>
-                        <h4>
-                            ".$row['IdInmueble']."</h4>
-                        <small><cite title='San Francisco, USA'>".$row['Direccion']."<i class='glyphicon glyphicon-map-marker'>
-                        </i></cite></small>
-                        <p>
-                            <i class='glyphicon glyphicon-usd'></i>".$row['Precio']."
-                            <br />
-                            ";
-    //Venta o Renta
-    if($row['VentaRenta'] == 1){
-        echo $lang['Venta'];
-    }elseif($row['VentaRenta'] == 2){
-        echo $lang['Renta'];
-    }
-    echo"
-                            <br />
-                            <i class='glyphicon glyphicon-info-sign'></i>".$row['Descripcion']."</p>
+                        <h4>".$row['usuario']."</h4>
+                        <p>".$row['nombre']." ".$row['apellido']."</p>
+                        <br>
+                        <p>".$row['correo']."</p>
                     </div>
                 </div>
             </div>
         </div>";
 //Fin de bloque
+    }
 }
 ?>
     </div>

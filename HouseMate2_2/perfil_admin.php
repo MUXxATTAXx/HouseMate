@@ -104,8 +104,24 @@
                     </tbody>
                   </table>
                 <?php } ?>
-                  <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
-                  <a href='mis_mensajes.php?remitente=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisMensajes'])?></a>
+                    <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
+                    <a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"  class="btn btn-primary">Mis Asociados</a>
+                    <?php
+                        include "conexion.php";
+                        $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");
+                        while($row3 = mysql_fetch_array($consulta3)){
+                    ?>
+                    <a href='recibidos.php' class="btn <?php
+                            if($row3['mensajes_sin_leer'] > 0){
+                                echo "btn-danger";
+                            }else{echo "btn-primary";}
+                    ?>">
+                        <?php
+                            echo "<span class='badge'>".$row3['mensajes_sin_leer']."</span> ".($lang['msjs']);
+                        }
+                        ?>
+                    </a>
+                    
                 </div>
               </div>
             </div>
@@ -113,8 +129,8 @@
                         <a id="meperfil" data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i   class="glyphicon glyphicon-envelope"></i></a>
 						<span class="pull-right">
                         <?php
-                            $consulta = mysql_query("select * from usuario where TempId = '$usuario'");
-							$existe = mysql_num_rows($consulta);
+                            $consulta2 = mysql_query("select * from usuario where TempId = '$usuario'");
+							$existe = mysql_num_rows($consulta2);
                             if($existe > 0){
                                 $boton = "modificar.php";
                                

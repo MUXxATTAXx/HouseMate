@@ -101,13 +101,14 @@
                                     echo"<a href='#' class='btn btn-success'>Ya son socios!</a>";
                                 }
                                 else{
-                                    echo "<input type='submit' name='socio' value='Agregar Socio' class='btn btn-primary' required>";
+                                    echo "<input type='submit' name='socio' value='Agregar Socio' class='btn btn-primary'>";
                                     if(isset($_POST['socio'])){
                                         include "conexion.php";
                                         $consulta = "INSERT INTO asociados values (null,'$socio1','$socio2','1')";
                                         $cs2 = mysql_query($consulta);
                                         if($cs2){
-                                            echo "Exito";
+                                            echo
+                                            "<script>window.location.assign('perfil.php?usuario=".$usuario."')</script";
                                         }
                                         else{echo "Error".mysql_error();}
                                     }
