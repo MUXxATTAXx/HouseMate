@@ -66,7 +66,7 @@ $cs = mysql_query($consulta);
                             echo "<span class='label label-danger'>".$lang['pendiente']."</span>";
                         }
                     echo"</td>
-                        <td>".$row2['usuario']."</td>
+                        <td><a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario']."</a></td>
                         <td><a href='mensaje.php?idmensaje=".$row['idmensaje']."'>".$row['asunto']."</a></td>
                         <td>".substr($row['mensaje'],0,50)."...</td>
                     </tr>";

@@ -42,39 +42,39 @@ while($row=mysql_fetch_array($cs)){
             </div>
             <div class="panel-body">
 				<div class="row">
-					<div class="col col-sm-4 col-centered">
+					<div class="col col-sm-3 col-centered">
 						<h4><?php echo $lang['destin'].":";?></h4>
 					</div>
-					<div class="col col-sm-6 col-centered">
-						<?php echo $row2['usuario'];?>
+					<div class="col col-sm-7 col-centered">
+                        <h3><?php echo $row2['usuario'];?></h3>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col col-sm-4 col-centered">
-						<?php echo $lang['asunto'].":";?>
+					<div class="col col-sm-3 col-centered">
+                        <h4><?php echo $lang['asunto'].":";?></h4>
 					</div>
-					<div class="col col-sm-6 col-centered">
-						<?php echo $row['asunto'];?>
+					<div class="col col-sm-7 col-centered">
+                        <h3><?php echo $row['asunto'];?></h3>
 					</div>
 				</div>
+                <br>
+                <div class="row">
+                 <div class="col col-sm-3 col-centered">
+                     <h4><?php echo $lang['msj'].":";?></h4>
+					</div>   
+                </div>
 				<div class="row">
-					<div class="col col-sm-4 col-centered">
-						<?php echo $lang['msj'].":";?>
+					<div class="col col-sm-3 col-centered">
 					</div>
-					<div class="col col-sm-6 col-centered">
+					<div class="col col-sm-7 col-centered">
 						<p>
 						<?php
 						$mensaje = $row['mensaje'];
 						$longitud = strlen($mensaje);
-						
-						while($longitud <= 360){
-							$contador = 0;
-							$contador2 = 50;
-							echo substr($mensaje,$contador,$contador2);
-							echo"<br>";
-							$contador = $contador + 50;
-							$contador2 = $contador2 + 50;
-							$longitud = $longitud + 50;
+                        $contador = 0;
+						while($contador < $longitud){
+							echo substr($mensaje,$contador,50);
+                            $contador = $contador + 50;
 						}
 						?>
 						</p>
@@ -82,7 +82,7 @@ while($row=mysql_fetch_array($cs)){
 				</div>
             </div>
             <div class="panel-footer">
-                 <a href="inbox.php"><button class="btn btn-primary btn-block" type="submit"><?php echo $lang['inbox'];?></button></a>
+                 <a href="enviados.php"><button class="btn btn-primary btn-block" type="submit"><?php echo $lang['inbox'];?></button></a>
             </div>
           </div>
     </div>

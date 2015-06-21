@@ -31,7 +31,7 @@
 <?php
 include "conexion.php";
 $usuario = $_SESSION['id'];
-$consulta = "SELECT * FROM mensaje WHERE destinatario = '$usuario' AND estado2 = '1' OR estado2 = '2' ORDER BY fecha DESC";
+$consulta = "SELECT * FROM mensaje WHERE remitente = '$usuario' AND estado2 = '1' OR estado2 = '2' ORDER BY fecha DESC";
 $cs = mysql_query($consulta);
 
     
@@ -58,7 +58,7 @@ $cs = mysql_query($consulta);
                     echo "<tr>
                         <td><input name= 'check[]' value='".$row['idmensaje']."' type='checkbox''></td>
                         <td>".$row['fecha']."</td>
-                        <td>".$row2['usuario']."</td>
+                        <td><a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario']."</a></td>
                         <td><a href='msj_enviado.php?idmensaje=".$row['idmensaje']."'>".$row['asunto']."</a></td>
                         <td>".substr($row['mensaje'],0,50)."...</td>
                     </tr>";

@@ -39,7 +39,14 @@
 							<center><?php echo $lang['destin'].": ";?></center>
 						</div>
 						<div class="col col-sm-6">
-							<input class="form-control" type="text" name="destinatario" placeholder="<?php echo $lang['destin'];?>">
+                            <?php
+                                if(isset($_GET['destin'])){
+                                    echo "<input class='form-control' type='text' name='destinatario' placeholder=".$lang['destin']." value='".$_GET['destin']."'>";
+                                }
+                                else{
+                                    echo"<input class='form-control' type='text' name='destinatario' placeholder=".$lang['destin'].">";
+                                }
+                            ?>
 						</div>
 					</div>
 					<br>
