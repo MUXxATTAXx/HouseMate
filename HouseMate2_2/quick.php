@@ -130,7 +130,6 @@
     </div>
     <div id="contenido9">
         <div id="resultado"></div>
-        <h2>No hay resultados que mostrar. :(</h2>
     </div>
 		<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 		<script>
