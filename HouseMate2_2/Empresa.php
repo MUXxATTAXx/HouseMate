@@ -15,7 +15,11 @@ if($cosa1 > 0 || $cosa2  > 0){
 }
 elseif($cosa3 > 0)
 {
-	
+	echo "<script>
+function goBack() {
+    window.history.back();
+}
+</script>";
 }
 else{
 	include "Call/Empresa/Empresacrear.php";

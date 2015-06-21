@@ -31,6 +31,8 @@
 		}
 	}
 	$idt = $_SESSION['id'];
+	$idempresalater = "";
+	
 	$queryportodos = mysql_query("Select * FROM usuario Inner join empresa on usuario.Empresa = Empresa.dueño WHERE usuario.TempId = '$idt'");
 	while($row = mysql_fetch_array($queryportodos))
 	{
@@ -48,9 +50,29 @@
 				padding-bottom: 0px;
 				border-bottom-width: 0px;'>
              <ul  class="nav nav-tabs forcenavchange">
-				<li id="me" class='active'><a href='#home' data-toggle='tab'><?php echo($lang['Inicio']);?></a></li>
-				<li id="me2"><a href='#crear' data-toggle='tab'><?php echo($lang['miembros']);?></a></li>
-				<li id="me3"><a href='#sd' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
+				
+				<?php 
+				$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario FROM usuario inner join 
+				tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa = empresa.IdEmpresa WHERE 
+				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.idusuario = '$idt'";
+				$master = mysql_query($queroempresario);
+				$idempresa = $row['IdEmpresa'];
+				$idempresalater = $idempresa;
+				if(mysql_num_rows($master) > 0)
+				{
+					echo "<li id='me' class='active'><a href='#home' data-toggle='tab'>".$lang['Inicio']."</a></li>
+					<li id='me2'><a href='#socios' data-toggle='tab'>".$lang['miembros']."</a></li>
+					<li id='me3'><a href='#configurar' data-toggle='tab'>".$lang['Solicitud']."</a></li>
+					<li id='me4'><a href='#solicitud' data-toggle='tab'>".$lang['Config']."</a></li>
+					<li id='me5'><a href='#informacion' data-toggle='tab'>".$lang['Informacion']."</a></li>";
+				}
+				else
+				{
+					echo "<li id='me' class='active'><a href='#home' data-toggle='tab'>".$lang['Inicio']."</a></li>
+					<li id='me2'><a href='#crear' data-toggle='tab'>".$lang['miembros']."</a></li>
+					<li id='me3'><a href='#sd' data-toggle='tab'>".$lang['Ver-Inmuebles']."</a></li>";
+				}
+				?>
 			</ul>
             </div>
             <div class="panel-body">
@@ -58,7 +80,25 @@
 			<div id='myTabContent' class='tab-content'>
 
 			<div class='tab-pane fade active in' id='home'>
-			<div class="row row-centered">
+			
+			</div>
+			 <div class='tab-pane fade' id='socios'>
+			
+			<div id="thetablemiembre">
+
+			</div>
+			 </div>
+			 <div class="tab-pane fade" id="solicitud">
+			  <div id="morepeople">
+				</div>
+			</div>
+			<div class="tab-pane fade" id="configurar">
+			  <div class="row row-centered">
+				<?php include'Call/Empresa/Empresafuncion/verusuario.php'  ?>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="informacion">
+			  <div class="row row-centered">
                <div class="col-md-4 col-lg-4 " align="center"> 
 					<div class="row">
 						<div class="form-group col-xs-12">
@@ -139,19 +179,7 @@
                 </div>
               </div>
 			</div>
-			 <div class='tab-pane fade' id='crear'>
-			
-			<div id="thetablemiembre">
-
-			</div>
 			 </div>
-			 <div class="tab-pane fade" id="sd">
-			  <div>sad
-				</div>
-			</div>
-			 </div>
-
-              
             </div>
                  <div class="panel-footer">
 				 <center>
@@ -165,37 +193,7 @@
       </div>
 	  </form>
  <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
-   <script type="text/javascript" >
-   	$(window).load(function()  {
-				loadData();
-			});
-			 	function loadData(){
-					empresa = $("#value").html();
-				$.ajax({   
-				 type: 'POST',   
-				 url: 'Call/Funciones/miembros.php', 
-				 data: "empresa="+empresa,
-				success: function(msg) {
-						$("#thetablemiembre").html(msg);
-					},
-				});
-			  };
-	function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#imagenempresa')
-                    .attr('src', e.target.result)
-            };
-			
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-  $(function() {
-$("#Municipio4").chained("#Departamento4");
-});
-</script>
+   <script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
 <?php } ?>
 </script>
 </body>

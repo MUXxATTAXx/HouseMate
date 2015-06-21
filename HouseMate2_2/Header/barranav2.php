@@ -19,7 +19,7 @@ require ("Call/Loged/seguridad.php");
           ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="perfil_admin.php"><span class='glyphicon glyphicon-user'></span><?php include ('namae.php') ?>) </a></li>
+        <li><a href="perfil_admin.php"><span class='glyphicon glyphicon-user'></span>(<?php include ('namae.php') ?>) </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Mantenimiento']);?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
