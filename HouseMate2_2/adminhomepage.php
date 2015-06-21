@@ -1,20 +1,39 @@
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
 <?php
-require ("Call/Lenguaje/lenguaje.php");
+    echo("
+    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+
+<meta charset=utf-8 />
+    ");
+    session_start();
+	if(isset($_SESSION['tip'])){
+if(isset($_SESSION['tip'])){
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			include("Header/barranav2.php");
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			include("Header/barranav6.php");
+			break;
+		}
+	}
+}
 ?>
 <head>
-	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
+	
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
-    <link href='css/estilo.css' rel='stylesheet'/>
+
 	<link href="css/bootstrap-table.css" rel="stylesheet">
     <title><?php echo $lang['Inicio'] ?></title>
 </head>
 <body id="intro">
-<?php
-    include("Header/barranav2.php");
-?>
 <a class="btn btn-sm btn-primary" href="quick.php"><?php echo $lang['quick'] ?></a>
 <a class="btn btn-sm btn-primary" href="quick.php">Asesoria</a>
 <div class="panel panel-default">

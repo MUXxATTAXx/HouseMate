@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include("conexion.php");
+include("Call/Lenguaje/lenguaje.php");
+?>
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
@@ -31,7 +36,7 @@
 		}
 	}
 ?>
- <title><?php echo $lang['Empresa'] ?></title>
+ <title><?php echo $lang['Inicio'] ?></title>
 <br>
 <br>
 <form method="post" enctype="multipart/form-data">
@@ -91,9 +96,8 @@
             </div>
                  <div class="panel-footer">
 				 <center>
-					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
-					<a href="Empresacheck.php" class="btn btn-primary extraright"><?php echo($lang['Buscar3'])?></a>
-					<br>
+					<button href="Empresa.php" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
+					<a  href="Empresacheck.php" class="btn btn-primary extraright"><?php echo($lang['Buscar3'])?></a>
 					<?php	
 						include "Call/Empresa/Empresafuncion/crearempresa.php";
 					?>

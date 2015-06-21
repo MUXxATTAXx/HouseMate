@@ -5,10 +5,8 @@
 <meta charset=utf-8 />
     ");
     session_start();
-	if(isset($_SESSION['tip']))
+	if(isset($_SESSION['tip'])){
 if(isset($_SESSION['tip'])){
-	switch($_SESSION['tip'])
-	{
 		switch($_SESSION['tip'])
 		{
 			case 1:
@@ -25,13 +23,13 @@ if(isset($_SESSION['tip'])){
 	}
 }
 ?>
-	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+
 <!DOCTYPE HTML>
 <html>
 <head>
 	<title><?php echo($lang['Perfil']);?></title>
 	<meta charset = "utf-8" />
-
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/estilop.css' rel='stylesheet'/>
 	
@@ -124,7 +122,7 @@ if(isset($_SESSION['tip'])){
                     echo ($lang['mejorar_error2']);
                 }
                 else{
-                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0')");        
+                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0',null)");        
                     if($consulta2){
                         echo($lang['mejorar_exito']);
                     }
