@@ -104,8 +104,8 @@
                     </tbody>
                   </table>
                 <?php } ?>
-                    <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas'])?></a>
-                    <a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"  class="btn btn-primary">Mis Asociados</a>
+                    <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas']);?></a>
+                    <a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"  class="btn btn-primary"><?php echo($lang['mis-socios']);?></a>
                     <?php
                         include "conexion.php";
                         $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");

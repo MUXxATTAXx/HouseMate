@@ -226,6 +226,7 @@ $lang['elim-msj-exito'] = "Mensaje Eliminado!";
 $lang['marcado-exito'] = "Mensaje cambiado!";
 
 $lang['back'] = "Regresar";
+$lang['mis-socios'] = "Mis Asociados";
 
 //Barra 6
 $lang['vender'] = "Vender";

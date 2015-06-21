@@ -226,6 +226,7 @@ $lang['marcar']= "Mark messages as: ";
 $lang['msj-elim'] = "Delete messages";
 $lang['elim-msj-exito'] = "Message deleted!";
 $lang['marcado-exito'] = "Message changed!";
+$lang['mis-socios'] = "My Partners";
 
 $lang['back'] = "Return";
 

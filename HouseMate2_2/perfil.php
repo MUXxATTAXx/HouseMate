@@ -41,6 +41,9 @@
             <div class="panel-heading">
                 <?php 
                     include "conexion.php";
+                    if(!isset($_GET['usuario'])){
+                        header ("Location: perfil_admin.php");
+                    }
                     $usuario = $_GET['usuario'];
                     $consulta = ("SELECT * FROM tbusuario WHERE usuario = '$usuario' ");
                     $cs = mysql_query($consulta);
@@ -100,7 +103,7 @@
                                 if(mysql_num_rows($consulta2) > 0){
                                     echo"<a href='#' class='btn btn-success'>Ya son socios!</a>";
                                 }
-                                else{
+                                elseif($socio1 != $socio2){
                                     echo "<input type='submit' name='socio' value='Agregar Socio' class='btn btn-primary'>";
                                     if(isset($_POST['socio'])){
                                         include "conexion.php";
@@ -115,7 +118,7 @@
                                 }
                         ?>
                     
-                        <a href='enviar_msj.php?destin=<?php echo $row['usuario']; ?>' class="btn btn-info">Enviar Mensaje</a>
+                        <a href='enviar_msj.php?destin=<?php echo $row['usuario']; ?>' class="btn btn-info"><?php echo $lang['msj-enviar'];?></a>
                         <?php } ?>
                     </form>
                     </center>
