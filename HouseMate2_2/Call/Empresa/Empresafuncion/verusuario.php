@@ -43,8 +43,7 @@ echo"
 				</div>
 				<div class='row'>
 				<?php 
-					$querymi = mysql_query("Select * FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario where Rating > 0 
-					AND Empresa <> $idempresalater AND EMPRESA = '' AND usuario.TempId = tbusuario.IdUsuario");
+					$querymi = mysql_query("Select * FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario where usuario.Rating >= 0  AND Empresa <> '$idempresalater' AND EMPRESA = '' AND usuario.TempId = tbusuario.IdUsuario");
 					while($sugeridos = mysql_fetch_array($querymi))
 					{
 						echo "
@@ -52,14 +51,14 @@ echo"
 							<div class='card'>
 								<canvas class='header-bg' width='250' height='70' id='header-blur'></canvas>
 								<div class='avatar'>
-									<img src='' alt='' />
+									<img  alt='' />
 								</div>
 								<div class='content'>
-								 <span class='label label-default rank-label'>100 puntos</span>
-									<img class='img-circle' src='//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120' />
+								 <span class='label label-default rank-label'>".$sugeridos['nombre']."</span>
+									<img class='img-circle' src='".$sugeridos['image']."' />
 								<!-- badge -->
 								<div class='rank-label-container'>
-									<span class='label label-default rank-label'>100 puntos</span>
+									<span class='label label-default rank-label'>".$sugeridos['Rating']."</span>
 									
 								</div>
 								</div>
