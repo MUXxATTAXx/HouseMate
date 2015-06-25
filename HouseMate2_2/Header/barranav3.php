@@ -91,9 +91,11 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
-                    <li><a href="#openModal2"><?php echo($lang['Cerrar-Sesion']);?></a></li>
+					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
+					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
+                    <li><a href="#openModal2" class="btn-danger blanco-letra"><div class="blanco-letra"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></div></a></li>
                 </ul>
-          </li>   
+          </li>  
       </ul>
     </div>
   </div>

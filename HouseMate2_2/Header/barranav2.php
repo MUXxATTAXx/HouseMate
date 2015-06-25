@@ -36,9 +36,10 @@ require ("Call/Loged/seguridad.php");
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
-				<li><a href="enviados.php"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
-            </ul>
+                <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
+				<li><a href="enviados.php"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
+				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
+			</ul>
         </li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
@@ -91,7 +92,9 @@ require ("Call/Loged/seguridad.php");
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
-                    <li><a href="#openModal2"><?php echo($lang['Cerrar-Sesion']);?></a></li>
+					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
+					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
+                    <li><a href="#openModal2" class="btn-danger blanco-letra"><div class="blanco-letra"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></div></a></li>
                 </ul>
           </li>   
       </ul>

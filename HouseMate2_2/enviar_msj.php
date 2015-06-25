@@ -35,6 +35,7 @@
             </div>
             <div class="panel-body">
 				<form action="enviar_msj.php" method="POST">
+				<div class="row">
 					<div class="row">
 						<div class="col col-sm-4">
 							<center><?php echo $lang['destin'].": ";?></center>
@@ -64,10 +65,11 @@
 						<div class="col col-sm-4">
 							<center><?php echo $lang['msj-max'];?></center>
 						</div>
-						<div class="col col-sm-6">
-							<textarea name="mensaje" placeholder="<?php echo $lang['msj'];?>" maxlength="260" class="form-control" rows="7" id="textArea" style="margin: 0px -0.84375px 0px 0px; width: 424px; height: 83px;"></textarea>
+						<div class="col col-sm-8">
+							<textarea name="mensaje" placeholder="<?php echo $lang['msj'];?>" maxlength="260" class="form-control" rows="7" id="textArea" style="margin: 0px -0.84375px 0px 0px; height: 83px;"></textarea>
 						</div>
 					</div>
+				</div>
             </div>
             <div class="panel-footer">
                      <button class="btn btn-primary btn-block" type="submit" name="registrar"><?php echo $lang['msj-enviar'];?></button>

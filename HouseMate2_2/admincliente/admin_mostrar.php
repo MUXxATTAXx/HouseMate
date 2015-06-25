@@ -23,7 +23,10 @@
     </div>
   </div>
 </div>
-<div id="thetablejq">
+<div class="row row-centered">
+	<div class="col-sm-10 col-centered">
+		<div class="negro" id="thetablejq"></div>
+	</div>
 </div>
 <span id="spanme"></span>
 

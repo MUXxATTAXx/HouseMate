@@ -15,18 +15,16 @@
 
 </head>
 <body> 
-
-<?php include_once("conexion.php"); ?>
-<div class="row">
-        <ol class="breadcrumb bread-primary breadnomargin">
-            <li><a><?php echo($lang['real-estate']);?></a></li>
-        </ol>
-    </div>
-<ul id="what" class="nav nav-tabs">
-		
-    <li id="me" class='active'><a href='#home' data-toggle='tab'><?php echo($lang['Crear-Inmuebles']);?></a></li>
-    <li id="me2"><a href='#crear' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
-</ul>
+<div class="row row-centered">
+	<div class="col-sm-7 col-centered">
+		<?php include_once("conexion.php"); ?>
+		<ul id="what" class="nav nav-tabs">
+				
+			<li id="me" class='active negro'><a href='#home' data-toggle='tab'><?php echo($lang['Crear-Inmuebles']);?></a></li>
+			<li id="me2" class="negro"><a href='#crear' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
+		</ul>
+	</div>
+</div>
 
 <div id='myTabContent' class='tab-content'>
 
@@ -35,7 +33,7 @@
  require('admininmueble/ingresar_inmueble.php');
  ?>
 </div>
- <div class='tab-pane fade' id='crear'>
+ <div class='tab-pane fade negro' id='crear'>
  <div id="thetablejq">
 	</div>
 		<div id='realornot'>

@@ -1,15 +1,16 @@
 	
 .tab-content>.active
 {
-	background:#222222
+	/*background:#222222*/
 }
 .tab-content
 {
-	background:#2B2B2B;
+	/*background:#2B2B2B;*/
 }
 #what
 {
-	background:gray;
+	/*background:gray;*/
+	border-bottom: none;
 }
 textarea {
     resize: none;

@@ -13,26 +13,25 @@
 	
 </head>
 <body> 
-<div class="row">
-        <ol class="breadcrumb bread-primary breadnomargin">
-            <li><a><?php echo($lang['Usuarios']);?></a></li>
-        </ol>
-    </div>
-<!-- Logic para change of active tab -->
 
+<!-- Logic para change of active ta	b -->
+<div class="row row-centered">
+	<div class="col-sm-7 col-centered">
 	<?php
-				echo "<ul id='what' class='nav nav-tabs'>
-			<li id='me' class='active'><a href='#home' data-toggle='tab'>
+			echo "<ul id='what' class='nav nav-tabs'>
+			<li id='me' class='active negro'><a href='#home' data-toggle='tab'>
 			".$lang['Crear-Usuario']."
 			</a></li>
-			<li id='me2'><a href='#crear' data-toggle='tab'>
+			<li id='me2' class='negro'><a href='#crear' data-toggle='tab'>
 			".$lang['Ver-Usuario']."
 			</a></li>
-			<li id='me3'><a href='#sd' data-toggle='tab'>
+			<li id='me3' class='negro'><a href='#sd' data-toggle='tab'>
 			".$lang['Modificar-Usuario']."
 			</a></li>
 		</ul>";
 		?>
+	</div>
+</div>
 <div id='myTabContent' class='tab-content'>
 	<?php 
 	echo "<div class='tab-pane fade active in' id='home'>";
