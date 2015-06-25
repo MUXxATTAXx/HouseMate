@@ -6,7 +6,7 @@
 <?php 
 echo"
 <li id='cambio2' class='active'><a href='#inbox' data-toggle='tab'>".$lang['recibidos']."</a></li>
-<li id='cambio'><a href='#enviar' data-toggle='tab'>".$lang['recibidos']."</a></li>
+<li id='cambio'><a href='#enviar' data-toggle='tab'>".$lang['enviados'] ."</a></li>
 ";
  ?>
 </ul>
@@ -14,7 +14,7 @@ echo"
 <div class="panel-body">
 		<div id='trytochange' class='tab-content'>
 			<div class='tab-pane fade active in' id='inbox'>
-				<?php include "Call/Empresa/Empresafuncion/vermensajes.php" ?>
+				<div id="checkmensajes"></div>
 			</div>
 			<div class='tab-pane fade' id='enviar'>
 				<div class="row">
@@ -43,13 +43,14 @@ echo"
 				<hr>
 				<div class='row'>
 				<?php include "Call/Empresa/Empresafuncion/sugeridos.php" ?>
-				<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
-				<?php // <script type="text/javascript" src="Call/Empresa/Empresajs/posiblescand.js" charset="utf-8"></script> ?>
 				<div id="sugeridosresult"></div>
 				 </div>
-				 <script type="text/javascript" src="Call/Empresa/Empresajs/EmpresaFill.js"></script>
+
+	
 			</div>
 		</div>
+		<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
+		<script type="text/javascript" src="Call/Empresa/Empresajs/EmpresaFill.js"></script>
 </div>
 
  

@@ -209,7 +209,7 @@ $lang['msj-max'] = "Message:<br>(Maximum 260 characters)";
 $lang['msj-enviar'] = "Send Message";
 $lang['msj-exito'] = "Message Sent!";
 $lang['msj-error'] = "Error in sending the message.";
-
+$lang['msj-yaenviado'] = "Already sent";
 
 //inbox
 $lang['inbox'] = "Inbox";

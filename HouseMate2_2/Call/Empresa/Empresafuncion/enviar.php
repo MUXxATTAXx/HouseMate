@@ -8,7 +8,8 @@ if($var != "" and $var2 != "" and $var3 != "")
 }
 else
 {
-	echo "nada";
+	include("../../Lenguaje/lenguaje.php");
+	echo "<span class='label label-warning'>".$lang['missing']."</span>";
 }
 function enviar($correo,$mensaje,$idempresa)
 {
@@ -29,22 +30,21 @@ function enviar($correo,$mensaje,$idempresa)
 		$solicitudempresa = mysql_query("Select * From empresasolicitud");
 		$numero = mysql_num_rows($solicitudempresa);
 		$check = mysql_query("Select * FROM empresasolicitud where idempresa = '$idempresa' and idusuario = '$idsujeto'");
-		echo "Select * FROM empresasolicitud where idempresa = '$idempresa' and idusuario = '$idsujeto'";
 		if(mysql_num_rows($check) == 0)
 		{
 			$queryenivar = mysql_query("Insert into empresasolicitud values ('$numero','$idempresa','$idsujeto','1','0','$mensaje')");
-			echo $queryenivar;	
+			echo "<span class='label label-success'>".$lang['msj-exito']."</span>";
 		}
 		else
 		{	
-			echo "ya";
+			echo "<span class='label label-warning'>".$lang['msj-yaenviado']."</span>";
 		}
 		
 		
 	}
 	else
 	{
-		
+		echo "<span class='label label-warning'>".$lang['notheremate']."</span>";
 	}
 }
 

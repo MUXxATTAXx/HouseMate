@@ -49,6 +49,11 @@ if(isset($_POST['modificar'])){
 						$man .= "c";
 						
 					}
+					elseif($hayimagen != "")
+					{
+						$maxc++;
+						$man .= "d";
+					}
 					break;
 				}
 		}
@@ -70,6 +75,9 @@ if(isset($_POST['modificar'])){
 				case "c":
 				$final_string .= "imagen='".$c."'";
 				break;
+				case "d":
+				$final_string .= "imagen='".$hayimagen."'";
+				break;
 				}
 			}
 			else
@@ -85,7 +93,9 @@ if(isset($_POST['modificar'])){
 				case "c":
 				$final_string .= "imagen='".$c."',";
 				break;
-
+				case "d":
+				$final_string .= "imagen='".$hayimagen."'";
+				break;
 				}
 			}
 		}
@@ -117,16 +127,12 @@ if(isset($_POST['modificar'])){
 			$filename = "img/Empresas/".$row['imagen'];	
 			if(file_exists($filename))
 			{
-				unlink($filename);
-				copy($varing,"img/Empresas/$imagevar");
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 				$ingresa = mysql_query($queryfinal);
 
 			}
 			else
 			{
-				
-				copy($varing,"img/Empresas/$imagevar");
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 				$ingresa = mysql_query($queryfinal);
 			}

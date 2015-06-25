@@ -207,7 +207,7 @@ $lang['msj-max'] = "Mensaje:<br>(M&aacute;ximo 260 caracteres)";
 $lang['msj-enviar'] = "Enviar Mensaje";
 $lang['msj-exito'] = "Mensaje enviado!";
 $lang['msj-error'] = "Error al enviar.";
-
+$lang['msj-yaenviado'] = "Ya fue enviado";
 
 //inbox
 $lang['inbox'] = "Bandeja de Entrada";

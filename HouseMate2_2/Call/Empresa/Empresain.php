@@ -41,7 +41,6 @@
 
  <title><?php echo $lang['Empresa'] ?></title>
 <br>
-<br>
 <span id="value" class="hidme"><?php echo $row['IdEmpresa'] ?></span>
 <form method="post" action="Empresa.php" enctype="multipart/form-data">
       <div class="row">
