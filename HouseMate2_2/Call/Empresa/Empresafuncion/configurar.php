@@ -5,7 +5,15 @@
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<img class="img-responsive imagenpequeña" id="imagenempresa" 
-							src="<?php echo "img/Empresas/".$row['imagen'] ?>"> 
+							src="<?php $filename = "img/Empresas/".$row['imagen'];	
+								if(file_exists($filename))
+								{
+									echo "img/Empresas/".$row['imagen']; 
+								}
+								else
+								{
+									echo "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100";
+								}?>"> 
 							
 						</div>
 						<div class="form-group col-xs-12">

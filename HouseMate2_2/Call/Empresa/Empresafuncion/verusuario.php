@@ -14,7 +14,7 @@ echo"
 <div class="panel-body">
 		<div id='trytochange' class='tab-content'>
 			<div class='tab-pane fade active in' id='inbox'>
-				<?php include "Call/Empresa/Empresafuncion/enviados.php" ?>
+				<?php include "Call/Empresa/Empresafuncion/vermensajes.php" ?>
 			</div>
 			<div class='tab-pane fade' id='enviar'>
 				<div class="row">
@@ -23,7 +23,7 @@ echo"
 							<label>E-mail</label>
 						</div>
 						<div class='col-sm-5'>
-							<textarea class="form-control" maxlength="30" ></textarea>
+							<input id="correoenviar" name="correoenviar" class="form-control" maxlength="30" ></input>
 						</div>
 					</div>
 					<br>
@@ -32,41 +32,22 @@ echo"
 							<label><?php echo $lang['msj'] ?></label>
 						</div>
 						<div class='col-sm-5'>
-							<textarea class="form-control" maxlength="260" rows="4" ></textarea>
+							<textarea id="mensaje" name="mensaje" class="form-control" maxlength="260" rows="4" ></textarea>
 						</div>
 						<div class='col-sm-3'>
-							<a class="btn btn-primary extraright"><?php echo($lang['mejorar2'])?></a>
+							<a onclick="posibles()" class="btn btn-primary extraright"><?php echo($lang['mejorar2'])?></a>
 						</div>
 						
-					</div>
-							
+					</div>	
 				</div>
+				<hr>
 				<div class='row'>
-				<?php 
-					$querymi = mysql_query("Select * FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario where usuario.Rating >= 0  AND Empresa <> '$idempresalater' AND EMPRESA = '' AND usuario.TempId = tbusuario.IdUsuario");
-					while($sugeridos = mysql_fetch_array($querymi))
-					{
-						echo "
-						<div class='col-sm-3'>
-							<div class='card'>
-								<canvas class='header-bg' width='250' height='70' id='header-blur'></canvas>
-								<div class='avatar'>
-									<img  alt='' />
-								</div>
-								<div class='content'>
-								 <span class='label label-default rank-label'>".$sugeridos['nombre']."</span>
-									<img class='img-circle' src='".$sugeridos['image']."' />
-								<!-- badge -->
-								<div class='rank-label-container'>
-									<span class='label label-default rank-label'>".$sugeridos['Rating']."</span>
-									
-								</div>
-								</div>
-							</div>
-						</div>";
-					}
-				?>
+				<?php include "Call/Empresa/Empresafuncion/sugeridos.php" ?>
+				<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
+				<?php // <script type="text/javascript" src="Call/Empresa/Empresajs/posiblescand.js" charset="utf-8"></script> ?>
+				<div id="sugeridosresult"></div>
 				 </div>
+				 <script type="text/javascript" src="Call/Empresa/Empresajs/EmpresaFill.js"></script>
 			</div>
 		</div>
 </div>
