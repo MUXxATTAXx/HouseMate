@@ -35,6 +35,16 @@
             </div>
             <div class="panel-body">
                 <div class="row">
+                    <div class="col col-sm-4">
+                        <p>Dueño</p>
+                    </div>
+                    <div class="col col-sm-4">
+                        <select name="dueno" class="checbocks" disabled>
+                            <option selected>Holi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col col-sm-2">
                         <center>&Aacute;rea Terreno</center>
                     </div>
@@ -110,7 +120,11 @@
                         <center>Localizacion</center>
                     </div>
                     <div class="col col-sm-6">
-                        <input type="text" class="form-control">
+                        <select class="form-control">
+                            <option value="1">Privado</option>
+                            <option value="2">No Privado</option>
+                            <option value="3">Centro</option>
+                        </select>
                     </div>
 				</div>
                 <br>

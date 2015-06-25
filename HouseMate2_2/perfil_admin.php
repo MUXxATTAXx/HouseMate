@@ -105,23 +105,7 @@
                   </table>
                 <?php } ?>
                     <a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>' class="btn btn-primary"><?php echo($lang['MisCasas']);?></a>
-                    <a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"  class="btn btn-primary"><?php echo($lang['mis-socios']);?></a>
-                    <?php
-                        include "conexion.php";
-                        $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");
-                        while($row3 = mysql_fetch_array($consulta3)){
-                    ?>
-                    <a href='recibidos.php' class="btn <?php
-                            if($row3['mensajes_sin_leer'] > 0){
-                                echo "btn-danger";
-                            }else{echo "btn-primary";}
-                    ?>">
-                        <?php
-                            echo "<span class='badge'>".$row3['mensajes_sin_leer']."</span> ".($lang['msjs']);
-                        }
-                        ?>
-                    </a>
-                    
+                    <a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"  class="btn btn-primary"><?php echo($lang['mis-socios']);?></a>    
                 </div>
               </div>
             </div>
