@@ -80,7 +80,7 @@
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a href="#openModal2" class="btn-danger blanco-letra"><div class="blanco-letra"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></div></a></li>
+                    <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
           </li>   
       </ul>
@@ -89,17 +89,19 @@
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<div id="openModal2" class="modalDialog2">
-	<div>
-		<form method="post" class='form-D2'>
-		<a href="#close" title="Close" class="close">X</a>
-		<h3><?php echo $lang['Cerrar-Sesion']; ?></h3>
-		<label><?php echo($lang['Salir-text']); ?></label><br>
-		<a id="white" href="Call/Funciones/Destroy.php" class="btn btn-default"><?php echo($lang['Salir']); ?></a>
-		<a id="white2" href="#close" class="btn btn-default"><?php echo($lang['Aceptar']); ?></a>
-		
-		</form>
-	</div>
+<div id="myModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title"><?php echo $lang['yousure']; ?></h4>
+      </div>
+      <div class="modal-body">
+        <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-primary"><?php echo($lang['Salir']); ?></a>
+		<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></button>
+      </div>
+    </div>
+  </div>
 </div>
        </form>
 	   <br>

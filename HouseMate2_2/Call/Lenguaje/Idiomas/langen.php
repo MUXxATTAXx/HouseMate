@@ -235,6 +235,7 @@ $lang['no-mates'] = "No new friend request found.";
 $lang['solici'] = "Mate Request";
 $lang['quiere-ser'] = " wants to be your mate.";
 
+$lang['yousure'] = "Are you sure you want to log out?";
 $lang['peritaje'] = "Appraisal";
 
 

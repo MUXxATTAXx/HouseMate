@@ -109,28 +109,15 @@ require ("Call/Loged/seguridad.php");
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title"><?php echo $lang['Cerrar-Sesion']; ?></h4>
+        <h4 class="modal-title"><?php echo $lang['yousure']; ?></h4>
       </div>
       <div class="modal-body">
-        <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-default"><?php echo($lang['Salir']); ?></a>
+        <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-primary"><?php echo($lang['Salir']); ?></a>
 		<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></button>
       </div>
     </div>
   </div>
 </div>
-
-<div id="openModal-2" class="modalDialog2">
-	<div class="modal-content modal">
-		<form method="post" class='form-D2'>
-            <a href="#close" title="Close" class="close">X</a>
-            <h3><?php echo $lang['Cerrar-Sesion']; ?></h3>
-            <label><?php echo($lang['Salir-text']); ?></label><br>
-            <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-default"><?php echo($lang['Salir']); ?></a>
-            <a id="white2" href="#close" class="btn btn-default"><?php echo($lang['Aceptar']); ?></a>
-		</form>
-	</div>
-</div>
-
  </form>
  <br>
  <br>
