@@ -44,14 +44,19 @@ if(!isset($_GET['socio1'])){
     header('Location: perfil_admin.php');
 }
 $socio = $_GET['socio1'];
-$consulta = "SELECT * FROM asociados WHERE socio1 = '$socio'";
-$cs2 = mysql_query($consulta);
-
-while($row2 = mysql_fetch_array($cs2)){
-    $consulta2 = "SELECT * FROM tbusuario WHERE idUsuario = '".$row2['socio2']."'";
-
-    $cs = mysql_query($consulta2);
-    while($row = mysql_fetch_array($cs)){
+$yo = $_SESSION['id'];
+$consulta = mysql_query("SELECT * FROM asociados WHERE socio1 = '$socio' or socio2 = $socio and solicitud = '2'");
+while($row = mysql_fetch_array($consulta)){
+	$usuario1 = $row['socio1'];
+	$usuario2 = $row['socio2'];
+	if($usuario1 != $yo ){
+		$yonohesido = $row['socio1'];
+	}elseif($usuario2 != $yo){
+		$yonohesido = $row['socio2'];
+	}
+    $consulta2 = "SELECT * FROM tbusuario WHERE idUsuario = '".$yonohesido."'";
+	$cs2 = mysql_query($consulta2);
+    while($row = mysql_fetch_array($cs2)){
 //Inicio de bloque
     echo    "<div class='col-xs-12 col-sm-6 col-md-6'>
             <div class='well well-sm'>
@@ -72,6 +77,7 @@ while($row2 = mysql_fetch_array($cs2)){
         </div>";
 //Fin de bloque
     }
+
 }
 ?>
     </div>

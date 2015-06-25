@@ -234,7 +234,7 @@ $lang['no-mates'] = "No hay solicitudes nuevas.";
 $lang['solici'] = "Solicitudes";
 $lang['quiere-ser'] = " quiere ser tu socio.";
 
-
+$lang['yousure'] = "¿Estás seguro que quiere salir?";
 $lang['peritaje'] = "Peritaje";
 
 //Barra 6

@@ -17,6 +17,13 @@
           ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+<!--Peritaje-->
+        <li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-list-alt mantenimien" aria-hidden="true"></span><span class="caret mantenimien"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="valuar_inmueble.php"><span class="glyphicon glyphicon-check"></span><?php echo $lang['peritaje'];?></a></li>
+            </ul>    
+        </li>
 <!--Empresa-->
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><span class="caret"></span></a>
@@ -30,6 +37,7 @@
             <ul class="dropdown-menu" role="menu">
                 <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
 				<li><a href="enviados.php"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
+				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
             </ul>
         </li>
           
@@ -71,13 +79,6 @@
                 ?>
             </ul>
         </li>
-<!--Peritaje-->
-        <li class="dropdown"> 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-list-alt mantenimien" aria-hidden="true"></span><span class="caret mantenimien"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="valuar_inmueble.php"><span class="glyphicon glyphicon-check"></span><?php echo $lang['peritaje'];?></a></li>
-            </ul>    
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
@@ -93,7 +94,7 @@
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a href="#openModal2" class="btn-danger blanco-letra"><div class="blanco-letra"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></div></a></li>
+                    <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
           </li>  
       </ul>
@@ -102,17 +103,19 @@
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<div id="openModal2" class="modalDialog2">
-	<div>
-		<form method="post" class='form-D2'>
-		<a href="#close" title="Close" class="close">X</a>
-		<h3><?php echo $lang['Cerrar-Sesion']; ?></h3>
-		<label><?php echo($lang['Salir-text']); ?></label><br>
-		<a id="white" href="Call/Funciones/Destroy.php" class="btn btn-default"><?php echo($lang['Salir']); ?></a>
-		<a id="white2" href="#close" class="btn btn-default"><?php echo($lang['Aceptar']); ?></a>
-		
-		</form>
-	</div>
+<div id="myModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title"><?php echo $lang['yousure']; ?></h4>
+      </div>
+      <div class="modal-body">
+        <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-primary"><?php echo($lang['Salir']); ?></a>
+		<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></button>
+      </div>
+    </div>
+  </div>
 </div>
        </form>
 	   <br>
