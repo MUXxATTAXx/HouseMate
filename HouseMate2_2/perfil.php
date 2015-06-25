@@ -99,11 +99,13 @@
                         <?php
                                 $socio1 = $_SESSION['id'];
                                 $socio2 = $row['idUsuario'];
-                                $consulta2 = mysql_query("SELECT * from asociados WHERE socio1 = '$socio1' and socio2 = '$socio2'");
-                                if(mysql_num_rows($consulta2) > 0){
+                                $consulta2 = mysql_query("SELECT * from asociados WHERE socio1 = '$socio1' and socio2 = '$socio2' and solicitud = '2'");
+                                $consulta3 = mysql_query("SELECT * from asociados WHERE socio1 = '$socio2' and socio2 = '$socio1' and solicitud = '1' ");
+                                $consulta5 = mysql_query("SELECT * from asociados WHERE socio2 = '$socio1' and socio1 = '$socio2' and solicitud = '2' ");
+                                if(mysql_num_rows($consulta2) > 0 or mysql_num_rows($consulta5) > 0){
                                     echo"<a href='#' class='btn btn-success'>Ya son socios!</a>";
                                 }
-                                elseif($socio1 != $socio2){
+                                elseif($socio1 != $socio2 and mysql_num_rows($consulta2) == 0 and mysql_num_rows($consulta3) < 0){
                                     echo "<input type='submit' name='socio' value='Agregar Socio' class='btn btn-primary'>";
                                     if(isset($_POST['socio'])){
                                         include "conexion.php";
@@ -115,6 +117,13 @@
                                         }
                                         else{echo "Error".mysql_error();}
                                     }
+                                }
+                                elseif(mysql_num_rows($consulta3) > 0){
+                                    echo "<input type='submit' name='confirmar' value='Confirmar Socio' class='btn btn-primary'>";
+                                    if(isset($_POST['confirmar'])){
+                                        $consulta4 = mysql_query("UPDATE asociados SET solicitud = '2' where socio2 = '$socio1' and socio1 = '$socio2'");
+                                    }
+                                    
                                 }
                         ?>
                     

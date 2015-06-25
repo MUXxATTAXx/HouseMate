@@ -20,7 +20,7 @@
                 <div class="row">
 				<div class="col-md-8">
 				 <ol class="breadcrumb bread-primary breadnomargin">
-				<li><a><h3><?php echo $land['noticias'] ?><h3></a></li>
+				<li><a><h3><?php echo $lang['noticias'] ?><h3></a></li>
 				</ol>
                     
                    </div>

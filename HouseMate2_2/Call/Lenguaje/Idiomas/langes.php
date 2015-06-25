@@ -227,6 +227,10 @@ $lang['marcado-exito'] = "Mensaje cambiado!";
 
 $lang['back'] = "Regresar";
 $lang['mis-socios'] = "Mis Asociados";
+$lang['msjs-enviados'] = "Mensajes Enviados";
+$lang['no-msjs'] = "No hay mensajes que mostrar.";
+$lang['solici'] = "Solicitudes";
+$lang['quiere-ser'] = " quiere ser tu socio.";
 
 //Barra 6
 $lang['vender'] = "Vender";

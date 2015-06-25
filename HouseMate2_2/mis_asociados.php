@@ -36,6 +36,7 @@
 <div class="container">
     <div class="row">
 <?php
+$usuario = $_SESSION['id'];
 include "conexion.php";
 // Obtiene el verdadero id usuario
 if(!isset($_GET['socio1'])){
@@ -60,8 +61,10 @@ while($row2 = mysql_fetch_array($cs2)){
                     <div class='col-sm-6 col-md-8'>
                         <h4>".$row['usuario']."</h4>
                         <p>".$row['nombre']." ".$row['apellido']."</p>
-                        <br>
                         <p>".$row['correo']."</p>
+                    </div>
+                    <div class='col-sm-6 col-md-8'>
+                        <a href='enviar_msj.php?destin=".$row['usuario']."' class='btn btn-info'>".$lang['msj-enviar']."</a>
                     </div>
                 </div>
             </div>
