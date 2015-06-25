@@ -1,14 +1,12 @@
 
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title"><?php echo $lang['EmpresaN'] ?></h3>
-            </div>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-4 col-lg-4 " align="center"> 
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"> 
+							<img class="img-responsive imagenpequeña" id="imagenempresa" 
+							src="<?php echo "img/Empresas/".$row['imagen'] ?>"> 
+							
 						</div>
 						<div class="form-group col-xs-12">
 							<div class="btn btn-primary btn-file">
@@ -22,46 +20,46 @@
 					<div class="row">
 						<div class="form-group col-xs-6">
 							<label>*<?php echo $lang['Nombre'] ?>:</label>
-							<input name="nombre" class="form-control">
+							<input name="nombre" class="form-control" maxlength="30">
 						</div>
 						<div class="form-group col-xs-6">
 							<label>*NIT:</label>
-							<input name="nit" class="form-control">
+							<input name="nit" class="form-control" maxlength="14">
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-6">
 							<label>*<?php echo $lang['tel'] ?>:</label>
-							<input name="telefono" class="form-control">
+							<input name="telefono" class="form-control"  maxlength="8">
 						</div>
 						<div class="form-group col-xs-6">
 							<label><?php echo $lang['tel2'] ?>:</label>
-							<input name="telefono2" class="form-control">
+							<input name="telefono2" class="form-control" maxlength="8">
 						</div>
 					</div>
 					<div>
 						<?php include "Call/Funciones/select3.php"; ?>
 					</div>
+					<br>
 					<div class="row">
-						<div class="form-group col-xs-12">
+						<div class="form-group col-xs-4">
 							<label><?php echo $lang['Descripcion'] ?>:</label>
-							<textarea name="descripcion" class="form-control"></textarea>
+						</div>
+						<div class="form-group col-xs-8">
+							<textarea name="descripcion" class="form-control" maxlength="260"></textarea>
 						</div>
 					</div>
                 </div>
               </div>
             </div>
-                 <div class="panel-footer">
 				 <center>
-					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
-					<a href="Empresacheck.php" class="btn btn-primary extraright"><?php echo($lang['Buscar3'])?></a>
+					<button name="modificar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
 					<br>
 					<?php	
-						include "Call/Empresa/Empresafuncion/crearempresa.php";
+						include "Call/Empresa/Empresafuncion/modificar.php";
 					?>
 				</center>	
-             </div>
-          </div>
+
  <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 
  <script>
