@@ -22,18 +22,44 @@ include_once "Call/Lenguaje/lenguaje.php";
 
 <body>  
  <center>
- <form class="formD3">
- 
-	<div class="jumbotron">
-	<h2 class="h1-D1"><img src="img/House%20Mate%20Logo%205.png" height="150px" width="210px"><?php echo($lang['Acerca']);?></h2>
-	<hr><h2 class="pD1"><?php echo($lang['Mision']);?></h2>
-	<p class="pD1"><?php echo($lang['Mision1']);?></p><hr>
-	<h2 class="pD1"><?php echo($lang['Vision']);?></h2>
-	<p class="pD1"><?php echo($lang['Vision1']);?></p>
-	<hr>
-	<p><a href="http://santacecilia.edu.sv" class="btn btn-primary btn-lg"><?php echo($lang['Institucion']);?></a></p>
+ <div class=" row-centered" id="colorme">
+	<div class="col-sm-1">	
 	</div>
-</form>
+	<div class="col-sm-10">	
+		<div id="parent">
+			<div id="child">
+				<div>
+					<div class="row" >
+					<h3 class="h1-D1"><img src="img/House%20Mate%20Logo%205.png" height="100px" width="130px"><?php echo($lang['Acerca']);?></h3>
+					</div>
+					<div class="row justify">
+						<div class="col-sm-1">	
+						</div>
+						<div class="col-sm-10">	
+							<h3 class="pD1"><?php echo($lang['Mision']);?></h3>
+							<p class="pD1"><?php echo($lang['Mision1']);?></p>
+						</div>
+					</div>
+					<br>
+					<div class="row justify">
+						<div class="col-sm-1">	
+						</div>
+						<div class="col-sm-10">	
+							<h3 class="pD1"><?php echo($lang['Vision']);?></h3>
+							<p class="pD1"><?php echo($lang['Vision1']);?></p>
+						</div>
+					</div>
+					<br>
+					<p><a href="http://santacecilia.edu.sv" class="btn btn-primary btn-sm"><?php echo($lang['Institucion']);?></a></p>
+				</div>
+			</div>
+			<div id="opacity"></div>
+		</div>
+		
+	</div>
+	<div class="col-sm-1">	
+	</div>
+</div>
 </center>
 </body>
 
