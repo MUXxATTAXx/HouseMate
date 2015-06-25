@@ -51,7 +51,7 @@
 					<div>
 						<?php include "Call/Funciones/select3.php"; 
 						$casa = explode(", ", $row['direccion']);
-						echo "<script>
+						echo "<script type='text/javascript'>
 						$('#Departamento3').val('".$casa[1]."');
 						$('#Municipio3').val('".$casa[0]."');
 						</script>";

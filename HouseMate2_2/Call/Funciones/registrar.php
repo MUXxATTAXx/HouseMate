@@ -44,7 +44,7 @@
 					{
 						$tipo = 4;
 					} 	
-					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',"")";
+					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',null)";
 					echo "<span class='label label-success'>".$lang['Uingre']."</span>";
 					mysql_query($consulta);
 				}

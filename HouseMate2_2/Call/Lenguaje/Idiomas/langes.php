@@ -15,6 +15,7 @@ $lang['Acerca'] = 'Acerca de';
 $lang['Config'] = 'Configuración';
 $lang['Informacion'] = 'Información';
 $lang['Solicitud'] = "Solicitud";
+$lang['Status'] = "Estado";
 //Acerca
 $lang['Mision'] = 'Misi&oacute;n';
 $lang['Mision1'] = 'Ofrecer a nuestros visitantes y usuarios afiliados un medio de interacción entre vendedores y compradores facilitando la venta y/o renta de inmuebles brindando calidad en los inmuebles, veracidad de información  y seguridad en las transacciones.';

@@ -40,7 +40,6 @@ echo"
 						
 					</div>	
 				</div>
-				<hr>
 				<div class='row'>
 				<?php include "Call/Empresa/Empresafuncion/sugeridos.php" ?>
 				<div id="sugeridosresult"></div>
@@ -50,6 +49,7 @@ echo"
 			</div>
 		</div>
 		<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
+		<?php include "Call/Empresa/Empresajs/Empresaf.php" ?>
 		<script type="text/javascript" src="Call/Empresa/Empresajs/EmpresaFill.js"></script>
 </div>
 
