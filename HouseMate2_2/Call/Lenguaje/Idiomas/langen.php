@@ -231,8 +231,11 @@ $lang['mis-socios'] = "My Mates";
 $lang['back'] = "Return";
 $lang['msjs-enviados'] = "Sent Messages";
 $lang['no-msjs'] = "No messages to show.";
+$lang['no-mates'] = "No new friend request found.";
 $lang['solici'] = "Mate Request";
 $lang['quiere-ser'] = " wants to be your mate.";
+
+$lang['peritaje'] = "Appraisal";
 
 
 //Barra 6

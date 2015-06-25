@@ -15,6 +15,7 @@
 		case 2:
 		break;
 		case 3:
+        include("Header/barranav3.php");
 		break;
 		case 4:
 		include("Header/barranav6.php");

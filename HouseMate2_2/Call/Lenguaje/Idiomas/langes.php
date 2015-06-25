@@ -229,8 +229,12 @@ $lang['back'] = "Regresar";
 $lang['mis-socios'] = "Mis Asociados";
 $lang['msjs-enviados'] = "Mensajes Enviados";
 $lang['no-msjs'] = "No hay mensajes que mostrar.";
+$lang['no-mates'] = "No hay solicitudes nuevas.";
 $lang['solici'] = "Solicitudes";
 $lang['quiere-ser'] = " quiere ser tu socio.";
+
+
+$lang['peritaje'] = "Peritaje";
 
 //Barra 6
 $lang['vender'] = "Vender";

@@ -6,9 +6,9 @@
 	switch ($row['tipo'])
 	{
 		case 1:
-		 $_SESSION["user"] = $row["nombre"];
-		$_SESSION['id'] = $row['idUsuario'];
-		$_SESSION['tip'] = $row['tipo'];
+            $_SESSION["user"] = $row["nombre"];
+            $_SESSION['id'] = $row['idUsuario'];
+            $_SESSION['tip'] = $row['tipo'];
 		
 		echo "<script> 
 			location.replace('adminhomepage.php#close'); 
@@ -18,14 +18,20 @@
 		case 2:
 		break;
 		case 3:
+            $_SESSION["user"] = $row["nombre"];
+            $_SESSION['id'] = $row['idUsuario'];
+            $_SESSION['tip'] = $row['tipo'];
+        echo "<script> 
+			location.replace('peritohomepage.php#close'); 
+			</script>";
 		break;
 		case 4:
-		$_SESSION["user"] = $row["nombre"];
-		$_SESSION['id'] = $row['idUsuario'];
-		$_SESSION['tip'] = $row['tipo'];
-		echo "<script> 
-			location.replace('visitantehomepage.php#close'); 
-			</script>";
+            $_SESSION["user"] = $row["nombre"];
+            $_SESSION['id'] = $row['idUsuario'];
+            $_SESSION['tip'] = $row['tipo'];
+		      echo "<script> 
+			 location.replace('visitantehomepage.php#close'); 
+			 </script>";
 		break;
 		default:
 
