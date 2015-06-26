@@ -118,7 +118,7 @@ $lang['ingresado'] = "Se ingreso la propiedad";
 $lang['Eliminado-inmueble'] = 'Inmueble eliminado';
 //Errores y faltas
 $lang['missing'] =  'Ingrese todos los campos de información';
-$lang['missing2'] = 'Ingrese una imagen'; 
+$lang['missing2'] = 'Ingrese una imagen';
 $lang['error'] = 'Eso no es una imagen';
 $lang['error2'] = 'Llene almenos una etiqueta';
 $lang['error3'] = 'Ya existe una imagen con ese nombre';
@@ -236,6 +236,12 @@ $lang['quiere-ser'] = " quiere ser tu socio.";
 
 $lang['yousure'] = "¿Estás seguro que quiere salir?";
 $lang['peritaje'] = "Peritaje";
+
+//Perfil
+$lang['yason'] = "Ya son socios.";
+$lang['soli-sent'] = "Solicitud Enviada";
+$lang['soli-send'] = "Enviar Solicitud";
+$lang['soli-confirm'] = "Confirmar Solicitud";
 
 //Barra 6
 $lang['vender'] = "Vender";

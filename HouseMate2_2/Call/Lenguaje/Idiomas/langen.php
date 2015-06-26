@@ -4,10 +4,10 @@
 Inglés
 -----------------
 */
- 
+
 $lang = array();
 
-$lang['Need'] = "Need a account?"; 
+$lang['Need'] = "Need a account?";
 $lang['Page_title'] = 'House Mate';
 $lang['Cuenta'] = 'Register';
 $lang['Acerca'] = 'About';
@@ -239,6 +239,11 @@ $lang['quiere-ser'] = " wants to be your mate.";
 $lang['yousure'] = "Are you sure you want to log out?";
 $lang['peritaje'] = "Appraisal";
 
+//Perfil
+$lang['yason'] = "Currently Mates.";
+$lang['soli-sent'] =  "Mate Request Sent";
+$lang['soli-send'] = "Send Mate Request";
+$lang['soli-confirm'] = "Confirm Request";
 
 //Barra 6
 $lang['vender'] = "Sale";
