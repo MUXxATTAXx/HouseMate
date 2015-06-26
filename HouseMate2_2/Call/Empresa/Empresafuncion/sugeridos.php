@@ -1,7 +1,19 @@
 <?php 
-					$querymi = mysql_query("Select * FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario where usuario.Rating >= 0  AND Empresa <> '$idempresalater' AND EMPRESA = '' AND usuario.TempId = tbusuario.IdUsuario");
+					$querymi = mysql_query("
+					Select * FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario where usuario.Rating >= 0  AND usuario.empresa <> '$idempresalater' AND usuario.empresa = '' AND 
+					usuario.TempId = tbusuario.IdUsuario");
+
 					while($sugeridos = mysql_fetch_array($querymi))
 					{
+						$idremitente = $_SESSION['id'];
+						$query = mysql_query("Select usuario.idUsuario From tbusuario inner join usuario on tbusuario.IdUsuario = usuario.TempId inner join 
+						empresasolicitud on usuario.idUsuario = empresasolicitud.idUsuario Where empresasolicitud.idempresa = '$idempresalater' and 
+						usuario.idusuario = ".$sugeridos['IdUsuario']."");
+						if (mysql_num_rows($query) > 0)
+						{
+						}
+						else
+						{
 						echo "
 						<div class='col-sm-3'>
 							<div class='card'>
@@ -9,7 +21,7 @@
 								<div class='avatar'>
 									<img  alt='' />
 								</div>
-								<div class='content'>
+								<div class='contente'>
 								 <span class='label label-default rank-label'>".$sugeridos['nombre']."</span>
 									<img class='img-circle' src='";
 									$filename = "img/Perfil/".$sugeridos['image'];	
@@ -32,5 +44,6 @@
 								<hr>
 							</div><a id='".$sugeridos['correo']."' onclick='getmail(this.id)' class='btn btn-sm btn-success extraright'>".$lang['Solicitud']."</a>
 						</div>";
+						}
 					}
 				?>

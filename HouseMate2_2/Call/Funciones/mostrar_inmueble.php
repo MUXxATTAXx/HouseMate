@@ -48,33 +48,29 @@
 		}
 		echo "<tr>
 		<td>
-		<p>".$row['IdInmueble']."</p> 
+			<p>".$row['IdInmueble']."</p> 
 		</td>
 		<td>
-		<h4>".$know."</h4>
+			<h4>".$know."</h4>
 		</td>
-		<td >
-			
+		<td>
 			<p>$".$row['Precio'].".00</p>
 		</td>
 		<td >
-		<p>".$row['Direccion']."</p>
+			<p>".$row['Direccion']."</p>
 		</td>
 		<td>
-		<p>".$row['Descripcion']."</p>
+			<p>".$row['Descripcion']."</p>
 		</td>
 		<td>
 			<p>".$row['nombre']." ".$row['apellido']."</p>
 		</td>
 		<td 
-		<label></label>
 			<p>".$know2."</p>
 		</td>
 		<td><a onclick='cambiar(this.id)' href='#me3' data-toggle='tab' class='btn btn-warning' id='".$row['IdInmueble']."'><i class='glyphicon glyphicon-edit'></i></a></td>
 		<td><a data-toggle='modal' data-target='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['IdInmueble']."'><i class='glyphicon glyphicon-remove'></i></a></td></tr>
 		</tr>";
-
-		
 	}	
 	echo "</table>";
 

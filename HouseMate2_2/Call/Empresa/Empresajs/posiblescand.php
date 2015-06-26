@@ -12,6 +12,7 @@ function posibles(){
     success: function(data) {
 				$('#sugeridosresult').empty();
 				$('#sugeridosresult').append(data);	
+				reloadmensajes();
         },
     });
 }; 

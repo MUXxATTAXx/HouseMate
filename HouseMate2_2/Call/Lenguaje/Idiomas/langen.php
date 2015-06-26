@@ -15,6 +15,9 @@ $lang['Config'] = 'Configuration';
 $lang['Informacion'] = 'Information';
 $lang['Solicitud'] = "Request";
 $lang['Status'] = "Status";
+$lang['aprovado'] = "Approved";
+$lang['naprovado'] = "Not approved";
+$lang['compose'] = "Compose";
 //Acerca
 $lang['Mision'] = 'Mission';
 $lang['Mision1'] = 'To offer our visitors and affiliated users an interaction medium between seller and buyers facilitating the sales and renting of real estate properties providing the properties’ quality, truthfulness information and security on the transactions.';

@@ -112,8 +112,9 @@
         </div>
       </div>
 	  </form>
- <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
-   <script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
+		<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+		<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+		<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
 <?php } ?>
 </script>
 </body>

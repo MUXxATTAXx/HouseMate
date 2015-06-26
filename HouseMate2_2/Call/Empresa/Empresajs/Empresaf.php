@@ -1,10 +1,9 @@
-<?php 
-echo "
+ 
 <script type='text/javascript'>
 function checkmensajes(){
     $.ajax({   	
     type: 'POST',
-	data: 'idempresa='+".$idempresalater.",
+	data: 'idempresa='+<?php echo $idempresalater ?>,
     url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
 	dataType: 'html',
     cache: false,
@@ -13,5 +12,18 @@ function checkmensajes(){
 				$('#checkmensajes').append(data);	
         },
     });
-}; </script>";
-?>
+}; 
+function enviadosmensajes(){
+    $.ajax({   	
+    type: 'POST',
+	data: 'idempresa='+<?php echo $idempresalater ?>,
+    url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
+	dataType: 'html',
+    cache: false,
+    success: function(data) {
+				$('#sentmessages').empty();
+				$('#sentmessages').append(data);	
+        },
+    });
+}; 
+</script>

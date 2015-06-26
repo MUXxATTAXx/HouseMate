@@ -5,15 +5,20 @@
 
 <?php 
 echo"
-<li id='cambio2' class='active'><a href='#inbox' data-toggle='tab'>".$lang['recibidos']."</a></li>
-<li id='cambio'><a href='#enviar' data-toggle='tab'>".$lang['enviados'] ."</a></li>
+<li id='cambio3' class='active'><a href='#enviados' data-toggle='tab'>".$lang['enviados']."</a></li>
+<li id='cambio2'><a href='#inbox' data-toggle='tab'>".$lang['recibidos']."</a></li>
+<li id='cambio'><a href='#enviar' data-toggle='tab'>".$lang['compose'] ."</a></li>
+
 ";
  ?>
 </ul>
 </div>
 <div class="panel-body">
 		<div id='trytochange' class='tab-content'>
-			<div class='tab-pane fade active in' id='inbox'>
+			<div class='tab-pane fade active in' id='enviados'>
+				<div id="sentmessages"></div>
+			</div>
+			<div class='tab-pane fade' id='inbox'>
 				<div id="checkmensajes"></div>
 			</div>
 			<div class='tab-pane fade' id='enviar'>
