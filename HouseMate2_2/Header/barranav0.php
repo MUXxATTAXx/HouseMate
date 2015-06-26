@@ -15,7 +15,7 @@
        <form id="loginForm" method="POST" method="Get">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-				<li><a type="button" data-toggle="modal" data-target="#myModal"><?php echo $lang['Iniciar-Sesion'];?></a></li>
+		<li><a type="button" class="pointerclick" data-toggle="modal" data-target="#myModal" ><?php echo $lang['Iniciar-Sesion'];?></a></li>
         <li><a href="Inicio.php"><?php echo($lang['Cuenta']);?></a></li>
         <li><a href="acerca_de.php"><?php echo($lang['Acerca']);?></a></li>
         <li class="dropdown">

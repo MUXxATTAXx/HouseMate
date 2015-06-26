@@ -2,8 +2,8 @@
 	<link href="css/bootstrap-table.css" rel="stylesheet"/>
 <?php
 	session_start();
-    include("../../conexion.php");
-	include("../Lenguaje/lenguaje.php");
+    include("../../../conexion.php");
+	include("../../Lenguaje/lenguaje.php");
     mysql_query("SET NAMES 'utf8'");	
 	$idempresa = $_POST['empresa'];
     $consulta = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario, usuario.Rating  FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa 
@@ -72,5 +72,4 @@
 	echo "</table>";
 
 ?>
-	<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
-	<script src='js/bootstrap-table.js' ></script>
+	

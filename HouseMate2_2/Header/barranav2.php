@@ -30,7 +30,7 @@ require ("Call/Loged/seguridad.php");
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="Empresa.php"><?php echo($lang['Empresa']);?></a></li>
+				<li><a href="Empresa.php"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><?php echo($lang['Empresa']);?></a></li>
 			</ul>
         </li>
         <li class="dropdown">

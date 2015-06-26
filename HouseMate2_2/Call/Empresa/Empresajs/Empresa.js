@@ -1,11 +1,13 @@
    	$(window).load(function()  {
-				loadData();
+				stuffed();
+				enviadosmensajes();
+				checkmensajes();				
 			});
-			 	function loadData(){
+			 	function stuffed(){
 					empresa = $("#value").html();
 				$.ajax({   
 				 type: 'POST',   
-				 url: 'Call/Funciones/miembros.php', 
+				 url: 'Call/Empresa/Empresafuncion/miembros.php', 
 				 data: "empresa="+empresa,
 				success: function(msg) {
 						$("#thetablemiembre").html(msg);

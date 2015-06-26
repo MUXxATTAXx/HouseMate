@@ -126,7 +126,8 @@ if(isset($_POST['ingresar'])){
 				}
 			}
 		}
-		else{
+		else
+		{
 			$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 			$ingresa = mysql_query($queryfinal);
 			$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";

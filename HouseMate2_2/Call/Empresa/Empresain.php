@@ -2,7 +2,6 @@
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>		
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
     <link href='css/estilo.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -11,6 +10,11 @@
 </head>
 <body id="intro">
 <?php
+if ($_SESSION['true'] != true || empty($_SESSION['true']))
+{
+	header("Location: Call/Empresa/mejorela.php");
+	die();
+}
     echo("
 <meta charset=utf-8 />
     ");
@@ -115,6 +119,7 @@
 		<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
 		<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 		<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
+			
 <?php } ?>
 </script>
 </body>

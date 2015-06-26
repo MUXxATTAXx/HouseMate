@@ -19,6 +19,8 @@ $lang['Status'] = "Estado";
 $lang['aprovado'] = "Aprovado";
 $lang['naprovado'] = "No aprovado";
 $lang['compose'] = "Enviar";
+$lang['nocuentaop'] = "Para poder acceder a estas funciones debes mejorar tu cuenta";
+$lang['Aqui'] = "Aqui!!";
 //Acerca
 $lang['Mision'] = 'Misi&oacute;n';
 $lang['Mision1'] = 'Ofrecer a nuestros visitantes y usuarios afiliados un medio de interacción entre vendedores y compradores facilitando la venta y/o renta de inmuebles brindando calidad en los inmuebles, veracidad de información  y seguridad en las transacciones.';

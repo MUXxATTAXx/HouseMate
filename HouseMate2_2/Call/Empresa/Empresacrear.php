@@ -11,6 +11,11 @@
 </head>
 <body id="intro">
 <?php
+if ($_SESSION['true'] != true || empty($_SESSION['true']))
+{
+	header("Location: Call/Empresa/mejorela");
+	die();
+}
     echo("
 <meta charset=utf-8 />
     ");

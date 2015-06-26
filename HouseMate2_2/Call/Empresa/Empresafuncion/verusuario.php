@@ -54,7 +54,48 @@ echo"
 			</div>
 		</div>
 		<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
-		<?php include "Call/Empresa/Empresajs/Empresaf.php" ?>
+		<script type='text/javascript'>
+		function checkmensajes(){
+			empresa = $("#value").html();
+			$.ajax({   	
+			type: 'POST',
+			data: 'idempresa='+empresa,
+			url: 'Call/Empresa/Empresafuncion/mensajesenviados.php', 
+			dataType: 'html',
+			cache: false,
+			success: function(data) {
+						$('#checkmensajes').empty();
+						$('#checkmensajes').append(data);	
+				},
+			});
+		}; 
+		function enviadosmensajes(){
+			empresa = $("#value").html();
+			$.ajax({   	
+			type: 'POST',
+			data: 'idempresa='+empresa,
+			url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
+			dataType: 'html',
+			cache: false,
+			success: function(data) {
+						$('#sentmessages').empty();
+						$('#sentmessages').append(data);	
+				},
+			});
+		};
+		function getmail(id)
+		{
+		var d = document.getElementById("correoenviar");
+		d.value = id;
+		}
+		function reloadmensajes()
+		{
+			stuffed();
+			enviadosmensajes();
+			checkmensajes();
+		}		
+		</script>
+		<div id="otherthigs"></div>
 		<script type="text/javascript" src="Call/Empresa/Empresajs/EmpresaFill.js"></script>
 </div>
 
