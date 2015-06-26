@@ -6,7 +6,7 @@
 	   <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
+
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 </head>
 <body>

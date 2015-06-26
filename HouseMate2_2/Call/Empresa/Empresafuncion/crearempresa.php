@@ -19,6 +19,10 @@ if(isset($_POST['ingresar'])){
 		$queryamount = mysql_query("Select * FROM EMPRESA");
 		$digito = mysql_num_rows($queryamount);
 		$who = $_SESSION['id'];
+		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.idusuario = '$who'")
+		if($me = mysql_fetch_array($querywhoim)){
+			$who = $querywhoim['idusuario'];
+		}
 		$restoquery = "('$digito','$who','$variable3','$variable1','$lugar','$variable2',";
 		$endofquery = "'0')";
 		$final_string ="";
@@ -129,6 +133,7 @@ if(isset($_POST['ingresar'])){
 		else
 		{
 			$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
+			echo $queryfinal;
 			$ingresa = mysql_query($queryfinal);
 			$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
 			$ingresa2 = mysql_query($variables);

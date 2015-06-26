@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-06-2015 a las 00:16:22
+-- Tiempo de generación: 26-06-2015 a las 22:52:18
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `asesoria` (
 --
 
 CREATE TABLE IF NOT EXISTS `asociados` (
-`idasocio` int(11) NOT NULL,
+`idasocio` int(5) NOT NULL,
   `socio1` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `socio2` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `solicitud` char(1) COLLATE utf8_spanish_ci NOT NULL
@@ -108,7 +108,8 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 --
 
 INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`, `nit`, `telefono2`, `descrip`, `imagen`, `ratings`) VALUES
-('0', '0', '12345678', 'House el Mate', 'Agua Caliente, Chalatenango, El Salvador', '12345678902323', '23232323', 'Cosas de la vida', 'House Mate Logo 5.png', 0);
+('0', '0', '12345678', 'House Mate', 'Santa Tecla, La Libertad, El Salvador', '12345678902323', '23232323', 'Cosas de la vida', 'House Mate Logo 5.png', 0),
+('1', '1', '23232323', 'Prueba', 'Santa Tecla, La Libertad, El Salvador', '12345678901234', '23232323', 'Info Web', 'smith,jonathan.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,9 @@ CREATE TABLE IF NOT EXISTS `empresasolicitud` (
 --
 
 INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprovado`, `aprovado2`, `mensaje`) VALUES
-('0', '0', '2', 1, 0, 's');
+('0', '0', '2', 0, 1, 's'),
+('1', '0', '1', 1, 0, 'Acepta pl0x'),
+('2', '0', '3', 1, 0, 'Gay');
 
 -- --------------------------------------------------------
 
@@ -215,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `mensaje` (
   `fecha` datetime NOT NULL,
   `estado` char(1) COLLATE utf8_spanish_ci NOT NULL,
   `estado2` char(1) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `mensaje`
@@ -225,7 +228,10 @@ INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mens
 (1, '0', '2', 'Test', 'Hola!', '2015-06-12 00:00:00', '', ''),
 (2, '0', '2', 'Test 2', 'sadhgaskdjashdaskdjksdasjdhajghdasgdhasgsdasd', '2015-06-12 00:00:00', '', ''),
 (3, '1', '2', 'Test 3', 'esto es de otro usuario', '2015-06-12 00:00:00', '', ''),
-(4, '0', '3', 'asd', 'cristopher esta aca', '2015-06-25 11:04:24', '1', '1');
+(4, '0', '3', 'asd', 'cristopher esta aca', '2015-06-25 11:04:24', '1', '1'),
+(5, '2', '0', 'no', 'j', '2015-06-26 14:11:48', '2', '1'),
+(6, '0', '2', 'soy gay', 'ño', '2015-06-26 14:20:38', '1', '1'),
+(7, '0', '3', '', '', '2015-06-26 14:21:02', '1', '3');
 
 -- --------------------------------------------------------
 
@@ -250,12 +256,11 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
-('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', 'chaleco234', 2, NULL),
+('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', 'chaleco234', 4, NULL),
 ('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', 'chaleco234', 4, NULL),
 ('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '12345', 1, NULL),
 ('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'asd', 2, NULL),
-('4', 'Usuario prueba', 'Usuario prueba', '1995-12-12', 'cosasdelavida@gmail.com', 'TestDiferencial', '12345', 1, NULL),
-('5', 'Matias', 'Delgado', '1995-12-12', 'username@hotmail.com', 'usuario', '12345', 1, '');
+('4', 'Usuario prueba', 'Usuario prueba', '1995-12-12', 'cosasdelavida@gmail.com', 'TestDiferencial', '12345', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -282,8 +287,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`, `Empresa`) VALUES
 ('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0, '0'),
-('1', '1', 'sdasdasd', 'asdsdasd', '131231231', '2321313213', '12312321', '23232323', 0, '0'),
-('2', '5', 'Credencial goes here', 'Dirrecion goes here', '123213213', '1232132131', '23232323', '23232323', 0, '');
+('1', '1', 'sdasdasd', 'asdsdasd', '131231231', '2321313213', '12312321', '23232323', 0, '1'),
+('2', '5', 'Credencial goes here', 'Dirrecion goes here', '123213213', '1232132131', '23232323', '23232323', 0, ''),
+('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '');
 
 --
 -- Índices para tablas volcadas
@@ -374,7 +380,7 @@ MODIFY `IdAsesoria` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `asociados`
 --
 ALTER TABLE `asociados`
-MODIFY `idasocio` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+MODIFY `idasocio` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `comprador`
 --
@@ -394,7 +400,7 @@ MODIFY `IdContrato` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
-MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

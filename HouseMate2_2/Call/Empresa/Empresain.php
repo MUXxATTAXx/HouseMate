@@ -1,9 +1,7 @@
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>		
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/appeal.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
-    <link href='css/estilo.css' rel='stylesheet'/>
+
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
    
@@ -63,11 +61,11 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				$idempresalater = $idempresa;
 				if(mysql_num_rows($master) > 0)
 				{
-					echo "<li id='me' class='active'><a href='#home' data-toggle='tab'>".$lang['Inicio']."</a></li>
-					<li id='me2'><a href='#socios' data-toggle='tab'>".$lang['miembros']."</a></li>
-					<li id='me3'><a href='#solicitud' data-toggle='tab'>".$lang['Solicitud']."</a></li>
-					<li id='me4'><a href='#configurar' data-toggle='tab'>".$lang['Config']."</a></li>
-					<li id='me5'><a href='#informacion' data-toggle='tab'>".$lang['Informacion']."</a></li>";
+					echo "<li id='me' class='active negro'><a href='#home' data-toggle='tab'>".$lang['Inicio']."</a></li>
+					<li id='me2' class='negro'><a href='#socios' data-toggle='tab'>".$lang['miembros']."</a></li>
+					<li id='me3' class='negro' ><a href='#solicitud' data-toggle='tab'>".$lang['Solicitud']."</a></li>
+					<li id='me4' class='negro'><a href='#configurar' data-toggle='tab'>".$lang['Config']."</a></li>
+					<li id='me5' class='negro'><a href='#informacion' data-toggle='tab'>".$lang['Informacion']."</a></li>";
 				}
 				else
 				{
