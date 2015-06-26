@@ -4,7 +4,7 @@ function checkmensajes(){
     $.ajax({   	
     type: 'POST',
 	data: 'idempresa='+<?php echo $idempresalater ?>,
-    url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
+    url: 'Call/Empresa/Empresafuncion/mensajenviados.php', 
 	dataType: 'html',
     cache: false,
     success: function(data) {

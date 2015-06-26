@@ -131,6 +131,7 @@ if(isset($_POST['ingresar'])){
 			$ingresa = mysql_query($queryfinal);
 			$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
 			$ingresa2 = mysql_query($variables);
+
 		}
 	}
 	else{
