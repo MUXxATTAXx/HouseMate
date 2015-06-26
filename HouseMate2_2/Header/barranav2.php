@@ -12,7 +12,7 @@
       </button>
       <a class="navbar-brand" href="adminHomepage.php">House Mate</a>
     </div>
-    <?php  
+    <?php
 require ("Call/Lenguaje/lenguaje.php");
 require ("Call/Loged/seguridad.php");
 
@@ -41,6 +41,7 @@ require ("Call/Loged/seguridad.php");
 				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
 			</ul>
         </li>
+        <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -96,7 +97,7 @@ require ("Call/Loged/seguridad.php");
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
 					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
-          </li>   
+          </li>
       </ul>
     </div>
   </div>

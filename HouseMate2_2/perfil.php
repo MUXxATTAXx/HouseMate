@@ -146,7 +146,7 @@
 																	if($usuario1 != $yo and mysql_num_rows($socio1_con) == 0 and mysql_num_rows($socio2_con) == 0) {
 																		echo"
 																		<form action='#' method='POST'>
-																		<input type='submit' name='enviar' value='".['soli-send']."' class='btn btn-primary'>
+																		<input type='submit' name='enviar' value='".$lang['soli-send']."' class='btn btn-primary'>
 																		</form>
 																		";}
 																		//Cuando se envia una solicitud

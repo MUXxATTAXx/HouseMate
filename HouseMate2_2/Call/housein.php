@@ -1,7 +1,7 @@
 <?php
 	include "conexion.php";
 $quero = "SELECT * FROM inmueble ORDER BY IdInmueble DESC LIMIT 8";
-$cs = mysql_query($quero); 
+$cs = mysql_query($quero);
 $me = mysql_num_rows($cs);
 $count = 0;
 while($row=mysql_fetch_array($cs))
@@ -15,7 +15,7 @@ while($row=mysql_fetch_array($cs))
 			echo "</div></div><div class='item'><div class='row'>";
 		break;
 	}
-		
+
 	$var = "";
 switch($row['VentaRenta'])
 {
@@ -47,8 +47,15 @@ echo "<div class='col-sm-3'>
 						</div>
 					</div>
 					<div class='separator clear-left'>
-						<p class='btn-add'>
-							<i class='fa fa-shopping-cart'></i><a href='dueno.php?IdUsuario=".$row['Dueno']."' class='hidden-sm'>".$lang['Ca1']."</a></p>
+						<p class='btn-add'>"
+						;
+						include "conexion.php";
+						$dueno = "SELECT * FROM tbusuario WHERE idUsuario ='".$row['Dueno']."'";
+						$dueno_con = mysql_query($dueno);
+						while($row2 = mysql_fetch_array($dueno_con)){
+						echo "<i class='fa fa-shopping-cart'></i><a href='perfil.php?usuario=".$row2['usuario']."' class='hidden-sm'>".$lang['Ca1']."</a></p>";
+						}
+						echo"
 						<p class='btn-details'>
 							<i class='fa fa-list'></i><a href='inmueble.php?IdInmueble=".$row['IdInmueble']."&tip=".$_SESSION['tip']."' class='hidden-sm'>".$lang['Ca2']."</a></p>
 					</div>
@@ -57,7 +64,7 @@ echo "<div class='col-sm-3'>
 				</div>
 			</div>
 		</div>";
-	
+
 	switch($count)
 	{
 	case 8:

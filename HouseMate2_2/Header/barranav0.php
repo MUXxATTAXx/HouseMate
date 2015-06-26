@@ -15,7 +15,7 @@
        <form id="loginForm" method="POST" method="Get">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-	  <li><a href="#login-overlay"><?php echo $lang['Iniciar-Sesion'] ?></a></li>
+				<li><a type="button" data-toggle="modal" data-target="#myModal"><?php echo $lang['Iniciar-Sesion'];?></a></li>
         <li><a href="Inicio.php"><?php echo($lang['Cuenta']);?></a></li>
         <li><a href="acerca_de.php"><?php echo($lang['Acerca']);?></a></li>
         <li class="dropdown">
@@ -24,7 +24,7 @@
             <li><a href="<?php include ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>
             <li><a href="<?php include ("urllen/lenstat.php")?>?lang=en">English</a></li>
           </ul>
-		 
+
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -35,15 +35,10 @@
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
-	<div>
-		<form method="post">	
-<div id="login-overlay">
+<form method="post">
+<div id="myModal" class="modal">
     <div  class="modal-dialog">
       <div class="modal-content">
-          <div class="modal-header">
-              <a class="close" href="#close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button></a>
-          </div>
           <div class="modal-body">
               <div class="row">
                   <div class="col-xs-6">
@@ -60,11 +55,11 @@
                                   <input type="password" class="form-control" id="password" name="contra1" required placeholder='<?php echo $lang['Contra'] ?>' title="Please enter your password">
                                   <span class="help-block"></span>
                               </div>
-							
 
-								
-                              <input href="#close" type="submit" name="ingresar" class="btn btn-info btn-block " value="<?php echo $lang['Iniciar-Sesion']; ?>">                             
-                          
+
+
+                              <input href="#close" type="submit" name="ingresar" class="btn btn-info btn-block " value="<?php echo $lang['Iniciar-Sesion']; ?>">
+
                       </div>
                   </div>
                   <div class="col-xs-6">
@@ -86,16 +81,16 @@
   </div>
 </div>
 </form>
-		  <?php 
+		  <?php
 							//Ingresar
 							if(isset($_POST['ingresar'])){
 							$usuario = trim($_POST['usuario1']);
 							$contra = $_POST['contra1'];
 
 								if($usuario != "" and $contra != ""){
-									
+
 									require "Call/Funciones/ingresar1.php";
-								
+
 								}
 								else{
 									echo ' <script language="javascript">alert("Campos vacios en Ingresar");</script> ';
@@ -108,8 +103,8 @@
 							}
 
 		?>
-		
-		
+
+
 	</div>
 <br>
 <br>
