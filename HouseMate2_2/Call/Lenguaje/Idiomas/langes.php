@@ -29,7 +29,7 @@ $lang['Vision1'] = 'Trascender en el mercado salvadoreño cambiando la forma en 
 $lang['QueEs'] = '¿Qué es House Mate?';
 $lang['QueEs1'] = 'House Mate es una plataforma web que permite la difusión y promoción de inmuebles para su venta y renta entre los usuarios que interactúan dentro de la aplicación web. Para ello los visitantes tienen la opción de registrarse gratuitamente a la plataforma para gozar de nuestros servicios.';
 $lang['edit'] = "Editar";
-$lang['Institucion'] = 'Mas sobre la institucion';
+$lang['Institucion'] = 'Más sobre la institución';
 $lang['Contactenos'] = 'Cont&aacute;ctenos';
 $lang['Novedades'] = 'Novedades';
 $lang['Iniciar-Sesion'] = 'Iniciar Sesi&oacute;n';
@@ -97,8 +97,8 @@ $lang['Tima'] = "Eso no es una imagen";
 $lang['precio'] = "Precio" ;
 $lang['Nada']= "Nada";
 $lang['Precio']= "Precio";
-$lang['ErUsuarioYa'] = "Nombre de usuario ya existente";
-$lang['ErCorreoya'] = "Correo en uso";
+$lang['ErUsuarioYa'] = "Error: Nombre de usuario ya existente";
+$lang['ErCorreoya'] = "Error: Correo en uso";
 $lang['Correos'] = "@";
 $lang['Cerrar-Sesion'] = "Cerrar sesión";
 $lang['Salir-text'] = "Seguro de que quiere cerrar sesión?";
@@ -247,6 +247,12 @@ $lang['yason'] = "Ya son socios.";
 $lang['soli-sent'] = "Solicitud Enviada";
 $lang['soli-send'] = "Enviar Solicitud";
 $lang['soli-confirm'] = "Confirmar Solicitud";
+
+$lang['contra-corta'] = "Contraseña debe contener 4 caracteres o más.";
+
+//Reportes
+$lang['report-usu'] = "reporte_usuarios_pdf_es";
+
 
 //Barra 6
 $lang['vender'] = "Vender";

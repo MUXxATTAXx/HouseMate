@@ -44,7 +44,7 @@ require ("Call/Lenguaje/lenguaje.php");
 							</div>
 							<div class="col-sm-6 col-centered">
 								<label><?php echo($lang['Correo']); ?>:</label>
-								<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" name="correo" placeholder="<?php echo($lang['Correos']); ?>" />
+								<input id="lowerme" class="form-control" maxlength="50" type="email" autocomplete="off" name="correo" placeholder="<?php echo($lang['Correos']); ?>" />
 							</div>
 						</div>
 						<div class='row row-centered'>
@@ -91,34 +91,40 @@ require ("Call/Lenguaje/lenguaje.php");
                             <span class="label label-warning" id="contra-error"></span>
 							</center>
 						</div>
-                    </div>
+						<?php
+						//Registrar
+						if(isset($_POST['registrar'])){
+						    $nombre = trim($_POST['nombre']);
+						    $apellido = trim($_POST['apellido']);
+						    $fechanac = $_POST['fechanac'];
+						    $correo = trim($_POST['correo']);
+								$usuario = trim($_POST['user']);
+						    $contra1 = trim($_POST['contra']);
+						    $contra2 = trim($_POST['contra2']);
+								$tiposu = '4';
+						    if($nombre != "" and $apellido != "" and $fechanac != "" and $correo != "" and $usuario != "" and $contra1 != "" and $contra2 != ""){
+						        if($contra1 == $contra2){
+
+						            include "Call/Funciones/crearcliente.php";
+						        }
+						        else{
+						            echo "contraseña incorrecta";
+						        }
+						    }
+								elseif (strlen($contra1) < 4) {
+									echo "<script language='javascript'>alert('".$lang['contra-corta']."');</script>";
+								}
+						    else{
+						        echo "<script language='javascript'>alert('".$lang['blank']."');</script> ";
+						    }
+						}
+						?>
+              </div>
             </form>
           </div>
         </div>
       </div>
-<?php
-//Registrar
-if(isset($_POST['registrar'])){
-    $nombre = trim($_POST['nombre']);
-    $apellido = trim($_POST['apellido']);
-    $fechanac = $_POST['fechanac'];
-    $correo = trim($_POST['correo']);
-	$usuario = trim($_POST['user']);
-    $contra1 = trim($_POST['contra']);
-    $contra2 = trim($_POST['contra2']);
-    if($nombre != "" and $apellido != "" and $fechanac != "" and $correo != "" and $usuario != "" and $contra1 != "" and $contra2 != ""){
-        if($contra1 == $contra2){
-            require "Call/Funciones/registrar1.php";
-        }
-        else{
-            echo "contraseña incorrecta";
-        }
-    }
-    else{
-        echo ' <script language="javascript">alert("Campos vacios en Registrarse");</script> ';
-    }
-}
-?>
+
 </div>
 <script src="js/validaciones.js"></script>
     <br>

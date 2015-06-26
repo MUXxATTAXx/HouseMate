@@ -16,18 +16,21 @@
 .blanco-letra{
 	color: white;
 }
+.azul{
+  background-color: #28415bF;
+}
 
 #intro
 {
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 15px;
-  line-height: 1.42857143;	
-  height: 100%;	
+  line-height: 1.42857143;
+  height: 100%;
 }
 #intro:before
 {
 position:fixed;
-z-index: -1; 
+z-index: -1;
   background: url(http://www.permanenttrust.co.za/wp-content/uploads/2014/08/property-news-img3.jpg) no-repeat;
   background-size: cover;
 }

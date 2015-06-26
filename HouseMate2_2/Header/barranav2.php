@@ -36,12 +36,18 @@ require ("Call/Loged/seguridad.php");
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
-				<li><a href="enviados.php"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
-				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
-			</ul>
+              <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
+      				<li><a href="enviados.php"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
+      				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
+      			</ul>
         </li>
         <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="call/reportes/vista/<?php echo $lang['report-usu'];?>.php"><?php echo($lang['Usuarios']);?></a></li>
+      			</ul>
+        </li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">

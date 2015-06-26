@@ -103,8 +103,8 @@ $lang['Tima'] = "Thats not a image";
 $lang['precio'] = "Price" ;
 $lang['Nada']= "Nothing";
 $lang['Precio']= "Price";
-$lang['ErUsuarioYa'] = "Username in use";
-$lang['ErCorreoya'] = "E-mail in use";
+$lang['ErUsuarioYa'] = "Error: Username in use";
+$lang['ErCorreoya'] = "Error: E-mail in use";
 $lang['Correos'] = "@";
 $lang['Cerrar-Sesion'] = "Log out";
 $lang['Salir-text'] = "Do you want to log out?";
@@ -249,6 +249,11 @@ $lang['yason'] = "Currently Mates.";
 $lang['soli-sent'] =  "Mate Request Sent";
 $lang['soli-send'] = "Send Mate Request";
 $lang['soli-confirm'] = "Confirm Request";
+
+$lang['contra-corta'] = "Password must contain 4 characters or more.";
+
+//Reportes
+$lang['report-usu'] = "reporte_usuarios_pdf_en";
 
 //Barra 6
 $lang['vender'] = "Sale";
