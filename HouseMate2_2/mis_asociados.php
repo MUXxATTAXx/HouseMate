@@ -1,6 +1,5 @@
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="css/profile_cards.css" rel="stylesheet">
+
 <?php
     echo("
 
@@ -25,15 +24,16 @@
 	}
 
 ?>
-<!DOCTYPE HTML>
 <html>
 <head>	
 	<title><?php echo $lang['mis-inmuebles'];?></title>
 	<meta charset = "utf-8" />
-	<link href='css/estilo.css' rel='stylesheet'/>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/profile_cards.css" rel="stylesheet">
 	
 </head>
 <body> 
+<br>
 <div class="container">
     <div class="row">
 <?php
@@ -83,4 +83,3 @@ while($row = mysql_fetch_array($consulta)){
     </div>
 </div>
 </body>
-</html>

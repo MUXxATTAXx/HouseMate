@@ -128,12 +128,14 @@ if(isset($_POST['modificar'])){
 			if(file_exists($filename))
 			{
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
+				$final_string .= "imagen='".$row['imagen']."'";
 				$ingresa = mysql_query($queryfinal);
 
 			}
 			else
 			{
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
+				$final_string .= "imagen='".$row['imagen']."'";
 				$ingresa = mysql_query($queryfinal);
 			}
 		}

@@ -6,7 +6,7 @@
 	include("../../Lenguaje/lenguaje.php");
     mysql_query("SET NAMES 'utf8'");	
 	$idempresa = $_POST['empresa'];
-    $consulta = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario, usuario.Rating  FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa 
+    $consulta = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario, usuario.Rating,usuario.idusuario  FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa 
 	= empresa.IdEmpresa WHERE usuario.idusuario <> empresa.dueño AND Empresa.IdEmpresa ='$idempresa'";
 	$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa 
 	= empresa.IdEmpresa WHERE usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='$idempresa'";
@@ -16,11 +16,11 @@
 	<thead>
             <tr>
                 <th>".$lang['Nombre']."</th>
-                <th>E-mail</th>
-                <th>".$lang['Usuario']."</th>
 				<th>Rating</th>
-				<th></th>
-				<th></th>
+				<th>".$lang['Perfil']."</th>
+				<th>".$lang['mensaje']."</th>
+				<th>".$lang['Eliminar']."</th>
+				<th>".$lang['UpgradeM']."</th>
             </tr>
     </thead>";
 	while($row=mysql_fetch_array($master))
@@ -30,19 +30,17 @@
 		<p>".$row['nombre']." ".$row['apellido']."</p> 
 		</td>
 		<td>
-			<p>".$row['correo']."</p>
+			<center><p>".$row['Rating']."</p></center>
 		</td>
 		<td>
-			<p>".$row['usuario']."</p>
-		</td>
-		<td><center>
-			<p>".$row['Rating']."</p></center>
+			<center><a class='glyphicon glyphicon-user' href='perfil.php?usuario=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<a class='glyphicon glyphicon-envelope'></a>
+			<center><a class='glyphicon glyphicon-envelope' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<a class='glyphicon glyphicon-user'></a>
+		</td>
+		<td>
 		</td>
 		</tr>";
 	}	
@@ -53,19 +51,19 @@
 		<p>".$row['nombre']." ".$row['apellido']."</p> 
 		</td>
 		<td>
-			<p>".$row['correo']."</p>
+			<center><p>".$row['Rating']."</p></center>
 		</td>
 		<td>
-			<p>".$row['usuario']."</p>
-		</td>
-		<td><center>
-			<p>".$row['Rating']."</p></center>
+			<center><a class='glyphicon glyphicon-user' href='perfil.php?usuario=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<a class='glyphicon glyphicon-envelope'></a>
+			<center><a class='glyphicon glyphicon-envelope' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<a class='glyphicon glyphicon-user'></a>
+			<center><a class='glyphicon glyphicon-remove' id='d".$row['idusuario']."'></a></center>
+		</td>
+		<td>
+			<center><a class='glyphicon glyphicon-arrow-up' id='u".$row['idusuario']."'></a></center>
 		</td>
 		</tr>";
 	}	

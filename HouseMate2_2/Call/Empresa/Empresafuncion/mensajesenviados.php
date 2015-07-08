@@ -8,7 +8,7 @@
 	$empresa = $_POST['idempresa']; 
 	$querymensajeget = mysql_query("SELECT empresasolicitud.idsolicitud, empresasolicitud.aprovado, empresasolicitud.aprovado2, tbusuario.nombre,tbusuario.apellido,tbusuario.correo 
 	FROM empresasolicitud inner join usuario on empresasolicitud.idusuario = usuario.idusuario inner join tbusuario on usuario.TempId = tbusuario.idusuario 
-	WHERE empresasolicitud.idempresa = '$empresa' AND empresasolicitud.aprovado2 = '0' AND empresasolicitud.aprovado ='1'");
+	WHERE empresasolicitud.idempresa = '$empresa' AND empresasolicitud.aprovado2 = '0' or empresasolicitud.aprovado2 = '2' AND empresasolicitud.aprovado ='1'");
 	echo "<table class='table table-striped table-hover' data-toggle='table' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 
 	<thead>
@@ -30,10 +30,13 @@
 				switch($row['aprovado2'])
 				{
 					case 0:
-						echo "<center><label class='label label-danger'>".$lang['naprovado']."</label></center>";
+						echo "<center><label class='label label-warning'>".$lang['naprovado']."</label></center>";
 					break;
 					case 1:
 						echo "<center><label class='label label-warning'>".$lang['aprovado']."</label></center>";
+					break;
+					case 2:
+						echo "<center><label class='label label-danger'>".$lang['No']."</label></center>";
 					break;
 				}
 				echo "</td>

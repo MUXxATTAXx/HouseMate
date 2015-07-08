@@ -6,7 +6,11 @@ Inglés
 */
 
 $lang = array();
-
+$lang['UpgradeM'] = "Upgrade";
+$lang['accept'] = "Accept";
+$lang['No'] = "Reject";
+$lang['mensaje'] = "Message";
+$lang['YTE'] = "You already have an enterprise";
 $lang['Need'] = "Need a account?";
 $lang['Page_title'] = 'House Mate';
 $lang['Cuenta'] = 'Register';
@@ -20,6 +24,9 @@ $lang['naprovado'] = "Not approved";
 $lang['compose'] = "Compose";
 $lang['nocuentaop'] = "To access to these functions you must first upgrade your account";
 $lang['Aqui'] = "Over here!";
+$lang['new-empresa'] = " is interested in you";
+$lang['res-empresa'] = "Enterprise request";
+$lang['no-empresa'] = "No new enterprise request found";
 //Acerca
 $lang['Mision'] = 'Mission';
 $lang['Mision1'] = 'To offer our visitors and affiliated users an interaction medium between seller and buyers facilitating the sales and renting of real estate properties providing the properties’ quality, truthfulness information and security on the transactions.';
@@ -87,7 +94,6 @@ $lang['vr']  ="Sale or Rent";
 //Variables redundantes
 $lang['contra'] = "Password";
 $lang['Mostrar'] ="Show";
-//Variables redundantes
 $lang['Direccion'] = 'Address';
 $lang['Etiqueta'] = 'Tags';
 $lang['EtiquetaNum'] = 'Type the number of tags (Max. 12)';

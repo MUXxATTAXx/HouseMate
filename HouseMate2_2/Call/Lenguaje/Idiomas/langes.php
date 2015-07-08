@@ -7,7 +7,11 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
-
+$lang['UpgradeM'] = "Mejorar";
+$lang['accept'] = "Aceptar";
+$lang['No'] = "Rechazar";
+$lang['mensaje'] = "Mensaje";
+$lang['YTE'] = "Ya tiene una empresa";
 $lang['Need'] = "No tengo cuenta";
 $lang['Page_title'] = 'House Mate';
 $lang['Cuenta'] = 'Registrarse';
@@ -21,6 +25,9 @@ $lang['naprovado'] = "No aprovado";
 $lang['compose'] = "Enviar";
 $lang['nocuentaop'] = "Para poder acceder a estas funciones debes mejorar tu cuenta";
 $lang['Aqui'] = "Aqui!!";
+$lang['new-empresa'] = " esta interesado en ti";
+$lang['res-empresa'] = "Solicitudes de empresas";
+$lang['no-empresa'] = "No se encontro ni una solicitud";
 //Acerca
 $lang['Mision'] = 'Misi&oacute;n';
 $lang['Mision1'] = 'Ofrecer a nuestros visitantes y usuarios afiliados un medio de interacción entre vendedores y compradores facilitando la venta y/o renta de inmuebles brindando calidad en los inmuebles, veracidad de información  y seguridad en las transacciones.';

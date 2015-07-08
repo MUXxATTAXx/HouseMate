@@ -5,8 +5,8 @@
 
 <?php 
 echo"
-<li id='cambio3' class='active'><a href='#enviados' data-toggle='tab'>".$lang['enviados']."</a></li>
-<li id='cambio2'><a href='#inbox' data-toggle='tab'>".$lang['recibidos']."</a></li>
+<li id='cambio3' class='active'><a href='#enviados' data-toggle='tab'>".$lang['recibidos']."</a></li>
+<li id='cambio2'><a href='#inbox' data-toggle='tab'>".$lang['enviados']."</a></li>
 <li id='cambio'><a href='#enviar' data-toggle='tab'>".$lang['compose'] ."</a></li>
 
 ";

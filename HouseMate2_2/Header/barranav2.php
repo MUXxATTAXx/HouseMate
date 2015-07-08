@@ -1,7 +1,6 @@
 <link href='css/intro.css' rel='stylesheet'/>
-<form method="post" class="comewithme" >
+<form method="post"  >
 <nav class="navbar navbar-default navbar-fixed-top">
-
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,7 +62,7 @@ require ("Call/Loged/seguridad.php");
                             echo "<a href='recibidos.php' class='btn btn-danger'><span class='badge'>".$row3['mensajes_sin_leer']. "</span>".$lang['msjs']."</a> ";
                         }
                         else{
-                            echo $lang['no-msjs'];
+                            echo "<a>".$lang['no-msjs']."</a>";
                         }
                     }
                     ?>
@@ -74,14 +73,29 @@ require ("Call/Loged/seguridad.php");
                     $consulta4 = mysql_query("SELECT * FROM asociados WHERE socio2 = '$usuario' and solicitud = '1'");
                     while($row = mysql_fetch_array($consulta4)){
                         $consulta5 = mysql_query("SELECT * from tbusuario where idUsuario =".$row['socio1']);
+                        echo "<li >";
                             while($row2 = mysql_fetch_array($consulta5)){
-                                echo "<li>";
                                 echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
-                                echo"</li>";
                             }
-                        if(mysql_num_rows($consulta4) == 0){
-                            echo "<li>".$lang['no-mates']."</li>";
-                        }
+                        echo"</li>";
+                    }
+					if(mysql_num_rows($consulta4) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+                ?>
+				<li class="divider"></li>
+				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+				<?php
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$usuario' and aprovado2 = '0' and aprovado = '1'");
+                    while($row = mysql_fetch_array($consulta6)){
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+						where empresa.idempresa =".$row['idempresa']);
+                            while($row2 = mysql_fetch_array($consulta7)){
+                                echo "<li ><a href='Empresalobby.php?empresa=".$row2['nombre']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
+                            }
+                    }
+					 if(mysql_num_rows($consulta6) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
                     }
                 ?>
             </ul>
@@ -110,7 +124,6 @@ require ("Call/Loged/seguridad.php");
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!--Modal-->
 <div id="myModal" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">

@@ -26,10 +26,12 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
-				<li><a href="enviados.php"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
-            </ul>
+              <li><a href="enviar_msj.php"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo($lang['msj-nuevo']);?></a></li>
+      				<li><a href="enviados.php"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span><?php echo("  ".$lang['msjs-enviados']);?></a></li>
+      				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
+      			</ul>
         </li>
+        <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -45,7 +47,7 @@
                             echo "<a href='recibidos.php' class='btn btn-danger'><span class='badge'>".$row3['mensajes_sin_leer']. "</span>".$lang['msjs']."</a> ";
                         }
                         else{
-                            echo $lang['no-msjs'];
+                            echo "<a>".$lang['no-msjs']."</a>";
                         }
                     }
                     ?>
@@ -60,7 +62,26 @@
                             while($row2 = mysql_fetch_array($consulta5)){
                                 echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
                             }
-                        echo"<li>";
+                        echo"</li>";
+                    }
+					if(mysql_num_rows($consulta4) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+                ?>
+				<li class="divider"></li>
+				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+				<?php
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$usuario' and aprovado2 = '0' and aprovado = '1'");
+                    while($row = mysql_fetch_array($consulta6)){
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+						where empresa.idempresa =".$row['idempresa']);
+                            while($row2 = mysql_fetch_array($consulta7)){
+                                echo "<li><a href='Beforelobbyempresa.php?empresa=".$row2['IdEmpresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
+
+                            }
+                    }
+					 if(mysql_num_rows($consulta6) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
                     }
                 ?>
             </ul>
@@ -80,9 +101,9 @@
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
+					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
-          </li>   
+          </li>
       </ul>
     </div>
   </div>
@@ -103,7 +124,7 @@
     </div>
   </div>
 </div>
-       </form>
-	   <br>
-	   <br>
-	   <br>
+</form>
+<br>
+<br>
+<br>
