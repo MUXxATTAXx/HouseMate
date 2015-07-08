@@ -77,27 +77,36 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 			</ul>
             </div>
             <div class="panel-body">
-				<div id='myTabContent' class='tab-content'>
+			<div id='myTabContent' class='tab-content'>
+				<?php
+				if(mysql_num_rows($master) > 0)
+				{
+				echo "
 					<div class='tab-pane fade active in' id='home'>
-						<div id="cambio">
+						<div id='cambio'>
 						</div>
 					</div>
 					<div class='tab-pane fade' id='socios'>
-						<div id="thetablemiembre">
+						<div>
+							<div id='thetablemiembre'>
+						</div>
+						</div>
+						<div id='resultborrar'>
+						</div>
+					</div>";
+					
+					echo "<div class='tab-pane fade' id='solicitud'>
+						<div class='row row-centered'>";
+								include 'Call/Empresa/Empresafuncion/verusuario.php';  
+						echo "</div>
+						<div id='morepeople'>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="solicitud">
-						<div class="row row-centered">
-							<?php include'Call/Empresa/Empresafuncion/verusuario.php'  ?>
-						</div>
-						<div id="morepeople">
-						</div>
-					</div>
-					<div class="tab-pane fade" id="configurar">
-						<div class="row row-centered">
-							<?php include'Call/Empresa/Empresafuncion/configurar.php'  ?>
-						</div>
-					</div>
+					<div class='tab-pane fade' id='configurar'>
+						<div class='row row-centered'>";
+						include "Call/Empresa/Empresafuncion/configurar.php"; 
+						echo "</div>
+					</div>"; }?>
 					<div class="tab-pane fade" id="informacion">
 						<?php include "Call/Empresa/informacion.php" ?>
 					</div>
@@ -119,5 +128,32 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 		<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
 			
 <?php } ?>
-</script>
+<span id="teste" class="hidme"></span>
+<div id='delete' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+
+    <!-- Modal content-->
+    <div class='modal-content'>
+      <div class='panel-footer'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+         <h4 class='modal-title' id='myModalLabel'><?php echo $lang['Cdelete'] ?></h4>
+      </div>
+      <div class='modal-body'>
+                <p><?php echo $lang['Xdelete'] ?></p>
+                <p><?php echo $lang['Fdelete']?></p>
+                <p class='debug-url'></p>
+				<div class="row">
+				<button class='btn btn-default' id='borrar' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
+				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
+				</div>
+      </div>
+      <div class='panel-footer'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="js/deletemember.js"></script>
+<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+<script src='js/bootstrap-table.js' type='text/javascript'></script>
 </body>

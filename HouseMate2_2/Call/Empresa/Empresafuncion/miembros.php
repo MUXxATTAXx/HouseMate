@@ -33,10 +33,10 @@
 			<center><p>".$row['Rating']."</p></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-user' href='perfil.php?usuario=".$row['usuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-user btn btn-sm btn-primary' href='perfil.php?usuario=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-envelope' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
 		</td>
@@ -48,26 +48,27 @@
 	{
 		echo "<tr>
 		<td>
-		<p>".$row['nombre']." ".$row['apellido']."</p> 
+			<p>".$row['nombre']." ".$row['apellido']."</p> 
 		</td>
 		<td>
 			<center><p>".$row['Rating']."</p></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-user' href='perfil.php?usuario=".$row['usuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-user btn btn-sm btn-info' href='perfil.php?usuario=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-envelope' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-envelope btn btn-sm btn-info' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-remove' id='d".$row['idusuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-remove btn btn-sm btn-danger deleteuser' onclick='deletemiembro(this.id)'  data-toggle='modal' data-target='#delete' id='d".$row['idusuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-arrow-up' id='u".$row['idusuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-arrow-up btn btn-sm btn-success' id='u".$row['idusuario']."'></a></center>
 		</td>
 		</tr>";
 	}	
 	echo "</table>";
-
 ?>
-	
+
+<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+<script src='js/bootstrap-table.js' type='text/javascript'></script>
