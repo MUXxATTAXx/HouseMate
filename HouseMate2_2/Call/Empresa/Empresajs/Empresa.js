@@ -26,6 +26,3 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
-  $(function() {
-$("#Municipio4").chained("#Departamento4");
-});

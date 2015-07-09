@@ -17,9 +17,11 @@ echo"
 		<div id='trytochange' class='tab-content'>
 			<div class='tab-pane fade active in' id='enviados'>
 				<div id="sentmessages"></div>
+				<div id="recibidosaj"></div>
 			</div>
 			<div class='tab-pane fade' id='inbox'>
 				<div id="checkmensajes"></div>
+				<div id="resultcos"></div>
 			</div>
 			<div class='tab-pane fade' id='enviar'>
 			<br>

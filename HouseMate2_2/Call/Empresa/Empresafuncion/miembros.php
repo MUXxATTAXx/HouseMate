@@ -15,6 +15,7 @@
 	echo "<table class='table table-striped table-hover' data-toggle='table' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 	<thead>
             <tr>
+			
                 <th>".$lang['Nombre']."</th>
 				<th>Rating</th>
 				<th>".$lang['Perfil']."</th>
@@ -70,5 +71,4 @@
 	echo "</table>";
 ?>
 
-<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
 <script src='js/bootstrap-table.js' type='text/javascript'></script>

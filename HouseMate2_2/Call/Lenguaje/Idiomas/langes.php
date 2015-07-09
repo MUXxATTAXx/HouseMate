@@ -9,7 +9,7 @@ Español
 $lang = array();
 $lang['UpgradeM'] = "Mejorar";
 $lang['accept'] = "Aceptar";
-$lang['No'] = "Rechazar";
+$lang['No'] = "Rechazado";
 $lang['mensaje'] = "Mensaje";
 $lang['YTE'] = "Ya tiene una empresa";
 $lang['Need'] = "No tengo cuenta";

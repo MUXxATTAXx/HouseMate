@@ -12,7 +12,9 @@ function posibles(){
     success: function(data) {
 				$('#sugeridosresult').empty();
 				$('#sugeridosresult').append(data);	
-				reloadmensajes();
+				stuffed();
+				enviadosmensajes();
+				checkmensajes();
         },
     });
 }; 

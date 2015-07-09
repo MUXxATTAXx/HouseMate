@@ -16,9 +16,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 	header("Location: Call/Empresa/mejorela");
 	die();
 }
-    echo("
-<meta charset=utf-8 />
-    ");
+echo("<meta charset=utf-8 />");
 	if(isset($_SESSION['tip']))
 	{
 		switch($_SESSION['tip'])

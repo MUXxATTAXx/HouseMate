@@ -19,7 +19,7 @@ if(isset($_POST['ingresar'])){
 		$queryamount = mysql_query("Select * FROM EMPRESA");
 		$digito = mysql_num_rows($queryamount);
 		$who = $_SESSION['id'];
-		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.idusuario = '$who'")
+		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.idusuario = '$who'");
 		if($me = mysql_fetch_array($querywhoim)){
 			$who = $querywhoim['idusuario'];
 		}

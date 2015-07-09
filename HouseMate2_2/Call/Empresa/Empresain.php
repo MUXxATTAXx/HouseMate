@@ -123,8 +123,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
         </div>
       </div>
 	  </form>
-		<script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
-		<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+		
 		<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
 			
 <?php } ?>
@@ -152,8 +151,53 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
     </div>
   </div>
 </div>
-
+<!-- Modal content-->
+<div id='accept' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='panel-footer'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+         <h4 class='modal-title' id='myModalLabel'><?php echo $lang['Cdelete'] ?></h4>
+      </div>
+      <div class='modal-body'>
+                <p><?php echo $lang['Xdelete'] ?></p>
+                <p><?php echo $lang['Fdelete']?></p>
+                <p class='debug-url'></p>
+				<div class="row">
+				<button class='btn btn-default' id='accept' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
+				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
+				</div>
+      </div>
+      <div class='panel-footer'>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal content-->
+<div id='denegar' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='panel-footer'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+         <h4 class='modal-title' id='myModalLabel'><?php echo $lang['Cdelete'] ?></h4>
+      </div>
+      <div class='modal-body'>
+                <p><?php echo $lang['Xdelete'] ?></p>
+                <p><?php echo $lang['Fdelete']?></p>
+                <p class='debug-url'></p>
+				<div class="row">
+				<button class='btn btn-default' id='denegar' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
+				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
+				</div>
+      </div>
+      <div class='panel-footer'>
+      </div>
+    </div>
+  </div>
+</div>
+		
 <script type="text/javascript" src="js/deletemember.js"></script>
 <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
+<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 <script src='js/bootstrap-table.js' type='text/javascript'></script>
 </body>

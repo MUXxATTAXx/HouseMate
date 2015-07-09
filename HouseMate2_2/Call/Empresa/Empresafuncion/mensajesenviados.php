@@ -46,5 +46,5 @@
 	}
 	"</tbody></table>";
 ?>
-
+<script src='js/bootstrap-table.js' type='text/javascript'></script>
 
