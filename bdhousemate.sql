@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2015 at 06:50 AM
+-- Generation Time: Jul 09, 2015 at 08:36 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -105,6 +105,7 @@ INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`,
 CREATE TABLE IF NOT EXISTS `empresamen` (
   `idmensaje` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idempresa` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `titulo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `texto` varchar(240) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -130,8 +131,7 @@ CREATE TABLE IF NOT EXISTS `empresasolicitud` (
 
 INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprovado`, `aprovado2`, `mensaje`) VALUES
 ('0', '0', '1', 1, 2, 'Acepta pl0x'),
-('1', '0', '2', 1, 0, 'Gay'),
-('2', '0', '3', 0, 1, '');
+('1', '0', '2', 1, 0, 'Gay');
 
 -- --------------------------------------------------------
 
@@ -288,7 +288,7 @@ INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`
 ('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0, '0'),
 ('1', '1', 'sdasdasd', 'asdsdasd', '131231231', '2321313213', '12312321', '23232323', 0, '1'),
 ('2', '3', 'Credencial goes here', 'Dirrecion goes here', '123213213', '1232132131', '23232323', '23232323', 0, '0'),
-('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '');
+('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '0');
 
 --
 -- Indexes for dumped tables
@@ -438,3 +438,4 @@ ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
