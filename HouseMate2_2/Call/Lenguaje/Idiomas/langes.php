@@ -276,15 +276,20 @@ $lang['TS'] = "Tipo Suelo";
 $lang['TT'] = "Tipo Techo";
 $lang['DC'] = "Descripci&oacute;n Constructiva";
 $lang['peri-local'] = "Localizaci&oacute;n";
+$lang['peri-estado'] = "";
+
 $lang['peri-valor'] = "Valor";
 $lang['peri-agregar'] = "Agregar";
 $lang['peri-pared'] = "Pared";
 $lang['peri-suelo'] = "Suelo";
 $lang['peri-techo'] = "Techo";
+
 $lang['peri-muni'] = "Municipio";
 $lang['peri-modal1'] = "¿Quiere agregar estos valores?";
 $lang['peri-modal2'] = "Cancelar";
 $lang['peri-modal3'] = "Confirmar";
+$lang['peri-vacio'] = "Campos vacios!";
 
+$lang['peri-exito'] = "Objeto de peritaje guardado!";
 
 ?>

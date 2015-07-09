@@ -276,14 +276,21 @@ $lang['TS'] = "Ground Type";
 $lang['TT'] = "Roof Type";
 $lang['DC'] = "Constructive Description";
 $lang['peri-local'] = "Localization";
+$lang['peri-estado'] = "";
+
 $lang['peri-valor'] = "Value";
 $lang['peri-agregar'] = "Add";
 $lang['peri-pared'] = "Wall";
 $lang['peri-suelo'] = "Ground";
 $lang['peri-techo'] = "Roof";
 $lang['peri-muni'] = "Town";
+
 $lang['peri-modal1'] = "Do you want to add these values?";
 $lang['peri-modal2'] = "Cancel";
 $lang['peri-modal3'] = "Confirm";
+$lang['peri-vacio'] = "Empty fields!";
+
+$lang['peri-exito'] = "Appraiser object saved!";
+
 
 ?>
