@@ -22,6 +22,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-list-alt mantenimien" aria-hidden="true"></span><span class="caret mantenimien"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="valuar_inmueble.php"><span class="glyphicon glyphicon-check"></span><?php echo $lang['peritaje'];?></a></li>
+                <li><a href="mantenimiento_peritaje.php"><span class="glyphicon glyphicon-list-alt"></span><?php echo $lang['peritaje'];?></a></li>
             </ul>    
         </li>
 <!--Empresa-->
