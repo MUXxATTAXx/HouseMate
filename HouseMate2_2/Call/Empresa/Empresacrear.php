@@ -3,7 +3,6 @@
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
-
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
    
@@ -49,8 +48,9 @@ echo("<meta charset=utf-8 />");
 	</div>
 </div>
 <form method="post" enctype="multipart/form-data">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
+      <div class="row" align="center">
+
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title"><?php echo $lang['EmpresaN'] ?></h3>
@@ -74,21 +74,21 @@ echo("<meta charset=utf-8 />");
 					<div class="row">
 						<div class="form-group col-xs-6">
 							<label>*<?php echo $lang['Nombre'] ?>:</label>
-							<input name="nombre" class="form-control">
+							<input name="nombre" class="form-control" maxlength="30">
 						</div>
 						<div class="form-group col-xs-6">
 							<label>*NIT:</label>
-							<input name="nit" class="form-control">
+							<input name="nit" class="form-control" maxlength="14">
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-6">
 							<label>*<?php echo $lang['tel'] ?>:</label>
-							<input name="telefono" class="form-control">
+							<input name="telefono" class="form-control" maxlength="8">
 						</div>
 						<div class="form-group col-xs-6">
 							<label><?php echo $lang['tel2'] ?>:</label>
-							<input name="telefono2" class="form-control">
+							<input name="telefono2" class="form-control" maxlength="8">
 						</div>
 					</div>
 					<div>
@@ -97,12 +97,14 @@ echo("<meta charset=utf-8 />");
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label><?php echo $lang['Descripcion'] ?>:</label>
-							<textarea name="descripcion" class="form-control"></textarea>
+							<textarea name="descripcion" class="form-control" maxlength="140"></textarea>
 						</div>
+						
 					</div>
                 </div>
               </div>
             </div>
+			<br>
                  <div class="panel-footer">
 				 <center>
 					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>

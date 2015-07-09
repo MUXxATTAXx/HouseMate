@@ -19,9 +19,9 @@ if(isset($_POST['ingresar'])){
 		$queryamount = mysql_query("Select * FROM EMPRESA");
 		$digito = mysql_num_rows($queryamount);
 		$who = $_SESSION['id'];
-		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.idusuario = '$who'");
+		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.TempId = '$who'");
 		if($me = mysql_fetch_array($querywhoim)){
-			$who = $querywhoim['idusuario'];
+			$who = $me['idusuario'];
 		}
 		$restoquery = "('$digito','$who','$variable3','$variable1','$lugar','$variable2',";
 		$endofquery = "'0')";
@@ -40,7 +40,7 @@ if(isset($_POST['ingresar'])){
 					}
 					else
 					{
-						$final_string .= "null,";
+						$man .= "n";
 					}
 					break;
 					case 2:
@@ -51,7 +51,7 @@ if(isset($_POST['ingresar'])){
 					}
 					else
 					{
-						$final_string .= "null,";
+						$man .= "n";
 					}
 					break;
 					case 3:
@@ -63,13 +63,13 @@ if(isset($_POST['ingresar'])){
 					}
 					else
 					{
-						$final_string .= "null,";
+						$man .= "n";
 					}
 					break;
 				}
 		}
 		$array = array();
-
+	
 		for ($n = 0; $n < $maxc; $n++)
 		{
 			array_push($array,substr($man,$n,1));
@@ -86,6 +86,9 @@ if(isset($_POST['ingresar'])){
 				case "c":
 				$final_string .= "'".$c."',";
 				break;
+				case "n":
+				$final_string .= "'',";
+				break;
 				}
 			}
 			else
@@ -101,7 +104,9 @@ if(isset($_POST['ingresar'])){
 				case "c":
 				$final_string .= "'".$c."',";
 				break;
-
+				case "n":
+				$final_string .= "'',";
+				break;
 				}
 			}
 		}
@@ -124,6 +129,7 @@ if(isset($_POST['ingresar'])){
 				{
 					copy($varing,"img/Empresas/$imagevar");
 					$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
+					echo $queryfinal;
 					$ingresa = mysql_query($queryfinal);
 					$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
 					$ingresa2 = mysql_query($variables);
@@ -133,8 +139,8 @@ if(isset($_POST['ingresar'])){
 		else
 		{
 			$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
-			echo $queryfinal;
 			$ingresa = mysql_query($queryfinal);
+			echo $queryfinal;
 			$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
 			$ingresa2 = mysql_query($variables);
 

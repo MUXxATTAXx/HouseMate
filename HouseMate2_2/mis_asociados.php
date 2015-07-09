@@ -1,4 +1,5 @@
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+<link href="css/empresatag.css" rel="stylesheet">
 
 <?php
     echo("
@@ -58,23 +59,24 @@ while($row = mysql_fetch_array($consulta)){
 	$cs2 = mysql_query($consulta2);
     while($row = mysql_fetch_array($cs2)){
 //Inicio de bloque
-    echo    "<div class='col-xs-12 col-sm-6 col-md-6'>
-            <div class='well well-sm'>
-                <div class='row'>
-                    <div class='col-sm-6 col-md-4'>
-                        <img height='150px' width='150px' src='https://lh3.googleusercontent.com/-4h2GkEskmws/AAAAAAAAAAI/AAAAAAAAAAA/9UdKs51m48o/photo.jpg' alt='' class='img-rounded img-responsive' />
+    echo    "
+	<div class='col-sm-6'>
+                <div class='row well well-sm'>
+                    <div class='col-sm-4'>
+                        <img src='' class='smallimage' />
                     </div>
-                    <div class='col-sm-6 col-md-8'>
-                        <h4>".$row['usuario']."</h4>
-                        <p>".$row['nombre']." ".$row['apellido']."</p>
-                        <p>".$row['correo']."</p>
-                    </div>
-                    <div class='col-sm-6 col-md-8'>
-                        <a href='enviar_msj.php?destin=".$row['usuario']."' class='btn btn-info'>".$lang['msj-enviar']."</a>
-                    </div>
-                </div>
-            </div>
-        </div>";
+                   <div class='col-sm-8'>
+						<div class='row'>
+							<div class='col-sm-12'>
+								<h4>".$row['usuario']."</h4>
+								<p>".$row['nombre']." ".$row['apellido']."</p>
+								<a href='enviar_msj.php?destin=".$row['usuario']."' class='glyphicon glyphicon-envelope btn-info btn-sm'></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		";
 //Fin de bloque
     }
 

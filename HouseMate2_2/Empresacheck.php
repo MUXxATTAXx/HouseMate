@@ -4,11 +4,11 @@ include('conexion.php');
 include('Call/Lenguaje/lenguaje.php');
 ?>
 <head>
-	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
-   <link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='css/bootstrap.min.css' rel='stylesheet'/>
+	<link href='css/appeal.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
-    
-	<link href='css/empresatag.css' rel='stylesheet'>
+	<link href="css/bootstrap-table.css" rel="stylesheet">
+	<link href="css/empresatag.css" rel="stylesheet">
    
 </head>
 <body id='intro'>
@@ -85,7 +85,6 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 							</div>
 						</div>
                     </div>
-					
             </div>
 		</div>
 		<?php
