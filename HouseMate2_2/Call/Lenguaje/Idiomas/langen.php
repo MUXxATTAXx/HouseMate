@@ -291,6 +291,6 @@ $lang['peri-modal3'] = "Confirm";
 $lang['peri-vacio'] = "Empty fields!";
 
 $lang['peri-exito'] = "Appraiser object saved!";
-
+$lang['nombre-pared'] = "nombreEN";
 
 ?>
