@@ -128,8 +128,9 @@
 																	//Si no has confirma la solicitud
 																		if(mysql_num_rows($solici2_con) > 0){
 																			echo "<form action='#' method='POST'>
+																			<div class='col-sm-6'>
 																			<input type='submit' name='confirmar' value='".$lang['soli-confirm']."' class='btn btn-primary'>
-																			</form>";
+																			</form></div>";
 																			//Cuando se confirmar una solicitud
 																			if(isset($_POST['confirmar'])){
 																				$consultaf = "UPDATE asociados SET solicitud = '2' WHERE socio2 = '$yo' and socio1 = '$usuario1' ";
@@ -145,9 +146,10 @@
 																	//Si nadie a enviado nada a nadie
 																	if($usuario1 != $yo and mysql_num_rows($socio1_con) == 0 and mysql_num_rows($socio2_con) == 0) {
 																		echo"
+																		<div class='col-sm-6'>
 																		<form action='#' method='POST'>
 																		<input type='submit' name='enviar' value='".$lang['soli-send']."' class='btn btn-primary'>
-																		</form>
+																		</form></div>
 																		";}
 																		//Cuando se envia una solicitud
 																		if(isset($_POST['enviar'])){

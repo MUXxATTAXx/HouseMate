@@ -144,22 +144,7 @@ include ('Call/Lenguaje/lenguaje.php');
 				  </div>
 				  <br>
 				  <div class="row row-centered">
-					<?php
-						$mate = mysql_query("Select usuario.idusuario FROM usuario inner join tbusuario on 
-						usuario.TempId = tbusuario.idusuario Where usuario.TempId = '".$_SESSION['id']."'");
-						while ($get = mysql_fetch_array($mate))
-						{
-							$personaid = $get['idusuario'];
-							$checkmesage = mysql_query("Select * From empresasolicitud Where idempresa = '$variable' and idusuario = '$personaid'");
-							while($print = mysql_fetch_array($checkmesage))
-							{
-								echo "<div class='col-lg-8 col-centered'>
-								".$lang['mensaje'].": ".$print['mensaje']." 
-								</div>";
-							}
-						}
-						
-					?>
+
 				  </div>
 				  <div class="row">
 							<div>
@@ -171,12 +156,11 @@ include ('Call/Lenguaje/lenguaje.php');
 							</div>
 						</div>
 				</div>
-					<div class='panel-footer'>
+				<div class='panel-footer'>
 					<center>
-						<a name='ingresare' id="check" class='btn btn-success btn-sm extraright'><?php echo $lang['accept'] ?></a>
-						<a name='nothanks' id="reject" class='btn btn-primary btn-sm extraright'><?php echo $lang['No'] ?></a>
+						<a name='ingresare' id="ask" class='btn btn-success btn-sm extraright'><?php echo $lang['Request'] ?></a>
+						<a name='nothanks' id="back" href="Empresacheck.php" class='btn btn-warning btn-sm extraright'><?php echo $lang['back'] ?></a>
 					<br>
-					
 					</center>	
 				</div>
 			</div>
@@ -190,8 +174,7 @@ include ('Call/Lenguaje/lenguaje.php');
 		
 	}
 	?>
-	<script type="text/javascript" src="js/casa.js">
-</script>
+<script type="text/javascript" src="js/askempresa.js"></script>
 	</form>
 
 </body>

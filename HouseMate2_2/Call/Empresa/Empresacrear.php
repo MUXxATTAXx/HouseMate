@@ -2,9 +2,8 @@
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
-    <link href='css/estilo.css' rel='stylesheet'/>
+
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
    
@@ -38,6 +37,17 @@ echo("<meta charset=utf-8 />");
  <title><?php echo $lang['Empresa'] ?></title>
 <br>
 <br>
+<div class="row">
+	<div class="col-sm-2">
+		<a href="Empresacheck.php" class="btn btn-sm btn-primary extraleft"><?php echo($lang['Buscar3'])?></a>
+	</div>
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-2">
+	</div>
+</div>
 <form method="post" enctype="multipart/form-data">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >
@@ -96,7 +106,7 @@ echo("<meta charset=utf-8 />");
                  <div class="panel-footer">
 				 <center>
 					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
-					<a href="Empresacheck.php" class="btn btn-primary extraright"><?php echo($lang['Buscar3'])?></a>
+					
 					<br>
 					<?php	
 						include "Call/Empresa/Empresafuncion/crearempresa.php";

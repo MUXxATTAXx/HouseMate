@@ -247,3 +247,8 @@ background-color:#303030;
 {
 	padding:0;
 }
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}

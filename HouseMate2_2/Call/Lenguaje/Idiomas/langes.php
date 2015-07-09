@@ -7,6 +7,7 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Request'] = "Solicitar";
 $lang['UpgradeM'] = "Mejorar";
 $lang['accept'] = "Aceptar";
 $lang['No'] = "Rechazado";

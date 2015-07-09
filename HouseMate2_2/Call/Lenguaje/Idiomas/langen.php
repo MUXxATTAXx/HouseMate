@@ -6,6 +6,7 @@ Inglés
 */
 
 $lang = array();
+$lang['Request'] = "Request";
 $lang['UpgradeM'] = "Upgrade";
 $lang['accept'] = "Accept";
 $lang['No'] = "Reject";
