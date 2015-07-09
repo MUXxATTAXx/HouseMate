@@ -2,10 +2,10 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 09, 2015 at 08:36 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 09-07-2015 a las 23:44:37
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `bdhousemate`
+-- Base de datos: `bdhousemate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asociados`
+-- Estructura de tabla para la tabla `asociados`
 --
 
 CREATE TABLE IF NOT EXISTS `asociados` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `asociados` (
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `asociados`
+-- Volcado de datos para la tabla `asociados`
 --
 
 INSERT INTO `asociados` (`idasocio`, `socio1`, `socio2`, `solicitud`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `asociados` (`idasocio`, `socio1`, `socio2`, `solicitud`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contrato`
+-- Estructura de tabla para la tabla `contrato`
 --
 
 CREATE TABLE IF NOT EXISTS `contrato` (
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `contrato` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `convenio`
+-- Estructura de tabla para la tabla `convenio`
 --
 
 CREATE TABLE IF NOT EXISTS `convenio` (
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `convenio` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresa`
+-- Estructura de tabla para la tabla `empresa`
 --
 
 CREATE TABLE IF NOT EXISTS `empresa` (
@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `empresa`
+-- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`, `nit`, `telefono2`, `descrip`, `imagen`, `ratings`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresamen`
+-- Estructura de tabla para la tabla `empresamen`
 --
 
 CREATE TABLE IF NOT EXISTS `empresamen` (
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `empresamen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresasolicitud`
+-- Estructura de tabla para la tabla `empresasolicitud`
 --
 
 CREATE TABLE IF NOT EXISTS `empresasolicitud` (
@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `empresasolicitud` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `empresasolicitud`
+-- Volcado de datos para la tabla `empresasolicitud`
 --
 
 INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprovado`, `aprovado2`, `mensaje`) VALUES
@@ -136,7 +136,7 @@ INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprova
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etiqueta`
+-- Estructura de tabla para la tabla `etiqueta`
 --
 
 CREATE TABLE IF NOT EXISTS `etiqueta` (
@@ -147,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `etiqueta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `etiqueta`
+-- Volcado de datos para la tabla `etiqueta`
 --
 
 INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
@@ -166,7 +166,7 @@ INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inmueble`
+-- Estructura de tabla para la tabla `inmueble`
 --
 
 CREATE TABLE IF NOT EXISTS `inmueble` (
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `inmueble`
+-- Volcado de datos para la tabla `inmueble`
 --
 
 INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`) VALUES
@@ -192,7 +192,7 @@ INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `Vent
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mensaje`
+-- Estructura de tabla para la tabla `mensaje`
 --
 
 CREATE TABLE IF NOT EXISTS `mensaje` (
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `mensaje` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `mensaje`
+-- Volcado de datos para la tabla `mensaje`
 --
 
 INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mensaje`, `fecha`, `estado`, `estado2`) VALUES
@@ -222,7 +222,37 @@ INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mens
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resultadoconevio`
+-- Estructura de tabla para la tabla `peritaje`
+--
+
+CREATE TABLE IF NOT EXISTS `peritaje` (
+  `id_peri` varchar(5) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `idioma` char(1) NOT NULL,
+  `valor1` int(5) NOT NULL,
+  `valor2` int(5) NOT NULL,
+  `valor3` int(5) NOT NULL,
+  `categoria` char(1) NOT NULL,
+  `creador` varchar(5) NOT NULL,
+  `estado` char(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `peritaje`
+--
+
+INSERT INTO `peritaje` (`id_peri`, `nombre`, `idioma`, `valor1`, `valor2`, `valor3`, `categoria`, `creador`, `estado`) VALUES
+('en1', 'Marble', '2', 7, 7, 7, '1', '3', '1'),
+('en2', 'Woodstock', '2', 5, 5, 5, '1', '3', '1'),
+('es1', 'Marmol', '1', 7, 0, 0, '1', '3', '2'),
+('es2', 'Madera', '1', 5, 5, 5, '1', '3', '1'),
+('es3', 'Repelladas', '1', 4, 4, 4, '1', '3', '1'),
+('es4', 'Marmol', '1', 10, 10, 10, '1', '3', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `resultadoconevio`
 --
 
 CREATE TABLE IF NOT EXISTS `resultadoconevio` (
@@ -235,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `resultadoconevio` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbusuario`
+-- Estructura de tabla para la tabla `tbusuario`
 --
 
 CREATE TABLE IF NOT EXISTS `tbusuario` (
@@ -251,20 +281,19 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `tbusuario`
+-- Volcado de datos para la tabla `tbusuario`
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
 ('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', 'chaleco234', 4, NULL),
-('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', 'chaleco234', 4, NULL),
+('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', 'chaleco234', 3, NULL),
 ('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '12345', 1, NULL),
-('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'asd', 2, NULL),
-('4', 'Usuario prueba', 'Usuario prueba', '1995-12-12', 'cosasdelavida@gmail.com', 'TestDiferencial', '12345', 1, NULL);
+('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'asd', 3, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -281,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`, `Empresa`) VALUES
@@ -291,146 +320,152 @@ INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`
 ('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '0');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `asociados`
+-- Indices de la tabla `asociados`
 --
 ALTER TABLE `asociados`
  ADD PRIMARY KEY (`idasocio`), ADD KEY `socio1` (`socio1`,`socio2`);
 
 --
--- Indexes for table `contrato`
+-- Indices de la tabla `contrato`
 --
 ALTER TABLE `contrato`
  ADD PRIMARY KEY (`idfinal`), ADD UNIQUE KEY `idinmueble` (`idinmueble`), ADD KEY `idusuario` (`idusuario`);
 
 --
--- Indexes for table `convenio`
+-- Indices de la tabla `convenio`
 --
 ALTER TABLE `convenio`
  ADD PRIMARY KEY (`idconvenio`), ADD UNIQUE KEY `idinmueble` (`idinmueble`), ADD KEY `idusuario` (`idusuario`);
 
 --
--- Indexes for table `empresa`
+-- Indices de la tabla `empresa`
 --
 ALTER TABLE `empresa`
  ADD PRIMARY KEY (`IdEmpresa`), ADD UNIQUE KEY `Dueño` (`dueño`);
 
 --
--- Indexes for table `empresamen`
+-- Indices de la tabla `empresamen`
 --
 ALTER TABLE `empresamen`
  ADD PRIMARY KEY (`idmensaje`), ADD KEY `idempresa` (`idempresa`);
 
 --
--- Indexes for table `empresasolicitud`
+-- Indices de la tabla `empresasolicitud`
 --
 ALTER TABLE `empresasolicitud`
  ADD PRIMARY KEY (`idsolicitud`), ADD KEY `idempresa` (`idempresa`,`idusuario`), ADD KEY `idempresa_2` (`idempresa`), ADD KEY `idusuario` (`idusuario`), ADD KEY `idempresa_3` (`idempresa`), ADD KEY `idusuario_2` (`idusuario`);
 
 --
--- Indexes for table `etiqueta`
+-- Indices de la tabla `etiqueta`
 --
 ALTER TABLE `etiqueta`
  ADD PRIMARY KEY (`IdEtiqueta`), ADD KEY `Idinmueble` (`Idinmueble`);
 
 --
--- Indexes for table `inmueble`
+-- Indices de la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
  ADD PRIMARY KEY (`IdInmueble`), ADD KEY `Dueno` (`Dueno`);
 
 --
--- Indexes for table `mensaje`
+-- Indices de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
  ADD PRIMARY KEY (`idmensaje`), ADD KEY `remitente` (`remitente`,`destinatario`), ADD KEY `remitente_2` (`remitente`), ADD KEY `destinatario` (`destinatario`);
 
 --
--- Indexes for table `resultadoconevio`
+-- Indices de la tabla `peritaje`
+--
+ALTER TABLE `peritaje`
+ ADD PRIMARY KEY (`id_peri`), ADD KEY `categoria` (`categoria`);
+
+--
+-- Indices de la tabla `resultadoconevio`
 --
 ALTER TABLE `resultadoconevio`
  ADD PRIMARY KEY (`idresultado`), ADD UNIQUE KEY `idconvenio` (`idconvenio`);
 
 --
--- Indexes for table `tbusuario`
+-- Indices de la tabla `tbusuario`
 --
 ALTER TABLE `tbusuario`
  ADD PRIMARY KEY (`idUsuario`), ADD UNIQUE KEY `usuario` (`usuario`), ADD UNIQUE KEY `usuario_2` (`usuario`), ADD UNIQUE KEY `correo` (`correo`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
  ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`), ADD KEY `Empresa` (`Empresa`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `asociados`
+-- AUTO_INCREMENT de la tabla `asociados`
 --
 ALTER TABLE `asociados`
 MODIFY `idasocio` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 --
--- AUTO_INCREMENT for table `mensaje`
+-- AUTO_INCREMENT de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
 MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `contrato`
+-- Filtros para la tabla `contrato`
 --
 ALTER TABLE `contrato`
 ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON UPDATE CASCADE,
 ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `convenio`
+-- Filtros para la tabla `convenio`
 --
 ALTER TABLE `convenio`
 ADD CONSTRAINT `convenio_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE,
 ADD CONSTRAINT `convenio_ibfk_2` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `empresa`
+-- Filtros para la tabla `empresa`
 --
 ALTER TABLE `empresa`
 ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`dueño`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Constraints for table `empresamen`
+-- Filtros para la tabla `empresamen`
 --
 ALTER TABLE `empresamen`
 ADD CONSTRAINT `empresamen_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `empresasolicitud`
+-- Filtros para la tabla `empresasolicitud`
 --
 ALTER TABLE `empresasolicitud`
 ADD CONSTRAINT `empresasolicitud_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`),
 ADD CONSTRAINT `empresasolicitud_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Constraints for table `etiqueta`
+-- Filtros para la tabla `etiqueta`
 --
 ALTER TABLE `etiqueta`
 ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `inmueble`
+-- Filtros para la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
 ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`IdInmueble`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Constraints for table `resultadoconevio`
+-- Filtros para la tabla `resultadoconevio`
 --
 ALTER TABLE `resultadoconevio`
 ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `convenio` (`idconvenio`) ON DELETE CASCADE ON UPDATE CASCADE;
@@ -438,4 +473,3 @@ ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
