@@ -39,9 +39,7 @@ include "conexion.php";
 //Mensaje que me han enviado
 $usuario = $_GET['remitente'];
 $consulta1 = "
-SELECT tbusuario.usuario, mensaje.asunto, mensaje.mensaje, mensaje.fecha, mensaje.idmensaje
-FROM tbusuario
-INNER JOIN mensaje
+SELECT tbusuario.usuario, mensaje.asunto, mensaje.mensaje, mensaje.fecha, mensaje.idmensaje FROM tbusuario INNER JOIN mensaje
 ON tbusuario.IdUsuario=mensaje.remitente
 WHERE mensaje.destinatario = '$usuario'
 ORDER BY mensaje.fecha ASC

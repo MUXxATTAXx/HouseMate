@@ -40,7 +40,7 @@
 					break;
 				}
 				echo "</td>
-				<td><center><a data-toggle='modal' data-target='#deleteb'  onclick='obtener(this.id)' class='glyphicon glyphicon-remove btn btn-sm btn-danger' id='x".$row['idsolicitud']."'> </a></center></td>
+				<td><center><a data-toggle='modal' data-target='#mensajedeleted'  onclick='deletemiembro(this.id)' class='glyphicon glyphicon-remove btn btn-sm btn-danger' id='x".$row['idsolicitud']."'> </a></center></td>
 
 			</tr>";
 	}

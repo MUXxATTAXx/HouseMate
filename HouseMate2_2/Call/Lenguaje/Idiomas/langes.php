@@ -7,12 +7,16 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Titulo'] = "Titulo";
 $lang['Request'] = "Solicitar";
+$lang['Start'] = "Inicio";
+$lang['Anuncios'] = "Anuncio";
 $lang['UpgradeM'] = "Mejorar";
 $lang['accept'] = "Aceptar";
 $lang['No'] = "Rechazado";
 $lang['mensaje'] = "Mensaje";
 $lang['YTE'] = "Ya tiene una empresa";
+$lang['TE'] = "Tiene una empresa";
 $lang['Need'] = "No tengo cuenta";
 $lang['Page_title'] = 'House Mate';
 $lang['Cuenta'] = 'Registrarse';

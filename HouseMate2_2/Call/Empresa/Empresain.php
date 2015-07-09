@@ -58,6 +58,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.idusuario = '$idt'";
 				$master = mysql_query($queroempresario);
 				$idempresa = $row['IdEmpresa'];
+				echo " <span class='hidme' id='sendvalueid'>$idempresa</span>";
 				$idempresalater = $idempresa;
 				if(mysql_num_rows($master) > 0)
 				{
@@ -82,10 +83,9 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				if(mysql_num_rows($master) > 0)
 				{
 				echo "
-					<div class='tab-pane fade active in' id='home'>
-						<div id='cambio'>
-						</div>
-					</div>
+					<div class='tab-pane fade active in' id='home'>";
+						include "Call/Empresa/Empresafuncion/messageboard.php";
+						echo"</div>
 					<div class='tab-pane fade' id='socios'>
 						<div>
 							<div id='thetablemiembre'>
@@ -187,6 +187,27 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
                 <p class='debug-url'></p>
 				<div class="row">
 				<button class='btn btn-default' id='denegar' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
+				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
+				</div>
+      </div>
+      <div class='panel-footer'>
+      </div>
+    </div>
+  </div>
+</div>
+<div id='mensajedeleted' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='panel-footer'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+         <h4 class='modal-title' id='myModalLabel'><?php echo $lang['Cdelete'] ?></h4>
+      </div>
+      <div class='modal-body'>
+                <p><?php echo $lang['Xdelete'] ?></p>
+                <p><?php echo $lang['Fdelete']?></p>
+                <p class='debug-url'></p>
+				<div class="row">
+				<button class='btn btn-default' id='mensajedelete' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
 				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
 				</div>
       </div>

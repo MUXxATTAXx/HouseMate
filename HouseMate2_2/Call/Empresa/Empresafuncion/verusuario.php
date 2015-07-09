@@ -52,8 +52,6 @@ echo"
 				<?php include "Call/Empresa/Empresafuncion/sugeridos.php" ?>
 				<div id="sugeridosresult"></div>
 				 </div>
-
-	
 			</div>
 		</div>
 		<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>

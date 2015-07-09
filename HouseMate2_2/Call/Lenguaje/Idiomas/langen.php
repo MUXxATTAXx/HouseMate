@@ -6,12 +6,16 @@ Inglés
 */
 
 $lang = array();
+$lang['Titulo'] = "Title";
 $lang['Request'] = "Request";
+$lang['Start'] = "Start";
+$lang['Anuncios'] = "Announcement";
 $lang['UpgradeM'] = "Upgrade";
 $lang['accept'] = "Accept";
 $lang['No'] = "Reject";
 $lang['mensaje'] = "Message";
 $lang['YTE'] = "You already have an enterprise";
+$lang['TE'] = "Already has an enterprise";
 $lang['Need'] = "Need a account?";
 $lang['Page_title'] = 'House Mate';
 $lang['Cuenta'] = 'Register';
@@ -132,7 +136,7 @@ $lang['Fdelete'] = "Do you want to proceed?";
 $lang['quick'] = "Quick finder";
 $lang['ingresado'] = "Your real estate was inserted";
 //Errores y faltas
-$lang['missing'] = 'Insert all the information fields';
+$lang['missing'] = 'Fill in all the information fields';
 $lang['missing2'] = 'Insert a image';
 $lang['error'] = 'Thats not a image';
 $lang['error2'] = 'Fill 1 tag at least';

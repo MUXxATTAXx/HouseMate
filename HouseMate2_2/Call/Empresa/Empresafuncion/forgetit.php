@@ -8,9 +8,9 @@
 	{
 		include("../../../conexion.php");
 		include("../../Lenguaje/lenguaje.php");
-		$idt =  str_replace("n","",$id);
+		$idt =  str_replace("x","",$id);
 		$query = mysql_query("Delete From empresasolicitud Where idsolicitud = '$idt'");
-		$query2 = mysql_query("Update empresasolicitud Set idsolicitud = idsolicitud - 1 Where idsolicitud > '$idt'");
+		$query2 = mysql_query("Update empresasolicitud Set idsolicitud = idsolicitud - 1 Where idsolicitud > 'idt'");
 		echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";		
 	}
 ?>
