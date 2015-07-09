@@ -1,7 +1,8 @@
    	$(window).load(function()  {
 				stuffed();
 				enviadosmensajes();
-				checkmensajes();				
+				checkmensajes();
+				anuncios();
 			});
 			 	function stuffed(){
 					empresa = $("#value").html();

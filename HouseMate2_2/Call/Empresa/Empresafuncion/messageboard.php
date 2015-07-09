@@ -16,7 +16,7 @@ echo"
 				<div id="recibidosaj"></div>
 			</div>
 			<div class='tab-pane fade' id='mensajenuevo'>
-			<br>
+				<br>
 				<div class="row">
 					<div class="col-sm-3">
 					</div>

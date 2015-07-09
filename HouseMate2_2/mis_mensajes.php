@@ -49,8 +49,7 @@ $cs1 = mysql_query($consulta1);
 echo"<div class='container'>
 <div class='row'>
 		<h2>Time Line</h2>
-</div>
-";
+</div>";
 while($row = mysql_fetch_array($cs1)){
 //Inicio de bloque
 
@@ -78,11 +77,11 @@ while($row = mysql_fetch_array($cs1)){
 							<div class='qa-message-content'>
                                 ".$row['mensaje']."
 							</div>
-					</div></div>
+					</div>
+	</div>
     ";
 //Fin de bloque
 }
-//Find de Mensajes
 echo"</div>";
 ?>
 

@@ -1,16 +1,14 @@
 <?php 
 	session_start();
-	$id = $_POST['id'];
-	$empresa = $_POST['empresa'];
-	if(isset($id) and isset($empresa)){
-        delete($id,$empresa);
+	$titulo = $_POST['titulo'];
+	$mensaje = $_POST['mensaje'];
+	if(isset($titulo) and isset($mensaje)){
+        delete($titulo,$mensaje);
     }
-	function delete($id,$empresa)
+	function delete($titulo,$mensaje$id,$empresa)
 	{
 		include("../../../conexion.php");
 		include("../../Lenguaje/lenguaje.php");
-		$idt =  str_replace("y","",$id);
-		
 		$query = mysql_query("Update empresasolicitud Set aprovado = '1' Where idsolicitud = '$idt' and idempresa = '$empresa'");
 		$beforethetruth = mysql_query("Select usuario.idusuario From usuario inner join empresasolicitud on usuario.idusuario = empresasolicitud.idusuario 
 		Where  empresasolicitud.idsolicitud = '$idt'");
