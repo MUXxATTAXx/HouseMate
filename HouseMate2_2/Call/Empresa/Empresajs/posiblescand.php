@@ -15,6 +15,8 @@ function posibles(){
 				stuffed();
 				enviadosmensajes();
 				checkmensajes();
+				$('#correoenviar').val('');
+				$('#mensaje').val('');
         },
     });
 }; 

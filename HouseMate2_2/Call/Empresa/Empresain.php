@@ -58,7 +58,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.idusuario = '$idt'";
 				$master = mysql_query($queroempresario);
 				$idempresa = $row['IdEmpresa'];
-				echo " <span class='hidme' id='sendvalueid'>$idempresa</span>";
+				echo " <span class='hidme' id='sendvalueid' name='empresidp'>$idempresa</span>";
 				$idempresalater = $idempresa;
 				if(mysql_num_rows($master) > 0)
 				{
@@ -124,7 +124,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
       </div>
 	  </form>
 		
-		<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
+	
 			
 <?php } ?>
 <span id="teste" class="hidme"></span>
@@ -234,7 +234,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
     </div>
   </div>
 </div>
-		
+<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>		
 <script type="text/javascript" src="js/deletemember.js"></script>
 <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
 <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>

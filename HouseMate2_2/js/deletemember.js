@@ -118,6 +118,8 @@ $("#anuncio").click(function(){
 				anuncios();
 				$("#anuncioresult").empty();
 				$("#anuncioresult").append(data).page;	
+				$('#titulo').val('');
+				$('#anunciotext').val('');
 		}
 	});							   
 });
@@ -138,7 +140,6 @@ $("#deletemensaje").click(function(){
 				alert("error petición ajax");
 			},
 			success: function(data){ 
-				enviadosmensajes();
 				anuncios();
 				$("#resulthomed").empty();
 				$("#resulthomed").append(data).page;	

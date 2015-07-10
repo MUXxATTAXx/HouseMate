@@ -6,7 +6,7 @@
 				dataType: "html",
 				beforeSend: function(){
 					  //imagen de carga
-					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+					  $("#respond").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
 				},
 				error: function(){
 					  alert("error petición ajax");

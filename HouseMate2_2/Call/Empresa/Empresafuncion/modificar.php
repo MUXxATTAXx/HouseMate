@@ -12,6 +12,8 @@ if(isset($_POST['modificar'])){
 		$lugar = $variable5.", ".$variable4.", El Salvador";
 		$a = $_POST['telefono2'];
 		$b = $_POST['descripcion'];
+		$string = "this.is.another.sample.of.it";
+		$contents = explode('.', $string);
 		$varing = $_FILES['file']["tmp_name"];
 		$c = $_FILES['file']["name"];
 		$imagevar = $c;
@@ -22,7 +24,7 @@ if(isset($_POST['modificar'])){
 		$restoquery = "telefono='$variable3',nombre='$variable1',direccion='$lugar',nit='$variable2',";
 		$final_string ="";
 		$endofquery = " WHERE idEmpresa = '$idempresalater'";
-		$maxc = 0;
+		$maxc = 0;	
 		$man = "";
 		for ($i=1;$i <=3;$i++) 
 		{
@@ -49,11 +51,7 @@ if(isset($_POST['modificar'])){
 						$man .= "c";
 						
 					}
-					elseif($hayimagen != "")
-					{
-						$maxc++;
-						$man .= "d";
-					}
+					
 					break;
 				}
 		}
@@ -107,17 +105,17 @@ if(isset($_POST['modificar'])){
 			$filename = "img/Empresas/".$row['imagen'];	
 			if(file_exists($filename))
 			{
+				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
+				$ingresa = mysql_query($queryfinal);
+				echo "<script>window.location = 'Empresa.php'</script>";
+			}
+			else
+			{
 				unlink($filename);
 				copy($varing,"img/Empresas/$imagevar");
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 				$ingresa = mysql_query($queryfinal);
-
-			}
-			else
-			{
-				copy($varing,"img/Empresas/$imagevar");
-				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
-				$ingresa = mysql_query($queryfinal);
+				echo "<script>window.location = 'Empresa.php'</script>";
 			}
 		}
 		else
@@ -130,13 +128,14 @@ if(isset($_POST['modificar'])){
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 				$final_string .= "imagen='".$row['imagen']."'";
 				$ingresa = mysql_query($queryfinal);
-
+				echo "<script>window.location = 'Empresa.php'</script>";
 			}
 			else
 			{
 				$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 				$final_string .= "imagen='".$row['imagen']."'";
 				$ingresa = mysql_query($queryfinal);
+				echo "<script>window.location = 'Empresa.php'</script>";
 			}
 		}
 	}

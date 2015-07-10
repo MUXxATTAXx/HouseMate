@@ -23,7 +23,7 @@ require ("Call/Loged/seguridad.php");
           <ul class="dropdown-menu" role="menu">
             <li><a href="cliente_mantenimiento.php"><?php echo($lang['Usuarios']);?></a></li>
             <li><a href="crear_inmueble.php"><?php echo($lang['real-estate']);?></a></li>
-            <li><a href=""><?php echo($lang['Perito']);?></a></li>
+            <li><a href="empresa_mantenimiento.php"><?php echo($lang['Empresa']);?></a></li>
           </ul>
         </li>
         <li class="dropdown">

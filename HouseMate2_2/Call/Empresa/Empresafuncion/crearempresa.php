@@ -129,7 +129,6 @@ if(isset($_POST['ingresar'])){
 				{
 					copy($varing,"img/Empresas/$imagevar");
 					$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
-					echo $queryfinal;
 					$ingresa = mysql_query($queryfinal);
 					$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
 					$ingresa2 = mysql_query($variables);

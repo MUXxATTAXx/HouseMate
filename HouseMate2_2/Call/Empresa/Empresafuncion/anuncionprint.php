@@ -19,7 +19,11 @@ while ($row = mysql_fetch_array($query))
 					<div class="col-sm-3">
 						<h4 class="pull-right">
 						<small><em><?php 
-						$variable = $_SESSION['lang'];
+						if(isset($_SESSION['lang'])){
+						$variable = $_SESSION['lang'];}
+						else{
+							$variable = "es";
+						}
 						switch ($variable ) {
 							case 'es':
 							echo $row['fecha'];

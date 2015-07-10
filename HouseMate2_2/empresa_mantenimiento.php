@@ -35,17 +35,18 @@
 <div id='myTabContent' class='tab-content'>
 	<?php 
 	echo "<div class='tab-pane fade active in' id='home'>";
-	include'admincliente/crear_cliente.php';
+	include'adminempresa/crear_empresa.php';
 	echo "</div><div class='tab-pane fade' id='crear'>";
-	include'admincliente/admin_mostrar.php';
+	include'adminempresa/empresa_mostrar.php';
 	echo "</div><div class='tab-pane fade' id='sd'>";
-	include("admincliente/admin_modificar.php");
+	include("adminempresa/empresa_modificar.php");
 	?>
 </div>
 <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
 <script src="js/bootstrap-table.js" type="text/javascript"></script>
- <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
- <script>
+<script src="js/validaciones.js" type="text/javascript" ></script>
+<script src="js/empresam.js" type="text/javascript"></script>
+<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -60,8 +61,6 @@
     }
 $("#Municipio3").chained("#Departamento3");
 </script>
-<script src="js/validaciones.js" type="text/javascript" ></script>
-<script src="js/usuariom.js" type="text/javascript"></script>
 <span id="spanme"></span>
 </body>
 </html>
