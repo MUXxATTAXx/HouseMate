@@ -142,13 +142,13 @@
                                 <br>
                                 <div class="row">
                                     <div class="col col-sm-2">
-                                        <center><label><?php echo $lang['DC'];?></label></center>
+                                        <center><label><?=$lang['DC'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
                                         <input id="nombre_constru" class="form-control" type="text">
                                     </div>
                                     <div class="col col-sm-2">
-                                        <center><label><?php echo $lang['peri-valor'];?></label></center>
+                                        <center><label><?=$lang['peri-valor'];?></label></center>
                                     </div>
                                     <div class="col col-sm-2">
                                         <input id="valor_constru" class="form-control" type="text">
@@ -171,21 +171,25 @@
                                 <br>
                                 <div class="row">
                                     <div class="col col-sm-2">
-                                        <center><label><?php echo $lang['peri-muni'];?></label></center>
+                                        <center><label><?=$lang['peri-muni'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                        <input id="nombre_local" class="form-control" type="text">
+                                    </div>
+                                    <div class="col col-sm-1">
+                                        <center><label><?=$lang['tipo-local'];?></label></center>
                                     </div>
                                     <div class="col col-sm-2">
-                                        <center><label><?php echo $lang['peri-valor'];?></label></center>
+                                        <input id="valor_local1" class="form-control" placeholder="<?=$lang['peri-centro']?>" type="text">
+                                        <input id="valor_local2" class="form-control" placeholder="<?=$lang['peri-priva']?>" type="text">
+                                        <input id="valor_local3" class="form-control" placeholder="<?=$lang['peri-nopriva']?>" type="text">
                                     </div>
-                                    <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
-                                    </div>
+                                    <div id="mesangemostra4"></div>
                                 </div>
                                 <br>
                             <div class="panel-footer">
-                                <center><a class ="btn btn-primary"><?php echo $lang['peri-agregar'];?></a></center>
+                                <!--Tabla-->
+                                <div id="mostrar4"></div>  
                             </div>
                         </center>
                 </div>

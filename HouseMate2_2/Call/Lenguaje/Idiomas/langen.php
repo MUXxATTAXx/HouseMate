@@ -297,4 +297,9 @@ $lang['peri-estado1'] = "Pending";
 $lang['peri-estado2'] = "Approved";
 
 $lang['peri-TP-usado'] = "This name has been used.";
+
+$lang['tipo-local'] = "Values";
+$lang['peri-centro'] = "Downtown";
+$lang['peri-priva'] = "Private";
+$lang['peri-nopriva'] = "Not private";
 ?>

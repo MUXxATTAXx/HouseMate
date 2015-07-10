@@ -297,4 +297,11 @@ $lang['peri-estado1'] = "Pendiente";
 $lang['peri-estado2'] = "Aprobado";
 
 $lang['peri-TP-usado'] = "Nombre ocupado anteriormente";
+
+$lang['tipo-local'] = "Valores";
+$lang['peri-centro'] = "Centro";
+$lang['peri-priva'] = "Privada";
+$lang['peri-nopriva'] = "No privada";
+
+
 ?>
