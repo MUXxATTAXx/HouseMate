@@ -4,7 +4,6 @@
 Inglés
 -----------------
 */
-
 $lang = array();
 $lang['Titulo'] = "Title";
 $lang['TY'] = "You can't repeat a title";
