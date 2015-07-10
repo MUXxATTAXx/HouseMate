@@ -144,6 +144,7 @@ $("#adminmodificar").click(function() {
         },
     });
   };
+
   	function obtener(yo) {
 		document.getElementById('spanme').innerHTML = yo;
 }

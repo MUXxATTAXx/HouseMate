@@ -14,6 +14,7 @@ echo"
 		<div id='content' class='tab-content'>
 			<div class='tab-pane fade active in' id='casa'>
 				<div id="recibidosaj"></div>
+				<div id="resulthomed"></div>
 			</div>
 			<div class='tab-pane fade' id='mensajenuevo'>
 				<br>

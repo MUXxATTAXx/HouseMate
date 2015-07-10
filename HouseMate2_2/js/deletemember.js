@@ -115,12 +115,38 @@ $("#anuncio").click(function(){
 				alert("error petición ajax");
 			},
 			success: function(data){ 
-				stuffed();
+				anuncios();
 				$("#anuncioresult").empty();
 				$("#anuncioresult").append(data).page;	
 		}
 	});							   
 });
+$("#deletemensaje").click(function(){
+		id = $("#teste").text();
+		empresa = $("#value").text();
+		//ingresar usuario													  
+		$.ajax({
+			type: "POST",
+			url: "Call/Empresa/Empresafuncion/borramen.php",
+			data: "id="+id+"&empresa="+empresa,
+			dataType: "html",
+			beforeSend: function(){
+				//imagen de carga
+				$("#resulthomed").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+			},
+			error: function(){
+				alert("error petición ajax");
+			},
+			success: function(data){ 
+				enviadosmensajes();
+				anuncios();
+				$("#resulthomed").empty();
+				$("#resulthomed").append(data).page;	
+		}
+	});
+												   
+});
+
 function checkmensajes(){
 	empresa = $("#value").html();
 	$.ajax({   	

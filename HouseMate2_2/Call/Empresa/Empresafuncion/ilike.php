@@ -9,11 +9,17 @@
 		While($row = mysql_fetch_array($realusuario))
 		{
 			$myid = $row['idusuario'];
-			$empresafound = $row['Empresa'];
-			if($empresafound == null || $empresafound == ""){
-			$query = mysql_query("Update usuario Set Empresa = '$variable', aprovado2='1' WHERE Tempid = '$myid'");
-			echo "<label class='label label-warning'>".$lang['modificar-exito']."</label>";}
+			$tiene = mysql_query("Select Count(Empresa) From usuario Where idusuario = '$myid'");
+			if(mysql_num_rows($tiene) > 1)
+			{
+				echo $row['idusuario'];
+				echo "<label class='label label-warning'>".$lang['YTE']."</label><a href='Empresa.php'>".$lang['Aqui']."</a>";
+			}
 			else
-			echo "<label class='label label-warning'>".$lang['YTE']."</label><a href='Empresa.php'>".$lang['Aqui']."</a>";
+			{
+				$query = mysql_query("Update usuario Set Empresa = '$variable' WHERE idusuario = '$myid'");
+				$query2 = mysql_query("Update empresasolicitud Set aprovado2 = '1' Where idusuario = '$myid'");
+				echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";
+			}
 		}
 ?>
