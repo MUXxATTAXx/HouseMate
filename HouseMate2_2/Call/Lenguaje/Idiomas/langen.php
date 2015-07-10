@@ -292,6 +292,9 @@ $lang['peri-modal3'] = "Confirm";
 $lang['peri-vacio'] = "Empty fields!";
 
 $lang['peri-exito'] = "Appraiser object saved!";
-$lang['nombre-pared'] = "nombreEN";
+$lang['peri-estado'] = "State";
+$lang['peri-estado1'] = "Pending";
+$lang['peri-estado2'] = "Approved";
 
+$lang['peri-TP-usado'] = "This name has been used.";
 ?>

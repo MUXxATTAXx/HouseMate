@@ -42,32 +42,68 @@
             <div id='myTabContent' class='tab-content'>
                 <div class='tab-pane fade active in' id='home'>
 <!--Paredes-->
-
-    <?php
-        include "Peritaje/paredes.php";
-    ?>
+<center>
+    <br>
+    <div class="row">
+        <div class="col col-sm-2">
+            <center><label><?php echo $lang['peri-pared'];?></label></center>
+        </div>
+        <div class="col col-sm-4">
+            <input id="nombre_pared" class="form-control" type="text">
+        </div>
+        <div class="col col-sm-1">
+            <center><label><?php echo $lang['peri-valor'];?></label></center>
+        </div>
+        <div class="col col-sm-2">
+            <input id="valor_pared" class="form-control" type="text">
+        </div>
+        <div class="col col-sm-3">
+            <button type="button" class="btn btn-default" id="confirmar"><?=$lang['peri-agregar']?></button>
+        </div>
+        <div id="mesangemostra"></div>
+    </div>
+    <br>
+    <div class="panel-footer">
+        <div class="row row-centered">
+            <div class="col col-sm-8">
+                <!--Tabla-->
+                <div id="mostrar1"></div>     
+            </div>
+        </div>
+    </div>
+</center>
                 </div>
 <!--Suelo-->
                 <div class='tab-pane fade' id='home2'>
                         <center>
+                                <br>
                                 <br>
                                 <div class="row">
                                     <div class="col col-sm-2">
                                         <center><label><?php echo $lang['peri-suelo'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                        <input id="nombre_suelo" class="form-control" type="text">
                                     </div>
-                                    <div class="col col-sm-2">
+                                    <div class="col col-sm-1">
                                         <center><label><?php echo $lang['peri-valor'];?></label></center>
                                     </div>
-                                    <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                    <div class="col col-sm-2">
+                                        <input id="valor_suelo" class="form-control" type="text">
                                     </div>
+                                    <div class="col col-sm-3">
+                                        <button type="button" class="btn btn-default" id="confirmar2"><?=$lang['peri-agregar']?></button>
+                                    </div>
+                                    <div id="mesangemostra2"></div>
                                 </div>
                                 <br>
                             <div class="panel-footer">
-                                <center><a class ="btn btn-primary"><?php echo $lang['peri-agregar'];?></a></center>
+                                <div class="row row-centered">
+                                    <div class="col col-sm-8">
+                                        <!--Tabla-->
+                                        <div id="mostrar2"></div>     
+                                    </div>
+                                </div>
                             </div>
                         </center>
                 </div>
@@ -148,64 +184,8 @@
     </div>
 </div>
 <br>
-    
-<!--Modal-->
-<div id="myModal2" class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>   
-        <h4 class="modal-title"><?php echo $lang['peri-modal1'];?></h4>
-      </div>
-      <div class="modal-body">
-        
-          
-		<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $lang['peri-modal2'];?></button>
-        
-      </div>
-    </div>
-  </div>
-</div>
 <script href="js/jquery-1.11.2.min.js"></script>
-    <script>
-        $( document ).ready(function() {      
-function loadData(){
-$.ajax({   
-type: 'POST',   
-url: 'Call/Funciones/update.php',   
-success: function(msg) {
-$("#thetablejq").html(msg);
-},
-});
-};
-    $("#confirmar").click(function(){
-
-    //obtenemos el texto introducido
-    var nombre_pared = $("#nombre_pared").val();
-    var valor_pared = $("#valor_pared").val();
-
-    //ingresar usuario
-
-    $.ajax({
-        type: "POST",
-        url: "Call/Funciones/peritaje.php",
-        data: {nombre_pared:nombre_pared, valor_pared: valor_pared},
-        dataType: "html",
-        error: function(){
-              alert("error petición ajax");
-        },
-        success: function(data){  
-            $("#nombre_pared").val("");
-            $("#valor_pared").val("");
-            
-            $("#resultadoinsert").empty();
-            $("#resultadoinsert").append(data);
-            loadData();	
-                }
-          });
-
-    });
-});
-        </script>
+<script src="js/peritaje.js" type="text/javascript"></script>
+<script src="js/peritaje2.js" type="text/javascript"></script>
 </body>
 </html>

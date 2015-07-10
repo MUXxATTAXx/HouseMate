@@ -11,16 +11,18 @@
   </thead>
     <tbody>
     <?php
-        if($lang['Start'] == "Inicio"){
+        if(isset($_SESSION['lang'])){
+            $idioma = $_SESSION['lang'];
+            if($idioma == "es"){
+                $idioma1 = "1";
+            }
+            elseif($idioma == "en"){
+                $idioma1 = "2";
+            }
+        }else{
             $idioma1 = "1";
         }
-        else
-        {
-            $idioma1 = "2";
-        }
-        echo $idioma1;
             $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='1' and idioma = '$idioma1'");
-            echo "SELECT * FROM peritaje WHERE categoria ='1' and idioma = '$idioma1'";
             while($row = mysql_fetch_array($desc)){
             echo "<form action='#' method='POST'><tr>
                 <td>".$row['id_peri']."</td>

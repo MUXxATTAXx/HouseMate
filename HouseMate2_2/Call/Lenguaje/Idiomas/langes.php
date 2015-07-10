@@ -292,5 +292,9 @@ $lang['peri-modal3'] = "Confirmar";
 $lang['peri-vacio'] = "Campos vacios!";
 
 $lang['peri-exito'] = "Objeto de peritaje guardado!";
-$lang['nombre-pared'] = "nombreES";
+$lang['peri-estado'] = "Estado";
+$lang['peri-estado1'] = "Pendiente";
+$lang['peri-estado2'] = "Aprobado";
+
+$lang['peri-TP-usado'] = "Nombre ocupado anteriormente";
 ?>

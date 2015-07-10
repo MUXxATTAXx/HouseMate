@@ -37,6 +37,6 @@ switch ($lang) {
   $lang_file = 'Idiomas/langen.php';
  
 }
- 
+
 require $lang_file;
 ?>
