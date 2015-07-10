@@ -1,10 +1,10 @@
 <?php include "../conexion.php";
       include "../Call/Lenguaje/lenguaje.php" ;?>
-<table data-toggle='table' id='here' class='table table-striped table-hover negro'>
+<table data-toggle='table' id='here4' class='table table-striped table-hover negro'>
   <thead>
     <tr>
         <th><center>#</center></th>
-        <th><center><?=$lang['peri-pared'];?></center></th>
+        <th><center><?=$lang['DC'];?></center></th>
         <th><center><?=$lang['peri-valor'];?></center></th>
         <th><center><?=$lang['peri-estado'];?></center></th>
     </tr>
@@ -22,7 +22,7 @@
         }else{
             $idioma1 = "1";
         }
-            $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='1' and idioma = '$idioma1'");
+            $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='4' and idioma = '$idioma1'");
             while($row = mysql_fetch_array($desc)){
             echo "<form action='#' method='POST'><tr>
                 <td>".$row['id_peri']."</td>

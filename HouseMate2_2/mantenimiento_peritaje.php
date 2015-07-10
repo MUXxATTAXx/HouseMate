@@ -116,18 +116,23 @@
                                         <center><label><?php echo $lang['peri-techo'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                        <input id="nombre_techo" class="form-control" type="text">
                                     </div>
                                     <div class="col col-sm-2">
                                         <center><label><?php echo $lang['peri-valor'];?></label></center>
                                     </div>
-                                    <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                    <div class="col col-sm-2">
+                                        <input id="valor_techo" class="form-control" type="text">
                                     </div>
+                                    <div class="col col-sm-1">
+                                        <button type="button" class="btn btn-default" id="confirmar3"><?=$lang['peri-agregar']?></button>
+                                    </div>
+                                    <div id="mesangemostra3"></div>
                                 </div>
                                 <br>
                             <div class="panel-footer">
-                                <center><a class ="btn btn-primary"><?php echo $lang['peri-agregar'];?></a></center>
+                                <!--Tabla-->
+                                <div id="mostrar3"></div>  
                             </div>
                         </center>
                 </div>
@@ -136,22 +141,27 @@
                         <center>
                                 <br>
                                 <div class="row">
-                                    <div class="col col-sm-3">
+                                    <div class="col col-sm-2">
                                         <center><label><?php echo $lang['DC'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
-                                        <input class="form-control" type="text">
+                                        <input id="nombre_constru" class="form-control" type="text">
                                     </div>
                                     <div class="col col-sm-2">
                                         <center><label><?php echo $lang['peri-valor'];?></label></center>
                                     </div>
-                                    <div class="col col-sm-3">
-                                        <input class="form-control" type="text">
+                                    <div class="col col-sm-2">
+                                        <input id="valor_constru" class="form-control" type="text">
                                     </div>
+                                    <div class="col col-sm-1">
+                                        <button type="button" class="btn btn-default" id="confirmar4"><?=$lang['peri-agregar']?></button>
+                                    </div>
+                                    <div id="mesangemostra4"></div>
                                 </div>
                                 <br>
                             <div class="panel-footer">
-                                <center><a class ="btn btn-primary"><?php echo $lang['peri-agregar'];?></a></center>
+                                <!--Tabla-->
+                                <div id="mostrar4"></div>  
                             </div>
                         </center>
                 </div>
@@ -187,5 +197,7 @@
 <script href="js/jquery-1.11.2.min.js"></script>
 <script src="js/peritaje.js" type="text/javascript"></script>
 <script src="js/peritaje2.js" type="text/javascript"></script>
+<script src="js/peritaje3.js" type="text/javascript"></script>
+<script src="js/peritaje4.js" type="text/javascript"></script>
 </body>
 </html>

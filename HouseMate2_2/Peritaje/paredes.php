@@ -1,4 +1,4 @@
-<?php include "../conexion.php";
+<br> <?php include "../conexion.php";
       include "../Call/Lenguaje/lenguaje.php" ;?>
 <table data-toggle='table' id='here' class='table table-striped table-hover negro'>
   <thead>
@@ -18,9 +18,8 @@
         {
             $idioma1 = "2";
         }
-        echo $idioma1;
             $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='1' and idioma = '$idioma1'");
-            echo "SELECT * FROM peritaje WHERE categoria ='1' and idioma = '$idioma1'";
+
             while($row = mysql_fetch_array($desc)){
             echo "<form action='#' method='POST'><tr>
                 <td>".$row['id_peri']."</td>

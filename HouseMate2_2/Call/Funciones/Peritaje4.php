@@ -2,35 +2,42 @@
 session_start();
     include "../../conexion.php";
     include "../Lenguaje/lenguaje.php";
+    mysql_query("SET NAMES 'utf8'");
     if(isset($_SESSION['id'])){
         $usuario = $_SESSION['id'];
     }
 
-    if(isset($_POST['nombre_pared']) && isset($_POST['valor_pared']) and $_POST['valor_pared'] > 0){
-        
-        $tpnombre = trim($_POST['nombre_pared']);
-        $tpvalor = trim($_POST['valor_pared']);
-        
-        $idioma = $_SESSION['lang'];
-        if($idioma == "es"){
-            $idioma1 = "1";
+    if(isset($_POST['nombre_constru']) and ($_POST['nombre_constru']) != "" && isset($_POST['valor_constru']) and $_POST['valor_constru'] > 0){
+        mysql_query("SET NAMES 'utf8'");
+        $categoria = "DC";
+        $dcnombre = trim($_POST['nombre_constru']);
+        $dcvalor = trim($_POST['valor_constru']);
+        if($lang['Start'] == "Inicio"){
+            $cidioma1 = "1";
+            $cidioma = "es";
         }
-        elseif($idioma == "en"){
-            $idioma1 = "2";
-        }else{
-            $idioma1 = "1";
+        else
+        {
+            $cidioma1 = "2";
+            $cidioma = "en";
         }
-        $pared = "SELECT * FROM peritaje WHERE categoria = '1' and idioma = '$idioma1'";
-        $pared_con = mysql_query($pared);    
-        $idpared = $idioma.(mysql_num_rows($pared_con) + 1);
+        $constru = "SELECT * FROM peritaje WHERE idioma = '$cidioma1' and categoria = '4'";
+        $constru_con = mysql_query($constru);    
+        $idconstru = $cidioma.$categoria.(mysql_num_rows($constru_con) + 1);
         
-        $nombre1 = strtolower($tpnombre);
-        $nombre = "SELECT * FROM peritaje WHERE nombre ='$nombre1'";
-        $nombre_con = mysql_query($nombre);
-        if((mysql_num_rows($nombre_con)) <= 0){
-            $pared2 = "INSERT INTO peritaje values('$idpared','$tpnombre','$idioma1','$tpvalor','$tpvalor','$tpvalor','1','$usuario','1')";
-            $pared2_con = mysql_query($pared2);
-             echo "<span class='label label-success'>".$lang['peri-exito']."</span>";
+        $cnombre1 = strtolower($dcnombre);
+        $cnombre = "SELECT * FROM peritaje WHERE nombre ='$cnombre1'";
+        $cnombre_con = mysql_query($cnombre);
+        if((mysql_num_rows($cnombre_con)) <= 0){
+            $constru2 = "INSERT INTO peritaje values('$idconstru','$dcnombre','$cidioma1','$dcvalor','null','null','4','$usuario','1')";
+            $constru2_con = mysql_query($constru2);
+            if(isset($constru2_con)){
+                echo "<span class='label label-success'>".$lang['peri-exito']."</span>";
+            }
+            else{
+                echo mysql_error();
+            }
+             
         }
         else{
             echo "<span class='label label-error'>".$lang['peri-TP-usado']."</span>";

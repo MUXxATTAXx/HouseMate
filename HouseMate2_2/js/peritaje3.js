@@ -1,39 +1,39 @@
 
-    $("#confirmar").click(function(){
+    $("#confirmar3").click(function(){
     //obtenemos el texto introducido
-    var nombre_pared = $("#nombre_pared").val();
-    var valor_pared = $("#valor_pared").val();
+    var nombre_techo = $("#nombre_techo").val();
+    var valor_techo = $("#valor_techo").val();
     //ingresar usuario
     $.ajax({
         type: "POST",
-        url: "Call/Funciones/peritaje.php",
-        data: {nombre_pared:nombre_pared, valor_pared: valor_pared},
+        url: "Call/Funciones/Peritaje3.php",
+        data: {nombre_techo:nombre_techo, valor_techo: valor_techo},
         dataType: "html",
         error: function(){
               alert("error petición ajax");
         },
         success: function(data){  
-            $("#nombre_pared").val("");
-            $("#valor_pared").val("");
+            $("#nombre_techo").val("");
+            $("#valor_techo").val("");
             
-            $("#mesangemostra").empty();
-            $("#mesangemostra").append(data);
-            loadData();	
+            $("#mesangemostra3").empty();
+            $("#mesangemostra3").append(data);
+            loadData3();	
                 }
           });
 
     });
 
 $(window).load(function()  {
-    loadData();
+    loadData3();
 });
-function loadData(){
+function loadData3(){
     $.ajax({   
      type: 'POST',   
-     url: 'Peritaje/paredes.php',   
+     url: 'Peritaje/techo.php',   
     success: function(data) {
-            $("#mostrar1").empty();
-            $("#mostrar1").append(data);
+            $("#mostrar3").empty();
+            $("#mostrar3").append(data);
         },
     });
   };
