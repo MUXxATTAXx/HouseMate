@@ -33,7 +33,7 @@
 						echo "<center><label class='label label-warning'>".$lang['naprovado']."</label></center>";
 					break;
 					case 1:
-						echo "<center><label class='label label-warning'>".$lang['aprovado']."</label></center>";
+						echo "<center><label class='label label-success'>".$lang['aprovado']."</label></center>";
 					break;
 					case 2:
 						echo "<center><label class='label label-danger'>".$lang['No']."</label></center>";

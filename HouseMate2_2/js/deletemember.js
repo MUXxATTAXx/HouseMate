@@ -2,11 +2,11 @@ function deletemiembro(id,idempresa)
 {	
 	var x = id;
 	document.getElementById("teste").innerHTML = id;
-	document.getElementById("idempresa").innerHTML = idempresa;
+	document.getElementById("sendvalueid").innerHTML = idempresa;
 }
 $("#accept").click(function(){
 		id = $("#teste").text();
-		empresa = $("#sendvalueid").text();
+		empresa = $("#value").text();
 		//ingresar usuario													  
 		$.ajax({
 			type: "POST",
@@ -91,7 +91,7 @@ $("#mensajedelete").click(function(){
 				alert("error petición ajax");
 			},
 			success: function(data){ 
-				stuffed();
+				checkmensajes();
 				$("#resultcos").empty();
 				$("#resultcos").append(data).page;	
 		}
@@ -128,7 +128,6 @@ function checkmensajes(){
 	data: 'idempresa='+empresa,
 	url: 'Call/Empresa/Empresafuncion/mensajesenviados.php', 
 	dataType: 'html',
-	cache: false,
 	success: function(data) {
 				$('#checkmensajes').empty();
 				$('#checkmensajes').append(data).page;	
@@ -142,7 +141,6 @@ function enviadosmensajes(){
 	data: 'idempresa='+empresa,
 	url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
 	dataType: 'html',
-	cache: false,
 	success: function(data) {
 				$('#sentmessages').empty();
 				$('#sentmessages').append(data).page;	
@@ -157,7 +155,6 @@ function anuncios()
 	data: 'idempresa='+empresa,
 	url: 'Call/Empresa/Empresafuncion/anuncionprint.php', 
 	dataType: 'html',
-	cache: false,
 	success: function(data) {
 				$('#recibidosaj').empty();
 				$('#recibidosaj').append(data).page;	

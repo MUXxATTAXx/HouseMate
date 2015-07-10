@@ -7,6 +7,7 @@ Inglés
 
 $lang = array();
 $lang['Titulo'] = "Title";
+$lang['TY'] = "You can't repeat a title";
 $lang['Request'] = "Request";
 $lang['Start'] = "Start";
 $lang['Anuncios'] = "Announcement";
@@ -94,7 +95,7 @@ $lang['Admin'] = "Administrator";
 $lang['Cliente'] = 'Client';
 $lang['Perito'] = 'Apraisser';
 $lang['Agente'] = "Agent";
-$lang['selectp'] = "Select a image";
+$lang['selectp'] = "Select an image";
 $lang['vr']  ="Sale or Rent";
 //Variables redundantes
 $lang['contra'] = "Password";

@@ -1,4 +1,4 @@
-<link href='css/intro.css' rel='stylesheet'/>
+
 <form method="post" >
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -58,7 +58,7 @@
                     $consulta4 = mysql_query("SELECT * FROM asociados WHERE socio2 = '$usuario' and solicitud = '1'");
                     while($row = mysql_fetch_array($consulta4)){
                         $consulta5 = mysql_query("SELECT * from tbusuario where idUsuario =".$row['socio1']);
-                        echo "<li>";
+                        echo "<li >";
                             while($row2 = mysql_fetch_array($consulta5)){
                                 echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
                             }
@@ -71,13 +71,15 @@
 				<li class="divider"></li>
 				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
 				<?php
-                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$usuario' and aprovado2 = '0' and aprovado = '1'");
+					$foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
+					while ($row = mysql_fetch_array($foundyou))
+					{$idusuario = $row['idusuario'];}
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
                     while($row = mysql_fetch_array($consulta6)){
                         $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
 						where empresa.idempresa =".$row['idempresa']);
                             while($row2 = mysql_fetch_array($consulta7)){
-                                echo "<li><a href='Beforelobbyempresa.php?empresa=".$row2['IdEmpresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
-
+                                echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
                             }
                     }
 					 if(mysql_num_rows($consulta6) == 0){

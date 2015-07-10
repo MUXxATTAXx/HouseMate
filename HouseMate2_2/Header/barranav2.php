@@ -86,12 +86,15 @@ require ("Call/Loged/seguridad.php");
 				<li class="divider"></li>
 				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
 				<?php
-                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$usuario' and aprovado2 = '0' and aprovado = '1'");
+					$foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
+					while ($row = mysql_fetch_array($foundyou))
+					{$idusuario = $row['idusuario'];}
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
                     while($row = mysql_fetch_array($consulta6)){
                         $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
 						where empresa.idempresa =".$row['idempresa']);
                             while($row2 = mysql_fetch_array($consulta7)){
-                                echo "<li ><a href='Empresalobby.php?empresa=".$row2['nombre']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
+                                echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row2['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
                             }
                     }
 					 if(mysql_num_rows($consulta6) == 0){

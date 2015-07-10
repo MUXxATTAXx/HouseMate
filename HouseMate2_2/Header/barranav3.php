@@ -52,30 +52,49 @@
                     $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");
                         while($row3 = mysql_fetch_array($consulta3)){
                 ?>
-<!--Mensajes sin leer-->
                 <li>
                     <?php
                         if($row3['mensajes_sin_leer'] > 0){
                             echo "<a href='recibidos.php' class='btn btn-danger'><span class='badge'>".$row3['mensajes_sin_leer']. "</span>".$lang['msjs']."</a> ";
                         }
                         else{
-                            echo $lang['no-msjs'];
+                            echo "<a>".$lang['no-msjs']."</a>";
                         }
                     }
                     ?>
                 </li>
                 <li class="divider"></li>
-<!--Solicitudes-->
                 <li><span class='glyphicon glyphicon-user'></span><?php echo $lang['solici'];?></li>
                 <?php
                     $consulta4 = mysql_query("SELECT * FROM asociados WHERE socio2 = '$usuario' and solicitud = '1'");
                     while($row = mysql_fetch_array($consulta4)){
                         $consulta5 = mysql_query("SELECT * from tbusuario where idUsuario =".$row['socio1']);
-                        echo "<li>";
+                        echo "<li >";
                             while($row2 = mysql_fetch_array($consulta5)){
                                 echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
                             }
-                        echo"<li>";
+                        echo"</li>";
+                    }
+					if(mysql_num_rows($consulta4) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+                ?>
+				<li class="divider"></li>
+				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+				<?php
+					$foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
+					while ($row = mysql_fetch_array($foundyou))
+					{$idusuario = $row['idusuario'];}
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
+                    while($row = mysql_fetch_array($consulta6)){
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+						where empresa.idempresa =".$row['idempresa']);
+                            while($row2 = mysql_fetch_array($consulta7)){
+                                echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
+                            }
+                    }
+					 if(mysql_num_rows($consulta6) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
                     }
                 ?>
             </ul>

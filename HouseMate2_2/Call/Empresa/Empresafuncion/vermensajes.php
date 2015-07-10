@@ -39,6 +39,9 @@
 					case 1:
 						echo "<label class='label label-success'>".$lang['aprovado']."</label>";
 					break;
+					case 2:
+						echo "<center><label class='label label-danger'>".$lang['No']."</label></center>";
+					break;
 				}
 				echo "<td>
 				<a class='glyphicon glyphicon-user btn btn-sm btn-info' href='perfil.php?usuario=".$row['usuario']."'></a>

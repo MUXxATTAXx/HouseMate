@@ -1,7 +1,7 @@
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>		
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-
+   <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
    
@@ -91,7 +91,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 							<div id='thetablemiembre'>
 						</div>
 						</div>
-						<div id='resultborrar'>
+							<div id='resultborrar'>
 						</div>
 					</div>";
 					

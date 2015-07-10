@@ -11,7 +11,7 @@
 			$myid = $row['idusuario'];
 			$empresafound = $row['Empresa'];
 			if($empresafound == null || $empresafound == ""){
-			$query = mysql_query("Update usuario Set Empresa = '$variable' WHERE Tempid = '$myid'");
+			$query = mysql_query("Update usuario Set Empresa = '$variable', aprovado2='1' WHERE Tempid = '$myid'");
 			echo "<label class='label label-warning'>".$lang['modificar-exito']."</label>";}
 			else
 			echo "<label class='label label-warning'>".$lang['YTE']."</label><a href='Empresa.php'>".$lang['Aqui']."</a>";

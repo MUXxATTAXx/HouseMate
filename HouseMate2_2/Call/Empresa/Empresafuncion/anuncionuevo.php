@@ -18,16 +18,16 @@ function insert($vartitulo,$varmensaje,$empresa)
 	include("../../Lenguaje/lenguaje.php");
 	$conta = mysql_query("Select idmensaje From empresamen");
 	$digito = mysql_num_rows($conta);
-	$date = getdate();
-	$gettitulo = mysql_query("Select titulo From empresamen Where titulo = '$vartitulo'");
+	$date = date("Y-m-d");
+	$gettitulo = mysql_query("Select titulo From empresamen Where titulo = '$vartitulo' and idempresa = '$empresa'");
 	if(mysql_num_rows($gettitulo) > 0)
 	{
-		
+		echo "<br><label class='label label-warning'>".$lang['TY']."</label>";
 	}
 	else
 	{
 		$query = mysql_query("Insert into empresamen Values ('$digito','$empresa','$vartitulo','$varmensaje','$date')");
-		echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";		
+		echo "<br><label class='label label-success'>".$lang['modificar-exito']."</label>";		
 	}
 }
 ?>

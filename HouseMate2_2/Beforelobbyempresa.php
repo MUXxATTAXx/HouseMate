@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if($_SESSION['empresalobby'] != "" || isset($_GET['empresa']))
+if(isset($_GET['empresa']) || $_SESSION['empresalobby'] != "")
 {
 	include "conexion.php";
 	if(isset($_GET['empresa']))
