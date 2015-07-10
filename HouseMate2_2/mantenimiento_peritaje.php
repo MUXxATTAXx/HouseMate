@@ -184,6 +184,9 @@
                                         <input id="valor_local2" class="form-control" placeholder="<?=$lang['peri-priva']?>" type="text">
                                         <input id="valor_local3" class="form-control" placeholder="<?=$lang['peri-nopriva']?>" type="text">
                                     </div>
+                                    <div class="col col-sm-1">
+                                        <button type="button" class="btn btn-default" id="confirmar5"><?=$lang['peri-agregar']?></button>
+                                    </div>
                                     <div id="mesangemostra4"></div>
                                 </div>
                                 <br>
