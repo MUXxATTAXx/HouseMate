@@ -1,11 +1,11 @@
 <head>
-	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
-   
+
 </head>
 <body id="intro">
 <?php
@@ -57,10 +57,10 @@ echo("<meta charset=utf-8 />");
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-4 col-lg-4 " align="center"> 
+                <div class="col-md-4 col-lg-4 " align="center">
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"> 
+							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100">
 						</div>
 						<div class="form-group col-xs-12">
 							<div class="btn btn-primary btn-file">
@@ -99,7 +99,7 @@ echo("<meta charset=utf-8 />");
 							<label><?php echo $lang['Descripcion'] ?>:</label>
 							<textarea name="descripcion" class="form-control" maxlength="140"></textarea>
 						</div>
-						
+
 					</div>
                 </div>
               </div>
@@ -108,16 +108,19 @@ echo("<meta charset=utf-8 />");
                  <div class="panel-footer">
 				 <center>
 					<button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
-					
+
 					<br>
-					<?php	
+					<?php
 						include "Call/Empresa/Empresafuncion/crearempresa.php";
 					?>
-				</center>	
+				</center>
              </div>
           </div>
         </div>
       </div>
 	  </form>
-
+		 <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+		<script>
+		$("#Municipio3").chained("#Departamento3");
+		</script>
 </body>

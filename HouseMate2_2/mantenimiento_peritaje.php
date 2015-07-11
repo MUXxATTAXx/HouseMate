@@ -209,5 +209,9 @@
 <script src="js/peritaje3.js" type="text/javascript"></script>
 <script src="js/peritaje4.js" type="text/javascript"></script>
 <script src="js/peritaje5.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+<script>
+$("#Municipio").chained("#Departamento");
+</script>
 </body>
 </html>
