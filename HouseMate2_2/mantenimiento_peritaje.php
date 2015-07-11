@@ -22,7 +22,7 @@
 	}
 ?>
 <html>
-<head>	
+<head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
 </head>
@@ -67,7 +67,7 @@
         <div class="row row-centered">
             <div class="col col-sm-8">
                 <!--Tabla-->
-                <div id="mostrar1"></div>     
+                <div id="mostrar1"></div>
             </div>
         </div>
     </div>
@@ -101,7 +101,7 @@
                                 <div class="row row-centered">
                                     <div class="col col-sm-8">
                                         <!--Tabla-->
-                                        <div id="mostrar2"></div>     
+                                        <div id="mostrar2"></div>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                                 <br>
                             <div class="panel-footer">
                                 <!--Tabla-->
-                                <div id="mostrar3"></div>  
+                                <div id="mostrar3"></div>
                             </div>
                         </center>
                 </div>
@@ -161,7 +161,7 @@
                                 <br>
                             <div class="panel-footer">
                                 <!--Tabla-->
-                                <div id="mostrar4"></div>  
+                                <div id="mostrar4"></div>
                             </div>
                         </center>
                 </div>
@@ -187,12 +187,12 @@
                                     <div class="col col-sm-1">
                                         <button type="button" class="btn btn-default" id="confirmar5"><?=$lang['peri-agregar']?></button>
                                     </div>
-                                    <div id="mesangemostra4"></div>
+                                    <div id="mesangemostra5"></div>
                                 </div>
                                 <br>
                             <div class="panel-footer">
                                 <!--Tabla-->
-                                <div id="mostrar4"></div>  
+                                <div id="mostrar5"></div>
                             </div>
                         </center>
                 </div>
@@ -206,5 +206,6 @@
 <script src="js/peritaje2.js" type="text/javascript"></script>
 <script src="js/peritaje3.js" type="text/javascript"></script>
 <script src="js/peritaje4.js" type="text/javascript"></script>
+<script src="js/peritaje5.js" type="text/javascript"></script>
 </body>
 </html>
