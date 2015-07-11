@@ -27,7 +27,7 @@ session_start();
         $local_con = mysql_query($local);
         $idlocal = $lidioma.$categoria.(mysql_num_rows($local_con) + 1);
 
-        $lnombre1 = strtolower($vlnombre);
+        $lnombre1 = mb_convert_encoding($vlnombre,'UTF-8');
         $lnombre = "SELECT * FROM peritaje WHERE nombre ='$lnombre1'";
         $lnombre_con = mysql_query($lnombre);
         if((mysql_num_rows($lnombre_con)) <= 0){

@@ -22,10 +22,10 @@ session_start();
             $sidioma = "en";
         }
         $suelo = "SELECT * FROM peritaje WHERE idioma = '$sidioma1' and categoria ='2'";
-        $suelo_con = mysql_query($suelo);    
+        $suelo_con = mysql_query($suelo);
         $idsuelo = $sidioma.$categoria.(mysql_num_rows($suelo_con) + 1);
-        
-        $snombre1 = strtolower($tsnombre);
+
+        $snombre1 = mb_convert_encoding($tsnombre,'UTF-8');
         $snombre = "SELECT * FROM peritaje WHERE nombre ='$snombre1'";
         $snombre_con = mysql_query($snombre);
 //            $techo2 = "INSERT INTO peritaje values('$idtecho','$ttnombre','$tidioma1','$ttvalor','$ttvalor','$ttvalor','3','$usuario','1')";
@@ -45,7 +45,7 @@ session_start();
         }
         else{
             echo "<span class='label label-error'>".$lang['peri-TP-usado']."</span>";
-        }       
+        }
     }
     else{
         echo "<span class='label label-error'>".$lang['peri-vacio']."</span>".mysql_error();

@@ -22,10 +22,10 @@ session_start();
             $tidioma = "en";
         }
         $techo = "SELECT * FROM peritaje WHERE idioma = '$tidioma1' and categoria = '3'";
-        $techo_con = mysql_query($techo);    
+        $techo_con = mysql_query($techo);
         $idtecho = $tidioma.$categoria.(mysql_num_rows($techo_con) + 1);
-        
-        $tnombre1 = strtolower($ttnombre);
+
+        $tnombre1 = mb_convert_encoding($ttnombre,'UTF-8');
         $tnombre = "SELECT * FROM peritaje WHERE nombre ='$tnombre1'";
         $tnombre_con = mysql_query($tnombre);
         if((mysql_num_rows($tnombre_con)) <= 0){
@@ -37,11 +37,11 @@ session_start();
             else{
                 echo mysql_error();
             }
-             
+
         }
         else{
             echo "<span class='label label-error'>".$lang['peri-TP-usado']."</span>";
-        }       
+        }
     }
     else{
         echo "<span class='label label-error'>".$lang['peri-vacio']."</span>".mysql_error();

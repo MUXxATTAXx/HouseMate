@@ -11,7 +11,7 @@ session_start();
         $categoria = "VP";
         $tpnombre = trim($_POST['nombre_pared']);
         $tpvalor = trim($_POST['valor_pared']);
-        
+
         if($lang['Start'] == "Inicio"){
             $idioma1 = "1";
             $idioma = "es";
@@ -22,10 +22,10 @@ session_start();
             $idioma = "en";
         }
         $pared = "SELECT * FROM peritaje WHERE idioma = '$idioma1' and categoria = '1'";
-        $pared_con = mysql_query($pared);    
+        $pared_con = mysql_query($pared);
         $idpared = $idioma.$categoria.(mysql_num_rows($pared_con) + 1);
-        
-        $nombre1 = strtolower($tpnombre);
+
+        $nombre1 = mb_convert_encoding($tpnombre,'UTF-8');
         $nombre = "SELECT * FROM peritaje WHERE nombre ='$nombre1'";
         $nombre_con = mysql_query($nombre);
         if((mysql_num_rows($nombre_con)) == 0){
@@ -35,7 +35,7 @@ session_start();
         }
         else{
             echo "<span class='label label-error'>".$lang['peri-TP-usado']."</span>";
-        }       
+        }
     }
     else{
         echo "<span class='label label-error'>".$lang['peri-vacio']."</span>".mysql_error();
