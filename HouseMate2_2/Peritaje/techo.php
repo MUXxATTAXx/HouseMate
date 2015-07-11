@@ -25,17 +25,17 @@
             $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='3' and idioma = '$idioma1'");
             while($row = mysql_fetch_array($desc)){
             echo "<form action='#' method='POST'><tr>
-                <td>".$row['id_peri']."</td>
-                <td>";
+                <td><center>".$row['id_peri']."</center></td>
+                <td><center>";
                 echo $row['nombre'];
-                echo "</td>
-                <td>".$row['valor1']."</td>";
+                echo "</center></td>
+                <td><center>".$row['valor1']."</td></center>";
                     echo "<td>";
                         if($row['estado'] == "1"){
-                            echo "<span class='label label-warning'>".$lang['peri-estado1']."</span>";
+                            echo "<center><span class='label label-warning'>".$lang['peri-estado1']."</span>";
                         }
                         else{
-                            echo "<span class='label label-success'>".$lang['peri-estado2']."</span>";
+                            echo "<center><span class='label label-success'>".$lang['peri-estado2']."</span>";
                         }
                     echo "</td>";
                 }
@@ -43,5 +43,3 @@
     ?>
     </tbody>
 </table>
-
-

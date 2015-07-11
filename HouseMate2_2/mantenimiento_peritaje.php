@@ -174,7 +174,9 @@
                                         <center><label><?=$lang['peri-muni'];?></label></center>
                                     </div>
                                     <div class="col col-sm-4">
-                                        <input id="nombre_local" class="form-control" type="text">
+                                        <?php
+                                          include "Call/Funciones/select.php";
+                                        ?>
                                     </div>
                                     <div class="col col-sm-1">
                                         <center><label><?=$lang['tipo-local'];?></label></center>
@@ -192,7 +194,7 @@
                                 <br>
                             <div class="panel-footer">
                                 <!--Tabla-->
-                                <div id="mostrar5"></div>
+                            <div id="mostrar5"></div>
                             </div>
                         </center>
                 </div>

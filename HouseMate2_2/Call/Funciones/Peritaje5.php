@@ -6,11 +6,11 @@ session_start();
     if(isset($_SESSION['id'])){
         $usuario = $_SESSION['id'];
     }
-    if(isset($_POST['nombre_local']) and ($_POST['nombre_local']) != "" && isset($_POST['valor_local1']) and $_POST['valor_local1'] > 0 && isset($_POST['valor_local2']) and $_POST['valor_local2'] > 0 && isset($_POST['valor_local3']) ){
+    if(isset($_POST['Municipio']) && isset($_POST['valor_local1']) and $_POST['valor_local1'] > 0 && isset($_POST['valor_local2']) and $_POST['valor_local2'] > 0 && isset($_POST['valor_local3']) ){
 
         mysql_query("SET NAMES 'utf8'");
         $categoria = "VL";
-        $vlnombre = trim($_POST['nombre_local']);
+        $vlnombre = trim($_POST['Municipio']);
         $vlvalor1 = trim($_POST['valor_local1']);
         $vlvalor2 = trim($_POST['valor_local2']);
         $vlvalor3 = trim($_POST['valor_local3']);
