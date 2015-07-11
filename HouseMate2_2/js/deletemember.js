@@ -1,5 +1,5 @@
 function deletemiembro(id,idempresa)
-{	
+{
 	var x = id;
 	document.getElementById("teste").innerHTML = id;
 	document.getElementById("sendvalueid").innerHTML = idempresa;
@@ -7,7 +7,7 @@ function deletemiembro(id,idempresa)
 $("#accept").click(function(){
 		id = $("#teste").text();
 		empresa = $("#value").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/acepta.php",
@@ -15,23 +15,23 @@ $("#accept").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				enviadosmensajes();
 				stuffed();
 				$("#recibidosaj").empty();
-				$("#recibidosaj").append(data).page;	
+				$("#recibidosaj").append(data).page;
 		}
 	});
-												   
+
 });
 $("#denegar").click(function(){
 		id = $("#teste").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/borra.php",
@@ -39,22 +39,22 @@ $("#denegar").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				enviadosmensajes();
 				$("#recibidosaj").empty();
-				$("#recibidosaj").append(data).page;	
+				$("#recibidosaj").append(data).page;
 		}
 	});
-												   
+
 });
 $("#borrar").click(function(){
 		id = $("#teste").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/delete.php",
@@ -62,22 +62,22 @@ $("#borrar").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#resultborrar").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#resultborrar").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				stuffed();
 				$("#resultborrar").empty();
-				$("#resultborrar").append(data).page;	
+				$("#resultborrar").append(data).page;
 		}
 	});
-												   
+
 });
 $("#mensajedelete").click(function(){
 		id = $("#teste").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/forgetit.php",
@@ -85,23 +85,23 @@ $("#mensajedelete").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#resultcos").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#resultcos").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				checkmensajes();
 				$("#resultcos").empty();
-				$("#resultcos").append(data).page;	
+				$("#resultcos").append(data).page;
 		}
-	});							   
+	});
 });
 $("#anuncio").click(function(){
 		var1 = $("#titulo").val();
 		var2 = $("#anunciotext").val();
 		value = $("#value").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/anuncionuevo.php",
@@ -109,24 +109,24 @@ $("#anuncio").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#anuncioresult").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#anuncioresult").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				anuncios();
 				$("#anuncioresult").empty();
-				$("#anuncioresult").append(data).page;	
+				$("#anuncioresult").append(data).page;
 				$('#titulo').val('');
 				$('#anunciotext').val('');
 		}
-	});							   
+	});
 });
 $("#deletemensaje").click(function(){
 		id = $("#teste").text();
 		empresa = $("#value").text();
-		//ingresar usuario													  
+		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/borramen.php",
@@ -134,57 +134,57 @@ $("#deletemensaje").click(function(){
 			dataType: "html",
 			beforeSend: function(){
 				//imagen de carga
-				$("#resulthomed").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+				$("#resulthomed").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
-			success: function(data){ 
+			success: function(data){
 				anuncios();
 				$("#resulthomed").empty();
-				$("#resulthomed").append(data).page;	
+				$("#resulthomed").append(data).page;
 		}
 	});
-												   
+
 });
 
 function checkmensajes(){
 	empresa = $("#value").html();
-	$.ajax({   	
+	$.ajax({
 	type: 'POST',
 	data: 'idempresa='+empresa,
-	url: 'Call/Empresa/Empresafuncion/mensajesenviados.php', 
+	url: 'Call/Empresa/Empresafuncion/mensajesenviados.php',
 	dataType: 'html',
 	success: function(data) {
 				$('#checkmensajes').empty();
-				$('#checkmensajes').append(data).page;	
+				$('#checkmensajes').append(data).page;
 		},
 	});
-}; 
+};
 function enviadosmensajes(){
 	empresa = $("#value").html();
-	$.ajax({   	
+	$.ajax({
 	type: 'POST',
 	data: 'idempresa='+empresa,
-	url: 'Call/Empresa/Empresafuncion/vermensajes.php', 
+	url: 'Call/Empresa/Empresafuncion/vermensajes.php',
 	dataType: 'html',
 	success: function(data) {
 				$('#sentmessages').empty();
-				$('#sentmessages').append(data).page;	
+				$('#sentmessages').append(data).page;
 		},
 	});
 };
 function anuncios()
 {
 	empresa = $("#value").html();
-	$.ajax({   	
+	$.ajax({
 	type: 'POST',
 	data: 'idempresa='+empresa,
-	url: 'Call/Empresa/Empresafuncion/anuncionprint.php', 
+	url: 'Call/Empresa/Empresafuncion/anuncionprint.php',
 	dataType: 'html',
 	success: function(data) {
 				$('#recibidosaj').empty();
-				$('#recibidosaj').append(data).page;	
+				$('#recibidosaj').append(data).page;
 		},
 	});
 };
@@ -192,4 +192,17 @@ function getmail(id)
 {
 var d = document.getElementById("correoenviar");
 d.value = id;
+}
+function changeedit(id)
+{
+	var id = id;
+	if(id.length > 5)
+	{
+		var tama = id.length - 5;
+		var largo = 1 + tama;
+		var firstlarge = id.substr(id.length - largo);
+	}
+	else {
+		var first = id.substr(id.length -2);
+	}
 }

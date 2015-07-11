@@ -1,5 +1,5 @@
 <div id="postlist">
-<?php 
+<?php
 session_start();
 include("../../../conexion.php");
 include("../../Lenguaje/lenguaje.php");
@@ -14,11 +14,14 @@ while ($row = mysql_fetch_array($query))
 			<div class="text-center">
 				<div class="row">
 					<div class="col-sm-9">
-						<h3 class="pull-left"><?= $row['titulo'] ?></h3>
+						<h3 class="pull-left"><?= $row['titulo']; ?></h3>
+						<div class="col-xs-4">
+						<input id='tid<?= $row['idmensaje'] ?>' class='hidme' value="<?= $row['titulo']; ?>" maxlength="30">
+					</div>
 					</div>
 					<div class="col-sm-3">
 						<h4 class="pull-right">
-						<small><em><?php 
+						<small><em><?php
 						if(isset($_SESSION['lang'])){
 						$variable = $_SESSION['lang'];}
 						else{
@@ -44,9 +47,13 @@ while ($row = mysql_fetch_array($query))
 		</div>
 		<div>
 				<div class="row">
-					<div class="col-sm-1"></div><div class="panel-body col-sm-9"><?= $row['texto']; ?></div><div class="col-sm-2">
-					<a class="glyphicon glyphicon-pencil btn btn-sm btn-warning"></a>
-					<a id="m<?= $row['idmensaje'] ?>" data-toggle='modal' data-target='#deletemensajes' onclick='deletemiembro(this.id)' class="glyphicon glyphicon-remove btn btn-sm btn-danger borrelapa"></a></div>
+					<div class="col-sm-1"></div>
+					<div class="panel-body col-sm-9"><?= "<label>".$row['texto']."</label>"; ?>
+					<textarea id='mensa<?= $row['idmensaje'] ?>' class='hidme' rows='3' maxlength="240"><?= $row['texto']; ?></textarea>
+					</div>
+					<div class="col-sm-2">
+					<a id="edit<?= $row['idmensaje']?>" class="glyphicon glyphicon-pencil btn btn-sm btn-warning" onclick="changeedit(this.id);" ></a>
+					<a id="m<?= $row['idmensaje'] ?>" data-toggle='modal' data-target='#deletemensajes' onclick='deletemiembro(this.id)' class="glyphicon glyphicon-remove btn btn-sm btn-danger borrelapa" readonly></a></div>
 				</div>
 		</div>
 		<hr>

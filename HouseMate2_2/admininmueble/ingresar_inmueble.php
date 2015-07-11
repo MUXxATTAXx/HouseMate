@@ -33,7 +33,7 @@
 </div>
 <div class="row row-centered">
 	<center>
-		<?php require ("Call/Funciones/select.php") ?>
+		<?php include ("Call/Funciones/select.php") ?>
 	</center>
 </div>
 <div class="row row-centered">
@@ -62,11 +62,11 @@
 	<br>
 
 	<br>
-	
+
     <div class="center">
 					<h3><?php echo $lang['Etiqueta'] ?>: </h3><span class="label label-danger" id="validacion-num1"></span>
 			</div>
-	
+
 	<div class="center">
 		<div class="row row-centered">
 			<div class="form-group col-xs-3">
@@ -94,7 +94,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag2" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
-				   
+
 					</div>
 				</div>
 			</div>
@@ -109,7 +109,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag3" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -124,7 +124,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag4" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -222,20 +222,20 @@
 
 		</div>
 
-</div>		
+</div>
 </div>
 <br>
 	<div class="row">
 	<div class="col-sm-6 col-centered">
 			<a class='btn btn-primary btn-block ingresarin' type='submit' value="Insert"><?php echo $lang['Verificar']?></a>
-	<?php 
+	<?php
 		if(isset($_POST['insertarforreal']))
 		{
 			require "Call/Funciones/beforeingresar.php";
 		}
 		else
 		{
-			
+
 		}
 	?>
 	</div>
@@ -252,7 +252,7 @@
                 $('#blah')
                     .attr('src', e.target.result)
             };
-			
+
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -265,17 +265,17 @@
 
 	});
 	$("form").on('click', 'a.ingresarin2', function() {
-		unison(); 
+		unison();
 	});
-	
+
 function unison(){
 	$("#poderdej").remove();
 	selector = $("#selector").val();
 	selector2 = $("#selector2").val();
-	precio = $("#precio").val();      
-	Departamento = $("#Departamento").val();      
-	Municipio = $("#Municipio").val();      
-	dirrecion = $("#dirrecion").val();  
+	precio = $("#precio").val();
+	Departamento = $("#Departamento").val();
+	Municipio = $("#Municipio").val();
+	dirrecion = $("#dirrecion").val();
 	descrip = $("#descrip").val();
 	imagenfea = $("#imagenfea").val();
 	$.ajax({
@@ -284,7 +284,7 @@ function unison(){
 		"&dirrecion="+dirrecion+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea,
 		dataType : "html",
 		type : "post",
-		
+
 		success: function(data){
 			$("#error1").remove();
 			$(".ingresarin").remove();
@@ -292,7 +292,7 @@ function unison(){
 			$("#resultadoinsert").append(data);
 		},
 		failure: function(){
-		   
+
 		}
 	});
 };
