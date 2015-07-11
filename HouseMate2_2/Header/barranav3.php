@@ -9,21 +9,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="visitantehomepage.php">House Mate</a>
+      <a class="navbar-brand" href="peritohomepage.php">House Mate</a>
     </div>
-    <?php  
+    <?php
 	include "Call/Lenguaje/lenguaje.php";
 	require ("Call/Loged/seguridad.php");
           ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 <!--Peritaje-->
-        <li class="dropdown"> 
+        <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-list-alt mantenimien" aria-hidden="true"></span><span class="caret mantenimien"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="valuar_inmueble.php"><span class="glyphicon glyphicon-check"></span><?php echo $lang['peritaje'];?></a></li>
                 <li><a href="mantenimiento_peritaje.php"><span class="glyphicon glyphicon-list-alt"></span><?php echo $lang['peritaje'];?></a></li>
-            </ul>    
+            </ul>
         </li>
 <!--Empresa-->
         <li class="dropdown">
@@ -41,7 +41,7 @@
 				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
             </ul>
         </li>
-          
+
 <!--Notificaciones-->
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
@@ -87,7 +87,7 @@
 					{$idusuario = $row['idusuario'];}
                     $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
                     while($row = mysql_fetch_array($consulta6)){
-                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
 						where empresa.idempresa =".$row['idempresa']);
                             while($row2 = mysql_fetch_array($consulta7)){
                                 echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
@@ -116,7 +116,7 @@
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
                     <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
-          </li>  
+          </li>
       </ul>
     </div>
   </div>

@@ -303,5 +303,7 @@ $lang['peri-centro'] = "Centro";
 $lang['peri-priva'] = "Privada";
 $lang['peri-nopriva'] = "No privada";
 
-
+//Perito Homepage
+$lang['peri-pendienteobj'] = "Peritajes Pendientes";
+$lang['peri-pendiente'] = "Objetos Pendientes";
 ?>

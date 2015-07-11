@@ -1,5 +1,5 @@
 <head>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
@@ -11,44 +11,62 @@
 <?php
     include("Header/barranav3.php");
 ?>
-<a class="btn btn-sm btn-primary" href="quick.php"><?php echo $lang['quick'] ?></a>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="panel-body">
-      
-                <div class="row">
-				<div class="col-md-8">
-				 <ol class="breadcrumb bread-primary breadnomargin">
-				<li><a><h3><?php echo $lang['noticias'] ?><h3></a></li>
-				</ol>
-                    
-                   </div>
-                    <div class="col-md-3">
-                        <div class="controls pull-right hidden-xs">
-                            <a class="left fa fa-chevron-left btn btn-primary" href="#carousel-example"
-                                data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-primary" href="#carousel-example"
-                                    data-slide="next"></a>
-                        </div>
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
+    <div class="panel panel-info">
+            <ul  class="nav nav-tabs">
+                <li id='me' class='active negro'><a href='#home' data-toggle='tab'><?=$lang['peri-pendiente'];?></a></li>
+                <li id='me2' class='negro'><a href='#home2' data-toggle='tab'><?=$lang['peri-pendienteobj'];?></a></li>
+            </ul>
+  <div class="panel-body">
+      <div id='myTabContent' class='tab-content'>
+          <!--Objetos-->
+                  <div class='tab-pane fade active in' id='home'>
+                    <?php
+                      include "conexion.php";
+                      $objeto = "SELECT * from peritaje WHERE estado = '1'";
+                      $objeto_con = mysql_query($objeto);
+                      while($row = mysql_fetch_array($objeto_con)){
+                        echo"
+                        <center>
+                            <br>
+                            <div class='row'>
+                                <div class='col col-sm-2'>
+                                  ".$row['nombre']."
+                                </div>
+                            </div>
+                            <br>
+                        </center>
+                        ";
+                      }
+                    ?>
+                  </div>
+                  <!--Inmuebles-->
+                  <div class='tab-pane fade' id='home2'>
+                      <center>
+                              <br>
+                              <div class="row">
+                                  <div class="col col-sm-2">
+                                      <p>Holi 2</p>
+                                  </div>
+                              </div>
+                              <br>
+                          <div class="panel-footer">
+                              <div class="row row-centered">
+                                  <div class="col col-sm-8">
+                                      <p>Holi 2</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </center>
                     </div>
-                </div>
-                <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
-                    <div class="carousel-inner">
-                    <?php 
-                    include ('Call/housein.php');
-                    ?>         
-                    </div>
-                </div>		
-
+              <!-- Fin de contenido de pestañas -->
+            </div>
+        <!-- Fin de pane body -->
         </div>
-    </div>      
-</div>
-<!-- Ni idea  de porque necesiro este div -->
-</div>
-<!-- Ni idea  de porque necesiro este div -->
-
-    <div id="barrabusqueda9">
+      <!-- Fin de row -->
     </div>
-		
-		<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+<!-- Fin de contenedor -->
+</div>
 
+<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 </body>

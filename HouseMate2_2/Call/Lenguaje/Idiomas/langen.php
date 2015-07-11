@@ -301,4 +301,9 @@ $lang['tipo-local'] = "Values";
 $lang['peri-centro'] = "Downtown";
 $lang['peri-priva'] = "Private";
 $lang['peri-nopriva'] = "Not private";
+
+//Perito Homepage
+$lang['peri-pendienteobj'] = "Pending Appraising";
+$lang['peri-pendiente'] = "Pending Objects";
+
 ?>
