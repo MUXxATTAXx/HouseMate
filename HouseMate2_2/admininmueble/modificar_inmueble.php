@@ -1,9 +1,9 @@
-<?php 
+<?php
 	include("../../conexion.php");
 	include("../Lenguaje/lenguaje.php");
 ?>
 			<!-- barra lateral -->
-			
+			<!-- modificar falta -->
  <div class='form-Dl' align="center">
  <div class="boxleft "><a href="#me2" class=" glyphicon glyphicon-arrow-left" onclick='regresar(this.id)'>></a></div>
            <div class="center">
@@ -56,7 +56,7 @@
 	</center>
 </div>
 			<div class="row row-centered">
-				<div class="form-group col-xs-12">			
+				<div class="form-group col-xs-12">
 					<label><?php echo $lang['Imagen']  ?>:</label>
 					<div  class="onlyme">
 						<label>
@@ -69,9 +69,9 @@
 					<img id="blah2" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
 					<br>
 					<br>
-				
+
 			</div>
-			
+
 				<h3><?php echo $lang['Etiqueta'] ?>:</h3>
 					<div class="center">
 		<div class="row row-centered">
@@ -86,7 +86,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ] " name="b1" type="number"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
-				   
+
 						</div>
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
-				   
+
 					</div>
 				</div>
 			</div>
@@ -116,7 +116,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -131,7 +131,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="b4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -228,7 +228,7 @@
 				</div>
 		</div>
 		<br>
-		<div class="row row-centered">	
+		<div class="row row-centered">
 					<div class="form-group col-xs-6 col-centered">
 						<button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
 					</div>
@@ -239,7 +239,7 @@
 </div>
 
 
-	
+
 <script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
 <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 <script>  $(function() {
@@ -253,7 +253,7 @@ $("#Municipio2").chained("#Departamento2");
                 $('#blah2')
                     .attr('src', e.target.result)
             };
-			
+
             reader.readAsDataURL(input.files[0]);
         }
     }

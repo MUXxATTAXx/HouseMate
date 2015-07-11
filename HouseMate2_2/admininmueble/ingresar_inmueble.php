@@ -1,6 +1,6 @@
 <form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
  <div class='form-Dl' align="center">
-
+<!--  falta -->
 <div id="cosas">
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
