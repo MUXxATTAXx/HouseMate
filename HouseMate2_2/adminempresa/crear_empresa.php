@@ -2,16 +2,16 @@
 <div name='registrar'>
 <div class='form-Dl' align="center">
 	<div class="panel-heading">
-            <div class="row">
-				<div class="col-sm-2"></div><div class="col-sm-8"><h3 class="panel-title label label-primary"><?php echo $lang['EmpresaN'] ?></h3></div><div class="col-sm-2"></div>
+            <div class="row"> 
+				<div class="col-sm-2"></div><div class="col-sm-8"><h3 class="panel-title label label-primary"><?php echo $lang['EmpresaN'] ?></h3></div><div class="col-sm-2"></div> 
 			</div>
             </div>
             <div class="panel-body">
               <div class="row">
-                <div class="col-md-4 col-lg-4 " align="center">
+                <div class="col-md-4 col-lg-4 " align="center"> 
 					<div class="row">
 						<div class="form-group col-xs-12">
-							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100">
+							<img class="img-responsive imagenpequeña" id="imagenempresa" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"> 
 						</div>
 						<div class="form-group col-xs-12">
 							<div class="btn btn-primary btn-file">
@@ -50,21 +50,20 @@
 							<label><?php echo $lang['Descripcion'] ?>:</label>
 							<textarea name="descripcion" class="form-control" maxlength="140"></textarea>
 						</div>
-
+						
 					</div>
                 </div>
               </div><br>
 				<center><button name="ingresar" type="submit" class="btn btn-primary extraright"><?php echo($lang['insert'])?></button>
-
+					
 					<br>
-					<?php
+					<?php	
 						include "Call/Empresa/Empresafuncion/crearempresa.php";
 					?>
-				</center>
+				</center>	
 			 </div>
 </div>
 </div>
-<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 <script>
 function password(){
     var pass1 = document.getElementById('contra');
@@ -82,8 +81,7 @@ function password(){
         message.innerHTML = ""
     }
 }
-$(function() {
-$("#Municipio3").chained("#Departamento3");
-});
 </script>
 </form>
+
+
