@@ -1,5 +1,5 @@
 <head>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <link href='css/bootstrap.min.css' rel='stylesheet'/>
 <link href='css/appeal.css' rel='stylesheet'/>
 <link href='css/intro.css' rel='stylesheet'/>
@@ -17,15 +17,15 @@ include ('Call/Lenguaje/lenguaje.php');
 		switch($_SESSION['tip'])
 		{
 			case 1:
-			include('Header/barranav2.php');
+		    include('Header/barranav2.php');
 			break;
 			case 2:
 			break;
 			case 3:
-            include('Header/barranav3.php');
+        include('Header/barranav3.php');
 			break;
 			case 4:
-			include('Header/barranav6.php');
+			   include('Header/barranav6.php');
 			break;
 		}
 	}
@@ -54,22 +54,22 @@ include ('Call/Lenguaje/lenguaje.php');
 			  <div class='panel panel-info'>
 				<div class='panel-heading'>
 				  <h3 class='panel-title'><?php echo $row['nombre'];
-					
+
 				  ?></h3>
 				</div>
 				<div class='panel-body'>
 				<br>
 				  <div class='row'>
-					<div class='col-md-4 col-lg-4 ' align='center'> 
+					<div class='col-md-4 col-lg-4 ' align='center'>
 						<div class='row'>
 							<div class='form-group col-xs-12'>
-								<img class='img-responsive imagenpequeña' id='imagenempresa' 
+								<img class='img-responsive imagenpequeña' id='imagenempresa'
 								src='<?php
-								$filename = "img/Empresas/".$row['imagen'];	
+								$filename = "img/Empresas/".$row['imagen'];
 								if(file_exists($filename))
 								{
 									$hayimagen = "img/Empresas/".$row['imagen'];
-									echo "img/Empresas/".$row['imagen']; 
+									echo "img/Empresas/".$row['imagen'];
 								}
 								else
 								{
@@ -81,7 +81,7 @@ include ('Call/Lenguaje/lenguaje.php');
 						<div class="row">
 							<div class="col-lg-12">
 								NIT:
-								<?php 
+								<?php
 								$rest = substr($row['nit'], 0, 4);
 								$rest2 = substr($row['nit'], 4, 6);
 								$rest3 = substr($row['nit'], 10, 3);
@@ -93,7 +93,7 @@ include ('Call/Lenguaje/lenguaje.php');
 						<div class="row">
 							<div class="col-lg-12">
 								Rating:
-								<?php 
+								<?php
 								echo " ".$row['ratings'];
 								?>
 							</div>
@@ -102,7 +102,7 @@ include ('Call/Lenguaje/lenguaje.php');
 					<div class=' col-md-8 col-lg-8 '>
 						<div class="row">
 							<div>
-							<?php	$dueno = mysql_query("Select tbusuario.nombre, tbusuario.apellido From usuario inner join tbusuario on  usuario.tempid = tbusuario.idusuario 
+							<?php	$dueno = mysql_query("Select tbusuario.nombre, tbusuario.apellido From usuario inner join tbusuario on  usuario.tempid = tbusuario.idusuario
 							Where usuario.idusuario = '".$row['dueño']."'");
 							while($row2 = mysql_fetch_array($dueno))
 							{
@@ -123,7 +123,7 @@ include ('Call/Lenguaje/lenguaje.php');
 						<br>
 						<div class="row">
 							<div>
-								<?php 
+								<?php
 									echo $lang['Direccion'].": ".$row['direccion'];
 								?>
 							</div>
@@ -133,19 +133,19 @@ include ('Call/Lenguaje/lenguaje.php');
 							<div>
 								<?php
 								echo $lang['Descripcion'].": ".$row['descrip'];
-								
+
 								?>
 							</div>
 						</div>
 						<?php } ?>
-						
-						
+
+
 					</div>
 				  </div>
 				  <br>
 				  <div class="row row-centered">
 					<?php
-						$mate = mysql_query("Select usuario.idusuario FROM usuario inner join tbusuario on 
+						$mate = mysql_query("Select usuario.idusuario FROM usuario inner join tbusuario on
 						usuario.TempId = tbusuario.idusuario Where usuario.TempId = '".$_SESSION['id']."'");
 						while ($get = mysql_fetch_array($mate))
 						{
@@ -154,11 +154,11 @@ include ('Call/Lenguaje/lenguaje.php');
 							while($print = mysql_fetch_array($checkmesage))
 							{
 								echo "<div class='col-lg-8 col-centered'>
-								".$lang['mensaje'].": ".$print['mensaje']." 
+								".$lang['mensaje'].": ".$print['mensaje']."
 								</div>";
 							}
 						}
-						
+
 					?>
 				  </div>
 				  <div class="row">
@@ -176,8 +176,8 @@ include ('Call/Lenguaje/lenguaje.php');
 						<a name='ingresare' id="check" class='btn btn-success btn-sm extraright'><?php echo $lang['accept'] ?></a>
 						<a name='nothanks' id="reject" class='btn btn-primary btn-sm extraright'><?php echo $lang['No'] ?></a>
 					<br>
-					
-					</center>	
+
+					</center>
 				</div>
 			</div>
 		</div>
@@ -187,7 +187,7 @@ include ('Call/Lenguaje/lenguaje.php');
 	}
 	else
 	{
-		
+
 	}
 	?>
 	<script type="text/javascript" src="js/casa.js">

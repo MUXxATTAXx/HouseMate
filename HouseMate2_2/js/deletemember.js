@@ -195,14 +195,63 @@ d.value = id;
 }
 function changeedit(id)
 {
-	var id = id;
 	if(id.length > 5)
 	{
 		var tama = id.length - 5;
 		var largo = 1 + tama;
-		var firstlarge = id.substr(id.length - largo);
+		var first = id.substr(id.length - largo);
 	}
 	else {
-		var first = id.substr(id.length -2);
+		var first = id.substr(id.length -1);
 	}
+	var estru1 = "titore"+first;
+	var estru2 = "shower"+first;
+	var estru3 = "lab"+first;
+	var estru4 = "mensaje"+first
+	var estru5 = "edit"+first;
+	var estru6 = "m"+first
+	var estru7 = "do"+first;
+	var estru8 = "notd"+first
+ 	document.getElementById(estru1).className = "hidme";
+	document.getElementById(estru2).className = "";
+	document.getElementById(estru3).className = "hidme";
+	document.getElementById(estru4).className = "";
+	document.getElementById(estru5).className = "hidme";
+	document.getElementById(estru6).className = "hidme";
+	document.getElementById(estru7).className = "glyphicon glyphicon-ok btn btn-sm btn-success";
+	document.getElementById(estru8).className = "glyphicon glyphicon-remove btn btn-sm btn-danger";
+	document.getElementById(estru2).focus();
+}
+function acceptedit()
+{
+
+}
+function canceledit(id)
+{
+	if(id.length > 5)
+	{
+		var tama = id.length - 5;
+		var largo = 1 + tama;
+		var first = id.substr(id.length - largo);
+	}
+	else {
+		var first = id.substr(id.length -1);
+	}
+	var estru1 = "titore"+first;
+	var estru2 = "shower"+first;
+	var estru3 = "lab"+first;
+	var estru4 = "mensaje"+first
+	var estru5 = "edit"+first;
+	var estru6 = "m"+first
+	var estru7 = "do"+first;
+	var estru8 = "notd"+first;
+ 	document.getElementById(estru1).className = "pull-left";
+	document.getElementById(estru2).className = "hidme";
+	document.getElementById(estru3).className = "";
+	document.getElementById(estru4).className = "hidme";
+	document.getElementById(estru5).className = "glyphicon glyphicon-pencil btn btn-sm btn-warning";
+	document.getElementById(estru6).className = "glyphicon glyphicon-remove btn btn-sm btn-danger borrelapa";
+	document.getElementById(estru7).className = "hidme";
+	document.getElementById(estru8).className = "hidme";
+	document.getElementById(estru2).focus();
 }
