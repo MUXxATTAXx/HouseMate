@@ -193,6 +193,20 @@ function anuncios()
 		},
 	});
 };
+function anuncios2()
+{
+	empresa = $("#value").html();
+	$.ajax({
+	type: 'POST',
+	data: 'idempresa='+empresa,
+	url: 'Call/Empresa/Empresafuncion/anuncionprint2.php',
+	dataType: 'html',
+	success: function(data) {
+				$('#recibidosaj2').empty();
+				$('#recibidosaj2').append(data).page;
+		},
+	});
+};
 function getmail(id)
 {
 var d = document.getElementById("correoenviar");
@@ -299,7 +313,9 @@ $("#Arios").click(function(){
 	});
 $(window).load(function()  {
 		stuffed();
+		stuffed2();
 		enviadosmensajes();
 		checkmensajes();
 		anuncios();
+		anuncios2();
 	});
