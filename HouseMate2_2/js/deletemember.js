@@ -222,10 +222,6 @@ function changeedit(id)
 	document.getElementById(estru8).className = "glyphicon glyphicon-remove btn btn-sm btn-danger";
 	document.getElementById(estru2).focus();
 }
-function acceptedit()
-{
-
-}
 function canceledit(id)
 {
 	if(id.length > 5)
@@ -255,3 +251,36 @@ function canceledit(id)
 	document.getElementById(estru8).className = "hidme";
 	document.getElementById(estru2).focus();
 }
+function acceptedit(id)
+{
+	if(id.length > 3){
+		var tama = id.length - 3;
+		var largo = 1 + tama;
+		var first = id.substr(id.length - largo);
+	}
+	else {
+		var first = id.substr(id.length -1);
+	}
+	var estru1 = "titup"+first;
+	var estru2 = "mensaj"+first;
+  var titulo =	document.getElementById(estru1).value;
+	var mensaje =	document.getElementById(estru2).value;
+	empresa = $("#value").html();
+	$.ajax({
+	type: 'POST',
+	data: 'idempresa='+empresa+"&titulo="+titulo+"&mensaje="+mensaje+"&first="+first,
+	url: 'Call/Empresa/Empresafuncion/anuncioedit.php',
+	dataType: 'html',
+	success: function(data){
+				anuncios();
+				$('#resulthomed').empty();
+				$('#resulthomed').append(data).page;
+		},
+	});
+}
+$(window).load(function()  {
+		stuffed();
+		enviadosmensajes();
+		checkmensajes();
+		anuncios();
+	});

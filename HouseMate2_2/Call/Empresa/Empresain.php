@@ -1,10 +1,10 @@
 <head>
-	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>		
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
    <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
-   
+
 </head>
 <body id="intro">
 <?php
@@ -35,7 +35,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 	}
 	$idt = $_SESSION['id'];
 	$idempresalater = "";
-	
+
 	$queryportodos = mysql_query("Select * FROM usuario Inner join empresa on usuario.Empresa = Empresa.dueño WHERE usuario.TempId = '$idt'");
 	while($row = mysql_fetch_array($queryportodos))
 	{
@@ -52,9 +52,9 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				padding-bottom: 0px;
 				border-bottom-width: 0px;'>
             <ul  class="nav nav-tabs forcenavchange">
-				<?php 
-				$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario FROM usuario inner join 
-				tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa = empresa.IdEmpresa WHERE 
+				<?php
+				$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario FROM usuario inner join
+				tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa = empresa.IdEmpresa WHERE
 				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.idusuario = '$idt'";
 				$master = mysql_query($queroempresario);
 				$idempresa = $row['IdEmpresa'];
@@ -94,17 +94,17 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 							<div id='resultborrar'>
 						</div>
 					</div>";
-					
+
 					echo "<div class='tab-pane fade' id='solicitud'>
 						<div class='row row-centered'>";
-								include 'Call/Empresa/Empresafuncion/verusuario.php';  
+								include 'Call/Empresa/Empresafuncion/verusuario.php';
 						echo "</div>
 						<div id='morepeople'>
 						</div>
 					</div>
 					<div class='tab-pane fade' id='configurar'>
 						<div class='row row-centered'>";
-						include "Call/Empresa/Empresafuncion/configurar.php"; 
+						include "Call/Empresa/Empresafuncion/configurar.php";
 						echo "</div>
 					</div>"; }?>
 					<div class="tab-pane fade" id="informacion">
@@ -117,15 +117,15 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 					<?php
 						// include "Call/Empresa/Empresafuncion/crearempresa.php";
 					?>
-				</center>	
+				</center>
              </div>
           </div>
         </div>
       </div>
 	  </form>
-		
-	
-			
+
+
+
 <?php } ?>
 <span id="teste" class="hidme"></span>
 <div id='delete' class='modal fade' role='dialog'>
@@ -234,7 +234,28 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
     </div>
   </div>
 </div>
-<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>		
+<div id='delegar' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='panel-footer'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+         <h4 class='modal-title' id='myModalLabel'><?php echo $lang['Cdelete'] ?></h4>
+      </div>
+      <div class='modal-body'>
+                <p><?php echo $lang['Xdelete'] ?></p>
+                <p><?php echo $lang['Fdelete']?></p>
+                <p class='debug-url'></p>
+				<div class="row">
+				<button class='btn btn-default' id='Arios' data-dismiss='modal'><?php echo $lang['Salir'] ?></button>
+				<a type='button' class='btn btn-default' data-dismiss='modal'><?php echo $lang['Aceptar'] ?></a>
+				</div>
+      </div>
+      <div class='panel-footer'>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="Call/Empresa/Empresajs/Empresa.js"></script>
 <script type="text/javascript" src="js/deletemember.js"></script>
 <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
 <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>

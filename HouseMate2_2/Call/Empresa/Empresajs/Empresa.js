@@ -1,14 +1,9 @@
-   	$(window).load(function()  {
-				stuffed();
-				enviadosmensajes();
-				checkmensajes();
-				anuncios();
-			});
+
 			 	function stuffed(){
 					empresa = $("#value").html();
-				$.ajax({   
-				 type: 'POST',   
-				 url: 'Call/Empresa/Empresafuncion/miembros.php', 
+				$.ajax({
+				 type: 'POST',
+				 url: 'Call/Empresa/Empresafuncion/miembros.php',
 				 data: "empresa="+empresa,
 				success: function(msg) {
 						$("#thetablemiembre").html(msg);
@@ -23,7 +18,7 @@
                 $('#imagenempresa')
                     .attr('src', e.target.result)
             };
-			
+
             reader.readAsDataURL(input.files[0]);
         }
     }

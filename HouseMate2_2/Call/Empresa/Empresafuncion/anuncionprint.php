@@ -1,10 +1,11 @@
 <div id="postlist">
 <?php
 session_start();
+$idempresa = $_POST['idempresa'];
 include("../../../conexion.php");
 include("../../Lenguaje/lenguaje.php");
 mysql_query("SET NAMES 'utf8'");
-$query = mysql_query("SELECT * FROM `empresamen`");
+$query = mysql_query("SELECT * FROM `empresamen` Where idempresa = '$idempresa' ORDER BY idmensaje ASC ");
 while ($row = mysql_fetch_array($query))
 {
 ?>
@@ -14,11 +15,11 @@ while ($row = mysql_fetch_array($query))
 			<div class="text-center">
 				<div class="row">
 					<div class="col-sm-9">
-						<div class="col-xs-4">
 						<h3 id="titore<?= $row['idmensaje']?>" class="pull-left"><?= $row['titulo'] ?></h3>
-						</div>
+						<div class="pull-left">
 							<div id="shower<?= $row['idmensaje']?>" class='hidme'><?php echo $lang['Titulo'].": "; ?><input id="titup<?= $row['idmensaje']?>" class="form-control"  value='<?= $row['titulo']?>'>
 							</div>
+						</div>
 					</div>
 					<div class="col-sm-3">
 						<h4 class="pull-right">
