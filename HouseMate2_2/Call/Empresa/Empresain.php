@@ -21,22 +21,23 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 		switch($_SESSION['tip'])
 		{
 			case 1:
-			include("Header/barranav2.php");
+				include("Header/barranav2.php");
 			break;
 			case 2:
 			break;
 			case 3:
-            include("Header/barranav3.php");
+        include("Header/barranav3.php");
 			break;
 			case 4:
-			include("Header/barranav6.php");
+				include("Header/barranav6.php");
 			break;
 		}
 	}
 	$idt = $_SESSION['id'];
 	$idempresalater = "";
 
-	$queryportodos = mysql_query("Select * FROM usuario Inner join empresa on usuario.Empresa = Empresa.dueño WHERE usuario.TempId = '$idt'");
+	$queryportodos = mysql_query("Select * FROM usuario Inner join empresa on usuario.idusuario = Empresa.dueño
+	WHERE usuario.TempId = '$idt'");
 	while($row = mysql_fetch_array($queryportodos))
 	{
 ?>
@@ -55,7 +56,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 				<?php
 				$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario FROM usuario inner join
 				tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa = empresa.IdEmpresa WHERE
-				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.idusuario = '$idt'";
+				usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='".$row['IdEmpresa']."' AND usuario.TempId = '$idt'";
 				$master = mysql_query($queroempresario);
 				$idempresa = $row['IdEmpresa'];
 				echo " <span class='hidme' id='sendvalueid' name='empresidp'>$idempresa</span>";
@@ -234,7 +235,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
     </div>
   </div>
 </div>
-<div id='delegar' class='modal fade' role='dialog'>
+<div id='delegare' class='modal fade' role='dialog'>
   <div class='modal-dialog'>
     <div class='modal-content'>
       <div class='panel-footer'>

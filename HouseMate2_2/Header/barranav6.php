@@ -1,4 +1,4 @@
-
+<link href='css/intro.css' rel='stylesheet'/>
 <form method="post" >
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -11,7 +11,7 @@
       </button>
       <a class="navbar-brand" href="visitantehomepage.php">House Mate</a>
     </div>
-    <?php  
+    <?php
 	include "Call/Lenguaje/lenguaje.php";
 	require ("Call/Loged/seguridad.php");
           ?>
@@ -76,7 +76,7 @@
 					{$idusuario = $row['idusuario'];}
                     $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
                     while($row = mysql_fetch_array($consulta6)){
-                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
 						where empresa.idempresa =".$row['idempresa']);
                             while($row2 = mysql_fetch_array($consulta7)){
                                 echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";

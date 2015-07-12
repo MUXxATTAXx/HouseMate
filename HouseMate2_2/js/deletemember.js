@@ -3,7 +3,12 @@ function deletemiembro(id,idempresa)
 	var x = id;
 	document.getElementById("teste").innerHTML = id;
 	document.getElementById("sendvalueid").innerHTML = idempresa;
-}
+};
+function delegard(id)
+{
+	var x = id;
+	document.getElementById("teste").innerHTML = id;
+};
 $("#accept").click(function(){
 		id = $("#teste").text();
 		empresa = $("#value").text();
@@ -192,7 +197,7 @@ function getmail(id)
 {
 var d = document.getElementById("correoenviar");
 d.value = id;
-}
+};
 function changeedit(id)
 {
 	if(id.length > 5)
@@ -221,7 +226,7 @@ function changeedit(id)
 	document.getElementById(estru7).className = "glyphicon glyphicon-ok btn btn-sm btn-success";
 	document.getElementById(estru8).className = "glyphicon glyphicon-remove btn btn-sm btn-danger";
 	document.getElementById(estru2).focus();
-}
+};
 function canceledit(id)
 {
 	if(id.length > 5)
@@ -277,7 +282,21 @@ function acceptedit(id)
 				$('#resulthomed').append(data).page;
 		},
 	});
-}
+};
+$("#Arios").click(function(){
+	id = $("#teste").text();
+	empresa = $("#value").text();
+	$.ajax({
+	type: 'POST',
+	data: 'idempresa='+empresa+"&id="+id,
+	url: 'Call/Empresa/Empresafuncion/upgrade.php',
+	dataType: 'html',
+	success: function(data) {
+				$('#thetablemiembre').empty();
+				$('#thetablemiembre').append(data).page;
+			},
+		});
+	});
 $(window).load(function()  {
 		stuffed();
 		enviadosmensajes();
