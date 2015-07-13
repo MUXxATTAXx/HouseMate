@@ -307,5 +307,6 @@ $lang['peri-nopriva'] = "Not private";
 $lang['peri-pendienteobj'] = "Pending Appraising";
 $lang['peri-pendiente'] = "Pending Objects";
 $lang['peri-categoria'] = "Category";
+$lang['peri_elim_exito'] = "Appraiser object deleted.";
 
 ?>

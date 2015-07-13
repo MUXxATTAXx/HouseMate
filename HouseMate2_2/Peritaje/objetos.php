@@ -50,7 +50,7 @@
         <form action='mantenimiento_peritaje.php' method='POST'>
         <div class='row'>
             <div class='col col-sm-2'>
-                <h4 id='".$row['id_peri']."'>".$row['id_peri']."</h4>
+                <h4 id='id'>".$row['id_peri']."</h4>
             </div>
             <div class='col col-sm-2'>
               <p class='text-info'>".$categoria."</p>

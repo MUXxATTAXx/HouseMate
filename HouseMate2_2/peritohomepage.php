@@ -23,6 +23,7 @@
                   <div class='tab-pane fade active in' id='home'>
                         <div id="mostrar1">
                         </div>
+                        <div id="mensaje_mostrar"></div>
                   </div>
                   <!--Inmuebles-->
                   <div class='tab-pane fade' id='home2'>

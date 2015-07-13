@@ -307,4 +307,6 @@ $lang['peri-nopriva'] = "No privada";
 $lang['peri-pendienteobj'] = "Peritajes Pendientes";
 $lang['peri-pendiente'] = "Objetos Pendientes";
 $lang['peri-categoria'] = "Categor&iacute;a";
+$lang['peri_elim_exito'] = "Objeto de Peritaje Eliminado.";
+
 ?>
