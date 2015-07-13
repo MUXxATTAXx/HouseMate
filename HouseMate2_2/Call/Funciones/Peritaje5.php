@@ -25,7 +25,7 @@ session_start();
         }
         $local = "SELECT * FROM peritaje WHERE idioma = '$lidioma1' and categoria = '5'";
         $local_con = mysql_query($local);
-        $idlocal = $lidioma.$categoria.(mysql_num_rows($local_con) + 1);
+        $idlocal = $categoria.(mysql_num_rows($local_con) + 1);
 
         $lnombre1 = mb_convert_encoding($vlnombre,'UTF-8');
         $lnombre = "SELECT * FROM peritaje WHERE nombre ='$lnombre1'";

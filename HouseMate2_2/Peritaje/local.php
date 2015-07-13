@@ -24,7 +24,7 @@
         }else{
             $idioma1 = "1";
         }
-            $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='5' and idioma = '$idioma1'");
+            $desc = mysql_query("SELECT * FROM peritaje WHERE categoria ='5'");
             while($row = mysql_fetch_array($desc)){
             echo "<form action='#' method='POST'><tr>
                 <td><center>".$row['id_peri']."</center></td>

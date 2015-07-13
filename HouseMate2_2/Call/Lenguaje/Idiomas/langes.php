@@ -286,9 +286,9 @@ $lang['peri-suelo'] = "Suelo";
 $lang['peri-techo'] = "Techo";
 
 $lang['peri-muni'] = "Municipio";
-$lang['peri-modal1'] = "¿Quiere agregar estos valores?";
-$lang['peri-modal2'] = "Cancelar";
-$lang['peri-modal3'] = "Confirmar";
+$lang['peri-modal1'] = "Modificar";
+$lang['peri-modal2'] = "Aprobar";
+$lang['peri-modal3'] = "Eliminar";
 $lang['peri-vacio'] = "Campos vacios!";
 
 $lang['peri-exito'] = "Objeto de peritaje guardado!";
@@ -306,4 +306,5 @@ $lang['peri-nopriva'] = "No privada";
 //Perito Homepage
 $lang['peri-pendienteobj'] = "Peritajes Pendientes";
 $lang['peri-pendiente'] = "Objetos Pendientes";
+$lang['peri-categoria'] = "Categor&iacute;a";
 ?>

@@ -4,6 +4,7 @@
 Inglés
 -----------------
 */
+ header('Content-Type: text/html; charset=utf-8');
 $lang = array();
 $lang['Titulo'] = "Title";
 $lang['TY'] = "You can't repeat a title";
@@ -285,9 +286,9 @@ $lang['peri-suelo'] = "Ground";
 $lang['peri-techo'] = "Roof";
 $lang['peri-muni'] = "Town";
 
-$lang['peri-modal1'] = "Do you want to add these values?";
-$lang['peri-modal2'] = "Cancel";
-$lang['peri-modal3'] = "Confirm";
+$lang['peri-modal1'] = "Modify";
+$lang['peri-modal2'] = "Approve";
+$lang['peri-modal3'] = "Delete";
 $lang['peri-vacio'] = "Empty fields!";
 
 $lang['peri-exito'] = "Appraiser object saved!";
@@ -305,5 +306,6 @@ $lang['peri-nopriva'] = "Not private";
 //Perito Homepage
 $lang['peri-pendienteobj'] = "Pending Appraising";
 $lang['peri-pendiente'] = "Pending Objects";
+$lang['peri-categoria'] = "Category";
 
 ?>

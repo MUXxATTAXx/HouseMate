@@ -21,24 +21,8 @@
       <div id='myTabContent' class='tab-content'>
           <!--Objetos-->
                   <div class='tab-pane fade active in' id='home'>
-                    <?php
-                      include "conexion.php";
-                      $objeto = "SELECT * from peritaje WHERE estado = '1'";
-                      $objeto_con = mysql_query($objeto);
-                      while($row = mysql_fetch_array($objeto_con)){
-                        echo"
-                        <center>
-                            <br>
-                            <div class='row'>
-                                <div class='col col-sm-2'>
-                                  ".$row['nombre']."
-                                </div>
-                            </div>
-                            <br>
-                        </center>
-                        ";
-                      }
-                    ?>
+                        <div id="mostrar1">
+                        </div>
                   </div>
                   <!--Inmuebles-->
                   <div class='tab-pane fade' id='home2'>
@@ -69,4 +53,5 @@
 </div>
 
 <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+<script type='text/javascript' src='js/aprobarperi.js'></script>
 </body>
