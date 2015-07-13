@@ -1,4 +1,4 @@
-<form>
+
 <div id="delete" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -13,11 +13,11 @@
                 <p><?php echo $lang['Xdelete']; ?> </p>
                 <p><?php echo $lang['Fdelete']; ?> </p>
                 <p class="debug-url"></p>
-            </div> 
+            </div>
       </div>
       <div class="modal-footer">
            <button class='btn btn-default' id="deleteuser" data-dismiss="modal"><?php echo($lang['Salir']);?></button>
-			
+
 			<a type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></a>
       </div>
     </div>
@@ -31,6 +31,3 @@
 <span id="spanme"></span>
 
 <center><div id="mesangemostra"></div></center>
-
-
-

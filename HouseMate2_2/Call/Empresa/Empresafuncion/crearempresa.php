@@ -1,4 +1,4 @@
-<?php 
+<?php
 if(isset($_POST['ingresar'])){
 	if($_POST['nombre'] != "" and $_POST['nit'] != "" and $_POST['telefono'] != "" and $_POST['Departamento3'] != ""
 		and $_POST['Municipio3'] != "nada"){
@@ -28,7 +28,7 @@ if(isset($_POST['ingresar'])){
 		$final_string ="";
 		$maxc = 0;
 		$man = "";
-		for ($i=1;$i <=3;$i++) 
+		for ($i=1;$i <=3;$i++)
 		{
 				switch ($i)
 				{
@@ -59,7 +59,7 @@ if(isset($_POST['ingresar'])){
 					{
 						$maxc++;
 						$man .= "c";
-						
+
 					}
 					else
 					{
@@ -69,7 +69,7 @@ if(isset($_POST['ingresar'])){
 				}
 		}
 		$array = array();
-	
+
 		for ($n = 0; $n < $maxc; $n++)
 		{
 			array_push($array,substr($man,$n,1));
@@ -96,7 +96,7 @@ if(isset($_POST['ingresar'])){
 				switch($array[$n])
 				{
 				case "a":
-				$final_string .= "'".$a."',"; 
+				$final_string .= "'".$a."',";
 				break;
 				case "b":
 				$final_string .= "'".$b."',";
@@ -112,10 +112,10 @@ if(isset($_POST['ingresar'])){
 		}
 		if($c != "" || $c != null)
 		{
-			
+
 			if($imagevar != null)
 			{
-						
+
 				$image_size = getimagesize($varing);
 				if ($image_size == False )
 				{

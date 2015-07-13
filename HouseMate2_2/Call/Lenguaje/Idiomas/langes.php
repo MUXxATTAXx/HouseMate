@@ -7,6 +7,7 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['ME'] = "Modifciar empresa";
 $lang['Titulo'] = "Título";
 $lang['TY'] = "No puedes repetir un título";
 $lang['Request'] = "Solicitar";

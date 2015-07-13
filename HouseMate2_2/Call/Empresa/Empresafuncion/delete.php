@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	$id = $_POST['id'];
 	if(isset($id)){
@@ -13,6 +13,7 @@
 		{
 			$query = mysql_query("Update usuario Set Empresa = '' Where IdUsuario = '$idt'");
 			echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";
+			echo "<script>window.location = '../../../Empresa.php </script>";
 		}
 		else{
 		}

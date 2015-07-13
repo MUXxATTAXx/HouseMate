@@ -6,12 +6,21 @@
 	include("../../Lenguaje/lenguaje.php");
     mysql_query("SET NAMES 'utf8'");
 	$idempresa = $_POST['empresa'];
-    $consulta = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario, usuario.Rating,usuario.idusuario  FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa
-	= empresa.IdEmpresa WHERE usuario.idusuario <> empresa.dueño AND Empresa.IdEmpresa ='$idempresa'";
-	$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario, usuario.idusuario FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa
-	= empresa.IdEmpresa WHERE usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='$idempresa'";
-    $master = mysql_query($queroempresario);
+	$whoiam = $_SESSION['id'];
+  $consulta = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario,
+	usuario.Rating,usuario.idusuario  FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario inner join
+	empresa on usuario.Empresa = empresa.IdEmpresa WHERE usuario.idusuario <> empresa.dueño AND Empresa.IdEmpresa ='$idempresa'
+	and usuario.TempId <> '$whoiam'";
+	//
+	$queroempresario = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, usuario.Rating,tbusuario.usuario, usuario.idusuario
+	FROM usuario inner join tbusuario on  usuario.TempId = tbusuario.IdUsuario inner join empresa on usuario.Empresa = empresa.IdEmpresa WHERE usuario.idusuario = empresa.dueño AND Empresa.IdEmpresa ='$idempresa'";
+	//
+	$me = "SELECT tbusuario.nombre, tbusuario.apellido, tbusuario.correo, tbusuario.usuario, usuario.Rating, usuario.idusuario
+	 FROM usuario inner join tbusuario on usuario.TempId = tbusuario.IdUsuario  WHERE  usuario.Empresa ='$idempresa' and
+	 usuario.TempId = '$whoiam'";
+  $master = mysql_query($queroempresario);
 	$cs=mysql_query($consulta);
+	$melater = mysql_query($me);
 	echo "<table class='table table-striped table-hover' data-toggle='table' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 	<thead>
             <tr>
@@ -23,6 +32,26 @@
 				<th>".$lang['Eliminar']."</th>
             </tr>
     </thead>";
+	while($row=mysql_fetch_array($melater))
+	{
+		echo "<tr class='warning'>
+		<td>
+		<p>".$row['nombre']." ".$row['apellido']."</p>
+		</td>
+		<td>
+			<center><p>".$row['Rating']."</p></center>
+		</td>
+		<td>
+			<center><a class='glyphicon glyphicon-user btn btn-sm btn-primary' href='perfil.php?usuario=".$row['usuario']."'></a></center>
+		</td>
+		<td>
+			<center><a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
+		</td>
+		<td>
+			<center><a class='glyphicon glyphicon-remove btn btn-sm btn-danger deleteuser' onclick='deletemiembro(this.id)'  data-toggle='modal' data-target='#delete' id='d".$row['idusuario']."'></a></center>
+		</td>
+		</tr>";
+	}
 	while($row=mysql_fetch_array($master))
 	{
 		echo "<tr class='info'>
@@ -39,7 +68,7 @@
 			<center><a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-remove btn btn-sm btn-danger deleteuser' onclick='deletemiembro(this.id)'  data-toggle='modal' data-target='#delete' id='d".$row['idusuario']."'></a></center>
+
 		</td>
 		</tr>";
 	}
