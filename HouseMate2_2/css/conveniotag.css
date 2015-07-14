@@ -37,7 +37,6 @@ background-color: #F1F1F1;
 
 .bg_blur
 {
-    background-image:url('http://data2.whicdn.com/images/139218968/large.jpg');
     height: 300px;
     background-size: cover;
 }
@@ -107,7 +106,7 @@ background-color: #F1F1F1;
     background-color: #3D5DE0;
     border-color: #adadad;
     width: 33.3%;
-   
+
 }
 
 
@@ -115,9 +114,9 @@ background-color: #F1F1F1;
     .header{
         text-align : center;
     }
-    
-    
-    
+
+
+
     .nav{
         margin-top : 30px;
     }

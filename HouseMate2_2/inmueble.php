@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+<?php
+require ("Call/Lenguaje/lenguaje.php");
+?>
 <html>
 <head>
-
-	<title>Login</title>
+	<title><?=$lang['Inmueble']?></title>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<meta charset = "utf-8" />
    <?php
     include "Call/spr.php";
@@ -62,10 +64,10 @@ else
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <?php
-                        if($row['VentaRenta'] == 1){
+                        if($row['VentaRenta'] == "1"){
                             echo $lang['Venta'];
                         }
-                        elseif($row['VentaRenta' == 2]){
+                        else{
                             echo $lang['Renta'];
                         }
                     ?>
@@ -112,7 +114,10 @@ else
             </div>
             </center>
             <div class="panel-footer">
-                <a href='convenio.php' name="mejorar" class="btn btn-primary" ><?php echo $lang['Offer'] ?></a>
+								<?php
+										$inmueble = $row['IdInmueble'];
+								?>
+                <a href='convenio.php?IdInmueble=<?=$inmueble;?>' name="mejorar" class="btn btn-primary" ><?php echo $lang['Offer'] ?></a>
             <?php
                 }
             ?>

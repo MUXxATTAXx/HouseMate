@@ -68,6 +68,7 @@ $lang['Inicio'] = 'Inicio';
 $lang['Perfil'] = 'Perfil';
 $lang['Mantenimiento'] = 'Mantenimientos';
 $lang['Clientes'] = 'Clientes';
+$lang['Inmueble'] = 'Inmueble';
 $lang['Inmuebles'] = 'Inmuebles';
 $lang['Empresa'] = "Empresa";
 $lang['EmpresaN'] = "Nueva empresa";
