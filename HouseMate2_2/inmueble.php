@@ -8,9 +8,9 @@
    <?php
     include "Call/spr.php";
 ?>
-	
+
 </head>
-<body> 
+<body>
 <?php
 session_start();
 if(isset($_SESSION['tip']))
@@ -45,11 +45,11 @@ else
         include "conexion.php";
         if(isset($_GET['IdInmueble']))
         {
-           
+
         }else{
              echo
-            "<script> 
-			location.replace('index.php'); 
+            "<script>
+			location.replace('index.php');
 			</script>";
         }
         $casa = $_GET['IdInmueble'];
@@ -73,7 +73,7 @@ else
             </div>
             <div class="panel-body">
             <center>
-                  <div class="row">   
+                  <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                         <img src="<?php echo $row['Imagen'] ?>" height="100%" width="100%">
                     <table class="table table-user-information">
@@ -100,7 +100,7 @@ else
                             }
                             ?>
                         </td>
-                      </tr>              
+                      </tr>
                       <tr>
                         <td><hr><?php echo $lang['precio'];?></td>
                         <td><hr>$<?php echo $row['Precio'] ?></td>
@@ -108,11 +108,11 @@ else
                     </tbody>
                   </table>
                     </div>
-                  </div>     
+                  </div>
             </div>
             </center>
             <div class="panel-footer">
-                <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer'] ?>">
+                <a href='convenio.php' name="mejorar" class="btn btn-primary" ><?php echo $lang['Offer'] ?></a>
             <?php
                 }
             ?>
@@ -122,7 +122,7 @@ else
         </div>
     </div>
 </div>
-      
+
 
 </body>
 

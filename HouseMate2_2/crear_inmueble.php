@@ -14,12 +14,12 @@
 	<meta charset = "utf-8" />
 
 </head>
-<body> 
+<body>
 <div class="row row-centered">
 	<div class="col-sm-7 col-centered">
 		<?php include_once("conexion.php"); ?>
 		<ul id="what" class="nav nav-tabs">
-				
+
 			<li id="me" class='active negro'><a href='#home' data-toggle='tab'><?php echo($lang['Crear-Inmuebles']);?></a></li>
 			<li id="me2" class="negro"><a href='#crear' data-toggle='tab'><?php echo($lang['Ver-Inmuebles']);?></a></li>
 		</ul>
@@ -64,29 +64,29 @@ $(window).load(function()  {
 	});
 function loadDataAdmin(){
 	idre = $("#modificarid").val();
-$.ajax({   
+$.ajax({
 type: 'POST',
-data: "idre="+idre,   
-url: 'Call/Funciones/mostrar_inmueble.php',   
+data: "idre="+idre,
+url: 'Call/Funciones/mostrar_inmueble.php',
 success: function(msg) {
 	$("#thetablejq").html(msg);
 },
 });
 };
 function loadDataModificar(){
-$.ajax({   
+$.ajax({
 type: 'POST',
-data: "idre="+idre,     
-url: 'Call/Funciones/modificardefault.php',   
+data: "idre="+idre,
+url: 'Call/Funciones/modificardefault.php',
 success: function(msg) {
 	$("#thetablemodif").html(msg);
 },
 });
 };
-  $("#deleteuser").click(function(){          
+  $("#deleteuser").click(function(){
 		  //obtenemos el texto introducido
 		  idre = $("#spanme").html();
-		  //ingresar usuario						  
+		  //ingresar usuario
 		  $.ajax({
 				type: "POST",
 				url: "Call/Funciones/borrar_inmueble.php",
@@ -94,17 +94,17 @@ success: function(msg) {
 				dataType: "html",
 				beforeSend: function(){
 					  //imagen de carga
-					 
+
 				},
 				error: function(){
 					  alert("error petición ajax");
 				},
-				success: function(data){                                                    
+				success: function(data){
 						$("#realornot").empty();
 						$("#realornot").append(data);
-						loadDataAdmin();							 
+						loadDataAdmin();
 						}
-				  });															   
+				  });
 			});
 </script>
 

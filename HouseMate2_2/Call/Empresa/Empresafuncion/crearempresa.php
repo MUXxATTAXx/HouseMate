@@ -18,10 +18,10 @@ if(isset($_POST['ingresar'])){
 		$queryempresa = "INSERT INTO EMPRESA VALUES ";
 		$queryamount = mysql_query("Select * FROM EMPRESA");
 		$digito = mysql_num_rows($queryamount);
-		$who = $_SESSION['id'];
-		$querywhoim = mysql_query("Select usuario.idusuario From tbusuario inner join usuario on tbusuario.idusuario = usuario.idusuario where usuario.TempId = '$who'");
-		if($me = mysql_fetch_array($querywhoim)){
-			$who = $me['idusuario'];
+		$whol = $_SESSION['id'];
+		$querywhoim = mysql_query("Select usuario.idusuario From usuario where usuario.TempId = '$whol'");
+		while($me = mysql_fetch_array($querywhoim)){
+			$who  = $me['idusuario'];
 		}
 		$restoquery = "('$digito','$who','$variable3','$variable1','$lugar','$variable2',";
 		$endofquery = "'0')";
@@ -121,7 +121,7 @@ if(isset($_POST['ingresar'])){
 				{
 					echo "<span class='label label-warning'>".$lang['error']."</span>";
 				}
-				elseif(file_exists("img/Houses/$imagevar"))
+				elseif(file_exists("img/Empresas/$imagevar"))
 				{
 					echo "<span class='label label-warning'>".$lang['error3']."</span>";
 				}
@@ -130,7 +130,7 @@ if(isset($_POST['ingresar'])){
 					copy($varing,"img/Empresas/$imagevar");
 					$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 					$ingresa = mysql_query($queryfinal);
-					$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
+					$variables = "UPDATE usuario SET Empresa='$digito' WHERE idusuario = '$who'";
 					$ingresa2 = mysql_query($variables);
 				}
 			}
@@ -139,10 +139,8 @@ if(isset($_POST['ingresar'])){
 		{
 			$queryfinal = $queryempresa.$restoquery.$final_string.$endofquery;
 			$ingresa = mysql_query($queryfinal);
-			echo $queryfinal;
-			$variables = "UPDATE usuario SET Empresa='$digito' WHERE TempId = '$who'";
+			$variables = "UPDATE usuario SET Empresa='$digito' WHERE idusuario = '$who'";
 			$ingresa2 = mysql_query($variables);
-
 		}
 	}
 	else{

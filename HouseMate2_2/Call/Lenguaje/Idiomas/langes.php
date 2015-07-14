@@ -7,6 +7,16 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['esta1'] = "Nuevo";
+$lang['esta2'] = "Bueno";
+$lang['esta3'] = "Medio";
+$lang['esta4'] = "Regular";
+$lang['esta5'] = "Reparaciones sencillas";
+$lang['esta6'] = "Reparaciones medias";
+$lang['esta7'] = "Reparaciones importantes";
+$lang['esta8'] = "Reparaciones cruciales";
+$lang['esta9'] = "En desecho";
+$lang['esta10'] = "Inrreversible";
 $lang['ME'] = "Modifciar empresa";
 $lang['Titulo'] = "Título";
 $lang['TY'] = "No puedes repetir un título";

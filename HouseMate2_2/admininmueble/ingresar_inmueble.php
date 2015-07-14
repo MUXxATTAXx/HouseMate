@@ -1,41 +1,54 @@
 <form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
- <div class='form-Dl' align="center">
+ <div class='Form-D1 negro' align="center">
 <!--  falta -->
+  <div class="panel panel-info">
 <div id="cosas">
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
 			</div>
 <div class="row row-centered">
-	<div class="form-group col-xs-3">
-		<label><?php echo $lang['vr'] ?>:</label>
-			<select id="selector" name="selector" class='form-control whitecover'>
-				<option value="0"><?php echo $lang['Nada'] ?></option>
-				<option value="1"><?php echo $lang['Venta']?></option>
-				<option value="2"><?php echo $lang['Renta']?></option>
-			</select>
-	</div>
-	<div class="form-group col-xs-3">
-			  <label><?php echo $lang['tm'] ?>:</label>
-			</span><select id="selector2" name="selector2" class='form-control whitecover'>
-				<option value="0"><?php echo $lang['Nada'] ?></option>
-				<option value="1"><?php echo $lang['Rustico']?></option>
-				<option value="2"><?php echo $lang['Urbana']?></option>
-			</select>
-	</div>
-	<div class="form-group col-xs-6">
-		<label><?php echo $lang['Precio']?>:</label>
-		<div class="input-group">
-			 <span class="input-group-addon">$</span>
-			 <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="precio" name="precio" placeholder='<?php echo $lang['Precio']?>'>
-			 <span class="input-group-addon">.00</span>
-		  </div>
-	</div>
-</div>
-<div class="row row-centered">
-	<center>
-		<?php include ("Call/Funciones/select.php") ?>
-	</center>
-</div>
+  <div class="form-group col-sm-6">
+    <div class="row">
+    	<div class="form-group col-sm-6">
+    		<label><?php echo $lang['vr'] ?>:</label>
+    			<select id="selector" name="selector" class='form-control whitecover'>
+    				<option value="0"><?php echo $lang['Nada'] ?></option>
+    				<option value="1"><?php echo $lang['Venta']?></option>
+    				<option value="2"><?php echo $lang['Renta']?></option>
+    			</select>
+    	</div>
+
+  	<div class="form-group col-sm-6">
+  			  <label><?php echo $lang['tm'] ?>:</label>
+  			</span><select id="selector2" name="selector2" class='form-control whitecover'>
+  				<option value="0"><?php echo $lang['Nada'] ?></option>
+  				<option value="1"><?php echo $lang['Rustico']?></option>
+  				<option value="2"><?php echo $lang['Urbana']?></option>
+  			</select>
+  	</div>
+    <div class="row row-centered">
+    	<center>
+    		<?php include ("Call/Funciones/select.php") ?>
+    	</center>
+    </div>
+      <div class="row row-centered">
+        <div class="form-group col-sm-6">
+        <label><?php echo $lang['Precio']?>:</label>
+      		<div class="input-group">
+      			 <span class="input-group-addon">$</span>
+      			 <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="precio" name="precio" placeholder='<?php echo $lang['Precio']?>'>
+      			 <span class="input-group-addon">.00</span>
+      		</div>
+        </div>
+        <div class="form-group col-sm-6">
+          <select
+        <?php ?>
+        </div>
+      </div>
+    </div>
+  </div>
+	<!-- la mitad	-->
+
 <div class="row row-centered">
     <center>
 		<div class="form-group col-xs-6">
@@ -242,6 +255,8 @@
 	</div>
 	<span id="resultadoinsert"  class="row">
 		</span>
+  </div>
+</div>
 </div>
 <script>
 	function readURL(input) {

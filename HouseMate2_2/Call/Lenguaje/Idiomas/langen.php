@@ -6,6 +6,16 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['esta1'] = "New";
+$lang['esta2'] = "Good";
+$lang['esta3'] = "Medium";
+$lang['esta4'] = "Regular";
+$lang['esta5'] = "Small repairs";
+$lang['esta6'] = "Medium repairs";
+$lang['esta7'] = "Important repairs";
+$lang['esta8'] = "Crucial repairs";
+$lang['esta9'] = "Waste";
+$lang['esta10'] = "Unsuable";
 $lang['ME'] = "Modify enterprise";
 $lang['Titulo'] = "Title";
 $lang['TY'] = "You can't repeat a title";
