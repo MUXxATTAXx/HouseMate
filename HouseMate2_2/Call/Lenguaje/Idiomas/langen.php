@@ -6,8 +6,10 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['ValuoR'] = "Real estate valuing";
 $lang['Valuo'] = "Valuing";
 $lang['ages'] = "Age";
+$lang['agev'] = "Vida util";
 $lang['age'] = "Real estate age";
 $lang['NoTa'] = "Normal tags";
 $lang['NoTa2'] = "Extra tags";

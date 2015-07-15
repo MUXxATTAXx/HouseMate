@@ -3,7 +3,7 @@
 				border-bottom-width: 0px;'>
 <ul  class='nav nav-tabs forcenavchange'>
 
-<?php 
+<?php
 echo"
 <li id='cambio3' class='active'><a href='#enviados' data-toggle='tab'>".$lang['recibidos']."</a></li>
 <li id='cambio2'><a href='#inbox' data-toggle='tab'>".$lang['enviados']."</a></li>
@@ -17,7 +17,7 @@ echo"
 		<div id='trytochange' class='tab-content'>
 			<div class='tab-pane fade active in' id='enviados'>
 				<div id="sentmessages"></div>
-				<div id="recibidosaj"></div>
+				<div id="recdj"></div>
 			</div>
 			<div class='tab-pane fade' id='inbox'>
 				<div id="checkmensajes"></div>
@@ -45,8 +45,8 @@ echo"
 						<div class='col-sm-3'>
 							<a onclick="posibles()" class="btn btn-primary extraright"><?php echo($lang['mejorar2'])?></a>
 						</div>
-						
-					</div>	
+
+					</div>
 				</div>
 				<div class='row'>
 				<?php include "Call/Empresa/Empresafuncion/sugeridos.php" ?>
@@ -57,5 +57,3 @@ echo"
 		<?php include "Call/Empresa/Empresajs/posiblescand.php" ?>
 		<div id="otherthigs"></div>
 </div>
-
- 

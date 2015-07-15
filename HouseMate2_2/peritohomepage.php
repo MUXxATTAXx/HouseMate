@@ -31,7 +31,8 @@
                       <th>Rating</th>
                       <th><?=$lang['Perfil']?></th>
                       <th><?=$lang['mensaje']?></th>
-                      <th><?= $lang['UpgradeM'] ?></th>
+                      <th><?= $lang['Valuo'] ?></th>
+                      <th><?= $lang['Empresa'] ?></th>
                       </tr>
                       </thead>
                         <?php
@@ -44,19 +45,28 @@
                             <td>
                               <?= $row['nombre'].$row['apellido'] ?>
                             </td>
+
                             <td>
                               <?= $row['Rating'] ?>
                             </td>
 
                             <td>
-                              <a href="enviar_msj.php?destin=<?=$row['usuario'] ?>" class="glyphicon glyphicon-envelope btn btn-sm btn-primary"></a>
+                              <center><a href="enviar_msj.php?destin=<?=$row['usuario'] ?>" class="glyphicon glyphicon-envelope btn btn-sm btn-primary"></a></center>
                             </td>
                             <td>
-                              <a href="perfil.php?usuario=<?=$row['usuario'] ?>" class="glyphicon glyphicon-user btn btn-sm btn-primary"></a>
+                              <center><a href="perfil.php?usuario=<?=$row['usuario'] ?>" class="glyphicon glyphicon-user btn btn-sm btn-primary"></a></center>
                             </td>
                             <td>
-                              <a href="valuo.php?super=<?=$row['usuario'] ?>" class="glyphicon glyphicon-usd btn btn-sm btn-success"></a>
+                              <?php $valordi = $row['Empresa'];
+                              if($valordi != "")
+                              {
+                                echo "<a href='valuo.php?super=".$row['IdInmueble']."' class='glyphicon glyphicon-usd btn btn-sm btn-success'></a>";
+                              } ?>
                             </td>
+                            <td>
+                              <a href="Empresawatch.php?empresa=<?=$row['Empresa'] ?>" class="glyphicon glyphicon-briefcase btn btn-sm btn-info"></a>
+                            </td>
+
                           </tr>
                           <?php
                         }

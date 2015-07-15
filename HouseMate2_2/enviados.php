@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>	
+<head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
@@ -35,7 +35,7 @@ $usuario = $_SESSION['id'];
 $consulta = "SELECT * FROM mensaje WHERE remitente = '$usuario' AND estado2 = '1' OR estado2 = '2' ORDER BY fecha DESC";
 $cs = mysql_query($consulta);
 
-    
+
 ?>
 <form action="enviados.php" method="POST">
 <table data-toggle='table'  id='here' class='table table-striped table-hover negro'  data-search='true' data-show-refresh='true' data-query-params='queryParams'>
@@ -49,13 +49,13 @@ $cs = mysql_query($consulta);
             </tr>
           </thead>
             <tbody>
-            
+
             <?php
                 while($row = mysql_fetch_array($cs)){
-                    
+
                     $desc = mysql_query("SELECT usuario FROM tbusuario WHERE idUsuario ='".$row['destinatario']."'");
                     while($row2 = mysql_fetch_array($desc)){
-                    
+
                     echo "<tr>
                         <td><input name= 'check[]' value='".$row['idmensaje']."' type='checkbox''></td>
                         <td>".$row['fecha']."</td>
@@ -71,7 +71,7 @@ $cs = mysql_query($consulta);
 		<br>
     <center><button name="eliminar" type="submit" class="btn btn-danger boxleft" value="2"><?php echo $lang['msj-elim'];?></button></center>
 <?php
-if(isset($_POST['eliminar']) and isset($_POST['check'])){  
+if(isset($_POST['eliminar']) and isset($_POST['check'])){
     $check = $_POST['check'];
     for($i=0;$i<count($check);$i++){
         $del_id = $check[$i];

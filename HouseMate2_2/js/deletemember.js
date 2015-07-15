@@ -27,8 +27,8 @@ $("#accept").click(function(){
 				checkmensajes();
 				enviadosmensajes();
 				stuffed();
-				$("#recibidosaj").empty();
-				$("#recibidosaj").append(data).page;
+				$("#recdj").empty();
+				$("#recdj").append(data).page;
 		}
 	});
 });
@@ -49,8 +49,8 @@ $("#denegar").click(function(){
 			},
 			success: function(data){
 				enviadosmensajes();
-				$("#recibidosaj").empty();
-				$("#recibidosaj").append(data).page;
+				$("#recdj").empty();
+				$("#recdj").append(data).page;
 		}
 	});
 
