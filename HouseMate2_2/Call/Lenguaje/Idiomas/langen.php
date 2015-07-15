@@ -6,6 +6,9 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Valuo'] = "Valuing";
+$lang['ages'] = "Age";
+$lang['age'] = "Real estate age";
 $lang['NoTa'] = "Normal tags";
 $lang['NoTa2'] = "Extra tags";
 $lang['are'] = "Area";

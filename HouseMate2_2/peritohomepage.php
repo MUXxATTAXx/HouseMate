@@ -14,33 +14,55 @@
 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
     <div class="panel panel-info">
             <ul  class="nav nav-tabs">
-                <li id='me' class='active negro'><a href='#home' data-toggle='tab'><?=$lang['peri-pendiente'];?></a></li>
+
                 <li id='me2' class='negro'><a href='#home2' data-toggle='tab'><?=$lang['peri-pendienteobj'];?></a></li>
             </ul>
   <div class="panel-body">
       <div id='myTabContent' class='tab-content'>
           <!--Objetos-->
-                  <div class='tab-pane fade active in' id='home'>
-                        <div id="mostrar1">
-                        </div>
-                        <div id="mensaje_mostrar"></div>
-                  </div>
+
                   <!--Inmuebles-->
-                  <div class='tab-pane fade' id='home2'>
+                  <div class='tab-pane fade active in' id='home2'>
                       <center>
-                              <br>
-                              <div class="row">
-                                  <div class="col col-sm-2">
-                                      <p>Holi 2</p>
-                                  </div>
-                              </div>
-                              <br>
+                        <table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
+                        <thead>
+                          <tr>
+                      <th><?=$lang['Nombre']?></th>
+                      <th>Rating</th>
+                      <th><?=$lang['Perfil']?></th>
+                      <th><?=$lang['mensaje']?></th>
+                      <th><?= $lang['UpgradeM'] ?></th>
+                      </tr>
+                      </thead>
+                        <?php
+
+                        $query = mysql_query("Select * from inmueble inner join usuario on inmueble.Dueno = usuario.idusuario
+                       inner join tbusuario on usuario.TempId = tbusuario.idusuario  where aprovado = '0'");
+                        while ($row = mysql_fetch_array($query))
+                        { ?>
+                          <tr>
+                            <td>
+                              <?= $row['nombre'].$row['apellido'] ?>
+                            </td>
+                            <td>
+                              <?= $row['Rating'] ?>
+                            </td>
+
+                            <td>
+                              <a href="enviar_msj.php?destin=<?=$row['usuario'] ?>" class="glyphicon glyphicon-envelope btn btn-sm btn-primary"></a>
+                            </td>
+                            <td>
+                              <a href="perfil.php?usuario=<?=$row['usuario'] ?>" class="glyphicon glyphicon-user btn btn-sm btn-primary"></a>
+                            </td>
+                            <td>
+                              <a href="valuo.php?super=<?=$row['usuario'] ?>" class="glyphicon glyphicon-usd btn btn-sm btn-success"></a>
+                            </td>
+                          </tr>
+                          <?php
+                        }
+                        ?>
                           <div class="panel-footer">
-                              <div class="row row-centered">
-                                  <div class="col col-sm-8">
-                                      <p>Holi 2</p>
-                                  </div>
-                              </div>
+
                           </div>
                       </center>
                     </div>
@@ -55,4 +77,6 @@
 
 <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 <script type='text/javascript' src='js/aprobarperi.js'></script>
+
+<script src='js/bootstrap-table.js' type='text/javascript'></script>
 </body>

@@ -12,27 +12,25 @@ function delegard(id)
 $("#accept").click(function(){
 		id = $("#teste").text();
 		empresa = $("#value").text();
-		//ingresar usuario
 		$.ajax({
 			type: "POST",
 			url: "Call/Empresa/Empresafuncion/acepta.php",
 			data: "id="+id+"&empresa="+empresa,
 			dataType: "html",
 			beforeSend: function(){
-				//imagen de carga
 				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
 			success: function(data){
+				checkmensajes();
 				enviadosmensajes();
 				stuffed();
 				$("#recibidosaj").empty();
 				$("#recibidosaj").append(data).page;
 		}
 	});
-
 });
 $("#denegar").click(function(){
 		id = $("#teste").text();
@@ -97,6 +95,7 @@ $("#mensajedelete").click(function(){
 			},
 			success: function(data){
 				checkmensajes();
+				enviadosmensajes();
 				$("#resultcos").empty();
 				$("#resultcos").append(data).page;
 		}
@@ -318,4 +317,28 @@ $(window).load(function()  {
 		checkmensajes();
 		anuncios();
 		anuncios2();
+	});
+	$("#borrar2").click(function(){
+			id = $("#teste").text();
+			//ingresar usuario
+			$.ajax({
+				type: "POST",
+				url: "Call/Empresa/Empresafuncion/delete2.php",
+				data: "id="+id,
+				dataType: "html",
+				beforeSend: function(){
+					//imagen de carga
+					$("#resultborrar").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+				},
+				error: function(){
+					alert("error petición ajax");
+				},
+				success: function(data){
+					stuffed();
+					$("#resultborrar").empty();
+					$("#resultborrar").append(data).page;
+					location.reload();
+			}
+		});
+
 	});

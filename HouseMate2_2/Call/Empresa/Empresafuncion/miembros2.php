@@ -48,7 +48,7 @@
 			<center><a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href='enviar_msj.php?destin=".$row['usuario']."'></a></center>
 		</td>
 		<td>
-			<center><a class='glyphicon glyphicon-remove btn btn-sm btn-danger deleteuser' onclick='deletemiembro(this.id)'  data-toggle='modal' data-target='#delete' id='d".$row['idusuario']."'></a></center>
+			<center><a class='glyphicon glyphicon-remove btn btn-sm btn-danger deleteuser' onclick='deletemiembro(this.id)'  data-toggle='modal' data-target='#delete2' id='d".$row['idusuario']."'></a></center>
 		</td>
 		</tr>";
 	}

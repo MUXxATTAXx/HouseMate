@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	$id = $_POST['id'];
 	if(isset($id)){
@@ -11,6 +11,7 @@
 		$idt =  str_replace("n","",$id);
 		$query = mysql_query("Delete From empresasolicitud Where idsolicitud = '$idt'");
 		$query2 = mysql_query("Update empresasolicitud Set idsolicitud = idsolicitud - 1 Where idsolicitud > '$idt'");
-		echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";		
+		echo "<label class='label label-success'>".$lang['modificar-exito']."</label>";
+		
 	}
 ?>

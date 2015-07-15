@@ -2,7 +2,7 @@
 $maxc = 0;
 $man="";
 if (isset($_POST['fancy-checkbox-success-custom-icons1']))
-	$check1 = 1; 	
+	$check1 = 1;
 else
 	$check1 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons2']))
@@ -10,50 +10,51 @@ if (isset($_POST['fancy-checkbox-success-custom-icons2']))
 else
 	$check2 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons3']))
-	$check3 = 1; 	
+	$check3 = 1;
 else
 	$check3 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons4']))
-	$check4 = 1; 	
+	$check4 = 1;
 else
 	$check4 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons5']))
-	$check5 = 1; 	
+	$check5 = 1;
 else
 	$check5 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons6']))
-	$check6 = 1; 	
+	$check6 = 1;
 else
 	$check6 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons7']))
-	$check7 = 1; 	
+	$check7 = 1;
 else
 	$check7 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons8']))
-	$check8 = 1; 	
+	$check8 = 1;
 else
 	$check8 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons9']))
-	$check9 = 1; 	
+	$check9 = 1;
 else
 	$check9 = 0;
 if (isset($_POST['fancy-checkbox-success-custom-icons10']))
-	$check10 = 1; 	
-else
+	$check10 = 1;
+else{
 	$check10 = 0;
-
+}
 
 $a = $_POST['a1'];
 $b = $_POST['a2'];
 $c = $_POST['a3'];
 $d = $_POST['a4'];
 $e = $_POST['a5'];
-$f = $_POST['a6'];
-$g = $_POST['a7'];
-$h = $_POST['a8'];
-$i = $_POST['a9'];
-$j = $_POST['a10'];
-for ($i=1;$i <=10;$i++) 
+$f = $_POST['areax1'];
+$g = $_POST['areax2'];
+$h = $_POST['areax3'];
+$i = $_POST['areax4'];
+$j = $_POST['areax5'];
+
+for ($i=1;$i <=10;$i++)
 {
 		switch ($i)
 		{
@@ -208,7 +209,7 @@ if ($maxc != 0)
 			$final_string .= "('$action','$maximun','10','$j');";
 			break;
 			}
-			
+
 		}
 		else
 		{
@@ -250,12 +251,13 @@ if ($maxc != 0)
 	$theend = "";
 	$theend .= $Start;
 	$theend .= $final_string;
+	copy($varing,"img/Houses/$imagevar");
 	$ingresa2 = mysql_query($thehouse);
-	$ingresa3 = mysql_query($theend);	
+	$ingresa3 = mysql_query($theend);
 	echo "<span class='label label-success'>" .$lang['ingresado']."</span>";
-	}	
+	}
 else
-{	
+{
 	echo "<span class='label label-warning'>" .$lang['error2']."</span>";
 }
 

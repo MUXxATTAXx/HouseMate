@@ -7,6 +7,9 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Valuo'] = "Valuar";
+$lang['ages'] = "Age";
+$lang['age'] = "Edad de construcción";
 $lang['NoTa'] = "Tags normales";
 $lang['NoTa2'] = "Tags extras";
 $lang['are'] = "Área";

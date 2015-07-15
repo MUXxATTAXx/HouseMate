@@ -1,7 +1,9 @@
+
 <form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
- <div class='Form-D1 negro' align="center">
+ <div class='Form-D1' align="center">
 <!--  falta -->
-  <div class="panel panel-info">
+<div class="">
+<div class="col-sm-10 col-centered negro">
 <div id="cosas">
  <div class="center">
 					<h3><?php echo $lang['Informacion'] ?>:</h3>
@@ -42,14 +44,20 @@
         </div>
         <div class="form-group col-sm-6">
           <label><?= $lang['Status'] ?>:</label>
-          <select class="form-control whitecover" name="estado">
-          <option<?= $lang['Nada']?>></option>;
+          <select class="form-control whitecover" name="estado" id="estado">
+          <option value="0"><?= $lang['Nada']?></option>
         <?php for($i = 1 ; $i < 10; $i++)
         {
           $var = 'esta'.$i;
           echo "<option value='$i'>".$lang[$var]."</option>";
         } ?>
       </select>
+        </div>
+      </div>
+      <div class="row row-centered">
+        <div class="form-group col-sm-6">
+          <label><?php echo $lang['age']?>:</label>
+          <input onkeypress="return num(event)" type="number" class='form-control' min="0" max="75" step="1" id="age" name="age" placeholder='<?php echo $lang['ages']?>'>
         </div>
       </div>
     </div>
@@ -75,17 +83,17 @@
     <div class="form-group col-sm-6 ">
     <label><?php echo $lang['area1']?>:</label>
       <div class="input-group">
-         <span class="input-group-addon label-info">m</span>
+         <span class="input-group-addon label-info"></span>
          <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="AT" name="AT" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">^2</span>
+         <span class="input-group-addon label-info">m^2</span>
       </div>
     </div>
     <div class="form-group col-sm-6">
     <label><?php echo $lang['area2']?>:</label>
       <div class="input-group">
-         <span class="input-group-addon label-info">m</span>
+         <span class="input-group-addon label-info"></span>
          <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="AR" name="AR" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">^2</span>
+         <span class="input-group-addon label-info">m^2</span>
       </div>
     </div>
   </div>
@@ -104,7 +112,7 @@
 		</ul>
 	</div>
 </div>
-<div id='taber' class='tab-content'>
+<div id='taber' class='tab-content negro2'>
 <div id="yui" class='tab-pane fade active in'>
 		<div class="row">
       <div class="col-sm-12">
@@ -203,9 +211,9 @@
 <div class="col-sm-4 hidme" id="chage1">
   <label><?php echo $lang['are']?>:</label>
     <div class="input-group" id="chage1">
-       <span class="input-group-addon label-info">m</span>
+       <span class="input-group-addon label-info"></span>
        <input value="0" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="areax1" name="areax1" placeholder='<?php echo $lang['are']?>'>
-       <span class="input-group-addon label-info">^2</span>
+       <span class="input-group-addon label-info">m^2</span>
     </div>
 </div>
 
@@ -227,13 +235,11 @@
   <div class="col-sm-4 hidme" id="chage2">
     <label><?php echo $lang['are']?>:</label>
       <div class="input-group" id="chage2">
-         <span class="input-group-addon label-info">m</span>
+         <span class="input-group-addon label-info"></span>
          <input value="0" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="areax2" name="areax2" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">^2</span>
+         <span class="input-group-addon label-info">m^2</span>
       </div>
   </div>
-</div>
-<div class="row">
   <div class="col-sm-2">
     <div class="[ form-group ]">
       <label><?php echo $lang['Jardines'] ?>:</label>
@@ -251,9 +257,9 @@
   <div class="col-sm-4 hidme" id="chage3">
     <label><?php echo $lang['are']?>:</label>
       <div class="input-group" >
-         <span class="input-group-addon label-info">m</span>
+         <span class="input-group-addon label-info"></span>
          <input value="0" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="areax3" name="areax3" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">^2</span>
+         <span class="input-group-addon label-info">m^2</span>
       </div>
   </div>
   <div class="col-sm-2">
@@ -273,12 +279,12 @@
   <div class="col-sm-4 hidme" id="chage4">
     <label><?php echo $lang['are']?>:</label>
       <div class="input-group" >
-         <span class="input-group-addon label-info">m</span>
+         <span class="input-group-addon label-info"></span>
          <input value="0" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="areax4" name="areax4" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">^2</span>
+         <span class="input-group-addon label-info">m^2</span>
       </div>
   </div>
-</div>
+
   <div class="col-sm-2">
       <div class="[ form-group ]">
         <label><?php echo $lang['Sotanos'] ?>:</label>
@@ -296,19 +302,20 @@
     <div class="col-sm-4 hidme" id="chage5">
       <label><?php echo $lang['are']?>:</label>
         <div class="input-group" >
-           <span class="input-group-addon label-info">m</span>
+           <span class="input-group-addon label-info"></span>
            <input value="0" onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="areax5" name="areax5" placeholder='<?php echo $lang['are']?>'>
-           <span class="input-group-addon label-info">^2</span>
+           <span class="input-group-addon label-info">m^2</span>
         </div>
+    </div>
     </div>
     </div>
   </div>
 </div>
 <br>
 <hr>
-<div class="row">
-    <div class="col-sm-12">
-    <label><?php echo $lang['Imagen']  ?>:</label>
+<div class="row row-centered">
+    <div class="col-sm-12 col-centered">
+    <center><label><?php echo $lang['Imagen']  ?>:</label></center>
     <div  class="onlyme">
     <label>
     <?php echo $lang['selectp']; ?>
@@ -316,12 +323,12 @@
     </label>
     </div>
     <br>
-    <img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
+    <center><img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" /></center>
     <br>
 
     <br>
   </div>
-</div>
+
 <br>
 
 <span id="resultadoinsert"  class="row">
@@ -337,7 +344,6 @@
     }
     else
     {
-
     }
   ?>
   </div>
@@ -345,6 +351,7 @@
   <br>
   <span id="resultadoinsert"  class="row">
     </span>
+  </div>
   </div>
   </div>
   <script>
@@ -382,13 +389,16 @@
   dirrecion = $("#dirrecion").val();
   descrip = $("#descrip").val();
   imagenfea = $("#imagenfea").val();
+  at = $("#AT").val();
+  ar = $("#AR").val();
+  estado = $("#estado").val();
+  age = $("#age").val();
   $.ajax({
     url: "Call/Funciones/ingresarin.php",
     data:  "selector="+selector+"&selector2="+selector2+"&precio="+precio+"&Departamento="+Departamento+"&Municipio="+Municipio+
-    "&dirrecion="+dirrecion+"&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea,
+    "&dirrecion="+dirrecion+"&descrip="+descrip+"&imagenfea="+imagenfea+"&AT="+at+"&AR="+ar+"&estado="+estado+"&age="+age,
     dataType : "html",
     type : "post",
-
     success: function(data){
       $("#error1").remove();
       $(".ingresarin").remove();
@@ -412,5 +422,6 @@
     }
   }
   </script>
+</div>
 </div>
 </form>
