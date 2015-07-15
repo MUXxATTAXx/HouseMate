@@ -6,7 +6,6 @@
 <meta charset=utf-8 />
     ");
     session_start();
-	if(isset($_SESSION['tip'])){
 if(isset($_SESSION['tip'])){
 		switch($_SESSION['tip'])
 		{
@@ -14,15 +13,18 @@ if(isset($_SESSION['tip'])){
 			include("Header/barranav2.php");
 			break;
 			case 2:
+      
 			break;
 			case 3:
+
 			break;
 			case 4:
-			include("Header/barranav6.php");
+
 			break;
 		}
 	}
-}
+
+
 ?>
 <head>
 

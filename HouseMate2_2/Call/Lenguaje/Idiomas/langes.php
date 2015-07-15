@@ -7,9 +7,16 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['VU'] = "Valor unitario";
+$lang['FE'] = "Factor estado de conservación";
+$lang['FD'] = "Factor depreciación";
+$lang['VNR'] = "Valor neto de reposición";
+$lang['VNR'] = "Valor neto de reposición nuevo";
+$lang['FFU'] = "Factor funcionalidad";
+$lang['VUR'] = "Vida útil remanente";
 $lang['ValuoR'] = "Valuar inmueble";
 $lang['Valuo'] = "Valuar";
-$lang['agev'] = "Useful life";
+$lang['agev'] = "Vida util";
 $lang['ages'] = "Age";
 $lang['age'] = "Edad de construcción";
 $lang['NoTa'] = "Tags normales";
