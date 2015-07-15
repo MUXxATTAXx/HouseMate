@@ -51,12 +51,7 @@
 
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
-<script src="js/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
-<script src="js/validaciones.js" type="text/javascript" ></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" ></script>
+
 <script type="text/javascript">
 $(window).load(function()  {
 		loadDataAdmin();
@@ -108,14 +103,15 @@ success: function(msg) {
 			});
 </script>
 
-<script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
- <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.chained.js?v=1.0.0" type="text/javascript" charset="utf-8"></script>
+<script src="js/validaciones.js" type="text/javascript" ></script>
+<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" ></script>
 <script>
   $(function() {
 $("#Municipio").chained("#Departamento");
+$("#Municipio2").chained("#Departamento2");
 });
 </script>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-<script src="js/upload.js" type="text/javascript"></script>
 </body>
 </html>

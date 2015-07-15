@@ -134,3 +134,7 @@ text-transform: lowercase;
 {
 	display:none;
 }
+.hidmesee
+{
+	visibility: :none;
+}

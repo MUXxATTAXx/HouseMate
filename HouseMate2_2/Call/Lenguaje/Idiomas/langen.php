@@ -6,6 +6,11 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['NoTa'] = "Normal tags";
+$lang['NoTa2'] = "Extra tags";
+$lang['are'] = "Area";
+$lang['area1'] = "Lot area";
+$lang['area2'] = "Residencial area";
 $lang['esta1'] = "New";
 $lang['esta2'] = "Good";
 $lang['esta3'] = "Medium";

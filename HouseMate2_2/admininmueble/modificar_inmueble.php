@@ -237,13 +237,7 @@
 		</div>
 		<br>
 </div>
-
-
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js" ></script>
-<script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 <script>  $(function() {
-$("#Municipio2").chained("#Departamento2");
 });
 	function readURL2(input) {
         if (input.files && input.files[0]) {

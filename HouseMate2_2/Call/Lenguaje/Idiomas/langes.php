@@ -7,6 +7,11 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['NoTa'] = "Tags normales";
+$lang['NoTa2'] = "Tags extras";
+$lang['are'] = "Área";
+$lang['area1'] = "Área de terreno";
+$lang['area2'] = "Área Residencial";
 $lang['esta1'] = "Nuevo";
 $lang['esta2'] = "Bueno";
 $lang['esta3'] = "Medio";
