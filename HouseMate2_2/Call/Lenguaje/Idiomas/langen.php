@@ -7,13 +7,14 @@ Inglés
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
 $lang['Constr'] ="Building";
+$lang['lot'] = "Lot";
 $lang['VU'] = "Unitary value";
 $lang['FE'] = "Conservation factor";
 $lang['FD'] = "Depreciation factor";
 $lang['FFU'] = "Functional factor";
 $lang['VUR'] = "Reamining useful life";
-$lang['VNR'] = "Net value of replacement";
-$lang['VNR'] = "Net value of new replacement";
+$lang['VNR'] = "Net value";
+$lang['VNR'] = "New net value";
 $lang['ValuoR'] = "Real estate valuing";
 $lang['Valuo'] = "Valuing";
 $lang['ages'] = "Age";

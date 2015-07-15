@@ -70,20 +70,23 @@ while ($row = mysql_fetch_array($query))
   </div>
 
 </div>
-</div>
+
 <br>
-<div class="row row-centered">
-  <div class="col-sm-12">
-  <div>
-    <div class="col-sm-3">
-      <div class="row">
-        <label><?= $lang['FE'] ?></label>
-      </div>
-    <div class="row btn btn-sm label-primary" >
-      <label id="estadoA" onload="load()"><?php $estado = $row['estado'];
+<table class='table table-striped table-hover'>
+<thead>
+  <tr>
+<th><?= $lang['FE'] ?></th>
+<th><?=$lang['FD']?></th>
+<th><?=$lang['FFU'] ?></th>
+<th><?= $lang['VNR'] ?></th>
+<th><?= $lang['VUR']  ?></th>
+</tr>
+</thead>
+<tr>
+  <td class="row btn btn-sm " >
+    <label id="estadoA" onload="load()2">  <?php $estado = $row['estado'];
       switch($estado)
-      {
-        case 1:
+      { case 1:
         echo "1";
         break;
         case 2:
@@ -112,50 +115,82 @@ while ($row = mysql_fetch_array($query))
         break;
         case 10:
         echo "0";
-        break;
-      } ?></label>
-      </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="row">
-          <label><?= $lang['FD'] ?></label>
-        </div>
-      <div class="row btn btn-sm label-primary">
-        <label id="estadoB"></label>
-        </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="row">
-        <label><?= $lang['FFU'] ?></label>
-        </div>
-      <div class="row btn btn-sm label-primary">
-        <label id="estadoC">
-        1</label>
-        </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="row">
-          <label><?= $lang['VNR'] ?></label>
-        </div>
-      <div class="row btn btn-sm label-primary">
-        <label id="estadoD">0</label>
-        </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="row">
-        <label><?= $lang['VUR'] ?></label>
-        </div>
-      <div class="row btn btn-sm label-primary">
-        <label id="estadoE"></label>
-        </div>
-    </div>
-
-  </div>
-  </div>
-
-</div>
+        break; } ?></label></td>
+          <td class="row btn btn-sm"><label id="estadoB"></label></td>
+    <td class="row btn btn-sm "><label id="estadoC">1</label></td>
+    <td class="row btn btn-sm "><label id="estadoD">0</label></td>
+    <td class="row btn btn-sm "><label id="estadoE"></label></td>
+</tr>
+</table>
 <br>
 <div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div class="col-sm-6">
+        <label><?= $lang['VU'] ?> (<?= $lang['lot'] ?>):</label>
+          <div class="input-group">
+          <span class="input-group-addon label-info">$</span>
+        <input class="form-control" type="number" id="unitaryadded" onchange="valuechange()">
+          <span class="input-group-addon label-info">.00</span>
+        </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+<br>
+<table class='table table-striped table-hover' >
+<thead>
+  <tr>
+<th><?= $lang['FE'] ?></th>
+<th><?=$lang['FD']?></th>
+<th><?=$lang['FFU'] ?></th>
+<th><?= $lang['VNR'] ?></th>
+<th><?= $lang['VUR']  ?></th>
+</tr>
+</thead>
+<tr>
+  <td class="row btn btn-sm" >
+    <label id="estadoA" onload="load()2">  <?php $estado = $row['estado'];
+      switch($estado)
+      { case 1:
+        echo "1";
+        break;
+        case 2:
+        echo "0.9968";
+        break;
+        case 3:
+        echo "0.9748";
+        break;
+        case 4:
+        echo "0.9191";
+        break;
+        case 5:
+        echo "0.819";
+        break;
+        case 6:
+        echo "0.668";
+        break;
+        case 7:
+        echo "0.474";
+        break;
+        case 8:
+        echo "0.248";
+        break;
+        case 9:
+        echo "0.135";
+        break;
+        case 10:
+        echo "0";
+        break; } ?></label></td>
+          <td class="row btn btn-sm"><label id="estadoB"></label></td>
+    <td class="row btn btn-sm"><label id="estadoC">1</label></td>
+    <td class="row btn btn-sm "><label id="estadoD">0</label></td>
+    <td class="row btn btn-sm"><label id="estadoE"></label></td>
+</tr>
+</table>
+<div class="panel-footer">
+  <div class="row">
     <div class="row">
       <div class="col-sm-3">
       <label><?= $lang['VNR'] ?>:</label>
@@ -166,12 +201,15 @@ while ($row = mysql_fetch_array($query))
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
     <input class="form-control" type="number" id="esda">
-      <span class="input-group-addon label-info">.00</span>
+      <span class="input-group-addon label-info"></span>
     </div>
     </div>
+  </div>
 </div>
-<?php
-?>
+
+    </div>
+  </div>
+</div>
 <br>
 <?php
 }
@@ -237,9 +275,7 @@ function valuechange()
 }
 </script>
       <!-- Fin de row -->
-    </div>
-<!-- Fin de contenedor -->
-</div>
+
 
 <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 <script type='text/javascript' src='js/aprobarperi.js'></script>

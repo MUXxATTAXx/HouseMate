@@ -8,11 +8,12 @@ Español
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
 $lang['Constr'] ="Constucción";
+$lang['lot'] = "Lote";
 $lang['VU'] = "Valor unitario";
-$lang['FE'] = "Factor estado de conservación";
+$lang['FE'] = "Estado de conservación";
 $lang['FD'] = "Factor depreciación";
-$lang['VNR'] = "Valor neto de reposición";
-$lang['VNR'] = "Valor neto de reposición nuevo";
+$lang['VNR'] = "Valor neto";
+$lang['VNR'] = "Valor neto nuevo";
 $lang['FFU'] = "Factor funcionalidad";
 $lang['VUR'] = "Vida útil remanente";
 $lang['ValuoR'] = "Valuar inmueble";
