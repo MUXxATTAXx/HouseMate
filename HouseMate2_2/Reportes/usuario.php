@@ -1,8 +1,8 @@
 <?php
 require('fpdf/fpdf.php');
+
 class PDF extends FPDF
 {
-    // Page header
     function Header()
     {
         // Logo
@@ -28,39 +28,18 @@ class PDF extends FPDF
         $this->Cell(30,10,'House Mate','C');
         $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
+
 }
-
-
 
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
 
-//$header = array('Country', 'Capital', 'Area (sq km)', 'Pop. (thousands)');
-//$data = '1';
+'1';
 $pdf->SetFont('Times','',12);
-
-
-//$pdf->BasicTable($header,$data);
-//Print table
-
-$pdf->Cell(20,10,'Title',1,1,'C');
-$pdf->Cell(20,10,'Title',1,1,'C');
-$pdf->Cell(20,10,'Title',1,1,'C');
-$pdf->Cell(20,10,'Title',1,1,'C');
-$pdf->Cell(10,40,'Hello World!');
-$pdf->Cell(10,50,'Holi1');
-$pdf->Ln();
-//Insert many lines
-$pdf->Cell(40,30,'Holi2',0,1);
-
-//Fin de PDF
-//$pdf->Output();
-
 
 function usuario(){
 
-class PDF extends FPDF{}
 
 $pdf=new FPDF('l','mm','a4');
 $pdf-> SetMargins(20,18);
@@ -69,10 +48,12 @@ $pdf-> AddPage();
 include("../conexion.php");
 $sql=("SELECT * FROM tbusuario WHERE idUsuario > 0");  
 
-//$pdf->Image("logo.png",10,6,30);
-$pdf->Cell(30,10,'Reportes','C');
+$pdf->Image("logo.png",10,6,30);
 $pdf->SetFont("Arial", "b", 12);
 $pdf->Cell(0, 19, utf8_decode(""), 0, 1,'C');
+$pdf->Cell(20,10,'Reportes',1,1,'C');
+
+
 
 $x =$pdf->GetX();
 $y =$pdf->GetY();
@@ -118,4 +99,5 @@ $pdf->Output();
 }
 
 usuario();
+
 ?>

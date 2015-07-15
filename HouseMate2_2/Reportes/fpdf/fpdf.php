@@ -166,7 +166,7 @@ function FPDF($orientation='P', $unit='mm', $size='A4')
 	// Set default PDF version number
 	$this->PDFVersion = '1.3';
 }
-
+    
 function SetMargins($left, $top, $right=null)
 {
 	// Set left, top and right margins
