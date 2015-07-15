@@ -7,6 +7,7 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Constr'] ="Constucción";
 $lang['VU'] = "Valor unitario";
 $lang['FE'] = "Factor estado de conservación";
 $lang['FD'] = "Factor depreciación";

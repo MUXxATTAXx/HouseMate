@@ -6,6 +6,7 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['Constr'] ="Building";
 $lang['VU'] = "Unitary value";
 $lang['FE'] = "Conservation factor";
 $lang['FD'] = "Depreciation factor";

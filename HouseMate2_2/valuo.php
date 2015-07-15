@@ -57,13 +57,11 @@ while ($row = mysql_fetch_array($query))
 
   <div class="col-sm-6">
     <div class="row">
-      <div class="col-sm-5">
-      <label><?= $lang['VU'] ?>:</label>
-    </div>
-    <div class="col-sm-5">
+      <div class="col-sm-6">
+      <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
         <div class="input-group">
         <span class="input-group-addon label-info">$</span>
-      <input class="form-control" type="number" id="unitaryadded">
+      <input class="form-control" type="number" id="unitaryadded" onchange="valuechange()">
         <span class="input-group-addon label-info">.00</span>
       </div>
       </div>
@@ -132,7 +130,7 @@ while ($row = mysql_fetch_array($query))
         </div>
       <div class="row btn btn-sm label-primary">
         <label id="estadoC">
-        0.9</label>
+        1</label>
         </div>
     </div>
     <div class="col-sm-3">
@@ -167,7 +165,7 @@ while ($row = mysql_fetch_array($query))
     <div class="col-sm-3">
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
-    <input class="form-control" type="number" >
+    <input class="form-control" type="number" id="esda">
       <span class="input-group-addon label-info">.00</span>
     </div>
     </div>
@@ -190,10 +188,52 @@ function load()
   var x = 1-multiplicacion;
   document.getElementById('estadoB').textContent = x;
   // Parte dos de la lógica
-  var cinco = parseInt($("#unitaryadded").text());
-  var total = 75*(x/cinco);
-  document.getElementById('estadoC').textContent = total;
+  var cinco = document.getElementById('unitaryadded').value;
+  var depresiacion = cinco*x*1;
+  document.getElementById('estadoD').textContent =  Math.round(depresiacion * 1000) / 1000;
+  document.getElementById('esda').value =  Math.round(depresiacion * 10000) / 10000;
+  var total = 0;
+  if(cinco == "")
+  {
+    cinco = 0;
+    total = 0;
+  }
+  else {
+    total = x/depresiacion;
+    total = total * dos;
+    total = dos - total;
+    total =  Math.round(total)
+  }
+  document.getElementById('estadoE').textContent = dos-total;
 
+}
+function valuechange()
+{
+  var uno =  parseInt($("#age").text());
+  var dos = parseInt($("#aget").text());
+  var tres =  document.getElementById('estadoA').textContent;
+  var division = uno/dos;
+  var multiplicacion = division * tres;
+  var x = 1-multiplicacion;
+  document.getElementById('estadoB').textContent = x;
+  // Parte dos de la lógica
+  var cinco = document.getElementById('unitaryadded').value;
+  var depresiacion = cinco*x*1;
+  document.getElementById('estadoD').textContent =  Math.round(depresiacion * 1000) / 1000;
+  document.getElementById('esda').value =  Math.round(depresiacion * 100) / 100;
+  var total = 0;
+  if(cinco == "")
+  {
+    cinco = 0;
+    total = 0;
+  }
+  else {
+    total = x/depresiacion;
+    total = total * dos;
+    total = dos - total;
+    total =  Math.round(total)
+  }
+  document.getElementById('estadoE').textContent = total;
 }
 </script>
       <!-- Fin de row -->
