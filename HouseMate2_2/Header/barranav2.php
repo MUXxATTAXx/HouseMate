@@ -45,15 +45,10 @@ require ("Call/Loged/seguridad.php");
             <ul class="dropdown-menu" role="menu">
               <li><a href="reportes/usuario.php" target="_blank"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo($lang['repo-usu']);?></a></li>
               <li><a href="reportes/inmueble.php" target="_blank"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <?php echo($lang['repo-in']);?></a></li>
+              <li><a href="reportes/inmueble.php" target="_blank"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <?php echo($lang['repo-emp']);?></a></li>
       			</ul>
         </li>
         <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="call/reportes/vista/<?php echo $lang['report-usu'];?>.php"><?php echo($lang['Usuarios']);?></a></li>
-      			</ul>
-        </li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
