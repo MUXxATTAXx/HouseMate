@@ -61,7 +61,8 @@ $sql=("SELECT * FROM tbusuario WHERE idUsuario > 0 ORDER BY idUsuario");
 
 
 $pdf->Image("logo.png",10,6,30);
-
+    
+date_default_timezone_set("America/El_Salvador");
 $t = (date("Y-m-d h:i a",time()));
 $pdf->SetFont("Arial", "", 12);
 $pdf->Cell(60,10,$lang['repo-creacion'].': '.$t,0,0,'C');
@@ -76,17 +77,17 @@ $pdf-> SetTextColor(255, 255, 255);
 $pdf->SetFillColor(55,90,157,'#375a7f');
 $pdf->SetFont("Helvetica", "b", 11);
 $pdf->SetXY($x - 10, $y);
-$pdf->MultiCell(20, 10, utf8_decode($lang['Usuario']), 1, 1, 'L',0);
+$pdf->MultiCell(20, $lang['repo-cinco'], utf8_decode($lang['Usuario']), 1, 1, 'C',0);
 $pdf->SetXY($x + 10, $y);
-$pdf->MultiCell(50, 10, utf8_decode($lang['Nombre']), 1, 1, 'L',0);
+$pdf->MultiCell(50,$lang['repo-cinco'] , utf8_decode($lang['Nombre']), 1, 1, 'C',0);
 $pdf->SetXY($x + 40, $y);
-$pdf->MultiCell(50, 10, utf8_decode($lang['Apellido']), 1, 1, 'L',0);
+$pdf->MultiCell(50, $lang['repo-cinco'], utf8_decode($lang['Apellido']), 1, 1, 'C',0);
 $pdf->SetXY($x + 70, $y);
-$pdf->MultiCell(25, 5, utf8_decode($lang['Fecha-Nac']), 1, 1, 'L',0);
+$pdf->MultiCell(25, $lang['repo-diez'], utf8_decode($lang['Fecha-Nac']), 1, 1, 'C',0);
 $pdf->SetXY($x + 95, $y);
-$pdf->MultiCell(40, 10, utf8_decode($lang['Correo']), 1, 1, 'L',0);
+$pdf->MultiCell(40, $lang['repo-cinco'], utf8_decode($lang['Correo']), 1, 1, 'C',0);
 $pdf->SetXY($x + 135, $y);
-$pdf->MultiCell(30, 5, utf8_decode($lang['Tipous']), 1, 1, 'L',0);
+$pdf->MultiCell(30, $lang['repo-diez'], utf8_decode($lang['Tipous']), 1, 1, 'C',0);
 
 $rec=mysql_query($sql);
 while($row = mysql_fetch_array($rec)){
