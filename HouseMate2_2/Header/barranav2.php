@@ -40,6 +40,13 @@ require ("Call/Loged/seguridad.php");
       				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
       			</ul>
         </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-print" aria-hidden="true"></span><span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="reportes/usuario.php" target="_blank"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo($lang['repo-usu']);?></a></li>
+              <li><a href="reportes/inmueble.php" target="_blank"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <?php echo($lang['repo-in']);?></a></li>
+      			</ul>
+        </li>
         <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-book" aria-hidden="true"></span><span class="caret"></span></a>
@@ -91,7 +98,7 @@ require ("Call/Loged/seguridad.php");
 					{$idusuario = $row['idusuario'];}
                     $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
                     while($row = mysql_fetch_array($consulta6)){
-                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario 
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
 						where empresa.idempresa =".$row['idempresa']);
                             while($row2 = mysql_fetch_array($consulta7)){
                                 echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row2['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";

@@ -345,5 +345,7 @@ $lang['peri_elim_exito'] = "Appraiser object deleted.";
 $lang['repo-page'] = "Page";
 $lang['creado-por'] = "Created by: ";
 $lang['repo-usu'] = "User Reports";
-
+$lang['repo-creacion'] = "Report Date";
+$lang['repo-in'] = "Real Estate Report";
+$lang['repo-emp'] = "Enterprise Reports";
 ?>

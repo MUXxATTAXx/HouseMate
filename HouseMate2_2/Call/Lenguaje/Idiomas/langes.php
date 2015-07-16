@@ -230,7 +230,7 @@ $lang['crede'] = "Credenciales";
 $lang['direc'] = "Direcci&oacute;n";
 $lang['dui'] = "DUI";
 $lang['nit'] = "NIT";
-$lang['tel'] = "Tel&eacute;fono";
+$lang['tel'] = "Teléfono";
 $lang['tel2'] = "Tel&eacute;fono 2 (Opcional)";
 $lang['tel22'] = "Tel&eacute;fono 2";
 $lang['mejorar2'] = "Enviar";
@@ -345,6 +345,14 @@ $lang['peri_elim_exito'] = "Objeto de Peritaje Eliminado.";
 $lang['repo-page'] = "Página";
 $lang['creado-por'] = "Creado por: ";
 $lang['repo-usu'] = "Reporte Usuarios";
-
-
+$lang['repo-creacion'] = "Fecha de Reporte";
+$lang['repo-in'] = "Reporte Inmueble";
+$lang['repo-emp'] = "Reporte de Empresas";
+//Dueño
+//Direccion
+//VentaRenta
+//UrbanaRural
+//Precio
+//AreaTerreno
+//AreaConstruccion
 ?>

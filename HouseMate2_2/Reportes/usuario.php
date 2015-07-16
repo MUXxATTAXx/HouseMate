@@ -1,6 +1,5 @@
 <?php
 require('fpdf/fpdf.php');
-include("../conexion.php");
 
 class PDF extends FPDF
 {
@@ -26,7 +25,9 @@ class PDF extends FPDF
           $consulta1 = "SELECT * from tbusuario WHERE idUsuario ='$ID'";
           $consulta1_con = mysql_query($consulta1);
           while($row2 = mysql_fetch_array($consulta1_con)){
-             $this->Cell(30,10,$lang['creado-por'].' '.$row2['usuario']);
+              $this->Ln(5);
+              $this->Cell(40);
+              $this->Cell(30,10,$lang['creado-por'].' '.$row2['usuario']);
           }
 
         // Line break
@@ -56,22 +57,15 @@ $pdf-> AliasNbPages();
 $pdf-> AddPage();
 
 
-$sql=("SELECT * FROM tbusuario WHERE idUsuario > 0");
+$sql=("SELECT * FROM tbusuario WHERE idUsuario > 0 ORDER BY idUsuario");
 
 
 $pdf->Image("logo.png",10,6,30);
-$pdf->Cell(0, 19, utf8_decode(""), 0, 1,'C');
 
 $t = (date("Y-m-d h:i a",time()));
 $pdf->SetFont("Arial", "", 12);
-$pdf->Cell(60,10,$lang['repo-usu'].'('.$t.')',0,0,'C');
+$pdf->Cell(60,10,$lang['repo-creacion'].': '.$t,0,0,'C');
 $pdf->Ln();
-
-$lang['Tipous'] = 'Tipo de usuario';
-$lang['Admin'] = "Administrador";
-$lang['Cliente'] = 'Cliente';
-$lang['Perito'] = 'Perito';
-$lang['Agente'] = "Agente";
 
 
 // switch(){}
@@ -82,25 +76,37 @@ $pdf-> SetTextColor(255, 255, 255);
 $pdf->SetFillColor(55,90,157,'#375a7f');
 $pdf->SetFont("Helvetica", "b", 11);
 $pdf->SetXY($x - 10, $y);
-$pdf->MultiCell(20, 5, utf8_decode($lang['Usuario']), 0, 1, 'L',0);
+$pdf->MultiCell(20, 10, utf8_decode($lang['Usuario']), 1, 1, 'L',0);
 $pdf->SetXY($x + 10, $y);
-$pdf->MultiCell(50, 5, utf8_decode($lang['Nombre']), 0, 1, 'L',0);
+$pdf->MultiCell(50, 10, utf8_decode($lang['Nombre']), 1, 1, 'L',0);
 $pdf->SetXY($x + 40, $y);
-$pdf->MultiCell(50, 5, utf8_decode($lang['Apellido']), 0, 1, 'L',0);
+$pdf->MultiCell(50, 10, utf8_decode($lang['Apellido']), 1, 1, 'L',0);
 $pdf->SetXY($x + 70, $y);
-$pdf->MultiCell(25, 5, utf8_decode($lang['Fecha-Nac']), 0, 1, 'L',0);
+$pdf->MultiCell(25, 5, utf8_decode($lang['Fecha-Nac']), 1, 1, 'L',0);
 $pdf->SetXY($x + 95, $y);
-$pdf->MultiCell(40, 5, utf8_decode($lang['Correo']), 0, 1, 'L',0);
-$pdf->SetXY($x + 125, $y);
-$pdf->Ln();
+$pdf->MultiCell(40, 10, utf8_decode($lang['Correo']), 1, 1, 'L',0);
+$pdf->SetXY($x + 135, $y);
+$pdf->MultiCell(30, 5, utf8_decode($lang['Tipous']), 1, 1, 'L',0);
+
 $rec=mysql_query($sql);
 while($row = mysql_fetch_array($rec)){
+
     $usuario=$row['usuario'];
     $nombre=$row['1'];
     $alto=$row['2'];
     $ancho=$row['3'];
     $precio=$row['4'];
-
+switch ($row['tipo']) {
+  case '1':
+    $tipousu = $lang['Admin'];
+    break;
+  case '3':
+    $tipousu = $lang['Perito'];
+    break;
+  case '4':
+    $tipousu = $lang['Cliente'];
+    break;
+}
     $x=$pdf->GetX();
     $y=$pdf->GetY();
     $pdf->SetTextColor(0, 0, 0);
@@ -116,8 +122,9 @@ while($row = mysql_fetch_array($rec)){
     $pdf->MultiCell(25, 5, utf8_decode("$ancho"), 1, 1, 'L',0);
     $pdf->SetXY($x + 95, $y);
     $pdf->MultiCell(40, 5, utf8_decode("$precio"), 1, 1, 'L',0);
-    $pdf->SetXY($x + 125, $y);
-    $pdf->Ln();
+    $pdf->SetXY($x + 135, $y);
+    $pdf->MultiCell(30, 5, utf8_decode("$tipousu"), 1, 1, 'L',0);
+
 }
 $pdf->Output();
 }
