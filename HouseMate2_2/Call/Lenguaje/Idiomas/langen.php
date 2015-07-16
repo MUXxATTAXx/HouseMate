@@ -6,8 +6,10 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
-$lang['Constr'] ="Building";
+$lang['denor'] = "Result :";
+$lang['Constr'] ="Residential:";
 $lang['lot'] = "Lot";
+$lang['builvalue'] = "Residential value";
 $lang['lotvalue'] = "Lot value";
 $lang['VU'] = "Unitary value";
 $lang['FE'] = "Conservation factor";

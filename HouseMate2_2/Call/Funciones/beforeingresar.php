@@ -53,7 +53,7 @@ if(isset($_POST['insertarforreal']) == "Insertreal")
 					$fecha = date("Y-m-d");
 					$maximun = $digito;
 					$thehouse = "INSERT INTO inmueble VALUES ('$maximun','$Rtemid','$objecto1','$objecto2','$objecto3','$objecto4','$objecto5','img/Houses/$imagevar'
-						,'$objecto6','$objecto7','$objecto8','$objecto9','0', '$objecto10','0','0','0')";
+						,'$objecto6','$objecto7','$objecto8','$objecto9','0', '$objecto10','0','0','0','0')";
 					//Mira si existe la imagen
 
 					require "Call/Funciones/inmuebleden.php";
