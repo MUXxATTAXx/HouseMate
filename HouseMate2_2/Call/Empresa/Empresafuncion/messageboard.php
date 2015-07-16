@@ -6,7 +6,8 @@
 <?php 
 echo"
 <li id='cambio3' class='active'><a href='#casa' data-toggle='tab'>".$lang['Start']."</a></li>
-<li id='cambio2'><a href='#mensajenuevo' data-toggle='tab'>".$lang['Anuncios']."</a></li>";
+<li id='cambio2'><a href='#mensajenuevo' data-toggle='tab'>".$lang['Anuncios']."</a></li>
+<li id='cambio3'><a href='Reportes/empresa_anuncios.php?IdEmpresa=".$row['IdEmpresa']."' target='_blank'><span class='glyphicon glyphicon-print' aria-hidden='true'></span></a></li>";
  ?>
 </ul>
 </div>
@@ -15,6 +16,7 @@ echo"
 			<div class='tab-pane fade active in' id='casa'>
 				<div id="recibidosaj"></div>
 				<div id="resulthomed"></div>
+                
 			</div>
 			<div class='tab-pane fade' id='mensajenuevo'>
 				<br>

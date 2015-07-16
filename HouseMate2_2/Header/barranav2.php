@@ -45,7 +45,7 @@ require ("Call/Loged/seguridad.php");
             <ul class="dropdown-menu" role="menu">
               <li><a href="reportes/usuario.php" target="_blank"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo($lang['repo-usu']);?></a></li>
               <li><a href="reportes/inmueble.php" target="_blank"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <?php echo($lang['repo-in']);?></a></li>
-              <li><a href="reportes/inmueble.php" target="_blank"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <?php echo($lang['repo-emp']);?></a></li>
+              <li><a href="reportes/empresa.php" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <?php echo($lang['repo-emp']);?></a></li>
       			</ul>
         </li>
         <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>

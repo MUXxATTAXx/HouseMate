@@ -348,4 +348,11 @@ $lang['repo-usu'] = "User Reports";
 $lang['repo-creacion'] = "Report Date";
 $lang['repo-in'] = "Real Estate Report";
 $lang['repo-emp'] = "Enterprise Reports";
+$lang['repo-cinco'] =5;
+$lang['repo-cinco2'] =10;
+$lang['repo-diez'] =5;
+$lang['repo-diez2'] =10;
+$lang['repo-anuncio'] = "Announcements Reports ";
+$lang['lista-miembros'] = "Members List";
+
 ?>

@@ -59,7 +59,8 @@ $pdf-> AddPage();
 $sql=("SELECT * FROM empresa ORDER BY dueño");
 
 $pdf->Image("logo.png",10,6,30);
-
+    
+date_default_timezone_set("America/El_Salvador");
 $t = (date("Y-m-d h:i a",time()));
 $pdf->SetFont("Arial", "", 12);
 $pdf->Cell(60,10,$lang['repo-creacion'].': '.$t,0,0,'C');
@@ -77,12 +78,12 @@ $pdf->MultiCell(20, 5, utf8_decode($lang['Duen']), 1, 1, 'L',0);
 $pdf->SetXY($x + 35, $y);
 $pdf->MultiCell(25, 5, utf8_decode($lang['tel']), 1, 1, 'L',0);
 $pdf->SetXY($x + 60, $y);
-$pdf->MultiCell(60, 5, utf8_decode($lang['Direccion']), 1, 1, 'L',0);
-$pdf->SetXY($x + 120, $y);
-$pdf->MultiCell(25, 5, utf8_decode($lang['nit']), 1, 1, 'L',0);
-$pdf->SetXY($x + 145, $y);
+$pdf->MultiCell(80, 5, utf8_decode($lang['Direccion']), 1, 1, 'L',0);
+$pdf->SetXY($x + 140, $y);
+$pdf->MultiCell(35, 5, utf8_decode($lang['nit']), 1, 1, 'L',0);
+$pdf->SetXY($x + 175, $y);
 $pdf->MultiCell(40, 5, utf8_decode($lang['Descripcion']), 1, 1, 'L',0);
-$pdf->SetXY($x + 185, $y);
+$pdf->SetXY($x + 215, $y);
 $pdf->MultiCell(15, 5, 'Rating', 1, 1, 'L',0);
 
 $rec=mysql_query($sql);
@@ -118,12 +119,12 @@ while($row = mysql_fetch_array($rec)){
       $pdf->SetXY($x + 35, $y);
       $pdf->MultiCell(25, 5, utf8_decode("$Telefono"), 1, 1, 'L',0);
       $pdf->SetXY($x + 60, $y);
-      $pdf->MultiCell(60, 5, utf8_decode("$Direccion"), 1, 1, 'L',0);
-      $pdf->SetXY($x + 120, $y);
-      $pdf->MultiCell(25, 5, utf8_decode("$NIT"), 1, 1, 'L',0);
-      $pdf->SetXY($x + 145, $y);
+      $pdf->MultiCell(80, 5, utf8_decode("$Direccion"), 1, 1, 'L',0);
+      $pdf->SetXY($x + 140, $y);
+      $pdf->MultiCell(35, 5, utf8_decode("$NIT"), 1, 1, 'L',0);
+      $pdf->SetXY($x + 175, $y);
       $pdf->MultiCell(40, 5, utf8_decode("$Descripcion"), 1, 1, 'L',0);
-      $pdf->SetXY($x + 185, $y);
+      $pdf->SetXY($x + 215, $y);
       $pdf->MultiCell(15, 5, utf8_decode("$Rating"), 1, 1, 'L',0);
   }
 }

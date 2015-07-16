@@ -348,11 +348,12 @@ $lang['repo-usu'] = "Reporte Usuarios";
 $lang['repo-creacion'] = "Fecha de Reporte";
 $lang['repo-in'] = "Reporte Inmueble";
 $lang['repo-emp'] = "Reporte de Empresas";
-//Dueño
-//Direccion
-//VentaRenta
-//UrbanaRural
-//Precio
-//AreaTerreno
-//AreaConstruccion
+$lang['repo-cinco'] =10;
+$lang['repo-cinco2'] =10;
+$lang['repo-diez'] =5;
+$lang['repo-diez2'] =5;
+$lang['repo-anuncio'] = "Reporte de Anuncios";
+$lang['lista-miembros'] = "Listado de Miembros";
+
+
 ?>
