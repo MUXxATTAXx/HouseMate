@@ -20,28 +20,14 @@ else
 if (isset($_POST['fancy-checkbox-success-custom-icons5']))
 	$check5 = 1;
 else
+{
 	$check5 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons6']))
-	$check6 = 1;
-else
-	$check6 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons7']))
-	$check7 = 1;
-else
-	$check7 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons8']))
-	$check8 = 1;
-else
-	$check8 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons9']))
-	$check9 = 1;
-else
-	$check9 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons10']))
-	$check10 = 1;
-else{
-	$check10 = 0;
 }
+	$check6 = 1;
+	$check7 = 1;
+	$check8 = 1;
+	$check9 = 1;
+	$check10 = 1;
 
 $a = $_POST['a1'];
 $b = $_POST['a2'];

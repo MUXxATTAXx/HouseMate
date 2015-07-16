@@ -8,12 +8,13 @@ Inglés
 $lang = array();
 $lang['Constr'] ="Building";
 $lang['lot'] = "Lot";
+$lang['lotvalue'] = "Lot value";
 $lang['VU'] = "Unitary value";
 $lang['FE'] = "Conservation factor";
 $lang['FD'] = "Depreciation factor";
 $lang['FFU'] = "Functional factor";
 $lang['VUR'] = "Reamining useful life";
-$lang['VNR'] = "Net value";
+$lang['VNRZ'] = "Net value";
 $lang['VNR'] = "New net value";
 $lang['ValuoR'] = "Real estate valuing";
 $lang['Valuo'] = "Valuing";

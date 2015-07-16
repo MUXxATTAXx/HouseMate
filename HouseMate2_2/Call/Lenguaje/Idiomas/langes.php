@@ -9,6 +9,7 @@ Español
 $lang = array();
 $lang['Constr'] ="Constucción";
 $lang['lot'] = "Lote";
+$lang['lotvalue'] = "Valor de lote";
 $lang['VU'] = "Valor unitario";
 $lang['FE'] = "Estado de conservación";
 $lang['FD'] = "Factor depreciación";
