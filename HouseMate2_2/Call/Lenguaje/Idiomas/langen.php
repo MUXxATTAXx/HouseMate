@@ -340,4 +340,9 @@ $lang['peri-pendiente'] = "Pending Objects";
 $lang['peri-categoria'] = "Category";
 $lang['peri_elim_exito'] = "Appraiser object deleted.";
 
+//Reportes
+$lang['repo-page'] = "Page";
+$lang['creado-por'] = "Created by: ";
+$lang['repo-usu'] = "User Reports";
+
 ?>

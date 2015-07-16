@@ -340,4 +340,10 @@ $lang['peri-pendiente'] = "Objetos Pendientes";
 $lang['peri-categoria'] = "Categor&iacute;a";
 $lang['peri_elim_exito'] = "Objeto de Peritaje Eliminado.";
 
+//Reportes
+$lang['repo-page'] = "Página";
+$lang['creado-por'] = "Creado por: ";
+$lang['repo-usu'] = "Reporte Usuarios";
+
+
 ?>
