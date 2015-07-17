@@ -358,5 +358,12 @@ $lang['repo-anuncio'] = "Reporte de Anuncios";
 $lang['lista-miembros'] = "Listado de Miembros";
 
 $lang['validaciones'] = "js/esvalidaciones.js";
+$lang['sin-cuenta'] = "Necesitas una cuenta";
+$lang['sin-propiedad'] = "Ingrese una propiedad!";
+$lang['es-suya'] = "Esta propiedad es suya!";
+$lang['oferta-reg'] = "Oferta Registrada.";
+$lang['ya-oferto'] = "Ya oferto por esta casa";
+$lang['mis-ofertas'] = "Ofertas";
+$lang['ofrecen'] = " ofrece: ";
 
 ?>

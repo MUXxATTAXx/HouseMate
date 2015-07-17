@@ -49,6 +49,61 @@ echo "<script src='".$lang['validaciones']."'></script>";
 ?>
 
 <script>
+//function vacio(){
+//    var campo1 = document.getElementByID('nombre');
+//    var campo2 = document.getElementByID('apellido');
+//    var campo3 = document.getElementByID('user');
+//    var campo4 = document.getElementByID('tiposu');
+//    var campo5 = document.getElementByID('lowerme');
+//    var campo6 = document.getElementByID('fechanac');
+//    var campo7 = document.getElementByID('contra');
+//    var campo8 = document.getElementByID('contra2');
+//    var contador = 0;
+//    if(campo1.trim == null || campo1.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo2.trim == null || campo2.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo3.trim == null || campo3.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo4.trim == null || campo4.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo5.trim == null || campo5.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo6.trim == null || campo6.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo7.trim == null || campo7.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(campo8.trim == null || campo8.trim == ""){}
+//    else{
+//        contador = contador + 1;
+//        alert(contador());
+//        }
+//    if(contador < 8){
+//        alert("Campos Vacios");
+//    }
+//}
+
 function password(){
     var pass1 = document.getElementById('contra');
     var pass2 = document.getElementById('contra2');
