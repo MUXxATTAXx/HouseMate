@@ -66,7 +66,7 @@
             <label><?= $lang['area2']  ?>:</label>
           </div>
           <div class="row row-centered">
-            <label id="age" class="btn label label-info"><?= $row['areadeconstruc']." m^2"  ?></label>
+            <label id="areale" class="btn label label-info"><?= $row['areadeconstruc']." m^2"  ?></label>
           </div>
           </div>
           <div class="col-sm-2">
@@ -187,7 +187,7 @@
                           break; } ?></label></td>
                             <td class="row btn btn-sm"><label id="estadoB"></label></td>
                       <td class="row btn btn-sm "><label id="estadoC">1</label></td>
-                      <td class="row btn btn-sm "><label id="estadoD">0</label></td>
+                      <td class="row btn btn-sm "><label id="estado1D">0</label></td>
                       <td class="row btn btn-sm "><label id="estadoE"></label></td>
                   </tr>
                   </table>
@@ -692,7 +692,9 @@
 <tbody id="tablameter">
 </tbody>
 <tr>
-  <td></td><td></td><td><label id="valorfinal"></label></td>
+  <td></td>
+  <td></td>
+  <td><label id="valorfinal"></label></td>
 </tr>
 </table>
 </div>
@@ -715,7 +717,7 @@ function load()
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded').value;
   var depresiacion = cinco*x*1;
-  document.getElementById('estadoD').textContent =  depresiacion.toFixed(2);
+  document.getElementById('estado1D').textContent =  depresiacion.toFixed(2);
   document.getElementById('esda').textContent =  depresiacion.toFixed(2);
   document.getElementById('valorfinal').textContent = document.getElementById('esda').textContent;
   var total = 0;
@@ -758,7 +760,7 @@ function valuechange()
   document.getElementById('unitaryadded').value = '';}
   var depresiacion = cinco*x*1;
   var estreo = <?= $row['areadeconstruc']?>;
-  document.getElementById('estadoD').textContent =  depresiacion.toFixed(2);
+  document.getElementById('estado1D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
   {
@@ -1024,41 +1026,46 @@ var  resu5 =  document.getElementById('resultado5').textContent;
 });}
 function formacion()
 {
-  var gete = "";
+  var gete1 = "";
+  var gete2 = "";
+  var gete3 = "";
   var uno ="";
   var dos ="";
   var tres ="";
   var compel = "";
   var watchdog ="";
   var goget = "";
+  var other = "";
+  var dona = "";
+  var logot = "";
   for(var ve = 0; ve <= 4;ve++)
   {
   for(var ie = 1; ie <= 3;ie++ )
   {
-    switch (ie) {
-      case 1:
-        gete = "Atabla"+ie;
-        goget = "estado"+(ie+1)+"D";
-        watchdog = document.getElementById(goget).textContent;
-        uno = document.getElementById(gete).textContent;
-      break;
-      case 2:
-        gete = "Btabla"+ie;
-        goget = "estado"+(ie+1)+"D";
-        watchdog = document.getElementById(goget).textContent;
-        dos = document.getElementById(gete).textContent;
-      break;
-      case 3:
-        gete = "Ctabla"+ie;
-        goget = "estado"+(ie+1)+"D";
-        watchdog = document.getElementById(goget).textContent;
-        tres = document.getElementById(gete).textContent;
-      break;
+      gete1 = "Atabla"+ve;
+      gete2 = "Btabla"+ve;
+      gete3 = "Ctabla"+ve;
+    if(gete1 == "Atabla0")
+    {
+      dona = document.getElementById("areale").textContent;
+      logot = "resultado";
+      goget = "estado"+(ve+1)+"D";
     }
-    if(watchdog == "0" || watchdog == null)
+    else {
+      dona = "valor"+(ve);
+      dona = document.getElementById(dona).textContent;
+      logot = "resultado"+(ve);
+      goget = "estado"+(ve+1)+"D";
+    }
+    other = document.getElementById(logot).textContent;
+    watchdog = document.getElementById(goget).textContent;
+    if(watchdog == "0" || watchdog == null || watchdog == "0.00")
     {}
     else {
        compel = "especial"+ve;
+       document.getElementById(gete1).textContent = dona;
+       document.getElementById(gete2).textContent = watchdog;
+       document.getElementById(gete3).textContent = other;
        document.getElementById(compel).className = "";
     }
     }
