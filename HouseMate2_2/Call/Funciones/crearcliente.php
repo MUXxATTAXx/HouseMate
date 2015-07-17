@@ -3,21 +3,21 @@
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Nombre']); ?>:</label>
-			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="nombre" placeholder="<?php echo($lang['Nombre']); ?>" required/>
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Apellido']); ?>:</label>
-			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="apellido" placeholder="<?php echo($lang['Apellido']); ?>" required/>
 		</div>
 	</div>
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Usuarioname']);?>:</label>
-			<input class="form-control" maxlength="20" id="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
+			<input class="form-control" maxlength="20" id="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" required/>
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo $lang['Tipous'] ?>:</label>
-			<select disabled="" class="form-control" id="tiposu">
+			<select disabled="" class="form-control" id="tiposu" required>
 				<option value="4"><?php echo $lang['Cliente'] ?></option>
 			</select>
 		</div>
@@ -25,21 +25,21 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Correo']); ?>:</label>
-			<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
+			<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" required/>
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo($lang['Fecha-Nac']); ?>:</label>
-			<input class="form-control" type="date" id="fechanac" placeholder="fecha nacimiento" max="1997-01-01"/>
+			<input class="form-control" type="date" id="fechanac" placeholder="fecha nacimiento" max="1997-01-01" required/>
 		</div>
 	</div>
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Contra']); ?>:</label>
-			<input  onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" />
+			<input  onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" required/>
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Confirmar']); ?>:</label>
-			<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
+			<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" required/>
 		</div>
 	</div>
 

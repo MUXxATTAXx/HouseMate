@@ -63,7 +63,7 @@ while($row=mysql_fetch_array($cs)){
 <!-- Imagen -->
         <div class="row">
           <div class="form-group col-xs-12">
-            <img class="img-responsive imagenpequeña" id="imagen" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100">
+            <img class="img-responsive imagenpequeña" id="imagen" src="<?=$row['image']?>">
           </div>
           <div class="form-group col-xs-12">
             <div class="btn btn-primary btn-file">
@@ -110,7 +110,7 @@ $contra_nueva = $_POST['contra_nueva'];
 $contra_vieja = $_POST['contra_vieja'];
 //Nombre,Apellido,Usuario,Tipo,FechaNac, Contra
 //Si se digito la contra y se llenaron los campos
-if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fechanac']) )
+if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fechanac']))
 {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];

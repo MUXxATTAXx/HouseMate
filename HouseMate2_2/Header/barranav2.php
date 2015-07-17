@@ -103,6 +103,28 @@ require ("Call/Loged/seguridad.php");
                             echo "<li ><a>".$lang['no-mates']."</a></li>";
                     }
                 ?>
+                <li class="divider"></li>
+                <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
+                <?php
+                    $usuario = $_SESSION['id'];
+                    $inmueble = "SELECT * from inmueble WHERE Dueno = '$usuario'";
+                    $inmueble_con = mysql_query($inmueble);
+                    while($urow = mysql_fetch_array($inmueble_con)){
+                        $idinmueble = $urow['IdInmueble'];
+                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble'";
+                        $convenio_con = mysql_query($convenio);
+                        while($drow = mysql_fetch_array($convenio_con)){
+                            $ofertor = "SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'";
+                            $ofertor_con = mysql_query($ofertor);
+                            while($orow = mysql_fetch_array($ofertor_con)){
+                               echo "<a href='mis_convenios.php?idconvenio=".$drow['idconvenio']."'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a>";
+                            }       
+                        }
+                    }     
+                    if(mysql_num_rows($convenio_con) == 0){
+                        echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+                ?>
             </ul>
         </li>
       </ul>

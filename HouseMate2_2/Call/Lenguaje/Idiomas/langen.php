@@ -358,5 +358,12 @@ $lang['repo-anuncio'] = "Announcements Reports ";
 $lang['lista-miembros'] = "Members List";
 
 $lang['validaciones'] = "js/validaciones.js";
+$lang['sin-cuenta'] = "You need an account!";
+$lang['sin-propiedad'] = "Insert a property!";
+$lang['es-suya'] = "This property is yours!";
+$lang['oferta-reg'] = "Offer registered.";
+$lang['ya-oferto'] = "You already offer for this house.";
+$lang['mis-ofertas'] = "Offers";
+$lang['ofrecen'] = " offers: ";
 
 ?>

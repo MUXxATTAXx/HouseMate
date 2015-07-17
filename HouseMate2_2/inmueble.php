@@ -40,7 +40,6 @@ else
 	include "Header/barranav0.php";
 }
 ?>
- <br>
 <div id="main">
     <div class="row">
     <?php
@@ -114,13 +113,24 @@ else
             </div>
             </center>
             <div class="panel-footer">
+                <center>
 								<?php
-										$inmueble = $row['IdInmueble'];
+                                if(isset($_SESSION['id']))
+                                {
+                                    $inmueble = $row['IdInmueble'];
+                                    $link = "convenio.php?IdInmueble=".$inmueble;
+                                    echo "<a href='".$link."' name='mejorar' class='btn btn-primary' >".$lang['Offer']."</a>";
+                                }
+                                else
+                                {
+//                                    echo "<span class='label label-danger'>".$lang['sin-cuenta']."</span><br><br>";
+                                    echo "<p> ".$lang['sin-cuenta']." <a name='crear' href='inicio.php'>".$lang['Crear-Cuenta']."</a></p>";
+                                }
 								?>
-                <a href='convenio.php?IdInmueble=<?=$inmueble;?>' name="mejorar" class="btn btn-primary" ><?php echo $lang['Offer'] ?></a>
             <?php
                 }
             ?>
+                </center>
             </div>
             </div>
         </div>

@@ -86,6 +86,8 @@
                             echo "<li ><a>".$lang['no-mates']."</a></li>";
                     }
                 ?>
+                <li class="divider"></li>
+                <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
             </ul>
         </li>
       </ul>
