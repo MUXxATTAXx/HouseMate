@@ -356,6 +356,7 @@ $lang['repo-diez'] =5;
 $lang['repo-diez2'] =5;
 $lang['repo-anuncio'] = "Reporte de Anuncios";
 $lang['lista-miembros'] = "Listado de Miembros";
+$lang['repo-convenio'] = "Convenio de Confianza";
 
 $lang['validaciones'] = "js/esvalidaciones.js";
 $lang['sin-cuenta'] = "Necesitas una cuenta";
@@ -365,6 +366,6 @@ $lang['oferta-reg'] = "Oferta Registrada.";
 $lang['ya-oferto'] = "Ya oferto por esta casa";
 $lang['mis-ofertas'] = "Ofertas";
 $lang['ofrecen'] = " ofrece: ";
-
+$lang['print-convenio'] = "Imprimir Convenio";
 
 ?>
