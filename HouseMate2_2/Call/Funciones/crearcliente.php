@@ -49,9 +49,9 @@
 			<button class="btn btn-primary btn-block" id="ingresarstuff"><?php echo($lang['Crear-Cuenta']); ?></button>
 			</div>
 		</div>
-		<br><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span>
-    <span class="label label-warning" id="contra-error"></span>
-
+		<br><center><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span></center>
+    <center><span class="label label-warning" id="contra-error"></span></center>
+<br>
 </div>
 <script>
 function password(){

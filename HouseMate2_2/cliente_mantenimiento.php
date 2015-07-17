@@ -10,9 +10,9 @@
 <head>
 	<title><?php echo($lang['Usuarios']);?></title>
 	<meta charset = "utf-8" />
-	
+
 </head>
-<body> 
+<body>
 
 <!-- Logic para change of active ta	b -->
 <div class="row row-centered">
@@ -33,7 +33,7 @@
 	</div>
 </div>
 <div id='myTabContent' class='tab-content'>
-	<?php 
+	<?php
 	echo "<div class='tab-pane fade active in' id='home'>";
 	include'admincliente/crear_cliente.php';
 	echo "</div><div class='tab-pane fade' id='crear'>";
@@ -54,13 +54,13 @@
                 $('#imagenempresa')
                     .attr('src', e.target.result)
             };
-			
+
             reader.readAsDataURL(input.files[0]);
         }
     }
 $("#Municipio3").chained("#Departamento3");
 </script>
-<script src="js/validaciones.js" type="text/javascript" ></script>
+<script src="<?=$lang['validaciones']?>">async: true</script>
 <script src="js/usuariom.js" type="text/javascript"></script>
 <span id="spanme"></span>
 </body>

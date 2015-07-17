@@ -357,4 +357,6 @@ $lang['repo-diez2'] =10;
 $lang['repo-anuncio'] = "Announcements Reports ";
 $lang['lista-miembros'] = "Members List";
 
+$lang['validaciones'] = "js/validaciones.js";
+
 ?>

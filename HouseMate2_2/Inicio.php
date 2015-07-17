@@ -38,16 +38,15 @@ require ("Call/Lenguaje/lenguaje.php");
 								include "Call/Funciones/crearcliente.php";
 								?>
             </div>
-						<span id="tiposu" value="4" class="hidme"></span>
-						<div id="tiposu" value="4">
 						</div>
           </div>
         </div>
       </div>
 
 </div>
-<script src="js/validaciones.js"></script>
-    <br>
+<?php
+echo "<script src='".$lang['validaciones']."'></script>";
+?>
 
 <script>
 function password(){
