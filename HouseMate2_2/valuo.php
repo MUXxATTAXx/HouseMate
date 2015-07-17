@@ -219,7 +219,7 @@
                           <label><?= $lang['Constr']?></label>
                         </div>
                         <div class="row row-centered">
-                          <label id="valor" class="btn label label-info"><?php while($row2 = mysql_fetch_array($quer1))
+                          <label id="valor1" class="btn label label-info"><?php while($row2 = mysql_fetch_array($quer1))
                           {
                               echo $row2['Valor']." m^2";
                               $valorR2 = $row2['Valor'];
@@ -646,7 +646,7 @@
     <div class="col-sm-6">
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
-    <label class="form-control" id="esda"></label>
+    <label class="form-control label-primary"  id="esda"></label>
       <span class="input-group-addon label-info"></span>
     </div>
     </div>
@@ -660,7 +660,7 @@
     <div class="col-sm-6">
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
-    <label class="form-control" id="esda2"></label>
+    <label class="form-control label-primary"  id="esda2"></label>
       <span class="input-group-addon label-info"></span>
     </div>
     </div>
@@ -689,10 +689,11 @@
 <th>Total</th>
 </tr>
 </thead>
-<div id="tablameter"></div>
+<tbody id="tablameter">
+</tbody>
 <tr>
+  <td></td><td></td><td><label id="valorfinal"></label></td>
 </tr>
-<tr><td></td><td></td><td><label id="valorfinal"></label></td></tr>
 </table>
 </div>
   </div>
@@ -971,6 +972,7 @@ function chare()
   document.getElementById('esda').textContent = (x+x1+x2+x3+x4+x5).toFixed(2);
   document.getElementById('valorfinal').textContent = "$"+(parseFloat(document.getElementById('esda').textContent)+parseFloat(pisto));
   barra();
+  changemaker();
 }
 function barra()
 {
@@ -994,23 +996,22 @@ function barra()
   document.getElementById("barra1").style.width = final1+"%";
   document.getElementById("barra2").style.width = final2+"%";
 }
-function changemaker()
-{
-/*  resu =  $("#resultado").text();
-  resu1 =  $("#resultado1").text();
-  resu2 =  $("#resultado2").text();
-  resu3 =  $("#resultado3").text();
-  resu4 =  $("#resultado4").text();
-  resu5 =  $("#resultado5").text();
+function changemaker() {
+var  resu =  document.getElementById('resultado').textContent;
+var  resu1 =  document.getElementById('resultado1').textContent;
+var  resu2 =  document.getElementById('resultado2').textContent;
+var  resu3 =  document.getElementById('resultado3').textContent;
+var  resu4 =  document.getElementById('resultado4').textContent;
+var  resu5 =  document.getElementById('resultado5').textContent;
     terreno =  parseFloat(document.getElementById("esda2").value);
   $.ajax({
     type: "POST",
-    url: "Call/Empresa/Empresafuncion/valuotabla.php",
+    url: "Call/Funciones/valuotabla.php",
     data: "resu="+resu+"&resu1="+resu1+"&resu2="+resu2+"&resu3="+resu3
     +"&resu4="+resu4+"&resu5="+resu5+"&terreno="+terreno,
     dataType: "html",
     beforeSend: function(){
-      $("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+      $("#tablameter").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
     },
     error: function(){
       alert("error petición ajax");
@@ -1020,11 +1021,48 @@ function changemaker()
       $("#tablameter").append(data).page;
       formacion();
   }
-});
-*/}
+});}
 function formacion()
 {
-
+  var gete = "";
+  var uno ="";
+  var dos ="";
+  var tres ="";
+  var compel = "";
+  var watchdog ="";
+  var goget = "";
+  for(var ve = 0; ve <= 4;ve++)
+  {
+  for(var ie = 1; ie <= 3;ie++ )
+  {
+    switch (ie) {
+      case 1:
+        gete = "Atabla"+ie;
+        goget = "estado"+(ie+1)+"D";
+        watchdog = document.getElementById(goget).textContent;
+        uno = document.getElementById(gete).textContent;
+      break;
+      case 2:
+        gete = "Btabla"+ie;
+        goget = "estado"+(ie+1)+"D";
+        watchdog = document.getElementById(goget).textContent;
+        dos = document.getElementById(gete).textContent;
+      break;
+      case 3:
+        gete = "Ctabla"+ie;
+        goget = "estado"+(ie+1)+"D";
+        watchdog = document.getElementById(goget).textContent;
+        tres = document.getElementById(gete).textContent;
+      break;
+    }
+    if(watchdog == "0" || watchdog == null)
+    {}
+    else {
+       compel = "especial"+ve;
+       document.getElementById(compel).className = "";
+    }
+    }
+  }
 }
 </script>
 <?php

@@ -29,13 +29,13 @@
     for($nos = 0;$nos <= 4;$nos++){
       $resultadoquery = $porciones[$nos];
       echo $resultadoquery;
-      if ($resultadoquery != 0 || $resultadoquery != null){
+      if ($resultadoquery != 0 || $resultadoquery != null)
+      {
           $estado++;
           $numeroiden = $nos +1;
           $numeradopor2 = 7 +$nos;
   ?>
-
-  <div class='tab-pane fade' id='<?=$numeroiden ?>' >
+  <div class='tab-pane fade active in' id='<?=$numeroiden ?>' >
                   <div class="row">
                     <div class="col-sm-6">
                       <div class="row">
