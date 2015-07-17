@@ -31,7 +31,7 @@ echo("<meta charset=utf-8 />");
 ?>
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-   
+
 </head>
 <body>
 
@@ -44,7 +44,7 @@ echo("<meta charset=utf-8 />");
                     $inmueble = "SELECT * FROM Inmueble WHERE IdInmueble = '$inmuebleid'";
                     $inmueble_con = mysql_query($inmueble);
                     while($row = mysql_fetch_array($inmueble_con)){
-                                     
+
             ?>
           <div class="panel-heading">
                 <center><h3 class="panel-title">
@@ -56,7 +56,7 @@ echo("<meta charset=utf-8 />");
                     <br>
                     <center>
                         <img src="<?php echo $row['Imagen'] ?>" height="25%" width="50%">
-                    
+
                     <br>
                     <p><?=$row['Direccion']?></p>
                     </center>
@@ -67,11 +67,11 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['precio-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-6">
-<<<<<<< HEAD
+
                             <input name="precio" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$$" min="1" maxlength="6" type="tel">
-=======
+
                             <input onkeypress="return num(event)" name="precio" class="form-control" placeholder="$$$$$$$" min="1" maxlength="7" type="tel">
->>>>>>> origin/master
+
                         </div>
                     </div>
                     <br>
@@ -80,11 +80,11 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-4">
-<<<<<<< HEAD
+
                           <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DD" min="2" maxlength="2" type="tel">
-=======
+
                             <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel">
->>>>>>> origin/master
+
                         </div>
                         <div class="col col-sm-2 col-centered">
                             <label><?=$lang['plazo-dias']?></label>
@@ -96,11 +96,11 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-adelanto']?></label>
                         </div>
                         <div class="col col-sm-6">
-<<<<<<< HEAD
+
                             <input name="adelanto" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
-=======
+
                             <input onkeypress="return num(event)" name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
->>>>>>> origin/master
+
                         </div>
                     </div>
                     <br>
@@ -125,7 +125,7 @@ echo("<meta charset=utf-8 />");
                                     $usuario = $gettinguser['idusuario'];
                                 }
 
-                                
+
                                 $consulta2 = "SELECT * FROM convenio WHERE idusuario ='$usuario' and idinmueble ='".$row['IdInmueble']."'";
                                 $consulta2_con = mysql_query($consulta2);
                             if(mysql_num_rows($consulta2_con) > 0){
@@ -143,7 +143,7 @@ echo("<meta charset=utf-8 />");
                 </div>
                     <center>
                 <?php
-                    
+
                     $consulta1 = "SELECT * FROM convenio";
                     $consulta1_con = mysql_query($consulta1);
                     $id = (mysql_num_rows($consulta1_con)) + 1;
@@ -157,14 +157,14 @@ echo("<meta charset=utf-8 />");
                     if(isset($_POST['precio']) and trim($_POST['precio']) != ""){
                         $oferta = $_POST['precio'];
                         date_default_timezone_set("America/El_Salvador");
-                        
+
                         $d1 = ($_POST['dias']) + 10;
                         $fecha_final1 = strtotime("+".$d1."Days");
                         $fecha_final2 = date("Y-m-d",$fecha_final1);
                         $d2 = strtotime("+10 Days");
                         $fecha_aprobacion =  date("Y-m-d", $d2);
                         $adelanto = $_POST['adelanto'];
-                        
+
                         $consulta = "INSERT INTO convenio VALUES ('$id','".$row['IdInmueble']."','$usuario','$oferta','1','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
                         //echo $consulta;
                         $consulta_con = mysql_query($consulta);
@@ -172,7 +172,7 @@ echo("<meta charset=utf-8 />");
                             echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";
                         }
                         else{echo mysql_error();}
-<<<<<<< HEAD
+
                     }
                     if(isset($_POST['cancelar'])){
                       $cancelar = "DELETE FROM convenio WHERE idconvenio = '$convenioid'";
@@ -185,10 +185,10 @@ echo("<meta charset=utf-8 />");
                     }
                 ?><br><center><span onload="return false;" id="resultadoinsert"></span><span class="label label-danger" id="validacion-num1"></span></center>
 <script src="js/validaciones.js" type="text/javascript"></script>
-=======
-                    }   
+
+                    }
                 ?>
->>>>>>> origin/master
+
                 </center>
               </form>
             </div>
