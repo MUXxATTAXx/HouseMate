@@ -21,12 +21,12 @@
     $empresa = $_GET['super'];
     $query = mysql_query("Select * FROM inmueble where IdInmueble = '$empresa'");
     $varlo = $row['IdInmueble'];
-    $quero = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta > '5'");
-    $quer1 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '6'");
-    $quer2 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '7'");
-    $quer3 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '8'");
-    $quer4 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '9'");
-    $quer5 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '10'");
+    $quero = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta > '5' and valor <> '0'");
+    $quer1 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '6' and valor <> '0'");
+    $quer2 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '7' and valor <> '0'");
+    $quer3 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '8' and valor <> '0'");
+    $quer4 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '9' and valor <> '0'");
+    $quer5 = mysql_query("Select * FROM etiqueta where IdInmueble = '$empresa' and Netiqueta = '10' and valor <> '0'");
     while ($row = mysql_fetch_array($query))
     {
       ?>
@@ -54,7 +54,7 @@
             <label ><?= $lang['agev']  ?>:</label>
           </div>
           <div class="row row-centered">
-            <label id="aget" class="btn label label-info">75</label>
+            <label id="aget" class="btn label label-info">65</label>
           </div>
           <div class="col-sm-4">
 
@@ -197,6 +197,7 @@
                   <br>
 
                 </div>
+          <?php    //   include "Call/Funciones/tagsinternos.php" ?>
 <!--Home 6--><div class='tab-pane fade' id='home6' >
                 <div class="row">
                   <div class="col-sm-6">
@@ -633,6 +634,7 @@
 <br>
 
 <div class="panel-footer">
+
   <div class="row">
       <div class="col-sm-6">
     <div class="row">
@@ -644,7 +646,7 @@
     <div class="col-sm-6">
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
-    <input class="form-control" type="number" id="esda">
+    <label class="form-control" id="esda"></label>
       <span class="input-group-addon label-info"></span>
     </div>
     </div>
@@ -658,12 +660,13 @@
     <div class="col-sm-6">
       <div class="input-group">
       <span class="input-group-addon label-info">$</span>
-    <input class="form-control" type="number" id="esda2">
+    <label class="form-control" id="esda2"></label>
       <span class="input-group-addon label-info"></span>
     </div>
     </div>
   </div>
   </div>
+  <br>
   <div class="row">
     <div class="col-sm-6"><label ><?= $lang['Constr'] ?></label>
       <label id="porcentaje1"></label></div>
@@ -678,7 +681,19 @@
     </div>
   </div>
 </div>
-
+<table class='table table-hover'>
+<thead>
+  <tr>
+<th><?= $lang['are']  ?></th>
+<th><?= $lang['VNR'] ?></th>
+<th>Total</th>
+</tr>
+</thead>
+<div id="tablameter"></div>
+<tr>
+</tr>
+<tr><td></td><td></td><td><label id="valorfinal"></label></td></tr>
+</table>
 </div>
   </div>
     </div>
@@ -692,15 +707,16 @@ function load()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estadoA').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estadoB').textContent = x;
+  document.getElementById('estadoB').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded').value;
   var depresiacion = cinco*x*1;
   document.getElementById('estadoD').textContent =  depresiacion.toFixed(2);
-  document.getElementById('esda').value =  depresiacion.toFixed(2);
+  document.getElementById('esda').textContent =  depresiacion.toFixed(2);
+  document.getElementById('valorfinal').textContent = document.getElementById('esda').textContent;
   var total = 0;
   if(cinco == "")
   {
@@ -717,7 +733,7 @@ function load()
 }
 function load2()
 {
-  document.getElementById('esda2').value = 0;
+  document.getElementById('esda2').textContent = 0;
   valuechange2();
   valuechange3();
   valuechange4();
@@ -730,10 +746,10 @@ function valuechange()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estadoA').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estadoB').textContent = x;
+  document.getElementById('estadoB').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded').value;
   if (cinco <= 0)
@@ -765,7 +781,7 @@ var z = document.getElementById('unitaryadded2').value;
 if (z < 0)
 { z = 0;
 document.getElementById('unitaryadded2').value = 0;}
-document.getElementById('esda2').value =  (x * z).toFixed(2);
+document.getElementById('esda2').textContent =  (x * z).toFixed(2);
 chare();
 }
 function valuechange3()
@@ -773,10 +789,10 @@ function valuechange3()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estado2A').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estado2B').textContent = x;
+  document.getElementById('estado2B').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded3').value;
   if (cinco <= 0)
@@ -808,10 +824,10 @@ function valuechange4()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estado3A').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estado3B').textContent = x;
+  document.getElementById('estado3B').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded4').value;
   if (cinco <= 0)
@@ -843,10 +859,10 @@ function valuechange5()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estado4A').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estado4B').textContent = x;
+  document.getElementById('estado4B').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded5').value;
   if (cinco <= 0)
@@ -878,10 +894,10 @@ function valuechange6()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estado5A').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estado5B').textContent = x;
+  document.getElementById('estado5B').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded6').value;
   if (cinco <= 0)
@@ -913,7 +929,7 @@ function valuechange7()
   var uno =  parseInt($("#age").text());
   var dos = parseInt($("#aget").text());
   var tres =  document.getElementById('estado6A').textContent;
-  var division = uno/dos;
+  var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
   document.getElementById('estado6B').textContent = x;
@@ -951,13 +967,15 @@ function chare()
   var x3 = parseFloat(document.getElementById('resultado3').textContent);
   var x4 = parseFloat(document.getElementById('resultado4').textContent);
   var x5 = parseFloat(document.getElementById('resultado5').textContent);
-  document.getElementById('esda').value = (x+x1+x2+x3+x4+x5).toFixed(2);
+  var pisto = parseFloat(document.getElementById("esda2").textContent);
+  document.getElementById('esda').textContent = (x+x1+x2+x3+x4+x5).toFixed(2);
+  document.getElementById('valorfinal').textContent = "$"+(parseFloat(document.getElementById('esda').textContent)+parseFloat(pisto));
   barra();
 }
 function barra()
 {
-  var x = parseFloat(document.getElementById("esda").value);
-  var z = parseFloat(document.getElementById("esda2").value);
+  var x = parseFloat(document.getElementById("esda").textContent);
+  var z = parseFloat(document.getElementById("esda2").textContent);
   var y = x + z;
   var final1 = 0;
   var final2 = 0;
@@ -975,6 +993,38 @@ function barra()
   document.getElementById('porcentaje2').textContent = Math.round(final2)+"%";
   document.getElementById("barra1").style.width = final1+"%";
   document.getElementById("barra2").style.width = final2+"%";
+}
+function changemaker()
+{
+/*  resu =  $("#resultado").text();
+  resu1 =  $("#resultado1").text();
+  resu2 =  $("#resultado2").text();
+  resu3 =  $("#resultado3").text();
+  resu4 =  $("#resultado4").text();
+  resu5 =  $("#resultado5").text();
+    terreno =  parseFloat(document.getElementById("esda2").value);
+  $.ajax({
+    type: "POST",
+    url: "Call/Empresa/Empresafuncion/valuotabla.php",
+    data: "resu="+resu+"&resu1="+resu1+"&resu2="+resu2+"&resu3="+resu3
+    +"&resu4="+resu4+"&resu5="+resu5+"&terreno="+terreno,
+    dataType: "html",
+    beforeSend: function(){
+      $("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+    },
+    error: function(){
+      alert("error petición ajax");
+    },
+    success: function(data){
+      $("#tablameter").empty();
+      $("#tablameter").append(data).page;
+      formacion();
+  }
+});
+*/}
+function formacion()
+{
+
 }
 </script>
 <?php

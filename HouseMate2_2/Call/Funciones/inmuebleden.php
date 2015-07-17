@@ -1,91 +1,59 @@
 <?php
 $maxc = 0;
 $man="";
-$aa = $_POST['a1'];
-$bb = $_POST['a2'];
-$cc = $_POST['a3'];
-$dd = $_POST['a4'];
-$ee = $_POST['a5'];
-$a = '';
-$b = '';
-$c = '';
-$d = '';
-$e = '';
-$v1 = 1;
-$v2 = 1;
-$v3 = 1;
-$v4 = 1;
-$v5 = 1;
+$aa = "";
+$bb = "";
+$cc = "";
+$dd = "";
+$ee = "";
 if (isset($_POST['fancy-checkbox-primary-custom-icons1']))
-{
-	$check1 = 1;
-	while($v1 <= $aa)
-	{
-		$valor = "1gate".$v1;
-		echo $valor."<br>";
-		$a .= "-".$_POST[$valor];
-		$v1++;
-	}
+{$check1 = 1;
+
+	$aa = $_POST["A1gate1"]."-".$_POST["B1gate2"]."-".$_POST["C1gate3"]."-".$_POST["D1gate4"]."-".$_POST["E1gate5"];
 }
-else{
-	$check1 = 0;}
+else {
+	$check1 = 0;
+}
 if (isset($_POST['fancy-checkbox-primary-custom-icons2']))
-{
-	$check2 = 1;
-	while($v2 <= $bb)
-	{
-		$valor = "2gate".$v2;
-		echo $valor."<br>";
-		$b .= "-".$_POST[$valor];
-		$v2++;
-	}
+{ $check2 = 1;
+	$bb = $_POST["A2gate1"]."-".$_POST["B2gate2"]."-".$_POST["C2gate3"]."-".$_POST["D2gate4"]."-".$_POST["E2gate5"];
 }
-else{
-	$check2 = 0;}
+else {
+	$check2 = 0;
+}
 if (isset($_POST['fancy-checkbox-primary-custom-icons3']))
-{
-	$check3 = 1;
-	while($v3 <= $cc)
-	{
-		$valor = "3gate".$v3;
-		echo $_POST[$valor];
-		$c .= "-".$_POST[$valor];
-		$v3++;
-	}
+{ $check3 = 1;
+	$cc = $_POST["A3gate1"]."-".$_POST["B3gate2"]."-".$_POST["C3gate3"]."-".$_POST["D3gate4"]."-".$_POST["E3gate5"];
 }
-else{
-	$check3 = 0;}
+else {
+	$check3 = 0;
+}
 if (isset($_POST['fancy-checkbox-primary-custom-icons4']))
-{
-	$check4 = 1;
-	while($v4 <= $dd)
-	{
-		$valor = "4gate".$v4;
-		echo $valor."<br>";
-		$d .= "-".$_POST[$valor];
-		$v4++;
-	}
+{ $check4 = 1;
+	$dd = $_POST["A4gate1"]."-".$_POST["B4gate2"]."-".$_POST["C4gate3"]."-".$_POST["D4gate4"]."-".$_POST["E4gate5"];
 }
-else{
-	$check4 = 0;}
+else {
+	$check4 = 0;
+}
 if (isset($_POST['fancy-checkbox-primary-custom-icons5']))
-{
-	$check5 = 1;
-	while($v5 <= $dd)
-	{
-		$valor = "5gate".$v5;
-		echo $valor."<br>";
-		$e .= "-".$_POST[$valor];
-		$v5++;
-	}
+{ $check5 = 1;
+	$ee = $_POST["A5gate1"]."-".$_POST["V5gate2"]."-".$_POST["C5gate3"]."-".$_POST["D5gate4"]."-".$_POST["E5gate5"];
 }
-else{
-	$check5 = 0;}
-	$check6 = 1;
-	$check7 = 1;
-	$check8 = 1;
-	$check9 = 1;
-	$check10 = 1;
+else {
+	$check5 = 0;
+}
+
+$a = $aa;
+$b = $bb;
+$c = $cc;
+$d = $dd;
+$e = $ee;
+$check5 = 1;
+$check6 = 1;
+$check7 = 1;
+$check8 = 1;
+$check9 = 1;
+$check10 = 1;
 
 
 $f = $_POST['areax1'];

@@ -1,5 +1,5 @@
 
-<form action="crear_inmueble.php" id="formenow" method="post" enctype="multipart/form-data">
+<form id="formenow" method="post" enctype="multipart/form-data">
  <div class='Form-D1' align="center">
 <!--  falta -->
 <div class="">
@@ -130,6 +130,12 @@
   						</label>
   						<input id="tag1" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ] " id="a1" name="a1" type="number"  maxlength="2"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
   						<div id="tager1"></div>
+              <div>
+              <input type="hidden" name="A1gate1" id="A1gate1" value="0">
+              <input type="hidden" name="B1gate2" id="B1gate1" value="0">
+              <input type="hidden" name="C1gate3" id="C1gate1" value="0">
+              <input type="hidden" name="D1gate4" id="D1gate1" value="0">
+              <input type="hidden" name="E1gate5" id="E1gate1" value="0"></div>
               </div>
   				</div>
   			</div>
@@ -145,6 +151,12 @@
               </label>
               <input id="tag2" onchange="creatediv(this.id);" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a2" name="a2" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
               <div id="tager2"></div>
+              <div >
+                <input type="hidden" name="A2gate1" id="A2gate1" value="0">
+                <input type="hidden" name="B2gate2" id="B2gate2" value="0">
+                <input type="hidden" name="C2gate3" id="C2gate3" value="0">
+                <input type="hidden" name="D2gate4" id="D2gate4" value="0">
+                <input type="hidden" name="E2gate5" id="E2gate5" value="0"></div>
             </div>
           </div>
         </div>
@@ -160,6 +172,12 @@
 						</label>
 						<input id="tag3" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a3"  name="a3" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
 					<div id="tager3"></div>
+          <div class="hidme">
+            <input type="hidden" name="A3gate1" id="A3gate1" value="0">
+            <input type="hidden" name="B3gate2" id="B3gate2" value="0">
+            <input type="hidden" name="C3gate3" id="C3gate3" value="0">
+            <input type="hidden" name="D3gate4" id="D3gate4" value="0">
+            <input type="hidden" name="E3gate5" id="E3gate5" value="0"></div>
           </div>
 				</div>
 			</div>
@@ -175,6 +193,12 @@
 						</label>
 						<input id="tag4" onchange="creatediv(this.id)"  onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a4"  name="a4" type="number"  min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
 					<div id="tager4"></div>
+          <div class="hidme">
+            <input type="hidden" name="A4gate1" id="A4gate1" value="0">
+            <input type="hidden" name="B4gate2" id="B4gate2" value="0">
+            <input type="hidden" name="C4gate3" id="C4gate3" value="0">
+            <input type="hidden" name="D4gate4" id="D4gate4" value="0">
+            <input type="hidden" name="E4gate5" id="E4gate5" value="0"></div>
           </div>
 				</div>
       </div>
@@ -190,6 +214,12 @@
 							</label>
 							<input id="tag5" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a5" name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
 						<div id="tager5"></div>
+            <div class="hidme">
+              <input type="hidden" name="A5gate1" id="A5gate1" value="0">
+              <input type="hidden" name="B5gate2" id="B5gate2" value="0">
+              <input type="hidden" name="C5gate3" id="C5gate3" value="0">
+              <input type="hidden" name="D5gate4" id="D5gate4" value="0">
+              <input type="hidden" name="E5gate5" id="E5gate5" value="0"></div>
             </div>
 					</div>
 			</div>
@@ -345,6 +375,7 @@
     if(isset($_POST['insertarforreal']))
     {
       require "Call/Funciones/beforeingresar.php";
+
     }
     else
     {
@@ -385,10 +416,10 @@
   function creatediv(id){
     var x = id.slice(-1);
     var  z = document.getElementById(id).value;
-    if(z > 10)
+    if(z > 5)
     {
-      z = 10;
-      document.getElementById(id).value = 10;
+      z = 5;
+      document.getElementById(id).value = 5;
     }
     var c = "#tager"+x;
     $.ajax({
@@ -404,6 +435,34 @@
 
       }
     });
+  }
+  function manipular(id)
+  {
+   var x = id.slice(-1);
+   var s = id.substr(0, 1);
+   var l = id.substr(1,1);
+   switch (x) {
+case "1":
+l = "A";
+break;
+case "2":
+l = "B";
+break;
+case "3":
+l = "C";
+break;
+case "4":
+l = "D";
+break;
+case "5":
+l = "E";
+break;
+     default:
+
+   }
+   var valor1 = document.getElementById(id).value;
+   var combo = l+s+"gate"+x;
+   document.getElementById(combo).value = valor1;
   }
   function unison(){
   $("#poderdej").remove();
