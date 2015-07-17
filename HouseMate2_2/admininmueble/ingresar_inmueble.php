@@ -128,8 +128,9 @@
   							<span class="[ glyphicon glyphicon-ok ]"></span>
   							<span class="[ glyphicon glyphicon-minus ]"></span>
   						</label>
-  						<input id="tag1" onkeypress="return num(event)" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ] " name="a1" type="number" maxlength="2"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
-  						</div>
+  						<input id="tag1" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ] " id="a1" name="a1" type="number"  maxlength="2"  min="0" max="10" placeholder='<?php echo $lang['Cuartos']?>'>
+  						<div id="tager1"></div>
+              </div>
   				</div>
   			</div>
         <div class="form-group col-sm-2">
@@ -142,8 +143,8 @@
                 <span class="[ glyphicon glyphicon-ok ]"></span>
                 <span class="[ glyphicon glyphicon-minus ]"></span>
               </label>
-              <input id="tag2" onkeypress="return num(event)" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
-
+              <input id="tag2" onchange="creatediv(this.id);" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a2" name="a2" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
+              <div id="tager2"></div>
             </div>
           </div>
         </div>
@@ -157,8 +158,9 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input id="tag3" onkeypress="return num(event)" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]"  name="a3" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
-					</div>
+						<input id="tag3" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a3"  name="a3" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Comedores'] ?>'>
+					<div id="tager3"></div>
+          </div>
 				</div>
 			</div>
 			<div class="form-group col-sm-2">
@@ -171,8 +173,9 @@
 							<span class="[ glyphicon glyphicon-ok ]"></span>
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
-						<input id="tag4"  onkeypress="return num(event)" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
-					</div>
+						<input id="tag4" onchange="creatediv(this.id)"  onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a4"  name="a4" type="number"  min="0"  max="10" class="form-control" placeholder='<?php echo $lang['Salas'] ?>'>
+					<div id="tager4"></div>
+          </div>
 				</div>
       </div>
 			<div class="form-group col-sm-2">
@@ -185,8 +188,9 @@
 								<span class="[ glyphicon glyphicon-ok ]"></span>
 								<span class="[ glyphicon glyphicon-minus ]"></span>
 							</label>
-							<input id="tag5" onkeypress="return num(event)" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
-						</div>
+							<input id="tag5" onchange="creatediv(this.id)" onkeypress="return num(event);" for="fancy-checkbox-primary-custom-icons" class="form-control widther [ btn btn-default active ]" id="a5" name="a5" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Baños'] ?>'>
+						<div id="tager5"></div>
+            </div>
 					</div>
 			</div>
 </div>
@@ -378,7 +382,29 @@
   $("form").on('click', 'a.ingresarin2', function() {
     unison();
   });
+  function creatediv(id){
+    var x = id.slice(-1);
+    var  z = document.getElementById(id).value;
+    if(z > 10)
+    {
+      z = 10;
+      document.getElementById(id).value = 10;
+    }
+    var c = "#tager"+x;
+    $.ajax({
+      url: "Call/Funciones/createtag.php",
+      data:  "amount="+z+"&id="+x,
+      dataType : "html",
+      type : "post",
+      success: function(data){
+          $(c).empty();
+          $(c).append(data);
+      },
+      failure: function(){
 
+      }
+    });
+  }
   function unison(){
   $("#poderdej").remove();
   selector = $("#selector").val();

@@ -107,9 +107,7 @@
           }?></a></li>
 <?php   }
          ?>
-
     </ul>
-
     <div id='myTabContent' class='tab-content'>
                 <!--Inmuebles-->
                 <div class='tab-pane fade active in' id='home'>
@@ -688,8 +686,7 @@
 </div>
 <br>
 
-<script>
-
+<script type="text/javascript">
 function load()
 {
   var uno =  parseInt($("#age").text());
@@ -714,7 +711,7 @@ function load()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estadoE').textContent = dos-total;
 }
@@ -755,7 +752,7 @@ function valuechange()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estadoE').textContent = total;
   document.getElementById('resultado').textContent = (depresiacion*estreo).toFixed(2);
@@ -786,7 +783,9 @@ function valuechange3()
   { cinco = 0;
   document.getElementById('unitaryadded3').value = '';}
   var depresiacion = cinco*x*1;
-  var estreo = <?= $valorR2 ?>;
+  var estreo = <?php if(isset($valorR2))
+  echo $valorR2;
+  else echo 0 ?>;
   document.getElementById('estado2D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
@@ -798,7 +797,7 @@ function valuechange3()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estado2E').textContent = total;
   document.getElementById('resultado1').textContent = (depresiacion*estreo).toFixed(2);
@@ -819,7 +818,9 @@ function valuechange4()
   { cinco = 0;
   document.getElementById('unitaryadded4').value = 0;}
   var depresiacion = cinco*x*1;
-  var estreo = <?= $valorR3 ?>;
+  var estreo = <?php if(isset($valorR3))
+  echo $valorR3;
+  else echo 0 ?>;
   document.getElementById('estado3D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
@@ -831,7 +832,7 @@ function valuechange4()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estado3E').textContent = total;
   document.getElementById('resultado2').textContent =(depresiacion*estreo).toFixed(2)
@@ -852,7 +853,9 @@ function valuechange5()
   { cinco = 0;
   document.getElementById('unitaryadded5').value = 0;}
   var depresiacion = cinco*x*1;
-  var estreo = <?= $valorR4 ?>;
+  var estreo = <?php if(isset($valorR4))
+  echo $valorR4;
+  else echo 0 ?>;
   document.getElementById('estado4D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
@@ -864,7 +867,7 @@ function valuechange5()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estado4E').textContent = total;
   document.getElementById('resultado3').textContent = (depresiacion*estreo).toFixed(2);
@@ -885,7 +888,9 @@ function valuechange6()
   { cinco = 0;
   document.getElementById('unitaryadded6').value = 0;}
   var depresiacion = cinco*x*1;
-  var estreo = <?= $valorR5 ?>;
+  var estreo = <?php if(isset($valorR5))
+  echo $valorR5;
+  else echo 0 ?>;
   document.getElementById('estado5D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
@@ -897,7 +902,7 @@ function valuechange6()
     total = x/depresiacion;
     total = total * dos;
     total = dos - total;
-    total =  Math.round(total)
+    total =  Math.round(total);
   }
   document.getElementById('estado5E').textContent = total;
   document.getElementById('resultado4').textContent = (depresiacion*estreo).toFixed(2);
@@ -918,7 +923,9 @@ function valuechange7()
   { cinco = 0;
   document.getElementById('unitaryadded6').value = 0;}
   var depresiacion = cinco*x*1;
-  var estreo = <?= $valorR6 ?>;
+  var estreo = <?php if(isset($valorR6))
+  echo $valorR6;
+  else echo 0 ?>;
   document.getElementById('estado6D').textContent =  depresiacion.toFixed(2);
   var total = 0;
   if(cinco == "")
@@ -959,9 +966,7 @@ function barra()
   else {
    final1 = (x/y)*100;
   }
-  if(y == 0)
-  {
-
+  if(y == 0){
   }
   else {
     final2 = (z/y)*100;

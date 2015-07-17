@@ -37,7 +37,7 @@ $e = $_POST['a5'];
 $f = $_POST['areax1'];
 $g = $_POST['areax2'];
 $h = $_POST['areax3'];
-$i = $_POST['areax4'];
+$k = $_POST['areax4'];
 $j = $_POST['areax5'];
 
 for ($i=1;$i <=10;$i++)
@@ -127,7 +127,7 @@ for ($i=1;$i <=10;$i++)
 			case 9:
 			if ($check9 == 1)
 			{
-				if ($i != 0 || $i != null)
+				if ($k != 0 || $k != null)
 				{
 					$maxc++;
 					$man .= "i";
@@ -189,7 +189,7 @@ if ($maxc != 0)
 			$final_string .= "('$action','$maximun','8','$h');";
 			break;
 			case "i":
-			$final_string .= "('$action','$maximun','9','$i');";
+			$final_string .= "('$action','$maximun','9','$k');";
 			break;
 			case "j":
 			$final_string .= "('$action','$maximun','10','$j');";
@@ -226,7 +226,7 @@ if ($maxc != 0)
 			$final_string .= "('$action','$maximun','8','$h'), ";
 			break;
 			case "i":
-			$final_string .= "('$action','$maximun','9','$i'), ";
+			$final_string .= "('$action','$maximun','9','$k'), ";
 			break;
 			case "j":
 			$final_string .= "('$action','$maximun','10','$j'), ";
