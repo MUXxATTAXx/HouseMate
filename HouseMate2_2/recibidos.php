@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html>
-<head>	
+<head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+  <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+  <link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/intro.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
      <script src='js/jquery-1.11.2.min.js' type='text/javascript'></script>
@@ -34,12 +34,12 @@ include "conexion.php";
 $usuario = $_SESSION['id'];
 //SELECT * FROM mensaje WHERE destinatario = 2 AND estado2 = 1 ORDER BY fecha DESC
 $consulta = "SELECT * FROM mensaje WHERE destinatario = '$usuario' AND estado2 = '1' ORDER BY fecha DESC";
-$cs = mysql_query($consulta);  
+$cs = mysql_query($consulta);
 ?>
 <form action="recibidos.php" method="POST">
         <table data-toggle='table' id='here' class='table table-striped table-hover negro'>
                <!--data-search='true' data-show-refresh='true' data-query-params='queryParams'>-->
-            
+
           <thead>
             <tr>
                 <th>#</th>
@@ -99,7 +99,7 @@ if(isset($_POST['eliminar']) and isset($_POST['check'])){
         $sql = mysql_query("UPDATE mensaje SET estado2 = '2' WHERE idmensaje ='$del_id'");
     }
     echo"<span class='label label-success'>".$lang['elim-msj-exito']."</span>";
-    
+
 }
 elseif(isset($_POST['marcar']) and isset($_POST['check'])){
     $check = $_POST['check'];

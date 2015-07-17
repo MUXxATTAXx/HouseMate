@@ -1,11 +1,11 @@
 <head>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-   <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/appeal.css' rel='stylesheet'/>
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
-	<title>Inicio</title>
+  	link href='css/appeal.css' rel='stylesheet'/>
+    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+  	<link href='css/intro.css' rel='stylesheet'/>
+  	<link href="css/bootstrap-table.css" rel="stylesheet">
+  	<title>Inicio</title>
 </head>
 <body id="intro">
 <?php
@@ -14,7 +14,7 @@ if(isset($_SESSION['tip'])){
 		switch($_SESSION['tip'])
 		{
 			case 1:
-			include("Header/barranav2.php");
+			     include("Header/barranav2.php");
 			break;
 			case 2:
             header('Location: index.php');
@@ -27,8 +27,6 @@ if(isset($_SESSION['tip'])){
 			break;
 		}
 	}
-
-   
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
     <div class="panel panel-info">
@@ -47,9 +45,8 @@ if(isset($_SESSION['tip'])){
                         <thead>
                           <tr>
                       <th><?=$lang['Nombre']?></th>
-                      <th>Rating</th>
-                      <th><?=$lang['Perfil']?></th>
                       <th><?=$lang['mensaje']?></th>
+                      <th><?=$lang['Perfil']?></th>
                       <th><?= $lang['Valuo'] ?></th>
                       <th><?= $lang['Empresa'] ?></th>
                       </tr>
@@ -64,11 +61,6 @@ if(isset($_SESSION['tip'])){
                             <td>
                               <?= $row['nombre'].$row['apellido'] ?>
                             </td>
-
-                            <td>
-                              <?= $row['Rating'] ?>
-                            </td>
-
                             <td>
                               <center><a href="enviar_msj.php?destin=<?=$row['usuario'] ?>" class="glyphicon glyphicon-envelope btn btn-sm btn-primary"></a></center>
                             </td>

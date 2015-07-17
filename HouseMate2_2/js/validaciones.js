@@ -86,8 +86,7 @@ function num(e){
                  var  teclado = String.fromCharCode(key).toLowerCase();
                  var   letras ="abcdefghijklmnñopqrstuvwxyz12345678";
                  var   especiales="8-37-38-46-164";
-
-                  var  teclado_especial = false;
+                 var  teclado_especial = false;
 
                     for(var i in especiales){
                           if(key==especiales[i]){
@@ -116,3 +115,38 @@ function num(e){
                         document.getElementById("validacion1").innerHTML = "";
                     }
               }
+              function correo(e){
+
+                       var   key=e.keyCode || e.which;
+                       var  teclado = String.fromCharCode(key).toLowerCase();
+                       var   letras ="abcdefghijklmnñopqrstuvwxyz12345678._@";
+                       var   especiales="8-37-38-46-164";
+                       var  teclado_especial = false;
+
+                          for(var i in especiales){
+                                if(key==especiales[i]){
+                                      teclado_especial=true;break;
+                                }
+                          }
+                          if(letras.indexOf(teclado)==-1 && !teclado_especial){
+
+                              document.getElementById("validacion1").innerHTML = "Letter only.";
+                              return false;
+                              document.getElementById("validacion2").innerHTML = "Letter only.";
+                              document.getElementById("validacion1").innerHTML = "Letters only.";
+                              return false;
+                              document.getElementById("validacion2").innerHTML = "Letters only.";
+                              document.getElementById("validacion1").innerHTML = "Letters only.";
+                              return false;
+                              document.getElementById("validacion2").innerHTML = "Letters only.";
+                              document.getElementById("validacion1").innerHTML = "Letters only.";
+                              return false;
+                              document.getElementById("validacion2").innerHTML = "Letters only.";
+
+                              return false;
+                          }
+                          else
+                          {
+                              document.getElementById("validacion1").innerHTML = "";
+                          }
+                    }

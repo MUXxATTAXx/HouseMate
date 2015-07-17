@@ -2,6 +2,7 @@
 	include("../../conexion.php");
 	include("../Lenguaje/lenguaje.php");
 ?>
+
 			<!-- barra lateral -->
 			<!-- modificar falta -->
  <div class='form-Dl' align="center">

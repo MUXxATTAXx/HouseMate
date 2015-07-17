@@ -1,4 +1,5 @@
 <?php
+
     include "Call/Lenguaje/lenguaje.php";
     echo("
     <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
@@ -19,7 +20,7 @@
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/estilop.css' rel='stylesheet'/>
 </head>
-<body> 
+<body>
 
 <h1><?php echo($lang['Perfil']);?></h1>
 <div class="panel panel-default">
@@ -38,9 +39,9 @@
         if($row['tipo']=="3"){echo"Perito";}
         if($row['tipo']=="4"){echo"Visitante";}
     echo"<br></h4>";
-    
-?> 
-	</div>	
+
+?>
+	</div>
   <div class="panel-body">
   <div id="image_p" align="center">
 <img  src="img/smith,jonathan.jpg" width="auto" height="auto">

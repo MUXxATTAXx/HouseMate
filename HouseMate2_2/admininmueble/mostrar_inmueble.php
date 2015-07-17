@@ -1,9 +1,8 @@
 
 <?php
-    mysql_query("SET NAMES 'utf8'");	
+    mysql_query("SET NAMES 'utf8'");
     $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
     $cs=mysql_query($consulta);
-
 	$countermax = 0;
 	$i = 0;
 	$know = "";
@@ -20,7 +19,7 @@
 				<th>".$lang['tm']."</th>
             </tr>
     </thead>";
-	
+
 	while($row=mysql_fetch_array($cs))
 	{
 		switch($row['VentaRenta'])
@@ -43,13 +42,13 @@
 		}
 		echo "<tr>
 		<td>
-		<p>".$row['IdInmueble']."</p> 
+		<p>".$row['IdInmueble']."</p>
 		</td>
 		<td>
 		<h4>".$know."</h4>
 		</td>
 		<td >
-			
+
 			<p>$".$row['Precio'].".00</p>
 		</td>
 		<td >
@@ -61,14 +60,14 @@
 		<td>
 			<p>".$row['nombre']." ".$row['apellido']."</p>
 		</td>
-		<td 
+		<td
 		<label></label>
 			<p>".$know2."</p>
 		</td>
 		</tr>";
 
-		
-	}	
+
+	}
 	echo "</table>";
 
 ?>

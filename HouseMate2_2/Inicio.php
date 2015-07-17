@@ -13,7 +13,6 @@ require ("Call/Lenguaje/lenguaje.php");
 <body>
 <?php
     require "Header/barranav0.php";
-
 ?>
 <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
 <!-- polyfiller file to detect and load polyfills -->

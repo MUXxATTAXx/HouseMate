@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-default navbar-fixed-top" >
 <?php require ("Call/Lenguaje/lenguaje.php"); ?>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -47,7 +46,7 @@
                               <div class="form-group">
 								<h4><?php echo $lang['Iniciar-Sesion']; ?></h4>
                                   <label for="username" class="control-label"><?php echo $lang['Usuarioname']; ?></label>
-                                  <input type="text" class="form-control" id="username" name="usuario1" required title="Please enter you username" placeholder="<?php echo $lang['Usuarioname']; ?>">
+                                  <input type="text" onk class="form-control" id="username" name="usuario1" required title="Please enter you username" placeholder="<?php echo $lang['Usuarioname']; ?>">
                                   <span class="help-block"></span>
                               </div>
                               <div class="form-group">
@@ -101,10 +100,8 @@
 								$error = $_GET['er'];
 								echo "<br>".$error;
 							}
-
 		?>
-
-
 	</div>
+	<script src="js/validaciones.js" type="text/javascript"></script>
 <br>
 <br>

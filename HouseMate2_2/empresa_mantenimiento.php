@@ -13,7 +13,6 @@
 
 </head>
 <body>
-
 <!-- Logic para change of active ta	b -->
 <div class="row row-centered">
 	<div class="col-sm-7 col-centered">
@@ -78,6 +77,7 @@
 				</div>
       </div>
       <div class='panel-footer'>
+				<span id="validacion-num1"></span>
       </div>
     </div>
   </div>

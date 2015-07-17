@@ -23,17 +23,16 @@
 		include("Header/barranav6.php");
 		break;
 	}
-
 ?>
 <html>
-<head>	
+<head>
 	<title><?php echo $lang['mis-inmuebles'];?></title>
 	<meta charset = "utf-8" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/profile_cards.css" rel="stylesheet">
-	
+
 </head>
-<body> 
+<body>
 <br>
 <div class="container">
     <div class="row">

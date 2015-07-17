@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
     <link href='css/bootstrap.min.css' rel='stylesheet'/>

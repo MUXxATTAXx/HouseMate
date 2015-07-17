@@ -24,7 +24,6 @@
 		break;
 	}
 
-
 ?>
 <!DOCTYPE HTML>
 

@@ -429,4 +429,9 @@ $lang['v-cuadradas'] = " square yards ";
 $lang['manual-usu'] = "User Manual";
 $lang['manual-admin'] = "Administrator Manual";
 $lang['cancelar-oferta'] = "Cancel Offer";
+
+$lang['manual-admin1'] = "Reportes/Admin-manual.pdf";
+$lang['manual-usu1'] = "Reportes/User-Manual.pdf";
+
+$lang['campos-vacios'] = "Do not leave blank spaces!";
 ?>

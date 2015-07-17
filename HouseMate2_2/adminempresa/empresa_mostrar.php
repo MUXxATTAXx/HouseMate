@@ -1,4 +1,3 @@
-
 <div id="delete" class="modal fade" role="dialog">
   <div class="modal-dialog">
 

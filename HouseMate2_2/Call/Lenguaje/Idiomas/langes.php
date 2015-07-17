@@ -428,4 +428,9 @@ $lang['manual-admin'] = "Manual de Administrador";
 
 $lang['cancelar-oferta'] = "Cancelar Oferta";
 
+$lang['manual-admin1'] = "Reportes/Manual-Administrador.pdf";
+$lang['manual-usu1'] = "Reportes/Manual-Usuario.pdf";
+
+$lang['campos-vacios'] = "Llene todos los campos!";
+
 ?>

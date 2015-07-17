@@ -8,6 +8,7 @@
 	float:right;
 	width:50%;
 }
+
 .rating > span:hover:before {
    content: "\2605";
    position: absolute;

@@ -3,7 +3,7 @@
 	<link href='css/estilop.css' rel='stylesheet'/>
 <?php
     echo("
-<meta charset=utf-8 />
+		<meta charset=utf-8 />
     ");
 	session_start();
 	$variable1 = $_SESSION["user"];

@@ -1,8 +1,8 @@
 
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-	<link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/change.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
+<link href='css/bootstrap.min.css' rel='stylesheet'/>
+<link href='css/change.css' rel='stylesheet'/>
+<link href="css/bootstrap-table.css" rel="stylesheet">
 
 <?php
     require("Header/barranav2.php");

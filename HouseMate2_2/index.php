@@ -5,7 +5,6 @@ require ("Call/Lenguaje/lenguaje.php");
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <html>
 <head>
-
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
    <?php
@@ -26,7 +25,7 @@ if(isset($_SESSION['id'])){
             header('Location: visitantehomepage.php');
 			break;
 		}
-    
+
 }
 ?>
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />

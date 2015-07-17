@@ -21,13 +21,13 @@
 		}
 		else
 		{
-				echo "<span class='label label-warning' id='error1'>llene todos los campos</span>";
+				echo "<span class='label label-warning' id='error1'>".$lang['campos-vacios']."</span>";
 				echo "<div class='col-sm-6 col-centered'> <a class='btn btn-danger btn-block ingresarin2' value='Insert'>".$lang['Verificar']."</a><div>";
 		}
 	}
 	else
 	{
-		echo "<span class='label label-warning' id='error1'>llene todos los campos</span>";
+		echo "<span class='label label-warning' id='error1'>".$lang['campos-vacios']."</span>";
 		echo "<div class='col-sm-6 col-centered '> <a class='btn btn-danger btn-block ingresarin2' value='Insert'>".$lang['Verificar']."</a><div>";
 	}
 	function ingresar()

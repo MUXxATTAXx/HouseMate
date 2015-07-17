@@ -8,9 +8,26 @@
 <title>Inicio</title>
 </head>
 <body id="intro" onload="load();load2()">
-<?php
-    include("Header/barranav3.php");
-?>
+  <?php
+  session_start();
+  if(isset($_SESSION['tip'])){
+  		switch($_SESSION['tip'])
+  		{
+  			case 1:
+  			     include("Header/barranav2.php");
+  			break;
+  			case 2:
+              header('Location: index.php');
+  			break;
+  			case 3:
+               include("Header/barranav3.php");
+  			break;
+  			case 4:
+              header('Location: visitantehomepage.php');
+  			break;
+  		}
+  	}
+  ?>
 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad">
     <div class="panel panel-info">
 <div class="panel-heading">
@@ -34,9 +51,9 @@
     <br>
       <div class="row">
           <div class="col-sm-4">
-            <div class="row">
+
             <label><?= $lang['Direccion']  ?>:</label>
-          </div>
+
           <div class="row">
             <i><?= $row['Direccion']  ?></i>
             <p><?= $row['Descripcion'] ?></p>
@@ -51,15 +68,12 @@
             <label id="age" class="btn label label-info"><?= $row['age']  ?></label>
           </div>
           </div>
-          <div class="col-sm-2">
+          <div class="col-xs-2">
             <div class="row row-centered">
             <label ><?= $lang['agev']  ?>:</label>
           </div>
           <div class="row row-centered">
             <label id="aget" class="btn label label-info">65</label>
-          </div>
-          <div class="col-sm-4">
-
           </div>
 
           </div>
@@ -76,12 +90,13 @@
             <label ><?= $lang['area1']  ?>:</label>
           </div>
           <div class="row row-centered">
-            <label id="areaterenoF" class="btn label label-info"><?= $row['areadeterreno']." m^2"?></label>
+            <label id="areaterenoF" class="btn label label-info"><?= $row['areadeterreno']." v^2"?></label>
           </div>
           </div>
 
       </div>
       <br>
+      <div class="col-sm-12">
     <ul  class="nav nav-tabs">
         <li id='me' class='negro'><a href='#home' data-toggle='tab' class="glyphicon glyphicon-usd"></a></li>
         <?php
@@ -109,39 +124,37 @@
           }?></a></li>
 <?php   }
          ?>
-    </ul>
+    </ul></div>
     <div id='myTabContent' class='tab-content'>
                 <!--Inmuebles-->
                 <div class='tab-pane fade active in' id='home'>
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="col-sm-6">
+                  <div class="row row-centered"><center>
+                    <div class="col-sm-6 col-centered">
+                      <div class="row row-centered">
+                        <div class="col-sm-6 col-centered">
                         <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                           <div class="input-group">
                           <span class="input-group-addon label-info">$</span>
-                        <input class="form-control" type="number" id="unitaryadded"  onchange="valuechange()">
+                        <input class="form-control" type="number" id="unitaryadded" onkeypress="return deci(event);"  onchange="valuechange();">
                           <span class="input-group-addon label-info"></span>
                         </div>
                         </div>
 
                       </div>
                     </div>
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="col-sm-6">
+                    <div class="col-sm-6 col-centered">
+                      <div class="row row-centered">
+                        <div class="col-sm-6 col-centered">
                         <label><?= $lang['VU'] ?> (<?= $lang['lot'] ?>):</label>
                           <div class="input-group">
                           <span class="input-group-addon label-info">$</span>
-                        <input class="form-control" type="number"  id="unitaryadded2" onchange="valuechange2()">
+                        <input class="form-control" type="number"  id="unitaryadded2" onkeypress="return deci(event);" onchange="valuechange2();">
                           <span class="input-group-addon label-info"></span>
                         </div>
                         </div>
                       </div>
-                    </div>
+                    </div></center>
                   </div>
-                  <div class="row">
-                </div>
                   <br>
                   <table class='table table-striped table-hover'>
                   <thead>
@@ -208,7 +221,7 @@
                       <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                         <div class="input-group">
                         <span class="input-group-addon label-info">$</span>
-                      <input class="form-control" type="number" id="unitaryadded3"  onchange="valuechange3()">
+                      <input class="form-control" type="number" id="unitaryadded3" onkeypress="return deci(event);"  onchange="valuechange3()">
                         <span class="input-group-addon label-info"></span>
                       </div>
                       </div>
@@ -296,7 +309,7 @@
                       <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                         <div class="input-group">
                         <span class="input-group-addon label-info">$</span>
-                      <input class="form-control" type="number" id="unitaryadded4"  onchange="valuechange4()">
+                      <input class="form-control" type="number" id="unitaryadded4" onkeypress="return deci(event);"  onchange="valuechange4()">
                         <span class="input-group-addon label-info"></span>
                       </div>
                       </div>
@@ -382,7 +395,7 @@
               <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                 <div class="input-group">
                 <span class="input-group-addon label-info">$</span>
-              <input class="form-control" type="number" id="unitaryadded5"  onchange="valuechange5()">
+              <input class="form-control" type="number" id="unitaryadded5" onkeypress="return deci(event);"  onchange="valuechange5()">
                 <span class="input-group-addon label-info"></span>
               </div>
               </div>
@@ -468,7 +481,7 @@
                 <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                   <div class="input-group">
                   <span class="input-group-addon label-info">$</span>
-                <input class="form-control" type="number" id="unitaryadded6"  onchange="valuechange6()">
+                <input class="form-control" type="number" id="unitaryadded6" onkeypress="return deci(event);"  onchange="valuechange6()">
                   <span class="input-group-addon label-info"></span>
                 </div>
                 </div>
@@ -554,7 +567,7 @@
                 <label><?= $lang['VU'] ?> (<?= $lang['Constr'] ?>):</label>
                   <div class="input-group">
                   <span class="input-group-addon label-info">$</span>
-                <input class="form-control" type="number" id="unitaryadded7"  onchange="valuechange7()">
+                <input class="form-control" type="number" id="unitaryadded7" onkeypress="return deci(event);"  onchange="valuechange7()">
                   <span class="input-group-addon label-info"></span>
                 </div>
                 </div>
@@ -637,15 +650,16 @@
 
 <div class="panel-footer">
 
-  <div class="row">
-  <div class="col-sm-5">
+  <div class="row row-centered">
+    <div class="col-sm-2"></div>
+  <div class="col-sm-5 col-centered">
     <div class="row">
       <div class="col-sm-6">
       <label><?= $lang['builvalue'] ?>:</label>
     </div>
 
   </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-centered">
       <div class="input-group"><h3>
       <span class="input-group-addon btn label label-info">$</span>
     <label class="input-group btn label label-info"  id="esda"></label>
@@ -653,13 +667,13 @@
     </div>
     </div>
   </div>
-  <div class="col-sm-5">
+  <div class="col-sm-5 col-centered">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-6 col-centered">
       <label><?= $lang['lotvalue'] ?>:</label>
     </div>
   </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-centered">
       <div class="input-group"><h3>
       <span class="input-group-addon btn label label-info">$</span>
     <label class="input-group btn label label-info"  id="esda2"></label>
@@ -667,11 +681,8 @@
     </div>
     </div>
   </div>
-  <div class="col-sm-2">
-  <div class="col-sm-12"><a  name="funcionar" id="funcionar" class="btn btn-sm btn-warning"><?= $lang['insert'] ?></a></div>
-
   </div>
-  </div>
+<span id="validacion-num1" class="label label-warning"></span>
   <br>
 
   <div class="row">
@@ -688,24 +699,25 @@
     </div>
   </div>
 </div>
+
 <div id="recdje"></div>
-<table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='false'>
+<table class='table whitecover' data-toggle='table'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='false'>
 <thead>
-<tr class="whitecover" style="color:black;">
-<th><?= $lang['Nombre'] ?></th>
-<th ><?= $lang['are']  ?></th>
-<th><?= $lang['VNR'] ?></th>
-<th>Total</th>
+<tr class="label-info " style="color:black; align:center;">
+<th class="centerme"><?= $lang['Nombre'] ?></th>
+<th class="centerme"><?= $lang['are']  ?></th>
+<th class="centerme"><?= $lang['VNR'] ?></th>
+<th class="centerme">Total</th>
 </tr>
 </thead>
 
-<tbody id="tablameter">
+<tbody id="tablameter" style="color:black;">
 </tbody>
  <tfoot>
-   <tr id="especial-1" class="hidme">
+   <tr id="especial-1" style="color:black;" class="hidme">
      <td><?=$lang['Constr'] ?></td><td id="Atabla-1" class="progress-bar progress-bar-primary"></td><td class="progress-bar progress-bar-primary" id="Btabla-1"></td><td class="progress-bar progress-bar-primary" id="Ctabla-1"></td>
    </tr>
-<tr id="tablaterreno" class="hidme">
+<tr id="tablaterreno" style="color:black;" class="hidme">
   <td ><?= $lang['lot'] ?></td>
   <td class="progress-bar progress-bar-success"><label id="areadeterreno"></label></td>
   <td class="progress-bar progress-bar-success"><label id="valorporterreno"></label></td>
@@ -715,11 +727,14 @@
   <td class="progress-bar progress-bar-info"></td>
   <td class="progress-bar progress-bar-info"></td>
   <td class="progress-bar progress-bar-info">Total:</td>
-  <td class="progress-bar progress-bar-info"><label id="valorfinal"></label></td>
+  <td style="color:black; align:center;"><center><label id="valorfinal"></label></center></td>
 </tr>
 </tfoot>
 </table>
-
+<br>
+<div class="col-sm-10"></div>
+<div class="col-sm-2 col-centered"><a  name="funcionar" id="funcionar" class="btn btn-sm btn-warning"><?= $lang['insert'] ?></a></div>
+<br>
 </div>
   </div>
     </div>
@@ -817,7 +832,7 @@ function formstart()
   var x = parseFloat(document.getElementById("unitaryadded2").value);
   var z = document.getElementById('areaterenoF').textContent;
   var y = document.getElementById('esda2').textContent;
-  if(x != 0 || x != 0.00 || x != null || x != NaN){
+  if(x != 0 && x != 0.00 && x != null && x > 0){
     document.getElementById('areadeterreno').textContent = z;
     document.getElementById('valorporterreno').textContent = x;
     document.getElementById('totalterreno').textContent = y;
@@ -1144,4 +1159,5 @@ $("#funcionar").click(function(){
 <script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
 <script type='text/javascript' src='js/aprobarperi.js'></script>
 <script src='js/bootstrap-table.js' type='text/javascript'></script>
+<script src="js/validaciones.js" type="text/javascript"></script>
 </body>

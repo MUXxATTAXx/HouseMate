@@ -1,12 +1,11 @@
 <head>
-<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>	
-   <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/appeal.css' rel='stylesheet'/>
+    <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
-
-	<link href="css/bootstrap-table.css" rel="stylesheet">
-	<title>Inicio</title>
+	  <link href='css/appeal.css' rel='stylesheet'/>
+    <link href='css/bootstrap.min.css' rel='stylesheet'/>
+	  <link href='css/intro.css' rel='stylesheet'/>
+	  <link href="css/bootstrap-table.css" rel="stylesheet">
+    <title>Inicio</title>
 </head>
 <body id="intro">
 <?php
@@ -28,7 +27,7 @@ if(isset($_SESSION['tip'])){
 			break;
 		}
 	}
-    
+
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">

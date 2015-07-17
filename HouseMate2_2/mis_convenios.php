@@ -3,10 +3,8 @@
 
 <?php
     echo("
-
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-
-<meta charset=utf-8 />
+    <meta charset=utf-8 />
     ");
     session_start();
 	switch($_SESSION['tip'])
@@ -26,14 +24,14 @@
 
 ?>
 <html>
-<head>	
+<head>
 	<title><?php echo $lang['mis-convenios'];?></title>
 	<meta charset = "utf-8" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/profile_cards.css" rel="stylesheet">
-	
+
 </head>
-<body> 
+<body>
 <br>
 <div class="container">
     <div class="row">
@@ -103,7 +101,7 @@ while($urow = mysql_fetch_array($inmueble_con)){
 		";
         }
     }
-}     
+}
 }
 else{
     echo "<h2>".$lang['no-mates']."</h2>";
@@ -125,11 +123,11 @@ if(isset($_POST['negociar'])){
         $d1 = $drow['fecha_final'];
         $date1 = $fecharow['fecha_aprobacion'];
         $date2 = date("Y-m-d",$date1);
-        $fecha_resta = (strtotime($d1)- strtotime($date2))/24/3600;     
+        $fecha_resta = (strtotime($d1)- strtotime($date2))/24/3600;
         $fecha_final1 = strtotime("+".$fecha_resta."Days");
-        $fecha_final2 = date("Y-m-d",$fecha_final1);   
+        $fecha_final2 = date("Y-m-d",$fecha_final1);
     }
-    
+
     $negociar = "UPDATE convenio SET aprovado1 = '0', aprovado2 = '2', fecha_aprobacion = CURRENT_TIMESTAMP, fecha_final = '$fecha_final2' WHERE idconvenio = '$idconvenio'";
     echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
     $negociar_con = mysql_query($negociar);

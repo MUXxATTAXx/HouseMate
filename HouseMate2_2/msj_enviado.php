@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html>
-<head>	
-	<title>House Mate</title>
-	<meta charset = "utf-8" />
-	   <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
+<head>
+		<title>House Mate</title>
+		<meta charset = "utf-8" />
+		<link href='css/bootstrap.min.css' rel='stylesheet'/>
+		<link href='css/appeal.css' rel='stylesheet'/>
+	  <link href='css/bootstrap.min.css' rel='stylesheet'/>
+		<link href='css/intro.css' rel='stylesheet'/>
+		<link href="css/bootstrap-table.css" rel="stylesheet">
 </head>
 <body>
 <?php
@@ -61,7 +61,7 @@ while($row=mysql_fetch_array($cs)){
                 <div class="row">
                  <div class="col col-sm-3 col-centered">
                      <h4><?php echo $lang['msj'].":";?></h4>
-					</div>   
+					</div>
                 </div>
 				<div class="row">
 					<div class="col col-sm-3 col-centered">

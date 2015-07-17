@@ -24,7 +24,6 @@ if(isset($_SESSION['tip'])){
 	}
 }
 ?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -33,9 +32,9 @@ if(isset($_SESSION['tip'])){
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/estilop.css' rel='stylesheet'/>
-	
+
 </head>
-<body> 
+<body>
 
 <br>
       <div class="row">
@@ -92,7 +91,7 @@ if(isset($_SESSION['tip'])){
 						<div class="col col-sm-4">
 							<input name="tel2" class="form-control" type="textbox" placeholder="<?php echo($lang['tel22']);?>" maxlength="8">
 						</div>
-					</div>   
+					</div>
             </div>
             <div class="panel-footer">
 				<center>
@@ -102,28 +101,28 @@ if(isset($_SESSION['tip'])){
 			</div>
             <?php
             if(isset($_POST['mejorar']) ){
-                include "conexion.php";  
+                include "conexion.php";
                 //Usuario mejorado
                 $consulta1 = mysql_query("SELECT * FROM usuario");
                 $digito = mysql_num_rows($consulta1);
 				$maximun = $digito;
                 //Usuario temporal
                 $temp_id = $_SESSION['id'];
-                
+
                 $credenciales = $_POST['crede'];
                 $direccion = $_POST['direccion'];
                 $dui = $_POST['dui'];
                 $nit = $_POST['nit'];
                 $telefono1 = $_POST['tel'];
                 $telefono2 = $_POST['tel2'];
-                
+
                 $consulta3 = mysql_query("select * from usuario where TempId = '$temp_id'");
 				$digito2 = mysql_num_rows($consulta3);
                 if($digito2 > 0){
                     echo ($lang['mejorar_error2']);
                 }
                 else{
-                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0','')");        
+                $consulta2 = mysql_query("INSERT INTO usuario VALUES ('$maximun','$temp_id','$credenciales','$direccion','$dui','$nit','$telefono1','$telefono2','0','')");
                     if($consulta2){
                         echo($lang['mejorar_exito']);
                     }

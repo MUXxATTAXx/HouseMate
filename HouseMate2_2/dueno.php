@@ -8,9 +8,8 @@
    <?php
     include "Call/spr.php";
 ?>
-	
 </head>
-<body> 
+<body>
 <?php
 session_start();
 if(isset($_SESSION['tip']))
@@ -49,7 +48,7 @@ else
         $cs = mysql_query($consulta);
         while ($row=mysql_fetch_array($cs)){
     ?>
-	
+
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 col-xs-offset-1 col-sm-offset-0 col-md-offset-3 col-lg-offset-2 toppad" >
           <div class="panel panel-info">
             <div class="panel-heading">
@@ -67,7 +66,7 @@ else
             <div class="panel-body">
             <center>
             <form action="mejorar_perfil.php" method="POST">
-                  <div class="row">   
+                  <div class="row">
                     <div class=" col-md-9 col-lg-9 ">
                     <table class="table table-user-information">
                     <tbody>
@@ -92,7 +91,7 @@ else
                         <td><?php echo $lang['Correo'];?></td>
                         <td><?php echo $row['correo'] ?></td>
                       </tr>
-                      </tr>              
+                      </tr>
 				 <?php
                 }
 				$consulta = ( "select tbusuario.* , usuario.* from tbusuario inner join usuario on tbusuario.idUsuario = usuario.TempId WHERE tbusuario.idUsuario = '$dueno'");
@@ -106,7 +105,7 @@ else
                       </tr>
 					  <tr>
 					  <td><?php echo "NIT" ?></td>
-						<td><?php 
+						<td><?php
 						$Nresult1 = substr($row['NIT'],0,4);
 						$Nresult2 = substr($row['NIT'],4,6);
 						$Nresult3 = substr($row['NIT'],10,3);
@@ -118,7 +117,7 @@ else
 						<td><?php
 						$Dresult = substr($row['DUI'], 0, 8);
 						$Dresult2 = substr($row['DUI'], 8, 1);
-								
+
 						echo $Dresult."-".$Dresult2  ?></td>
 					  </tr>
 					  <tr>
@@ -129,7 +128,7 @@ else
 					  </tr>
 					  <tr>
 					  <td><?php echo $lang['tel'] ?></td>
-					  <td><?php 
+					  <td><?php
 					  $Telefono1 = substr($row['telefono2'],0,4);
 					  $Telefono2 = substr($row['telefono2'],4,4);
 					  echo $Telefono1."-".$Telefono2 ?></td>
@@ -137,13 +136,13 @@ else
                     </tbody>
                   </table>
                     </div>
-                  </div>     
+                  </div>
             </div>
             <?php ?>
             </center>
             <div class="panel-footer">
                 <input type="submit" name="mejorar" class="btn btn-primary" value="<?php echo $lang['Offer']; ?>">
-				<?php 
+				<?php
 				}
 				?>
 
@@ -153,7 +152,7 @@ else
         </div>
     </div>
 </div>
-      
+
 
 </body>
 </html>

@@ -11,6 +11,7 @@
       </button>
       <a class="navbar-brand" href="adminHomepage.php">House Mate</a>
     </div>
+    
     <?php
 require ("Call/Lenguaje/lenguaje.php");
 require ("Call/Loged/seguridad.php");
@@ -30,6 +31,7 @@ require ("Call/Loged/seguridad.php");
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
 				<li><a href="Empresa.php"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><?php echo($lang['Empresa']);?></a></li>
+        <li><a href="peritohomepage.php"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span><?= $lang['Perito'];?></a></li>
 			</ul>
         </li>
         <li class="dropdown">
@@ -150,9 +152,10 @@ require ("Call/Loged/seguridad.php");
         </li>
           <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+
                 <ul class="dropdown-menu" role="menu">
-                    <li><a target="_blank" href="Reportes/Manual%20de%20Administrador.pdf" ><?=$lang['manual-admin']?></a></li>
-					<li><a target="_blank" href='Reportes/Manual%20de%20Usuario.pdf'><?=$lang['manual-usu']?></a></li>
+                    <li><a target="_blank" href="<?=$lang['manual-admin1']?>" ><?=$lang['manual-admin']?></a></li>
+					<li><a target="_blank" href='<?=$lang['manual-usu1']?>'><?=$lang['manual-usu']?></a></li>
                 </ul>
           </li>
           <li class="dropdown">

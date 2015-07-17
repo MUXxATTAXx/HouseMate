@@ -24,7 +24,7 @@
           </div>
           <div class="form-group col-xs-12">
             <label>*NIT:</label>
-            <input name="nit" class="form-control" maxlength="14">
+            <input name="nit" onkeypress="return num(event)" class="form-control" maxlength="14">
           </div>
         </div>
       </div>
@@ -34,11 +34,11 @@
         <div class="row">
           <div class="form-group col-xs-6">
             <label>*<?php echo $lang['tel'] ?>:</label>
-            <input name="telefono" class="form-control" maxlength="8">
+            <input name="telefono" onkeypress="return num(event)" class="form-control" maxlength="8">
           </div>
           <div class="form-group col-xs-6">
             <label><?php echo $lang['tel2'] ?>:</label>
-            <input name="telefono2" class="form-control" maxlength="8">
+            <input name="telefono2" onkeypress="return num(event)" class="form-control" maxlength="8">
           </div>
         </div>
         <div>

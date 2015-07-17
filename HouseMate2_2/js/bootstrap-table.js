@@ -3,7 +3,6 @@
  * version: 1.7.0
  * https://github.com/wenzhixin/bootstrap-table/
  */
-
 !function ($) {
     'use strict';
 
@@ -1248,7 +1247,7 @@
                                 (value && value.disabled) ? 'disabled' : undefined) +
                             ' />',
                         that.options.cardView ? '</div>' : '</td>'].join('');
-                        
+
                     item[that.header.stateField] = value === true || (value && value.checked);
                 } else {
                     value = typeof value === 'undefined' || value === null ?

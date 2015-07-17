@@ -1,4 +1,3 @@
-
 <div name='registrar'>
 <div class='form-Dl' align="center">
 	<div class="row row-centered">
@@ -30,7 +29,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Correo']); ?>:</label>
-			<input id="lowerme" onkeypress="checkEmail()"  class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
+			<input id="lowerme" onkeypress="checkEmail();return correo(event)"  class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo($lang['Fecha-Nac']); ?>:</label>

@@ -35,7 +35,7 @@
           </div>
           <div class="form-group col-xs-12">
             <label>*NIT:</label>
-            <input name="nit" class="form-control" value='<?= $row['nit'] ?>' maxlength="14">
+            <input name="nit" onkeypress="return num(event)" class="form-control" value='<?= $row['nit'] ?>' maxlength="14">
           </div>
         </div>
       </div>
@@ -45,11 +45,11 @@
         <div class="row">
           <div class="form-group col-xs-6">
             <label>*<?php echo $lang['tel'] ?>:</label>
-            <input name="telefono" class="form-control" value='<?= $row['telefono'] ?>' maxlength="8">
+            <input name="telefono" onkeypress="return num(event)" class="form-control" value='<?= $row['telefono'] ?>' maxlength="8">
           </div>
           <div class="form-group col-xs-6">
             <label><?php echo $lang['tel2'] ?>:</label>
-            <input name="telefono2" class="form-control" value='<?= $row['telefono2'] ?>' maxlength="8">
+            <input onkeypress="return num(event)"  name="telefono2" class="form-control" value='<?= $row['telefono2'] ?>' maxlength="8">
           </div>
         </div>
         <div>

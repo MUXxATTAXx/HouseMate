@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if($_SESSION['empresalobby'] != "" || isset($_GET['empresa']))
 {
@@ -11,19 +11,19 @@ if($_SESSION['empresalobby'] != "" || isset($_GET['empresa']))
 	$digito = mysql_num_rows($consulta);
 	if($digito > 0 )
 	{
-		
+
 		include "Call/Empresa/Empresasee.php";
 	}
 	else
 	{
-		echo "<script> 
+		echo "<script>
     window.history.back();
-			</script>";
+		</script>";
 	}
 }
 else
 	{
-		echo "<script> 
+		echo "<script>
 			window.history.back();
 			</script>";
 	}

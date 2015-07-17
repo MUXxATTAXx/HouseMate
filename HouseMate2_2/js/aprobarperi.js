@@ -17,6 +17,7 @@ $("#eliminar").click(function(){
         });
 });
 
+
 $(window).load(function()  {
     loadData();
 });

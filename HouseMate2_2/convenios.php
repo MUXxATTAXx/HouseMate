@@ -3,7 +3,6 @@
 
 <?php
     echo("
-
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
 
 <meta charset=utf-8 />
@@ -25,15 +24,16 @@
 	}
 
 ?>
+
 <html>
-<head>	
+<head>
 	<title><?php echo $lang['mis-convenios'];?></title>
 	<meta charset = "utf-8" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/profile_cards.css" rel="stylesheet">
-	
+
 </head>
-<body> 
+<body>
 <br>
 <div class="container">
     <div class="row">
@@ -53,17 +53,17 @@ while($drow = mysql_fetch_array($convenio_con)){
     $inmueble_con = mysql_query($inmueble);
     while($urow = mysql_fetch_array($inmueble_con)){
         echo "<form action='#' method='POST'>";
-        echo"<div class='col-sm-6'> 
+        echo"<div class='col-sm-6'>
             <div class='row well well-sm'>";
-            if($drow['aprovado2'] == "0"){             
+            if($drow['aprovado2'] == "0"){
                 echo "<center><h1>".$lang['nego-pendiente']."</h1>
                 </center>";
-                    
+
             }elseif($drow['aprovado2'] == "2"){
                 echo "<center><h1>".$lang['oferta-denegada']."</h1>
                 <p class='text-danger'>".$lang['intente-denuevo']."</p>
                 </center>";
-            }    
+            }
                 echo "<div class='col-sm-4'>
                     <img src='".$urow['Imagen']."' height='150px' width='200px' />
                 </div>
@@ -140,7 +140,7 @@ while($drow = mysql_fetch_array($convenio_con)){
     }
 }
 if(mysql_num_rows($convenio_con) == 0){
-    echo "<div class='col-sm-6'> 
+    echo "<div class='col-sm-6'>
             <div class='row well well-sm'><center><h2>".$lang['ninguna-oferta']."</h2><br>
             <a class='btn btn-primary' href='visitantehomepage.php'>".$lang['regresar-inicio']."</a>
             </center></div></div>";
@@ -160,9 +160,9 @@ if(isset($_POST['renegociar'])){
         if(isset($renegociar_con)){
              echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";
         }
-        
+
     }
-                        
+
 }
 
 if(isset($_POST['cancelar']) and isset($_POST['idconvenio'])){

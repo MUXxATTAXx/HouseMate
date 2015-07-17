@@ -11,6 +11,7 @@
       </button>
       <a class="navbar-brand" href="peritohomepage.php">House Mate</a>
     </div>
+    
     <?php
 	include "Call/Lenguaje/lenguaje.php";
 	require ("Call/Loged/seguridad.php");

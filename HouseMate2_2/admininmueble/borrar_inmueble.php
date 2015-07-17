@@ -1,12 +1,11 @@
 <div class='form-Dl' align='center'>
 	<div class='row row-centered'>
-		<div class="col-sm-4 col-centered">            
+		<div class="col-sm-4 col-centered">
 			<label><?php echo $lang['idm'] ?>:</label>
 			<input onkeypress="return num(event)" class='form-control' type='number' name="destruiere" placeholder='<?php echo $lang['Codigo'] ?>' autocomplete="off"/>
-			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>
-			
+			<a class='btn btn-primary btn-block' href="#delete"><?php echo $lang['Eliminares'] ?></a>			
 		</div>
-        
+
 	</div>
 </div>
 <div id="delete" class="modalDialog2">
@@ -15,10 +14,10 @@
 		<div  class='form-D2'>
 		<a href="#close" title="Close" class="close">X</a>
 		           <div class="modal-header">
-               
+
                     <h4 class="modal-title" id="myModalLabel"><?php echo $lang['Cdelete']; ?></h4>
                 </div>
-            
+
                 <div class="modal-body">
                     <p><?php echo $lang['Xdelete']; ?></p>
                     <p><?php echo $lang['Fdelete']; ?></p>
@@ -26,10 +25,10 @@
 					 <button name='eliminar' type="submit" class="btn btn-default btn-block" ><?php echo($lang['Salir']); ?>
 					 </button><a type="button" class="btn btn-default btn-block" href="#close"><?php echo($lang['Aceptar']); ?></a>
                 </div>
-                
-                
+
+
 		</div>
-	
+
 		</div>
 </div>
     <?php
@@ -47,34 +46,34 @@
 				$numero=mysql_query($consulta2);
 				$digito = mysql_num_rows($numero);
 				echo $digito;
-				
-				
+
+
 				$consulta3 = "DELETE FROM inmueble WHERE IdInmueble = '$ideli'";
 				$cs=mysql_query($consulta3);
-				
+
 				$consulta4 = "UPDATE etiqueta SET IdEtiqueta = IdEtiqueta - $digito  WHERE Idinmueble > '$ideli'";
 				$numero=mysql_query($consulta4);
-				
-				
+
+
 				$consulta5 = "UPDATE inmueble SET IdInmueble = IdInmueble - 1  WHERE IdInmueble > '$ideli'";
 				$cs=mysql_query($consulta5);
-				echo "<script> 
-				location.replace('crear_inmueble.php'); 
+				echo "<script>
+				location.replace('crear_inmueble.php');
 				</script>";
-				
+
 			}
 			else
 			{
 				echo $lang['error4'];
-				echo "<script> 
-				location.replace('crear_inmueble.php'); 
+				echo "<script>
+				location.replace('crear_inmueble.php');
 				</script>";
 			}
 		}
 
-    
 
-?>	
+
+?>
 <?php
 
     $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
@@ -93,7 +92,7 @@
 		echo "</th><th>";
 		echo $lang['tm'];
 		echo "</th></tr></thead>";
-		
+
     while($row=mysql_fetch_array($cs)){
 		switch($row['VentaRenta'])
 		{

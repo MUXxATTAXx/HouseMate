@@ -3,7 +3,7 @@
 <?php
     echo("
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<meta charset=utf-8 />
+	   <meta charset=utf-8 />
     ");
     session_start();
 	switch($_SESSION['tip'])

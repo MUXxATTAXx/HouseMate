@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-<head>	
+<head>
 	<title>House Mate</title>
 	<meta charset = "utf-8" />
 	   <link href='css/bootstrap.min.css' rel='stylesheet'/>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-    session_start();
+  session_start();
 	switch($_SESSION['tip'])
 	{
 		case 1:
@@ -94,7 +94,7 @@ if(isset($_POST['registrar'])){
             echo"<span class='label label-danger'>".$lang['msj-error']."</span>".mysql_error();
         }
     }
-    
+
 }
 ?>
             </div>

@@ -1,4 +1,4 @@
-<div class='form-Dl' align='center'> 
+	<div class='form-Dl' align='center'> 
 	<div class="row">
 	<div class="col-sm-2 col-centered">
 		<label><?php echo $lang['Usuario'] ?>:</label>
@@ -44,14 +44,14 @@
 		<label><?php echo $lang['Contra-reset']; ?>: </label>
 			<input id="b5" type='checkbox' class="checkbox-inline" value="marcado" name='contraprevia' placeholder='<?php echo $lang['Contra-nueva']; ?>' autocomplete="off"/>
 		</div>
-		
+
 	</div>
 	<br>
 	<div class="col-sm-6 col-centered">
-	
+
 		<a id="adminmodificar" class='btn btn-primary btn-block' href="#me2"><?php echo $lang['Modificar-Usuario'] ?></a>
 		</div>
 <hr><div id="resultmodiadmin"></div>
 
 
-</div>  
+</div>

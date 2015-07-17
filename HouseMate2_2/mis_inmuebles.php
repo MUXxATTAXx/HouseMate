@@ -1,10 +1,8 @@
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <?php
     echo("
-
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-
-<meta charset=utf-8 />
+    <meta charset=utf-8 />
     ");
     session_start();
 	switch($_SESSION['tip'])
@@ -25,13 +23,13 @@
 ?>
 <!DOCTYPE HTML>
 <html>
-<head>	
+<head>
 	<title><?php echo $lang['mis-inmuebles'];?></title>
 	<meta charset = "utf-8" />
 	<link href='css/estilo.css' rel='stylesheet'/>
-	
+
 </head>
-<body> 
+<body>
 <div class="container">
     <div class="row">
 <?php

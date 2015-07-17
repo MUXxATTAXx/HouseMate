@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include('conexion.php');
 include('Call/Lenguaje/lenguaje.php');
@@ -9,7 +9,6 @@ include('Call/Lenguaje/lenguaje.php');
 	<link href='css/intro.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
 	<link href="css/empresatag.css" rel="stylesheet">
-   
 </head>
 <body id='intro'>
 <?php
@@ -53,16 +52,16 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 </div>
 <div class='container'>
     <div class='row'>
-	<?php 
+	<?php
 		$variable = $_SESSION['id'];
-		$query = mysql_query("Select empresa.idempresa, empresa.nombre, empresa.direccion, empresa.imagen, empresa.ratings, empresa.IdEmpresa, tbusuario.usuario from Empresa inner join usuario on empresa.dueño = usuario.idusuario 
+		$query = mysql_query("Select empresa.idempresa, empresa.nombre, empresa.direccion, empresa.imagen, empresa.ratings, empresa.IdEmpresa, tbusuario.usuario from Empresa inner join usuario on empresa.dueño = usuario.idusuario
 		inner join tbusuario on usuario.TempId = tbusuario.idusuario where usuario.TempId <> '$variable'");
 		while($row = mysql_fetch_array($query))
 		{ ?>
 		<div class='col-sm-6'>
                 <div class='row well well-sm'>
                     <div class='col-sm-4'>
-						<img class="smallimage" src='<?php 
+						<img class="smallimage" src='<?php
 							if($row['imagen'] == "" || $row['imagen'] == null)
 							echo "https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100";
 							else
@@ -77,7 +76,7 @@ if ($_SESSION['true'] != true || empty($_SESSION['true']))
 							<small><cite><?php echo $row['direccion'] ?><i class='glyphicon glyphicon-map-marker'>
 							</i></cite></small>
 							<p>
-								<a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href="enviar_msj.php?destin=<?php echo $row['usuario']?>"></a> 
+								<a class='glyphicon glyphicon-envelope btn btn-sm btn-primary' href="enviar_msj.php?destin=<?php echo $row['usuario']?>"></a>
 								<a class='glyphicon glyphicon-info-sign btn btn-sm btn-primary' href="Empresawatch.php?empresa=<?php echo $row['idempresa'] ?>"> </a>
 								<a class='glyphicon glyphicon-user btn btn-sm btn-primary' href="perfil.php?usuario=<?php echo $row['usuario']?>"> </a><br><br><i class='glyphicon glyphicon-thumbs-up btn-info btn-sm'><?php echo $row['ratings'] ?></i>
 								<br>

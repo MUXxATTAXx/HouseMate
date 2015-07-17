@@ -2,7 +2,7 @@
 session_start();
 include "../../conexion.php";
 include "../Lenguaje/lenguaje.php";
-if (isset($_POST['name']) and $_POST['name'] != "undefined")
+if (isset($_POST['name']) and $_POST['name'] != "undefined" and $_POST['name'] != "' --")
 {
   $variable = $_POST['name'];
   $quero = mysql_query("Select empresa.nombre, empresa.telefono, empresa.direccion, empresa.nit, empresa.telefono2, empresa.imagen, empresa.descrip

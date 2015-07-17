@@ -1,4 +1,4 @@
-			<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
+	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href='css/change.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -9,8 +9,8 @@
 <meta charset=utf-8 />
     ");
 	session_start();
-	$variable1 = $_SESSION["user"]; 
-	$variable2 = $_SESSION['id']; 
+	$variable1 = $_SESSION["user"];
+	$variable2 = $_SESSION['id'];
 	$variable3 = $_SESSION['tip'];
 	switch($variable3)
 	{
@@ -26,7 +26,7 @@
 		include("Header/barranav6.php");
 		break;
 	}
-    
+
 
 ?>
 <!DOCTYPE HTML>
@@ -35,7 +35,7 @@
 	<title><?php echo($lang['Perfil']);?></title>
 	<meta charset = "utf-8" />
 </head>
-<body> 
+<body>
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/jquery.chained.min.js"></script>
 <form method="POST" method="GET" enctype="multipart/form-data">
@@ -102,11 +102,11 @@
 	<br>
 
 	<br>
-	
+
     <div class="center">
 					<h3><?php echo $lang['Etiqueta'] ?>: </h3><span class="label label-danger" id="validacion-num1"></span>
 			</div>
-	
+
 	<div class="center">
 		<div class="row row-centered">
 			<div class="form-group col-xs-3">
@@ -134,7 +134,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag2" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a2" type="number"  min="0" max="10" placeholder='<?php echo $lang['Terraza'] ?>' >
-				   
+
 					</div>
 				</div>
 			</div>
@@ -149,7 +149,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag3" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a3" type="number" min="0" max="10" placeholder='<?php echo $lang['Cocinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -164,7 +164,7 @@
 							<span class="[ glyphicon glyphicon-minus ]"></span>
 						</label>
 						<input id="tag4" onkeypress="return num(event)" for="fancy-checkbox-success-custom-icons" class="form-control widther [ btn btn-default active ]" name="a4" type="number" min="0" max="10" class="form-control" placeholder='<?php echo $lang['Piscinas'] ?>'>
-				   
+
 					</div>
 				</div>
 			</div>
@@ -267,7 +267,7 @@
 	 <div class="col-sm-6 col-centered">
     <button class='btn btn-primary btn-block' type='submit' name='boto' value="Insert"><?php echo $lang['insert']?></button>
 	</div>
-     	</div>   
+     	</div>
 			<script>
 	function readURL(input) {
         if (input.files && input.files[0]) {
@@ -277,16 +277,16 @@
                 $('#blah')
                     .attr('src', e.target.result)
             };
-			
+
             reader.readAsDataURL(input.files[0]);
         }
     }
 	</script>
 	<?php
-		require('Call/Funciones/ingresarin.php');	
+		require('Call/Funciones/ingresarin.php');
 	?>
 
-    
+
 </form>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>

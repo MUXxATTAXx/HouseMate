@@ -9,9 +9,6 @@ require ("Call/Lenguaje/lenguaje.php");
 	<title><?=$lang['Inmueble']?></title>
 
 	<meta charset = "utf-8" />
-   <?php
-
-?>
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 	<link href='css/bootstrap.min.css' rel='stylesheet'/>
 	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -70,7 +67,7 @@ else
             <div class="panel-heading">
                 <h3 class="panel-title">
                     <?php
-                        if($row['VentaRenta'] == "1"){
+                        if($row['VentaRenta'] == "2"){
                             echo $lang['Venta'];
                         }
                         else{
@@ -130,7 +127,7 @@ else
                         <label class="label label-info"><?php
                             if($row['Tipopropiedad'] == 1){
                                 echo $lang['Urbana'];
-                            }elseif($row['Tipopropiedad'] == 2){
+                            }else{
                                 echo $lang['Rustico'];
                             }
                             ?></label>

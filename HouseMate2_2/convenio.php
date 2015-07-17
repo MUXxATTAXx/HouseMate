@@ -1,5 +1,6 @@
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-<link href='css/bootstrap.min.css' rel='stylesheet'/><?php
+<link href='css/bootstrap.min.css' rel='stylesheet'/>
+<?php
 if(!isset($_GET['IdInmueble']))
 {
     echo "<script> window.history.back();</script>";
@@ -66,7 +67,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['precio-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-6">
-                            <input name="precio" class="form-control" placeholder="$$$$$$" min="1" maxlength="6" type="tel">
+                            <input name="precio" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$$" min="1" maxlength="6" type="tel">
                         </div>
                     </div>
                     <br>
@@ -75,7 +76,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-4">
-                            <input name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel">
+                          <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DD" min="2" maxlength="2" type="tel">
                         </div>
                         <div class="col col-sm-2 col-centered">
                             <label><?=$lang['plazo-dias']?></label>
@@ -87,7 +88,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-adelanto']?></label>
                         </div>
                         <div class="col col-sm-6">
-                            <input name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
+                            <input name="adelanto" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
                         </div>
                     </div>
                     <br>
@@ -176,7 +177,8 @@ echo("<meta charset=utf-8 />");
                       }
 
                     }
-                ?>
+                ?><br><center><span onload="return false;" id="resultadoinsert"></span><span class="label label-danger" id="validacion-num1"></span></center>
+<script src="js/validaciones.js" type="text/javascript"></script>
                 </center>
               </form>
             </div>
