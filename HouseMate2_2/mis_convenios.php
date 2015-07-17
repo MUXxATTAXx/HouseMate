@@ -72,6 +72,8 @@ while($urow = mysql_fetch_array($inmueble_con)){
                             if($drow['aprovado1'] == "0"){
                                 echo "<input type='submit' value='".$lang['accept']."' class='btn-success btn-sm' name='aceptar'>
                             <input type='submit' value='".$lang['No']."'  class='btn-error btn-sm' name='negar'>";
+                            }else{
+                                echo "<a class='btn btn-info' href='Reportes/conveniofinal.php?idconvenio=".$drow['idconvenio']."'>".$lang['print-convenio']."</a>";
                             }
                             echo "</center>
 					</div>
@@ -81,7 +83,7 @@ while($urow = mysql_fetch_array($inmueble_con)){
 	</div>
     </form>
 		";
-        }       
+        }
     }
 }     
 if(mysql_num_rows($convenio_con) == 0){
@@ -91,7 +93,8 @@ if(mysql_num_rows($convenio_con) == 0){
 if(isset($_POST['aceptar'])){
     include "conexion.php";
     $idconvenio = $_POST['idconvenio'];
-    $aceptar = "UPDATE convenio SET aprovado1 = '1' WHERE idconvenio = '$idconvenio'";
+    $aceptar = "UPDATE convenio SET aprovado1 = '1', fecha_aprobacion = CURRENT_TIMESTAMP WHERE idconvenio = '$idconvenio'";
+    echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
     $aceptar_con = mysql_query($aceptar);
 }
 if(isset($_POST['negar'])){
