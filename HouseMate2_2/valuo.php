@@ -681,7 +681,7 @@
     </div>
   </div>
 </div>
-<table class='table table-hover'>
+<table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 <thead>
   <tr>
 <th><?= $lang['are']  ?></th>
@@ -693,7 +693,7 @@
 </tbody>
 <tr>
   <td></td>
-  <td></td>
+  <td class="flightright">Total:</td>
   <td><label id="valorfinal"></label></td>
 </tr>
 </table>
