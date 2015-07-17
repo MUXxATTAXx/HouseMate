@@ -133,7 +133,7 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
         }
         else
         {
-          copy($varing,"img/Empresas/$imagevar");
+          copy($varing,"img/Usuarios/$imagevar");
           $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id'");
           //Si las contraseñas coinciden
               //Si se puso una nueva contraseña
@@ -174,10 +174,6 @@ else
 }
 }
 ?>
-            </form>
-            </div>
-        </div>
-  </center>
 <script>
   function readURL(input) {
         if (input.files && input.files[0]) {
@@ -192,5 +188,10 @@ else
         }
     }
   </script>
+            </form>
+            </div>
+        </div>
+  </center>
+
 </body>
 </html>
