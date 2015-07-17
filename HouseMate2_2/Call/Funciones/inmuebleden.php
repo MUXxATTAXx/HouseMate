@@ -1,39 +1,93 @@
 <?php
 $maxc = 0;
 $man="";
-if (isset($_POST['fancy-checkbox-success-custom-icons1']))
-	$check1 = 1;
-else
-	$check1 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons2']))
-	$check2 = 1;
-else
-	$check2 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons3']))
-	$check3 = 1;
-else
-	$check3 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons4']))
-	$check4 = 1;
-else
-	$check4 = 0;
-if (isset($_POST['fancy-checkbox-success-custom-icons5']))
-	$check5 = 1;
-else
+$aa = $_POST['a1'];
+$bb = $_POST['a2'];
+$cc = $_POST['a3'];
+$dd = $_POST['a4'];
+$ee = $_POST['a5'];
+$a = '';
+$b = '';
+$c = '';
+$d = '';
+$e = '';
+$v1 = 1;
+$v2 = 1;
+$v3 = 1;
+$v4 = 1;
+$v5 = 1;
+if (isset($_POST['fancy-checkbox-primary-custom-icons1']))
 {
-	$check5 = 0;
+	$check1 = 1;
+	while($v1 <= $aa)
+	{
+		$valor = "1gate".$v1;
+		echo $valor."<br>";
+		$a .= "-".$_POST[$valor];
+		$v1++;
+	}
 }
+else{
+	$check1 = 0;}
+if (isset($_POST['fancy-checkbox-primary-custom-icons2']))
+{
+	$check2 = 1;
+	while($v2 <= $bb)
+	{
+		$valor = "2gate".$v2;
+		echo $valor."<br>";
+		$b .= "-".$_POST[$valor];
+		$v2++;
+	}
+}
+else{
+	$check2 = 0;}
+if (isset($_POST['fancy-checkbox-primary-custom-icons3']))
+{
+	$check3 = 1;
+	while($v3 <= $cc)
+	{
+		$valor = "3gate".$v3;
+		echo $_POST[$valor];
+		$c .= "-".$_POST[$valor];
+		$v3++;
+	}
+}
+else{
+	$check3 = 0;}
+if (isset($_POST['fancy-checkbox-primary-custom-icons4']))
+{
+	$check4 = 1;
+	while($v4 <= $dd)
+	{
+		$valor = "4gate".$v4;
+		echo $valor."<br>";
+		$d .= "-".$_POST[$valor];
+		$v4++;
+	}
+}
+else{
+	$check4 = 0;}
+if (isset($_POST['fancy-checkbox-primary-custom-icons5']))
+{
+	$check5 = 1;
+	while($v5 <= $dd)
+	{
+		$valor = "5gate".$v5;
+		echo $valor."<br>";
+		$e .= "-".$_POST[$valor];
+		$v5++;
+	}
+}
+else{
+	$check5 = 0;}
 	$check6 = 1;
 	$check7 = 1;
 	$check8 = 1;
 	$check9 = 1;
 	$check10 = 1;
 
-$a = $_POST['a1'];
-$b = $_POST['a2'];
-$c = $_POST['a3'];
-$d = $_POST['a4'];
-$e = $_POST['a5'];
+
 $f = $_POST['areax1'];
 $g = $_POST['areax2'];
 $h = $_POST['areax3'];
