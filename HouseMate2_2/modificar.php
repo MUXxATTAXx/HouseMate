@@ -46,7 +46,7 @@ $cs = mysql_query($consulta1);
 while($row=mysql_fetch_array($cs)){
 
 
-?>	 <form action="modificar.php" method="POST">
+?>	 <form action="modificar.php" method="POST" enctype="multipart/form-data">
 	<div class="row">
 		<div class="col-xs-6">
 
@@ -63,12 +63,12 @@ while($row=mysql_fetch_array($cs)){
 <!-- Imagen -->
         <div class="row">
           <div class="form-group col-xs-12">
-            <img class="img-responsive imagenpequeña" id="imagen" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100">
+            <img class="img-responsive imagenpequeña" id="imagen" src="">
           </div>
           <div class="form-group col-xs-12">
             <div class="btn btn-primary btn-file">
               <i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?>
-              <input type="file" class="file" onchange="readURL(this)" name="file" >
+              <input type="file" class="file" onchange="readURL(this)" id="file" name="file" >
             </div>
           </div>
         </div>
@@ -118,6 +118,7 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
     $varing = $_FILES['file']["tmp_name"];
     $c = $_FILES['file']["name"];
     $imagevar = $c;
+    $ruta = "img/Usuarios/".$imagevar;
     if($c != "" || $c != null)
     {
       if($imagevar != null)
@@ -141,7 +142,7 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
               if($row['contra']==$contra_vieja){
                   if(!empty($contra_nueva))
                   {
-                  $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
+                  $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra ='$contra_nueva', image='$ruta' WHERE idUsuario = '$id' ");
                   echo "<script>
                       location.replace('modificar.php');
                       alert('".$lang['modificar-exito2']."');
@@ -151,7 +152,7 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
                   //Si no se puso una nueva contrasela
                   if(empty($contra_nueva))
                   {
-                      $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac' WHERE idUsuario = '$id'");
+                      $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', image='$ruta' WHERE idUsuario = '$id'");
                       echo "<script>
                       location.replace('perfil_admin.php');
                       alert('".$lang['modificar-exito']."');
