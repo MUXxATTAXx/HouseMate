@@ -16,10 +16,7 @@
 			<input class="form-control" maxlength="20" id="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" required/>
 		</div>
 		<div class="col-sm-4 col-centered">
-			<label><?php echo $lang['Tipous'] ?>:</label>
-			<select disabled="" class="form-control" id="tiposu" required>
-				<option value="4"><?php echo $lang['Cliente'] ?></option>
-			</select>
+			<input type="hidden" value="4" name="tiposu">
 		</div>
 	</div>
 	<div class="row row-centered">

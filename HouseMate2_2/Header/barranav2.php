@@ -111,7 +111,7 @@ require ("Call/Loged/seguridad.php");
                     $inmueble_con = mysql_query($inmueble);
                     while($urow = mysql_fetch_array($inmueble_con)){
                         $idinmueble = $urow['IdInmueble'];
-                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble'";
+                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble' and aprovado1 ='0'";
                         $convenio_con = mysql_query($convenio);
                         while($drow = mysql_fetch_array($convenio_con)){
                             $ofertor = "SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'";
