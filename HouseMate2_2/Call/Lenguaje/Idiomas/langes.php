@@ -47,7 +47,7 @@ $lang['Start'] = "Inicio";
 $lang['Anuncios'] = "Anuncio";
 $lang['UpgradeM'] = "Mejorar";
 $lang['accept'] = "Aceptar";
-$lang['No'] = "Rechazado";
+$lang['No'] = "Rechazar";
 $lang['mensaje'] = "Mensaje";
 $lang['YTE'] = "Ya tiene una empresa";
 $lang['TE'] = "Tiene una empresa";
@@ -365,5 +365,6 @@ $lang['oferta-reg'] = "Oferta Registrada.";
 $lang['ya-oferto'] = "Ya oferto por esta casa";
 $lang['mis-ofertas'] = "Ofertas";
 $lang['ofrecen'] = " ofrece: ";
+
 
 ?>

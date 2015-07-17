@@ -63,7 +63,7 @@ while($row = mysql_fetch_array($consulta)){
 	<div class='col-sm-6'>
                 <div class='row well well-sm'>
                     <div class='col-sm-4'>
-                        <img src='' class='smallimage' />
+                        <img src='".$row['image']."' class='smallimage' />
                     </div>
                    <div class='col-sm-8'>
 						<div class='row'>
