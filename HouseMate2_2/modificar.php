@@ -27,9 +27,9 @@
 	<title><?php echo($lang['Perfil']);?></title>
 	<meta charset = "utf-8" />
 	<?php include("call/spr.php");?>
-    
+
 </head>
-<body> 
+<body>
 
    <center>
         <div id="marginme" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
@@ -44,29 +44,35 @@ $id = $_SESSION['id'];
 $consulta1 = "SELECT * FROM tbusuario WHERE idUsuario = '$id'";
 $cs = mysql_query($consulta1);
 while($row=mysql_fetch_array($cs)){
-    
-	
+
+
 ?>	 <form action="modificar.php" method="POST">
 	<div class="row">
-		<div class="col-xs-6"> 
-            
+		<div class="col-xs-6">
+
                 <p><?php echo $lang['Nombre'] ?></p>
                 <input value="<?php echo $row['nombre']; ?>" class="form-control" type="text" name="nombre" placeholder="Name" required>
 		</div>
-		<div class="col-xs-6"> 
+		<div class="col-xs-6">
                 <p><?php echo $lang['Apellido'] ?></p>
                 <input value="<?php echo $row['apellido']; ?>" class="form-control" type="text" name="apellido" placeholder="Last Name" required>
 		</div>
 	  </div>
 	  <div class="row">
 			<div class="col-xs-6">
-                <div  class="onlyme">
-	<label>
-	<p><?php echo $lang['Imagen'] ?></p>
-		
-			</label>
-
-			</div >
+<!-- Imagen -->
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <img class="img-responsive imagenpequeña" id="imagen" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100">
+          </div>
+          <div class="form-group col-xs-12">
+            <div class="btn btn-primary btn-file">
+              <i class="glyphicon glyphicon-folder-open"></i><?php echo $lang['Buscar3'] ?>
+              <input type="file" class="file" onchange="readURL(this)" name="file" >
+            </div>
+          </div>
+        </div>
+<!-- Imagen -->
 	<img id="blah" class="img-responsive" alt="Responsive image" src="#" alt="<?php echo $lang['Imagese'] ?>" />
 	<br>
 		</div>
@@ -109,35 +115,58 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $fechanac = $_POST['fechanac'];
-    $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id'");
-    //Si las contraseñas coinciden
-        //Si se puso una nueva contraseña
-    while($row = mysql_fetch_array($consulta2)){
-        if($row['contra']==$contra_vieja){
-            if(!empty($contra_nueva))
-            {
-            $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
-            echo "<script> 
-                location.replace('modificar.php');
-                alert('".$lang['modificar-exito2']."');
-                </script>";
-
-            }
-            //Si no se puso una nueva contrasela
-            if(empty($contra_nueva))
-            {
-                $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac' WHERE idUsuario               = '$id'");
-                echo "<script> 
-                location.replace('perfil_admin.php');
-                alert('".$lang['modificar-exito']."');
-                </script>";
-            }
+    $varing = $_FILES['file']["tmp_name"];
+    $c = $_FILES['file']["name"];
+    $imagevar = $c;
+    if($c != "" || $c != null)
+    {
+      if($imagevar != null)
+      {
+        $image_size = getimagesize($varing);
+        if ($image_size == False )
+        {
+          echo "<span class='label label-warning'>".$lang['error']."</span>";
+        }
+        elseif(file_exists("img/Usuarios/$imagevar"))
+        {
+          echo "<span class='label label-warning'>".$lang['error3']."</span>";
         }
         else
         {
-            echo"<span class='label label-danger'>".$lang['error-contra']."</span>";
+          copy($varing,"img/Empresas/$imagevar");
+          $consulta2 = mysql_query("SELECT * FROM tbusuario WHERE idUsuario = '$id'");
+          //Si las contraseñas coinciden
+              //Si se puso una nueva contraseña
+          while($row = mysql_fetch_array($consulta2)){
+              if($row['contra']==$contra_vieja){
+                  if(!empty($contra_nueva))
+                  {
+                  $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
+                  echo "<script>
+                      location.replace('modificar.php');
+                      alert('".$lang['modificar-exito2']."');
+                      </script>";
+
+                  }
+                  //Si no se puso una nueva contrasela
+                  if(empty($contra_nueva))
+                  {
+                      $consulta4 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac' WHERE idUsuario = '$id'");
+                      echo "<script>
+                      location.replace('perfil_admin.php');
+                      alert('".$lang['modificar-exito']."');
+                      </script>";
+                  }
+              }
+              else
+              {
+                  echo"<span class='label label-danger'>".$lang['error-contra']."</span>";
+              }
+          }
         }
+      }
     }
+
 }
 else
 {
@@ -149,5 +178,19 @@ else
             </div>
         </div>
   </center>
+<script>
+  function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#imagen')
+                    .attr('src', e.target.result)
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+  </script>
 </body>
 </html>

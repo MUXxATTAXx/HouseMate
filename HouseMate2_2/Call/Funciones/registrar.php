@@ -9,6 +9,9 @@
     $contra1 = trim($_POST['contra']);
     $contra2 = trim($_POST['contra2']);
 		$tipo = $_POST['tiposu'];
+		if(!isset($tipo)){
+			$tipo = 4;
+		}
 	if(!empty($nombre) and !empty($apellido) and !empty($fechanac) and !empty($correo) and !empty($usuario) and !empty($contra1) and !empty($contra2) and !empty($tipo)) {
             ingresar($nombre,$apellido,$fechanac,$correo,$usuario,$contra1,$contra2,$tipo);
      }

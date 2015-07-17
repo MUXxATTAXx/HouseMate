@@ -1,17 +1,17 @@
        //comprobamos si se pulsa una boton
         $("#ingresarstuff").click(function(){
-                                     
+
 		  //obtenemos el texto introducido
 		   nombre = $("#nombre").val();
 			apellido = $("#apellido").val();
-			fechanac = $("#fechanac").val();      
-			correo = $("#lowerme").val();      
-			user = $("#user").val();      
-			contra = $("#contra").val();  
-			contra2 = $("#contra2").val(); 
-			tiposu = $("#tiposu").val(); 
+			fechanac = $("#fechanac").val();
+			correo = $("#lowerme").val();
+			user = $("#user").val();
+			contra = $("#contra").val();
+			contra2 = $("#contra2").val();
+			tiposu = $("#tiposu").val();
 		  //ingresar usuario
-																			  
+
 		  $.ajax({
 				type: "POST",
 				url: "Call/Funciones/registrar.php",
@@ -19,26 +19,25 @@
 				dataType: "html",
 				beforeSend: function(){
 					  //imagen de carga
-					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");    
+					  $("#resultadoinsert").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 				},
 				error: function(){
 					  alert("error petición ajax");
 				},
-				success: function(data){  
+				success: function(data){
 					$("#nombre").val("");
 					$("#apellido").val("");
-					$("#fechanac").val("");      
-					$("#lowerme").val("");      
-					$("#user").val("");      
-					$("#contra").val("");  
-					$("#contra2").val(""); 
-					$("#tiposu").val(1);
+					$("#fechanac").val("");
+					$("#lowerme").val("");
+					$("#user").val("");
+					$("#contra").val("");
+					$("#contra2").val("");
 					$("#resultadoinsert").empty();
 					$("#resultadoinsert").append(data);
-					loadData();	
+					loadData();
 						}
 				  });
-															   
+
 			});
 
 	$(window).load(function()  {
@@ -46,7 +45,7 @@
 			});
 			$("#thestart").change(function() {
 	usuario = $("#thestart").val();
-	//ingresar usuario					  
+	//ingresar usuario
 	$.ajax({
 		type: "POST",
 		url: "Call/Funciones/checkmodificar.php",
@@ -60,23 +59,23 @@
 		error: function(){
 			  alert("error petición ajax");
 		},
-		success: function(data){                                                    
+		success: function(data){
 					$("#resultmodiadmin").empty();
 					$("#resultmodiadmin").append(data);
 			}
-	});	
+	});
 });
 function unison(){
 	usuario = $("#thestart").val();
-    $.ajax({   
-    type: 'POST',   
-    url: 'Call/Funciones/checkmodificar.php',   
+    $.ajax({
+    type: 'POST',
+    url: 'Call/Funciones/checkmodificar.php',
     data: "usuario="+usuario,
 	dataType: 'html',
     cache: false,
     success: function(data) {
 				$("#resultmodiadmin").empty();
-				$("#resultmodiadmin").append(data);	
+				$("#resultmodiadmin").append(data);
         },
     });
 };
@@ -91,9 +90,9 @@ $("#adminmodificar").click(function() {
 		contraprevia = "no";
 		}
 		tipo = $("#b6").val();
-		$.ajax({   
-		type: 'POST',   
-		url: 'Call/Funciones/modificaradmin.php',   
+		$.ajax({
+		type: 'POST',
+		url: 'Call/Funciones/modificaradmin.php',
 		data: "nombre="+nombre+"&apellido="+apellido+"&correo="+correo+"&fecha="+fecha+"&tipo="+tipo+"&contraprevia="+contraprevia,
 		dataType: 'html',
 		beforeSend: function(){
@@ -103,19 +102,19 @@ $("#adminmodificar").click(function() {
 		error: function(){
 			  alert("error petición ajax");
 		},
-		success: function(data){                                                    
+		success: function(data){
 					$("#resultmodiadmin").empty();
 					$("#resultmodiadmin").append(data);
-					loadData();	
+					loadData();
 			}
-	});	
+	});
 });
         //Borrar usuario
      $("#deleteuser").click(function(){
-                                     
+
 		  //obtenemos el texto introducido
 		  idre = $("#spanme").html();
-		  //ingresar usuario						  
+		  //ingresar usuario
 		  $.ajax({
 				type: "POST",
 				url: "Call/Funciones/admin_eliminar.php",
@@ -128,17 +127,17 @@ $("#adminmodificar").click(function() {
 				error: function(){
 					  alert("error petición ajax");
 				},
-				success: function(data){                                                    
+				success: function(data){
 						$("#mesangemostra").empty();
 						$("#mesangemostra").append(data);
-						loadData();							 
+						loadData();
 						}
-				  });															   
+				  });
 			});
 	function loadData(){
-    $.ajax({   
-     type: 'POST',   
-     url: 'Call/Funciones/update.php',   
+    $.ajax({
+     type: 'POST',
+     url: 'Call/Funciones/update.php',
     success: function(msg) {
             $("#thetablejq").html(msg);
         },

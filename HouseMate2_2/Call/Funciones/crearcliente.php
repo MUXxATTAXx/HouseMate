@@ -1,55 +1,73 @@
-<?php
-session_destroy();
-    $nombre = trim($_POST['nombre']);
-    $apellido = trim($_POST['apellido']);
-    $fechanac = $_POST['fechanac'];
-    $correo = trim($_POST['correo']);
-		$usuario = trim($_POST['user']);
-    $contra1 = trim($_POST['contra']);
-    $contra2 = trim($_POST['contra2']);
-		$tipo = $tiposu;
 
-		$con = mysql_connect('localhost','root', '');
-		mysql_select_db('bdhousemate', $con);
-		mysql_query("Set Names 'utf8'");
-		include "Call/Lenguaje/lenguaje.php";
-		if($nombre != "" and $apellido != "" and $fechanac != "" and $correo != "" and $usuario != "" and $contra1 != "" and $contra2 != "" and $tipo != 0)
-		{
-			if($contra1 == $contra2)
-			{
-				$query = "Select usuario FROM tbusuario WHERE usuario ='$usuario'";
-				$result = mysql_query($query);
-				if(mysql_num_rows($result) > 0)
-				{
-					//Usuario en uso
-					echo"<center><span class='label label-danger'>".$lang['ErUsuarioYa']."</span></center>";
-				}
-				$query2 = "Select correo FROM tbusuario WHERE correo ='$correo'";
-				$result2 = mysql_query($query2);
-				if(mysql_num_rows($result2) > 0)
-				{
-					//Correo en uso
-					echo"<center><span class='label label-danger'>".$lang['ErCorreoya']."</span></center>";
-				}
-				else
-				{
-					$cantidad = "Select * FROM tbusuario";
-					$numero = mysql_query($cantidad);
-					$digito = mysql_num_rows($numero);
-					$maximun = $digito;
-					if(!isset($tipo))
-					{
-						$tipo = 4;
-					}
-					$consulta = "INSERT INTO tbUsuario VALUES ('$maximun','$nombre','$apellido','$fechanac','$correo','$usuario','$contra1','$tipo',null)";
-					echo "<span class='label label-success'>".$lang['Uingre']."</span>";
-					mysql_query($consulta);
-				}
-			}
-			else
-			{
-				echo "<span class='label label-important'>".$lang['error-contra']."</span>";
-			}
-		}
+<div name='registrar'>
+	<div class="row row-centered">
+		<div class="col-sm-6 col-centered">
+			<label><?php echo($lang['Nombre']); ?>:</label>
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="nombre" placeholder="<?php echo($lang['Nombre']); ?>" />
+		</div>
+		<div class="col-sm-6 col-centered">
+			<label><?php echo($lang['Apellido']); ?>:</label>
+			<input onkeypress="return letras(event)" class="form-control"maxlength="20" type="text" autocomplete="off" id="apellido" placeholder="<?php echo($lang['Apellido']); ?>" />
+		</div>
+	</div>
+	<div class="row row-centered">
+		<div class="col-sm-8 col-centered">
+			<label><?php echo($lang['Usuarioname']);?>:</label>
+			<input class="form-control" maxlength="20" id="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
+		</div>
+		<div class="col-sm-4 col-centered">
+			<label><?php echo $lang['Tipous'] ?>:</label>
+			<select disabled="" class="form-control" id="tiposu">
+				<option value="4"><?php echo $lang['Cliente'] ?></option>
+			</select>
+		</div>
+	</div>
+	<div class="row row-centered">
+		<div class="col-sm-8 col-centered">
+			<label><?php echo($lang['Correo']); ?>:</label>
+			<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
+		</div>
+		<div class="col-sm-4 col-centered">
+			<label><?php echo($lang['Fecha-Nac']); ?>:</label>
+			<input class="form-control" type="date" id="fechanac" placeholder="fecha nacimiento" max="1997-01-01"/>
+		</div>
+	</div>
+	<div class="row row-centered">
+		<div class="col-sm-6 col-centered">
+			<label><?php echo($lang['Contra']); ?>:</label>
+			<input  onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" />
+		</div>
+		<div class="col-sm-6 col-centered">
+			<label><?php echo($lang['Confirmar']); ?>:</label>
+			<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra2" placeholder="<?php echo($lang['Confirmar']); ?>" />
+		</div>
+	</div>
 
-?>
+   <br>
+	   <div class="row row-centered">
+			<div class="col-sm-6 col-centered">
+			<button class="btn btn-primary btn-block" id="ingresarstuff"><?php echo($lang['Crear-Cuenta']); ?></button>
+			</div>
+		</div>
+		<br><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span>
+    <span class="label label-warning" id="contra-error"></span>
+
+</div>
+<script>
+function password(){
+    var pass1 = document.getElementById('contra');
+    var pass2 = document.getElementById('contra2');
+    var message = document.getElementById('contra-error');
+     if(pass1.value == pass2.value){
+
+        message.innerHTML = "Passwords Match!"
+        message.className = "label label-success"
+    }else{
+        message.innerHTML = "Passwords Do Not Match!"
+        message.className = "label label-warning"
+    }
+    if(pass2.value == ""){
+        message.innerHTML = ""
+    }
+}
+</script>
