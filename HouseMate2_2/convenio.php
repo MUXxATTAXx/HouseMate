@@ -67,11 +67,8 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['precio-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-6">
-
                             <input name="precio" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$$" min="1" maxlength="6" type="tel">
-
-                            <input onkeypress="return num(event)" name="precio" class="form-control" placeholder="$$$$$$$" min="1" maxlength="7" type="tel">
-
+                            <!-- <input onkeypress="return num(event)" name="precio" class="form-control" placeholder="$$$$$$$" min="1" maxlength="7" type="tel"> -->
                         </div>
                     </div>
                     <br>
@@ -80,11 +77,8 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-4">
-
                           <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DD" min="2" maxlength="2" type="tel">
-
-                            <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel">
-
+                          <!-- <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel"> -->
                         </div>
                         <div class="col col-sm-2 col-centered">
                             <label><?=$lang['plazo-dias']?></label>
@@ -98,9 +92,7 @@ echo("<meta charset=utf-8 />");
                         <div class="col col-sm-6">
 
                             <input name="adelanto" onkeypress="return deci(event)" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
-
-                            <input onkeypress="return num(event)" name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
-
+                            <!-- <input onkeypress="return num(event)" name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel"> -->
                         </div>
                     </div>
                     <br>
@@ -169,7 +161,8 @@ echo("<meta charset=utf-8 />");
                         //echo $consulta;
                         $consulta_con = mysql_query($consulta);
                         if(isset($consulta_con)){
-                            echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";
+                            echo "<script> alert(".$lang['oferta-reg'].")</script>";
+                            echo "<script>window.location.replace('convenio.php?IdInmueble=".$inmuebleid."'); </script>";
                         }
                         else{echo mysql_error();}
 
@@ -184,11 +177,7 @@ echo("<meta charset=utf-8 />");
 
                     }
                 ?><br><center><span onload="return false;" id="resultadoinsert"></span><span class="label label-danger" id="validacion-num1"></span></center>
-<script src="js/validaciones.js" type="text/javascript"></script>
-
-                    }
-                ?>
-
+                <script src="js/validaciones.js" type="text/javascript"></script>
                 </center>
               </form>
             </div>
