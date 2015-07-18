@@ -179,13 +179,15 @@ $lang['error3'] = 'There is a image with the same name';
 $lang['error4'] = "You dont have the right to do it";
 $lang['error5'] = "Insert the id of the property";
 $lang['error6'] = "Error while trying to delete image";
-$lang['error-contra'] = "Passwords don't match";
+$lang['error-contra'] = "Passwords don't match or password too short!";
 $lang['modificar-exito'] = "Sucess! Changes added.";
 $lang['modificar-exito2'] = "Sucess! Changes and new password added.";
 $lang['blank'] = "Blank Spaces";
 $lang['Eliminado-Usuario-error'] = 'The user was not deleted';
 $lang['notheremate'] = "The user does not exist";
 $lang['errornada'] = "Nothing to change";
+$lang['error-correo'] = "Insert a valid email.";
+
 //Titulos
 $lang['regis'] = "Sign Up";
 $lang['mis-inmuebles'] = "My properties";

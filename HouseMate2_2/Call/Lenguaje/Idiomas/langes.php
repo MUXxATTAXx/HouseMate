@@ -177,13 +177,14 @@ $lang['error3'] = 'Ya existe una imagen con ese nombre';
 $lang['error4'] = "No tiene los privilegios";
 $lang['error5'] = "Ingrese un Id";
 $lang['error6'] = "Error al intentar borrar imagen";
-$lang['error-contra'] = "Contraseñas no coinciden";
+$lang['error-contra'] = "Contraseñas no coinciden o muy corta!";
 $lang['modificar-exito'] = "¡Exito! Cambios agregados.";
 $lang['modificar-exito2'] = "¡Exito! Cambios y nueva contraseña agregada.";
 $lang['blank'] = "Espacios en blanco";
 $lang['Eliminado-Usuario-error'] = 'El usuario no fue eliminado';
 $lang['notheremate'] = "El usuario no existe";
 $lang['errornada'] = "No hay nada que modifciar";
+$lang['error-correo'] = "Ingrese un correo.";
 
 //Titulos
 $lang['regis'] = "Crear Cuenta";
