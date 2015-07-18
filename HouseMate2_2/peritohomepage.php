@@ -1,7 +1,6 @@
 <head>
     <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
-  	link href='css/appeal.css' rel='stylesheet'/>
     <link href='css/bootstrap.min.css' rel='stylesheet'/>
   	<link href='css/intro.css' rel='stylesheet'/>
   	<link href="css/bootstrap-table.css" rel="stylesheet">
@@ -68,14 +67,20 @@ if(isset($_SESSION['tip'])){
                               <center><a href="perfil.php?usuario=<?=$row['usuario'] ?>" class="glyphicon glyphicon-user btn btn-sm btn-primary"></a></center>
                             </td>
                             <td>
-                              <?php $valordi = $row['Empresa'];
-                              if($valordi != "")
+                              <?php $valordi = $row['VentaRenta'];
+                              if($valordi == 1)
                               {
-                                echo "<a href='valuo.php?super=".$row['IdInmueble']."' class='glyphicon glyphicon-usd btn btn-sm btn-success'></a>";
+                                echo "<center><a href='valuo.php?super=".$row['IdInmueble']."' class='glyphicon glyphicon-usd btn btn-sm btn-success'></a></center>";
+                              }
+                              else {
+                                  echo "<center><a href='valuo.php?super=".$row['IdInmueble']."' class='glyphicon glyphicon-usd btn btn-sm btn-success disabled'></a></center>";
                               } ?>
                             </td>
                             <td>
-                              <a href="Empresawatch.php?empresa=<?=$row['Empresa'] ?>" class="glyphicon glyphicon-briefcase btn btn-sm btn-info"></a>
+                              <?php if($row['Empresa'] == "") {}
+                                else{?>
+                              <center><a href="Empresawatch.php?empresa=<?=$row['Empresa'] ?>" class="glyphicon glyphicon-briefcase btn btn-sm btn-info"></a></center>
+                              <?php }?>
                             </td>
 
                           </tr>

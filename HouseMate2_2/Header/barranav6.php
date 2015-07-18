@@ -11,7 +11,7 @@
       </button>
       <a class="navbar-brand" href="visitantehomepage.php">House Mate</a>
     </div>
-    
+
     <?php
 	include "Call/Lenguaje/lenguaje.php";
 	require ("Call/Loged/seguridad.php");
@@ -21,8 +21,9 @@
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="Empresa.php"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><?php echo($lang['Empresa']);?></a></li>
-			</ul>
+				<li><a href="Empresa.php"><?php echo($lang['Empresa']);?></a></li>
+			  <li><a href="crear_inmueble.php"><?php echo($lang['real-estate']);?></a></li>
+      </ul>
         </li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span class="caret"></span></a>
@@ -123,24 +124,32 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="<?php require ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>
-                <li><a href="<?php require ("urllen/lenstat.php")?>?lang=en">English</a></li>
-            </ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php require ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>
+              <li><a href="<?php require ("urllen/lenstat.php")?>?lang=en">English</a></li>
+          </ul>
+      </li>
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+
+              <ul class="dropdown-menu" role="menu">
+                  <li><a target="_blank" href="<?=$lang['manual-admin1']?>" ><?=$lang['manual-admin']?></a></li>
+        <li><a target="_blank" href='<?=$lang['manual-usu1']?>'><?=$lang['manual-usu']?></a></li>
+              </ul>
         </li>
-          <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
-					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
-					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['convenio']);?></a></li>
-                    <li><a href='mis_convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
-					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
-                </ul>
-          </li>
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
+              <ul class="dropdown-menu" role="menu">
+                  <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
+        <li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
+        <li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
+                  <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['convenio']);?></a></li>
+                  <li><a href='mis_convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
+        <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
+              </ul>
+        </li>
       </ul>
     </div>
   </div>

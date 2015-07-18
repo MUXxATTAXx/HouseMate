@@ -9,9 +9,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="peritohomepage.php">House Mate</a>
+      <a class="navbar-brand" href="visitantehomepage.php">House Mate</a>
     </div>
-    
+
     <?php
 	include "Call/Lenguaje/lenguaje.php";
 	require ("Call/Loged/seguridad.php");
@@ -24,6 +24,8 @@
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span><span class="caret"></span></a>
 			<ul class="dropdown-menu" role="menu">
 				<li><a href="Empresa.php"><?php echo($lang['Empresa']);?></a></li>
+        <li><a href="crear_inmueble.php"><?php echo($lang['real-estate']);?></a></li>
+        <li><a href="empresa_mantenimiento.php"><?php echo($lang['Empresa']);?></a></li>
 			</ul>
         </li>
 <!--Mensajes-->
@@ -35,114 +37,125 @@
 				<li><a href="recibidos.php"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span><?php echo("  ".$lang['inbox']);?></a></li>
             </ul>
         </li>
+        <li><a href="quick.php"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
 
 <!--Notificaciones-->
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-            <?php
-                $usuario = $_SESSION['id'];
-                include "conexion.php";
-                $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");
-                    while($row3 = mysql_fetch_array($consulta3)){
-            ?>
-            <li>
-                <?php
-                    if($row3['mensajes_sin_leer'] > 0){
-                        echo "<a href='recibidos.php' class='btn btn-danger'><span class='badge'>".$row3['mensajes_sin_leer']. "</span>".$lang['msjs']."</a> ";
-                    }
-                    else{
-                        echo "<a>".$lang['no-msjs']."</a>";
-                    }
-                }
-                ?>
-            </li>
-            <li class="divider"></li>
-            <li><span class='glyphicon glyphicon-user'></span><?php echo $lang['solici'];?></li>
-            <?php
-                $consulta4 = mysql_query("SELECT * FROM asociados WHERE socio2 = '$usuario' and solicitud = '1'");
-                while($row = mysql_fetch_array($consulta4)){
-                    $consulta5 = mysql_query("SELECT * from tbusuario where idUsuario =".$row['socio1']);
-                    echo "<li >";
-                        while($row2 = mysql_fetch_array($consulta5)){
-                            echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
-                        }
-                    echo"</li>";
-                }
-      if(mysql_num_rows($consulta4) == 0){
-                        echo "<li ><a>".$lang['no-mates']."</a></li>";
-                }
-            ?>
-    <li class="divider"></li>
-    <li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span><span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
     <?php
-      $foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
-      while ($row = mysql_fetch_array($foundyou))
-      {$idusuario = $row['idusuario'];}
-                $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
-                while($row = mysql_fetch_array($consulta6)){
-                    $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
-        where empresa.idempresa =".$row['idempresa']);
-                        while($row2 = mysql_fetch_array($consulta7)){
-                            echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row2['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
-                        }
+        $usuario = $_SESSION['id'];
+        include "conexion.php";
+        $consulta3 = mysql_query("SELECT count(*) as 'mensajes_sin_leer' FROM `mensaje` WHERE destinatario = '$usuario' and estado = '1' and estado2 = '1'");
+            while($row3 = mysql_fetch_array($consulta3)){
+    ?>
+    <li>
+        <?php
+            if($row3['mensajes_sin_leer'] > 0){
+                echo "<a href='recibidos.php' class='btn btn-danger'><span class='badge'>".$row3['mensajes_sin_leer']. "</span>".$lang['msjs']."</a> ";
+            }
+            else{
+                echo "<a>".$lang['no-msjs']."</a>";
+            }
+        }
+        ?>
+    </li>
+    <li class="divider"></li>
+    <li><span class='glyphicon glyphicon-user'></span><?php echo $lang['solici'];?></li>
+    <?php
+        $consulta4 = mysql_query("SELECT * FROM asociados WHERE socio2 = '$usuario' and solicitud = '1'");
+        while($row = mysql_fetch_array($consulta4)){
+            $consulta5 = mysql_query("SELECT * from tbusuario where idUsuario =".$row['socio1']);
+            echo "<li >";
+                while($row2 = mysql_fetch_array($consulta5)){
+                    echo "<a href='perfil.php?usuario=".$row2['usuario']."'>".$row2['usuario'].$lang['quiere-ser']."</a>";
                 }
-       if(mysql_num_rows($consulta6) == 0){
-                        echo "<li ><a>".$lang['no-mates']."</a></li>";
+            echo"</li>";
+        }
+if(mysql_num_rows($consulta4) == 0){
+                echo "<li ><a>".$lang['no-mates']."</a></li>";
+        }
+    ?>
+<li class="divider"></li>
+<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+<?php
+$foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
+while ($row = mysql_fetch_array($foundyou))
+{$idusuario = $row['idusuario'];}
+        $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
+        while($row = mysql_fetch_array($consulta6)){
+            $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
+where empresa.idempresa =".$row['idempresa']);
+                while($row2 = mysql_fetch_array($consulta7)){
+                    echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row2['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
                 }
-            ?>
-            <li class="divider"></li>
-            <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
-            <?php
-                //Mostrar solicitudes
-                $soli1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
-                while($vrow = mysql_fetch_array($soli1)){
-                    $Usuario = $vrow['IdUsuario'];
-                    $inmueble_con = mysql_query("SELECT * from inmueble WHERE Dueno = '$Usuario'");
-                    while($urow = mysql_fetch_array($inmueble_con)){
-                        $idinmueble = $urow['IdInmueble'];
-                        $convenio_con = mysql_query("SELECT * FROM convenio WHERE aprovado2 != '1' and idinmueble ='$idinmueble'");
-                        while($drow = mysql_fetch_array($convenio_con)){
-                            $ofertor_con = mysql_query("SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'");
-                            while($orow = mysql_fetch_array($ofertor_con)){
-                                echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a><br>";
-                            }
-                        }
+        }
+if(mysql_num_rows($consulta6) == 0){
+                echo "<li ><a>".$lang['no-mates']."</a></li>";
+        }
+    ?>
+    <li class="divider"></li>
+    <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
+    <?php
+        //Mostrar solicitudes
+        $soli1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+        while($vrow = mysql_fetch_array($soli1)){
+            $Usuario = $vrow['IdUsuario'];
+            $inmueble_con = mysql_query("SELECT * from inmueble WHERE Dueno = '$Usuario'");
+            while($urow = mysql_fetch_array($inmueble_con)){
+                $idinmueble = $urow['IdInmueble'];
+                $convenio_con = mysql_query("SELECT * FROM convenio WHERE aprovado2 != '1' and idinmueble ='$idinmueble'");
+                while($drow = mysql_fetch_array($convenio_con)){
+                    $ofertor_con = mysql_query("SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'");
+                    while($orow = mysql_fetch_array($ofertor_con)){
+                        echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a><br>";
                     }
                 }
+            }
+        }
 
 
-                //Ver si no hay solicitud 1
-                $vacio1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
-                while($v1row = mysql_fetch_array($vacio1)){
-                    $Usuario = $v1row['IdUsuario'];
-                    $vacio2 = "SELECT * from inmueble inner join convenio on inmueble.idinmueble = convenio.idinmueble WHERE inmueble.Dueno                                 ='$Usuario' and convenio.aprovado2 = '0'";
-                    $numero = mysql_num_rows(mysql_query($vacio2));
-                    if($numero == 0){
-                        echo "<li ><a>".$lang['no-mates']."</a></li>";
-                    }
-                }
-            ?>
-        </ul>
-        </li>
+        //Ver si no hay solicitud 1
+        $vacio1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+        while($v1row = mysql_fetch_array($vacio1)){
+            $Usuario = $v1row['IdUsuario'];
+            $vacio2 = "SELECT * from inmueble inner join convenio on inmueble.idinmueble = convenio.idinmueble WHERE inmueble.Dueno                                 ='$Usuario' and convenio.aprovado2 = '0'";
+            $numero = mysql_num_rows(mysql_query($vacio2));
+            if($numero == 0){
+                echo "<li ><a>".$lang['no-mates']."</a></li>";
+            }
+        }
+    ?>
+</ul>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="<?php require ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>
-                <li><a href="<?php require ("urllen/lenstat.php")?>?lang=en">English</a></li>
-            </ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="<?php require ("urllen/lenstat.php")?>?lang=es">Espa&ntilde;ol</a></li>
+              <li><a href="<?php require ("urllen/lenstat.php")?>?lang=en">English</a></li>
+          </ul>
+      </li>
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+
+              <ul class="dropdown-menu" role="menu">
+                  <li><a target="_blank" href="<?=$lang['manual-admin1']?>" ><?=$lang['manual-admin']?></a></li>
+        <li><a target="_blank" href='<?=$lang['manual-usu1']?>'><?=$lang['manual-usu']?></a></li>
+              </ul>
         </li>
-          <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
-					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
-					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
-                </ul>
-          </li>
+        <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
+              <ul class="dropdown-menu" role="menu">
+                  <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
+        <li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
+        <li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
+                  <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['convenio']);?></a></li>
+                  <li><a href='mis_convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
+        <li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
+              </ul>
+        </li>
       </ul>
     </div>
   </div>

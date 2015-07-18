@@ -5,7 +5,25 @@
 <link href="css/bootstrap-table.css" rel="stylesheet">
 
 <?php
-    require("Header/barranav2.php");
+session_start();
+if(isset($_SESSION['tip'])){
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			   include("Header/barranav2.php");
+			break;
+			case 2:
+            header('Location: index.php');
+			break;
+			case 3:
+             include("Header/barranav3.php");
+			break;
+			case 4:
+             include("Header/barranav6.php");
+			break;
+		}
+	}
+
 ?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -69,38 +87,38 @@ success: function(msg) {
 });
 };
 function loadDataModificar(){
-$.ajax({
-type: 'POST',
-data: "idre="+idre,
-url: 'Call/Funciones/modificardefault.php',
-success: function(msg) {
-	$("#thetablemodif").html(msg);
-},
-});
+    $.ajax({
+    type: 'POST',
+    data: "idre="+idre,
+    url: 'Call/Funciones/modificardefault.php',
+    success: function(msg) {
+    	$("#thetablemodif").html(msg);
+    },
+  });
 };
-  $("#deleteuser").click(function(){
+$("#deleteuser").click(function(){
 		  //obtenemos el texto introducido
-		  idre = $("#spanme").html();
-		  //ingresar usuario
-		  $.ajax({
-				type: "POST",
-				url: "Call/Funciones/borrar_inmueble.php",
-				data: "idre="+idre,
-				dataType: "html",
-				beforeSend: function(){
-					  //imagen de carga
+	  idre = $("#spanme").html();
+	  //ingresar usuario
+	  $.ajax({
+			type: "POST",
+			url: "Call/Funciones/borrar_inmueble.php",
+			data: "idre="+idre,
+			dataType: "html",
+		beforeSend: function(){
+			  //imagen de carga
 
-				},
-				error: function(){
-					  alert("error petición ajax");
-				},
-				success: function(data){
-						$("#realornot").empty();
-						$("#realornot").append(data);
-						loadDataAdmin();
-						}
-				  });
-			});
+		},
+		error: function(){
+			  alert("error petición ajax");
+		},
+		success: function(data){
+				$("#realornot").empty();
+				$("#realornot").append(data);
+				loadDataAdmin();
+				}
+	  });
+});
 
 </script>
 

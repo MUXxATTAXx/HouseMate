@@ -1,14 +1,22 @@
 
 <?php
+  session_start();
     mysql_query("SET NAMES 'utf8'");
+    if($_SESSION['tip'] == 1){
     $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
-    $cs=mysql_query($consulta);
+    }
+    else {
+      $normi = $_SESSION['id'];
+      $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0 and tbusuario.idusuario = '$normi'";
+    }
+  $cs=mysql_query($consulta);
 	$countermax = 0;
 	$i = 0;
 	$know = "";
 	$know2= "";
 	echo "<table class='table table-striped table-hover' data-toggle='table' data-search='true' data-show-refresh='true'   data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
-	<thead>
+
+  <thead>
             <tr>
                 <th>".$lang['Codigo']."</th>
                 <th>".$lang['vr']."</th>

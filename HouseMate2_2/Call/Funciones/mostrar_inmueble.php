@@ -3,8 +3,14 @@
 	session_start();
     include("../../conexion.php");
 	include("../Lenguaje/lenguaje.php");
-    mysql_query("SET NAMES 'utf8'");	
-    $consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
+    mysql_query("SET NAMES 'utf8'");
+		if($_SESSION['tip'] == 1){
+		$consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0";
+		}
+		else {
+			$normi = $_SESSION['id'];
+			$consulta = "select inmueble.*, tbusuario.nombre, tbusuario.apellido from inmueble  left join tbusuario on inmueble.Dueno = tbusuario.idUsuario WHERE inmueble.IdInmueble > 0 and tbusuario.idusuario = '$normi'";
+		}
     $cs=mysql_query($consulta);
 
 	$countermax = 0;
@@ -25,7 +31,7 @@
 				<th>".$lang['Eliminares']."</th>
             </tr>
     </thead>";
-	
+
 	while($row=mysql_fetch_array($cs))
 	{
 		switch($row['VentaRenta'])
@@ -48,7 +54,7 @@
 		}
 		echo "<tr>
 		<td>
-			<p>".$row['IdInmueble']."</p> 
+			<p>".$row['IdInmueble']."</p>
 		</td>
 		<td>
 			<h4>".$know."</h4>
@@ -65,13 +71,13 @@
 		<td>
 			<p>".$row['nombre']." ".$row['apellido']."</p>
 		</td>
-		<td 
+		<td
 			<p>".$know2."</p>
 		</td>
 		<td><a onclick='cambiar(this.id)' href='#me3' data-toggle='tab' class='btn btn-warning' id='".$row['IdInmueble']."'><i class='glyphicon glyphicon-edit'></i></a></td>
 		<td><a data-toggle='modal' data-target='#delete' onclick='obtener(this.id)' class='btn btn-danger' id='x".$row['IdInmueble']."'><i class='glyphicon glyphicon-remove'></i></a></td></tr>
 		</tr>";
-	}	
+	}
 	echo "</table>";
 
 ?>
@@ -92,11 +98,11 @@
                 <p><?php echo $lang['Xdelete']; ?> </p>
                 <p><?php echo $lang['Fdelete']; ?> </p>
                 <p class="debug-url"></p>
-            </div> 
+            </div>
       </div>
       <div class="modal-footer">
            <button class='btn btn-default' id="deleteuser" data-dismiss="modal"><?php echo($lang['Salir']);?></button>
-			
+
 			<a type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></a>
       </div>
     </div>
@@ -110,10 +116,10 @@
 
 <script type="text/javascript">
  $("#deleteuser").click(function(){
-								 
+
 	  //obtenemos el texto introducido
 	  idre = $("#spanme").html();
-	  //ingresar usuario						  
+	  //ingresar usuario
 	  $.ajax({
 			type: "POST",
 			url: "Call/Funciones/borrar_inmueble.php",
@@ -126,12 +132,12 @@
 			error: function(){
 				  alert("error petición ajax");
 			},
-			success: function(data){                                                    
+			success: function(data){
 					$("#realornot").empty();
 					$("#realornot").append(data);
-					loadDataAdmin();							 
+					loadDataAdmin();
 					}
-			  });															   
+			  });
 		});
 	function obtener(yo) {
 		document.getElementById('spanme').innerHTML = yo;

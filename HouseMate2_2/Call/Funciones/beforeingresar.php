@@ -71,7 +71,7 @@ if(isset($_POST['insertarforreal']) == "Insertreal")
 		}
 	else
 	{
-		echo "<span class='label label-warning'>llene todos los campos</span>";
+		echo "<span class='label label-warning'>".$lang['campos-vacios']."</span>";
 	}
 	}
 ?>
