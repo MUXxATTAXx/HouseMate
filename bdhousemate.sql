@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2015 a las 07:35:06
+-- Tiempo de generación: 18-07-2015 a las 18:55:05
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -71,15 +71,23 @@ CREATE TABLE IF NOT EXISTS `convenio` (
   `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `dueno` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `oferta` varchar(6) COLLATE utf8_spanish_ci NOT NULL,
-  `aprovado1` int(1) NOT NULL,
-  `aprovado2` date NOT NULL,
+  `aprovado1` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  `aprovado2` char(1) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_aprobacion` date NOT NULL,
+  `fecha_final` date NOT NULL,
   `adelanto` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`idconvenio`),
   UNIQUE KEY `idinmueble` (`idinmueble`),
   KEY `idusuario` (`idusuario`),
   KEY `dueno` (`dueno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `convenio`
+--
+
+INSERT INTO `convenio` (`idconvenio`, `idinmueble`, `idusuario`, `dueno`, `oferta`, `aprovado1`, `aprovado2`, `fecha_aprobacion`, `fecha_final`, `adelanto`) VALUES
+('1', '3', '2', '0', '80000', '1', '0', '2015-07-28', '2015-09-16', '8000');
 
 -- --------------------------------------------------------
 
@@ -392,7 +400,7 @@ INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`
 ('0', '0', 'Profesional experto', 'San Salvador', '233333333', '2312321312', '22222222', '22222222', 0, '0'),
 ('1', '1', 'sdasdasd', 'asdsdasd', '131231231', '2321313213', '12312321', '23232323', 0, ''),
 ('2', '3', 'Credencial goes here', 'Dirrecion goes here', '123213213', '1232132131', '23232323', '23232323', 0, ''),
-('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '0');
+('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '');
 
 --
 -- Restricciones para tablas volcadas
@@ -436,12 +444,6 @@ ALTER TABLE `empresasolicitud`
 --
 ALTER TABLE `etiqueta`
   ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `inmueble`
---
-ALTER TABLE `inmueble`
-  ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`IdInmueble`) REFERENCES `usuario` (`IdUsuario`);
 
 --
 -- Filtros para la tabla `resultadoconevio`

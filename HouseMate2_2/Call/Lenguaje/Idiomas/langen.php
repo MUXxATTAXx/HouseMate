@@ -363,11 +363,21 @@ $lang['repo-convenio'] = "Trust Agreement";
 $lang['validaciones'] = "js/validaciones.js";
 $lang['sin-cuenta'] = "You need an account!";
 $lang['sin-propiedad'] = "Insert a property!";
+
+//Convenios
 $lang['es-suya'] = "This property is yours!";
 $lang['oferta-reg'] = "Offer registered.";
 $lang['ya-oferto'] = "You already offer for this house.";
 $lang['mis-ofertas'] = "Offers";
 $lang['ofrecen'] = " offers: ";
 $lang['print-convenio'] = "Print Agreement";
+$lang['precio-ofrecer'] = "Offering price: ";
+$lang['plazo-ofrecer'] = "In a lapse of: ";
+$lang['plazo-dias'] = " days";
+$lang['plazo'] = "This lapse is valid until 10 after today, until then you can cancel it at any moment you wish to do it.";
+$lang['plazo-adelanto'] = "With an advance pay of: ";
+$lang['precio-ofrecido'] = "Offered price: ";
+$lang['precio-estimado'] = "Estimated price: ";
+$lang['mis-convenios'] = "My Agreements";
 
 ?>

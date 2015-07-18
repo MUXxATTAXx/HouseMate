@@ -22,7 +22,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Correo']); ?>:</label>
-			<input onfocus="checkEmail()" onblur="checkEmail();return false;" onchange ="checkEmail()return false;" id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" required/>
+			<input onblur="checkEmail();" onkeyup ="checkEmail()" id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" required/>
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo($lang['Fecha-Nac']); ?>:</label>
@@ -32,7 +32,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Contra']); ?>:</label>
-			<input  onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" required/>
+			<input onkeyup="password(); return false;" class="form-control"maxlength="20" type="password" autocomplete="off" id="contra" placeholder="<?php echo($lang['Contra']); ?>" required/>
 		</div>
 		<div class="col-sm-6 col-centered">
 			<label><?php echo($lang['Confirmar']); ?>:</label>
@@ -55,29 +55,17 @@
   function checkEmail() {
     var email = document.getElementById('lowerme');
     var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var mensaje = document.getElementById('email-error');
+			
     if (!filter.test(email.value)) {
-	    var mensaje = document.getElementById('email-error');
-			mensaje.innerHTML = "E-mail error!"
+	       mensaje.innerHTML = "E-mail error!"
+            document.getElementsByTagName("span")[3].setAttribute("class", "label label-danger");
 	    email.focus;
 	    return false;
- 		}else{
-     mensaje.innerHTML = ""
+ 		}
+      else{
+            mensaje.innerHTML = ""
  		}
 }
-function password(){
-    var pass1 = document.getElementById('contra');
-    var pass2 = document.getElementById('contra2');
-    var message = document.getElementById('contra-error');
-     if(pass1.value == pass2.value){
 
-        message.innerHTML = "Passwords Match!"
-        message.className = "label label-success"
-    }else{
-        message.innerHTML = "Passwords Do Not Match!"
-        message.className = "label label-warning"
-    }
-    if(pass2.value == ""){
-        message.innerHTML = ""
-    }
-}
 </script>

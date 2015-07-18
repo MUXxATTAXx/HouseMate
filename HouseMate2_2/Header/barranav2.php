@@ -111,13 +111,13 @@ require ("Call/Loged/seguridad.php");
                     $inmueble_con = mysql_query($inmueble);
                     while($urow = mysql_fetch_array($inmueble_con)){
                         $idinmueble = $urow['IdInmueble'];
-                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble' and aprovado1 ='0'";
+                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble' and aprovado2 ='0'";
                         $convenio_con = mysql_query($convenio);
                         while($drow = mysql_fetch_array($convenio_con)){
                             $ofertor = "SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'";
                             $ofertor_con = mysql_query($ofertor);
                             while($orow = mysql_fetch_array($ofertor_con)){
-                               echo "<a href='mis_convenios.php?idconvenio=".$drow['idconvenio']."'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a>";
+                               echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a>";
                             }       
                         }
                     }     

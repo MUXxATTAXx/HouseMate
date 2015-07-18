@@ -362,11 +362,21 @@ $lang['repo-convenio'] = "Convenio de Confianza";
 $lang['validaciones'] = "js/esvalidaciones.js";
 $lang['sin-cuenta'] = "Necesitas una cuenta";
 $lang['sin-propiedad'] = "Ingrese una propiedad!";
+
+//Convenios
 $lang['es-suya'] = "Esta propiedad es suya!";
 $lang['oferta-reg'] = "Oferta Registrada.";
 $lang['ya-oferto'] = "Ya oferto por esta casa";
 $lang['mis-ofertas'] = "Ofertas";
 $lang['ofrecen'] = " ofrece: ";
 $lang['print-convenio'] = "Imprimir Convenio";
+$lang['precio-ofrecer'] = "Precio a ofrecer: ";
+$lang['plazo-ofrecer'] = "En un plazo de: ";
+$lang['plazo-dias'] = " días";
+$lang['plazo'] = "Este plazo es valido dentro de 10 días, hasta entonces puede cancelarlo en cualquier momento que desee.";
+$lang['plazo-adelanto'] = "Con un adelanto de: ";
+$lang['precio-ofrecido'] = "Precio ofrecido: ";
+$lang['precio-estimado'] = "Precio estimado: ";
+$lang['mis-convenios'] = "Mis Convenios";
 
 ?>

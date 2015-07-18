@@ -27,7 +27,7 @@
 ?>
 <html>
 <head>	
-	<title><?php echo $lang['mis-inmuebles'];?></title>
+	<title><?php echo $lang['mis-convenios'];?></title>
 	<meta charset = "utf-8" />
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="css/profile_cards.css" rel="stylesheet">
@@ -63,13 +63,26 @@ while($urow = mysql_fetch_array($inmueble_con)){
 						<div class='row'>
                             <center>
 							<div class='col-sm-12'>
+                            <div class='row'>
+                                <div class='col col-sm-6'>
+                                    <p>".$lang['precio-estimado']."</p><p class='lead'>$".$urow['Precio']."</p>
+                                </div>
+                                <div class='col col-sm-6'>
+                                    <p>".$lang['precio-ofrecido']."</p><p class='lead'>$".$drow['oferta']."</p>
+                                </div>
+                            </div>
+                            <p>";
+                                date_default_timezone_set("America/El_Salvador");
+                                $d1 = $drow['fecha_final'];
+                                $date1 = strtotime("Today");
+                                $d2 = date("Y-m-d",$date1);
+                                $fecha1 = (strtotime($d1)- strtotime($d2))/24/3600;
+                                echo $lang['plazo-ofrecer'].$fecha1.$lang['plazo-dias'];
+                            echo "</p>
                             <br>
-                            <p> Valor Estimado: ".$urow['Precio']."
-                            <p> Valor Ofrecido: ".$drow['oferta']."
-                            <br><br>
                             <input type='hidden' name='idconvenio' value='".$drow['idconvenio']."'>
                             ";
-                            if($drow['aprovado1'] == "0"){
+                            if($drow['aprovado2'] == "0"){
                                 echo "<input type='submit' value='".$lang['accept']."' class='btn-success btn-sm' name='aceptar'>
                             <input type='submit' value='".$lang['No']."'  class='btn-error btn-sm' name='negar'>";
                             }else{
@@ -93,7 +106,7 @@ if(mysql_num_rows($convenio_con) == 0){
 if(isset($_POST['aceptar'])){
     include "conexion.php";
     $idconvenio = $_POST['idconvenio'];
-    $aceptar = "UPDATE convenio SET aprovado1 = '1', fecha_aprobacion = CURRENT_TIMESTAMP WHERE idconvenio = '$idconvenio'";
+    $aceptar = "UPDATE convenio SET aprovado2 = '1', fecha_aprobacion = CURRENT_TIMESTAMP WHERE idconvenio = '$idconvenio'";
     echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
     $aceptar_con = mysql_query($aceptar);
 }
