@@ -1,11 +1,11 @@
 <head>
 <link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-   <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/appeal.css' rel='stylesheet'/>
-    <link href='css/bootstrap.min.css' rel='stylesheet'/>
-	<link href='css/intro.css' rel='stylesheet'/>
-	<link href="css/bootstrap-table.css" rel="stylesheet">
-	<title>Inicio</title>
+<link href='css/bootstrap.min.css' rel='stylesheet'/>
+<link href='css/appeal.css' rel='stylesheet'/>
+<link href='css/bootstrap.min.css' rel='stylesheet'/>
+<link href='css/intro.css' rel='stylesheet'/>
+<link href="css/bootstrap-table.css" rel="stylesheet">
+<title>Inicio</title>
 </head>
 <body id="intro" onload="load();load2()">
 <?php
@@ -683,8 +683,8 @@
 </div>
 <table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
 <thead>
-  <tr>
-<th><?= $lang['are']  ?></th>
+  <tr class="whitecover" style="color:black;">
+<th ><?= $lang['are']  ?></th>
 <th><?= $lang['VNR'] ?></th>
 <th>Total</th>
 </tr>
@@ -692,9 +692,9 @@
 <tbody id="tablameter">
 </tbody>
 <tr>
-  <td></td>
-  <td class="flightright">Total:</td>
-  <td><label id="valorfinal"></label></td>
+  <td class="progress-bar progress-bar-info"></td>
+  <td class="progress-bar progress-bar-info">Total:</td>
+  <td class="progress-bar progress-bar-info"><label id="valorfinal"></label></td>
 </tr>
 </table>
 </div>

@@ -8,7 +8,7 @@ function start ($id)
     {
       ?>
       <tr id="especial<?= $nur ?>" class="hidme">
-      <td id="Atabla<?= $nur?>"></td><td id="Btabla<?= $nur ?>"></td><td id="Ctabla<?= $nur ?>"></td>
+      <td id="Atabla<?= $nur?>" class="progress-bar progress-bar-primary"></td><td class="progress-bar progress-bar-primary" id="Btabla<?= $nur ?>"></td><td class="progress-bar progress-bar-primary" id="Ctabla<?= $nur ?>"></td>
       </tr>
       <?php
     }
