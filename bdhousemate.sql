@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 18, 2015 at 04:04 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 18-07-2015 a las 07:35:06
+-- Versión del servidor: 5.6.16
+-- Versión de PHP: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,24 +17,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `bdhousemate`
+-- Base de datos: `bdhousemate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asociados`
+-- Estructura de tabla para la tabla `asociados`
 --
 
 CREATE TABLE IF NOT EXISTS `asociados` (
-`idasocio` int(5) NOT NULL,
+  `idasocio` int(5) NOT NULL AUTO_INCREMENT,
   `socio1` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `socio2` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `solicitud` char(1) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `solicitud` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`idasocio`),
+  KEY `socio1` (`socio1`,`socio2`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `asociados`
+-- Volcado de datos para la tabla `asociados`
 --
 
 INSERT INTO `asociados` (`idasocio`, `socio1`, `socio2`, `solicitud`) VALUES
@@ -43,7 +45,7 @@ INSERT INTO `asociados` (`idasocio`, `socio1`, `socio2`, `solicitud`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contrato`
+-- Estructura de tabla para la tabla `contrato`
 --
 
 CREATE TABLE IF NOT EXISTS `contrato` (
@@ -51,28 +53,38 @@ CREATE TABLE IF NOT EXISTS `contrato` (
   `idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `aprovado1` int(1) NOT NULL,
-  `aprovado2` int(1) NOT NULL
+  `aprovado2` int(1) NOT NULL,
+  PRIMARY KEY (`idfinal`),
+  UNIQUE KEY `idinmueble` (`idinmueble`),
+  KEY `idusuario` (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `convenio`
+-- Estructura de tabla para la tabla `convenio`
 --
 
 CREATE TABLE IF NOT EXISTS `convenio` (
   `idconvenio` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `tipo` int(1) NOT NULL,
+  `dueno` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  `oferta` varchar(6) COLLATE utf8_spanish_ci NOT NULL,
   `aprovado1` int(1) NOT NULL,
-  `aprovado2` int(1) NOT NULL
+  `aprovado2` date NOT NULL,
+  `fecha_aprobacion` date NOT NULL,
+  `adelanto` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`idconvenio`),
+  UNIQUE KEY `idinmueble` (`idinmueble`),
+  KEY `idusuario` (`idusuario`),
+  KEY `dueno` (`dueno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresa`
+-- Estructura de tabla para la tabla `empresa`
 --
 
 CREATE TABLE IF NOT EXISTS `empresa` (
@@ -85,11 +97,13 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `telefono2` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
   `descrip` varchar(140) COLLATE utf8_spanish_ci NOT NULL,
   `imagen` varchar(30) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `ratings` int(1) DEFAULT NULL
+  `ratings` int(1) DEFAULT NULL,
+  PRIMARY KEY (`IdEmpresa`),
+  UNIQUE KEY `Dueño` (`dueño`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `empresa`
+-- Volcado de datos para la tabla `empresa`
 --
 
 INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`, `nit`, `telefono2`, `descrip`, `imagen`, `ratings`) VALUES
@@ -98,7 +112,7 @@ INSERT INTO `empresa` (`IdEmpresa`, `dueño`, `telefono`, `nombre`, `direccion`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresamen`
+-- Estructura de tabla para la tabla `empresamen`
 --
 
 CREATE TABLE IF NOT EXISTS `empresamen` (
@@ -106,11 +120,13 @@ CREATE TABLE IF NOT EXISTS `empresamen` (
   `idempresa` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `titulo` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   `texto` varchar(240) COLLATE utf8_spanish_ci NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` date NOT NULL,
+  PRIMARY KEY (`idmensaje`),
+  KEY `idempresa` (`idempresa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `empresamen`
+-- Volcado de datos para la tabla `empresamen`
 --
 
 INSERT INTO `empresamen` (`idmensaje`, `idempresa`, `titulo`, `texto`, `fecha`) VALUES
@@ -120,7 +136,7 @@ INSERT INTO `empresamen` (`idmensaje`, `idempresa`, `titulo`, `texto`, `fecha`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `empresasolicitud`
+-- Estructura de tabla para la tabla `empresasolicitud`
 --
 
 CREATE TABLE IF NOT EXISTS `empresasolicitud` (
@@ -129,11 +145,17 @@ CREATE TABLE IF NOT EXISTS `empresasolicitud` (
   `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `aprovado` int(1) NOT NULL,
   `aprovado2` int(1) NOT NULL,
-  `mensaje` varchar(260) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL
+  `mensaje` varchar(260) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  PRIMARY KEY (`idsolicitud`),
+  KEY `idempresa` (`idempresa`,`idusuario`),
+  KEY `idempresa_2` (`idempresa`),
+  KEY `idusuario` (`idusuario`),
+  KEY `idempresa_3` (`idempresa`),
+  KEY `idusuario_2` (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `empresasolicitud`
+-- Volcado de datos para la tabla `empresasolicitud`
 --
 
 INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprovado`, `aprovado2`, `mensaje`) VALUES
@@ -143,18 +165,20 @@ INSERT INTO `empresasolicitud` (`idsolicitud`, `idempresa`, `idusuario`, `aprova
 -- --------------------------------------------------------
 
 --
--- Table structure for table `etiqueta`
+-- Estructura de tabla para la tabla `etiqueta`
 --
 
 CREATE TABLE IF NOT EXISTS `etiqueta` (
   `IdEtiqueta` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `Idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `Netiqueta` int(5) NOT NULL,
-  `Valor` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+  `Valor` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`IdEtiqueta`),
+  KEY `Idinmueble` (`Idinmueble`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `etiqueta`
+-- Volcado de datos para la tabla `etiqueta`
 --
 
 INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
@@ -187,7 +211,7 @@ INSERT INTO `etiqueta` (`IdEtiqueta`, `Idinmueble`, `Netiqueta`, `Valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inmueble`
+-- Estructura de tabla para la tabla `inmueble`
 --
 
 CREATE TABLE IF NOT EXISTS `inmueble` (
@@ -208,11 +232,13 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `valuo1` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `valuo2` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `total` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `remaining` varchar(2) COLLATE utf8_spanish_ci NOT NULL
+  `remaining` varchar(2) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`IdInmueble`),
+  KEY `Dueno` (`Dueno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `inmueble`
+-- Volcado de datos para la tabla `inmueble`
 --
 
 INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`, `estado`, `areadeterreno`, `areadeconstruc`, `aprovado`, `age`, `valuo1`, `valuo2`, `total`, `remaining`) VALUES
@@ -224,22 +250,26 @@ INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `Vent
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mensaje`
+-- Estructura de tabla para la tabla `mensaje`
 --
 
 CREATE TABLE IF NOT EXISTS `mensaje` (
-`idmensaje` int(5) NOT NULL,
+  `idmensaje` int(5) NOT NULL AUTO_INCREMENT,
   `remitente` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `destinatario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `asunto` varchar(25) COLLATE utf8_spanish_ci NOT NULL,
   `mensaje` varchar(260) COLLATE utf8_spanish_ci NOT NULL,
   `fecha` datetime NOT NULL,
   `estado` char(1) COLLATE utf8_spanish_ci NOT NULL,
-  `estado2` char(1) COLLATE utf8_spanish_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+  `estado2` char(1) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`idmensaje`),
+  KEY `remitente` (`remitente`,`destinatario`),
+  KEY `remitente_2` (`remitente`),
+  KEY `destinatario` (`destinatario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `mensaje`
+-- Volcado de datos para la tabla `mensaje`
 --
 
 INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mensaje`, `fecha`, `estado`, `estado2`) VALUES
@@ -254,7 +284,7 @@ INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mens
 -- --------------------------------------------------------
 
 --
--- Table structure for table `peritaje`
+-- Estructura de tabla para la tabla `peritaje`
 --
 
 CREATE TABLE IF NOT EXISTS `peritaje` (
@@ -266,11 +296,13 @@ CREATE TABLE IF NOT EXISTS `peritaje` (
   `valor3` int(5) NOT NULL,
   `categoria` char(1) NOT NULL,
   `creador` varchar(5) NOT NULL,
-  `estado` char(1) NOT NULL
+  `estado` char(1) NOT NULL,
+  PRIMARY KEY (`id_peri`),
+  KEY `categoria` (`categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `peritaje`
+-- Volcado de datos para la tabla `peritaje`
 --
 
 INSERT INTO `peritaje` (`id_peri`, `nombre`, `idioma`, `valor1`, `valor2`, `valor3`, `categoria`, `creador`, `estado`) VALUES
@@ -284,20 +316,22 @@ INSERT INTO `peritaje` (`id_peri`, `nombre`, `idioma`, `valor1`, `valor2`, `valo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `resultadoconevio`
+-- Estructura de tabla para la tabla `resultadoconevio`
 --
 
 CREATE TABLE IF NOT EXISTS `resultadoconevio` (
   `idresultado` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idconvenio` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `resultado` int(1) NOT NULL,
-  `satisfaccion` int(1) NOT NULL
+  `satisfaccion` int(1) NOT NULL,
+  PRIMARY KEY (`idresultado`),
+  UNIQUE KEY `idconvenio` (`idconvenio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbusuario`
+-- Estructura de tabla para la tabla `tbusuario`
 --
 
 CREATE TABLE IF NOT EXISTS `tbusuario` (
@@ -309,11 +343,15 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `usuario` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `contra` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
   `tipo` int(1) DEFAULT NULL,
-  `image` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL
+  `image` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY `usuario` (`usuario`),
+  UNIQUE KEY `usuario_2` (`usuario`),
+  UNIQUE KEY `correo` (`correo`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `tbusuario`
+-- Volcado de datos para la tabla `tbusuario`
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
@@ -326,7 +364,7 @@ INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -339,11 +377,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `telefono1` varchar(8) COLLATE utf8_spanish_ci NOT NULL,
   `telefono2` varchar(8) COLLATE utf8_spanish_ci DEFAULT NULL,
   `Rating` int(1) DEFAULT NULL,
-  `Empresa` varchar(5) COLLATE utf8_spanish_ci DEFAULT NULL
+  `Empresa` varchar(5) COLLATE utf8_spanish_ci DEFAULT NULL,
+  PRIMARY KEY (`IdUsuario`),
+  UNIQUE KEY `TempId` (`TempId`),
+  UNIQUE KEY `TempId_2` (`TempId`),
+  KEY `Empresa` (`Empresa`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`, `NIT`, `telefono1`, `telefono2`, `Rating`, `Empresa`) VALUES
@@ -353,155 +395,59 @@ INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`
 ('3', '2', 'New at the company mates', 'sasdasasjdlkasjdkl', '123123232', '1223213213', '23232332', '23232323', 0, '0');
 
 --
--- Indexes for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Indexes for table `asociados`
---
-ALTER TABLE `asociados`
- ADD PRIMARY KEY (`idasocio`), ADD KEY `socio1` (`socio1`,`socio2`);
-
---
--- Indexes for table `contrato`
+-- Filtros para la tabla `contrato`
 --
 ALTER TABLE `contrato`
- ADD PRIMARY KEY (`idfinal`), ADD UNIQUE KEY `idinmueble` (`idinmueble`), ADD KEY `idusuario` (`idusuario`);
+  ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON UPDATE CASCADE;
 
 --
--- Indexes for table `convenio`
+-- Filtros para la tabla `convenio`
 --
 ALTER TABLE `convenio`
- ADD PRIMARY KEY (`idconvenio`), ADD UNIQUE KEY `idinmueble` (`idinmueble`), ADD KEY `idusuario` (`idusuario`);
+  ADD CONSTRAINT `convenio_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `convenio_ibfk_2` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Indexes for table `empresa`
+-- Filtros para la tabla `empresa`
 --
 ALTER TABLE `empresa`
- ADD PRIMARY KEY (`IdEmpresa`), ADD UNIQUE KEY `Dueño` (`dueño`);
+  ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`dueño`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Indexes for table `empresamen`
+-- Filtros para la tabla `empresamen`
 --
 ALTER TABLE `empresamen`
- ADD PRIMARY KEY (`idmensaje`), ADD KEY `idempresa` (`idempresa`);
+  ADD CONSTRAINT `empresamen_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Indexes for table `empresasolicitud`
+-- Filtros para la tabla `empresasolicitud`
 --
 ALTER TABLE `empresasolicitud`
- ADD PRIMARY KEY (`idsolicitud`), ADD KEY `idempresa` (`idempresa`,`idusuario`), ADD KEY `idempresa_2` (`idempresa`), ADD KEY `idusuario` (`idusuario`), ADD KEY `idempresa_3` (`idempresa`), ADD KEY `idusuario_2` (`idusuario`);
+  ADD CONSTRAINT `empresasolicitud_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`),
+  ADD CONSTRAINT `empresasolicitud_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Indexes for table `etiqueta`
+-- Filtros para la tabla `etiqueta`
 --
 ALTER TABLE `etiqueta`
- ADD PRIMARY KEY (`IdEtiqueta`), ADD KEY `Idinmueble` (`Idinmueble`);
+  ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Indexes for table `inmueble`
+-- Filtros para la tabla `inmueble`
 --
 ALTER TABLE `inmueble`
- ADD PRIMARY KEY (`IdInmueble`), ADD KEY `Dueno` (`Dueno`);
+  ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`IdInmueble`) REFERENCES `usuario` (`IdUsuario`);
 
 --
--- Indexes for table `mensaje`
---
-ALTER TABLE `mensaje`
- ADD PRIMARY KEY (`idmensaje`), ADD KEY `remitente` (`remitente`,`destinatario`), ADD KEY `remitente_2` (`remitente`), ADD KEY `destinatario` (`destinatario`);
-
---
--- Indexes for table `peritaje`
---
-ALTER TABLE `peritaje`
- ADD PRIMARY KEY (`id_peri`), ADD KEY `categoria` (`categoria`);
-
---
--- Indexes for table `resultadoconevio`
+-- Filtros para la tabla `resultadoconevio`
 --
 ALTER TABLE `resultadoconevio`
- ADD PRIMARY KEY (`idresultado`), ADD UNIQUE KEY `idconvenio` (`idconvenio`);
-
---
--- Indexes for table `tbusuario`
---
-ALTER TABLE `tbusuario`
- ADD PRIMARY KEY (`idUsuario`), ADD UNIQUE KEY `usuario` (`usuario`), ADD UNIQUE KEY `usuario_2` (`usuario`), ADD UNIQUE KEY `correo` (`correo`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
- ADD PRIMARY KEY (`IdUsuario`), ADD UNIQUE KEY `TempId` (`TempId`), ADD UNIQUE KEY `TempId_2` (`TempId`), ADD KEY `Empresa` (`Empresa`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `asociados`
---
-ALTER TABLE `asociados`
-MODIFY `idasocio` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
---
--- AUTO_INCREMENT for table `mensaje`
---
-ALTER TABLE `mensaje`
-MODIFY `idmensaje` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `contrato`
---
-ALTER TABLE `contrato`
-ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON UPDATE CASCADE,
-ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON UPDATE CASCADE;
-
---
--- Constraints for table `convenio`
---
-ALTER TABLE `convenio`
-ADD CONSTRAINT `convenio_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE,
-ADD CONSTRAINT `convenio_ibfk_2` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `empresa`
---
-ALTER TABLE `empresa`
-ADD CONSTRAINT `empresa_ibfk_1` FOREIGN KEY (`dueño`) REFERENCES `usuario` (`IdUsuario`);
-
---
--- Constraints for table `empresamen`
---
-ALTER TABLE `empresamen`
-ADD CONSTRAINT `empresamen_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `empresasolicitud`
---
-ALTER TABLE `empresasolicitud`
-ADD CONSTRAINT `empresasolicitud_ibfk_1` FOREIGN KEY (`idempresa`) REFERENCES `empresa` (`IdEmpresa`),
-ADD CONSTRAINT `empresasolicitud_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`);
-
---
--- Constraints for table `etiqueta`
---
-ALTER TABLE `etiqueta`
-ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `inmueble`
---
-ALTER TABLE `inmueble`
-ADD CONSTRAINT `inmueble_ibfk_1` FOREIGN KEY (`IdInmueble`) REFERENCES `usuario` (`IdUsuario`);
-
---
--- Constraints for table `resultadoconevio`
---
-ALTER TABLE `resultadoconevio`
-ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `convenio` (`idconvenio`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `convenio` (`idconvenio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
