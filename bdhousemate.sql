@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2015 a las 00:06:49
+-- Tiempo de generación: 18-07-2015 a las 02:21:12
 -- Versión del servidor: 5.6.24
 -- Versión de PHP: 5.6.8
 
@@ -63,9 +63,8 @@ CREATE TABLE IF NOT EXISTS `convenio` (
 --
 
 INSERT INTO `convenio` (`idconvenio`, `idinmueble`, `idusuario`, `oferta`, `aprovado1`, `aprovado2`, `fecha_aprobacion`, `fecha_final`, `adelanto`) VALUES
-('1', '2', '1', '123', '1', '0', '2015-07-31', '2015-08-12', '123'),
-('2', '1', '1', '12', '1', '1', '2015-07-21', '2015-08-12', '12'),
-('3', '3', '1', '23000', '1', '0', '2015-07-31', '2016-03-19', '23232');
+('1', '1', '3', '23000', '1', '1', '2015-07-23', '2015-08-14', '2000'),
+('2', '1', '3', '23000', '0', '0', '2015-07-17', '2015-09-30', '2000');
 
 -- --------------------------------------------------------
 
@@ -206,18 +205,19 @@ CREATE TABLE IF NOT EXISTS `inmueble` (
   `valuo1` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `valuo2` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `total` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
-  `remaining` varchar(2) COLLATE utf8_spanish_ci NOT NULL
+  `remaining` varchar(2) COLLATE utf8_spanish_ci NOT NULL,
+  `perito` varchar(5) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `inmueble`
 --
 
-INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`, `estado`, `areadeterreno`, `areadeconstruc`, `aprovado`, `age`, `valuo1`, `valuo2`, `total`, `remaining`) VALUES
-('0', '0', 'Santa Tecla, La Libertad, El Salvador', 'Test', 2, 1, '23000', 'img/Houses/2.jpg', NULL, '', '', '', '', '', '', '', '', ''),
-('1', '0', 'Apaneca, Ahuachapán, El Salvador', 'asd', 1, 1, '1230', 'img/Houses/b.jpg', 'asd', '1', '120', '120', '0', '10', '0', '0', '0', '0'),
-('2', '0', 'Agua Caliente, Chalatenango, El Salvador', '1230', 1, 0, '1230', 'img/Houses/3.jpg', '1230', '3', '120', '120', '0', '10', '0', '0', '0', '0'),
-('3', '0', 'Apaneca, Ahuachapán, El Salvador', 'Manual', 2, 1, '1245', 'img/Houses/4.jpg', 'Jose', '2', '186', '122', '0', '10', '0', '0', '0', '0');
+INSERT INTO `inmueble` (`IdInmueble`, `Dueno`, `Direccion`, `Descripcion`, `VentaRenta`, `Tipopropiedad`, `Precio`, `Imagen`, `DescDire`, `estado`, `areadeterreno`, `areadeconstruc`, `aprovado`, `age`, `valuo1`, `valuo2`, `total`, `remaining`, `perito`) VALUES
+('0', '0', 'Santa Tecla, La Libertad, El Salvador', 'Test', 2, 1, '23000', 'img/Houses/2.jpg', NULL, '', '', '', '', '', '', '', '', '', ''),
+('1', '0', 'Apaneca, Ahuachapán, El Salvador', 'asd', 1, 1, '1230', 'img/Houses/b.jpg', 'asd', '1', '120', '120', '1', '10', '27817.06', '12000.00', '39817.06', '65', '0'),
+('2', '0', 'Agua Caliente, Chalatenango, El Salvador', '1230', 1, 0, '1230', 'img/Houses/3.jpg', '1230', '3', '120', '120', '1', '10', '27426.12', '14760.00', '42186.12', '64', '3'),
+('3', '0', 'Apaneca, Ahuachapán, El Salvador', 'Manual', 2, 1, '1245', 'img/Houses/4.jpg', 'Jose', '2', '186', '122', '1', '10', '18669.93', '30690.00', '49359.93', '65', '0');
 
 -- --------------------------------------------------------
 
@@ -244,7 +244,7 @@ INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mens
 (1, '0', '2', 'Test', 'Hola!', '2015-06-12 00:00:00', '', ''),
 (2, '0', '2', 'Test 2', 'sadhgaskdjashdaskdjksdasjdhajghdasgdhasgsdasd', '2015-06-12 00:00:00', '', ''),
 (3, '1', '2', 'Test 3', 'esto es de otro usuario', '2015-06-12 00:00:00', '', ''),
-(4, '0', '3', 'asd', 'cristopher esta aca', '2015-06-25 11:04:24', '2', '1'),
+(4, '0', '3', 'asd', 'cristopher esta aca', '2015-06-25 11:04:24', '2', '3'),
 (5, '2', '0', 'no', 'j', '2015-06-26 14:11:48', '2', '1'),
 (6, '0', '2', 'soy gay', 'ño', '2015-06-26 14:20:38', '1', '2'),
 (7, '0', '3', '', '', '2015-06-26 14:21:02', '1', '3');
@@ -262,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `fechanac` date NOT NULL,
   `correo` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `usuario` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `contra` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contra` varchar(120) COLLATE utf8_spanish_ci DEFAULT NULL,
   `tipo` int(1) DEFAULT NULL,
   `image` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -272,11 +272,12 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
-('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', 'chaleco234', 4, NULL),
-('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', 'chaleco234', 4, NULL),
-('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '12345', 1, NULL),
-('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'Perito', 'chaleco234', 3, NULL),
-('4', 'Jose Alexander', 'Garcia Valladares', '1995-12-12', 'nome@hotmail.com', 'alexan', 'chaleco234', 4, NULL);
+('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', '734c9f9c17e31655a415bd2bb0a36c012a3e8cda', 4, NULL),
+('1', 'Jose', 'Montolla', '1996-01-12', 'correo@hotmail.com', 'Visitante', '734c9f9c17e31655a415bd2bb0a36c012a3e8cda', 3, NULL),
+('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '8cb2237d0679ca88db6464eac60da96345513964', 1, NULL),
+('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'f10e2821bbbea527ea02200352313bc059445190', 3, NULL),
+('4', 'Jose Alexander', 'Garcia Valladares', '1995-12-12', 'nome@hotmail.com', 'alexan', '5eb0f0f0ec5a736b6931', 4, NULL),
+('5', 'Marvin', 'asdsadw', '2019-04-12', 'marvin@asd.es', 'marvin215', '7c4a8d09ca3762af61e59520943dc26494f8941b', 4, NULL);
 
 -- --------------------------------------------------------
 
