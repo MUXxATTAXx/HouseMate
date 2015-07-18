@@ -74,7 +74,7 @@
             <label ><?= $lang['area1']  ?>:</label>
           </div>
           <div class="row row-centered">
-            <label id="aget" class="btn label label-info"><?= $row['areadeterreno']." m^2"?></label>
+            <label id="areaterenoF" class="btn label label-info"><?= $row['areadeterreno']." m^2"?></label>
           </div>
           </div>
 
@@ -636,7 +636,7 @@
 <div class="panel-footer">
 
   <div class="row">
-      <div class="col-sm-6">
+  <div class="col-sm-5">
     <div class="row">
       <div class="col-sm-6">
       <label><?= $lang['builvalue'] ?>:</label>
@@ -644,29 +644,35 @@
 
   </div>
     <div class="col-sm-6">
-      <div class="input-group">
-      <span class="input-group-addon label-info">$</span>
-    <label class="form-control label-primary"  id="esda"></label>
-      <span class="input-group-addon label-info"></span>
+      <div class="input-group"><h3>
+      <span class="input-group-addon btn label label-info">$</span>
+    <label class="input-group btn label label-info"  id="esda"></label>
+      <span class="input-group-addon label label-info"></span></h3>
+
     </div>
     </div>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-5">
     <div class="row">
       <div class="col-sm-6">
       <label><?= $lang['lotvalue'] ?>:</label>
     </div>
   </div>
     <div class="col-sm-6">
-      <div class="input-group">
-      <span class="input-group-addon label-info">$</span>
-    <label class="form-control label-primary"  id="esda2"></label>
-      <span class="input-group-addon label-info"></span>
+      <div class="input-group"><h3>
+      <span class="input-group-addon btn label label-info">$</span>
+    <label class="input-group btn label label-info"  id="esda2"></label>
+      <span class="input-group-addon label label-info"></span></h3>
     </div>
     </div>
+  </div>
+  <div class="col-sm-2">
+  <div class="col-sm-12"><button type="submit" name="submit" id="submit" class="btn btn-sm btn-warning"><?= $lang['insert'] ?></button></div>
+  <div class="recdj"></div>
   </div>
   </div>
   <br>
+
   <div class="row">
     <div class="col-sm-6"><label ><?= $lang['Constr'] ?></label>
       <label id="porcentaje1"></label></div>
@@ -675,15 +681,16 @@
   </div>
   <div class="row">
     <div class="progress">
-      <div id="barra1" class="progress-bar progress-bar-success" >
+      <div id="barra1" class="progress-bar progress-bar-primary" >
     </div>
-    <div id="barra2" class="progress-bar progress-bar-primary">
+    <div id="barra2" class="progress-bar progress-bar-success">
     </div>
   </div>
 </div>
-<table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='true'>
+<table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='false'>
 <thead>
-  <tr class="whitecover" style="color:black;">
+<tr class="whitecover" style="color:black;">
+<th><?= $lang['Nombre'] ?></th>
 <th ><?= $lang['are']  ?></th>
 <th><?= $lang['VNR'] ?></th>
 <th>Total</th>
@@ -691,16 +698,25 @@
 </thead>
 <tbody id="tablameter">
 </tbody>
+<tr id="tablaterreno" class="hidme">
+  <td class="progress-bar progress-bar-success"><?= $lang['lot'] ?></td>
+  <td class="progress-bar progress-bar-success"><label id="areadeterreno"></label></td>
+  <td class="progress-bar progress-bar-success"><label id="valorporterreno"></label></td>
+  <td class="progress-bar progress-bar-success"><label id="totalterreno"></label></td>
+</tr>
 <tr>
+  <td class="progress-bar progress-bar-info"></td>
   <td class="progress-bar progress-bar-info"></td>
   <td class="progress-bar progress-bar-info">Total:</td>
   <td class="progress-bar progress-bar-info"><label id="valorfinal"></label></td>
 </tr>
 </table>
+
 </div>
   </div>
     </div>
   </div>
+
 </div>
 <br>
 
@@ -786,6 +802,22 @@ if (z < 0)
 document.getElementById('unitaryadded2').value = 0;}
 document.getElementById('esda2').textContent =  (x * z).toFixed(2);
 chare();
+formstart();
+}
+function formstart()
+{
+  var x = parseFloat(document.getElementById("unitaryadded2").value);
+  var z = document.getElementById('areaterenoF').textContent;
+  var y = document.getElementById('esda2').textContent;
+  if(x != 0 || x != 0.00 || x != null || x != NaN){
+    document.getElementById('areadeterreno').textContent = z;
+    document.getElementById('valorporterreno').textContent = x;
+    document.getElementById('totalterreno').textContent = y;
+    document.getElementById("tablaterreno").className = "";
+  }
+  else {
+    document.getElementById("tablaterreno").className = "hidme";
+  }
 }
 function valuechange3()
 {
@@ -972,7 +1004,7 @@ function chare()
   var x5 = parseFloat(document.getElementById('resultado5').textContent);
   var pisto = parseFloat(document.getElementById("esda2").textContent);
   document.getElementById('esda').textContent = (x+x1+x2+x3+x4+x5).toFixed(2);
-  document.getElementById('valorfinal').textContent = "$"+(parseFloat(document.getElementById('esda').textContent)+parseFloat(pisto));
+  document.getElementById('valorfinal').textContent = "$"+(parseFloat(document.getElementById('esda').textContent)+parseFloat(pisto)).toFixed(2);
   barra();
   changemaker();
 }
@@ -1005,12 +1037,12 @@ var  resu2 =  document.getElementById('resultado2').textContent;
 var  resu3 =  document.getElementById('resultado3').textContent;
 var  resu4 =  document.getElementById('resultado4').textContent;
 var  resu5 =  document.getElementById('resultado5').textContent;
-    terreno =  parseFloat(document.getElementById("esda2").value);
+
   $.ajax({
     type: "POST",
     url: "Call/Funciones/valuotabla.php",
     data: "resu="+resu+"&resu1="+resu1+"&resu2="+resu2+"&resu3="+resu3
-    +"&resu4="+resu4+"&resu5="+resu5+"&terreno="+terreno,
+    +"&resu4="+resu4+"&resu5="+resu5,
     dataType: "html",
     beforeSend: function(){
       $("#tablameter").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
@@ -1071,10 +1103,31 @@ function formacion()
     }
   }
 }
+$("#submit").click(function(){
+		var valor = ocument.getElementById('esda').textContent;
+		var valor2 = document.getElementById('esda2').textContent;
+		$.ajax({
+			type: "POST",
+			url: "Call/Empresa/Empresafuncion/valuofinal.php",
+			data: "valor="+valor+"&valor2="+valor2,
+			dataType: "html",
+			beforeSend: function(){
+				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+			},
+			error: function(){
+				alert("error petición ajax");
+			},
+			success: function(data){
+				$("#recdj").empty();
+				$("#recdj").append(data).page;
+		}
+	});
+});
 </script>
 <?php
 }
 ?>
+
       <!-- Fin de row -->
 
 
