@@ -87,7 +87,28 @@
                     }
                 ?>
                 <li class="divider"></li>
+				<li><span class='glyphicon glyphicon-briefcase'></span><?php echo $lang['res-empresa'];?></li>
+				<?php
+					$foundyou = mysql_query("Select idusuario FROM usuario Where TempId = $usuario");
+					while ($row = mysql_fetch_array($foundyou))
+					{$idusuario = $row['idusuario'];}
+                    $consulta6 = mysql_query("SELECT * FROM empresasolicitud WHERE idusuario = '$idusuario' and aprovado2 = '0' and aprovado = '1'");
+                    while($row = mysql_fetch_array($consulta6)){
+                        $consulta7 = mysql_query("SELECT * from empresa inner join usuario on empresa.dueño =  usuario.idusuario
+						where empresa.idempresa =".$row['idempresa']);
+                            while($row2 = mysql_fetch_array($consulta7)){
+                                echo "<li ><a href='Beforelobbyempresa.php?empresa=".$row2['idempresa']."'>".$row2['nombre'].$lang['new-empresa']."</a></li>";
+                            }
+                    }
+					 if(mysql_num_rows($consulta6) == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+                ?>
+                <li class="divider"></li>
                 <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
+                <?php
+                        echo "<li ><a>".$lang['no-mates']."</a></li>";
+                ?>
             </ul>
         </li>
       </ul>
@@ -105,6 +126,7 @@
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
+                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
 					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
           </li>

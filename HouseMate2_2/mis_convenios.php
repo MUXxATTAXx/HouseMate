@@ -84,7 +84,8 @@ while($urow = mysql_fetch_array($inmueble_con)){
                             ";
                             if($drow['aprovado2'] == "0"){
                                 echo "<input type='submit' value='".$lang['accept']."' class='btn-success btn-sm' name='aceptar'>
-                            <input type='submit' value='".$lang['No']."'  class='btn-error btn-sm' name='negar'>";
+                            <input type='submit' value='".$lang['No']."'  class='btn-error btn-sm' name='negar'><p>  </p>";
+                            echo "<a class='btn-sm btn-warning' href='modificar_con1.php?idconvenio=".$drow['idconvenio']."'>".$lang['Modificar']."</a>";
                             }else{
                                 echo "<a class='btn btn-info' href='Reportes/conveniofinal.php?idconvenio=".$drow['idconvenio']."'>".$lang['print-convenio']."</a>";
                             }
