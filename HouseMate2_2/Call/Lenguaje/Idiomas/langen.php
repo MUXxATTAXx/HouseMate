@@ -391,4 +391,5 @@ $lang['intente-denuevo'] = "Try again or cancel your offer.";
 $lang['oferta-cancelada'] = "Offer Canceled";
 $lang['ninguna-oferta'] = "There are no offers.";
 $lang['regresar-inicio'] = "Keep searching.";
+$lang['convenio'] = "Agreements";
 ?>

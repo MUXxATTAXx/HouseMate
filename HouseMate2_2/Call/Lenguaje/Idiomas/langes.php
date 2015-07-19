@@ -390,5 +390,6 @@ $lang['intente-denuevo'] = "Intente de nuevo o cancele su oferta.";
 $lang['oferta-cancelada'] = "Oferta Cancelada";
 $lang['ninguna-oferta'] = "No hay ninguna oferta.";
 $lang['regresar-inicio'] = "Seguir buscando casas.";
+$lang['convenio'] = "Convenios";
 
 ?>

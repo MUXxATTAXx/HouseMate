@@ -107,24 +107,30 @@
                 <li class="divider"></li>
                 <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
                 <?php
-                    $usuario = $_SESSION['id'];
-                    $inmueble = "SELECT * from inmueble WHERE Dueno = '$usuario'";
-                    $inmueble_con = mysql_query($inmueble);
-                    while($urow = mysql_fetch_array($inmueble_con)){
-                        $idinmueble = $urow['IdInmueble'];
-                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble'";
-                        $convenio_con = mysql_query($convenio);
-                        while($drow = mysql_fetch_array($convenio_con)){
-                            $ofertor = "SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'";
-                            $ofertor_con = mysql_query($ofertor);
-                            while($orow = mysql_fetch_array($ofertor_con)){
-                                if($drow['aprovado2'] == '0'){
+                    //Mostrar solicitudes
+                    $soli1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+                    while($vrow = mysql_fetch_array($soli1)){
+                        $Usuario = $vrow['IdUsuario'];
+                        $inmueble_con = mysql_query("SELECT * from inmueble WHERE Dueno = '$Usuario'");
+                        while($urow = mysql_fetch_array($inmueble_con)){
+                            $idinmueble = $urow['IdInmueble'];
+                            $convenio_con = mysql_query("SELECT * FROM convenio WHERE aprovado2 != '1' and idinmueble ='$idinmueble'");
+                            while($drow = mysql_fetch_array($convenio_con)){
+                                $ofertor_con = mysql_query("SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'");
+                                while($orow = mysql_fetch_array($ofertor_con)){
                                     echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a><br>";
                                 }
-                                else{
-                                    echo "<li ><a>".$lang['no-mates']."</a></li>";
-                                }
-                            }       
+                            }
+                        }
+                    }               
+                    //Ver si no hay solicitud 1
+                    $vacio1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+                    while($v1row = mysql_fetch_array($vacio1)){
+                        $Usuario = $v1row['IdUsuario'];
+                        $vacio2 = "SELECT * from inmueble inner join convenio on inmueble.idinmueble = convenio.idinmueble WHERE inmueble.Dueno                                 ='$Usuario' and convenio.aprovado2 = '0'";
+                        $numero = mysql_num_rows(mysql_query($vacio2));
+                        if($numero == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
                         }
                     }
                 ?>
@@ -145,7 +151,8 @@
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
+                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['convenio']);?></a></li>
+                    <li><a href='mis_convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
 					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
           </li>

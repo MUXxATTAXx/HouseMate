@@ -152,7 +152,8 @@ require ("Call/Loged/seguridad.php");
                     <li><a href="perfil_admin.php"><?php echo($lang['Perfil']);?></a></li>
 					<li><a href='mis_inmuebles.php?Dueno=<?php echo $usuario; ?>'><?php echo($lang['mis-inmuebles']);?></a></li>
 					<li><a href="mis_asociados.php?socio1=<?php echo $usuario; ?>"><?php echo($lang['mis-socios']);?></a></li>
-                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
+                    <li><a href='convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['convenio']);?></a></li>
+                    <li><a href='mis_convenios.php?idusuario=<?php echo $usuario; ?>'><?php echo($lang['mis-convenios']);?></a></li>
 					<li><a type="button" class="btn-danger blanco-letra" data-toggle="modal" data-target="#myModal"><span class='glyphicon glyphicon-off danger'></span><?php echo($lang['Cerrar-Sesion']);?></a></li>
                 </ul>
           </li>
