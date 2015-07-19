@@ -360,7 +360,7 @@ $lang['lista-miembros'] = "Listado de Miembros";
 $lang['repo-convenio'] = "Convenio de Confianza";
 
 $lang['validaciones'] = "js/esvalidaciones.js";
-$lang['sin-cuenta'] = "Necesitas una cuenta";
+$lang['sin-cuenta'] = "Necesitas una cuenta. ";
 $lang['sin-propiedad'] = "Ingrese una propiedad!";
 
 //Convenios
@@ -378,5 +378,17 @@ $lang['plazo-adelanto'] = "Con un adelanto de: ";
 $lang['precio-ofrecido'] = "Precio ofrecido: ";
 $lang['precio-estimado'] = "Precio estimado: ";
 $lang['mis-convenios'] = "Mis Convenios";
+$lang['negociar'] = "Negociar";
+$lang['o'] = " o ";
+$lang['nego-pendiente'] = "Pendiente de negociación.";
+$lang['revisar-oferta'] = " quiere revisar la oferta.";
+$lang['ver-inmueble'] = "Ver inmueble.";
+$lang['renegociar'] = "Renegociar";
+$lang['nego-cancelar'] = "Cancelar";
+$lang['oferta-denegada'] = "Oferta Denegada";
+$lang['intente-denuevo'] = "Intente de nuevo o cancele su oferta.";
+$lang['oferta-cancelada'] = "Oferta Cancelada";
+$lang['ninguna-oferta'] = "No hay ninguna oferta.";
+$lang['regresar-inicio'] = "Seguir buscando casas.";
 
 ?>

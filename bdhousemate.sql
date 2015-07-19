@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2015 a las 18:55:05
+-- Tiempo de generación: 19-07-2015 a las 06:00:36
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -45,23 +45,6 @@ INSERT INTO `asociados` (`idasocio`, `socio1`, `socio2`, `solicitud`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `contrato`
---
-
-CREATE TABLE IF NOT EXISTS `contrato` (
-  `idfinal` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `aprovado1` int(1) NOT NULL,
-  `aprovado2` int(1) NOT NULL,
-  PRIMARY KEY (`idfinal`),
-  UNIQUE KEY `idinmueble` (`idinmueble`),
-  KEY `idusuario` (`idusuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `convenio`
 --
 
@@ -69,7 +52,6 @@ CREATE TABLE IF NOT EXISTS `convenio` (
   `idconvenio` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idinmueble` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `idusuario` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `dueno` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   `oferta` varchar(6) COLLATE utf8_spanish_ci NOT NULL,
   `aprovado1` char(1) COLLATE utf8_spanish_ci NOT NULL,
   `aprovado2` char(1) COLLATE utf8_spanish_ci NOT NULL,
@@ -78,16 +60,15 @@ CREATE TABLE IF NOT EXISTS `convenio` (
   `adelanto` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`idconvenio`),
   UNIQUE KEY `idinmueble` (`idinmueble`),
-  KEY `idusuario` (`idusuario`),
-  KEY `dueno` (`dueno`)
+  KEY `idusuario` (`idusuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `convenio`
 --
 
-INSERT INTO `convenio` (`idconvenio`, `idinmueble`, `idusuario`, `dueno`, `oferta`, `aprovado1`, `aprovado2`, `fecha_aprobacion`, `fecha_final`, `adelanto`) VALUES
-('1', '3', '2', '0', '80000', '1', '0', '2015-07-28', '2015-09-16', '8000');
+INSERT INTO `convenio` (`idconvenio`, `idinmueble`, `idusuario`, `oferta`, `aprovado1`, `aprovado2`, `fecha_aprobacion`, `fecha_final`, `adelanto`) VALUES
+('1', '3', '2', '80000', '1', '1', '2015-07-18', '2015-10-01', '8000');
 
 -- --------------------------------------------------------
 
@@ -292,53 +273,6 @@ INSERT INTO `mensaje` (`idmensaje`, `remitente`, `destinatario`, `asunto`, `mens
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `peritaje`
---
-
-CREATE TABLE IF NOT EXISTS `peritaje` (
-  `id_peri` varchar(5) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `idioma` char(1) NOT NULL,
-  `valor1` int(5) NOT NULL,
-  `valor2` int(5) NOT NULL,
-  `valor3` int(5) NOT NULL,
-  `categoria` char(1) NOT NULL,
-  `creador` varchar(5) NOT NULL,
-  `estado` char(1) NOT NULL,
-  PRIMARY KEY (`id_peri`),
-  KEY `categoria` (`categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `peritaje`
---
-
-INSERT INTO `peritaje` (`id_peri`, `nombre`, `idioma`, `valor1`, `valor2`, `valor3`, `categoria`, `creador`, `estado`) VALUES
-('en1', 'Marble', '2', 7, 7, 7, '1', '3', '1'),
-('en2', 'Woodstock', '2', 5, 5, 5, '1', '3', '1'),
-('es1', 'Marmol', '1', 7, 0, 0, '1', '3', '2'),
-('es2', 'Madera', '1', 5, 5, 5, '1', '3', '1'),
-('es3', 'Repelladas', '1', 4, 4, 4, '1', '3', '1'),
-('es4', 'Marmol', '1', 10, 10, 10, '1', '3', '1');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `resultadoconevio`
---
-
-CREATE TABLE IF NOT EXISTS `resultadoconevio` (
-  `idresultado` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `idconvenio` varchar(5) COLLATE utf8_spanish_ci NOT NULL,
-  `resultado` int(1) NOT NULL,
-  `satisfaccion` int(1) NOT NULL,
-  PRIMARY KEY (`idresultado`),
-  UNIQUE KEY `idconvenio` (`idconvenio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `tbusuario`
 --
 
@@ -407,13 +341,6 @@ INSERT INTO `usuario` (`IdUsuario`, `TempId`, `Credenciales`, `Direccion`, `DUI`
 --
 
 --
--- Filtros para la tabla `contrato`
---
-ALTER TABLE `contrato`
-  ADD CONSTRAINT `contrato_ibfk_1` FOREIGN KEY (`idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `contrato_ibfk_2` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`IdUsuario`) ON UPDATE CASCADE;
-
---
 -- Filtros para la tabla `convenio`
 --
 ALTER TABLE `convenio`
@@ -444,12 +371,6 @@ ALTER TABLE `empresasolicitud`
 --
 ALTER TABLE `etiqueta`
   ADD CONSTRAINT `etiqueta_ibfk_1` FOREIGN KEY (`Idinmueble`) REFERENCES `inmueble` (`IdInmueble`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `resultadoconevio`
---
-ALTER TABLE `resultadoconevio`
-  ADD CONSTRAINT `resultadoconevio_ibfk_1` FOREIGN KEY (`idconvenio`) REFERENCES `convenio` (`idconvenio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

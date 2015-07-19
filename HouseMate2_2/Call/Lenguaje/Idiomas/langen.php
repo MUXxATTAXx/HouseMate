@@ -361,7 +361,7 @@ $lang['lista-miembros'] = "Members List";
 $lang['repo-convenio'] = "Trust Agreement";
 
 $lang['validaciones'] = "js/validaciones.js";
-$lang['sin-cuenta'] = "You need an account!";
+$lang['sin-cuenta'] = "You need an account.";
 $lang['sin-propiedad'] = "Insert a property!";
 
 //Convenios
@@ -379,5 +379,16 @@ $lang['plazo-adelanto'] = "With an advance pay of: ";
 $lang['precio-ofrecido'] = "Offered price: ";
 $lang['precio-estimado'] = "Estimated price: ";
 $lang['mis-convenios'] = "My Agreements";
-
+$lang['negociar'] = "Bargain";
+$lang['o'] = " or ";
+$lang['nego-pendiente'] = "Pending of Bargain.";
+$lang['revisar-oferta'] = " wants to revisit the bargain.";
+$lang['ver-inmueble'] = "View property.";
+$lang['renegociar'] = "Renegotiate";
+$lang['nego-cancelar'] = "Cancel";
+$lang['oferta-denegada'] = "Rejected Offer";
+$lang['intente-denuevo'] = "Try again or cancel your offer.";
+$lang['oferta-cancelada'] = "Offer Canceled";
+$lang['ninguna-oferta'] = "There are no offers.";
+$lang['regresar-inicio'] = "Keep searching.";
 ?>

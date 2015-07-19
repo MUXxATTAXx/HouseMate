@@ -82,12 +82,14 @@ while($urow = mysql_fetch_array($inmueble_con)){
                             <br>
                             <input type='hidden' name='idconvenio' value='".$drow['idconvenio']."'>
                             ";
-                            if($drow['aprovado2'] == "0"){
+                            if($drow['aprovado1'] == "1" and $drow['aprovado2'] == "0"){
                                 echo "<input type='submit' value='".$lang['accept']."' class='btn-success btn-sm' name='aceptar'>
-                            <input type='submit' value='".$lang['No']."'  class='btn-error btn-sm' name='negar'><p>  </p>";
-                            echo "<a class='btn-sm btn-warning' href='modificar_con1.php?idconvenio=".$drow['idconvenio']."'>".$lang['Modificar']."</a>";
-                            }else{
+                            <input type='submit' value='".$lang['negociar']."'  class='btn-warning btn-sm' name='negociar'><p>  </p>";
+                            }elseif($drow['aprovado1'] == "1" and $drow['aprovado2'] == "1"){
                                 echo "<a class='btn btn-info' href='Reportes/conveniofinal.php?idconvenio=".$drow['idconvenio']."'>".$lang['print-convenio']."</a>";
+                            }
+                            elseif($drow['aprovado2'] == "2"){
+                                echo "<a href='#' class='btn btn-default disabled'>".$lang['nego-pendiente']."</a>";
                             }
                             echo "</center>
 					</div>
@@ -111,11 +113,23 @@ if(isset($_POST['aceptar'])){
     echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
     $aceptar_con = mysql_query($aceptar);
 }
-if(isset($_POST['negar'])){
+if(isset($_POST['negociar'])){
     include "conexion.php";
     $idconvenio = $_POST['idconvenio'];
-    $negar = "DELETE FROM convenio WHERE idconvenio = '$idconvenio'";
-    $negar_con = mysql_query($negar); 
+    $fechacon = "SELECT * from convenio WHERE idconvenio = '$idconvenio'";
+    $fecha_con = mysql_query($fechacon);
+    while($fecharow = mysql_fetch_array($fecha_con)){
+        $d1 = $drow['fecha_final'];
+        $date1 = $fecharow['fecha_aprobacion'];
+        $date2 = date("Y-m-d",$date1);
+        $fecha_resta = (strtotime($d1)- strtotime($date2))/24/3600;     
+        $fecha_final1 = strtotime("+".$fecha_resta."Days");
+        $fecha_final2 = date("Y-m-d",$fecha_final1);   
+    }
+    
+    $negociar = "UPDATE convenio SET aprovado2 = '2', fecha_aprobacion = CURRENT_TIMESTAMP, fecha_final = '$fecha_final2' WHERE idconvenio = '$idconvenio'";
+    echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
+    $negociar_con = mysql_query($negociar);
 }
 ?>
     </div>

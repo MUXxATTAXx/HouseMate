@@ -10,7 +10,25 @@
 </head>
 <body id="intro">
 <?php
-    include("Header/barranav6.php");
+session_start();
+if(isset($_SESSION['tip'])){
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			header('Location: adminhomepage.php');
+			break;
+			case 2:
+            header('Location: index.php');
+			break;
+			case 3:
+            header('Location: index.php');
+			break;
+			case 4:
+            include("Header/barranav6.php");
+			break;
+		}
+	}
+    
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">

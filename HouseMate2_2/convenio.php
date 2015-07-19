@@ -1,13 +1,10 @@
-<?php
-session_start();
 
+<link href='css/bootstrap.min.css' rel='stylesheet'/><?php
 if(!isset($_GET['IdInmueble']))
 {
-    echo "<script> 
-    window.history.back();
-			</script>";
+    echo "<script> window.history.back();</script>";
 }
-
+session_start();
 echo("<meta charset=utf-8 />");
 	if(isset($_SESSION['tip']))
 	{
@@ -33,7 +30,7 @@ echo("<meta charset=utf-8 />");
 ?>
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-   <link href='css/bootstrap.min.css' rel='stylesheet'/>
+   
 </head>
 <body>
 
@@ -41,9 +38,6 @@ echo("<meta charset=utf-8 />");
           <div class="panel panel-info">
               <?php
 
-                    if(!isset($_GET['IdInmueble'])){
-                        echo "<script></script>";
-                    }
                     include "conexion.php";
                     $inmuebleid = $_GET['IdInmueble'];
                     $inmueble = "SELECT * FROM Inmueble WHERE IdInmueble = '$inmuebleid'";
@@ -111,7 +105,14 @@ echo("<meta charset=utf-8 />");
                             <a class="btn btn-warning" href="inmueble.php?IdInmueble=<?=$row['IdInmueble']?>"><?=$lang['back']?></a>
                             <?php
                                 $dueno = $row['Dueno'];
-                                $usuario = $_SESSION['id'];
+                                $fausuario = $_SESSION['id'];
+                                $read = mysql_query("Select idusuario from usuario where TempId = '$fausuario'");
+                                while ($gettinguser = mysql_fetch_array($read))
+                                {
+                                    $usuario = $gettinguser['idusuario'];
+                                }
+
+                                
                                 $consulta2 = "SELECT * FROM convenio WHERE idusuario ='$usuario' and idinmueble ='".$row['IdInmueble']."'";
                                 $consulta2_con = mysql_query($consulta2);
                             if(mysql_num_rows($consulta2_con) > 0){
@@ -129,10 +130,16 @@ echo("<meta charset=utf-8 />");
                 </div>
                     <center>
                 <?php
-                    include "conexion.php";
+                    
                     $consulta1 = "SELECT * FROM convenio";
                     $consulta1_con = mysql_query($consulta1);
                     $id = (mysql_num_rows($consulta1_con)) + 1;
+                    $fausuario = $_SESSION['id'];
+                    $read = mysql_query("Select idusuario from usuario where TempId = '$fausuario'");
+                    while ($gettinguser = mysql_fetch_array($read))
+                    {
+                        $usuario = $gettinguser['idusuario'];
+                    }
                     $dueno_inmueble = $row['Dueno'];
                     if(isset($_POST['precio']) and trim($_POST['precio']) != ""){
                         $oferta = $_POST['precio'];
@@ -145,7 +152,7 @@ echo("<meta charset=utf-8 />");
                         $fecha_aprobacion =  date("Y-m-d", $d2);
                         $adelanto = $_POST['adelanto'];
                         
-                        $consulta = "INSERT INTO convenio VALUES ('$id','$inmuebleid','$usuario','$dueno_inmueble','$oferta','0','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
+                        $consulta = "INSERT INTO convenio VALUES ('$id','".$row['IdInmueble']."','$usuario','$oferta','0','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
                         $consulta_con = mysql_query($consulta);
                         if(isset($consulta_con)){
                             echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";

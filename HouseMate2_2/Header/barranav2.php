@@ -106,23 +106,33 @@ require ("Call/Loged/seguridad.php");
                 <li class="divider"></li>
                 <li><span class='glyphicon glyphicon-shopping-cart'></span><?php echo $lang['mis-ofertas'];?></li>
                 <?php
-                    $usuario = $_SESSION['id'];
-                    $inmueble = "SELECT * from inmueble WHERE Dueno = '$usuario'";
-                    $inmueble_con = mysql_query($inmueble);
-                    while($urow = mysql_fetch_array($inmueble_con)){
-                        $idinmueble = $urow['IdInmueble'];
-                        $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble' and aprovado2 ='0'";
-                        $convenio_con = mysql_query($convenio);
-                        while($drow = mysql_fetch_array($convenio_con)){
-                            $ofertor = "SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'";
-                            $ofertor_con = mysql_query($ofertor);
-                            while($orow = mysql_fetch_array($ofertor_con)){
-                               echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a>";
-                            }       
+                    //Mostrar solicitudes
+                    $soli1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+                    while($vrow = mysql_fetch_array($soli1)){
+                        $Usuario = $vrow['IdUsuario'];
+                        $inmueble_con = mysql_query("SELECT * from inmueble WHERE Dueno = '$Usuario'");
+                        while($urow = mysql_fetch_array($inmueble_con)){
+                            $idinmueble = $urow['IdInmueble'];
+                            $convenio_con = mysql_query("SELECT * FROM convenio WHERE aprovado2 != '1' and idinmueble ='$idinmueble'");
+                            while($drow = mysql_fetch_array($convenio_con)){
+                                $ofertor_con = mysql_query("SELECT * FROM tbusuario WHERE IdUsuario ='".$drow['idusuario']."'");
+                                while($orow = mysql_fetch_array($ofertor_con)){
+                                    echo "<a href='mis_convenios.php'>".$orow['usuario'].$lang['ofrecen']."$".$drow['oferta']."</a><br>";
+                                }
+                            }
                         }
-                    }     
-                    if(mysql_num_rows($convenio_con) == 0){
-                        echo "<li ><a>".$lang['no-mates']."</a></li>";
+                    }
+
+                    
+                    //Ver si no hay solicitud 1
+                    $vacio1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
+                    while($v1row = mysql_fetch_array($vacio1)){
+                        $Usuario = $v1row['IdUsuario'];
+                        $vacio2 = "SELECT * from inmueble inner join convenio on inmueble.idinmueble = convenio.idinmueble WHERE inmueble.Dueno                                 ='$Usuario' and convenio.aprovado2 = '0'";
+                        $numero = mysql_num_rows(mysql_query($vacio2));
+                        if($numero == 0){
+                            echo "<li ><a>".$lang['no-mates']."</a></li>";
+                        }
                     }
                 ?>
             </ul>

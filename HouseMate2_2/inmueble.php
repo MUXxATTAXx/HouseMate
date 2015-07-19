@@ -14,7 +14,7 @@ require ("Call/Lenguaje/lenguaje.php");
 </head>
 <body>
 <?php
-session_start();
+//session_start();
 if(isset($_SESSION['tip']))
 {
 	switch($_SESSION['tip'])
@@ -124,7 +124,7 @@ else
                                 else
                                 {
 //                                    echo "<span class='label label-danger'>".$lang['sin-cuenta']."</span><br><br>";
-                                    echo "<p> ".$lang['sin-cuenta']." <a name='crear' href='inicio.php'>".$lang['Crear-Cuenta']."</a></p>";
+                                    echo "<p> ".$lang['sin-cuenta']." <a name='crear' href='inicio.php'>".$lang['Crear-Cuenta']."</a>".$lang['o']."<a type='button' class='pointerclick' data-toggle='modal' data-target='#myModal' >".$lang['Iniciar-Sesion']."</a></p>";
                                 }
 								?>
             <?php
