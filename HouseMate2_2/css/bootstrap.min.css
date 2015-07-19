@@ -277,3 +277,8 @@ body::-webkit-scrollbar-thumb {
 .negro2{
   background-color:#303030;
 }
+#dontover
+{
+  overflow: auto;
+  max-height: 70%;
+}

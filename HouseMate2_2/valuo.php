@@ -30,6 +30,7 @@
     while ($row = mysql_fetch_array($query))
     {
       ?>
+      <label class="hidme"><?= $row['IdInmueble'] ?></label>
     <br>
       <div class="row">
           <div class="col-sm-4">
@@ -39,6 +40,7 @@
           <div class="row">
             <i><?= $row['Direccion']  ?></i>
             <p><?= $row['Descripcion'] ?></p>
+
           </div>
           </div>
           <div class="col-sm-2">
@@ -648,7 +650,6 @@
       <span class="input-group-addon btn label label-info">$</span>
     <label class="input-group btn label label-info"  id="esda"></label>
       <span class="input-group-addon label label-info"></span></h3>
-
     </div>
     </div>
   </div>
@@ -667,8 +668,8 @@
     </div>
   </div>
   <div class="col-sm-2">
-  <div class="col-sm-12"><button type="submit" name="submit" id="submit" class="btn btn-sm btn-warning"><?= $lang['insert'] ?></button></div>
-  <div class="recdj"></div>
+  <div class="col-sm-12"><a  name="funcionar" id="funcionar" class="btn btn-sm btn-warning"><?= $lang['insert'] ?></a></div>
+
   </div>
   </div>
   <br>
@@ -687,6 +688,7 @@
     </div>
   </div>
 </div>
+<div id="recdje"></div>
 <table class='table table-striped table-hover' data-toggle='table'  data-query-params='queryParams' data-page-list='[5, 10, 20, 50, 100, 200]' data-pagination='false'>
 <thead>
 <tr class="whitecover" style="color:black;">
@@ -696,10 +698,15 @@
 <th>Total</th>
 </tr>
 </thead>
+
 <tbody id="tablameter">
 </tbody>
+ <tfoot>
+   <tr id="especial-1" class="hidme">
+     <td><?=$lang['Constr'] ?></td><td id="Atabla-1" class="progress-bar progress-bar-primary"></td><td class="progress-bar progress-bar-primary" id="Btabla-1"></td><td class="progress-bar progress-bar-primary" id="Ctabla-1"></td>
+   </tr>
 <tr id="tablaterreno" class="hidme">
-  <td class="progress-bar progress-bar-success"><?= $lang['lot'] ?></td>
+  <td ><?= $lang['lot'] ?></td>
   <td class="progress-bar progress-bar-success"><label id="areadeterreno"></label></td>
   <td class="progress-bar progress-bar-success"><label id="valorporterreno"></label></td>
   <td class="progress-bar progress-bar-success"><label id="totalterreno"></label></td>
@@ -710,6 +717,7 @@
   <td class="progress-bar progress-bar-info">Total:</td>
   <td class="progress-bar progress-bar-info"><label id="valorfinal"></label></td>
 </tr>
+</tfoot>
 </table>
 
 </div>
@@ -867,7 +875,7 @@ function valuechange4()
   var cinco = document.getElementById('unitaryadded4').value;
   if (cinco <= 0)
   { cinco = 0;
-  document.getElementById('unitaryadded4').value = 0;}
+  document.getElementById('unitaryadded4').value = '';}
   var depresiacion = cinco*x*1;
   var estreo = <?php if(isset($valorR3))
   echo $valorR3;
@@ -902,7 +910,7 @@ function valuechange5()
   var cinco = document.getElementById('unitaryadded5').value;
   if (cinco <= 0)
   { cinco = 0;
-  document.getElementById('unitaryadded5').value = 0;}
+  document.getElementById('unitaryadded5').value = '';}
   var depresiacion = cinco*x*1;
   var estreo = <?php if(isset($valorR4))
   echo $valorR4;
@@ -937,7 +945,7 @@ function valuechange6()
   var cinco = document.getElementById('unitaryadded6').value;
   if (cinco <= 0)
   { cinco = 0;
-  document.getElementById('unitaryadded6').value = 0;}
+  document.getElementById('unitaryadded6').value = '';}
   var depresiacion = cinco*x*1;
   var estreo = <?php if(isset($valorR5))
   echo $valorR5;
@@ -967,12 +975,12 @@ function valuechange7()
   var division = Math.pow(uno/dos,1.4);
   var multiplicacion = division * tres;
   var x = 1-multiplicacion;
-  document.getElementById('estado6B').textContent = x;
+  document.getElementById('estado6B').textContent = x.toFixed(2);
   // Parte dos de la lógica
   var cinco = document.getElementById('unitaryadded7').value;
   if (cinco <= 0)
   { cinco = 0;
-  document.getElementById('unitaryadded6').value = 0;}
+  document.getElementById('unitaryadded6').value = '';}
   var depresiacion = cinco*x*1;
   var estreo = <?php if(isset($valorR6))
   echo $valorR6;
@@ -1031,18 +1039,10 @@ function barra()
   document.getElementById("barra2").style.width = final2+"%";
 }
 function changemaker() {
-var  resu =  document.getElementById('resultado').textContent;
-var  resu1 =  document.getElementById('resultado1').textContent;
-var  resu2 =  document.getElementById('resultado2').textContent;
-var  resu3 =  document.getElementById('resultado3').textContent;
-var  resu4 =  document.getElementById('resultado4').textContent;
-var  resu5 =  document.getElementById('resultado5').textContent;
-
   $.ajax({
     type: "POST",
     url: "Call/Funciones/valuotabla.php",
-    data: "resu="+resu+"&resu1="+resu1+"&resu2="+resu2+"&resu3="+resu3
-    +"&resu4="+resu4+"&resu5="+resu5,
+    data: "",
     dataType: "html",
     beforeSend: function(){
       $("#tablameter").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
@@ -1070,56 +1070,66 @@ function formacion()
   var other = "";
   var dona = "";
   var logot = "";
-  for(var ve = 0; ve <= 4;ve++)
+  var counter = -2;
+  for(var ve = 0; ve <= 5;ve++)
   {
-  for(var ie = 1; ie <= 3;ie++ )
-  {
-      gete1 = "Atabla"+ve;
-      gete2 = "Btabla"+ve;
-      gete3 = "Ctabla"+ve;
-    if(gete1 == "Atabla0")
-    {
-      dona = document.getElementById("areale").textContent;
-      logot = "resultado";
+      counter++;
+      if(ve == 0)
+      {
+        gete1 = "Atabla"+(ve-1);
+        gete2 = "Btabla"+(ve-1);
+        gete3 = "Ctabla"+(ve-1);
+        logot = "resultado";
+        dona = document.getElementById("areale").textContent;
+      }
+      else {
+        gete1 = "Atabla"+counter;
+        gete2 = "Btabla"+counter;
+        gete3 = "Ctabla"+counter;
+        logot = "resultado"+ve;
+        dona = "valor"+ve;
+        dona = document.getElementById(dona).textContent;
+      }
       goget = "estado"+(ve+1)+"D";
-    }
-    else {
-      dona = "valor"+(ve);
-      dona = document.getElementById(dona).textContent;
-      logot = "resultado"+(ve);
-      goget = "estado"+(ve+1)+"D";
-    }
+
+
     other = document.getElementById(logot).textContent;
     watchdog = document.getElementById(goget).textContent;
     if(watchdog == "0" || watchdog == null || watchdog == "0.00")
     {}
     else {
-       compel = "especial"+ve;
+        if(ve == 0)
+        {
+       compel = "especial"+(ve-1);}
+       else {
+         compel = "especial"+(counter);
+       }
        document.getElementById(gete1).textContent = dona;
        document.getElementById(gete2).textContent = watchdog;
        document.getElementById(gete3).textContent = other;
        document.getElementById(compel).className = "";
     }
-    }
   }
 }
-$("#submit").click(function(){
-		var valor = ocument.getElementById('esda').textContent;
+$("#funcionar").click(function(){
+		var valor = document.getElementById('esda').textContent;
 		var valor2 = document.getElementById('esda2').textContent;
+    var inmueble = <?= $_GET['super']; ?>;
+    var geting = document.getElementById('estadoE').textContent;
 		$.ajax({
 			type: "POST",
-			url: "Call/Empresa/Empresafuncion/valuofinal.php",
-			data: "valor="+valor+"&valor2="+valor2,
+			url: "Call/Funciones/valuofinal.php",
+			data: "valor="+valor+"&valor2="+valor2+"&inmueble="+inmueble+"&geting="+geting,
 			dataType: "html",
 			beforeSend: function(){
-				$("#recibidosaj").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
+				$("#recdje").html("<p align='center'><load.info/images/exemples/26.gif'/></p>");
 			},
 			error: function(){
 				alert("error petición ajax");
 			},
 			success: function(data){
-				$("#recdj").empty();
-				$("#recdj").append(data).page;
+				$("#recdje").empty();
+				$("#recdje").append(data).page;
 		}
 	});
 });

@@ -1,16 +1,17 @@
 <?php
-session_start();
-include "../Lenguaje/lenguaje.php";
+
 start(5);
 function start ($id)
-{ ?>
+{
+  session_start();
+  include "../Lenguaje/lenguaje.php";?>
 
     <?php
     for($nur = 0; $nur < 5;$nur++)
     {
       ?>
       <tr id="especial<?= $nur ?>" class="hidme">
-      <td><?php
+      <td ><?php
       switch($nur)
       {
         case 0: echo $lang['Terraza'];
