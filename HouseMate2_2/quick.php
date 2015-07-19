@@ -130,7 +130,9 @@
 	</div>
 	</div>
 		<script type='text/javascript' src='js/jquery-1.11.2.min.js'></script>
+		 <script type="text/javascript" src="js/jquery.chained.js" charset="utf-8"></script>
 		<script>
+		$("#Municipio3").chained("#Departamento3");
 		$(document).ready(function(){
 
         var consulta;
@@ -144,7 +146,7 @@
               //obtenemos el texto introducido en el campo de búsqueda
               consulta = $("#busqueda").val();
               select = $("#select").val();
-              //hace la búsqueda
+              condominio = $("#Municipio3").val();
 
               $.ajax({
                     type: "POST",
@@ -160,16 +162,45 @@
 							}
 					  });
 				});
+			$('#Departamento3').on('change', function() {
+				consulta = $("#busqueda").val();
+				select = $("#select").val();
+				lugar = $("#Departamento3").val();
+				condominio = $("#Municipio3").val();
+				fuse = condominio+", "+lugar+", El Salvador";
+				//hace la búsqueda
+
+				$.ajax({
+							type: "POST",
+							url: "Call/Funciones/Busqueda/buscar.php",
+							data: "b="+consulta+"&c="+select+"&fuse="+fuse,
+							dataType: "html",
+
+							error: function(){
+										alert("error petición ajax");
+							},
+							success: function(data){
+										$("#resultado").empty();
+										$("#resultado").append(data);
+			}
 			$('#select').on('change', function() {
 				//obtenemos el texto introducido en el campo de búsqueda
               consulta = $("#busqueda").val();
               select = $("#select").val();
+							lugar = $("#Departamento3").val();
+							if(lugar != "")
+							{
+							condominio = $("#Municipio3").val();
+							fuse = condominio+", "+lugar+", El Salvador";}
+							else {
+								fuse = "";
+							}
               //hace la búsqueda
 
               $.ajax({
                     type: "POST",
                     url: "Call/Funciones/Busqueda/buscar.php",
-                    data: "b="+consulta+"&c="+select,
+                    data: "b="+consulta+"&c="+select+"&fuse="+fuse,
                     dataType: "html",
 
                     error: function(){
