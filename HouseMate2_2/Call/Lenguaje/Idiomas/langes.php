@@ -7,6 +7,7 @@ Español
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['peritada'] = "Peritada";
 $lang['denor'] = "Resultado :";
 $lang['Constr'] ="Construcción";
 $lang['lot'] = "Lote";

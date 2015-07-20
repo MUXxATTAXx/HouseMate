@@ -6,6 +6,7 @@ Inglés
 */
  header('Content-Type: text/html; charset=utf-8');
 $lang = array();
+$lang['peritada'] = "Appraised";
 $lang['denor'] = "Result :";
 $lang['Constr'] ="Residential:";
 $lang['lot'] = "Lot";
