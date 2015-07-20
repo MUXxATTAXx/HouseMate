@@ -393,4 +393,33 @@ $lang['ninguna-oferta'] = "No hay ninguna oferta.";
 $lang['regresar-inicio'] = "Seguir buscando casas.";
 $lang['convenio'] = "Convenios";
 
+//Promesa de Compra-Venta
+//date("Y/m/d")
+$lang['final1'] = "En la ciudad de Santa Tecla, a las diez  del día ". date("Y/m/d").".- comparece el señor ";
+$lang['final2'] = ", de ";
+$lang['final3'] = " años de edad, ";
+$lang['final4'] = ", del domicilio de ";
+$lang['final5'] = ", a quien por no conocer lo identifico por medio de su Documento Único de Identidad Números ";
+$lang['final6'] = " y Número de Identificación Tributaria ";
+$lang['final7'] = ", quien en adelante se denominará EL PROMITENTE VENDEDOR, y ";
+$lang['final81'] = ", de ";
+$lang['final82'] = " años de edad, ";
+$lang['final9'] = ", del domicilio de ";
+$lang['final10'] = ", a quien por no conocer lo identifico por medio de su Documento Único de Identidad Números ";
+$lang['final11'] = " y con Número de Identificación Tributaria ";
+$lang['final12'] = ", quien en adelante se denominará EL PROMITENTE  COMPRADOR;  y ME DICEN: que han convenido en celebrar el siguiente contrato de PROMESA DE COMPRAVENTA, que se regirá por las cláusulas siguientes: I) Que el promitente vendedor  es dueño y actual poseedor del siguiente inmueble: Un terreno ";
+$lang['final13'] = ", situado en ";
+$lang['final14'] = ", marcado como LOTE NUMERO TRES.- Se localiza ";
+$lang['final15'] = ". Dicho inmueble tiene una superficie de ";
+$lang['final16'] = ", equivalentes a ";
+$lang['final17'] = ", e inscrito a favor del promitente vendedor señor ";
+//$lang['final18'] = "18.	//, bajo el Número REGISTRO, del Registro de la Propiedad Raíz e Hipotecas del Departamento de DIRECCION.";
+$lang['final19'] = " y II) PRECIO, PLAZO Y CONDICIÓN:  El precio  total de la venta es de ";
+$lang['final20'] = ", siendo la forma  de pago la siguiente: En este mismo momento entrega el promitente comprador al promitente vendedor,  la cantidad de ";
+$lang['final21'] = ",  y el resto o sea la cantidad de ";
+$lang['final22'] = ", será pagada al finalizar el plazo acordado en el presente documento o su prorroga.- El promitente vendedor se obliga a vender libre de todo gravamen el inmueble relacionados al  promitente comprador y éste se obliga a comprarlo.- El  Promitente vendedor se obliga a mantener inalterable el precio de venta pactado en el contrato, durante el plazo establecido.- III) EL PLAZO DE LA PROMESA DE VENTA.- El plazo acordado para la venta del inmueble descrito, será de ";
+$lang['final23'] = " días, prorrogable por otro período igual, ya que la suma restante del precio de los inmuebles, será gestionado en el sistema Bancario por los promitentes compradores,  por lo que el plazo estará sujeto al lapso del tiempo que dure el proceso de aprobación del crédito que solicitaran los promitentes compradores.- IV) PENALIZACION POR INCUMPLIMIENTO DEL PRESENTE CONTRATO.- A) Para el caso de que el Promitente vendedor se niegue a vender al  promitente comprador, en el plazo pactado y por el precio convenido, el inmueble relacionado en el numeral I de este instrumento, además de devolverle al promitente comprador ";
+$lang['final24'] = ", de anticipo que ha recibido del precio de la venta, en un plazo máximo de cinco días contados a partir del desistimiento de la venta de los inmuebles, que estará dentro del plazo acordado, cantidades que serán exigibles ejecutivamente; V) OTRAS OBLIGACIONES DE LAS CONTRATANTES: 1) Por su parte  los Promitentes compradores se obligan a cancelar  el resto de lo adeudado a los promitentes vendedores en el plazo establecido; VI) ACCIONES QUE PUEDEN EJERCER LAS CONTRATANTES PARA EXIGIR EL CUMPLIMIENTO DEL PRESENTE CONTRATO: Vencido el plazo para la celebración del contrato de compraventa convenido, sin que este se hubiere celebrado cualquiera de los contratantes notificara a la otra su deseo de celebrarlo y si éste no se llevaré a cabo  diez días después de efectuada dicha notificación, se entenderá que la parte requerida a incumplido el presente contrato.-Los contratantes podrán sin embargo optar por exigir o demandar judicialmente el cumplimiento  del presente contrato, esto es, el otorgamiento de la escritura de compraventa, mediante Juicio Ejecutivo.- VII) Para el caso de acción judicial  ambas partes someten a la competencia de los tribunales de esta ciudad, renuncian  al derecho de apelar del decreto de embargo, sentencia de remate y cualquier otra providencia apelable que se dicte en el Juicio correspondiente, y sus incidentes, pagando las costas procesales la parte que resultare condenada en juicio.- Así  se expresaron los comparecientes, a quienes les expliqué los efectos legales de la presente escritura, que les leí íntegramente en un  solo acto, ratifican su contenido y firmamos.- DOY FE.-";
+$lang['m-cuadrados'] = " metros cuadrados ";
+$lang['v-cuadradas'] = " varas cuadradas ";
 ?>
