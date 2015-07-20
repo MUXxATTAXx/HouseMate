@@ -161,7 +161,7 @@ session_start();
                           case 1: $varew = $lang['Cuartos']; $treta = $get1;
                           if($counter > 0 and $counter >= $treta);
                           {
-                            echo $get1 ." ".$treta;
+                          
                           echo "<label class='label label-primary'>$varew : $counter</label>";
                           }
                           break;
