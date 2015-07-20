@@ -22,8 +22,16 @@ session_start();
       $contar = mysql_num_rows($sql);
       $demente = "";
       $creadote = 0;
+      $extrasuper = 0;
+      $cantidadexpon = 0;
+      $acreditador = 0;
       $parte1 = "Select * FROM inmueble ";
       $parte2 = "Where IdInmueble = IdInmueble and IdInmueble > 0";
+      $theend1 = "";
+      $theend2 = "";
+      $theend3 = "";
+      $theend4 = "";
+      $theend5 = "";
       $array = array();
       if($contar == 0)
 			{
@@ -31,7 +39,7 @@ session_start();
       }
 			else
 			{
-        for($i = 0; $i < 5;$i++)
+        for($i = 0; $i < 10;$i++)
         {
         switch ($i) {
             case 0: if
@@ -46,6 +54,21 @@ session_start();
             case 3: if($perotado == 0){}else{$demente .= "d";$creadote++;}
             break;
             case 4: if($tipo == ""){}else{$demente .= "e";$creadote++;}
+            case 5:
+            if($get1 == ""){}else{$demente .= "f" ; $creadote++;$extrasuper .="q";$cantidadexpon++;}
+            break;
+            case 6:
+            if($get2 == ""){}else{$demente .= "f" ; $creadote++; $extrasuper .= "w";$cantidadexpon++;}
+            break;
+            case 7:
+            if($get3 == ""){}else{$demente .= "f" ; $creadote++; $extrasuper .= "t";$cantidadexpon++;}
+            break;
+            case 8:
+            if($get4 == ""){}else{$demente .= "f" ; $creadote++; $extrasuper .= "y";$cantidadexpon++;}
+            break;
+            case 9:
+            if($get5 == ""){}else{$demente .= "f" ; $creadote++; $extrasuper .= "u";$cantidadexpon++;}
+            break;
             }
         }
         for ($n = 0; $n < $creadote; $n++)
@@ -77,14 +100,82 @@ session_start();
               case "e":
               $parte2 .= " AND Tipopropiedad = '$tipo'";
               break;
+              case "f":
+                for($norma = 0; $norma < $cantidadexpon;$norma){
+                  array_push($array2,substr($extrasuper,$norma,1));
+                switch($array2[$norma])
+                {
+                  case "q":
+                    $theend1 .= "AND etiqueta.Netiqueta = '1'";
+                  break;
+                  case "w":
+                      $theend2 .= "AND etiqueta.Netiqueta = '1'";
+                  break;
+                  case "t":
+                    $theend3 .= "AND etiqueta.Netiqueta = '1'";
+                  break;
+                  case "y":
+                    $theend4 .= "AND etiqueta.Netiqueta = '1'";
+                  break;
+                  case "u":
+                    $theend5 .= "AND etiqueta.Netiqueta = '1'";
+                  break;
+                }
+                }
+              break;
             }
         }
         }
         $consulta = $parte1.$parte2;
         $cs = mysql_query($consulta);
+
         while($row = mysql_fetch_array($cs)){
         //Inicio de bloque
             $valor = $row['IdInmueble'];
+            $principio = "SELECT * FROM inmueble inner join etiqueta on inmueble.idinmueble = etiqueta.idinmueble Where inmueble.idinmueble = '$valor' ";
+            for($norma2 = 0; $norma2 < $cantidadexpon;$norma2){
+            array_push($array2,substr($extrasuper,$norma2,1));
+            switch($array2[$norma2])
+            {
+              case "q":
+                $principio .= $theend1;
+                echo $principio;
+                if(mysql_query($principio))
+                {
+                $acreditador++;
+                }
+              break;
+              case "w":
+                $principio .= $theend2;
+                if(mysql_query($principio))
+                {
+                $acreditador++;
+                }
+              break;
+              case "t":
+                $principio .= $theend3;
+                if(mysql_query($principio))
+                {
+                $acreditador++;
+                }
+              break;
+              case "y":
+                $principio .= $theend4;
+                if(mysql_query($principio))
+                {
+                $acreditador++;
+                }
+              break;
+              case "u":
+                $principio .= $theend4;
+                if(mysql_query($principio))
+                {
+                $acreditador++;
+                }
+              break;
+            }
+            }
+            if($cantidadexpon==$acreditador) {
             echo   "<div class='row'><div class='col-sm-12'>
               <div class='well well-sm'>
                 <div class='row'>
@@ -161,7 +252,6 @@ session_start();
                           case 1: $varew = $lang['Cuartos']; $treta = $get1;
                           if($counter > 0 and $counter >= $treta);
                           {
-                          
                           echo "<label class='label label-primary'>$varew : $counter</label>";
                           }
                           break;
@@ -200,7 +290,7 @@ session_start();
             </div> </div>";
         //Fin de bloque
 				}
-
+}
 
 				}
 
