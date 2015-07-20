@@ -393,4 +393,36 @@ $lang['oferta-cancelada'] = "Offer Canceled";
 $lang['ninguna-oferta'] = "There are no offers.";
 $lang['regresar-inicio'] = "Keep searching.";
 $lang['convenio'] = "Agreements";
+
+//Promesa de Compra-Venta
+//date("Y/m/d")
+$lang['final1'] = "In the city of Santa Tecla, at ten o'clock on ". date("m/d/Y").".- claims sir ";
+$lang['final2'] = ", with ";
+$lang['final3'] = " years old, ";
+$lang['final4'] = ", resident from ";
+$lang['final5'] = ", who I identify with his Documento Único de Identidad with the numbers  ";
+$lang['final6'] = " and the Número de Identificación Tributaria ";
+$lang['final7'] = ", whom from now on will be denominated 'PROMISOR SALESMAN', and ";
+$lang['final81'] = ", with ";
+$lang['final82'] = " years old, ";
+$lang['final9'] = ", resident from ";
+$lang['final10'] = ", who I identify with his Documento Único de Identidad with the numbers ";
+$lang['final11'] = " y con Número de Identificación Tributaria ";
+$lang['final12'] = ", who, from no won, will be denominated 'PROMISOR BUYER';  and they STATE: they have agreed to perform the following contract of TRADING PROMISE, that will be ruled by the following rules I) That the promisor salesman is the current owner of the following real estate: A property";
+$lang['final13'] = ", located on ";
+$lang['final15'] = ". Said property has a total area of";
+$lang['final16'] = ", equivalent to ";
+$lang['final17'] = ", and signed up officialy to the promisor salesman: ";
+//$lang['final18'] = "18.	//, bajo el Número REGISTRO, del Registro de la Propiedad Raíz e Hipotecas del Departamento de DIRECCION.";
+$lang['final19'] = " y II) PRICE, TERMS AND CONDITIONS:  The total selling price is  ";
+$lang['final20'] = ", being this the terms of payment: On this momento delivers the promisor buyer to ther promisor salesman, the quantity of ";
+$lang['final21'] = ",  and the rest or the quantity of ";
+$lang['final22'] = ", will pe paid at the end of the agreed terms in the present document or its extension. - The promisor salesman it's complied to sale free of all burden, the real estate related to the promisor buyer and he is complied to buy it.- The promisor salesman it's complied to keep unchanged the selling price agreed on the contract, during the establish term. - III) THE TRADING PROMISE TERM.- The term agreed for the sale of the described real estate, will be ";
+
+$lang['final23'] = " days, extendable by an equal term, since the remaining amount of the real estate price, will be managed by the banking system by the promisor buyer, for which the term will subject to the lapse of time that lasts the approval process of the credit that will request the promisor buyer.- IV) PENALTY FOR BREACH OF THIS AGREEMENT.- A) For the case that the promisor salesman rejects to sell to the promisor buyer, on the agreed term and by the agreed price, the real estate related tothe numeral I of this instrument, besides returning to the promiser buyer ";
+
+$lang['final24'] = ", as an advance payment from the selling price, in a maximum term of five days counted since the dismiss of the real estate sale, that will be within the agreed term, qunatity that can be demanded executely; V) OTHER OBLIGATIONS OF THE CONTRACTORS: 1) The promisor buyers are complied to pay a fee with the rest of the indebted to the promisor salesman on the established term; VI) ACTIONS THAT CAN EXERCISE THE CONTRACTORS TO ENFORCE THIS AGREEMENT: Once the term for this contract of agreed trade expires, without being performed, any of the contractors can notify the other his will to perform it and it it's not performed at all in ten days after the notification, it will be understood as if the requiring part has not fulfilled the contract. -The contractors can opt to demand legally the fulfillment of the present contract, this is, the giving of trading real estate deed, in an Executive Judgement. - VII) For the case of legal actions on any of the parties submits to the jurisdiction of the courts from this town, waive the right to appeal the decree of embargo, auction order and any other appealable ruling handed down in the relevant Judgment, and any incidents, paying court costs the part ordered to trial. - So they expressed, the appearing parties, who are aware of the legal effects of the present deed, given entirely in a single act, with the content ratofied and signed.";
+
+$lang['m-cuadrados'] = " square meters ";
+$lang['v-cuadradas'] = " square yards ";
 ?>
