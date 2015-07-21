@@ -160,7 +160,8 @@ session_start();
                         case 10: $varew = $lang['Sotanos'];
                         break;
                         }
-                      echo "<label class='label label-info'>".$varew."</label>";
+                          if($confog != 0){
+                      echo "<label class='label label-info'>".$varew."</label>";}
                       }
                       else {
                         $treta = 0;

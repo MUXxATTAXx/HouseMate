@@ -42,8 +42,10 @@ $usuario = $_SESSION['id'];
 include "conexion.php";
 
 $usuario = $_SESSION['id'];
-$inmueble = "SELECT * from inmueble WHERE Dueno = '$usuario'";
+$inmueble = "SELECT * from inmueble inner join usuario on inmueble.dueno = usuario.idusuario inner join tbusuario on usuario.tempid = tbusuario.idusuario  WHERE inmueble.dueno= '$usuario'";
 $inmueble_con = mysql_query($inmueble);
+if(mysql_num_rows($inmueble_con)>0)
+{
 while($urow = mysql_fetch_array($inmueble_con)){
     $idinmueble = $urow['IdInmueble'];
     $convenio = "SELECT * FROM convenio WHERE idinmueble ='$idinmueble'";
@@ -82,7 +84,7 @@ while($urow = mysql_fetch_array($inmueble_con)){
                             <br>
                             <input type='hidden' name='idconvenio' value='".$drow['idconvenio']."'>
                             ";
-                            if($drow['aprovado1'] == "1" and $drow['aprovado2'] == "0"){
+                            if($drow['aprovado2'] == "0"){
                                 echo "<input type='submit' value='".$lang['accept']."' class='btn-success btn-sm' name='aceptar'>
                             <input type='submit' value='".$lang['negociar']."'  class='btn-warning btn-sm' name='negociar'><p>  </p>";
                             }elseif($drow['aprovado1'] == "1" and $drow['aprovado2'] == "1"){
@@ -102,7 +104,8 @@ while($urow = mysql_fetch_array($inmueble_con)){
         }
     }
 }     
-if(mysql_num_rows($convenio_con) == 0){
+}
+else{
     echo "<h2>".$lang['no-mates']."</h2>";
 }
 
@@ -127,7 +130,7 @@ if(isset($_POST['negociar'])){
         $fecha_final2 = date("Y-m-d",$fecha_final1);   
     }
     
-    $negociar = "UPDATE convenio SET aprovado2 = '2', fecha_aprobacion = CURRENT_TIMESTAMP, fecha_final = '$fecha_final2' WHERE idconvenio = '$idconvenio'";
+    $negociar = "UPDATE convenio SET aprovado1 = '0', aprovado2 = '2', fecha_aprobacion = CURRENT_TIMESTAMP, fecha_final = '$fecha_final2' WHERE idconvenio = '$idconvenio'";
     echo "<script>window.location.replace('mis_convenios.php?idconvenio=".$drow['idconvenio']."'); </script>";
     $negociar_con = mysql_query($negociar);
 }

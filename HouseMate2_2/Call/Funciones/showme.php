@@ -78,20 +78,93 @@ while($row=mysql_fetch_array($cs))
 	{
 		case 1:
 	echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-3' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
-			<p>".$row['Descripcion']."</p>
+			<h5>";
+            $valor = $row['IdInmueble'];
+            $formato = mysql_query("Select * From etiqueta where idinmueble ='$valor' ORDER BY `IdEtiqueta` ASC");
+                    while($confog = mysql_fetch_array($formato))
+                    {   
+                      if($confog['Netiqueta']>5)
+                      {
+                        switch($confog['Netiqueta'])
+                        {
+                        case 6: $varew = $lang['Terraza'];
+                        break;
+                        case 7: $varew = $lang['Piscinas'];
+                        break;
+                        case 8: $varew = $lang['Jardines'];
+                        break;
+                        case 9: $varew = $lang['Cocheras'];
+                        break;
+                        case 10: $varew = $lang['Sotanos'];
+                        break;
+                        }
+                      echo "<label class='label label-info'>".$varew."</label>";    
+                      }
+                    }
+            
+            echo "</h5>
 		</div></a>";
 		$morf = 1;
 		$count++;
 		break;
 		case 2:
 		echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-5' href='index.php?IdInmueble='".$row['IdInmueble']."' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
-			<p>".$row['Descripcion']."</p>
+			<h5>";
+            $valor = $row['IdInmueble'];
+            $formato = mysql_query("Select * From etiqueta where idinmueble ='$valor' ORDER BY `IdEtiqueta` ASC");
+                    while($confog = mysql_fetch_array($formato))
+                    {   
+                      if($confog['Netiqueta']>5)
+                      {
+                        switch($confog['Netiqueta'])
+                        {
+                        case 6: $varew = $lang['Terraza'];
+                        break;
+                        case 7: $varew = $lang['Piscinas'];
+                        break;
+                        case 8: $varew = $lang['Jardines'];
+                        break;
+                        case 9: $varew = $lang['Cocheras'];
+                        break;
+                        case 10: $varew = $lang['Sotanos'];
+                        break;
+                        }
+                      echo "<label class='label label-info'>".$varew."</label>";    
+                      }
+                    }
+            
+            echo "</h5>
 		</div></a>";
 		$morf = 2;
 		$count++;
 		break;
 		case 3:echo "<a href='inmueble.php?IdInmueble=".$row['IdInmueble']."'><div class='cover-card col-sm-4' href='index.php?IdInmueble='".$row['IdInmueble']."' style='background: url(".$row['Imagen'].") no-repeat center top;background-size:cover;'>
-			<p>".$row['Descripcion']."</p>
+			<h5>";
+            $valor = $row['IdInmueble'];
+            $formato = mysql_query("Select * From etiqueta where idinmueble ='$valor' ORDER BY `IdEtiqueta` ASC");
+                    while($confog = mysql_fetch_array($formato))
+                    {   
+                      if($confog['Netiqueta']>5)
+                      {
+                        switch($confog['Netiqueta'])
+                        {
+                        case 6: $varew = $lang['Terraza'];
+                        break;
+                        case 7: $varew = $lang['Piscinas'];
+                        break;
+                        case 8: $varew = $lang['Jardines'];
+                        break;
+                        case 9: $varew = $lang['Cocheras'];
+                        break;
+                        case 10: $varew = $lang['Sotanos'];
+                        break;
+                        }
+                        if($confog != 0){
+                      echo "<label class='label label-info'>".$varew."</label>";    }
+                      }
+                    }
+            
+            echo "</h5>
 		</div></a>";
 		$morf = 3;
 		$count++;

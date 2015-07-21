@@ -54,11 +54,17 @@ while($drow = mysql_fetch_array($convenio_con)){
     while($urow = mysql_fetch_array($inmueble_con)){
         echo "<form action='#' method='POST'>";
         echo"<div class='col-sm-6'> 
-            <div class='row well well-sm'>
-            <center><h1>".$lang['oferta-denegada']."</h1>
-            <p class='text-danger'>".$lang['intente-denuevo']."</p>
-            </center>
-                <div class='col-sm-4'>
+            <div class='row well well-sm'>";
+            if($drow['aprovado2'] == "0"){             
+                echo "<center><h1>".$lang['nego-pendiente']."</h1>
+                </center>";
+                    
+            }elseif($drow['aprovado2'] == "2"){
+                echo "<center><h1>".$lang['oferta-denegada']."</h1>
+                <p class='text-danger'>".$lang['intente-denuevo']."</p>
+                </center>";
+            }    
+                echo "<div class='col-sm-4'>
                     <img src='".$urow['Imagen']."' height='150px' width='200px' />
                 </div>
                <div class='col-sm-8'>

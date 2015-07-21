@@ -425,4 +425,7 @@ $lang['final24'] = ", as an advance payment from the selling price, in a maximum
 
 $lang['m-cuadrados'] = " square meters ";
 $lang['v-cuadradas'] = " square yards ";
+
+$lang['manual-usu'] = "User Manual";
+$lang['manual-admin'] = "Administrator Manual";
 ?>

@@ -28,7 +28,32 @@ switch($row['VentaRenta'])
 }
 echo "<div class='col-sm-3'>
 		<div class='col-item'>
-			<h4 class='text-center'><span class='label label-info'>Tag</span></h4>
+			<h6 class='text-center'>";
+    $valor = $row['IdInmueble'];
+    $formato = mysql_query("Select * From etiqueta where idinmueble ='$valor' ORDER BY `IdEtiqueta` ASC");
+                    while($confog = mysql_fetch_array($formato))
+                    {   
+                      if($confog['Netiqueta']>5)
+                      {
+                        switch($confog['Netiqueta'])
+                        {
+                        case 6: $varew = $lang['Terraza'];
+                        break;
+                        case 7: $varew = $lang['Piscinas'];
+                        break;
+                        case 8: $varew = $lang['Jardines'];
+                        break;
+                        case 9: $varew = $lang['Cocheras'];
+                        break;
+                        case 10: $varew = $lang['Sotanos'];
+                        break;
+                        }
+                          if($confog != 0){
+                      echo "<label class='label label-info'>".$varew."</label>";  }  
+                      }
+                    }
+    
+    echo "</h6>
 				<div class='photo'>
 					<img src='".$row['Imagen']."' class='limitante img-responsive' alt='a' />
 				</div>
@@ -40,10 +65,9 @@ echo "<div class='col-sm-3'>
 							<h5 class='price-text-color'>
 								$".$row['Precio'].".00</h5>
 						</div>
-						<div class='rating hidden-sm col-md-6'>
-							<i class='price-text-color fa fa-star'></i><i class='price-text-color fa fa-star'>
-							</i><i class='price-text-color fa fa-star'></i><i class='price-text-color fa fa-star'>
-							</i><i class='fa fa-star'></i>
+						<div class='col-md-6'>
+							<p><label class='label label-primary'>".$lang['lot']." ".$row['areadeterreno']."v^2</label></p>
+                            <p><label class='label label-primary'>".$lang['Constr']." ".$row['areadeconstruc']."m^2</label></p>
 						</div>
 					</div>
 					<div class='separator clear-left'>

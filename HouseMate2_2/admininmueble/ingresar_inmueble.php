@@ -85,7 +85,7 @@
       <div class="input-group">
          <span class="input-group-addon label-info"></span>
          <input onkeypress="return num(event)" type="number" class='form-control' min="0" step="1" id="AT" name="AT" placeholder='<?php echo $lang['are']?>'>
-         <span class="input-group-addon label-info">m^2</span>
+         <span class="input-group-addon label-info">v^2</span>
       </div>
     </div>
     <div class="form-group col-sm-6">

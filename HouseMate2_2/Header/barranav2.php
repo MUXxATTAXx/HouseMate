@@ -139,6 +139,8 @@ require ("Call/Loged/seguridad.php");
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+          <!--$lang['manual-usu'] = "User Manual";-->
+            <!--$lang['manual-admin'] = "Administrator Manual";-->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo($lang['Idioma']);?><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -146,6 +148,13 @@ require ("Call/Loged/seguridad.php");
                 <li><a href="<?php require ("urllen/lenstat.php")?>?lang=en">English</a></li>
             </ul>
         </li>
+          <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a target="_blank" href="Reportes/Manual%20de%20Administrador.pdf" ><?=$lang['manual-admin']?></a></li>
+					<li><a target="_blank" href='Reportes/Manual%20de%20Usuario.pdf'><?=$lang['manual-usu']?></a></li>
+                </ul>
+          </li>
           <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php include ('namae.php') ?> </a>
                 <ul class="dropdown-menu" role="menu">
@@ -163,8 +172,8 @@ require ("Call/Loged/seguridad.php");
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<div id="myModal" class="modal fade">
-  <div class='modal-dialog smmodal'>
+<div id="myModal" class="modal fade darkness">
+  <div class='modal-dialog smmodal '>
     <div class='modal-content'>
       <div class='panel-footer'>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

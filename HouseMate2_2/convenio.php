@@ -1,4 +1,4 @@
-
+<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
 <link href='css/bootstrap.min.css' rel='stylesheet'/><?php
 if(!isset($_GET['IdInmueble']))
 {
@@ -122,7 +122,7 @@ echo("<meta charset=utf-8 />");
                                 echo "<input value='".$lang['Offer']."' type='submit' name='ofertar' class='btn btn-primary'>";
                             }
                             else{
-                                echo "<a class='btn btn-danger disabled'>".$lang['es-suyo']."</a>";
+                                echo "<a class='btn btn-danger disabled'>".$lang['es-suya']."</a>";
                             }
                             ?>
                         </div>
@@ -152,7 +152,8 @@ echo("<meta charset=utf-8 />");
                         $fecha_aprobacion =  date("Y-m-d", $d2);
                         $adelanto = $_POST['adelanto'];
                         
-                        $consulta = "INSERT INTO convenio VALUES ('$id','".$row['IdInmueble']."','$usuario','$oferta','0','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
+                        $consulta = "INSERT INTO convenio VALUES ('$id','".$row['IdInmueble']."','$usuario','$oferta','1','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
+                        //echo $consulta;
                         $consulta_con = mysql_query($consulta);
                         if(isset($consulta_con)){
                             echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";

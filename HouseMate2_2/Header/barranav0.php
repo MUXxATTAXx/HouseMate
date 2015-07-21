@@ -36,7 +36,7 @@
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <form method="post">
-<div id="myModal" class="modal">
+<div id="myModal" class="modal fade darkness">
     <div  class="modal-dialog">
       <div class="modal-content">
           <div class="modal-body">
