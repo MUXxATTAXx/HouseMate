@@ -95,7 +95,6 @@ session_start();
         }
 
         $consulta = $parte1.$parte2;
-        echo $consulta;
         $cs = mysql_query($consulta);
 
         while($row = mysql_fetch_array($cs)){

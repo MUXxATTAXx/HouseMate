@@ -146,7 +146,7 @@
 					var digito1 = $("#AR").val();
 					var digito2 = $("#AT").val();
 
-					if(lugar != "")
+					if(lugar != "" && lugar != "nada")
 					{
 					var condominio = $("#Municipio2").val();
 					var fuse = condominio+", "+lugar+", El Salvador";}
