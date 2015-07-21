@@ -2,7 +2,7 @@
 <div class="form-group col-xs-6">
 	 <label><?php echo $lang['Departamento']  ?>:</label>
 	<select onchange="creator()" name="Departamento2" class="form-control" id="Departamento2">
-		<option value=""><?php echo $lang['Nada'] ?></option>
+		<option value="nada"><?php echo $lang['Nada'] ?></option>
 		<option value="Ahuachapán">Ahuachapán</option>
 		<option value="Cabañas">Cabañas</option>
 		<option value="Chalatenango">Chalatenango</option>
@@ -23,7 +23,7 @@
 <div class="form-group col-xs-6">
 <label><?php echo $lang['Municipio'] ?>:</label>
 <select name="Municipio2" onchange="creator()" class="form-control" id="Municipio2">
-	<option value="nada"><?php echo $lang['Nada'] ?></option>
+	<option class="nada" value="nada "><?php echo $lang['Nada'] ?></option>
 	<?php include "InsideSelect/Ahu.php";
 	include "InsideSelect/Caba.php";
 	include "InsideSelect/Cha.php" ;

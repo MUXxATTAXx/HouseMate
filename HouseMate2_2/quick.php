@@ -87,34 +87,32 @@
 							    </div>
 								</div>
             </div>
+						<br>
             <div class="row">
-                <hr>
+							<div class="col-sm-6">
+								<label><?= $lang['area2'] ?></label><br>
+								<div class="input-group">
+									 <span class="input-group-addon label-primary"></span>
+									 <input onkeypress="return deci(event)" onchange="creator()" type="number" class='form-control' min="0" step="1" id="AR" name="AR" placeholder='<?php echo $lang['are']?>'>
+									 <span class="input-group-addon label-primary">m^2</span>
+								</div>
+							</div>
+                <div class="col-sm-6"><label><?= $lang['area1'] ?></label><br>
+									<div class="input-group">
+										 <span class="input-group-addon label-primary"></span>
+										 <input onkeypress="return deci(event)" onchange="creator()" type="number" class='form-control' min="0" step="1" id="AT" name="AT" placeholder='<?php echo $lang['are']?>'>
+										 <span class="input-group-addon label-primary">v^2</span>
+									</div>
+								</div>
             </div>
-            <div class="row row-centered">
-                <p><?php echo $lang['Etiqueta']; ?></p>
-                <div class="row row-centered">
-                    <div class="col-sm-4 col-centered">
-                        <input id="input1" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onchange="creator ()" placeholder="<?php echo$lang['Cuartos']; ?>" type="text" class="form-control">
-                    </div>
-                    <div class="col-sm-4 col-centered">
-                         <input id="input2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onchange="creator ()" placeholder="<?php echo $lang['Salas']; ?>" type="text" class="form-control">
-                    </div>
-                    <div class="col-sm-4 col-centered">
-                         <input id="input3"  onkeypress='return event.charCode >= 48 && event.charCode <= 57' onchange="creator ()" placeholder="<?php echo $lang['Cocinas']; ?>" type="text" class="form-control">
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-4 col-centered">
-                         <input id="input4" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onchange="creator ()" placeholder="<?php echo $lang['Baños']; ?>" type="text" class="form-control">
-                    </div>
-                    <div class="col-sm-4 col-centered">
-                         <input id="input5" onkeypress='return event.charCode >= 48 && event.charCode <= 57' onchange="creator ()" placeholder="<?php echo $lang['Comedores']; ?>" type="text" class="form-control">
-                    </div>
-                </div>
-                <br>
-
-            </div>
+						<div class="row">
+								<div class="col-sm-10">
+								</div>
+								<div class="col-sm-2">
+									<br>
+									<a class="btn btn-success glyphicon glyphicon-th" onclick="empty()"></a>
+								</div>
+						</div>
         <br>
 	</div>
 
@@ -130,16 +128,23 @@
 		$("#busqueda").focus();
 		$("#Municipio2").chained("#Departamento2");
 	});
+				function empty()
+				{
+					document.getElementById('busqueda').value = "";
+					document.getElementById('select').value = "";
+					document.getElementById('Departamento2').value = "nada";
+					document.getElementById('Municipio2').value = "nada";
+					document.getElementById('realstate').value = "";
+					document.getElementById("AR").value = "";
+					document.getElementById("AT").value = "";
+				}
         function creator () {
 					var consulta = $("#busqueda").val();
 					var select = $("#select").val();
 					var lugar = $("#Departamento2").val();
 					var realstate = $("#realstate").val();
-					var get1 = $("#input1").val();
-					var get2 = $("#input2").val();
-					var get3 = $("#input3").val();
-					var get4 = $("#input4").val();
-					var get5 = $("#input5").val();
+					var digito1 = $("#AR").val();
+					var digito2 = $("#AT").val();
 
 					if(lugar != "")
 					{
@@ -158,8 +163,7 @@
 					$.ajax({
 								type: "POST",
 								url: "Call/Funciones/Busqueda/buscar.php",
-								data: "a="+consulta+"&b="+select+"&fuse="+fuse+"&perito="+peritado+"&type="+realstate+"&get1="+get1+"&get2="+get2
-								+"&get3="+get3+"&get4="+get4+"&get5="+get5,
+								data: "a="+consulta+"&b="+select+"&fuse="+fuse+"&perito="+peritado+"&type="+realstate+"&constru="+digito1+"&terreno="+digito2,
 								dataType: "html",
                     error: function(){
                           alert("error petición ajax");

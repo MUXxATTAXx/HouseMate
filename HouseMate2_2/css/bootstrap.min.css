@@ -282,3 +282,7 @@ body::-webkit-scrollbar-thumb {
   overflow: auto;
   max-height: 70%;
 }
+.smmodal
+{
+  width: 30%;
+}

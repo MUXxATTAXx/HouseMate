@@ -123,7 +123,7 @@ require ("Call/Loged/seguridad.php");
                         }
                     }
 
-                    
+
                     //Ver si no hay solicitud 1
                     $vacio1 = mysql_query("SELECT * FROM usuario WHERE TempId = $usuario");
                     while($v1row = mysql_fetch_array($vacio1)){
@@ -163,20 +163,25 @@ require ("Call/Loged/seguridad.php");
 </nav>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<div id="myModal" class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+<div id="myModal" class="modal fade">
+  <div class='modal-dialog smmodal'>
+    <div class='modal-content'>
+      <div class='panel-footer'>
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h4 class="modal-title"><?php echo $lang['yousure']; ?></h4>
       </div>
       <div class="modal-body">
-        <a id="white" href="Call/Funciones/Destroy.php" class="btn btn-primary"><?php echo($lang['Salir']); ?></a>
-		<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></button>
+        <div class="row">
+				<a id="white" href="Call/Funciones/Destroy.php" class="btn btn-primary"><?php echo($lang['Salir']); ?></a>
+				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo($lang['Aceptar']); ?></button>
+				</div>
+        </div>
+          <div class='panel-footer'>
+      </div>
+
       </div>
     </div>
   </div>
-</div>
  </form>
  <br>
  <br>
