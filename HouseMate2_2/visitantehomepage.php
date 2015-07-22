@@ -21,7 +21,7 @@ if(isset($_SESSION['tip'])){
             header('Location: index.php');
 			break;
 			case 3:
-            header('Location: index.php');
+            header('Location: peritohomepage.php');
 			break;
 			case 4:
             include("Header/barranav6.php");

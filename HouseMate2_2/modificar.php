@@ -106,8 +106,8 @@ while($row=mysql_fetch_array($cs)){
 if(isset($_POST['mejorar']))
 {
 include "conexion.php";
-$contra_nueva = $_POST['contra_nueva'];
-$contra_vieja = $_POST['contra_vieja'];
+$contra_nueva = Sha1($_POST['contra_nueva']);
+$contra_vieja = Sha1($_POST['contra_vieja']);
 //Nombre,Apellido,Usuario,Tipo,FechaNac, Contra
 //Si se digito la contra y se llenaron los campos
 if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fechanac']))
@@ -141,7 +141,8 @@ if(isset($_POST['nombre']) and isset($_POST['apellido']) and isset($_POST['fecha
               if($row['contra']==$contra_vieja){
                   if(!empty($contra_nueva))
                   {
-                  $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra =                         '$contra_nueva' WHERE idUsuario = '$id' ");
+
+                  $consulta3 = mysql_query("UPDATE tbusuario SET nombre = '$nombre', apellido = '$apellido', fechanac = '$fechanac', contra = '$contra_nueva' WHERE idUsuario = '$id' ");
                   echo "<script>
                       location.replace('modificar.php');
                       alert('".$lang['modificar-exito2']."');

@@ -290,4 +290,7 @@ body::-webkit-scrollbar-thumb {
 {
     background:black;
 }
-        
+.limitme{
+    max-height: 450px;
+    max-width: 450px;
+}

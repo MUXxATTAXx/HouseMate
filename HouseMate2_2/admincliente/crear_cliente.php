@@ -14,7 +14,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Usuarioname']);?>:</label>
-			<input class="form-control" maxlength="20" id="user" autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
+			<input class="form-control" maxlength="20" id="user" onkeypress="return username(event)"; autocomplete="off" placeholder="<?php echo($lang['Usuarioname']); ?>" />
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo $lang['Tipous'] ?>:</label>
@@ -30,7 +30,7 @@
 	<div class="row row-centered">
 		<div class="col-sm-8 col-centered">
 			<label><?php echo($lang['Correo']); ?>:</label>
-			<input id="lowerme" class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
+			<input id="lowerme" onkeypress="checkEmail()"  class="form-control"maxlength="30" type="email" autocomplete="off" placeholder="<?php echo($lang['Correos']); ?>" />
 		</div>
 		<div class="col-sm-4 col-centered">
 			<label><?php echo($lang['Fecha-Nac']); ?>:</label>
@@ -56,6 +56,7 @@
 		</div>
 		<br><span id="resultadoinsert"></span><span class="label label-danger" id="validacion1"></span>
     <span class="label label-warning" id="contra-error"></span>
+		<span class="label label-warning" id="email-error"></span>
 </div>
 </div>
 <script>
@@ -75,4 +76,22 @@ function password(){
         message.innerHTML = ""
     }
 }
+</script>
+<script>
+  function checkEmail() {
+    var email = document.getElementById('lowerme');
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var mensaje = document.getElementById('email-error');
+
+    if (!filter.test(email.value)) {
+	       mensaje.innerHTML = "E-mail error!"
+            document.getElementsByTagName("span")[3].setAttribute("class", "label label-danger");
+	    email.focus;
+	    return false;
+ 		}
+      else{
+            mensaje.innerHTML = ""
+ 		}
+}
+
 </script>

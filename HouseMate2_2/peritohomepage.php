@@ -9,7 +9,26 @@
 </head>
 <body id="intro">
 <?php
-    include("Header/barranav3.php");
+    session_start();
+if(isset($_SESSION['tip'])){
+		switch($_SESSION['tip'])
+		{
+			case 1:
+			include("Header/barranav2.php");
+			break;
+			case 2:
+            header('Location: index.php');
+			break;
+			case 3:
+             include("Header/barranav3.php");
+			break;
+			case 4:
+            header('Location: visitantehomepage.php');
+			break;
+		}
+	}
+
+   
 ?>
 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad">
     <div class="panel panel-info">

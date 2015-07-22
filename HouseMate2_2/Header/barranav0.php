@@ -85,7 +85,7 @@
 							//Ingresar
 							if(isset($_POST['ingresar'])){
 							$usuario = trim($_POST['usuario1']);
-							$contra = $_POST['contra1'];
+							$contra = Sha1($_POST['contra1']);
 
 								if($usuario != "" and $contra != ""){
 

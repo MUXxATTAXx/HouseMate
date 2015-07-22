@@ -49,6 +49,7 @@
                         $numero = mysql_query($cantidad);
                         $digito = mysql_num_rows($numero);
                         $maximun = $digito;
+												$contra1 = Sha1($contra1);
                         if(!isset($tipo))
                         {
                             $tipo = 4;

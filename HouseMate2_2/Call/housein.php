@@ -28,7 +28,8 @@ switch($row['VentaRenta'])
 }
 echo "<div class='col-sm-3'>
 		<div class='col-item'>
-			<h6 class='text-center'>";
+        <div class='row'>
+			<h5 class='text-center'>";
     $valor = $row['IdInmueble'];
     $formato = mysql_query("Select * From etiqueta where idinmueble ='$valor' ORDER BY `IdEtiqueta` ASC");
                     while($confog = mysql_fetch_array($formato))
@@ -53,7 +54,7 @@ echo "<div class='col-sm-3'>
                       }
                     }
     
-    echo "</h6>
+    echo "</div></h5>
 				<div class='photo'>
 					<img src='".$row['Imagen']."' class='limitante img-responsive' alt='a' />
 				</div>
@@ -66,8 +67,8 @@ echo "<div class='col-sm-3'>
 								$".$row['Precio'].".00</h5>
 						</div>
 						<div class='col-md-6'>
-							<p><label class='label label-primary'>".$lang['lot']." ".$row['areadeterreno']."v^2</label></p>
-                            <p><label class='label label-primary'>".$lang['Constr']." ".$row['areadeconstruc']."m^2</label></p>
+							<h5><label class='label label-primary'>".$lang['lot']." ".$row['areadeterreno']."v^2</label></h5>
+                            <h5><label class='label label-primary'>".$lang['Constr']." ".$row['areadeconstruc']."m^2</label></h5>
 						</div>
 					</div>
 					<div class='separator clear-left'>

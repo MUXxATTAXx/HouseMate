@@ -80,38 +80,39 @@ function num(e){
                   document.getElementById("validacion-num1").innerHTML = "";
               }
         }
-function usuername(e)
- var   key=e.keyCode || e.which;
-         var  teclado = String.fromCharCode(key).toLowerCase();
-         var   letras ="abcdefghijklmnñopqrstuvwxyz";
-         var   especiales="8-37-38-46-164";
+        function username(e){
 
-          var  teclado_especial = false;
+                 var   key=e.keyCode || e.which;
+                 var  teclado = String.fromCharCode(key).toLowerCase();
+                 var   letras ="abcdefghijklmnñopqrstuvwxyz12345678";
+                 var   especiales="8-37-38-46-164";
 
-            for(var i in especiales){
-                  if(key==especiales[i]){
-                        teclado_especial=true;break;
-                  }
-            }
-            if(letras.indexOf(teclado)==-1 && !teclado_especial){
+                  var  teclado_especial = false;
 
-                document.getElementById("validacion1").innerHTML = "Letter only.";
-                return false;
-                document.getElementById("validacion2").innerHTML = "Letter only.";
-                document.getElementById("validacion1").innerHTML = "Letters only.";
-                return false;
-                document.getElementById("validacion2").innerHTML = "Letters only.";
-                document.getElementById("validacion1").innerHTML = "Letters only.";
-                return false;
-                document.getElementById("validacion2").innerHTML = "Letters only.";
-                document.getElementById("validacion1").innerHTML = "Letters only.";
-                return false;
-                document.getElementById("validacion2").innerHTML = "Letters only.";
+                    for(var i in especiales){
+                          if(key==especiales[i]){
+                                teclado_especial=true;break;
+                          }
+                    }
+                    if(letras.indexOf(teclado)==-1 && !teclado_especial){
 
-                return false;
-            }
-            else
-            {
-                document.getElementById("validacion1").innerHTML = "";
-                document.getElementById("validacion2").innerHTML = "";
-            }
+                        document.getElementById("validacion1").innerHTML = "Letter only.";
+                        return false;
+                        document.getElementById("validacion2").innerHTML = "Letter only.";
+                        document.getElementById("validacion1").innerHTML = "Letters only.";
+                        return false;
+                        document.getElementById("validacion2").innerHTML = "Letters only.";
+                        document.getElementById("validacion1").innerHTML = "Letters only.";
+                        return false;
+                        document.getElementById("validacion2").innerHTML = "Letters only.";
+                        document.getElementById("validacion1").innerHTML = "Letters only.";
+                        return false;
+                        document.getElementById("validacion2").innerHTML = "Letters only.";
+
+                        return false;
+                    }
+                    else
+                    {
+                        document.getElementById("validacion1").innerHTML = "";
+                    }
+              }

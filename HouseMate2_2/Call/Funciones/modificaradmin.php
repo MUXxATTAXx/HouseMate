@@ -13,14 +13,14 @@
 	else
 	{
 		error();
-		
+
 	}
 	function error()
 	{
 		include("../Lenguaje/lenguaje.php");
 		echo "<span class='label label-warning'>".$lang['errornada']."</span>";
 	}
-	function modificar($nombre,$apellido,$correo,$fecha,$tipo) 
+	function modificar($nombre,$apellido,$correo,$fecha,$tipo)
 	{
 		include("../../conexion.php");
 		include("../Lenguaje/lenguaje.php");
@@ -32,12 +32,12 @@
 		$b = $nombre;
 		$c = $apellido;
 		$d = $fecha;
-		$e = "00000";
+		$e = Sha1("00000");
 		$f = $tipo;
 		$g = 0;
 		$copilation = "UPDATE tbUsuario SET";
 		$Where ="WHERE correo ='$a'";
-			for ($i=1;$i <=5;$i++) 
+			for ($i=1;$i <=5;$i++)
 			{
 					switch ($i)
 					{
@@ -81,26 +81,26 @@
 								$maxc++;
 								$man .= "f";
 								break;
-								
+
 								case 2:
 								$g = 2;
 								$maxc++;
 								$man .= "f";
 								break;
-								
+
 								case 3:
 								$g = 3;
 								$maxc++;
 								$man .= "f";
 								break;
-								
+
 								case 4:
 								$g = 4;
 								$maxc++;
 								$man .= "f";
 								break;
 							}
-							
+
 						}
 						break;
 					}
@@ -136,7 +136,7 @@
 					switch($array[$n])
 					{
 					case "b":
-					$final_string .= " nombre='".$b."',"; 
+					$final_string .= " nombre='".$b."',";
 					break;
 					case "c":
 					$final_string .= " apellido='".$c."',";

@@ -11,7 +11,22 @@ require ("Call/Lenguaje/lenguaje.php");
    <?php
     include "Call/spr.php";
 if(isset($_SESSION['id'])){
-    header('Location: adminhomepage.php');
+    switch($_SESSION['tip'])
+		{
+			case 1:
+			header('Location: adminhomepage.php');
+			break;
+			case 2:
+            header('Location: index.php');
+			break;
+			case 3:
+            header('Location: peritohomepage.php');
+			break;
+			case 4:
+            header('Location: visitantehomepage.php');
+			break;
+		}
+    
 }
 ?>
 	<link href="css/parallax.css"	rel="stylesheet" type="text/css" />
