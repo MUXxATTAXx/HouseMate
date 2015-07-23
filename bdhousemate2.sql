@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2015 a las 21:48:27
+-- Tiempo de generación: 22-07-2015 a las 22:49:17
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -68,7 +68,9 @@ CREATE TABLE IF NOT EXISTS `convenio` (
 --
 
 INSERT INTO `convenio` (`idconvenio`, `idinmueble`, `idusuario`, `oferta`, `aprovado1`, `aprovado2`, `fecha_aprobacion`, `fecha_final`, `adelanto`) VALUES
-('1', '3', '2', '75000', '1', '1', '2015-07-20', '2015-10-03', '2500');
+('1', '3', '2', '75000', '1', '1', '2015-07-20', '2015-10-03', '2500'),
+('2', '2', '3', '7500', '1', '0', '2015-08-01', '2015-10-15', '75'),
+('3', '1', '3', '99000', '1', '0', '2015-08-01', '2015-08-13', '9000');
 
 -- --------------------------------------------------------
 
