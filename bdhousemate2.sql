@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-07-2015 a las 21:36:47
+-- Tiempo de generación: 22-07-2015 a las 21:48:27
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `fechanac` date NOT NULL,
   `correo` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `usuario` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `contra` varchar(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `contra` varchar(120) COLLATE utf8_spanish_ci DEFAULT NULL,
   `tipo` int(1) DEFAULT NULL,
   `image` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`idUsuario`),
@@ -297,11 +297,11 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 --
 
 INSERT INTO `tbusuario` (`idUsuario`, `nombre`, `apellido`, `fechanac`, `correo`, `usuario`, `contra`, `tipo`, `image`) VALUES
-('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', '5eb0f0f0ec5a736b6931', 4, NULL),
-('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', '5eb0f0f0ec5a736b6931', 3, NULL),
-('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '8cb2237d0679ca88db64', 1, NULL),
-('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'f10e2821bbbea527ea02', 3, NULL),
-('4', 'Jose Alexander', 'Garcia Valladares', '1995-12-12', 'nome@hotmail.com', 'alexan', '5eb0f0f0ec5a736b6931', 4, NULL);
+('2', 'Test', 'Test2 prueba', '1994-12-12', 'html@hotmail.com', 'Garcia', '734c9f9c17e31655a415bd2bb0a36c012a3e8cda', 4, NULL),
+('1', 'Jose', 'Alexander', '1996-01-12', 'correo@hotmail.com', 'Visitante', '734c9f9c17e31655a415bd2bb0a36c012a3e8cda', 3, NULL),
+('0', 'Fernando Antonio', 'Menjivar Rivera', '1993-12-12', 'Menjivarmenjivar@gmail.com', 'Fernando', '8cb2237d0679ca88db6464eac60da96345513964', 1, NULL),
+('3', 'asd', 'asd', '1233-12-12', 'correo@correo', 'asd', 'f10e2821bbbea527ea02200352313bc059445190', 3, NULL),
+('4', 'Jose Alexander', 'Garcia Valladares', '1995-12-12', 'nome@hotmail.com', 'alexan', '8cb2237d0679ca88db6464eac60da96345513964', 4, NULL);
 
 -- --------------------------------------------------------
 

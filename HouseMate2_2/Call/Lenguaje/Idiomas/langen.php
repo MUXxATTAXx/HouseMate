@@ -428,4 +428,5 @@ $lang['v-cuadradas'] = " square yards ";
 
 $lang['manual-usu'] = "User Manual";
 $lang['manual-admin'] = "Administrator Manual";
+$lang['cancelar-oferta'] = "Cancel Offer";
 ?>

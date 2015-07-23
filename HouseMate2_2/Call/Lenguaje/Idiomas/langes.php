@@ -426,4 +426,6 @@ $lang['ayuda'] = "";
 $lang['manual-usu'] = "Manual de Usuario";
 $lang['manual-admin'] = "Manual de Administrador";
 
+$lang['cancelar-oferta'] = "Cancelar Oferta";
+
 ?>
