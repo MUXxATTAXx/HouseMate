@@ -30,7 +30,7 @@ echo("<meta charset=utf-8 />");
 ?>
 <head>
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.ico'/>
-
+   
 </head>
 <body>
 
@@ -43,7 +43,7 @@ echo("<meta charset=utf-8 />");
                     $inmueble = "SELECT * FROM Inmueble WHERE IdInmueble = '$inmuebleid'";
                     $inmueble_con = mysql_query($inmueble);
                     while($row = mysql_fetch_array($inmueble_con)){
-
+                                     
             ?>
           <div class="panel-heading">
                 <center><h3 class="panel-title">
@@ -55,7 +55,7 @@ echo("<meta charset=utf-8 />");
                     <br>
                     <center>
                         <img src="<?php echo $row['Imagen'] ?>" height="25%" width="50%">
-
+                    
                     <br>
                     <p><?=$row['Direccion']?></p>
                     </center>
@@ -66,7 +66,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['precio-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-6">
-                            <input name="precio" class="form-control" placeholder="$$$$$$" min="1" maxlength="6" type="tel">
+                            <input onkeypress="return num(event)" name="precio" class="form-control" placeholder="$$$$$$$" min="1" maxlength="7" type="tel">
                         </div>
                     </div>
                     <br>
@@ -75,7 +75,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-ofrecer']?></label>
                         </div>
                         <div class="col col-sm-4">
-                            <input name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel">
+                            <input onkeypress="return num(event)" name="dias" class="form-control" placeholder="DDD" min="2" maxlength="3" type="tel">
                         </div>
                         <div class="col col-sm-2 col-centered">
                             <label><?=$lang['plazo-dias']?></label>
@@ -87,7 +87,7 @@ echo("<meta charset=utf-8 />");
                             <label><?=$lang['plazo-adelanto']?></label>
                         </div>
                         <div class="col col-sm-6">
-                            <input name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
+                            <input onkeypress="return num(event)" name="adelanto" class="form-control" placeholder="$$$$$" min="1" maxlength="5" type="tel">
                         </div>
                     </div>
                     <br>
@@ -112,20 +112,13 @@ echo("<meta charset=utf-8 />");
                                     $usuario = $gettinguser['idusuario'];
                                 }
 
+                                
                                 $consulta2 = "SELECT * FROM convenio WHERE idusuario ='$usuario' and idinmueble ='".$row['IdInmueble']."'";
                                 $consulta2_con = mysql_query($consulta2);
-                                while($row2 = mysql_fetch_array($consulta2_con)){
-                                    $fecha_apro = $row2['fecha_aprobacion'];
-                                    $fecha_actual = date("Y-m-d");
-                                    $convenioid = $row2['idconvenio'];
-                                    // $diferencia = ($fecha_actual - $fecha_apro);
-                                    // echo $diferencia;
-                                }
-                            if(mysql_num_rows($consulta2_con) > 0  && $fecha_actual < $fecha_apro){
-                                echo "<input value='".$lang['cancelar-oferta']."' type='submit' name='cancelar' class='btn btn-danger'>";
-                                // echo "<a class='btn btn-danger disabled'>".$lang['ya-oferto']."</a>";
+                            if(mysql_num_rows($consulta2_con) > 0){
+                                echo "<a class='btn btn-danger disabled'>".$lang['ya-oferto']."</a>";
                             }
-                            elseif($dueno != $usuario and mysql_num_rows($consulta2_con) <= 0){
+                            elseif($dueno != $usuario ){
                                 echo "<input value='".$lang['Offer']."' type='submit' name='ofertar' class='btn btn-primary'>";
                             }
                             else{
@@ -137,7 +130,7 @@ echo("<meta charset=utf-8 />");
                 </div>
                     <center>
                 <?php
-
+                    
                     $consulta1 = "SELECT * FROM convenio";
                     $consulta1_con = mysql_query($consulta1);
                     $id = (mysql_num_rows($consulta1_con)) + 1;
@@ -151,36 +144,28 @@ echo("<meta charset=utf-8 />");
                     if(isset($_POST['precio']) and trim($_POST['precio']) != ""){
                         $oferta = $_POST['precio'];
                         date_default_timezone_set("America/El_Salvador");
-
+                        
                         $d1 = ($_POST['dias']) + 10;
                         $fecha_final1 = strtotime("+".$d1."Days");
                         $fecha_final2 = date("Y-m-d",$fecha_final1);
                         $d2 = strtotime("+10 Days");
                         $fecha_aprobacion =  date("Y-m-d", $d2);
                         $adelanto = $_POST['adelanto'];
-
+                        
                         $consulta = "INSERT INTO convenio VALUES ('$id','".$row['IdInmueble']."','$usuario','$oferta','1','0','$fecha_aprobacion','$fecha_final2','$adelanto')";
+                        //echo $consulta;
                         $consulta_con = mysql_query($consulta);
                         if(isset($consulta_con)){
                             echo "<span class='label label-success'>".$lang['oferta-reg']."</span>";
-                            echo "<script>window.location.replace('convenio.php?IdInmueble=".$inmuebleid."'); </script>";
                         }
                         else{echo mysql_error();}
-                    }
-                    if(isset($_POST['cancelar'])){
-                      $cancelar = "DELETE FROM convenio WHERE idconvenio = '$convenioid'";
-                      $cancelar_con = mysql_query($cancelar);
-                      if(isset($cancelar_con)){
-                        $cancelar2 = "UPDATE convenio SET idconvenio = idconvenio - 1 WHERE idconvenio > $convenioid ";
-                        echo "<script>window.location.replace('convenio.php?IdInmueble=".$inmuebleid."'); </script>";
-                      }
-
-                    }
+                    }   
                 ?>
                 </center>
               </form>
             </div>
         </div>
+<script src="js/validaciones.js" type="text/javascript"></script>
 <?php
 	}
  ?>
